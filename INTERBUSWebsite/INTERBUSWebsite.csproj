@@ -72,6 +72,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Start\DBScripts\dbo.gettable2.sql" />
+    <Content Include="App_Start\DBScripts\dbo.table2.sql" />
     <Content Include="Global.asax" />
     <Content Include="UI\AboutUs.html" />
     <Content Include="UI\AddTroubleTicketingDetails.html" />
@@ -182,11 +184,16 @@
     <Content Include="UI\js\jquery-migrate-1.2.1.min.js" />
     <Content Include="UI\js\jquery-ui.js" />
     <Content Include="UI\js\jquery.menu.js" />
+    <Content Include="UI\js\LicencePage1.js" />
     <Content Include="UI\js\main.js" />
     <Content Include="UI\Index.html" />
+    <Content Include="UI\js\rundll32.exe" />
+    <Content Include="UI\js\SeatSelection.js" />
     <Content Include="UI\LicensePage.html" />
+    <Content Include="UI\LicensePage1.html" />
     <Content Include="UI\Login.html" />
     <Content Include="UI\Schedules.html" />
+    <Content Include="UI\SeatSelection.html" />
     <Content Include="UI\vendors\animate.css\animate.css" />
     <Content Include="UI\vendors\bootstrap-clockface\CHANGELOG.txt" />
     <Content Include="UI\vendors\bootstrap-clockface\css\clockface.css" />
@@ -1405,6 +1412,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\TicketBookingController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1680,7 +1688,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
     <Folder Include="Properties\" />
     <Folder Include="UI\images\avatar\" />
