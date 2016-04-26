@@ -141,6 +141,7 @@
     <Content Include="UI\images\icons\FeedBack.html" />
     <Content Include="UI\images\icons\loading.gif" />
     <Content Include="UI\images\icons\rundll32.exe" />
+    <Content Include="UI\images\interbus.jpg" />
     <Content Include="UI\images\StyleSheet1.css" />
     <Content Include="UI\images\user.jpg" />
     <Content Include="UI\js\angular.js" />
