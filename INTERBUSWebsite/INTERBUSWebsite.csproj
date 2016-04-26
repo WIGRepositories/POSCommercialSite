@@ -103,6 +103,9 @@
     <Content Include="UI\css\themes\style2\yellow-green.css" />
     <Content Include="UI\css\themes\style2\yellow-grey.css" />
     <Content Include="UI\FeedBack.html" />
+    <Content Include="UI\images\1.jpg" />
+    <Content Include="UI\images\2.jpg" />
+    <Content Include="UI\images\arrows.png" />
     <Content Include="UI\images\bg\1.jpg" />
     <Content Include="UI\images\bg\2.jpg" />
     <Content Include="UI\images\bg\3.jpg" />
@@ -140,10 +143,11 @@
     <Content Include="UI\images\hmeBg.jpg" />
     <Content Include="UI\images\icons\FeedBack.html" />
     <Content Include="UI\images\icons\loading.gif" />
-    <Content Include="UI\images\icons\rundll32.exe" />
+    <Content Include="UI\images\fleetownerReq.jpg" />
     <Content Include="UI\images\StyleSheet1.css" />
     <Content Include="UI\images\user.jpg" />
     <Content Include="UI\js\angular.js" />
+    <Content Include="UI\js\CreateFleetOwner.js" />
     <Content Include="UI\js\Index.js" />
     <Content Include="UI\js\jplist.js" />
     <Content Include="UI\js\jquery-1.10.2.min.js" />
@@ -151,7 +155,7 @@
     <Content Include="UI\js\jquery-ui.js" />
     <Content Include="UI\js\jquery.menu.js" />
     <Content Include="UI\js\jquery.nivo.slider.js" />
-    <Content Include="UI\js\LicencePage1.js" />
+    <Content Include="UI\js\LicensePage.js" />
     <Content Include="UI\js\main.js" />
     <Content Include="UI\Index.html" />
     <Content Include="UI\js\SeatSelection.js" />
@@ -161,10 +165,6 @@
     <Content Include="UI\Schedules.html" />
     <Content Include="UI\SeatSelection.html" />
     <Content Include="UI\vendors\animate.css\animate.css" />
-    <Content Include="UI\vendors\bootstrap-clockface\CHANGELOG.txt" />
-    <Content Include="UI\vendors\bootstrap-clockface\css\clockface.css" />
-    <Content Include="UI\vendors\bootstrap-clockface\js\clockface.js" />
-    <Content Include="UI\vendors\bootstrap-clockface\README.html" />
     <Content Include="UI\vendors\bootstrap-colorpicker\css\colorpicker.css" />
     <Content Include="UI\vendors\bootstrap-colorpicker\img\alpha.png" />
     <Content Include="UI\vendors\bootstrap-colorpicker\img\hue.png" />
@@ -421,28 +421,6 @@
     <Content Include="UI\vendors\calendar\zabuto_calendar.js" />
     <Content Include="UI\vendors\calendar\zabuto_calendar.min.css" />
     <Content Include="UI\vendors\calendar\zabuto_calendar.min.js" />
-    <Content Include="UI\vendors\chart.js\Chart.js" />
-    <Content Include="UI\vendors\chart.js\Chart.min.js" />
-    <Content Include="UI\vendors\chart.js\docs\Chart.js" />
-    <Content Include="UI\vendors\chart.js\docs\index.html" />
-    <Content Include="UI\vendors\chart.js\docs\prettify.css" />
-    <Content Include="UI\vendors\chart.js\docs\prettify.js" />
-    <Content Include="UI\vendors\chart.js\docs\styles.css" />
-    <Content Include="UI\vendors\chart.js\samples\bar.html" />
-    <Content Include="UI\vendors\chart.js\samples\doughnut.html" />
-    <Content Include="UI\vendors\chart.js\samples\line.html" />
-    <Content Include="UI\vendors\chart.js\samples\pie.html" />
-    <Content Include="UI\vendors\chart.js\samples\polarArea.html" />
-    <Content Include="UI\vendors\chart.js\samples\radar.html" />
-    <Content Include="UI\vendors\chart.js\samples\sixup.html" />
-    <Content Include="UI\vendors\chart.js\site\assets\6charts.png" />
-    <Content Include="UI\vendors\chart.js\site\assets\Chart.js" />
-    <Content Include="UI\vendors\chart.js\site\assets\effects.js" />
-    <Content Include="UI\vendors\chart.js\site\assets\excanvas.js" />
-    <Content Include="UI\vendors\chart.js\site\assets\html.png" />
-    <Content Include="UI\vendors\chart.js\site\assets\simple.png" />
-    <Content Include="UI\vendors\chart.js\site\index.html" />
-    <Content Include="UI\vendors\chart.js\site\styles.css" />
     <Content Include="UI\vendors\ckeditor\adapters\jquery.js" />
     <Content Include="UI\vendors\ckeditor\build-config.js" />
     <Content Include="UI\vendors\ckeditor\ckeditor.js" />
@@ -1378,10 +1356,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\FleetOwnerLicenseController.cs" />
     <Compile Include="Controllers\TicketBookingController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Models.cs" />
     <Compile Include="UI\vendors\jplist\html\data-sources\asp-net-sql-server\asp-net-solution\JPList\DAL\DataBase.cs" />
     <Compile Include="UI\vendors\jplist\html\data-sources\asp-net-sql-server\asp-net-solution\JPList\DAL\StatusQueries.cs" />
     <Compile Include="UI\vendors\jplist\html\data-sources\asp-net-sql-server\asp-net-solution\JPList\Domain\Models\Item.cs" />
@@ -1393,12 +1373,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="UI\vendors\bootstrap-clockface\.gitignore" />
-    <Content Include="UI\vendors\bootstrap-clockface\.jshintignore" />
-    <Content Include="UI\vendors\bootstrap-clockface\build" />
-    <Content Include="UI\vendors\bootstrap-clockface\bumpver" />
-    <Content Include="UI\vendors\bootstrap-clockface\LICENSE-MIT" />
-    <Content Include="UI\vendors\bootstrap-clockface\README.md" />
     <Content Include="UI\vendors\bootstrap-daterangepicker\.gitignore" />
     <Content Include="UI\vendors\bootstrap-daterangepicker\bower.json" />
     <Content Include="UI\vendors\bootstrap-daterangepicker\README.md" />
@@ -1548,12 +1522,6 @@
     <Content Include="UI\vendors\calendar\index.php" />
     <Content Include="UI\vendors\calendar\README.md" />
     <Content Include="UI\vendors\calendar\zabuto_calendar.jquery.json" />
-    <Content Include="UI\vendors\chart.js\.gitignore" />
-    <Content Include="UI\vendors\chart.js\component.json" />
-    <Content Include="UI\vendors\chart.js\docs\prettify.less" />
-    <Content Include="UI\vendors\chart.js\docs\styles.less" />
-    <Content Include="UI\vendors\chart.js\LICENSE.md" />
-    <Content Include="UI\vendors\chart.js\readme.md" />
     <Content Include="UI\vendors\ckeditor\CHANGES.md" />
     <Content Include="UI\vendors\ckeditor\LICENSE.md" />
     <Content Include="UI\vendors\ckeditor\plugins\scayt\LICENSE.md" />
@@ -1654,7 +1622,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Properties\" />
     <Folder Include="UI\images\avatar\" />
     <Folder Include="UI\Local Disk\" />

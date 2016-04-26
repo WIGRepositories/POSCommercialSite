@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp" ng-controller="myCtrl">
 <head>
     <title>INTERBUS CommercialSite | Index</title>
     <meta charset="utf-8">
@@ -28,10 +28,10 @@
         <h1>Please choose below license options available:</h1>
         <h3>Enter fleet owner code: <input id="Text1" type="text" ng-model="txt" /></h3>
         <br />
-        <h4>Do not have a fleet owner code? please <a href="Request.html" style="color:red">click here</a> to contact INTERBUS administrator </h4>
+        <h4>Do not have a fleet owner code? please <a href="FleetOwnerRequest.html" style="color:red">click here</a> to contact INTERBUS administrator </h4>
 
         <!--BEGIN PAGE WRAPPER-->
-        <div id="page-wrapper">
+        <div>
             <!--BEGIN TITLE & BREADCRUMB PAGE-->
             <!--END TITLE & BREADCRUMB PAGE--><!--BEGIN CONTENT-->
             <div class="page-content">
@@ -146,5 +146,7 @@
     <script src="vendors/responsive-tabs/responsive-tabs.js"></script>
     <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
     <script src="js/main.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/LicensePage.js"></script>
 </body>
 </html>
