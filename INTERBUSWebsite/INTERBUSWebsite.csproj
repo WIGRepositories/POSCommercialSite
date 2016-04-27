@@ -145,6 +145,7 @@
     <Content Include="UI\images\interbus.jpg" />
     <Content Include="UI\images\StyleSheet1.css" />
     <Content Include="UI\images\user.jpg" />
+    <Content Include="UI\index2.html" />
     <Content Include="UI\js\angular.js" />
     <Content Include="UI\js\CreateFleetOwner.js" />
     <Content Include="UI\js\Index.js" />
