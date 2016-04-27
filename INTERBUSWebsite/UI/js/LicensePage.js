@@ -13,7 +13,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http) {
                 $scope.result = response.data;
 
                 if ($scope.result > 0)
-                    window.location.href = "http://localhost:52800/CommercialSite/LicenseConfirmation.html";
+                    window.location.href = "http://localhost:52800/UI/LicenseConfirmation.html";
                 else
                     alert('invalid fleet owner code');
 
