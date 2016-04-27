@@ -37,6 +37,7 @@ var ctrl = app.controller('Mycntrlr', function ($scope, $http) {
             data: Fleet
         }).success(function (data, status, headers, config) {
             alert('saved successfully');
+            window.location.href = "http://localhost:52800/UI/LicenseConfirmation.html";
         }).error(function (ata, status, headers, config) {
             alert(ata);
         });
