@@ -119,7 +119,7 @@
                                                                     <tr>
                                                                         <td style="HEIGHT: 25px" valign="top" align="left">
                                                                             <table style="HEIGHT: 25px" cellspacing="0" cellpadding="0" width="100%" border="0">
-                                                                                <tbody style="background-color:lightgray" height="25px" cellspacing="0" cellpadding="0" width="100%" border="0">
+                                                                                <tbody style="background-color:lightgray" height="40px" cellspacing="0" cellpadding="0" width="100%" border="0">
 
                                                                                     <tr><td colspan="3" class="" style="padding-bottom:2px" valign="bottom" align="center">Check Availability</td></tr>
                                                                                 </tbody>
@@ -128,22 +128,23 @@
                                                                     </tr>
                                                                     <tr>
                                                                         <td class="black-table-border" valign="top" align=center>
-                                                                            <table cellspacing="0" cellpadding="0" width="100%" align=center border="1" style="background-color:white">
+                                                                            <table cellspacing="0" cellpadding="0"  align=center border="1" style="background-color:white">
                                                                                 <tbody>
                                                                                     <tr>
-                                                                                        <td style="HEIGHT: 20px" align="center">
+                                                                                        <td style="HEIGHT: 25px" align="center">
                                                                                             <div style="color:black">
-                                                                                                <table width="90%" border="0" cellspacing="0" cellpadding="0" align="center">
+                                                                                                <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
                                                                                                     <tr>
                                                                                                         <td valign="top" align="center" style="height: 53px">
-                                                                                                            <table cellpadding="0" cellspacing="0" width="44%" border="0" align="center">
-                                                                                                                <tr>
-                                                                                                                    <td align="left" valign="top" class="fildstext" style="padding-bottom:1px;">From:</td>
+                                                                                                            <table cellpadding="0" cellspacing="0" border="0">
+                                                                                                                <div class="form-group">
+                                                                                                                    <label for="descr" class="col-md-3 control-label">From: <span class='require'></span></label>
+
+                                                                                                                    <div class="col-md-3">
 
 
-
-                                                                                                                    <td align="left" valign="top" class="fildstext" style="padding-bottom:9px;">
-                                                                                                                        <select name="ctl00$cpEndUserMain$ucSearchRoute$ddlSource" onchange="javascript:setTimeout('__doPostBack(\'ctl00$cpEndUserMain$ucSearchRoute$ddlSource\',\'\')', 0)" id="ctl00_cpEndUserMain_ucSearchRoute_ddlSource" tabindex="2" class="formfileds" errname="Source Name" valid="m" style="width:130px;">
+                                                                                                                        <select name="ctl00$cpEndUserMain$ucSearchRoute$ddlSource" id="ctl00_cpEndUserMain_ucSearchRoute_ddlSource" tabindex="2" class="formfileds" errname="Source Name" valid="m" style="width:130px;">
+                                                                                                                            <option selected="selected" value="0">Select Source</option>
                                                                                                                             <option selected="selected" value="0">Select Source</option>
                                                                                                                             <option value="171">AHMEDABAD</option>
                                                                                                                             <option value="10">AHMEDNAGAR</option>
@@ -199,99 +200,91 @@
                                                                                                                             <option value="3">HYDERABAD</option>
                                                                                                                             <option value="179">ICCHAPURAM</option>
                                                                                                                         </select>
-                                                                                                                </tr>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                              
+                                                                                      
+                                                                                                                <td valign="top" align="center" style="height: 53px">
+                                                                                                                    <table cellpadding="0" cellspacing="0" border="0" align="center">
+                                                                                                                        <div class="form-group">
+                                                                                                                            <label for="descr" class="col-md-2">To: <span class='require'></span></label>
+
+                                                                                                                            <div class="col-md-2">
+
+
+                                                                                                                                <select name="ctl00$cpEndUserMain$ucSearchRoute$ddlDestination" id="ctl00_cpEndUserMain_ucSearchRoute_ddlSource" tabindex="2" class="formfileds" errname="Source Name" valid="m" style="width:130px;">
+                                                                                                                                    <option value="Select Destination">Select Destination</option>
+
+                                                                                                                                </select>
+
+                                                                                                                            </div>
+                                                                                                                        </div>
+
+
+
+
+
+                                                                                                                        <tr>
+                                                                                                                            <td align="left" valign="top" style="padding-bottom:2px;" class="fildstext">OnwardDate:</td>
+
+
+                                                                                                                            <td align="left" valign="top" style="padding-bottom:8px;">
+                                                                                                                                <input name="ctl00$cpEndUserMain$ucSearchRoute$txtDateofJourney" type="text" value="26/3/2016" id="ctl00_cpEndUserMain_ucSearchRoute_txtDateofJourney" tabindex="4" onkeyup="javaScript:return IndianDateFormat(event,10,this);" onkeypress="javascript:return isNumberKey(event,10,this);" style="width:88px;" />
+                                                                                                                                <img src="Images/EndUserImages/cal-icon.gif" id="ctl00_cpEndUserMain_ucSearchRoute_imgOnward" alt="Pick a date" border="0" style="padding-right: 3px; padding-left: 3px; padding-bottom: 3px; padding-top: 3px" />
+                                                                                                                            </td>
+
+
+                                                                                                                        </tr>
+
+                                                                                                                        <tr>
+                                                                                                                            <td align="left" valign="top" style="padding-bottom:2px;" class="fildstext">ReturnDate:</td>
+
+
+                                                                                                                            <td align="left" valign="top" style="padding-bottom:8px;">
+                                                                                                                                <input name="ctl00$cpEndUserMain$ucSearchRoute$txtDateofJourney" type="text" value="26/3/2016" style="width:88px;" />
+                                                                                                                                <img src="Images/EndUserImages/cal-icon.gif" id="ctl00_cpEndUserMain_ucSearchRoute_imgOnward" alt="Pick a date" border="0" style="padding-right: 3px; padding-left: 3px; padding-bottom: 3px; padding-top: 3px" />
+                                                                                                                            </td>
+
+                                                                                                                        </tr>
+
+
+                                                                                                                        <tr>
+                                                                                                                            <td align="left" valign="top" class="fildstext" style="padding-bottom:2px;">CoachType:</td>
+                                                                                                                            <td align="left" valign="top" class="fildstext" style="padding-bottom:3px;">
+                                                                                                                                <select name="ctl00$cpEndUserMain$ucSearchRoute$ddlBusType" id="ctl00_cpEndUserMain_ucSearchRoute_ddlBusType" tabindex="6" class="formfileds" style="width:94px;">
+                                                                                                                                    <option selected="selected" value="0">--Any--</option>
+                                                                                                                                    <option value="1">Seat</option>
+                                                                                                                                    <option value="2">Sleeper</option>
+                                                                                                                                </select>
+                                                                                                                            </td>
+                                                                                                                        </tr>
+
+
+                                                                                                                        <tr>
+                                                                                                                            <td align="left" valign="top" class="fildstext" style="padding-bottom:2px;">BookingType:</td>
+                                                                                                                            <td align="left" valign="top" class="fildstext" style="padding-bottom:3px;">
+                                                                                                                                <select name="ctl00$cpEndUserMain$ucSearchRoute$ddlBusType" id="ctl00_cpEndUserMain_ucSearchRoute_ddlBusType" tabindex="6" class="formfileds" style="width:94px;">
+                                                                                                                                    <option value="1">Select Type</option>
+                                                                                                                                    <option value="2">Booking Type</option>
+                                                                                                                                    <option value="3">Hiring Type</option>
+                                                                                                                                </select>
+                                                                                                                        </tr>
+
+                                                                                                                        <tr>
+
+                                                                                                                            <td>
+
+                                                                                                                                <a href="SeatSelection.html"><input type="submit" value="Search"style=" margin-bottom:10px" /></a>
+
+                                                                                                                            </td>
+                                                                                                                        </tr>
+
+                       
+                                                                                                                    </table>
+
+                                                                                                            </table>
+
                                                                                                         </td>
-                                                                                                    </tr>
-                                                                                                    <tr>
-                                                                                                        <td align="left" valign="top" class="fildstext" style="padding-bottom:1px;">To:</td>
-
-
-
-                                                                                                        <td align="left" valign="top" class="fildstext" style="padding-bottom:8px;">
-                                                                                                            <select name="ctl00$cpEndUserMain$ucSearchRoute$ddlDestination" id="ctl00_cpEndUserMain_ucSearchRoute_ddlDestination" tabindex="5" class="formfileds" errname="Destination Name" valid="m" style="width:130px;">
-                                                                                                                <option value="Select Destination">Select Destination</option>
-
-                                                                                                            </select>
-                                                                                                    </tr>
-                                                                                                </table>
-                                                                                            </div>
-                                                                                        </td>
-
-                                                                                    <tr>
-                                                                                        <td align="left" valign="top" style="padding-bottom:2px;" class="fildstext">OnwardDate:</td>
-
-
-                                                                                        <td align="left" valign="top" style="padding-bottom:8px;">
-                                                                                            <input name="ctl00$cpEndUserMain$ucSearchRoute$txtDateofJourney" type="text" value="26/3/2016" id="ctl00_cpEndUserMain_ucSearchRoute_txtDateofJourney" tabindex="4" onkeyup="javaScript:return IndianDateFormat(event,10,this);" onkeypress="javascript:return isNumberKey(event,10,this);" style="width:88px;" />
-                                                                                            <img src="Images/EndUserImages/cal-icon.gif" id="ctl00_cpEndUserMain_ucSearchRoute_imgOnward" alt="Pick a date" border="0" style="padding-right: 3px; padding-left: 3px; padding-bottom: 3px; padding-top: 3px" />
-                                                                                        </td>
-
-
-                                                                                    </tr>
-
-                                                                                    <tr>
-                                                                                        <td align="left" valign="top" style="padding-bottom:2px;" class="fildstext">ReturnDate:</td>
-
-
-                                                                                        <td align="left" valign="top" style="padding-bottom:8px;">
-                                                                                            <input name="ctl00$cpEndUserMain$ucSearchRoute$txtDateofJourney" type="text" value="26/3/2016" style="width:88px;" />
-                                                                                            <img src="Images/EndUserImages/cal-icon.gif" id="ctl00_cpEndUserMain_ucSearchRoute_imgOnward" alt="Pick a date" border="0" style="padding-right: 3px; padding-left: 3px; padding-bottom: 3px; padding-top: 3px" />
-                                                                                        </td>
-
-                                                                                    </tr>
-
-
-                                                                                    <tr>
-                                                                                        <td align="left" valign="top" class="fildstext" style="padding-bottom:2px;">CoachType:</td>
-                                                                                        <td align="left" valign="top" class="fildstext" style="padding-bottom:3px;">
-                                                                                            <select name="ctl00$cpEndUserMain$ucSearchRoute$ddlBusType" id="ctl00_cpEndUserMain_ucSearchRoute_ddlBusType" tabindex="6" class="formfileds" style="width:94px;">
-                                                                                                <option selected="selected" value="0">--Any--</option>
-                                                                                                <option value="1">Seat</option>
-                                                                                                <option value="2">Sleeper</option>
-                                                                                            </select>
-                                                                                        </td>
-                                                                                    </tr>
-
-
-                                                                                    <tr>
-                                                                                        <td align="left" valign="top" class="fildstext" style="padding-bottom:2px;">BookingType:</td>
-                                                                                        <td align="left" valign="top" class="fildstext" style="padding-bottom:3px;">
-                                                                                            <select name="ctl00$cpEndUserMain$ucSearchRoute$ddlBusType" id="ctl00_cpEndUserMain_ucSearchRoute_ddlBusType" tabindex="6" class="formfileds" style="width:94px;">
-                                                                                                <option value="1">Select Type</option>
-                                                                                                <option value="2">Booking Type</option>
-                                                                                                <option value="3">Hiring Type</option>
-                                                                                            </select>
-                                                                                    </tr>
-
-                                                                                    <tr>
-
-                                                                                        <td>
-
-                                                                                            <a href="SeatSelection.html"><input type="submit" value="Search" /></a>
-
-                                                                                        </td>
-                                                                                    </tr>
-
-                                                                                    <!--<tr>
-                                                                                        <td>
-                                                                                            <div id="ctl00_cpEndUserMain_ucSearchRoute_uppgrSearchRoute" style="display:none;">
-                                                                                                <div style="Z-INDEX: 1; LEFT: 0px; POSITION: absolute; TOP:0px;width:100%;height:100%;" class="darkClass">
-
-
-                                                                                                </div>
-                                                                                                <div style="Z-INDEX: 100; LEFT: 0px; POSITION: absolute; TOP:0px;width:100%;height:100%;">
-                                                                                                    <table align="center" border="0" cellspacing="0" cellpadding="0" height="100%"></table>
-                                                                                                </div>
-                                                                                            </div>
-
-                                                                                        </td>
-                                                                                    </tr>-->
-
-                                                                            </table>
-
-                                                            </table>
-
-                                                        </td>
                                                     </tr>
                                                 </tbody>
                                             </table>
