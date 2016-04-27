@@ -29,16 +29,17 @@ var ctrl = app.controller('Mycntrlr', function ($scope, $http) {
             insupdflag: flag
 
         }
-
-        var req = {
+      
+        $http({
+            url: 'http://localhost:52800/api/fleetownerlicense/CreateNewFO',
             method: 'POST',
-            url: 'http://localhost:52800/api/fleetownerlicense/Savenewfleet',
+            headers: { 'Content-Type': 'application/json' },
             data: Fleet
-        }
-        $http(req).then(function (response) {
-            alert('saved successfully.');
+        }).success(function (data, status, headers, config) {
+            alert('saved successfully');
+        }).error(function (ata, status, headers, config) {
+            alert(ata);
         });
-
 
         $scope.User1 = null;
     };
