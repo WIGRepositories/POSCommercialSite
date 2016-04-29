@@ -117,23 +117,24 @@
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td class="black-table-border" valign="top" align=center>
+                                                                        <td class="black-table-border">
                                                                             <table cellspacing="0" cellpadding="0" width="100%" align=center border="1" style="background-color:white">
                                                                                 <tbody>
                                                                                     <tr>
-                                                                                        <td style="HEIGHT: 20px" align="center">
+                                                                                        <td>
                                                                                             <div style="color:black">
                                                                                                 <table width="90%" border="0" cellspacing="0" cellpadding="0" align="center">
                                                                                                     <tr>
-                                                                                                        <td valign="top" align="center" style="height: 53px">
-                                                                                                            <table cellpadding="0" cellspacing="0" width="44%" border="0" align="center">
-                                                                                                                <tr>
-                                                                                                                    <td align="left" valign="top" class="fildstext" style="padding-bottom:1px;">From:</td>
+                                                                                                        <td>
+                                                                                                            <table>
 
+                                                                                                                <div class="form-group">
+                                                                                                                    <br />
+                                                                                                                    <label for="inputMiddleName" class="col-md-4 control-label">From:<span class='require'></span></label>
 
-
-                                                                                                                    <td align="left" valign="top" class="fildstext" style="padding-bottom:9px;">
-                                                                                                                        <select name="ctl00$cpEndUserMain$ucSearchRoute$ddlSource" onchange="javascript:setTimeout('__doPostBack(\'ctl00$cpEndUserMain$ucSearchRoute$ddlSource\',\'\')', 0)" id="ctl00_cpEndUserMain_ucSearchRoute_ddlSource" tabindex="2" class="formfileds" errname="Source Name" valid="m" style="width:130px;">
+                                                                                                                    <div class="col-md-6">
+                                                                                                                        <select>
+                                                                                                                            <option value="">Select Company</option>
                                                                                                                             <option selected="selected" value="0">Select Source</option>
                                                                                                                             <option value="171">AHMEDABAD</option>
                                                                                                                             <option value="10">AHMEDNAGAR</option>
@@ -189,102 +190,107 @@
                                                                                                                             <option value="3">HYDERABAD</option>
                                                                                                                             <option value="179">ICCHAPURAM</option>
                                                                                                                         </select>
-                                                                                                                </tr>
+                                                                                                                    </div>
+                                                                                                                </div>
                                                                                                         </td>
                                                                                                     </tr>
-                                                                                                    <tr>
-                                                                                                        <td align="left" valign="top" class="fildstext" style="padding-bottom:1px;">To:</td>
-
-
-
-                                                                                                        <td align="left" valign="top" class="fildstext" style="padding-bottom:8px;">
-                                                                                                            <select name="ctl00$cpEndUserMain$ucSearchRoute$ddlDestination" id="ctl00_cpEndUserMain_ucSearchRoute_ddlDestination" tabindex="5" class="formfileds" errname="Destination Name" valid="m" style="width:130px;">
-                                                                                                                <option value="Select Destination">Select Destination</option>
-
-                                                                                                            </select>
-                                                                                                    </tr>
-                                                                                                </table>
                                                                                             </div>
-                                                                                        </td>
-
                                                                                     <tr>
-                                                                                        <td align="left" valign="top" style="padding-bottom:2px;" class="fildstext">OnwardDate:</td>
+                                                                                        <div class="form-group">
+                                                                                            <br />
+                                                                                            <label for="inputMiddleName" class="col-md-4 control-label">To:<span class='require'></span></label>
 
+                                                                                            <div class="col-md-6">
 
-                                                                                        <td align="left" valign="top" style="padding-bottom:8px;">
-                                                                                            <input name="ctl00$cpEndUserMain$ucSearchRoute$txtDateofJourney" type="text" value="26/3/2016" id="ctl00_cpEndUserMain_ucSearchRoute_txtDateofJourney" tabindex="4" onkeyup="javaScript:return IndianDateFormat(event,10,this);" onkeypress="javascript:return isNumberKey(event,10,this);" style="width:88px;" />
-                                                                                            <img src="Images/EndUserImages/cal-icon.gif" id="ctl00_cpEndUserMain_ucSearchRoute_imgOnward" alt="Pick a date" border="0" style="padding-right: 3px; padding-left: 3px; padding-bottom: 3px; padding-top: 3px" />
-                                                                                        </td>
+                                                                                                <select name="ctl00$cpEndUserMain$ucSearchRoute$ddlDestination" id="ctl00_cpEndUserMain_ucSearchRoute_ddlDestination" tabindex="5" class="formfileds" errname="Destination Name" valid="m" style="width:130px;">
+                                                                                                    <option value="Select Destination">Select Destination</option>
 
+                                                                                                </select>
 
-                                                                                    </tr>
-
-                                                                                    <tr>
-                                                                                        <td align="left" valign="top" style="padding-bottom:2px;" class="fildstext">ReturnDate:</td>
-
-
-                                                                                        <td align="left" valign="top" style="padding-bottom:8px;">
-                                                                                            <input name="ctl00$cpEndUserMain$ucSearchRoute$txtDateofJourney" type="text" value="26/3/2016" style="width:88px;" />
-                                                                                            <img src="Images/EndUserImages/cal-icon.gif" id="ctl00_cpEndUserMain_ucSearchRoute_imgOnward" alt="Pick a date" border="0" style="padding-right: 3px; padding-left: 3px; padding-bottom: 3px; padding-top: 3px" />
-                                                                                        </td>
-
-                                                                                    </tr>
-
-
-                                                                                    <tr>
-                                                                                        <td align="left" valign="top" class="fildstext" style="padding-bottom:2px;">CoachType:</td>
-                                                                                        <td align="left" valign="top" class="fildstext" style="padding-bottom:3px;">
-                                                                                            <select name="ctl00$cpEndUserMain$ucSearchRoute$ddlBusType" id="ctl00_cpEndUserMain_ucSearchRoute_ddlBusType" tabindex="6" class="formfileds" style="width:94px;">
-                                                                                                <option selected="selected" value="0">--Any--</option>
-                                                                                                <option value="1">Seat</option>
-                                                                                                <option value="2">Sleeper</option>
-                                                                                            </select>
-                                                                                        </td>
-                                                                                    </tr>
-
-
-                                                                                    <tr>
-                                                                                        <td align="left" valign="top" class="fildstext" style="padding-bottom:2px;">BookingType:</td>
-                                                                                        <td align="left" valign="top" class="fildstext" style="padding-bottom:3px;">
-                                                                                            <select name="ctl00$cpEndUserMain$ucSearchRoute$ddlBusType" id="ctl00_cpEndUserMain_ucSearchRoute_ddlBusType" tabindex="6" class="formfileds" style="width:94px;">
-                                                                                                <option value="1">Select Type</option>
-                                                                                                <option value="2">Booking Type</option>
-                                                                                                <option value="3">Hiring Type</option>
-                                                                                            </select>
-                                                                                    </tr>
-
-                                                                                    <tr>
-
-                                                                                        <td>
-
-                                                                                            <a href="SeatSelection.html"><input type="submit" value="Search" /></a>
-
-                                                                                        </td>
-                                                                                    </tr>
-
-                                                                                    <!--<tr>
-                                                                                        <td>
-                                                                                            <div id="ctl00_cpEndUserMain_ucSearchRoute_uppgrSearchRoute" style="display:none;">
-                                                                                                <div style="Z-INDEX: 1; LEFT: 0px; POSITION: absolute; TOP:0px;width:100%;height:100%;" class="darkClass">
-
-
-                                                                                                </div>
-                                                                                                <div style="Z-INDEX: 100; LEFT: 0px; POSITION: absolute; TOP:0px;width:100%;height:100%;">
-                                                                                                    <table align="center" border="0" cellspacing="0" cellpadding="0" height="100%"></table>
-                                                                                                </div>
                                                                                             </div>
+                                                                                        </div>
+                                                                        </td>
+                                                                    </tr>
 
-                                                                                        </td>
-                                                                                    </tr>-->
 
-                                                                            </table>
+                                                                    <div class="form-group">
+                                                                        <br />
+                                                                        <label for="inputMiddleName" class="col-md-6 control-label">OnwardDate:<span class='require'></span></label>
 
-                                                            </table>
+                                                                        <div class="col-md-6">
 
+                                                                            <input type="text" value="26/3/2016" id="ctl00_cpEndUserMain_ucSearchRoute_txtDateofJourney" tabindex="4" onkeyup="javaScript:return IndianDateFormat(event,10,this);" onkeypress="javascript:return isNumberKey(event,10,this);" style="width:88px;" />
+                                                                            <img src="Images/EndUserImages/cal-icon.gif" id="ctl00_cpEndUserMain_ucSearchRoute_imgOnward" alt="Pick a date" border="0" style="padding-right: 3px; padding-left: 3px; padding-bottom: 3px; padding-top: 3px" />
+
+                                                                        </div>
+                                                                    </div>
                                                         </td>
                                                     </tr>
-                                                </tbody>
+                                                    <div class="form-group">
+                                                        <br />
+                                                        <label for="inputMiddleName" class="col-md-4 control-label">CoachType:<span class='require'></span></label>
+
+                                                        <div class="col-md-6">
+
+                                                            <select name="ctl00$cpEndUserMain$ucSearchRoute$ddlBusType" id="ctl00_cpEndUserMain_ucSearchRoute_ddlBusType" tabindex="6" class="formfileds" style="width:94px;">
+                                                                <option selected="selected" value="0">--Any--</option>
+                                                                <option value="1">Seat</option>
+                                                                <option value="2">Sleeper</option>
+                                                            </select>
+
+                                                                  </div>
+                                                    </div>
+                                        </td>
+                                    </tr>
+
+</table>
+
+
+
+<tr>
+                                        <td align="left" valign="top" class="fildstext" style="padding-bottom:2px;">CoachType:</td>
+                                        <td align="left" valign="top" class="fildstext" style="padding-bottom:3px;">
+                                            <select name="ctl00$cpEndUserMain$ucSearchRoute$ddlBusType" id="ctl00_cpEndUserMain_ucSearchRoute_ddlBusType" tabindex="6" class="formfileds" style="width:94px;">
+                                                <option selected="selected" value="0">--Any--</option>
+                                                <option value="1">Seat</option>
+                                                <option value="2">Sleeper</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td align="left" valign="top" class="fildstext" style="padding-bottom:2px;">BookingType:</td>
+                                        <td align="left" valign="top" class="fildstext" style="padding-bottom:3px;">
+                                            <select name="ctl00$cpEndUserMain$ucSearchRoute$ddlBusType" id="ctl00_cpEndUserMain_ucSearchRoute_ddlBusType" tabindex="6" class="formfileds" style="width:94px;">
+                                                <option value="1">Select Type</option>
+                                                <option value="2">Booking Type</option>
+                                                <option value="3">Hiring Type</option>
+                                            </select>
+                                    </tr>
+
+
+
+
+                                    <tr>
+                                        <td align="left" valign="top" style="text-align: center" colspan="3">
+                                            <table align="center" border="0" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td>
+                                                        <div class="cssbutton sample b">
+                                                            <input type="submit" name="ctl00$cpEndUserMain$ucSearchRoute$ibtnSearch" value="Search" style="margin-bottom:px" />
+                                                        </div>
+                                                    </td>
+                                                </tr>
                                             </table>
+
+</table>
+                                                                            </table>
+
+                                                                         </td>
+                                                                     </tr>
+                                                               </tbody>
+                                                             </table>
 
 
                                         <td style="HEIGHT: 1px" valign="top" align="left">
@@ -323,11 +329,67 @@
                     </table>
                 </td>
                 <td style="WIDTH: 11px" valign="top" align="left"><img height="1" src="images/8.jpeg" width="1" /></td>
-                </tr>
+              
 
-                </table>
+                
             </div>
         </div>
+
+    <table width="100%">
+       
+    </table>
+
+    </td>
+    </tr>
+    <!-- Middle Part End -->
+    <!--Author:Sathishkumar.Mailaram-->
+    <tr>
+        <td align="left" valign="top" style="height: 1px; background-color: #e5e4e4;">
+            <img src="images/spacer.gif" width="1" height="1">
+        </td>
+    </tr>
+
+    <tr>
+        <td align="center" valign="middle" class="bottext11" style="height: 55px;">
+            <a href="Faq.aspx" class="bottextlinks">FAQ</a> | <a href="TermsConditions.aspx"
+                                                                 class="bottextlinks">Terms &amp; Conditions</a> | <a href="MailToFriend.aspx" class="bottextlinks">
+                Mail a friend
+            </a> | <a href="Privacy.aspx" class="bottextlinks">Privacy Policy</a>
+
+            | <a href="News.aspx" class="bottextlinks">News &amp; Media</a> | <a href="Sitemap.aspx"
+                                                                                 class="bottextlinks">Site Map</a>
+
+            <br />
+            <table width="100%" border="0">
+                <tr>
+                    <td align="center" width="100%">
+                        <div class="bottext11">
+                            <span class="bottext11">
+                                Kesineni Tours &amp; Travels ©
+
+                                <script language="javascript">var today = new Date(); var year = today.getYear(); if (year > 2000) { document.write(year); } else { year = year + 1900; document.write(year); }</script>
+
+                                . All Rights Reserved.
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <span id="divBrand"></span>
+
+                        <script type="text/javascript">
+                            var pathName = window.location.pathname.toLowerCase(); if (pathName == "/" || pathName.indexOf("index.aspx") > 0) { document.getElementById('divBrand').innerHTML = 'Powered By: <a href="http://www.valuelabs.com" target="_blank"><img src="Images/EndUserImages/vl-logo.gif" height="16" border="0" style="vertical-align: middle;" /></a>'; }
+                        </script>
+
+                    </td>
+                </tr>
+            </table>
+            <br />
+        </td>
+    </tr>
+
+
         <script src="js/jquery-1.10.2.min.js"></script>
         <script src="js/jquery-migrate-1.2.1.min.js"></script>
         <script src="js/jquery-ui.js"></script>
