@@ -92,6 +92,7 @@
     <Content Include="obj\Debug\INTERBUSWebsite.pdb" />
     <Content Include="UI\AboutUs.html" />
     <Content Include="UI\AddTroubleTicketingDetails.html" />
+    <Content Include="UI\BuyBTPOS.html" />
     <Content Include="UI\Cancellation.html" />
     <Content Include="UI\CheckFare.html" />
     <Content Include="UI\CheckOut.html" />
@@ -139,6 +140,7 @@
     <Content Include="UI\images\commercialsite2.jpg" />
     <Content Include="UI\images\commercialsite3.jpg" />
     <Content Include="UI\images\commercialsite4.jpg" />
+    <Content Include="UI\images\fleetownerReq.jpg" />
     <Content Include="UI\images\Fwd_ arrows.html" />
     <Content Include="UI\images\gallery\1.jpg" />
     <Content Include="UI\images\gallery\10.jpg" />
@@ -164,6 +166,7 @@
     <Content Include="UI\InVoiceExrtras.html" />
     <Content Include="UI\js\angular.js" />
     <Content Include="UI\js\createfleet.js" />
+    <Content Include="UI\js\CreateFleetOwner.js" />
     <Content Include="UI\js\Index.js" />
     <Content Include="UI\js\jplist.js" />
     <Content Include="UI\js\jquery-1.10.2.min.js" />
@@ -172,10 +175,12 @@
     <Content Include="UI\js\jquery.menu.js" />
     <Content Include="UI\js\jquery.nivo.slider.js" />
     <Content Include="UI\js\LicencePage1.js" />
+    <Content Include="UI\js\LicensePage.js" />
     <Content Include="UI\js\main.js" />
     <Content Include="UI\Index.html" />
     <Content Include="UI\js\SeatSelection.js" />
     <Content Include="UI\FleetOwnerRequest.html" />
+    <Content Include="UI\LicenseConfirmation.html" />
     <Content Include="UI\LicensePage.html" />
     <Content Include="UI\Login.html" />
     <Content Include="UI\Schedules.html" />

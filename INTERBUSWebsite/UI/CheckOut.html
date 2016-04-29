@@ -10,6 +10,7 @@
     <link rel="apple-touch-icon" sizes="72x72" href="images/icons/favicon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="images/icons/favicon-114x114.png">
     <!--Loading bootstrap css-->
+    
     <link type="text/css" rel="stylesheet" href="vendors/jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
     <link type="text/css" rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
     <link type="text/css" rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
@@ -24,6 +25,7 @@
     <link rel="stylesheet" type="text/css" href="css/Main.css">
 </head>
 <body>
+   
     <center style="height:50%">
         <a id="totop" href="#"><i class="fa fa-angle-up"></i></a><!--END BACK TO TOP--><!--BEGIN TOPBAR-->
         <div id="header-topbar-option-demo" class="page-header-topbar" style="width:50%">
@@ -77,20 +79,13 @@
                             <div class="form-group"><input id="inputAddress" type="text" placeholder="Address" class="form-control" /></div>
                             <div class="form-group"><textarea rows="5" placeholder="Additional info" class="form-control"></textarea></div>
                             <hr />
-                            <div class="form-group">
-                                <div class="radio">
-                                    <label class="radio-inline">
-                                        <input id="optionsVisa" type="radio" name="optionsRadios" value="Visa" checked="checked" />&nbsp;
-                                        Visa
-                                    </label><label class="radio-inline">
-                                        <input id="optionsMasterCard" type="radio" name="optionsRadios" value="MasterCard" />&nbsp;
-                                        MasterCard
-                                    </label><label class="radio-inline">
-                                        <input id="optionsPayPal" type="radio" name="optionsRadios" value="PayPal" />&nbsp;
-                                        PayPal
-                                    </label>
-                                </div>
+                            <form name=myform>
+    <input type="radio" name=myradio value="1">Visa&nbsp;&nbsp;
+    <input type="radio" name=myradio value="2">MasterCard&nbsp;&nbsp;
+    <input type="radio" name=myradio value="3">PayPal&nbsp;&nbsp;&nbsp;&nbsp;
+</form>
                             </div>
+                            
                             <div class="form-group"><input id="inputNameCard" type="text" placeholder="Name on card" class="form-control" /></div>
                             <div class="row">
                                 <div class="col-md-9">
