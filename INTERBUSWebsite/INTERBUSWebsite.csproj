@@ -103,6 +103,7 @@
     <Content Include="UI\css\themes\style2\yellow-green.css" />
     <Content Include="UI\css\themes\style2\yellow-grey.css" />
     <Content Include="UI\FeedBack.html" />
+    <Content Include="UI\images\arrows.png" />
     <Content Include="UI\images\bg\1.jpg" />
     <Content Include="UI\images\bg\2.jpg" />
     <Content Include="UI\images\bg\3.jpg" />
@@ -119,6 +120,11 @@
     <Content Include="UI\images\blogs\8.jpg" />
     <Content Include="UI\images\blogs\9.jpg" />
     <Content Include="UI\images\blogs\blog_item1.jpg" />
+    <Content Include="UI\images\busimages\acbus.jpg" />
+    <Content Include="UI\images\busimages\nonac.jpg" />
+    <Content Include="UI\images\busimages\seat.jpg" />
+    <Content Include="UI\images\busimages\selction seats.jpg" />
+    <Content Include="UI\images\busimages\time.jpg" />
     <Content Include="UI\images\commercialsite1.jpg" />
     <Content Include="UI\images\commercialsite2.jpg" />
     <Content Include="UI\images\commercialsite3.jpg" />
@@ -161,7 +167,9 @@
     <Content Include="UI\LicensePage.html" />
     <Content Include="UI\Login.html" />
     <Content Include="UI\Schedules.html" />
+    <Content Include="UI\seats.html" />
     <Content Include="UI\SeatSelection.html" />
+    <Content Include="UI\vehicleAvailability.html" />
     <Content Include="UI\vendors\animate.css\animate.css" />
     <Content Include="UI\vendors\bootstrap-clockface\CHANGELOG.txt" />
     <Content Include="UI\vendors\bootstrap-clockface\css\clockface.css" />
