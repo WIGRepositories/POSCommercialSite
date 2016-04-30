@@ -74,11 +74,28 @@
   <ItemGroup>
     <Content Include="App_Start\DBScripts\dbo.gettable2.sql" />
     <Content Include="App_Start\DBScripts\dbo.table2.sql" />
+    <Content Include="bin\INTERBUSWebsite.dll" />
+    <Content Include="bin\INTERBUSWebsite.pdb" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\System.Net.Http.Formatting.dll" />
+    <Content Include="bin\System.Net.Http.Formatting.xml" />
+    <Content Include="bin\System.Web.Http.dll" />
+    <Content Include="bin\System.Web.Http.WebHost.dll" />
+    <Content Include="bin\System.Web.Http.WebHost.xml" />
+    <Content Include="bin\System.Web.Http.xml" />
+    <Content Include="DBScript\dbo.gettable2.sql" />
+    <Content Include="DBScript\dbo.table2.sql" />
     <Content Include="Global.asax" />
+    <Content Include="obj\Debug\INTERBUSWebsite.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\INTERBUSWebsite.dll" />
+    <Content Include="obj\Debug\INTERBUSWebsite.pdb" />
     <Content Include="UI\AboutUs.html" />
     <Content Include="UI\AddTroubleTicketingDetails.html" />
+    <Content Include="UI\BuyBTPOS.html" />
     <Content Include="UI\Cancellation.html" />
     <Content Include="UI\CheckFare.html" />
+    <Content Include="UI\CheckOut.html" />
     <Content Include="UI\ContactUs.html" />
     <Content Include="UI\css\Main.css" />
     <Content Include="UI\css\style-responsive.css" />
@@ -129,6 +146,8 @@
     <Content Include="UI\images\commercialsite2.jpg" />
     <Content Include="UI\images\commercialsite3.jpg" />
     <Content Include="UI\images\commercialsite4.jpg" />
+    <Content Include="UI\images\fleetownerReq.jpg" />
+    <Content Include="UI\images\Fwd_ arrows.html" />
     <Content Include="UI\images\gallery\1.jpg" />
     <Content Include="UI\images\gallery\10.jpg" />
     <Content Include="UI\images\gallery\11.jpg" />
@@ -150,6 +169,7 @@
     <Content Include="UI\images\interbus.jpg" />
     <Content Include="UI\images\StyleSheet1.css" />
     <Content Include="UI\images\user.jpg" />
+    <Content Include="UI\InVoiceExrtras.html" />
     <Content Include="UI\js\angular.js" />
     <Content Include="UI\js\CreateFleetOwner.js" />
     <Content Include="UI\js\Index.js" />
@@ -164,6 +184,7 @@
     <Content Include="UI\Index.html" />
     <Content Include="UI\js\SeatSelection.js" />
     <Content Include="UI\FleetOwnerRequest.html" />
+    <Content Include="UI\LicenseConfirmation.html" />
     <Content Include="UI\LicensePage.html" />
     <Content Include="UI\Login.html" />
     <Content Include="UI\Schedules.html" />
@@ -1388,10 +1409,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\FleetOwnerLicenseController.cs" />
     <Compile Include="Controllers\TicketBookingController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Models.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="UI\vendors\jplist\html\data-sources\asp-net-sql-server\asp-net-solution\JPList\DAL\DataBase.cs" />
     <Compile Include="UI\vendors\jplist\html\data-sources\asp-net-sql-server\asp-net-solution\JPList\DAL\StatusQueries.cs" />
     <Compile Include="UI\vendors\jplist\html\data-sources\asp-net-sql-server\asp-net-solution\JPList\Domain\Models\Item.cs" />
@@ -1655,6 +1681,9 @@
     <Content Include="UI\vendors\moment\readme.md" />
     <Content Include="UI\vendors\slimScroll\README.md" />
     <Content Include="UI\vendors\slimScroll\slimScroll.jquery.json" />
+    <Content Include="bin\INTERBUSWebsite.dll.config" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\INTERBUSWebsite.csprojResolveAssemblyReference.cache" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

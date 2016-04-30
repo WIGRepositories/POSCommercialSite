@@ -37,38 +37,7 @@
             height: 20px;
         }
     </style>
-    <script language="JavaScript">
-
-        function buildTable(rows, cols) {
-
-            var table = "<table width='900'align='center'>";
-
-
-
-            table += "<tbody>";
-
-            for (i = 1; i <= rows; i++) {
-                table += "<tr align='center'>";
-                for (j = 1; j <= cols; j++) {
-                    table += "<td><input type='checkbox' ng-model='album.selected'value={{album.name}}/>" + i + j + "</td>"
-
-
-                }
-
-                table += "</tr>";
-            }
-
-            table += "</tbody>";
-            table += "</table>";
-
-            document.getElementById("tableHolder").innerHTML = table;
-            //var table = document.getElementById(tabelid);
-
-
-        }
-    </script>
-
-
+   
     <!--END TITLE & BREADCRUMB PAGE--><!--BEGIN CONTENT-->
     <center>
         <div class="page-content">

@@ -2,7 +2,7 @@
 var myapp1 = angular.module('myApp', [])
 var mycrtl1 = myapp1.controller('Mycntrlr', function ($scope, $http) {
 
-    $http.get('http://localhost:52800/api/KESENINE3/commericialsite').then(function (res, data) {
+    $http.get('http://localhost:1476/api/KESENINE3/commericialsite').then(function (res, data) {
         $scope.tr = res.data;
 
 
