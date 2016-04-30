@@ -145,6 +145,7 @@
     <Content Include="UI\images\StyleSheet1.css" />
     <Content Include="UI\images\user.jpg" />
     <Content Include="UI\js\angular.js" />
+    <Content Include="UI\js\CreateFleetOwner.js" />
     <Content Include="UI\js\Index.js" />
     <Content Include="UI\js\jplist.js" />
     <Content Include="UI\js\jquery-1.10.2.min.js" />
@@ -152,7 +153,7 @@
     <Content Include="UI\js\jquery-ui.js" />
     <Content Include="UI\js\jquery.menu.js" />
     <Content Include="UI\js\jquery.nivo.slider.js" />
-    <Content Include="UI\js\LicencePage1.js" />
+    <Content Include="UI\js\LicensePage.js" />
     <Content Include="UI\js\main.js" />
     <Content Include="UI\Index.html" />
     <Content Include="UI\js\SeatSelection.js" />
