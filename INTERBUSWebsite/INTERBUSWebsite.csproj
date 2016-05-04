@@ -169,8 +169,10 @@
     <Content Include="UI\images\interbus.jpg" />
     <Content Include="UI\images\StyleSheet1.css" />
     <Content Include="UI\images\user.jpg" />
+    <Content Include="UI\Index.html" />
     <Content Include="UI\InVoiceExrtras.html" />
     <Content Include="UI\js\angular.js" />
+    <Content Include="UI\js\createfleet.js" />
     <Content Include="UI\js\CreateFleetOwner.js" />
     <Content Include="UI\js\Index.js" />
     <Content Include="UI\js\jplist.js" />
@@ -181,7 +183,6 @@
     <Content Include="UI\js\jquery.nivo.slider.js" />
     <Content Include="UI\js\LicensePage.js" />
     <Content Include="UI\js\main.js" />
-    <Content Include="UI\Index.html" />
     <Content Include="UI\js\SeatSelection.js" />
     <Content Include="UI\FleetOwnerRequest.html" />
     <Content Include="UI\LicenseConfirmation.html" />
@@ -1693,7 +1694,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Properties\" />
     <Folder Include="UI\images\avatar\" />
     <Folder Include="UI\Local Disk\" />
