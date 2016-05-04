@@ -171,6 +171,7 @@
     <Content Include="UI\images\user.jpg" />
     <Content Include="UI\InVoiceExrtras.html" />
     <Content Include="UI\js\angular.js" />
+    <Content Include="UI\js\createfleet.js" />
     <Content Include="UI\js\CreateFleetOwner.js" />
     <Content Include="UI\js\Index.js" />
     <Content Include="UI\js\jplist.js" />
@@ -1693,7 +1694,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Properties\" />
     <Folder Include="UI\images\avatar\" />
     <Folder Include="UI\Local Disk\" />
