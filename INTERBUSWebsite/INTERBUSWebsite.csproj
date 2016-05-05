@@ -92,6 +92,7 @@
     <Content Include="obj\Debug\INTERBUSWebsite.pdb" />
     <Content Include="UI\AboutUs.html" />
     <Content Include="UI\AddTroubleTicketingDetails.html" />
+    <Content Include="UI\booking.html" />
     <Content Include="UI\BuyBTPOS.html" />
     <Content Include="UI\Cancellation.html" />
     <Content Include="UI\CheckFare.html" />
@@ -120,6 +121,11 @@
     <Content Include="UI\css\themes\style2\yellow-green.css" />
     <Content Include="UI\css\themes\style2\yellow-grey.css" />
     <Content Include="UI\FeedBack.html" />
+    <Content Include="UI\images\1.jpg" />
+    <Content Include="UI\images\2.jpg" />
+    <Content Include="UI\images\3.jpg" />
+    <Content Include="UI\images\5.jpg" />
+    <Content Include="UI\images\6.jpg" />
     <Content Include="UI\images\arrows.png" />
     <Content Include="UI\images\bg\1.jpg" />
     <Content Include="UI\images\bg\2.jpg" />
@@ -188,6 +194,7 @@
     <Content Include="UI\LicenseConfirmation.html" />
     <Content Include="UI\LicensePage.html" />
     <Content Include="UI\Login.html" />
+    <Content Include="UI\registrationform.html" />
     <Content Include="UI\Schedules.html" />
     <Content Include="UI\seats.html" />
     <Content Include="UI\SeatSelection.html" />
