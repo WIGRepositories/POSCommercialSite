@@ -170,7 +170,7 @@
     <Content Include="UI\images\StyleSheet1.css" />
     <Content Include="UI\images\user.jpg" />
     <Content Include="UI\Index.html" />
-    <Content Include="UI\InVoiceExrtras.html" />
+    <Content Include="UI\Invoice.html" />
     <Content Include="UI\js\angular.js" />
     <Content Include="UI\js\createfleet.js" />
     <Content Include="UI\js\CreateFleetOwner.js" />
@@ -1410,6 +1410,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\StopsController.cs" />
     <Compile Include="Controllers\FleetOwnerLicenseController.cs" />
     <Compile Include="Controllers\TicketBookingController.cs" />
     <Compile Include="Global.asax.cs">
