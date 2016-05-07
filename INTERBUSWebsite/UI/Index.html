@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html ng-app="myApp">
 <head>
     <title>INTERBUS CommercialSite | Index</title>
     <meta charset="utf-8">
@@ -18,12 +18,16 @@
     <link type="text/css" rel="stylesheet" href="vendors/jquery-pace/pace.css">
     <link type="text/css" rel="stylesheet" href="vendors/iCheck/skins/all.css">
     <link type="text/css" rel="stylesheet" href="vendors/jquery-news-ticker/jquery.news-ticker.css">
+    <link type="text/css" rel="stylesheet" href="vendors/jplist/html/css/jplist-custom.css">
+
+
     <!--Loading style-->
     <link type="text/css" rel="stylesheet" href="css/themes/style2/pink-blue.css" id="theme-change" class="style-change color-change">
     <link type="text/css" rel="stylesheet" href="css/Main.css">
     <link type="text/css" rel="stylesheet" href="css/style-responsive.css">
 </head>
-<body>
+
+<body ng-controller="myCtrl">
     <!--<img src="images/commercialsite2.jpg" width="100%" />-->
     <div class="main" width="100%">
         <div class="slider-wrapper theme-default banner">
@@ -36,7 +40,7 @@
         </div>
     </div>
     <!--END THEME SETTING--><!--BEGIN BACK TO TOP--><a id="totop" href="#"><i class="fa fa-angle-up"></i></a><!--END BACK TO TOP--><!--BEGIN TOPBAR-->
-    <div id="header-topbar-option-demo" class="page-header-topbar" >
+    <div id="header-topbar-option-demo" class="page-header-topbar">
         <nav id="topbar" role="navigation" style="margin-bottom: 0;" data-step="3" class="navbar navbar-header">
 
             <div class="topbar-main" style="margin-left:auto;margin-right:auto">
@@ -74,260 +78,199 @@
                             </tr>
                             <tr>
                                 <td align="left" valign="top" style="height: 1px;">
-                            
-                                    <td valign="top" align="left">
-                                        <table cellspacing="0" cellpadding="0" width="100%" border="0">
-                                            
-                                                <tr>
-                                                    <td style="WIDTH: 11px" valign="top" align="left"><img height="0" src="download.png" width="1" /></td>
-                                                    <td style="WIDTH: 266px" valign="top" align="left">
-                                                        <table cellspacing="0" cellpadding="0" width="100%" border="0">
-                                                            <tr>
-                                                                <td><img src="images/1.jpg" id="ctl00_cpEndUserMain_impLeftTop" height="207" width="266" /></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td style=" BACKGROUND-COLOR: #ffffff;padding" valign="top" align="left">
-                                                                    <table cellspacing="0" cellpadding="0" width="100%" border="0">
-                                                                        <tbody>
-                                                                            <tr>
-                                                                                <td valign="top" align="left">
 
-                                                                                    <img src="images/2.jpg" id="ctl00_cpEndUserMain_impLeftBottom" height="90" width="266" vspace="7" />
+                                <td valign="top" align="left">
+                                    <table cellspacing="0" cellpadding="0" width="100%" border="0">
 
-                                                                                </td>
-                                                                            </tr>
-                                                                        </tbody>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                    <td style="WIDTH: 26px" valign="top" align="left"><img height=1 src="download.png" width="0" /></td>
-                                                    <td valign="top" align="left">
-                                                        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+                                        <tr>
+                                            <td style="WIDTH: 11px" valign="top" align="left"><img height="0" src="download.png" width="1" /></td>
+                                            <td style="WIDTH: 266px" valign="top" align="left">
+                                                <table cellspacing="0" cellpadding="0" width="100%" border="0">
+                                                    <tr>
+                                                        <td><img src="images/1.jpg" id="ctl00_cpEndUserMain_impLeftTop" height="207" width="266" /></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style=" BACKGROUND-COLOR: #ffffff;padding" valign="top" align="left">
+                                                            <table cellspacing="0" cellpadding="0" width="100%" border="0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td valign="top" align="left">
 
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td style="HEIGHT: 25px" valign="top" align="left">
-                                                                        <table style="HEIGHT: 25px" cellspacing="0" cellpadding="0" width="100%" border="0">
-                                                                            <tbody style="background-color:lightgray" height="25px" cellspacing="0" cellpadding="0" width="100%" border="0">
+                                                                            <img src="images/2.jpg" id="ctl00_cpEndUserMain_impLeftBottom" height="90" width="266" vspace="7" />
 
-                                                                                <tr><td colspan="3" class="" style="padding-bottom:2px" valign="bottom" align="center">Check Availability</td></tr>
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td class="black-table-border" valign="top" width="50%">
-                                                                        <table cellspacing="0" cellpadding="0" width="100%" align=center border="1" style="background-color:white">
-                                                                            <tbody>
-                                                                                <tr>
-                                                                                    <td style="HEIGHT: 20px" align="center">
-                                                                                        <div style="color:black">
-                                                                                            <table width="90%" border="0" cellspacing="0" cellpadding="0" align="center">
-                                                                                                <tr>
-                                                                                                    <td valign="top" align="center" style="height: 53px">
-                                                                                                        <table cellpadding="0" cellspacing="0" width="100%" border="0" align="center">
-                                                                                                            <tr>
-                                                                                                                <td align="left" valign="top" class="fildstext" style="padding-bottom:1px;">From:</td>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td style="WIDTH: 26px" valign="top" align="left"><img height=1 src="download.png" width="0" /></td>
+                                            <td valign="top" align="left">
+                                                <table cellspacing="0" cellpadding="0" width="100%" border="0">
 
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="HEIGHT: 25px" valign="top" align="left">
+                                                                <table style="HEIGHT: 25px" cellspacing="0" cellpadding="0" width="100%" border="0">
+                                                                    <tbody style="background-color:lightgray" height="25px" cellspacing="0" cellpadding="0" width="100%" border="0">
 
-
-                                                                                                                <td align="left" valign="top" class="fildstext" style="padding-bottom:9px;">
-                                                                                                                    <select name="ctl00$cpEndUserMain$ucSearchRoute$ddlSource" onchange="javascript:setTimeout('__doPostBack(\'ctl00$cpEndUserMain$ucSearchRoute$ddlSource\',\'\')', 0)" id="ctl00_cpEndUserMain_ucSearchRoute_ddlSource" tabindex="2" class="formfileds" errname="Source Name" valid="m" style="width:130px;">
-                                                                                                                        <option selected="selected" value="0">Select Source</option>
-                                                                                                                        <option value="171">AHMEDABAD</option>
-                                                                                                                        <option value="10">AHMEDNAGAR</option>
-                                                                                                                        <option value="158">AKIVEEDU</option>
-                                                                                                                        <option value="115">ALUVA</option>
-                                                                                                                        <option value="11">AMALAPURAM</option>
-                                                                                                                        <option value="12">AMBAJIPETA</option>
-                                                                                                                        <option value="13">ANAKAPALLI</option>
-                                                                                                                        <option value="170">ANAND</option>
-                                                                                                                        <option value="14">ANANTAPURAM</option>
-                                                                                                                        <option value="214">ANATAVARAM</option>
-                                                                                                                        <option value="116">ANGAMALY</option>
-                                                                                                                        <option value="15">ANNAVARAM</option>
-                                                                                                                        <option value="217">AVIDI</option>
-                                                                                                                        <option value="9">BANGALORE</option>
-                                                                                                                        <option value="148">BAPATLA</option>
-                                                                                                                        <option value="169">BARODA/VADODARA</option>
-                                                                                                                        <option value="89">BELGAUM</option>
-                                                                                                                        <option value="182">BERHAMPUR</option>
-                                                                                                                        <option value="193">BHANDARA</option>
-                                                                                                                        <option value="172">BHARUCH</option>
-                                                                                                                        <option value="104">BHATKAL</option>
-                                                                                                                        <option value="166">BHILAI</option>
-                                                                                                                        <option value="62">BHIMAVARAM</option>
-                                                                                                                        <option value="180">BHUBANESWAR</option>
-                                                                                                                        <option value="117">CHALAKUDY</option>
-                                                                                                                        <option value="8">CHENNAI</option>
-                                                                                                                        <option value="141">CHIDAMBARAM</option>
-                                                                                                                        <option value="51">CHILAKALURIPET</option>
-                                                                                                                        <option value="147">CHIRALA</option>
-                                                                                                                        <option value="39">CHITTOOR</option>
-                                                                                                                        <option value="168">CHOUTUPPAL</option>
-                                                                                                                        <option value="113">COCHIN/ERNAKULAM</option>
-                                                                                                                        <option value="92">COIMBATORE</option>
-                                                                                                                        <option value="142">CUDDALORE</option>
-                                                                                                                        <option value="181">CUTTACK</option>
-                                                                                                                        <option value="199">DARSI</option>
-                                                                                                                        <option value="16">DEVARAPALLI</option>
-                                                                                                                        <option value="17">DHARMAVARAM</option>
-                                                                                                                        <option value="123">DINDIGUL</option>
-                                                                                                                        <option value="167">DURG</option>
-                                                                                                                        <option value="211">EDURULANKA</option>
-                                                                                                                        <option value="19">ELURU</option>
-                                                                                                                        <option value="94">ERODE</option>
-                                                                                                                        <option value="163">ETTIMADAI</option>
-                                                                                                                        <option value="88">GOA(PANJIM)</option>
-                                                                                                                        <option value="161">GUDIVADA</option>
-                                                                                                                        <option value="22">GUNTUR</option>
-                                                                                                                        <option value="83">HANUMAN JUNCTION</option>
-                                                                                                                        <option value="106">HONNAVAR</option>
-                                                                                                                        <option value="97">HOSUR</option>
-                                                                                                                        <option value="105">HUBLI</option>
-                                                                                                                        <option value="3">HYDERABAD</option>
-                                                                                                                        <option value="179">ICCHAPURAM</option>
-                                                                                                                    </select>
-                                                                                                            </tr>
-                                                                                                    </td>
-
-                                                                                                <tr>
-                                                                                                    <td align="left" valign="top" class="fildstext" style="padding-bottom:1px;">To:</td>
+                                                                        <tr><td colspan="3" class="" style="padding-bottom:2px" valign="bottom" align="center">Check Availability</td></tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="black-table-border" valign="top" width="50%">
+                                                                <table cellspacing="0" cellpadding="0" width="100%" align=center border="1" style="background-color:white">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td style="HEIGHT: 20px" align="center">
+                                                                                <div style="color:black">
+                                                                                    <table width="90%" border="0" cellspacing="0" cellpadding="0" align="center">
+                                                                                        <tr>
+                                                                                            <td valign="top" align="center" style="height: 53px">
+                                                                                                <table cellpadding="0" cellspacing="0" width="100%" border="0" align="center">
+                                                                                                    <tr>
+                                                                                                <td align="left" valign="top" class="fildstext" style="padding-bottom:1px;" >From:</td>
 
 
 
-                                                                                                    <td align="left" valign="top" class="fildstext" style="padding-bottom:8px;">
-                                                                                                        <select name="ctl00$cpEndUserMain$ucSearchRoute$ddlDestination" id="ctl00_cpEndUserMain_ucSearchRoute_ddlDestination" tabindex="5" class="formfileds" errname="Destination Name" valid="m" style="width:130px;">
-                                                                                                            <option value="Select Destination">Select Destination</option>
+                                                                                                        <td align="left" valign="top" class="fildstext" style="padding-bottom:9px;">
+                                                                                                            <select tabindex="2"  ng-options="S.Name for S in Stops track by S.Id" ng-model="S"  style="width:130px;">
+                                                                                                                <option value="">Select Source</option>
+                                                                                                            </select>
+                                                                                                           
+                                                                                                    </tr>
+                                                                                            </td>
 
-                                                                                                        </select>
-                                                                                                </tr>
-                                                                                    </td>
-
-                                                                                <tr>
-                                                                                    <td align="left" valign="top" style="padding-bottom:2px;" class="fildstext">Onward Date:</td>
-
-
-                                                                                    <td align="left" valign="top" style="padding-bottom:8px;">
-                                                                                        <input name="ctl00$cpEndUserMain$ucSearchRoute$txtDateofJourney" type="text" value="26/3/2016" id="ctl00_cpEndUserMain_ucSearchRoute_txtDateofJourney" tabindex="4" onkeyup="javaScript:return IndianDateFormat(event,10,this);" onkeypress="javascript:return isNumberKey(event,10,this);" style="width:88px;" />
-                                                                                        <img src="Images/EndUserImages/cal-icon.gif" id="ctl00_cpEndUserMain_ucSearchRoute_imgOnward" alt="date" border="0" style="padding-right: 3px; padding-left: 3px; padding-bottom: 3px; padding-top: 3px" />
-                                                                                    </td>
-
-                                                                                </tr>
-
-                                                                                <tr>
-                                                                                    <td align="left" valign="top" style="padding-bottom:2px;" class="fildstext">Return Date:</td>
+                                                                                        <tr>
+                                                                                            <td align="left" valign="top" class="fildstext" style="padding-bottom:1px;">To:</td>
 
 
-                                                                                    <td align="left" valign="top" style="padding-bottom:8px;">
-                                                                                        <input name="ctl00$cpEndUserMain$ucSearchRoute$txtDateofJourney" type="text" value="26/3/2016" style="width:88px;" />
-                                                                                        <img src="Images/EndUserImages/cal-icon.gif" id="ctl00_cpEndUserMain_ucSearchRoute_imgOnward" alt="date" border="0" style="padding-right: 3px; padding-left: 3px; padding-bottom: 3px; padding-top: 3px" />
-                                                                                    </td>
 
-                                                                                </tr>
+                                                                                            <td align="left"  class="fildstext" style="padding-bottom:8px;">
+                                                                                                <select style="width:130px;" ng-options="D.Name for D in Stops track by D.Id" ng-model="S">
+                                                                                                    <option value="">Select Destination</option>
 
-
-                                                                                <tr>
-                                                                                    <td align="left" valign="top" class="fildstext" style="padding-bottom:2px;">CoachType:</td>
-                                                                                    <td align="left" valign="top" class="fildstext" style="padding-bottom:8px;">
-                                                                                        <select name="ctl00$cpEndUserMain$ucSearchRoute$ddlBusType" id="ctl00_cpEndUserMain_ucSearchRoute_ddlBusType" tabindex="6" class="formfileds" style="width:94px;">
-                                                                                            <option selected="selected" value="0">--Any--</option>
-                                                                                            <option value="1">Seat</option>
-                                                                                            <option value="2">Sleeper</option>
-                                                                                        </select>
-                                                                                    </td>
-                                                                                </tr>
+                                                                                                </select>
+</tr>
+                                                                            </td>
 
 
-                                                                                <tr>
-                                                                                    <td align="left" valign="top" class="fildstext" style="padding-bottom:2px;">BookingType:</td>
-                                                                                    <td align="left" valign="top" class="fildstext" style="padding-bottom:8px;">
-                                                                                        <select name="ddlBusType" id="ddlBusType" tabindex="6" class="formfileds" style="width:94px;">
-                                                                                            <option value="1">Select Type</option>
-                                                                                            <option value="2">Booking Type</option>
-                                                                                            <option value="3">Hiring Type</option>
-                                                                                        </select>
-                                                                                </tr>
-
-                                                                                <tr>
-
-                                                                                    <td align="center" style="padding-bottom:18px;" colspan="2">
-
-                                                                                        <input type="button" id="searchType" onclick="fun();" value="Search" style="margin-bottom:10px" />
-
-                                                                                    </td>
-                                                                                </tr>
-
-                                                                                <tr>
-                                                                                    <td>
-                                                                                        <div id="ctl00_cpEndUserMain_ucSearchRoute_uppgrSearchRoute" style="display:none;">
-                                                                                            <div style="Z-INDEX: 1; LEFT: 0px; POSITION: absolute; TOP:0px;width:100%;height:100%;" class="darkClass">
+                                                                           
 
 
-                                                                                            </div>
-                                                                                            <div style="Z-INDEX: 100; LEFT: 0px; POSITION: absolute; TOP:0px;width:100%;height:100%;">
-                                                                                                <table align="center" border="0" cellspacing="0" cellpadding="0" height="100%"></table>
-                                                                                            </div>
-                                                                                        </div>
-
-                                                                                    </td>
-                                                                                </tr>
-
-                                                                        </table>
-
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                        </table>
+                                                                        <tr>
+                                                                            <td style="padding-bottom:2px;">Return Date:</td>
 
 
-                                    </td>
-                                    <td style="WIDTH: 26px" valign="top" align="left"><img height=1 src="images/6.jpg" width=1 /></td>
+                                                                            <td style="padding-bottom:8px;" id="grid-datepicker" class="date-picker form-control" data-control-type="date-picker-range-filter"  data-control-action="filter" data-path=".date" data-datetime-format="{month}/{day}/{year}">
+                                                                                <input type="text" placeholder="Datepicker" class="jplist-panel box panel-top date-picker form-control" data-type="prev" />
 
-                                    <td style="WIDTH: 266px;height:100%" valign="top" align="left">
+                                                                            </td>
+
+                                                                        </tr>
 
 
-                                        <table border="0" width="244px">
+                                                                        <tr>
+                                                                            <td align="left" valign="top" class="fildstext" style="padding-bottom:2px;">CoachType:</td>
+                                                                            <td align="left" valign="top" class="fildstext" style="padding-bottom:8px;">
+                                                                                <select name="ctl00$cpEndUserMain$ucSearchRoute$ddlBusType" id="ctl00_cpEndUserMain_ucSearchRoute_ddlBusType" tabindex="6" class="formfileds" style="width:94px;">
+                                                                                    <option selected="selected" value="0">--Any--</option>
+                                                                                    <option value="1">Seat</option>
+                                                                                    <option value="2">Sleeper</option>
+                                                                                </select>
+                                                                            </td>
+                                                                        </tr>
 
 
-                                            <tr>
-                                                <td>
-                                                    <img src="images/3.jpg" id="ctl00_cpEndUserMain_impRightTop" alt="" width="244" height="154" />
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="height:10px"><img src="" width="1" height="1" /></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <a href="LicensePage.html">  <img src="images/interbus.jpg" id="ctl00_cpEndUserMain_impRightBottom" width="244" height="126" /></a>
-                                                </td>
-                                            </tr>
+                                                                        <tr>
+                                                                            <td align="left" valign="top" class="fildstext" style="padding-bottom:2px;">BookingType:</td>
+                                                                            <td align="left" valign="top" class="fildstext" style="padding-bottom:8px;">
+                                                                                <select name="ddlBusType" id="ddlBusType" tabindex="6" class="formfileds" style="width:94px;">
+                                                                                    <option value="1">Select Type</option>
+                                                                                    <option value="2">Booking Type</option>
+                                                                                    <option value="3">Hiring Type</option>
+                                                                                </select>
+                                                                        </tr>
 
-                                        </table>
-                                    </td>
-                                    <td style="WIDTH: 11px" valign="top" align="left"><img height="1" src="images/8.jpeg" width="1" /></td>
-                                </tr>
+                                                                        <tr>
 
-                     
-                     </table>
-                             </td>
-                    </tr>       
-            
+                                                                            <td align="center" style="padding-bottom:18px;" colspan="2">
+
+                                                                                <input type="button" id="searchType" onclick="fun();" value="Search" style="margin-bottom:10px" />
+
+                                                                            </td>
+                                                                        </tr>
+
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div id="ctl00_cpEndUserMain_ucSearchRoute_uppgrSearchRoute" style="display:none;">
+                                                                                    <div style="Z-INDEX: 1; LEFT: 0px; POSITION: absolute; TOP:0px;width:100%;height:100%;" class="darkClass">
+
+
+                                                                                    </div>
+                                                                                    <div style="Z-INDEX: 100; LEFT: 0px; POSITION: absolute; TOP:0px;width:100%;height:100%;">
+                                                                                        <table align="center" border="0" cellspacing="0" cellpadding="0" height="100%"></table>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </td>
+                                                                        </tr>
+
+                                                                </table>
+
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+
+                                </td>
+                                <td style="WIDTH: 26px" valign="top" align="left"><img height=1 src="images/6.jpg" width=1 /></td>
+
+                                <td style="WIDTH: 266px;height:100%" valign="top" align="left">
+
+
+                                    <table border="0" width="244px">
+
+
+                                        <tr>
+                                            <td>
+                                                <img src="images/3.jpg" id="ctl00_cpEndUserMain_impRightTop" alt="" width="244" height="154" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="height:10px"><img src="" width="1" height="1" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="LicensePage.html">  <img src="images/interbus.jpg" id="ctl00_cpEndUserMain_impRightBottom" width="244" height="126" /></a>
+                                            </td>
+                                        </tr>
+
+                                    </table>
+                                </td>
+                                <td style="WIDTH: 11px" valign="top" align="left"><img height="1" src="images/8.jpeg" width="1" /></td>
+                            </tr>
+
+
+                        </table>
+                    </td>
+                </tr>
+
             </table>
         </div>
     </div>
     <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/jquery-ui.js"></script>
-    <script src="js/index.js"></script>
     <!--loading bootstrap js-->
     <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
     <script src="vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
+    
     <script src="vendors/metisMenu/jquery.metisMenu.js"></script>
     <script src="vendors/slimScroll/jquery.slimscroll.js"></script>
     <script src="vendors/jquery-cookie/jquery.cookie.js"></script>
@@ -338,20 +281,14 @@
     <script src="vendors/jquery-pace/pace.min.js"></script>
     <script src="vendors/holder/holder.js"></script>
     <script src="vendors/responsive-tabs/responsive-tabs.js"></script>
+    <script src="vendors/jplist/html/js/jplist.min.js"></script>
+    <script src="js/jplist.js"></script>
     <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
 
     <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
 
-
-    <script src="js/main.js"></script>
+    
     <script src="js/angular.js"></script>
     <script src="js/Index.js"></script>
-
-    <script type="text/javascript">
-        $(window).load(function () {
-            $('#slider').nivoSlider();
-        });
-    </script>
-
 </body>
 </html>

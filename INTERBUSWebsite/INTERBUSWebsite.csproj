@@ -120,6 +120,7 @@
     <Content Include="UI\css\themes\style2\yellow-dark.css" />
     <Content Include="UI\css\themes\style2\yellow-green.css" />
     <Content Include="UI\css\themes\style2\yellow-grey.css" />
+    <Content Include="UI\datepicker.html" />
     <Content Include="UI\FeedBack.html" />
     <Content Include="UI\images\1.jpg" />
     <Content Include="UI\images\2.jpg" />
