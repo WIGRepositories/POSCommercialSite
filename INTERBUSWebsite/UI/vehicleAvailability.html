@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html ng-app="myApp">
 <head>
     <title>INTERBUS CommercialSite | Index</title>
     <meta charset="utf-8">
@@ -23,7 +23,7 @@
     <link type="text/css" rel="stylesheet" href="css/style-responsive.css">
     <link rel="stylesheet" type="text/css" href="css/Main.css">
 </head>
-<body>
+<body ng-controller="myCtrl">
     <!--<img src="images/commercialsite2.jpg" width="100%" />-->
     <!--END THEME SETTING--><!--BEGIN BACK TO TOP--><a id="totop" href="#"><i class="fa fa-angle-up"></i></a><!--END BACK TO TOP--><!--BEGIN TOPBAR-->
     <div id="header-topbar-option-demo" class="page-header-topbar" style="background-color:red;">
@@ -64,246 +64,122 @@
 
 
                             </div>
+                            <table class="table table-hover table-striped table-bordered table-advanced tablesorter" ng-repeat="H in Hiring">
+                                <tr>
+                                    <td><img src="images/busimages/nonac.jpg"></img></td>
+                                    <td>
+                                        <strong> {{H.TravelName}}</strong>
+                                        <div class="message-inner">
+
+                                            <div class="qa-message-content">
+                                                {{H.TravelType}}
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <img src="images/busimages/time.jpg" /><strong>{{H.Time}}</strong>
+
+
+                                        <div class="message-inner">
+
+                                            <div class="qa-message-content">
+                                                {{H.Duration}}
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <img src="images/busimages/seat.jpg" />
+                                        <strong> {{H.Seats}}</strong><br />
+
+
+
+
+                                    </td>
+
+                                    <td>
+                                        <div class="col-md-3 col-sm-4"><div class="col-md-3 col-sm-4"></div></div>
+                                        <div class="col-md-3 col-sm-4">
+                                            {{H.Rating}}
+                                        </div>
+
+                                     
+
+                                    </td>
+                                    <td>
+                                        <div class="message-inner">
+
+                                            <div class="qa-message-content">
+                                                <strong> {{H.Cost}}</strong>
+                                            </div>
+                                        </div>
+                                        <a onclick="test();">
+                                            <button type="button" class="btn btn-primary">
+                                                select seats
+                                            </button>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
                             <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
-                                <thead>
+                                <tr style="display:table-row">
+                                    <td id="imgTd" style="display:none" colspan="6">
+                                        <div>
+                                            <img src="images/busimages/selction seats.jpg" />
+                                            <center>
+                                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                                <a href="InVoice.html">  <button type="button" class="btn btn-primary">booking</button></a>
+                                            </center>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/busimages/acbus.jpg"></img></td>
+                                    <td>Sri Srinivasa Travels </td>
 
-                                <tbody>
-                                    <tr>
-                                        <td><img src="images/busimages/nonac.jpg"></img></td>
-                                        <td>
-                                            <strong> Star Travels</strong>
-                                            <div class="message-inner">
-
-                                                <div class="qa-message-content">
-                                                    Non A/C Seater (2+2)
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <strong>FROM</strong>
-
-
-                                            <div class="message-inner">
-
-                                                <div class="qa-message-content">
-                                                    04/30/2016
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-
-                                            <strong>TO</strong>
-                                            <div class="message-inner">
-
-                                                <div class="qa-message-content">
-                                                    04/30/2016
-
-                                                </div>
-                                            </div>
-                                        </td>
-
-                                        <td>
-                                            <div class="col-md-3 col-sm-4"><div class="col-md-3 col-sm-4"></div></div>
-                                            <div class="col-md-3 col-sm-4">
-                                                <a href=""><i class="fa fa-star"></i></a>
-                                                <a href=""><i class="fa fa-star"></i></a>
-                                            </div>
+                                    <td><img src="images/busimages/time.jpg" />10:00 PM -05:45 AM</td>
+                                    <td>32 seats</td>
+                                    <td>Rs 510</td>
 
 
 
-                                        </td>
-                                        <td>
-                                            <div class="message-inner">
-
-                                                <div class="qa-message-content">
-                                                    <strong> RS 400 </strong>
-                                                </div>
-                                            </div>
-                                            <a href="images/busimages/selction seats.jpg">
-                                                <button type="button" class="btn btn-primary">
-                                                    select
-                                                </button>
-                                            </a>
-                                        </td>
-
-
-                                    <tr>
-                                        <td><img src="images/busimages/acbus.jpg"></img></td>
-                                        <td>Sri Srinivasa Travels </td>
-
-                                        <td><img src="images/busimages/time.jpg" />10:00 PM -05:45 AM</td>
-                                        <td>32 seats</td>
-                                        <td>Rs 510</td>
+                                    <td>
 
 
 
-                                        <td>
-                                            <a href="viewseats.html">
-                                                <button type="button" class="btn btn-primary">
-                                                    select seats
-                                                </button>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="images/busimages/nonac.jpg"></img></img></td>
-                                        <td>INTERBUS Travels</td>
-                                        <td>11:00 PM -06:45 AM</td>
-                                        <td>18 seats</td>
-                                        <td> Rs550</td>
-
-
-                                        <td>
-
-                                            <a href="viewseats.html">
-                                                <button type="button" class="btn btn-primary">
-                                                    select seats
-                                                </button>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="images/busimages/nonac.jpg"></img></img></td>
-                                        <td>
-                                            Yamani Travels
-                                        </td>
-                                        <td>11:00 PM -05:45 AM</td>
-                                        <td>47 seats</td>
-                                        <td>Rs 500</td>
-
-
-                                        <td>
-
-                                            <a href="viewseats.html">
-                                                <button type="button" class="btn btn-primary">
-                                                    select seats
-                                                </button>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="images/busimages/acbus.jpg"></img></img></td>
-                                        <td>Orange Tours Travels</td>
-                                        <td>11:20 PM -06:45 AM</td>
-                                        <td>36 seats</td>
-                                        <td>Rs 550</td>
-
-
-                                        <td>
-                                            <a href="viewseats.html">
-                                                <button type="button" class="btn btn-primary">
-                                                    select seats
-                                                </button>
-                                            </a>
-                                        </td>
-                                    </tr>
 
 
 
-                                    <tr>
-                                        <td><img src="images/busimages/nonac.jpg"></img></img></td>
-                                        <td>Yamani Travels</td>
-                                        <td>11:00 PM -05:45 AM</td>
-                                        <td>47 seats</td>
-                                        <td>Rs 500</td>
 
 
-                                        <td>
-
-                                            <a href="viewseats.html">
-                                                <button type="button" class="btn btn-primary">
-                                                    select seats
-                                                </button>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="images/busimages/nonac.jpg"></img></img></td>
-                                        <td>Yamani Travels</td>
-                                        <td>11:00 PM -05:45 AM</td>
-                                        <td>47 seats</td>
-                                        <td>Rs 500</td>
 
 
-                                        <td>
+                                        <button type="button" class="btn btn-primary">
+                                            select seats
+                                        </button>
 
-                                            <a href="viewseats.html">
-                                                <button type="button" class="btn btn-primary">
-                                                    select seats
-                                                </button>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="images/busimages/nonac.jpg"></img></img></td>
-                                        <td>Yamani Travels</td>
-                                        <td>11:00 PM -05:45 AM</td>
-                                        <td>47 seats</td>
-                                        <td>Rs 500</td>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/busimages/nonac.jpg"></img></td>
+                                    <td>Kesineni Travels</td>
+                                    <td>11:00 PM -06:45 AM</td>
+                                    <td>18 seats</td>
+                                    <td> Rs550</td>
 
 
-                                        <td>
+                                    <td>
 
-                                            <a href="viewseats.html">
-                                                <button type="button" class="btn btn-primary">
-                                                    select seats
-                                                </button>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="images/busimages/nonac.jpg"></img></img></td>
-                                        <td>Yamani Travels</td>
-                                        <td>11:00 PM -05:45 AM</td>
-                                        <td>47 seats</td>
-                                        <td>Rs 500</td>
+                                        <a href="viewseats.html">
+                                            <button type="button" class="btn btn-primary">
+                                                select seats
+                                            </button>
+                                        </a>
+                                    </td>
+                                </tr>
 
 
-                                        <td>
 
-                                            <a href="viewseats.html">
-                                                <button type="button" class="btn btn-primary">
-                                                    select seats
-                                                </button>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="images/busimages/nonac.jpg"></img></img></td>
-                                        <td>Yamani Travels</td>
-                                        <td>11:00 PM -05:45 AM</td>
-                                        <td>47 seats</td>
-                                        <td>Rs 500</td>
-
-
-                                        <td>
-
-                                            <a href="viewseats.html">
-                                                <button type="button" class="btn btn-primary">
-                                                    select seats
-                                                </button>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="images/busimages/nonac.jpg"></img></img></td>
-                                        <td>Yamani Travels</td>
-                                        <td>11:00 PM -05:45 AM</td>
-                                        <td>47 seats</td>
-                                        <td>Rs 500</td>
-
-
-                                        <td>
-
-                                            <a href="viewseats.html">
-                                                <button type="button" class="btn btn-primary">
-                                                    select seats
-                                                </button>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                                </thead>
                             </table>
                             <div class="row">
                                 <div class="col-lg-6">
@@ -317,8 +193,7 @@
             </div>
         </div>
     </div>
-    </div>
-    </div>
+
 
     <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/jquery-migrate-1.2.1.min.js"></script>
@@ -326,8 +201,7 @@
     <!--loading bootstrap js-->
     <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
     <script src="vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
+
     <script src="vendors/metisMenu/jquery.metisMenu.js"></script>
     <script src="vendors/slimScroll/jquery.slimscroll.js"></script>
     <script src="vendors/jquery-cookie/jquery.cookie.js"></script>
@@ -343,10 +217,10 @@
     <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
 
 
-    <script src="js/main.js"></script>
-    <script src="js/angular.js"></script>
-    <script src="js/Index.js"></script>
 
+
+    <script src="js/angular.js"></script>
+    <script src="js/VehicleAvailability.js"></script>
 
 </body>
 </html>

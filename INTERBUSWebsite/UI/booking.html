@@ -222,11 +222,11 @@
                                             <tr>
                                                 <td><img src="images/busimages/nonac.jpg"></img></td>
                                                 <td>
-                                                    <strong> {{S.Tn}}</strong>
+                                                    <strong> {{S.TravelName}}</strong>
                                                     <div class="message-inner">
 
                                                         <div class="qa-message-content">
-                                                            Non A/C Seater (2+2)
+                                                          {{S.TravelType}}
                                                         </div>
                                                     </div>
                                                 </td>
@@ -237,7 +237,7 @@
                                                     <div class="message-inner">
 
                                                         <div class="qa-message-content">
-                                                            Duration 07:45 Hrs
+                                                          {{S.Duration}}
                                                         </div>
                                                     </div>
                                                 </td>
@@ -245,26 +245,26 @@
                                                     <img src="images/busimages/seat.jpg" />
                                                     <strong> {{S.Seats}}</strong><br />
 
-                                                    Non A/C Seater (2+2)
+                                              
 
 
                                                 </td>
 
                                                 <td>
-                                                    <div class="col-md-3 col-sm-4"><div class="col-md-3 col-sm-4"></div></div>
+                                                    <div class="col-md-3 col-sm-4"><div class="col-md-3 col-sm-4" ></div></div>
                                                     <div class="col-md-3 col-sm-4">
                                                         <a href=""><i class="fa fa-star"></i></a>
                                                         <a href=""><i class="fa fa-star"></i></a>
                                                     </div>
 
-
+                                                    {{S.Rating}}
 
                                                 </td>
                                                 <td>
                                                     <div class="message-inner">
 
                                                         <div class="qa-message-content">
-                                                            <strong> {{S.Price}}</strong>
+                                                            <strong> {{S.Cost}}</strong>
                                                         </div>
                                                     </div>
                                                     <a onclick="test();">
@@ -382,7 +382,7 @@
 
                 <script src="js/main.js"></script>
                 <script src="js/angular.js"></script>
-                <script src="js/Index.js"></script>
+                <script src="js/Booking.js"></script>
 
 
 </body>

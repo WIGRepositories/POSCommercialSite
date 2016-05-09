@@ -9,10 +9,10 @@ using System.Web.Http;
 
 namespace INTERBUSWebsite.Controllers
 {
-    public class BookingController : ApiController
+    public class VehicleAvailabilityController : ApiController
     {
 
-        [HttpGet]
+         [HttpGet]
 
         public DataTable commericialsite()
         {
@@ -26,7 +26,7 @@ namespace INTERBUSWebsite.Controllers
 
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "GetBooking";
+            cmd.CommandText = "GetHiringType";
             cmd.Connection = conn;
 
             DataSet ds = new DataSet();
@@ -42,3 +42,4 @@ namespace INTERBUSWebsite.Controllers
         }
     }
 }
+

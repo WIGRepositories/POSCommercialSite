@@ -86,7 +86,9 @@
     <Content Include="bin\System.Web.Http.xml" />
     <Content Include="DBScript\dbo.Booking.sql" />
     <Content Include="DBScript\dbo.GetBooking.sql" />
+    <Content Include="DBScript\dbo.GetHiringType.sql" />
     <Content Include="DBScript\dbo.gettable2.sql" />
+    <Content Include="DBScript\dbo.HiringType.sql" />
     <Content Include="DBScript\dbo.table2.sql" />
     <Content Include="Global.asax" />
     <Content Include="obj\Debug\INTERBUSWebsite.csproj.FileListAbsolute.txt" />
@@ -181,6 +183,7 @@
     <Content Include="UI\Index.html" />
     <Content Include="UI\Invoice.html" />
     <Content Include="UI\js\angular.js" />
+    <Content Include="UI\js\Booking.js" />
     <Content Include="UI\js\createfleet.js" />
     <Content Include="UI\js\CreateFleetOwner.js" />
     <Content Include="UI\js\Index.js" />
@@ -194,6 +197,7 @@
     <Content Include="UI\js\main.js" />
     <Content Include="UI\js\SeatSelection.js" />
     <Content Include="UI\FleetOwnerRequest.html" />
+    <Content Include="UI\js\VehicleAvailability.js" />
     <Content Include="UI\LicenseConfirmation.html" />
     <Content Include="UI\LicensePage.html" />
     <Content Include="UI\Login.html" />
@@ -1424,6 +1428,7 @@
     <Compile Include="Controllers\StopsController.cs" />
     <Compile Include="Controllers\FleetOwnerLicenseController.cs" />
     <Compile Include="Controllers\TicketBookingController.cs" />
+    <Compile Include="Controllers\VehicleAvailabilityController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
