@@ -84,6 +84,8 @@
     <Content Include="bin\System.Web.Http.WebHost.dll" />
     <Content Include="bin\System.Web.Http.WebHost.xml" />
     <Content Include="bin\System.Web.Http.xml" />
+    <Content Include="DBScript\dbo.Booking.sql" />
+    <Content Include="DBScript\dbo.GetBooking.sql" />
     <Content Include="DBScript\dbo.gettable2.sql" />
     <Content Include="DBScript\dbo.table2.sql" />
     <Content Include="Global.asax" />
@@ -1418,6 +1420,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\StopsController.cs" />
     <Compile Include="Controllers\FleetOwnerLicenseController.cs" />
     <Compile Include="Controllers\TicketBookingController.cs" />
