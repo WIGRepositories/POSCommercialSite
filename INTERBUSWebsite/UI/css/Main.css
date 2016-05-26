@@ -37,7 +37,7 @@ div .noBorder ul li:before{content:url("../Images/liImg2.png"); vertical-align: 
 .footer ul{margin: 0px auto; width: 960px; padding: 0px;}
 .footer ul li{display: inline;font-size: 12px; color: #777;}
 /* .footer div{margin:0px auto; width:960px; font-size:11px; line-height:1.8; text-align:left;} */
-.footer ul li a, span, .cpyTxt{font-size: 12px; color: #777; text-decoration: none; padding: 3px;}
+.footer ul li a, span, .cpyTxt{font-size: 12px;  text-decoration: none; padding: 3px;}
 .footer ul li a:hover{color: #333; text-decoration: underline;}
 /* .footer ul li:last-child{float: right;} */
 .socilIcons a span{ width: 24px; height: 24px; float: right; margin: 0px 5px 0px 0px;-webkit-transition: all ease 0.3s;-moz-transition: all ease 0.3s;-o-transition: all ease 0.3s;-ms-transition: all ease 0.3s;transition: all ease 0.3s;padding: 0px;-webkit-border-radius: 6px;-moz-border-radius: 6px;border-radius: 6px; display:inline-block;}

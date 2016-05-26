@@ -270,6 +270,8 @@
 
 
 
+
+
                         if(!$(".top-banner-advert .large").is(":visible")) {
 
                           googletag.pubads().collapseEmptyDivs(true);
@@ -404,9 +406,8 @@
     
 
 <div id="c-mask" class="c-mask disable-touch-scrolling"></div>
-
-    <!--Start Header-->
-    <div id="container">
+<!--Start Header-->
+    <div id="container" style="position:absolute; width:100%">
 
               <!--start of white bar above menu-->
 
@@ -416,17 +417,19 @@
 
                 <div class="logo">
 
-                    <a style="color:white" href="Index.html">
-
-                        <img src="Images/logos/interbusLogo.png" width="180px" height="65px" />
-                        <!--<span class="main-roundel">&nbsp;</span>-->
-                        <!--<span class="tfl-name">
+                    <a style="color:white" href="index.html">
+                        
+                            <img src="Images/logos/interbusLogo.png" width="180px" height="65px" />
+                            <!--<span class="main-roundel">&nbsp;</span>-->
+                            <!--<span class="tfl-name">
 
             Transport<br /> for London
 
         </span>-->
 
-                    </a>
+                        </a>
+
+                  
 
                 </div>
 
@@ -472,7 +475,7 @@
 
                                     <li>
 
-                                        <a style="text-decoration:none" href="Index.html">Home</a>
+                                        <a style="text-decoration:none" href="index.html">Home</a>
 
                                     </li>
                                     <li class="active">
@@ -482,7 +485,7 @@
                                     </li>
                                     <li>
 
-                                        <a style="text-decoration:none" href="Status_and_Updates.html">Status & Updates</a>
+                                        <a style="text-decoration:none" href="Status_and_updates.html">Status & Updates</a>
 
                                     </li>
                                     <li>
@@ -514,69 +517,738 @@
                 </div>
 <!--End Header-->
 
+<!--Start Container-->
+<div class="container" style="padding-top:120px">
+<div id="full-width-content" tab-index="0">
+<div class="r">
+<div class="breadcrumb-container">
+<ul class="breadcrumbs clearfix">
+<li class="home">
+<a href="/">
+<span class="hide-text">Home</span>
+</a>
+</li>
+<li class="ellipsis hidden" style="">
+<a href="javascript:void(0)">...</a>
+</li>
+<li>
+<a href="/tube-dlr-overground/status/">Status updates</a>
+</li>
+<li>
+<span class="last-breadcrumb">Tube, Overground, TfL Rail & DLR</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="r status-update-heading">
+<div class="headline-container content-page clearfix heading-dropdowns-wrap">
+<h1>Status Updates</h1>
+<div class="dropdowns-wrap clearfix">
+<div class="heading-dropdown modes-dropdown-placeholder" data-list-header="Select Transport Mode">
+<div class="for-dropdown">
+<h2>Tube, Overground, TfL Rail & DLR</h2>
+<div class="dropdown-button tab-dropdown dropdown-closed " aria-label="Mode of transport" role="button" tabindex="0" data-list-header="Select Transport Mode" style="">
+<span>Tube, Overground, TfL Rail & DLR</span>
+</div>
+<ul class="links-list modes-list status-updates hidden" data-dropdown-option="tab-dropdown" data-dropdown-target="modes-dropdown-placeholder" data-dropdown-label="Mode of transport" data-selected-item-id="Tube, Overground, TfL Rail & DLR">
+<li class="tube selected" data-item-id="Tube, Overground, TfL Rail & DLR" style="border-top-width: 1px;">
+<a href="/tube-dlr-overground/status/?startdate=2016-05-28T00%3a00%3a00&endDate=2016-05-29T23%3a59%3a59&dateTypeSelect=This%20weekend">
+<span class="dropdown-name">Tube, Overground, TfL Rail & DLR</span>
+</a>
+</li>
+<li class="bus " data-item-id="Buses">
+<a href="/bus/status/?startdate=2016-05-28T00%3a00%3a00&endDate=2016-05-29T23%3a59%3a59&dateTypeSelect=This%20weekend">
+<span class="dropdown-name">Buses</span>
+</a>
+</li>
+<li class="traffic " data-item-id="Traffic">
+<a href="/traffic/status/?startdate=2016-05-28T00%3a00%3a00&endDate=2016-05-29T23%3a59%3a59&dateTypeSelect=This%20weekend">
+<span class="dropdown-name">Traffic</span>
+</a>
+</li>
+<li class="tram " data-item-id="Tram">
+<a href="/tram/status/?startdate=2016-05-28T00%3a00%3a00&endDate=2016-05-29T23%3a59%3a59&dateTypeSelect=This%20weekend">
+<span class="dropdown-name">Tram</span>
+</a>
+</li>
+<li class="river-bus " data-item-id="River Bus">
+<a href="/river/status/?startdate=2016-05-28T00%3a00%3a00&endDate=2016-05-29T23%3a59%3a59&dateTypeSelect=This%20weekend">
+<span class="dropdown-name">River Bus</span>
+</a>
+</li>
+<li class="cable-car " data-item-id="Emirates Air Line">
+<a href="/cable-car/status/?startdate=2016-05-28T00%3a00%3a00&endDate=2016-05-29T23%3a59%3a59&dateTypeSelect=This%20weekend">
+<span class="dropdown-name">Emirates Air Line</span>
+</a>
+</li>
+<li class="national-rail " data-item-id="National Rail">
+<a href="/national-rail/status/?startdate=2016-05-28T00%3a00%3a00&endDate=2016-05-29T23%3a59%3a59&dateTypeSelect=This%20weekend">
+<span class="dropdown-name">National Rail</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="heading-dropdown date-dropdown-placeholder" data-list-header="Select date">
+<div class="for-dropdown">
+<h2>Now 16:07</h2>
+<div class="dropdown-button tab-dropdown dropdown-closed datepicker-dropdown" aria-label="Date picker" role="button" tabindex="0" data-list-header="Select date">
+<span>Now 10:57</span>
+</div>
+<ul class="links-list status-updates hidden datepicker-dropdown" data-dropdown-option="tab-dropdown" data-dropdown-target="date-dropdown-placeholder" data-dropdown-label="Date picker" data-selected-item-id="26/05/16">
+<li class="selected" data-item-id="Now 10:57">
+<span class="dropdown-name">Now 16:07</span>
+</li>
+<li class="not-selected" data-item-id="28/05/16 - 29/05/16">
+<a href="/tube-dlr-overground/status/?startDate=2016-05-28T00%3a00%3a00&endDate=2016-05-29T23%3a59%3a59&dateTypeSelect=This%20weekend">
+<span class="dropdown-name">This weekend</span>
+<span class="right-arrow icon"></span>
+</a>
+</li>
+<li class="not-selected no-hover" data-item-id="">
+<div class="date-wrap">
+<span class="dropdown-name" data-direction="" data-lineids="" data-input="">Future date</span>
+</div>
+<div class="advance-month-container">
+<span>May 2016</span>
+<a class="no-js-next-month" href="/tube-dlr-overground/status/?startDate=2016-06-26T00%3a00%3a00">
+<span>Next month</span>
+</a>
+</div>
+<div class="date-link-container" data-href="/tube-dlr-overground/status/" data-current-year="2016" data-current-month="5" data-current-day="26">
+<div class="date-link">
+<span class="selected-date" data-selected-year="2016" data-selected-month="5" data-selected-day="26">26/05/16</span>
+<span class="hidden calendar-year">2016</span>
+<span class="hidden calendar-month">May</span>
+<span class="hidden calendar-day">26</span>
+</div>
+<div class="date-link">
+<a href="/tube-dlr-overground/status/?startDate=2016-05-27T00%3a00%3a00&endDate=2016-05-27T23%3a59%3a59">27/05/16</a>
+<span class="hidden calendar-year">2016</span>
+<span class="hidden calendar-month">May</span>
+<span class="hidden calendar-day">27</span>
+</div>
+<div class="date-link">
+<a href="/tube-dlr-overground/status/?startDate=2016-05-28T00%3a00%3a00&endDate=2016-05-28T23%3a59%3a59">28/05/16</a>
+<span class="hidden calendar-year">2016</span>
+<span class="hidden calendar-month">May</span>
+<span class="hidden calendar-day">28</span>
+</div>
+<div class="date-link">
+<a href="/tube-dlr-overground/status/?startDate=2016-05-29T00%3a00%3a00&endDate=2016-05-29T23%3a59%3a59">29/05/16</a>
+<span class="hidden calendar-year">2016</span>
+<span class="hidden calendar-month">May</span>
+<span class="hidden calendar-day">29</span>
+</div>
+<div class="date-link">
+<a href="/tube-dlr-overground/status/?startDate=2016-05-30T00%3a00%3a00&endDate=2016-05-30T23%3a59%3a59">30/05/16</a>
+<span class="hidden calendar-year">2016</span>
+<span class="hidden calendar-month">May</span>
+<span class="hidden calendar-day">30</span>
+</div>
+<div class="date-link">
+<a href="/tube-dlr-overground/status/?startDate=2016-05-31T00%3a00%3a00&endDate=2016-05-31T23%3a59%3a59">31/05/16</a>
+<span class="hidden calendar-year">2016</span>
+<span class="hidden calendar-month">May</span>
+<span class="hidden calendar-day">31</span>
+</div>
+</div>
+<div class="fc-calendar-wrapper clearfix hidden">
+<div class="current-month">
+<a class="calendar-previous-month hide-text disabled" href="javascript:void(0);">Previous month</a>
+<span class="calendar-month">May</span>
+<span class="calendar-year">2016</span>
+<a class="calendar-next-month hide-text" href="javascript:void(0);">Next month</a>
+</div>
+<div class="fc-calendar-container" data-year="2016" data-month="5">
+<div class="fc-calendar fc-six-rows">
+<div class="fc-head">
+<div>M</div>
+<div>T</div>
+<div>W</div>
+<div>T</div>
+<div>F</div>
+<div>S</div>
+<div>S</div>
+</div>
+<div class="fc-body">
+<div class="fc-row">
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div>
+<span class="fc-date">1</span>
+<span class="fc-weekday">S</span>
+</div>
+</div>
+<div class="fc-row">
+<div>
+<span class="fc-date">2</span>
+<span class="fc-weekday">M</span>
+</div>
+<div>
+<span class="fc-date">3</span>
+<span class="fc-weekday">T</span>
+</div>
+<div>
+<span class="fc-date">4</span>
+<span class="fc-weekday">W</span>
+</div>
+<div>
+<span class="fc-date">5</span>
+<span class="fc-weekday">T</span>
+</div>
+<div>
+<span class="fc-date">6</span>
+<span class="fc-weekday">F</span>
+</div>
+<div>
+<span class="fc-date">7</span>
+<span class="fc-weekday">S</span>
+</div>
+<div>
+<span class="fc-date">8</span>
+<span class="fc-weekday">S</span>
+</div>
+</div>
+<div class="fc-row">
+<div>
+<span class="fc-date">9</span>
+<span class="fc-weekday">M</span>
+</div>
+<div>
+<span class="fc-date">10</span>
+<span class="fc-weekday">T</span>
+</div>
+<div>
+<span class="fc-date">11</span>
+<span class="fc-weekday">W</span>
+</div>
+<div>
+<span class="fc-date">12</span>
+<span class="fc-weekday">T</span>
+</div>
+<div>
+<span class="fc-date">13</span>
+<span class="fc-weekday">F</span>
+</div>
+<div>
+<span class="fc-date">14</span>
+<span class="fc-weekday">S</span>
+</div>
+<div>
+<span class="fc-date">15</span>
+<span class="fc-weekday">S</span>
+</div>
+</div>
+<div class="fc-row">
+<div>
+<span class="fc-date">16</span>
+<span class="fc-weekday">M</span>
+</div>
+<div>
+<span class="fc-date">17</span>
+<span class="fc-weekday">T</span>
+</div>
+<div>
+<span class="fc-date">18</span>
+<span class="fc-weekday">W</span>
+</div>
+<div>
+<span class="fc-date">19</span>
+<span class="fc-weekday">T</span>
+</div>
+<div>
+<span class="fc-date">20</span>
+<span class="fc-weekday">F</span>
+</div>
+<div>
+<span class="fc-date">21</span>
+<span class="fc-weekday">S</span>
+</div>
+<div>
+<span class="fc-date">22</span>
+<span class="fc-weekday">S</span>
+</div>
+</div>
+<div class="fc-row">
+<div>
+<span class="fc-date">23</span>
+<span class="fc-weekday">M</span>
+</div>
+<div>
+<span class="fc-date">24</span>
+<span class="fc-weekday">T</span>
+</div>
+<div>
+<span class="fc-date">25</span>
+<span class="fc-weekday">W</span>
+</div>
+<div class="fc-today">
+<span class="fc-date">26</span>
+<span class="fc-weekday">T</span>
+</div>
+<div class="highlighted-day">
+<a href="/tube-dlr-overground/status/?input=&lineIds=&dateTypeSelect=Future date&direction=&startDate=2016-05-27T00%3a00%3a00&endDate=2016-05-27T23%3a59%3a59">
+<span class="fc-date">27</span>
+</a>
+<span class="fc-weekday">F</span>
+</div>
+<div class="highlighted-day">
+<a href="/tube-dlr-overground/status/?input=&lineIds=&dateTypeSelect=Future date&direction=&startDate=2016-05-28T00%3a00%3a00&endDate=2016-05-28T23%3a59%3a59">
+<span class="fc-date">28</span>
+</a>
+<span class="fc-weekday">S</span>
+</div>
+<div class="highlighted-day">
+<a href="/tube-dlr-overground/status/?input=&lineIds=&dateTypeSelect=Future date&direction=&startDate=2016-05-29T00%3a00%3a00&endDate=2016-05-29T23%3a59%3a59">
+<span class="fc-date">29</span>
+</a>
+<span class="fc-weekday">S</span>
+</div>
+</div>
+<div class="fc-row">
+<div class="highlighted-day">
+<a href="/tube-dlr-overground/status/?input=&lineIds=&dateTypeSelect=Future date&direction=&startDate=2016-05-30T00%3a00%3a00&endDate=2016-05-30T23%3a59%3a59">
+<span class="fc-date">30</span>
+</a>
+<span class="fc-weekday">M</span>
+</div>
+<div class="highlighted-day">
+<a href="/tube-dlr-overground/status/?input=&lineIds=&dateTypeSelect=Future date&direction=&startDate=2016-05-31T00%3a00%3a00&endDate=2016-05-31T23%3a59%3a59">
+<span class="fc-date">31</span>
+</a>
+<span class="fc-weekday">T</span>
+</div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div>
+<div class="r service-status-links" data-mode="Tube, Overground, TfL Rail & DLR"> </div>
+<div class="r service-status-links"> </div>
 
+
+<div class="r no-overflow small-medium">
+<div class="view-static-map-button ">
+<span class="view-static-map-button-icon"></span>
+<span>View live map</span>
+<span class="expand-map-icon"></span>
+</div>
+<div class="small-medium main map-sliver-container non-google-map" data-set="status-map"> </div>
+</div>
+
+<div class="r r-override-su">
+<div class="aside">
+<ul class="tabs-style-2 lines-stations-tab">
+<li class="lines-tab selected">
+<a href="#lines-status">Lines</a>
+</li>
+<li class="stations-tab">
+<a href="#stations-status">Stations</a>
+</li>
+</ul>
+
+<div class="fav-panel-save-container no-js-hide">
+<div class="fav-panel-save-container-inner favourite-tab">
+<a id="fav-panel-save" href="javascript:void(0)">
+<span class="align-text">Add favourites</span>
+</a>
+</div>
+</div>
+<div id="service-status-page-board" class="service-status-rainbow-board board-wrapper">
+<div id="rainbow-list-tube-dlr-overground-tflrail" class="ajax-su rainbow-list-wrapper lines-status visible">
+<h2>Lines</h2>
+<ul class="rainbow-list interactive ">
+<li class="rainbow-list-item district disrupted expandable " data-mode="tube" data-severity-codes="5" data-line-id="lul-district">
+<a class="rainbow-list-link" data-line-class="lul-district" href="#line-lul-district">
+<span class="service-name district">
+<span>District</span>
+</span>
+<span class="disruption-summary ">
+<span>
+Part closure
+<br>
+</span>
+</span>
+<span class="controls"> </span>
+</a>
+<div class="rainbow-list-content">
+<div class="section">
+<p>DISTRICT LINE: Saturday 28, Sunday 29 and Bank Holiday Monday 30 May, no service between Earl's Court and Wimbledon. This is to allow for track replacement work at Fulham Broadway, Putney Bridge and Wimbledon. Replacement buses operate.</p>
+<p>Replacement buses operateService A: Hammersmith - Putney Bridge - East Putney - Southfields - Wimbledon Park - WimbledonService B: Earl's Court - West Brompton - Fulham Broadway - Parsons Green - Putney Bridge - Wimbledon.</p>
+</div>
+<div class="section">
+<div class="vertical-button-container">
+<a class="plain-button" href="/plan-a-journey/">Replan your journey</a>
+</div>
+</div>
+<a class="close-message" href="#">Close status</a>
+</div>
+</li>
+<li class="rainbow-list-item overground disrupted expandable " data-mode="overground" data-severity-codes="5" data-line-id="raillo-overground">
+<a class="rainbow-list-link" data-line-class="raillo-overground" href="#line-raillo-overground">
+<span class="service-name overground">
+<span>London Overground</span>
+</span>
+<span class="disruption-summary ">
+<span>
+Part closure
+<br>
+</span>
+</span>
+<span class="controls"> </span>
+</a>
+<div class="rainbow-list-content">
+<div class="section">
+<p>LONDON OVERGROUND: Sunday 29 and Monday 30 May, no service between Romford and Upminster due to Crossrail works. Please use local London Buses services instead.</p>
+<p></p>
+</div>
+<div class="section">
+<p>LONDON OVERGROUND: Saturday 7 and Sunday 8 May, and every Saturday and Sunday until Saturday 24 and Sunday 25 September (except Saturdays 28 May and 27 August), as well as on Bank Holiday Mondays 30 May and 29 August, no service between Gospel Oak and Barking to help prepare the line for electrification. Replacement buses operate.</p>
+<p>Replacement buses operate Route J: Gospel Oak Station (Highgate Road) - Upper Holloway - Crouch Hill - Finsbury Park (for London Underground Piccadilly and Victoria line and National Rail Great Northern services) - Harringay Green Lanes - Seven Sisters (for London Underground Victoria line and London Overground Enfield Town / Cheshunt services and South Tottenham) Route T: Walthamstow Central (for London Underground Victoria line and London Overground Chingford Services) - Leyton Midland Road - Leytonstone High Road - Wanstead Park - Woodgrange Park - East Ham (for London Underground District and Hammersmith & City line, set down only towards Barking, pick up only towards Walthamstow) - Barking.For travel between Seven Sisters and Walthamstow Central, use London Underground Victoria line (valid tickets are accepted for entrance and exit at Seven Sisters, Tottenham Hale, Blackhorse Road and Walthamstow Central only) or local London Buses services via any reasonable routes.</p>
+</div>
+<div class="section">
+<div class="vertical-button-container">
+<a class="plain-button" href="/plan-a-journey/">Replan your journey</a>
+</div>
+</div>
+<a class="close-message" href="#">Close status</a>
+</div>
+</li>
+<li class="rainbow-list-item tflrail disrupted expandable " data-mode="tflrail" data-severity-codes="4,5" data-line-id="tfl-rail">
+<a class="rainbow-list-link" data-line-class="tfl-rail" href="#line-tfl-rail">
+<span class="service-name tflrail">
+<span>TfL Rail</span>
+</span>
+<span class="disruption-summary ">
+<span>
+Planned closure
+<br>
+Part closure
+<br>
+</span>
+</span>
+<span class="controls"> </span>
+</a>
+<div class="rainbow-list-content">
+<div class="section">
+<p>TfL Rail: Every Sunday until 0800, buses replace trains between Shenfield and Ilford, due to Network Rail track works.</p>
+<p>Service A: Shenfield - Brentwood - Harold Wood - Gidea Park - Romford - Chadwell Heath - Goodmayes - Ilford</p>
+</div>
+<div class="section">
+<p>TfL RAIL: Sunday 29 and Monday 30 May, no service Liverpool Street to Shenfield due to planned engineering works. A replacement bus service will operate</p>
+<p>Replacement bus services operate as follows:Service C: Romford - Chadwell Heath - Goodmayes - Seven Kings - Ilford - Manor Park - Forest Gate - StratfordService D: Shenfield - Brentwood - Harold Wood - Gidea Park - Romford - Chadwell Heath - Newbury Park (for Central Line)</p>
+</div>
+<div class="section">
+<div class="vertical-button-container">
+<a class="plain-button" href="/plan-a-journey/">Replan your journey</a>
+</div>
+</div>
+<a class="close-message" href="#">Close status</a>
+</div>
+</li>
+<li class="rainbow-list-item waterloo disrupted expandable " data-mode="tube" data-severity-codes="4" data-line-id="lul-waterloo-city">
+<a class="rainbow-list-link" data-line-class="lul-waterloo-city" href="#line-lul-waterloo-city">
+<span class="service-name waterloo">
+<span>Waterloo & City</span>
+</span>
+<span class="disruption-summary ">
+<span>
+Planned closure
+<br>
+</span>
+</span>
+<span class="controls"> </span>
+</a>
+<div class="rainbow-list-content">
+<div class="section">
+<p>WATERLOO & CITY LINE: Train services will resume at 06:15.</p>
+<p></p>
+</div>
+<div class="section">
+<div class="vertical-button-container">
+<a class="plain-button" href="/plan-a-journey/">Replan your journey</a>
+</div>
+</div>
+<a class="close-message" href="#">Close status</a>
+</div>
+</li>
+<li class="rainbow-list-item bakerloo " data-mode="tube" data-severity-codes="10" data-line-id="lul-bakerloo">
+<div class="rainbow-list-link ">
+<span class="service-name bakerloo">
+<span>Bakerloo</span>
+</span>
+<span class="disruption-summary ">
+<span>
+Good service
+<br>
+</span>
+</span>
+</div>
+</li>
+<li class="rainbow-list-item central " data-mode="tube" data-severity-codes="10" data-line-id="lul-central">
+<div class="rainbow-list-link ">
+<span class="service-name central">
+<span>Central</span>
+</span>
+<span class="disruption-summary ">
+<span>
+Good service
+<br>
+</span>
+</span>
+</div>
+</li>
+<li class="rainbow-list-item circle " data-mode="tube" data-severity-codes="10" data-line-id="lul-circle">
+<div class="rainbow-list-link ">
+<span class="service-name circle">
+<span>Circle</span>
+</span>
+<span class="disruption-summary ">
+<span>
+Good service
+<br>
+</span>
+</span>
+</div>
+</li>
+<li class="rainbow-list-item hammersmith " data-mode="tube" data-severity-codes="10" data-line-id="lul-hammersmith-city">
+<div class="rainbow-list-link ">
+<span class="service-name hammersmith">
+<span>Hammersmith & City</span>
+</span>
+<span class="disruption-summary ">
+<span>
+Good service
+<br>
+</span>
+</span>
+</div>
+</li>
+<li class="rainbow-list-item jubilee " data-mode="tube" data-severity-codes="10" data-line-id="lul-jubilee">
+<div class="rainbow-list-link ">
+<span class="service-name jubilee">
+<span>Jubilee</span>
+</span>
+<span class="disruption-summary ">
+<span>
+Good service
+<br>
+</span>
+</span>
+</div>
+</li>
+<li class="rainbow-list-item metropolitan " data-mode="tube" data-severity-codes="10" data-line-id="lul-metropolitan">
+<div class="rainbow-list-link ">
+<span class="service-name metropolitan">
+<span>Metropolitan</span>
+</span>
+<span class="disruption-summary ">
+<span>
+Good service
+<br>
+</span>
+</span>
+</div>
+</li>
+<li class="rainbow-list-item northern " data-mode="tube" data-severity-codes="10" data-line-id="lul-northern">
+<div class="rainbow-list-link ">
+<span class="service-name northern">
+<span>Northern</span>
+</span>
+<span class="disruption-summary ">
+<span>
+Good service
+<br>
+</span>
+</span>
+</div>
+</li>
+<li class="rainbow-list-item piccadilly " data-mode="tube" data-severity-codes="10" data-line-id="lul-piccadilly">
+<div class="rainbow-list-link ">
+<span class="service-name piccadilly">
+<span>Piccadilly</span>
+</span>
+<span class="disruption-summary ">
+<span>
+Good service
+<br>
+</span>
+</span>
+</div>
+</li>
+<li class="rainbow-list-item victoria " data-mode="tube" data-severity-codes="10" data-line-id="lul-victoria">
+<div class="rainbow-list-link ">
+<span class="service-name victoria">
+<span>Victoria</span>
+</span>
+<span class="disruption-summary ">
+<span>
+Good service
+<br>
+</span>
+</span>
+</div>
+</li>
+<li class="rainbow-list-item dlr " data-mode="dlr" data-severity-codes="10" data-line-id="dlr-dlr">
+<div class="rainbow-list-link ">
+<span class="service-name dlr">
+<span>DLR</span>
+</span>
+<span class="disruption-summary ">
+<span>
+Good service
+<br>
+</span>
+</span>
+</div>
+</li>
+</ul>
+</div>
+<div class="rainbow-list-wrapper stations-status no-border">
+</div></div>
+<h2>Planned works</h2>
+<div class="vertical-button-container">
+<a class="plain-button show-all-reported" href="/forms/12392.aspx">Planned works calendar</a>
+<a class="plain-button show-all-reported" href="/status-updates/major-works-and-events">Major works & events</a>
+</div>
+<h2>Planned closures</h2>
+<div class="vertical-button-container">
+<a class="plain-button show-all-reported" href="/cdn/static/cms/documents/track-closures.pdf">Track</a>
+<a class="plain-button show-all-reported" href="/cdn/static/cms/documents/station-closures.pdf ">Stations, lifts and escalators</a>
+</div>
+</div>
+
+<div class="main">
+<div class="large" data-set="status-map">
+<div class="moving-source-order">
+<div class="status-map-wrapper map-wrapper status-page">
+<div id="tubemap" class="map-sliver" data-map-type="interactive-schematic" style="overflow: hidden;">
+<div class="panzoom-wrapper coloured-disruptions" tabindex="0">
+<svg id="status-map" class="coloured-disruptions" xml:space="preserve" enable-background="new 0 0 1247.244 907.087" viewBox="64.094 122.25 985.889 657.072" height="907.087px" width="1247.244px" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" data-margin-width="11.434508749474958" data-margin-height="0" style="transform: matrix(0.550115, 0, 0, 0.550115, -246.69, -204.041); margin-top: 0px; margin-left: -11px; cursor: move; transition: transform 200ms ease-in-out 0s;">
+<button class="map-button zoom-in" title="Zoom in">
+<span class="icon plus-icon-blue"></span>
+</button>
+<button class="map-button zoom-out" title="Zoom out">
+<span class="icon minus-icon-blue"></span>
+</button>
+</div>
+<span class="throbber"></span>
+<button id="toggle-panel-status-map" class="map-button" title="Toggle panel">
+<span class="icon menu-icon-blue"></span>
+</button>
+<div class="map-options-panel">
+<div class="map-options-panel-heading">
+<span class="menu-icon-alt icon"></span>
+<span class="">Map options</span>
+<span class="close3-icon icon close-map-panel-button"></span>
+</div>
+<div class="map-options-panel-body">
+<div class="clearfix radiobutton-list">
+<input id="coloured-disruptions" class="map-panel-radio" type="radio" checked="" name="disruption-colour">
+<label class="map-panel-radio-with-image radiobutton-list-item" for="coloured-disruptions">
+<span class="map-panel-radio-image"></span>
+<span>Colour disruptions</span>
+</label>
+<input id="grey-disruptions" class="map-panel-radio" type="radio" name="disruption-colour">
+<label class="map-panel-radio-with-image radiobutton-list-item" for="grey-disruptions">
+<span class="map-panel-radio-image"></span>
+<span>Grey disruptions</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<div class="sliver-overlay">
+<button id="open-fullscreen-stage" class="fullscreen-stage-button">
+<span class="icon expand-map-icon"></span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="su-search tube,dlr,overground,tflrail">
+<div class="SSP-search-wrapper">
+<div class="search-filter">
+<h3>Search</h3>
+<p>For live arrivals, status information, route maps and timetables</p>
+<form id="search-filter-form" class="clearfix" data-excludehubs="False" data-ajax-enabled="False" data-modes="tube,dlr,overground,tflrail,river-bus,river-tour,tram,cable-car,national-rail" data-include-geolocation="True" data-display-selected-modes-only="False" data-isoysteronly="False" data-busstopsonly="False" data-datasets="[["stopPoints","/{{mode}}/stop/{{naptanId}}/{{stopName}}/"]]" data-placeholder="Station, stop or pier (eg Bank)" method="GET" action="/disambiguation" novalidate="novalidate">
+<div class="text-input">
+<label class="heading visually-hidden" for="Input">Search for Station, stop or pier (eg Bank)</label>
+<div class="remove-content-container empty" style="position: relative;">
+<span class="twitter-typeahead" style="position: relative; display: inline-block;">
+<input id="Input" class="tt-input" type="text" value="" placeholder="Station, stop or pier (eg Bank)" name="Input" data-val-required="Please enter a search term." data-val="true" autocorrect="off" autocomplete="off" spellcheck="false" style="position: relative; vertical-align: top;" dir="auto">
+<pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: nowrap; font-family: arial; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: optimizelegibility; text-transform: none;"></pre>
+<span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;">
+<div class="tt-dataset-geolocation"></div>
+<div class="tt-dataset-recent-searches-footer-off"></div>
+<div class="tt-dataset-stop-points-search"></div>
+</span>
+</span>
+<a class="remove-content hide-text" style="position: absolute; cursor: pointer; display: none; top: 4px; right: 5px;" href="javascript:void(0)">Clear search</a>
+</div>
+<span class="field-validation-error geolocation-error hidden"> </span>
+<input id="DataSetsJson" type="hidden" value="[["stopPoints","/{{mode}}/stop/{{naptanId}}/{{stopName}}/"]]" name="DataSetsJson">
+<input id="Modes" type="hidden" value="tube,dlr,overground,tflrail,bus,river-bus,river-tour,tram,cable-car,national-rail" name="Modes">
+<input id="PlaceHolderText" type="hidden" value="Station, stop or pier (eg Bank)" name="PlaceHolderText">
+</div>
+<div class="submit-button">
+<input class="primary-button" type="submit" value="Go">
+</div>
+</form>
+</div>
+</div>
+</div>
+
+<div class="follow-social twitter">
+<div class="social-image">
+<span class="mode-icon tube-dlr-overground"> </span>
+</div>
+<div class="social-text">
+<h3>Follow us on Twitter</h3>
+<p>Combined service information for the Tube, DLR, London Overground, trams and Emirates Air Line</p>
+</div>
+<div class="social-button">
+<a class="secondary-button" data-size="large" data-show-count="false" target="_blank" href="https://twitter.com/TfLTravelAlerts">Follow @TfLTravelAlerts</a>
+</div>
+</div>
+
+<div class="follow-social email">
+<div class="social-image"></div>
+<div class="social-text">
+<h3>Email updates</h3>
+<p>Customer updates and advanced warning of weekend closures and planned works</p>
+</div>
+<div class="social-button">
+<a class="secondary-button" href="/travel-information/social-media-and-email-updates/email-updates">Register</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</div>
+<!--End Container-->
                         
 
                            
-<div class="row">
-                      <div class="col-lg-12">
-                      
-                      <div class="page-form">
-        <form  action="Licenseconfirmation.html">
-            <div class="header-content"><h1>Interbus fleet owner request</h1></div>
-            <div class="body-content">
-                <div class="form-group">
-                    <div class="input-icon right"><i class="fa fa-user"></i><input type="text" placeholder="First Name" name="First Name" class="form-control">
-                       </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-icon right"><i class="fa fa-user"></i><input type="text" placeholder="Last Name" name="Last Name"  class="form-control"></div>
-                </div>
-                <div class="form-group">
-                    <div class="input-icon right"><i class="fa fa-envelope"></i><input type="email"  placeholder="Email" name="email" class="form-control"></div>
-                </div>
-                <div class="form-group">
-                    <div class="input-icon right"><i class="fa fa-mobilephone"></i><input type="text" placeholder="Mobile No" name="Mobile No" class="form-control"></div>
-                </div>
-                <div class="form-group">
-                    <div class="input-icon right"><i class="fa fa-envelope"></i><input type="text" placeholder="CompanyName" name="CompanyName" class="form-control"></div>
-                </div>
-                <div class="form-group">
-                    <div class="input-icon right"><i class="fa fa-envelope"></i><input type="text" placeholder="Description " name="CompanyInfo " class="form-control"></div>
-                </div>
-                <div class="form-group">
-
-
-                    <div class="col-md-14">
-                        <select id="selusertype" class="form-control">
-                            <option value="3" selected disabled>Select License Type</option>
-                            <option value="4">Basic</option>
-                            <option value="5">Professional</option>
-                            <option value="6">Business</option>
-                            <option value="6">Unlimited</option>
-                        </select>
-                    </div>
-                </div>
-                <center>
-                   
-                        <input type="submit" data-toggle="modal" class="btn btn-primary" value="Submit"/>
-                           
-
-</center>
-                <!--<div class="form-group">
-                            <div class="input-icon right"><label for="inputPhone" class="control-label">Phone</label><input id="inputPhone" type="text" placeholder="" class="form-control" /></div>
-                    </div>
-                </div>-->
-
-
-            </div>
-        </form>
-    </div>
-            
-                    
-                    
-            </div>
-                      </div>   
+   
 <div class="row">
 <div class="col-lg-12">
 <div id="footer" tabindex="0">
@@ -869,6 +1541,7 @@ function carousel() {
             <script>
 
                 queue.push("/cdn/static/scripts/modules/search-filter.js", null);
+
 
             </script>
 
