@@ -270,6 +270,8 @@
 
 
 
+
+
                         if(!$(".top-banner-advert .large").is(":visible")) {
 
                           googletag.pubads().collapseEmptyDivs(true);
@@ -408,7 +410,7 @@
     <!--Start Header-->
     <div id="container">
 
-              <!--start of white bar above menu-->
+  <!--start of white bar above menu-->
 
         <div class ="top-row-top">
 
@@ -470,39 +472,44 @@
                             <div class="r">
                                 <ul class="collapsible-menu clearfix">
 
-                                    <li>
+                                    <li class="plan-journey">
 
-                                        <a style="text-decoration:none" href="Index.html">Home</a>
-
-                                    </li>
-                                    <li class="active">
-
-                                        <a style="text-decoration:none" href="Fares_and_payments.html">Fares / Payments</a>
-
-                                    </li>
-                                    <li>
-
-                                        <a style="text-decoration:none" href="Status_and_Updates.html">Status & Updates</a>
-
-                                    </li>
-                                    <li>
-
-                                        <a style="text-decoration:none" href="#">Products</a>
+                                        <a href="/plan-a-journey/">Home</a>
 
                                     </li>
 
-                                    <li>
+                                    <li class="plan-journey">
 
-                                        <a style="text-decoration:none" href="#">About Us</a>      
+                                        <a href="#">About Us</a>      
+
+                                    </li>
+
+                                    <li class="plan-journey">
+
+                                        <a href="#">Contact Us</a>
+
+                                    </li>
+                                     <li class="plan-journey">
+
+                                        <a href="#">Schedules</a>
 
                                     </li>
 
-                                    <li>
+                                    <li class="status-update">
 
-                                        <a style="text-decoration:none" href="#">Contact Us</a>
+                                        <a href="/status-updates/">CheckFare</a>
 
                                     </li>
-                                     
+
+                                    <li class="maps">
+
+                                        <a href="/maps_/maps">Cancellation</a>
+
+                                    </li>
+
+                               
+                                    <li><a href="#">FeedBack/Complaints</a></li>
+
                                 </ul>
                             </div>
 
@@ -520,61 +527,132 @@
                            
 <div class="row">
                       <div class="col-lg-12">
-                      
-                      <div class="page-form">
-        <form  action="Licenseconfirmation.html">
-            <div class="header-content"><h1>Interbus fleet owner request</h1></div>
-            <div class="body-content">
-                <div class="form-group">
-                    <div class="input-icon right"><i class="fa fa-user"></i><input type="text" placeholder="First Name" name="First Name" class="form-control">
-                       </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-icon right"><i class="fa fa-user"></i><input type="text" placeholder="Last Name" name="Last Name"  class="form-control"></div>
-                </div>
-                <div class="form-group">
-                    <div class="input-icon right"><i class="fa fa-envelope"></i><input type="email"  placeholder="Email" name="email" class="form-control"></div>
-                </div>
-                <div class="form-group">
-                    <div class="input-icon right"><i class="fa fa-mobilephone"></i><input type="text" placeholder="Mobile No" name="Mobile No" class="form-control"></div>
-                </div>
-                <div class="form-group">
-                    <div class="input-icon right"><i class="fa fa-envelope"></i><input type="text" placeholder="CompanyName" name="CompanyName" class="form-control"></div>
-                </div>
-                <div class="form-group">
-                    <div class="input-icon right"><i class="fa fa-envelope"></i><input type="text" placeholder="Description " name="CompanyInfo " class="form-control"></div>
-                </div>
-                <div class="form-group">
+ <!--BEGIN TITLE & BREADCRUMB PAGE-->
+       <div class="col-md-8 col-md-offset-2">
+        <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
+            <div class="page-header">
+                <div class="page-title">Invoice</div>
+       
+          
+                
+    <button type="submit" class="btn btn-success mrm">
+     <i class="fa fa-print"></i>&nbsp;Print</button>&nbsp;&nbsp;
+    <button type="button" class="btn btn-white"><i class="fa fa-edit"></i>&nbsp;Edit</button>
+               
+       
+          
+           </div>
+            <div class="clearfix"></div>
+        </div>
+       <div class="page-content">
+       <div id="invoice-page" class="row">
+                
 
+                    <div class="panel">
+                        <div class="panel-body">
+                            <div class="invoice-title">
+                                <h2>Invoice</h2>
 
-                    <div class="col-md-14">
-                        <select id="selusertype" class="form-control">
-                            <option value="3" selected disabled>Select License Type</option>
-                            <option value="4">Basic</option>
-                            <option value="5">Professional</option>
-                            <option value="6">Business</option>
-                            <option value="6">Unlimited</option>
-                        </select>
+                                <p class="mbn text-left">Invoice# 10335</p>
+
+                                <p class="text-left">April 22, 2014</p>
+                               
+                            </div>
+                            <div class="pull-left">
+                                <h2 class="text-green logo">InterBus</h2>
+                                <address class="mbn">78183 Sweards Bluff Ave<br />New York, CA 94107<br /><abbr title="Phone">P:</abbr>(123) 456-7890<br /><br />info@email.com</address>
+                            </div>
+                            <div class="clearfix"></div>
+                            <hr />
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <address><strong>Billed To:</strong><br />John Smith<br />Incorporesano Ltd.<br />(123) 456-7890</address>
+                                </div>
+                                <div class="col-md-3">
+                                    <address><strong>Shipped To:</strong><br />John Doe<br />78183 Sweards Bluff Ave<br />(123) 456-7890</address>
+                                </div>
+                                <div class="col-md-3">
+                                    <address><strong>Due Date:</strong><br />21 March 2014</address>
+                                </div>
+                                <div class="col-md-3">
+                                    <address>
+                                        <strong>Due Balance:</strong><br />
+
+                                        <h2 class="text-green mtn">
+                                            <strong>
+                                                $19 per month
+                                            </strong>
+                                        </h2>
+                                    </address>
+                                </div>
+                            </div>
+                            <hr />
+                            <h4 class="block-heading">Order summary</h4>
+
+                            <div class="table-responsive">
+                                <table class="table table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <td><strong>Item</strong></td>
+                                            <td class="text-center"><strong>Price</strong></td>
+                                            <td class="text-center"><strong>Quantity</strong></td>
+                                            <td class="text-right"><strong>Totals</strong></td>
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>BS-200</td>
+                                            <td class="text-center">$10.99</td>
+                                            <td class="text-center">1</td>
+                                            <td class="text-right">$10.99</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BS-400</td>
+                                            <td class="text-center">$20.00</td>
+                                            <td class="text-center">3</td>
+                                            <td class="text-right">$60.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BS-1000</td>
+                                            <td class="text-center">$600.00</td>
+                                            <td class="text-center">1</td>
+                                            <td class="text-right">$600.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="thick-line"></td>
+                                            <td class="thick-line"></td>
+                                            <td class="thick-line text-center"><strong>Subtotal</strong></td>
+                                            <td class="thick-line text-right">$670.99</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="no-line"></td>
+                                            <td class="no-line"></td>
+                                            <td class="no-line text-center"><strong>Shipping</strong></td>
+                                            <td class="no-line text-right">$15</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="no-line"></td>
+                                            <td class="no-line"></td>
+                                            <td class="no-line text-center"><strong>Total</strong></td>
+                                            <td class="no-line text-right"></td>
+                                        </tr>
+                                       
+                                    </tbody>
+                                </table>
+                            </div>
+                            <center>
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                <a href="Checkout.html">  <button type="button" class="btn btn-primary">CheckOut</button></a>
+                            </center>
+                            <hr class="mbm" />
+                            <p>Thank you for your business. Please remit the total amount due within 30 days.</p>
+                        </div>
                     </div>
                 </div>
-                <center>
-                   
-                        <input type="submit" data-toggle="modal" class="btn btn-primary" value="Submit"/>
-                           
-
-</center>
-                <!--<div class="form-group">
-                            <div class="input-icon right"><label for="inputPhone" class="control-label">Phone</label><input id="inputPhone" type="text" placeholder="" class="form-control" /></div>
-                    </div>
-                </div>-->
-
-
+               
             </div>
-        </form>
-    </div>
-            
-                    
-                    
+            </div>          
             </div>
                       </div>   
 <div class="row">
