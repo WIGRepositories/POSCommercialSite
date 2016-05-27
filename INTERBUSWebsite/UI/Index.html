@@ -10,6 +10,10 @@
 
 <!--<![endif]-->
 <head>
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js" ></script>
+    <script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+   
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
@@ -59,15 +63,10 @@
 
 
 
-    <script src="js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js" ></script>
 
 
-
-    <noscript>
-
-        <link href="/cdn/static/styles/core/min/no-js.min.8296e186.css" media="screen" rel="stylesheet" />
-
-    </noscript>
+   
 
     <title>Every Journey Matters - Transport for London</title>
 
@@ -123,191 +122,45 @@
     <![endif]-->
 
 
-
-    <script type='text/javascript'>
-
-        amznads.getAds('3199');
-
-        amznads.setTargetingForGPTAsync('amznslots');
-
-    </script>
-
-    <script type='text/javascript'>
-
-        var googletag = googletag || {};
-
-        googletag.cmd = googletag.cmd || [];
-
-        window.onload = function () {
-
-            var ads = document.querySelectorAll("[data-advert]");
-
-            if (ads !== null && ads.length > 0) {
-
-                (function () {
-
-                    var gads = document.createElement('script');
-
-                    gads.async = true;
-
-                    gads.type = 'text/javascript';
-
-                    var useSSL = 'https:' == document.location.protocol;
-
-                    gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
-
-                    var node = document.getElementsByTagName('script')[0];
-
-                    node.parentNode.insertBefore(gads, node);
-
-                })();
-
-                googletag.cmd.push(function () {
-
-                    var toDisplay = [];
-
-                    var fromJP = $('#From');
-
-                    var toJP = $('#To');
-
-
-
-                    function addDisplayAd(ad, id) {
-
-                        var sc = document.createElement('script');
-
-                        sc.type = 'text/javascript';
-
-                        sc.text = "googletag.cmd.push(function () { googletag.display('" + id + "'); });";
-
-                        ad.appendChild(sc);
-
-                    }
-
-
-
-                    for (var i = 0; i < ads.length; i++) {
-
-                        var ad = ads[i];
-
-                        if (ad.offsetParent === null) {
-
-                            continue;
-
-                        }
-
-                        var id = 'adv-' + i;
-
-                        var path = ad.getAttribute("data-advert");
-
-                        var sizesArr = ad.getAttribute("data-advert-sizes").split('|');
-
-                        var sizes = [];
-
-                        for (var s = 0; s < sizesArr.length; s++) {
-
-                            sizes.push(sizesArr[s].split(',').map(Number));
-
-                        }
-
-                        addDisplayAd(ad, id);
-
-                        toDisplay.push(id);
-
-                        ad.setAttribute("id", id);
-
-                        googletag.defineSlot(path, sizes, id).addService(googletag.pubads());
-
-                    }
-
-
-
-                    if (fromJP.val() !== "" && toJP.val() !== "") {
-
-                        googletag.pubads().setTargeting('from', fromJP);
-
-                        googletag.pubads().setTargeting('to', toJP);
-
-                    }
-
-
-
-                    googletag.pubads().enableSingleRequest();
-
-                    googletag.pubads().setCentering(true);
-
-
-
-                    if (!$(".top-banner-advert .large").is(":visible")) {
-
-                        googletag.pubads().collapseEmptyDivs(true);
-
-                    }
-
-
-
-                    googletag.pubads().addEventListener('slotRenderEnded', function (event) {
-
-
-
-                        var id = $('#' + event.slot.getSlotElementId());
-
-
-
-                        if (!event.isEmpty) {
-
-                            var adHeight = event.size[1];
-
-                            var adLabel = '<a class="advertisement-label" href="/info-for/business-and-commercial/commercial-opportunities/advertising-on-the-network">Advertisement</a>';
-
-
-
-                            if (id.hasClass("large")) {
-
-                                id.css("background-color", "#fff").animate({ height: adHeight }, 2000);
-
-                            }
-
-
-
-                            if (id.parent().hasClass("advert-content")) {
-
-                                id.append(adLabel).closest('.advert-link').css('background', '#f7f7f7');
-
-                            } else {
-
-                                id.prepend(adLabel);
-
-                            }
-
-                        }
-
-                    });
-
-                    googletag.enableServices();
-
-                    for (var ii = 0; ii < toDisplay.length; ii++) {
-
-                        googletag.display(toDisplay[ii]);
-
-                    }
-
-                });
-
-            }
-
-        };
-
-    </script>
-
-
-
     <script type='text/javascript'>
 
         try { amznads.setTargetingForGPTAsync('amznslots'); } catch (e) { /*ignore*/ };
 
     </script>
+    <script>
+        // Plugin options and our code
+        $("#modal_trigger").leanModal({
+            top: 100,
+            overlay: 0.6,
+            closeButton: ".modal_close"
+        });
 
+        $(function () {
+            // Calling Login Form
+            $("#login_form").click(function () {
+                $(".social_login").hide();
+                $(".user_login").show();
+                return false;
+            });
+
+            // Calling Register Form
+            $("#register_form").click(function () {
+                $(".social_login").hide();
+                $(".user_register").show();
+                $(".header_title").text('Register');
+                return false;
+            });
+
+            // Going back to Social Forms
+            $(".back_btn").click(function () {
+                $(".user_login").hide();
+                $(".user_register").hide();
+                $(".social_login").show();
+                $(".header_title").text('Login');
+                return false;
+            });
+        });
+    </script>
 
     <script type="text/javascript">
 
@@ -352,6 +205,8 @@
         // DO NOT MODIFY ABOVE THIS LINE *****************************************
 
     </script>
+    
+    
 </head>
 
 <body class="personalisation-active bus-favourites-inactive">
@@ -362,30 +217,26 @@
     <div id="container">
         <!--Start Logo and Search box-->
 
-        <div class="top-row-top" style="background-color:#FFFFFF">
+        <!--<div class="top-row-top" style="background-color:#FFFFFF">
 
             <div class="r">
 
                 <div class="logo">
 
                     <a style="color:white" href="#">
-                        <img src="Images/logos/interbusLogo.png" width="180px" height="65px" />
-                        <!--<span class="main-roundel">&nbsp;</span>-->
-                        <!--<span class="tfl-name">
+                        <img src="Images/logos/interbusLogo.png" style="width:180px; height:65px" />
+                        <span class="main-roundel">&nbsp;</span>
+                        <span class="tfl-name">
 
                             Transport<br /> for London
 
-                        </span>-->
+                        </span>
 
                     </a>
 
                 </div>
 
                 <div class="top-row-extras">
-
-                    <div class="texts">
-
-                    </div>
 
                     <form action="/search/" method="GET">
 
@@ -409,16 +260,18 @@
 
             </div>
 
-        </div>
+        </div>-->
 
         <!--End Logo and Search box-->
         <!--Start Menu -->
         <div class="mainnav" id="mainnav" tabindex="0">
 
-            <div class="top-row">
+            <div class="top-row" style="position:fixed">
 
                 <div class="r">
-                    <ul class="collapsible-menu clearfix">
+
+               <ul class="collapsible-menu clearfix">
+                   <li style="margin-right:65px"><img style="width:100%; height:56px" src="Images/logos/interbusLogo.png" alt="Alternate Text" /> </li>
 
                         <li>
 
@@ -449,9 +302,19 @@
 
                         <li>
 
-                            <a style="text-decoration:none" href="#">Contact Us</a>
+                            <a style="text-decoration:none; margin-right:30px" href="#">Contact Us</a>
 
                         </li>
+                        <li>
+                            
+                            <div style="float:right; padding-top:11px">
+                                    <input type="text" placeholder="Search" id="q" name="q" style="border-radius:30px; width:120px; height:35px" />
+
+                              
+                            </div>
+                               
+                            
+</li>
 
                     </ul>
                 </div>
@@ -531,7 +394,7 @@
 
                                                             <label class="heading&#32;visually-hidden" for="InputFrom">From</label>
 
-                                                            <input autocorrect="off" class="jpFrom" data-val="true" data-val-required="The&#32;From&#32;field&#32;is&#32;required." id="InputFrom" maxlength="100" name="InputFrom" placeholder="From" type="text" value="" />
+                                                            <input autocorrect="off" class="jpFrom" data-val="true" id="InputFrom" maxlength="100" name="InputFrom" placeholder="From" type="text" value="" />
 
                                                             <span class="field-validation-valid" data-valmsg-for="InputFrom" data-valmsg-replace="true"></span>
 
@@ -553,10 +416,7 @@
 
 
 
-                                                    <div id="search-filter-form-1"
-                                                         data-placeholder="" data-datasets="[[&quot;stopPoints&quot;,&quot;journeyPlannerNoSubmit?Input={{input}}&quot;],[&quot;bikePoints&quot;,&quot;journeyPlannerNoSubmit?Input={{input}}&quot;],[&quot;placesExtra&quot;,&quot;journeyPlannerNoSubmit?Input={{input}}&quot;]]" data-busstopsonly="False"
-                                                         data-display-selected-modes-only="False" data-include-geolocation="True"
-                                                         data-modes="tube,dlr,overground,tflrail,bus,river-bus,tram,cable-car,national-rail,river-tour" data-ajax-enabled="False" data-excludehubs="False" class="clearfix">
+                                                    <div id="search-filter-form-1">
 
 
 
@@ -592,7 +452,7 @@
 
                                                     </div>
 
-                                                    <div class="change-time-options">
+                                                    <!--<div class="change-time-options">
 
                                                         <div class="clearfix">
 
@@ -894,7 +754,7 @@
 
                                                         </div>
 
-                                                    </div>
+                                                    </div>-->
 
                                                 </div>
 
@@ -914,7 +774,7 @@
 
                                     </div>
 
-                                    <div id="more-journey-options">
+                                    <!--<div id="more-journey-options">
 
                                         <div>
 
@@ -964,7 +824,7 @@
 
                                                         <option selected="selected" value="overground">London Overground</option>
 
-                                                        <option selected="selected" value="tflrail">TfL Rail</option>
+                                                        
 
                                                         <option selected="selected" value="river-bus">River Bus</option>
 
@@ -1118,10 +978,7 @@
 
 
 
-                                                            <div id="search-filter-form-2"
-                                                                 data-placeholder="" data-datasets="[[&quot;stopPoints&quot;,&quot;journeyPlannerNoSubmit?Input={{input}}&quot;]]" data-busstopsonly="False"
-                                                                 data-display-selected-modes-only="False" data-include-geolocation="True"
-                                                                 data-modes="tube,dlr,overground,tflrail,bus,river-bus,tram,cable-car,national-rail" data-ajax-enabled="False" data-excludehubs="False" class="clearfix">
+                                                            <div id="search-filter-form-2">
 
 
 
@@ -1191,7 +1048,7 @@
 
                                         </div>
 
-                                    </div>
+                                    </div>-->
 
 
 
@@ -1331,40 +1188,65 @@
                     </div>
 
                 </div>
-                <div class="advert-tile unsponsored-style google-ads">
-
-                    <div class="advert-link" style="background: rgb(247, 247, 247) none repeat scroll 0% 0%;">
-
-                        <div class="advert-content">
-
-                            <div class="medium-large" data-advert="/3595/TFL/Homepage" data-advert-sizes="300, 250">
-
-                            </div>
-
-                            <div class="small" data-advert="/3595/TFL/Homepage" data-advert-sizes="300, 250|300, 600">
-
-                            </div>
-
-                            <a href="#"><img class="img_ad" width="300" height="250" border="0" alt="" src="images/promos/contactless-homepage-promo.jpg"></a>
-
-                            <a class="advertisement-label" href="/info-for/business-and-commercial/commercial-opportunities/advertising-on-the-network">Advertisement</a>
-
-                        </div>
-
-                    </div>
-
-                </div>
+                
 
 
             </div>
 
 
             <div class="sub-main">
+                <!--Div for pop up starts-->
+                <div><div class="container">
+    
+    <div id="modal" class="popupContainer" style="display:none;">
+        <header class="popupHeader">
+            <span class="header_title">Login</span>
+            <span class="modal_close"><i class="fa fa-times"></i></span>
+        </header>
+
+        <section class="popupBody">
+            <!-- Social Login -->
+            
+            <form>
+                <label>Email / Username</label>
+
+                <input type="text" />
+                <br />
+                <label>Password</label>
+
+                <input type="text" />
+                <br /><br />
+                <div>
+
+
+                    <input type="checkbox" id="check" />
+
+                    <label for="remember">Remember me on this computer </label>
+
+                </div>
+                <div class="action_btns">
+                   
+                    <div class="one_half last"><a href="BookedTicketHistory.html" class="btn btn_red">Login</a></div>
+                </div>
+            </form>
+            <a href="#" class="forgot_password">Forgot password?</a>
+               
+            
+            <!-- Username & Password Login form -->
+           
+            <!-- Register Form -->
+            
+        </section>
+    </div>
+</div></div>
+                <!--div for popup ends-->
+
 
                 <div class="main-services">
                     <div class="section-style-login">
-                        <a style="text-decoration:none; color:#CCCCCC" href="#"><img src="Images/login.png" />Login</a> Or
-                        <a style="text-decoration:none; color:#CCCCCC" href="#">Registration</a>
+                        <a style="text-decoration:none; color:#CCCCCC" href="#modal" id="modal_trigger"><img src="Images/login.png" />Login</a> 
+                        <a style="text-decoration:none; color:#CCCCCC" href="">Or</a>
+                        <a style="text-decoration:none; color:#CCCCCC" href="Registration.html">Registration</a>
                     </div>
                     <div data-set="reserved-teaser" class="large tertiary-teaser">
                         <div style="background-color:#f8f7f7">
@@ -1447,7 +1329,7 @@
 
                     <a href="/travel-information/social-media-and-email-updates/" class="plain-button">Social media &amp; email updates</a>
 
-                    <a href="http://blog.tfl.gov.uk/" class="plain-button">TfL Digital Blog</a>
+                   
 
                 </div>
 
@@ -1482,16 +1364,13 @@
         </div>
     </div>
 
-
-
-
     <script>
 
         var myIndex = 0;
 
         carousel();
 
-
+// script for slider
 
         function carousel() {
 
@@ -1511,517 +1390,41 @@
 
             x[myIndex - 1].style.display = "block";
 
-            setTimeout(carousel, 4000); // Change image every 2 seconds
+            setTimeout(carousel, 3000); // Change image every 3 seconds
 
         }
 
     </script>
-
-    <script src="/cdn/static/scripts/core/min/init.min.c77abd11.js"></script>
-
-    <script>
-
-        (function (i, s, o, g, r, a, m) {
-
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-
-                (i[r].q = i[r].q || []).push(arguments)
-
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-
-
-        ga('create', 'UA-42514315-1', 'tfl.gov.uk');
-
-        ga('send', 'pageview');
-
-
-
-
-
-        var queue = [function () { tfl.settings.debug = false; }, "//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js", null];
-
-        var isDebug = false;
-
-        var isMapsDebug = false;
-
-        var isGoogleMapsDebug = false;
-
-        var predictionsAjaxPolling = false;
-
-
-
-        tfl.apiUrl = "https://api-neon.tfl.gov.uk/";
-
-        tfl.protectedApiUrl = "http://localhost:8006";
-
-        tfl.pushApiUrl = "https://push-api-neon.tfl.gov.uk/";
-
-        tfl.appId = "8268063a";
-
-        tfl.appKey = "14f7f5ff5d64df2e88701cef2049c804";
-
-
-
-        // Api mode names
-
-        tfl.modeNameBus = "bus";
-
-        tfl.modeNameCableCar = "cable-car";
-
-        tfl.modeNameDlr = "dlr";
-
-        tfl.modeNameOverground = "overground";
-
-        tfl.modeNameTflRail = "tflrail";
-
-        tfl.modeNameRiver = "river-bus";
-
-        tfl.modeNameTrain = "national-rail";
-
-        tfl.modeNameTram = "tram";
-
-        tfl.modeNameTube = "tube";
-
-        tfl.modeNameTraffic = "traffic";
-
-        tfl.modeNameMultiModal = "hub";
-
-
-
-        // bus stopType
-
-        tfl.naptanPublicBusCoachTram = "NaptanPublicBusCoachTram";
-
-
-
-        // disambiguation datasets
-
-        tfl.disambiguationDataSets = {
-
-            placesExtra: "placesExtra",
-
-            routes: "routes",
-
-            stopPoints: "stopPoints",
-
-            bikePoints: "bikePoints"
-
-        };
-
-
-
-        //api error message
-
-        tfl.apiErrorMessage = "Sorry, there was a problem with your request. Please try again later.";
-
-
-
-        //page Urls
-
-        tfl.jPLandingPageUrl = "/plan-a-journey/";
-
-        tfl.jPResultsPageUrl = "/plan-a-journey/results";
-
-        tfl.disambiguationUrl = "/Disambiguation/AmbiguousSearchAjax";
-
-
-
-        //Typeahead search stops
-
-        tfl.stopPointsSearchPrevent = false;
-
-        tfl.stopPointsSearchPreviousQueryLength = 0;
-
-        tfl.placesExtraSearchPrevent = false;
-
-        tfl.placesExtraSearchPreviousQueryLength = 0;
-
-        tfl.bikePointsSearchPrevent = false;
-
-        tfl.bikePointsSearchPreviousQueryLength = 0;
-
-
-
-        //switch off buss on home page
-
-        tfl.showBusStatusOnHomePage = "True";
-
-
-
-        queue.push("/cdn/static/scripts/core/min/global.min.ce10832e.js", null);
-
-
-
-
-
-        queue.push(function () {
-
-            var allowCorsInIe9 = "/cdn/static/scripts/jquery-ajaxtransport-xdomainrequest/1.0.3/jquery.xdomainrequest.min.js",
-
-                l = $LAB,
-
-                isie9OrLess = $("html").hasClass("lt-ie10");
-
-
-
-            if (isie9OrLess) {
-
-                l.script(allowCorsInIe9);
-
-                l.wait();
-
-            }
-
-        });
-
-
-
-        if (isMapsDebug) {
-
-            tfl.mapScriptPath = "/mapssource/packageall/packageall.js";
-
-            tfl.stealScriptPath = "/mapssource/steal/steal.js";
-
-        } else {
-
-            tfl.mapScriptPath = "/cdn/static/scripts/maps/packageall/production.js";
-
-            tfl.stealScriptPath = "/cdn/static/scripts/maps/steal/steal.production.js";
-
-        }
-
-
-
-        if (isGoogleMapsDebug) {
-
-            tfl.isGoogleMapsDebug = true;
-
-        }
-
-    </script>
-
-
-
-    <script>
-
-        queue.push(function () {
-
-            $("#From").attr("data-jumpback", ".show-mobile-search:visible, #search-button:visible");
-
-        });
-
-    </script>
-
-
-
-    <script>
-
-        queue.push(function () {
-
-
-
-            if (!$('body').hasClass('personalisation-active')) {
-
-                $('#home-status-updates-default').css("visibility", "visible");
-
-            }
-
-
-
-        });</script>
-
-    <script>
-
-        queue.push("/cdn/static/scripts/modules/search-filter.js", null);
-
-    </script>
-
-    <script>
-
-        queue.push(
-
-            function () {
-
-                tfl.searchFilter.setNearUrl("/maps");
-
-            }, null
-
-        );
-
-    </script>
-
-    <script>
-
-        queue.push("/cdn/static/scripts/modules/search-filter.js", null);
-
-    </script>
-
-    <script>
-
-        queue.push(
-
-            function () {
-
-                tfl.searchFilter.setNearUrl("/maps");
-
-            }, null
-
-        );
-
-    </script>
-
-    <script>
-
-        queue.push("/cdn/static/scripts/modules/search-filter.js", null);
-
-    </script>
-
-    <script>
-
-        queue.push(
-
-            function () {
-
-                tfl.searchFilter.setNearUrl("/maps");
-
-            }, null
-
-        );
-
-    </script>
-
-    <script>
-
-        queue.push(function () { tfl.journeyPlanner.searchForm.init(true); });
-
-        queue.push("/cdn/static/scripts/jquery/jquery.xdomainrequest.js", null); //Allows CORS in ie9 or lower, enabling auto-suggest in JP, courtesy of https://github.com/MoonScript/jQuery-ajaxTransport-XDomainRequest
-
-    </script>
-
-    <script>
-
-        queue.push("/cdn/static/scripts/modules/search-filter.js", null);
-
-    </script>
-
-    <script>
-
-        tfl.logs.create("tfl.favstatusbus: creating");
-
-        if (predictionsAjaxPolling || navigator.userAgent.indexOf("BlackBerry") >= 0) {
-
-            tfl.logs.create("tfl.favstatusbus: blackberry");
-
-            // reverting to AJAX polling for Blackberry 7 devices
-
-            queue.push(
-
-                "/cdn/static/scripts/specific/stations-stops-piers/predictions-ajax.js", null
-
-            );
-
-        } else {
-
-            tfl.logs.create("tfl.statusbus: non-blackberry");
-
-            queue.push(
-
-                "/cdn/static/scripts//plugins/includes/jquery.signalR-2.2.0.min.js", null,
-
-
-
-                "https://push-api-neon.tfl.gov.uk/signalr/hubs", null,
-
-                "/cdn/static/scripts//plugins/includes/knockout-2.3.0.min.js", null,
-
-                "/cdn/static/scripts/specific/stations-stops-piers/predictions.min.js", null
-
-            );
-
-        }
-
-    </script>
-
-    <script>
-
-        queue.push(
-
-            function () { tfl.serviceStatus.initServiceBoardAutoRefresh("/StatusUpdates/StatusBoard?modes=tube,dlr,overground,tflrail&startDate=&endDate=&collapsed=True&isHomeOrModePageStatusBoard=True&isStatusUpdatesPage=False&isFavouritesPanel=False", "rainbow-list-tube-dlr-overground-tflrail", "tube,dlr,overground,tflrail"); }, null
-
-        );
-
-    </script>
-
-    <script>
-
-        queue.push("/cdn/static/scripts/modules/search-filter.js", null);
-
-    </script>
-
-    <script>
-
-        queue.push(
-
-            function () {
-
-                tfl.serviceStatus.initServiceBoardAutoRefresh("/StatusUpdates/StatusBoard?modes=traffic&collapsed=True&isFavouritesPanel=False", "rainbow-list-roads", "traffic", "False".toLowerCase());
-
-            }, null
-
-        );
-
-    </script>
-
-    <script>
-
-        queue.push(
-
-            function () { tfl.serviceStatus.initServiceBoardAutoRefresh("/StatusUpdates/StatusBoard?modes=river-bus&startDate=&endDate=&collapsed=True&isHomeOrModePageStatusBoard=False&isStatusUpdatesPage=False&isFavouritesPanel=False", "rainbow-list-river-bus", "river-bus"); }, null
-
-        );
-
-    </script>
-
-    <script>
-
-        queue.push(
-
-            function () { tfl.serviceStatus.initServiceBoardAutoRefresh("/StatusUpdates/StatusBoard?modes=tram&startDate=&endDate=&collapsed=True&isHomeOrModePageStatusBoard=False&isStatusUpdatesPage=False&isFavouritesPanel=False", "rainbow-list-tram", "tram"); }, null
-
-        );
-
-    </script>
-
-    <script>
-
-        queue.push(
-
-            function () { tfl.serviceStatus.initServiceBoardAutoRefresh("/StatusUpdates/StatusBoard?modes=cable-car&startDate=&endDate=&collapsed=True&isHomeOrModePageStatusBoard=False&isStatusUpdatesPage=False&isFavouritesPanel=False", "rainbow-list-cable-car", "cable-car"); }, null
-
-        );
-
-    </script>
-
-    <script>
-
-        queue.push(
-
-            function () { tfl.serviceStatus.initServiceBoardAutoRefresh("/StatusUpdates/StatusBoard?modes=national-rail&startDate=&endDate=&collapsed=True&isHomeOrModePageStatusBoard=False&isStatusUpdatesPage=False&isFavouritesPanel=False", "rainbow-list-national-rail", "national-rail"); }, null
-
-        );
-
-    </script>
-
-    <script>
-
-        tfl.logs.create("tfl.favstatusbus: creating");
-
-        if (predictionsAjaxPolling || navigator.userAgent.indexOf("BlackBerry") >= 0) {
-
-            tfl.logs.create("tfl.favstatusbus: blackberry");
-
-            // reverting to AJAX polling for Blackberry 7 devices
-
-            queue.push(
-
-                "/cdn/static/scripts/specific/stations-stops-piers/predictions-ajax.js", null
-
-            );
-
-        } else {
-
-            tfl.logs.create("tfl.statusbus: non-blackberry");
-
-            queue.push(
-
-                "/cdn/static/scripts//plugins/includes/jquery.signalR-2.2.0.min.js", null,
-
-                "https://push-api-neon.tfl.gov.uk/signalr/hubs", null,
-
-                "/cdn/static/scripts//plugins/includes/knockout-2.3.0.min.js", null,
-
-                "/cdn/static/scripts/specific/stations-stops-piers/predictions.min.js", null
-
-            );
-
-        }
-
-    </script>
-
-    <script>
-
-        queue.push("/cdn/static/scripts/modules/search-filter.js", null);
-
-    </script>
-
-
-
-    <script>
-
-        var $L = $LAB;
-
-        for (var i = 0, len = queue.length; i < len; i++) {
-
-            if (typeof queue[i] == "string") {
-
-                $L = $L.script(queue[i]);
-
-            } else if (!queue[i]) {
-
-                $L = $L.wait();
-
-            } else if (typeof queue[i] == "function") {
-
-                $L = $L.wait(queue[i]);
-
-            }
-
-        }
-
-    </script>
-
-
-
-    <!-- SiteCatalyst code version: H.26. -->
-
     <script type="text/javascript">
+        $("#modal_trigger").leanModal({ top: 200, overlay: 0.6, closeButton: ".modal_close" });
 
-        tfl.stats.account = 'tfl-global';
+        $(function () {
+            // Calling Login Form
+            $("#login_form").click(function () {
+                $(".social_login").hide();
+                $(".user_login").show();
+                return false;
+            });
 
+            // Calling Register Form
+            $("#register_form").click(function () {
+                $(".social_login").hide();
+                $(".user_register").show();
+                $(".header_title").text('Register');
+                return false;
+            });
+
+            // Going back to Social Forms
+            $(".back_btn").click(function () {
+                $(".user_login").hide();
+                $(".user_register").hide();
+                $(".social_login").show();
+                $(".header_title").text('Login');
+                return false;
+            });
+
+        })
     </script>
-
-    <script src="/cdn/static/scripts/core/min/stats.min.f8d91423.js"></script>
-
-
-
-    <script type="text/javascript">
-
-        <!--
-
-        tfl.stats.code = s.t(); if (tfl.stats.code) document.write(tfl.stats.code);
-
-        if (navigator.appVersion.indexOf('MSIE') >= 0) document.write(unescape('%3C') + '\!-' + '-');
-
-        //-->
-
-    </script>
-
-    <script src="https://tags.crwdcntrl.net/c/8190/cc_af.js"></script>
-
-    <noscript>
-
-        <img src="http://tfl.d3.sc.omtrdc.net/b/ss/tfl-global/1/H.26--NS/0?[AQB]&cdp=3&[AQE]" height="1" width="1" alt="" />
-
-    </noscript>
-
-    <!-- End SiteCatalyst -->
-
-
 
 </body>
 

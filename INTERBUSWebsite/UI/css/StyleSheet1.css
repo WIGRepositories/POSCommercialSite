@@ -92,8 +92,8 @@
     }
 
         .news-teaser a .text-link:after, .content-information-box a .text-link:after, .news-teaser a:visited .text-link:after, .content-information-box a:visited .text-link:after, .news-teaser a:active .text-link:after, .content-information-box a:active .text-link:after {
-            background-image: url("/static/1/images/vsprite_x2.b9905b1f.png");
-            background-image: url("/static/1/images/vsprite.fdb08bfe.png") \9;
+            background-image: url("Images/vsprite_x2.b9905b1f.png");
+            background-image: url("Images/vsprite.fdb08bfe.png") \9;
             background-size: 96px 3328px;
             height: 32px;
             width: 32px;
@@ -101,7 +101,7 @@
         }
 
 .body-cms-preview .news-teaser a .text-link:after, .body-cms-preview .content-information-box a .text-link:after, .body-cms-preview .news-teaser a:visited .text-link:after, .body-cms-preview .content-information-box a:visited .text-link:after, .body-cms-preview .news-teaser a:active .text-link:after, .body-cms-preview .content-information-box a:active .text-link:after {
-    background-image: url("/static/1/images/vsprite.fdb08bfe.png");
+    background-image: url("Images/vsprite.fdb08bfe.png");
 }
 
 .fc-calendar-wrapper .current-month .calendar-previous-month:not([disabled='disabled']):hover, .fc-calendar-wrapper .current-month .calendar-next-month:not([disabled='disabled']):hover, .fc-calendar-wrapper .current-month .calendar-previous-month:not([disabled='disabled']):focus, .fc-calendar-wrapper .current-month .calendar-next-month:not([disabled='disabled']):focus, .fc-calendar-wrapper .current-month .disabled.calendar-previous-month:not([disabled='disabled']):hover, .fc-calendar-wrapper .current-month .disabled.calendar-next-month:not([disabled='disabled']):hover, .fc-calendar-wrapper .current-month .disabled.calendar-previous-month:not([disabled='disabled']):focus, .fc-calendar-wrapper .current-month .disabled.calendar-next-month:not([disabled='disabled']):focus, .collapsible-menu a:hover, .collapsible-menu a:focus, .navigation-style-1 .item-title:hover, .navigation-style-1 .item-title:focus, .navigation-style-1 .selected .item-title:hover, .navigation-style-1 .selected .item-title:focus, .top-row-extras a:hover, .top-row-extras a:focus, .extra-nav .extras a:hover, .extra-nav .extras a:focus, #footer .info-for-link:focus h2.heading, #footer .info-for-link:hover h2.heading, .tabs-style-1 > li:hover, .tabs-style-1 > li:focus, .tabs-style-2 > li:hover, .tabs-style-2 > li:focus, .share-widget-wrapper .share-widget:hover, .share-widget-wrapper .share-widget:focus, .for-dropdown .links-list#gla-list li:hover, .for-dropdown .links-list#gla-list li:focus, .for-dropdown .links-list#gla-list li a:hover, .for-dropdown .links-list#gla-list li a:focus, .for-dropdown a:hover, .for-dropdown a:focus, .for-dropdown .datepicker-dropdown .fc-row .highlighted-day a:hover, .for-dropdown .datepicker-dropdown .fc-row .highlighted-day a:focus, .widget-wrapper.info-widget .widget-heading:hover, .widget-wrapper.info-widget .widget-heading:focus, .routes-list .route > a:hover, .routes-list .route > a:focus, .favourites-box .favourites-mode.disrupted .always-visible:hover, .favourites-box .favourites-mode.disrupted .always-visible:focus, .favourites-box .always-visible:hover, .favourites-box .always-visible:focus, .select-bus .towards-link:hover, .select-bus .towards-link:focus, .list-loader .list-loader-link > a:hover, .list-loader .list-loader-link > a:focus, .list-loader .list-loader-option.expanded.secondary-expanded > .list-loader-link > a:hover, .list-loader .list-loader-option.expanded.secondary-expanded > .list-loader-link > a:focus, .list-loader .list-loader-option.expanded > .list-loader-link > a:hover, .list-loader .list-loader-option.expanded > .list-loader-link > a:focus, .bus-list > li > a:hover, .bus-list > li > a:focus, .shop-widget ul li a:focus, .shop-widget ul li a:hover, .shop-widget ul li a:hover:focus, .shop-widget ul li a:visited:focus, .shop-widget ul li a:visited:hover, .shop-widget ul li a:active:focus, .shop-widget ul li a:active:hover, .disambiguation-option .disambiguation-link:hover, .disambiguation-option .disambiguation-link:focus, .rainbow-board.roads table tr:hover td.line-text, .rainbow-board .re-plan-button:hover, .board-wrapper .service-status a:hover, .board-wrapper .service-status a:focus, .rainbow-board tr:hover td.service-status, .rainbow-board tr:focus td.service-status, .rainbow-board tr:hover td.bakerloo, .rainbow-board tr:focus td.bakerloo, .rainbow-board tr:hover td.central, .rainbow-board tr:focus td.central, .rainbow-board tr:hover td.circle, .rainbow-board tr:focus td.circle, .rainbow-board tr:hover td.district, .rainbow-board tr:focus td.district, .rainbow-board tr:hover td.dlr, .rainbow-board tr:hover td.docklands, .rainbow-board tr:hover td.docklands-light-railway, .rainbow-board tr:focus td.dlr, .rainbow-board tr:focus td.docklands, .rainbow-board tr:focus td.docklands-light-railway, .rainbow-board tr:hover td.hammersmith, .rainbow-board tr:focus td.hammersmith, .rainbow-board tr:hover td.jubilee, .rainbow-board tr:focus td.jubilee, .rainbow-board tr:hover td.metropolitan, .rainbow-board tr:focus td.metropolitan, .rainbow-board tr:hover td.northern, .rainbow-board tr:focus td.northern, .rainbow-board tr:hover td.overground, .rainbow-board tr:focus td.overground, .rainbow-board tr:hover td.piccadilly, .rainbow-board tr:focus td.piccadilly, .rainbow-board tr:hover td.victoria, .rainbow-board tr:focus td.victoria, .rainbow-board tr:hover td.waterloo, .rainbow-board tr:focus td.waterloo, .rainbow-board tr:hover td.tram1, .rainbow-board tr:focus td.tram1, .rainbow-board tr:hover td.tram2, .rainbow-board tr:focus td.tram2, .rainbow-board tr:hover td.tram3, .rainbow-board tr:focus td.tram3, .rainbow-board tr:hover td.tram4, .rainbow-board tr:focus td.tram4, .rainbow-board tr:hover td.rb1, .rainbow-board tr:focus td.rb1, .rainbow-board tr:hover td.rb2, .rainbow-board tr:focus td.rb2, .rainbow-board tr:hover td.rb3, .rainbow-board tr:focus td.rb3, .rainbow-board tr:hover td.rb4, .rainbow-board tr:focus td.rb4, .rainbow-board tr:hover td.rb5, .rainbow-board tr:focus td.rb5, .rainbow-board tr:hover td.rb6, .rainbow-board tr:focus td.rb6, .rainbow-board tr:hover td.city-cruises, .rainbow-board tr:focus td.city-cruises, .rainbow-board tr:hover td.thames-river-services, .rainbow-board tr:focus td.thames-river-services, .rainbow-board tr:hover td.circular-cruise-westminster, .rainbow-board tr:focus td.circular-cruise-westminster, .rainbow-board tr:hover td.westminster-passenger-service-association, .rainbow-board tr:hover td.wetsminster-passenger-services-association, .rainbow-board tr:focus td.westminster-passenger-service-association, .rainbow-board tr:focus td.wetsminster-passenger-services-association, .rainbow-board tr:hover td.turk-launches, .rainbow-board tr:focus td.turk-launches, .rainbow-board tr:hover td.woolwich-ferry, .rainbow-board tr:focus td.woolwich-ferry, .rainbow-board tr:hover td.emirates, .rainbow-board tr:focus td.emirates, .rainbow-board tr.has-disruption:hover td.service-status, .rainbow-board tr.has-disruption:focus td.service-status, .rainbow-board.stations-status tr:hover td.line-text, .news-teaser > a:focus, .news-teaser > a:hover, .content-area .news-teaser > a:focus, .content-area .news-teaser > a:hover, .primary-teaser .news-teaser > a:focus, .primary-teaser .news-teaser > a:hover, .content-information-box > a:focus, .content-information-box > a:hover, .timetable-list > *:hover, .timetable-list > *:focus, .timetable-list .load-more:hover, .timetable-list .load-more:focus, .other-languages-wrap .other-languages ul li:hover, .advert-tile .advert-link:focus .caption, .advert-tile .advert-link:hover .caption, .broadcast-comms:hover, .broadcast-comms:focus, .large-icon-accordion ul a:hover, .large-icon-accordion ul a:focus, .large-icon-accordion ul a:hover .mini-map, .large-icon-accordion ul a:focus .mini-map, .fav-panel #fav-panel-rainbow-list-roads.rainbow-board tr .service-status.has-disruption:hover, .fav-panel #fav-panel-rainbow-list-roads.rainbow-board tr .service-status.has-disruption:focus, .fav-panel #fav-panel-rainbow-list-roads.rainbow-board tr .service-status:hover, .fav-panel #fav-panel-rainbow-list-roads.rainbow-board tr .service-status:focus, .c-buttons:hover, .c-buttons:focus, .fav-panel-status .fav-forward-to-all:hover, .fav-panel-status .fav-forward-to-all:focus, .home-favourites .fav-rainbow-board .good-service-link:hover, .home-favourites .fav-rainbow-board .good-service-link:focus {
@@ -1706,8 +1706,8 @@
 
 #footer {
     border-top: 3px solid #ccc;
-    margin-top: 50px;
-    background-color: #202329;
+    
+   
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0px, #292C34),color-stop(6px, #373D48),color-stop(300px, #1F2329));
     background-image: -webkit-linear-gradient(#292C34 0px,#373D48 6px,#1F2329 300px);
     background-image: linear-gradient(#292C34 0px,#373D48 6px,#1F2329 300px);
@@ -1726,16 +1726,16 @@
     }
 
     #footer .footer-links {
-        padding-top: 10px;
+        
         height: 100%;
         margin: 0 2.54% 10px;
     }
 
         #footer .footer-links .languages {
-            background-image: url("/static/1/images/vsprite_x2.b9905b1f.png");
-            background-image: url("/static/1/images/vsprite.fdb08bfe.png") \9;
-            background-image: url("/static/1/images/vsprite_x2.b9905b1f.png");
-            background-image: url("/static/1/images/vsprite.fdb08bfe.png") \9;
+            background-image: url("Images/vsprite_x2.b9905b1f.png");
+            background-image: url("Images/vsprite.fdb08bfe.png") \9;
+            background-image: url("Images/vsprite_x2.b9905b1f.png");
+            background-image: url("Images/vsprite.fdb08bfe.png") \9;
             background-size: 96px 3328px;
             background-position: 0px -1312px;
             height: 25px;
@@ -1744,11 +1744,11 @@
         }
 
 .body-cms-preview #footer .footer-links .languages {
-    background-image: url("/static/1/images/vsprite.fdb08bfe.png");
+    background-image: url("Images/vsprite.fdb08bfe.png");
 }
 
 .body-cms-preview #footer .footer-links .languages {
-    background-image: url("/static/1/images/vsprite.fdb08bfe.png");
+    background-image: url("Images/vsprite.fdb08bfe.png");
 }
 
 #footer h2.heading {
@@ -1883,8 +1883,8 @@
 }
 
     .languages-footer a:after {
-        background-image: url("/static/1/images/vsprite_x2.b9905b1f.png");
-        background-image: url("/static/1/images/vsprite.fdb08bfe.png") \9;
+        background-image: url("Images/vsprite_x2.b9905b1f.png");
+        background-image: url("Images/vsprite.fdb08bfe.png") \9;
         background-size: 96px 3328px;
         height: 32px;
         width: 32px;

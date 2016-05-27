@@ -100,6 +100,7 @@
     <Content Include="UI\css\bootstrap-theme.min.css" />
     <Content Include="UI\css\Main.css" />
     <Content Include="UI\css\style-responsive.css" />
+    <Content Include="UI\css\style.css" />
     <Content Include="UI\css\StyleSheet1.css" />
     <Content Include="UI\css\StyleSheet2.css" />
     <Content Include="UI\css\StyleSheet3.css" />
@@ -218,8 +219,10 @@
     <Content Include="UI\js\Index.js" />
     <Content Include="UI\js\jplist.js" />
     <Content Include="UI\js\jquery-1.10.2.min.js" />
+    <Content Include="UI\js\jquery-1.11.0.min.js" />
     <Content Include="UI\js\jquery-migrate-1.2.1.min.js" />
     <Content Include="UI\js\jquery-ui.js" />
+    <Content Include="UI\js\jquery.leanModal.min.js" />
     <Content Include="UI\js\jquery.menu.js" />
     <Content Include="UI\js\jquery.nivo.slider.js" />
     <Content Include="UI\js\LicensePage.js" />
@@ -231,9 +234,9 @@
     <Content Include="UI\LicensePage.html" />
     <Content Include="UI\Login.html" />
     <Content Include="UI\mail.html" />
-    <Content Include="UI\newinvoice.html" />
     <Content Include="UI\PrintTicket.html" />
     <Content Include="UI\Refund.html" />
+    <Content Include="UI\Registration.html" />
     <Content Include="UI\registrationform.html" />
     <Content Include="UI\Schedules.html" />
     <Content Include="UI\seats.html" />
