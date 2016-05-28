@@ -20,8 +20,6 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" href="/cdn/static/assets/icons/favicon.ico" type="image/x-icon" />
-
     <link rel="stylesheet" href="css/w3.css">
 
    
@@ -79,29 +77,16 @@
 
 
 
-    <script src="js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
 
     
-
-<noscript>
-
-        <link href="/cdn/static/styles/core/min/no-js.min.8296e186.css" media="screen" rel="stylesheet" />    
-
-    </noscript>
-
-    <title>Every Journey Matters - Transport for London</title>
-
-    
-
-
-
     <meta name="description" content="Information on all forms of transport in London including cycle hire. Routes, maps, plan a journey, tickets sales, realtime traffic and travel updates." />
 
     <meta name="keywords" />
 
     <meta name="author" content="Transport for London | Every Journey Matters" />
 
-    <meta property="og:url" content="https://www.tfl.gov.uk/" />
+    <meta property="og:url" content="https://www..com/" />
 
     <meta property="og:title" content="Every Journey Matters" />
 
@@ -109,9 +94,9 @@
 
     <meta property="og:site_name" content="Transport for London" />
 
-    <meta property="article:publisher" content="https://facebook.com/transportforlondon" />
+    <meta property="article:publisher" content="https://facebook.com/" />
 
-    <meta property="article:author" content="https://facebook.com/transportforlondon" />
+    <meta property="article:author" content="https://facebook.com/" />
 
     <meta name="twitter:creator" content="&#64;tfl" />
 
@@ -146,209 +131,6 @@
             <link href="/cdn/static/styles/core/min/ie.min.0b308d8c.css" media="screen" rel="stylesheet" />
 
         <![endif]-->
-
-
-
-
-
-               
-
-            <script type='text/javascript'>
-
-                amznads.getAds('3199');
-
-            amznads.setTargetingForGPTAsync('amznslots');
-
-        </script>
-
-        <script type='text/javascript'>
-
-            var googletag = googletag || {};
-
-            googletag.cmd = googletag.cmd || [];
-
-            window.onload = function () {
-
-                var ads = document.querySelectorAll("[data-advert]");
-
-                if (ads !== null && ads.length > 0) {
-
-                    (function () {
-
-                        var gads = document.createElement('script');
-
-                        gads.async = true;
-
-                        gads.type = 'text/javascript';
-
-                        var useSSL = 'https:' == document.location.protocol;
-
-                        gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
-
-                        var node = document.getElementsByTagName('script')[0];
-
-                        node.parentNode.insertBefore(gads, node);
-
-                    })();
-
-                    googletag.cmd.push(function () {
-
-                        var toDisplay = [];
-
-                        var fromJP = $('#From');                            
-
-                        var toJP = $('#To');  
-
-
-
-                        function addDisplayAd(ad, id) {
-
-                            var sc = document.createElement('script');
-
-                            sc.type = 'text/javascript';
-
-                            sc.text = "googletag.cmd.push(function () { googletag.display('" + id + "'); });";
-
-                            ad.appendChild(sc);
-
-                        }
-
-            
-
-                        for (var i = 0; i < ads.length; i++) {
-
-                            var ad = ads[i];
-
-                            if (ad.offsetParent === null) {
-
-                                continue;
-
-                            }
-
-                            var id = 'adv-' + i;
-
-                            var path = ad.getAttribute("data-advert");
-
-                            var sizesArr = ad.getAttribute("data-advert-sizes").split('|');
-
-                            var sizes = [];
-
-                            for (var s = 0; s < sizesArr.length; s++) {
-
-                                sizes.push(sizesArr[s].split(',').map(Number));
-
-                            }
-
-                            addDisplayAd(ad, id);
-
-                            toDisplay.push(id);
-
-                            ad.setAttribute("id", id);
-
-                            googletag.defineSlot(path, sizes, id).addService(googletag.pubads());
-
-                        }
-
-
-
-                        if (fromJP.val() !== "" && toJP.val() !== "") {
-
-                            googletag.pubads().setTargeting('from', fromJP);
-
-                            googletag.pubads().setTargeting('to', toJP);
-
-                        } 
-
-
-
-                        googletag.pubads().enableSingleRequest();
-
-                        googletag.pubads().setCentering(true);
-
-
-
-
-
-
-
-                        if(!$(".top-banner-advert .large").is(":visible")) {
-
-                          googletag.pubads().collapseEmptyDivs(true);
-
-                        } 
-
-
-
-                        googletag.pubads().addEventListener('slotRenderEnded', function(event) {
-
-
-
-                          var id = $('#' + event.slot.getSlotElementId());
-
-
-
-                          if (!event.isEmpty) {                            
-
-                            var adHeight = event.size[1];
-
-                            var adLabel = '<a class="advertisement-label" href="/info-for/business-and-commercial/commercial-opportunities/advertising-on-the-network">Advertisement</a>';
-
-
-
-                            if(id.hasClass("large")) {                              
-
-                              id.css("background-color", "#fff").animate({height: adHeight}, 2000);
-
-                            }
-
-
-
-                            if (id.parent().hasClass("advert-content")) {
-
-                              id.append(adLabel).closest('.advert-link').css('background', '#f7f7f7');
-
-                            } else {
-
-                              id.prepend(adLabel);
-
-                            }
-
-                          }
-
-                        });
-
-                        googletag.enableServices();
-
-                        for (var ii = 0; ii < toDisplay.length; ii++) {
-
-                            googletag.display(toDisplay[ii]);
-
-                        }
-
-                    });
-
-                }
-
-            };
-
-        </script>
-
-
-
-        <script type='text/javascript'>
-
-            try { amznads.setTargetingForGPTAsync('amznslots'); } catch (e) { /*ignore*/ };
-
-        </script>
-
-
-
-    
-
-
-
-
-
 
 
 <script type="text/javascript">
@@ -418,12 +200,12 @@
 <!--Start Menu-->
         <div class="mainnav" id="mainnav" tabindex="0">
 
-            <div class="top-row" style="position:fixed">
+            <div class="top-row" style="position:fixed; z-index:1">
 
                 <div class="r">
 
                     <ul class="collapsible-menu clearfix">
-                        <li style="margin-right:65px"><img style="width:100%; height:56px" src="Images/logos/interbusLogo.png" alt="Alternate Text" /> </li>
+                        <li style="margin-right:65px"><a style="margin-top:0px; padding-top:0px" href="Index.html"><img style="width:100%; height:56px" src="Images/logos/interbusLogo.png" alt="Alternate Text" /></a> </li>
 
                         <li>
 
@@ -479,13 +261,8 @@
                 </div>
 <!--End Header-->
 
-<div class="row">
-
-</div>
-                        
-
-                           
-<div class="row">
+                      
+<div class="row" style="margin-top:60px">
 
 <div class="container">
 <div class="row">
@@ -495,105 +272,101 @@
  <h4 style="padding-top:10px;text-align:center">Do not have a fleet owner code? please <a href="Fleetownerrequest.html" style="color:red">click here</a> to contact INTERBUS administrator </h4>
  
  </div>
-</div></div>
-                      <div class="col-md-8 col-md-offset-1">
-          
-       	
-       
-              <!--BEGIN PAGE WRAPPER-->
-    
-            <!--BEGIN TITLE & BREADCRUMB PAGE-->
-            <!--END TITLE & BREADCRUMB PAGE--><!--BEGIN CONTENT-->
-           <div class="page-content">
-                <div id="page-pricing" class="row">
-                    <div class="container">
-                        <div class="row row-merge">
-                            <div class="col-md-3 col-sm-6">
-                                <div class="pricing-widget">
-                                    <div class="pricing-head">Basic</div>
-                                    <div class="pricing-body">
-                                        <div class="pricing-cost">
-                                            <strong style="display: block">$19</strong>
-                                            <small>per month</small>
-                                        </div>
-                                        <ul class="pricing-list text-center">
+</div>
+</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="page-content">
 
 
-                                            <li>Tickets per month <strong>100</strong></li>
-
-
-                                            <li>24/7 Unlimited Support <strong>YES</strong></li>
-                                            <li>Support Tickets per month <strong>10</strong></li>
-                                            <li class="text-center"><a ng-click="GoToConfirmation();" class="btn btn-success">Buy Now</a></li>
-                                        </ul>
+                    <div class="row row-merge">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="pricing-widget">
+                                <div class="pricing-head">Basic</div>
+                                <div class="pricing-body">
+                                    <div class="pricing-cost">
+                                        <strong style="display: block">$19</strong>
+                                        <small>per month</small>
                                     </div>
+                                    <ul class="pricing-list text-center">
+
+
+                                        <li>Tickets per month <strong>100</strong></li>
+
+
+                                        <li>24/7 Unlimited Support <strong>YES</strong></li>
+                                        <li>Support Tickets per month <strong>10</strong></li>
+                                        <li class="text-center"><a ng-click="GoToConfirmation();" class="btn btn-success">Buy Now</a></li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="col-md-3 col-sm-6">
-                                <div class="pricing-widget active">
-                                    <div class="pricing-head">Professional</div>
-                                    <div class="pricing-body">
-                                        <div class="pricing-cost">
-                                            <strong style="display: block"><span>$</span>39</strong>
-                                            <small>per month</small>
-                                        </div>
-                                        <ul class="pricing-list text-center">
-
-
-                                            <li>Tickets per month <strong>200</strong></li>
-
-                                            <li>24/7 Unlimited Support <strong>YES</strong></li>
-                                            <li>Support Tickets per month <strong>30</strong></li>
-                                            <li class="text-center"><a ng-click="GoToConfirmation();" class="btn btn-success">Buy Now</a></li>
-                                        </ul>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="pricing-widget active">
+                                <div class="pricing-head">Professional</div>
+                                <div class="pricing-body">
+                                    <div class="pricing-cost">
+                                        <strong style="display: block"><span>$</span>39</strong>
+                                        <small>per month</small>
                                     </div>
+                                    <ul class="pricing-list text-center">
+
+
+                                        <li>Tickets per month <strong>200</strong></li>
+
+                                        <li>24/7 Unlimited Support <strong>YES</strong></li>
+                                        <li>Support Tickets per month <strong>30</strong></li>
+                                        <li class="text-center"><a ng-click="GoToConfirmation();" class="btn btn-success">Buy Now</a></li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="col-md-3 col-sm-6">
-                                <div class="pricing-widget">
-                                    <div class="pricing-head">Business</div>
-                                    <div class="pricing-body">
-                                        <div class="pricing-cost">
-                                            <strong style="display: block">$59</strong>
-                                            <small>per month</small>
-                                        </div>
-                                        <ul class="pricing-list text-center">
-
-                                            <li>Tickets per month <strong>500</strong></li>
-
-                                            <li>24/7 Unlimited Support <strong>YES</strong></li>
-                                            <li>Support Tickets per month <strong>50</strong></li>
-                                            <li class="text-center"><a ng-click="GoToConfirmation(txt);" class="btn btn-success">Buy Now</a></li>
-                                        </ul>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="pricing-widget">
+                                <div class="pricing-head">Business</div>
+                                <div class="pricing-body">
+                                    <div class="pricing-cost">
+                                        <strong style="display: block">$59</strong>
+                                        <small>per month</small>
                                     </div>
+                                    <ul class="pricing-list text-center">
+
+                                        <li>Tickets per month <strong>500</strong></li>
+
+                                        <li>24/7 Unlimited Support <strong>YES</strong></li>
+                                        <li>Support Tickets per month <strong>50</strong></li>
+                                        <li class="text-center"><a ng-click="GoToConfirmation(txt);" class="btn btn-success">Buy Now</a></li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="col-md-3 col-sm-6">
-                                <div class="pricing-widget">
-                                    <div class="pricing-head">Unlimited</div>
-                                    <div class="pricing-body">
-                                        <div class="pricing-cost">
-                                            <strong style="display: block">$79</strong>
-                                            <small>per month</small>
-                                        </div>
-                                        <ul class="pricing-list text-center">
-
-                                            <li>Tickets per month <strong>800</strong></li>
-
-                                            <li>24/7 Unlimited Support <strong>YES</strong></li>
-                                            <li>Support Tickets per month <strong>80</strong></li>
-                                            <li class="text-center"><a ng-click="GoToConfirmation(txt);" class="btn btn-success">Buy Now</a></li>
-                                        </ul>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="pricing-widget">
+                                <div class="pricing-head">Unlimited</div>
+                                <div class="pricing-body">
+                                    <div class="pricing-cost">
+                                        <strong style="display: block">$79</strong>
+                                        <small>per month</small>
                                     </div>
+                                    <ul class="pricing-list text-center">
+
+                                        <li>Tickets per month <strong>800</strong></li>
+
+                                        <li>24/7 Unlimited Support <strong>YES</strong></li>
+                                        <li>Support Tickets per month <strong>80</strong></li>
+                                        <li class="text-center"><a ng-click="GoToConfirmation(txt);" class="btn btn-success">Buy Now</a></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
-         
-</div>
+
             </div>
+
+        </div>
+    </div>
                       </div>   
 <div class="row">
 <div class="col-lg-12">
