@@ -79,19 +79,12 @@
 
 
 
-    <script src="js/bootstrap.min.js" ></script>
+    <script src="js/bootstrap.min.js"></script>
 
     
+                    <title>Interbus - Get Moving Anywhere, Comfortably</title>
 
-<noscript>
 
-        <link href="/cdn/static/styles/core/min/no-js.min.8296e186.css" media="screen" rel="stylesheet" />    
-
-    </noscript>
-
-    <title>Every Journey Matters - Transport for London</title>
-
-    
 
 
 
@@ -101,7 +94,7 @@
 
     <meta name="author" content="Transport for London | Every Journey Matters" />
 
-    <meta property="og:url" content="https://www.tfl.gov.uk/" />
+    <meta property="og:url" content="https://www..com/" />
 
     <meta property="og:title" content="Every Journey Matters" />
 
@@ -109,9 +102,9 @@
 
     <meta property="og:site_name" content="Transport for London" />
 
-    <meta property="article:publisher" content="https://facebook.com/transportforlondon" />
+    <meta property="article:publisher" content="https://facebook.com/" />
 
-    <meta property="article:author" content="https://facebook.com/transportforlondon" />
+    <meta property="article:author" content="https://facebook.com/" />
 
     <meta name="twitter:creator" content="&#64;tfl" />
 
@@ -146,203 +139,6 @@
             <link href="/cdn/static/styles/core/min/ie.min.0b308d8c.css" media="screen" rel="stylesheet" />
 
         <![endif]-->
-
-
-
-
-
-               
-
-            <script type='text/javascript'>
-
-                amznads.getAds('3199');
-
-            amznads.setTargetingForGPTAsync('amznslots');
-
-        </script>
-
-        <script type='text/javascript'>
-
-            var googletag = googletag || {};
-
-            googletag.cmd = googletag.cmd || [];
-
-            window.onload = function () {
-
-                var ads = document.querySelectorAll("[data-advert]");
-
-                if (ads !== null && ads.length > 0) {
-
-                    (function () {
-
-                        var gads = document.createElement('script');
-
-                        gads.async = true;
-
-                        gads.type = 'text/javascript';
-
-                        var useSSL = 'https:' == document.location.protocol;
-
-                        gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
-
-                        var node = document.getElementsByTagName('script')[0];
-
-                        node.parentNode.insertBefore(gads, node);
-
-                    })();
-
-                    googletag.cmd.push(function () {
-
-                        var toDisplay = [];
-
-                        var fromJP = $('#From');                            
-
-                        var toJP = $('#To');  
-
-
-
-                        function addDisplayAd(ad, id) {
-
-                            var sc = document.createElement('script');
-
-                            sc.type = 'text/javascript';
-
-                            sc.text = "googletag.cmd.push(function () { googletag.display('" + id + "'); });";
-
-                            ad.appendChild(sc);
-
-                        }
-
-            
-
-                        for (var i = 0; i < ads.length; i++) {
-
-                            var ad = ads[i];
-
-                            if (ad.offsetParent === null) {
-
-                                continue;
-
-                            }
-
-                            var id = 'adv-' + i;
-
-                            var path = ad.getAttribute("data-advert");
-
-                            var sizesArr = ad.getAttribute("data-advert-sizes").split('|');
-
-                            var sizes = [];
-
-                            for (var s = 0; s < sizesArr.length; s++) {
-
-                                sizes.push(sizesArr[s].split(',').map(Number));
-
-                            }
-
-                            addDisplayAd(ad, id);
-
-                            toDisplay.push(id);
-
-                            ad.setAttribute("id", id);
-
-                            googletag.defineSlot(path, sizes, id).addService(googletag.pubads());
-
-                        }
-
-
-
-                        if (fromJP.val() !== "" && toJP.val() !== "") {
-
-                            googletag.pubads().setTargeting('from', fromJP);
-
-                            googletag.pubads().setTargeting('to', toJP);
-
-                        } 
-
-
-
-                        googletag.pubads().enableSingleRequest();
-
-                        googletag.pubads().setCentering(true);
-
-
-
-
-
-                        if(!$(".top-banner-advert .large").is(":visible")) {
-
-                          googletag.pubads().collapseEmptyDivs(true);
-
-                        } 
-
-
-
-                        googletag.pubads().addEventListener('slotRenderEnded', function(event) {
-
-
-
-                          var id = $('#' + event.slot.getSlotElementId());
-
-
-
-                          if (!event.isEmpty) {                            
-
-                            var adHeight = event.size[1];
-
-                            var adLabel = '<a class="advertisement-label" href="/info-for/business-and-commercial/commercial-opportunities/advertising-on-the-network">Advertisement</a>';
-
-
-
-                            if(id.hasClass("large")) {                              
-
-                              id.css("background-color", "#fff").animate({height: adHeight}, 2000);
-
-                            }
-
-
-
-                            if (id.parent().hasClass("advert-content")) {
-
-                              id.append(adLabel).closest('.advert-link').css('background', '#f7f7f7');
-
-                            } else {
-
-                              id.prepend(adLabel);
-
-                            }
-
-                          }
-
-                        });
-
-                        googletag.enableServices();
-
-                        for (var ii = 0; ii < toDisplay.length; ii++) {
-
-                            googletag.display(toDisplay[ii]);
-
-                        }
-
-                    });
-
-                }
-
-            };
-
-        </script>
-
-
-
-        <script type='text/javascript'>
-
-            try { amznads.setTargetingForGPTAsync('amznslots'); } catch (e) { /*ignore*/ };
-
-        </script>
-
-
-
-    
-
 
 
 
@@ -408,55 +204,7 @@
 
               <!--start of white bar above menu-->
 
-        <div class ="top-row-top">
 
-            <div class="r">
-
-                <div class="logo">
-
-                    <a style="color:white" href="index.html">
-
-                        <img src="Images/logos/interbusLogo.png" width="180px" height="65px" />
-                        <!--<span class="main-roundel">&nbsp;</span>-->
-                        <!--<span class="tfl-name">
-
-            Transport<br /> for London
-
-        </span>-->
-
-                    </a>
-
-                </div>
-
-                <div class="top-row-extras">
-
-                    <div class="texts">
-
-                    </div>
-
-                    <form action="/search/" method="GET">
-
-                        <div class="search-tools">
-
-                            <label for="q" class="visually-hidden">Search the site</label>
-
-                            <div class="remove-content-container empty" style="position: relative;">
-
-                                <input type="text" placeholder="Search" id="q" name="q" />
-
-                            </div>
-
-                            <input id="search-button" class="hide-text" type="submit" value="Search" data-jumpto="#full-width-content :tabbable:first">
-
-                        </div>
-
-                    </form>
-
-                </div>
-
-                </div>
-
-            </div>
 
 
 
@@ -466,17 +214,19 @@
 <!--Start Menu-->
                 <div class="mainnav" id="mainnav" tabindex="0">
 
-                                           <div class="top-row">
+            <div class="top-row" style="position:fixed; z-index:1">
 
                             <div class="r">
+
                                 <ul class="collapsible-menu clearfix">
+                        <li style="margin-right:65px"><a style="margin-top:0px; padding-top:0px" href="Index.html"><img style="width:100%; height:56px" src="Images/logos/interbusLogo.png" alt="Alternate Text" /></a></li>
 
                                     <li>
 
                                         <a style="text-decoration:none" href="index.html">Home</a>
 
                                     </li>
-                                    <li class="active">
+                        <li>
 
                                         <a style="text-decoration:none" href="Fares_and_payments.html">Fares / Payments</a>
 
@@ -498,9 +248,19 @@
 
                                     </li>
 
+                        <li>
+
+                            <a style="text-decoration:none; margin-right:30px" href="#">Contact Us</a>
+
+                        </li>
                                     <li>
 
-                                        <a style="text-decoration:none" href="#">Contact Us</a>
+                            <div style="float:right; padding-top:11px">
+                                <input type="text" placeholder="Search" id="q" name="q" style="border-radius:30px; width:120px; height:35px" />
+
+
+                            </div>
+
 
                                     </li>
                                      
@@ -518,7 +278,7 @@
                         
 
                            
-<div class="row">
+<div class="row" style="margin-top:60px">
                       <div class="col-lg-12">
                       
                       
