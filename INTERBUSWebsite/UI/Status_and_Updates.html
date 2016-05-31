@@ -185,7 +185,64 @@
 </script>
 
 
+                    <style>
+                        rr.div a {
+                            text-decoration: none;
+                            color: white;
+                            font-size: 20px;
+                            padding: 15px;
+                            display: inline-block;
+                        }
 
+                        .rr ul {
+                            display: inline;
+                            margin: 0;
+                            padding: 0;
+                        }
+
+
+                            .rr ul li {
+                                display: inline-block;
+                                color: white;
+                            }
+                        .rr .active {
+                            background: #555;
+                        }
+
+                                .rr ul li:hover {
+                                    background: #555;
+                                }
+
+                                    .rr ul li:hover ul {
+                                        display: block;
+                                    }
+
+                                .rr ul li ul {
+                                    position: absolute;
+                                    width: 100px;
+                                    display: none;
+                                }
+
+                                    .rr ul li ul li {
+                                        background: #555;
+                                        display: block;
+                                        border-bottom: 1px solid white;
+                                        width: 170px;
+                                    }
+
+                                        .rr ul li ul li a {
+                                            display: block !important;
+                                            text-decoration: none;
+                                        }
+
+                                        .rr ul li ul li:hover {
+                                            background: #666;
+                                        }
+
+                                        .rr ul li ul li a:hover {
+                                            text-decoration: none;
+                                        }
+                    </style>
 
 
 </head>
@@ -199,64 +256,71 @@
 
 
 <!--Start Menu-->
-                <div class="mainnav" id="mainnav" tabindex="0">
+        <div class="mainnav" id="mainnav" tabindex="0">
 
-            <div class="top-row" style="position:fixed; z-index:1">
+            <div class="top-row" style="position:fixed; width:100%; z-index:13">
 
-                            <div class="r">
+                <div class="r">
+                    <div class="rr">
+                        <a style="margin-top: 0px; padding-top: 0px; margin-right: 50px; float:left" href="Index.html"><img style="height:56px" src="Images/logos/interbusLogo.png" alt="Alternate Text" /> </a>
+                        <ul class="collapsible-menu clearfix" style="margin-left:0px;">
 
-                                <ul class="collapsible-menu clearfix">
-                        <li style="margin-right:65px"><a style="margin-top:0px; padding-top:0px" href="Index.html"><img style="width:100%; height:56px" src="Images/logos/interbusLogo.png" alt="Alternate Text" /></a> </li>
+                            <li style="margin-left:90px">
 
-                                    <li>
+                                <a style="text-decoration:none" href="Index.html">Home</a>
 
-                                        <a style="text-decoration:none" href="index.html">Home</a>
+                            </li>
+                            <li>
 
-                                    </li>
-                        <li>
+                                <a style="text-decoration:none" href="Fares_and_payments.html">Fares / Payments</a>
 
-                                        <a style="text-decoration:none" href="Fares_and_payments.html">Fares / Payments</a>
+                                <ul>
+                                    <li><a href="#">Schedules</a></li>
+                                    <li><a href="#">CheckFare</a></li>
+                                    <li><a href="#">Cancellation</a></li>
+                                    <li><a href="Licensepage.html">Fleet Owner Lisence</a></li>
 
-                                    </li>
-                                    <li>
-
-                            <a style="text-decoration:none" href="Status_and_Updates.html">Status & Updates</a>
-
-                                    </li>
-                                    <li>
-
-                                        <a style="text-decoration:none" href="#">Products</a>
-
-                                    </li>
-
-                                    <li>
-
-                                        <a style="text-decoration:none" href="#">About Us</a>      
-
-                                    </li>
-
-                        <li>
-
-                            <a style="text-decoration:none; margin-right:30px" href="#">Contact Us</a>
-
-                        </li>
-                                    <li>
-
-                            <div style="float:right; padding-top:11px">
-                                <input type="text" placeholder="Search" id="q" name="q" style="border-radius:30px; width:120px; height:35px" />
-
-
-                            </div>
-
-
-                                    </li>
-                                     
                                 </ul>
-                            </div>
+                            </li>
+                            <li>
 
-                        </div>
+                                <a class="active" style="text-decoration:none" href="Status_and_Updates.html">Status & Updates</a>
 
+                            </li>
+                            <li>
+
+                                <a style="text-decoration:none" href="#">Products</a>
+
+                            </li>
+
+                            <li>
+
+                                <a style="text-decoration:none" href="About.html">About Us</a>
+                                <ul>
+                                    <li><a href="Contact.html">ContactUs</a></li>
+
+                                </ul>
+
+                            </li>
+
+                            <li style="margin-left:150px">
+
+                                <div style="float:right; padding-top:11px">
+                                    <input type="text" placeholder="Search.." id="q" name="q" style="border-radius: 30px; width: 120px; height: 35px; color: red;" />
+
+
+                                </div>
+
+
+                            </li>
+
+                        </ul>
                     </div>
+                </div>
+
+            </div>
+
+        </div>
                     <!--End Menu-->
                     
                 </div>
@@ -994,39 +1058,53 @@ Good service
 
                            
    
-<div class="row">
-<div class="col-lg-12">
-<div id="footer" tabindex="0">
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="footer" tabindex="0">
 
-                    <h2 class="visually-hidden">Site footer</h2>
-
-
-
-                    <div class="primary-footer r">
-                    <h2 class="visually-hidden">About TfL</h2><ul class="footer-links"><li><a href="/help-and-contact/">Help &amp; contacts</a></li><li><a class="" href="/corporate/careers/">Careers</a></li><li><a class="" href="/corporate/about-tfl/">About TfL</a></li><li><a class="" href="/corporate/safety-and-security/">Safety &amp; security</a></li><li><a class="" href="/corporate/transparency/">Transparency</a></li><li><a class="" href="/corporate/publications-and-reports/">Publications &amp; reports</a></li><li><a class="" href="/corporate/tfl-shop/">Gift Shop</a></li><li><a class="" href="/travel-information/social-media-and-email-updates/">Social media &amp; email updates</a></li><li><a class="languages-footer" href="/travel-information/other-languages/">Other languages</a></li></ul><h2 class="heading">Information for...</h2><ul class="info-for clearfix"><li><a href="/info-for/media/">Media</a></li><li><a href="/info-for/business-and-commercial/">Business &amp; commercial</a></li><li><a href="/info-for/boroughs/">Boroughs</a></li><li><a href="/info-for/schools-and-young-people/">Schools &amp; young people</a></li><li><a href="/info-for/deliveries-in-london/">Deliveries in London</a></li><li><a href="/info-for/urban-planning-and-construction/">Urban planning &amp; construction</a></li><li><a href="/info-for/taxis-and-private-hire/">Taxi &amp; private hire </a></li><li><a href="/info-for/suppliers-and-contractors/">Suppliers &amp; contractors</a></li><li><a href="/info-for/bus-operators/">Bus operators</a></li><li><a href="/info-for/open-data-users/">Open data users</a></li><li><a href="/info-for/coach-drivers/">Coach drivers</a></li><li><a href="/info-for/investors/">Investors</a></li></ul></div>
-                    <div class="secondary-footer"><h2 class="visually-hidden">Site structure and legal information</h2><div class="r"><ul><li><a href="/corporate/terms-and-conditions/">Terms &amp; conditions </a></li><li><a href="/corporate/privacy-and-cookies/">Privacy &amp; cookies</a></li><li><a href="/corporate/website-accessibility/">Website accessibility</a></li></ul><span class="heading">Copyright Interbus</span></div></div>
-                    <div>
-                    </div>
+                <h2 class="visually-hidden">Site footer</h2>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+                <div class="primary-footer r">
+                    <h2 class="visually-hidden">About Interbus</h2>
+                    <ul class="footer-links">
+                        <li><a href="/help-and-contact/">Help &amp; contacts</a></li>
+                        <li><a class="" href="/corporate/careers/">Careers</a></li>
+                        <li><a class="" href="/corporate/about-tfl/">About Interbus</a></li>
+                        <li><a class="" href="/corporate/safety-and-security/">Safety &amp; security</a></li>
+                        <li><a class="" href="/corporate/transparency/">Transparency</a></li>
+                        <li><a class="" href="/corporate/publications-and-reports/">Publications &amp; reports</a></li>
+                        <li><a class="" href="/corporate/tfl-shop/">Gift Shop</a></li>
+                        <li><a class="" href="/travel-information/social-media-and-email-updates/">Social media &amp; email updates</a></li>
+                        <li><a class="languages-footer" href="/travel-information/other-languages/">Other languages</a></li>
+                    </ul><h2 class="heading">Information for...</h2><ul class="info-for clearfix">
+                        <li><a href="/info-for/media/">Media</a></li>
+                        <li><a href="/info-for/business-and-commercial/">Business &amp; commercial</a></li>
+                        <li><a href="/info-for/boroughs/">Get Support online 24/7</a></li>
+                        <li><a href="/info-for/schools-and-young-people/">Schools &amp; young people</a></li>
+                        <li><a href="/info-for/deliveries-in-london/">Deliveries in Zimbabwe</a></li>
+                        <li><a href="/info-for/urban-planning-and-construction/">Urban planning &amp; construction</a></li>
+                        <li><a href="/info-for/taxis-and-private-hire/">Taxi &amp; private hire </a></li>
+                        <li><a href="/info-for/suppliers-and-contractors/">Suppliers &amp; contractors</a></li>
+                        <li><a href="/info-for/bus-operators/">Bus operators</a></li>
+                        <li><a href="/info-for/open-data-users/">Open data users</a></li>
+                        <li><a href="/info-for/coach-drivers/">Coach drivers</a></li>
+                        <li><a href="/info-for/investors/">Investors</a></li>
+                        <li><a href="/info-for/investors/">Download Interbus App   </a></li>
+                    </ul>
                 </div>
-</div>
-     </div>           
+                <div class="secondary-footer"><h2 class="visually-hidden">Site structure and legal information</h2><div class="r"><ul><li><a href="/corporate/terms-and-conditions/">Terms &amp; conditions </a></li><li><a href="/corporate/privacy-and-cookies/">Privacy &amp; cookies</a></li><li><a href="/corporate/website-accessibility/">Website accessibility</a></li></ul><span class="heading">Copyright Interbus</span></div></div>
+                <div>
+                </div>
+
+
 
             </div>
+        </div>
+    </div>           
+
+            
 
           
 

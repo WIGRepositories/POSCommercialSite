@@ -85,6 +85,7 @@
     <Content Include="obj\Debug\INTERBUSWebsite.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\INTERBUSWebsite.dll" />
     <Content Include="obj\Debug\INTERBUSWebsite.pdb" />
+    <Content Include="UI\About.html" />
     <Content Include="UI\AboutUs.html" />
     <Content Include="UI\AddTroubleTicketingDetails.html" />
     <Content Include="UI\BookedTicketHistory.html" />
@@ -97,6 +98,7 @@
     <Content Include="UI\Cancel_Ticket.html" />
     <Content Include="UI\CheckFare.html" />
     <Content Include="UI\CheckOut.html" />
+    <Content Include="UI\Contact.html" />
     <Content Include="UI\ContactUs.html" />
     <Content Include="UI\css\bootstrap-theme.min.css" />
     <Content Include="UI\css\Main.css" />
