@@ -1,408 +1,1375 @@
-﻿<!DOCTYPE html>
-<html ng-app="myApp">
+﻿<!doctype html>
+
+<!-- tfl-probe -->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html lang="en" class="no-js lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!-->
+
+<html lang="en" class="no-js no-touch">
+<!--<![endif]-->
 <head>
-    <title>INTERBUS CommercialSite | Index</title>
-    <meta charset="utf-8">
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js" ></script>
+    <script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="images/icons/favicon.ico">
-    <link rel="apple-touch-icon" href="images/icons/favicon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/icons/favicon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/icons/favicon-114x114.png">
-    <!--Loading bootstrap css-->
-    <link type="text/css" rel="stylesheet" href="vendors/jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
-    <link type="text/css" rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
-    <link type="text/css" rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
-    <!--LOADING STYLESHEET FOR PAGE--><!--Loading style vendors-->
-    <link type="text/css" rel="stylesheet" href="vendors/animate.css/animate.css">
-    <link type="text/css" rel="stylesheet" href="vendors/jquery-pace/pace.css">
-    <link type="text/css" rel="stylesheet" href="vendors/iCheck/skins/all.css">
-    <link type="text/css" rel="stylesheet" href="vendors/jquery-news-ticker/jquery.news-ticker.css">
-    <link type="text/css" rel="stylesheet" href="vendors/jplist/html/css/jplist-custom.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/w3.css">
+    <!-- Latest compiled and minified CSS -->
+    <!-- Optional theme -->
+
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
 
 
-    <!--Loading style-->
-    <link type="text/css" rel="stylesheet" href="css/themes/style2/pink-blue.css" id="theme-change" class="style-change color-change">
-    <link type="text/css" rel="stylesheet" href="css/Main.css">
-    <link type="text/css" rel="stylesheet" href="css/style-responsive.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <meta name="HandheldFriendly" content="True">
+
+    <script type="text/javascript">
+
+        var h = document.documentElement;
+
+        h.className = h.className.replace(/\bno-js\b/, '');
+
+        var isTouch = !!("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0;
+
+
+
+        if (isTouch) {
+
+            // remove class which defines hover behavior
+
+            h.className = h.className.replace(/\bno-touch\b/, '');
+
+        }
+
+    </script>
+
+
+
+    <script src="js/bootstrap.min.js" ></script>
+
+
+
+
+    <title>Interbus - Get Moving Anywhere, Comfortably</title>
+
+
+
+
+
+    <meta name="description" content="Information on all forms of transport in London including cycle hire. Routes, maps, plan a journey, tickets sales, realtime traffic and travel updates." />
+
+    <meta name="keywords" />
+
+    <meta name="author" content="Interbus | Get Moving Anywhere, Comfortably" />
+
+    <meta property="og:url" content="" />
+
+    <meta property="og:title" content="Every Journey Matters" />
+
+    <meta property="og:description" content="Information on all forms of transport in London including cycle hire. Routes, maps, plan a journey, tickets sales, realtime traffic and travel updates." />
+
+    <meta property="og:site_name" content="Transport for London" />
+
+    <meta property="article:publisher" content="https://facebook.com/" />
+
+    <meta property="article:author" content="https://facebook.com/" />
+
+    <meta name="twitter:creator" content="&#64;tfl" />
+
+
+
+    <link href="css/StyleSheet2.css" media="screen,print" rel="stylesheet" />
+
+    <link href="css/StyleSheet1.css" media="screen,print" rel="stylesheet" />
+
+    <link href="css/StyleSheet4.css" media="screen,&#32;print" rel="stylesheet" />
+
+    <link href="css/StyleSheet3.css" media="screen&#32;and&#32;(min-width:&#32;580px),print" rel="stylesheet" />
+
+
+
+    <link href="css/StyleSheet5.css" media="screen&#32;and&#32;(min-width:&#32;900px)" rel="stylesheet" />
+
+
+
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+
+
+    <!--[if lte IE 9]>
+
+        <link href="/cdn/static/styles/core/min/ie.min.0b308d8c.css" media="screen" rel="stylesheet" />
+
+    <![endif]-->
+
+
+
+
+    <script type="text/javascript">
+
+        // Instructions: please embed this snippet directly into every page in your website template.
+
+        // For optimal performance, this must be embedded directly into the template, not referenced
+
+        // as an external file.
+
+
+
+        // Answers Cloud Services Embed Script v1.02
+
+        // DO NOT MODIFY BELOW THIS LINE *****************************************
+
+        ; (function (g) {
+
+            var d = document, i, am = d.createElement('script'), h = d.head || d.getElementsByTagName("head")[0],
+
+            aex = {
+
+                "src": "//gateway.answerscloud.com/tfl-gov-uk/production/gateway.min.js",
+
+                "type": "text/javascript",
+
+                "async": "true",
+
+                "data-vendor": "acs",
+
+                "data-role": "gateway"
+
+            };
+
+            for (var attr in aex) { am.setAttribute(attr, aex[attr]); }
+
+            h.appendChild(am);
+
+            g['acsReady'] = function () { var aT = '__acsReady__', args = Array.prototype.slice.call(arguments, 0), k = setInterval(function () { if (typeof g[aT] === 'function') { clearInterval(k); for (i = 0; i < args.length; i++) { g[aT].call(g, function (fn) { return function () { setTimeout(fn, 1) }; }(args[i])); } } }, 50); };
+
+        })(window);
+
+        // DO NOT MODIFY ABOVE THIS LINE *****************************************
+
+    </script>
+    
+    
 </head>
 
-<body ng-controller="myCtrl">
-    <!--<img src="images/commercialsite2.jpg" width="100%" />-->
-    <div class="main" width="100%">
-        <div class="slider-wrapper theme-default banner">
-            <div id="slider" class="nivoSlider">
-                <img src="images/commercialsite1.jpg">
-                <img src="images/commercialsite2.jpg">
-                <img src="images/commercialsite3.jpg">
-                <img src="images/commercialsite4.jpg">
+<body class="personalisation-active bus-favourites-inactive">
+
+    <div id="c-mask" class="c-mask disable-touch-scrolling"></div>
+    <!--start header-->
+
+    <div id="container">
+        <!--Start Logo and Search box-->
+
+        <!--<div class="top-row-top" style="background-color:#FFFFFF">
+
+            <div class="r">
+
+                <div class="logo">
+
+                    <a style="color:white" href="#">
+                        <img src="Images/logos/interbusLogo.png" style="width:180px; height:65px" />
+                        <span class="main-roundel">&nbsp;</span>
+                        <span class="tfl-name">
+
+                            Transport<br /> for London
+
+                        </span>
+
+                    </a>
+
+                </div>
+
+                <div class="top-row-extras">
+
+                    <form action="/search/" method="GET">
+
+                        <div class="search-tools">
+
+                            <label for="q" class="visually-hidden">Search the site</label>
+
+                            <div class="remove-content-container empty" style="position: relative;">
+
+                                <input type="text" placeholder="Search" id="q" name="q" />
+
+                            </div>
+
+                            <input id="search-button" class="hide-text" type="submit" value="Search" data-jumpto="#full-width-content :tabbable:first">
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>-->
+
+        <!--End Logo and Search box-->
+        <!--Start Menu -->
+        <div class="mainnav" id="mainnav" tabindex="0">
+
+            <div class="top-row" style="position:fixed; width:100%; z-index:1">
+
+                <div class="r">
+
+                    <ul class="collapsible-menu clearfix">
+                        <li style="margin-right:65px"><a style="margin-top:0px; padding-top:0px" href="#"><img style="width:100%; height:56px" src="Images/logos/interbusLogo.png" alt="Alternate Text" /> </a></li>
+
+                        <li>
+
+                            <a style="text-decoration:none" href="index.html">Home</a>
+
+                        </li>
+                        <li>
+
+                            <a style="text-decoration:none" href="Fares_and_payments.html">Fares / Payments</a>
+
+                        </li>
+                        <li>
+
+                            <a style="text-decoration:none" href="Status_and_Updates.html">Status & Updates</a>
+
+                        </li>
+                        <li>
+
+                            <a style="text-decoration:none" href="#">Products</a>
+
+                        </li>
+
+                        <li>
+
+                            <a style="text-decoration:none" href="#">About Us</a>
+
+                        </li>
+
+                        <li>
+
+                            <a style="text-decoration:none" href="#">Contact Us</a>
+
+                        </li>
+
+                     
+                        
+                        <li>
+
+                            <div style="float:right; padding-top:11px">
+                                <input type="text" placeholder="Search" id="q" name="q" style="border-radius:30px; width:120px; height:35px" />
+
+
+                            </div>
+
+
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+        <!--End Menu-->
+
+    </div>
+    <div class="clearfix"></div>
+    <!--End header-->
+
+    <div id="main-hero" style="margin-top:58px">
+        <img class="mySlides" src="Images/promos/thames-clipper_rdax_400x200.jpg" style="width:100%; height:350px;">
+
+        <img class="mySlides" src="Images/promos/santanderfreehire-hp-1400x700.jpg" style="width:100%; height:350px;">
+
+        <img class="mySlides" src="Images/promos/travel-disruptions_rdax_400x200.jpg" style="width:100%; height:350px;">
+
+    </div>
+
+    <div class="main-and-aside one-row r">
+
+        <!--plan journey form-->
+
+        <div class="aside">
+
+            <div class="widget-wrapper homepage-style">
+
+                <div class="expandable-box">
+
+                    <div class="content">
+
+                        <div class="always-visible widget-heading primary">
+
+                            <div class="controls">&nbsp;</div>
+
+                            <div class="section-style">Plan a journey</div>
+
+                        </div>
+
+                        <div class="start-hidden widget-content journey-planner-widget clearfix">
+
+
+
+                            <form autocomplete="off" action="booking.html" method="" id="jp-search-form" class="publictransport">
+
+                                <input id="IsAsync" name="IsAsync" type="hidden" value="False" />
+
+                                <input id="JpType" name="JpType" type="hidden" value="publictransport" />
+
+                                <div class="journey-form">
+
+                                    <div class="basic-journey-options">
+
+                                        <div id="plan-a-journey">
+
+                                            <fieldset>
+
+                                                <legend class="visually-hidden">Journey preferences</legend>
+
+                                                <div class="from-and-to clearfix">
+
+
+
+
+
+                                                    <div id="search-filter-form-0"
+                                                         data-placeholder="" data-datasets="[[&quot;stopPoints&quot;,&quot;journeyPlannerNoSubmit?Input={{input}}&quot;],[&quot;bikePoints&quot;,&quot;journeyPlannerNoSubmit?Input={{input}}&quot;],[&quot;placesExtra&quot;,&quot;journeyPlannerNoSubmit?Input={{input}}&quot;]]" data-busstopsonly="False"
+                                                         data-display-selected-modes-only="False" data-include-geolocation="True"
+                                                         data-modes="tube,dlr,overground,tflrail,bus,river-bus,tram,cable-car,national-rail,river-tour" data-ajax-enabled="False" data-excludehubs="False" class="clearfix">
+
+
+
+                                                        <div class="geolocation-box clearfix">
+
+                                                            <label class="heading&#32;visually-hidden" for="InputFrom">From</label>
+
+                                                            <input autocorrect="off" class="jpFrom" data-val="true" id="InputFrom" maxlength="100" name="InputFrom" placeholder="From" type="text" value="" />
+
+                                                            <span class="field-validation-valid" data-valmsg-for="InputFrom" data-valmsg-replace="true"></span>
+
+                                                        </div>
+
+
+
+                                                        <span class="field-validation-error geolocation-error hidden">&nbsp;</span>
+
+                                                        <input id="DataSetsJson" name="DataSetsJson" type="hidden" value="[[&quot;stopPoints&quot;,&quot;journeyPlannerNoSubmit?Input={{input}}&quot;],[&quot;bikePoints&quot;,&quot;journeyPlannerNoSubmit?Input={{input}}&quot;],[&quot;placesExtra&quot;,&quot;journeyPlannerNoSubmit?Input={{input}}&quot;]]" /><input id="Modes" name="Modes" type="hidden" value="tube,dlr,overground,tflrail,bus,river-bus,tram,cable-car,national-rail,river-tour" />
+
+
+
+                                                    </div>
+
+
+
+                                                    <input data-val="true" data-val-required="The&#32;From:&#32;field&#32;is&#32;required." id="From" name="From" type="hidden" value="" /><input id="FromId" name="FromId" type="hidden" value="" /><input id="PreviousFrom" name="PreviousFrom" type="hidden" value="" />
+
+
+
+                                                    <div id="search-filter-form-1">
+
+
+
+                                                        <label class="heading&#32;visually-hidden" for="InputTo">To</label><input autocorrect="off" class="jpTo" data-val="true" data-val-required="The&#32;To&#32;field&#32;is&#32;required." id="InputTo" maxlength="100" name="InputTo" placeholder="To" type="text" value="" /><span class="field-validation-valid" data-valmsg-for="InputTo" data-valmsg-replace="true"></span>
+
+                                                        <span class="field-validation-error geolocation-error hidden">&nbsp;</span>
+
+                                                        <input id="DataSetsJson" name="DataSetsJson" type="hidden" value="[[&quot;stopPoints&quot;,&quot;journeyPlannerNoSubmit?Input={{input}}&quot;],[&quot;bikePoints&quot;,&quot;journeyPlannerNoSubmit?Input={{input}}&quot;],[&quot;placesExtra&quot;,&quot;journeyPlannerNoSubmit?Input={{input}}&quot;]]" /><input id="Modes" name="Modes" type="hidden" value="tube,dlr,overground,tflrail,bus,river-bus,tram,cable-car,national-rail,river-tour" />
+
+
+
+                                                    </div>
+
+
+
+                                                    <input data-val="true" data-val-required="The&#32;To:&#32;field&#32;is&#32;required." id="To" name="To" type="hidden" value="" /><input id="ToId" name="ToId" type="hidden" value="" /><input id="PreviousTo" name="PreviousTo" type="hidden" value="" />
+
+                                                </div>
+
+                                                <div class="time-options clearfix">
+
+                                                    <div class="time-defaults">
+
+                                                        <p>
+
+                                                            <strong>Leaving:</strong>
+
+                                                            <span>now</span>
+
+                                                        </p>
+
+                                                        <a class="change-departure-time" href="javascript:void(0)">change time</a>
+
+                                                    </div>
+
+                                                    <!--<div class="change-time-options">
+
+                                                        <div class="clearfix">
+
+                                                            <ul class="horizontal-toggle-buttons leaving-or-arriving clearfix">
+
+                                                                <li class="selected">
+
+                                                                    <label for="departing">Leaving</label>
+
+                                                                    <input id="departing" name="TimeIs" type="radio" value="departing" />
+
+                                                                </li>
+
+                                                                <li class="">
+
+                                                                    <label for="arriving">Arriving</label>
+
+                                                                    <input id="arriving" name="TimeIs" type="radio" value="arriving" />
+
+                                                                </li>
+
+                                                            </ul>
+
+                                                        </div>
+
+                                                        <div class="hours-mins clearfix">
+
+                                                            <div class="selector date-of-departure">
+
+                                                                <label class="visually-hidden" for="Date">Date of departure</label>
+
+                                                                <select id="Date" name="Date">
+
+                                                                    <option selected="selected" value="20160522">Today</option>
+
+                                                                    <option value="20160523">Tomorrow</option>
+
+                                                                    <option value="20160524">Tue 24 May</option>
+
+                                                                    <option value="20160525">Wed 25 May</option>
+
+                                                                    <option value="20160526">Thu 26 May</option>
+
+                                                                    <option value="20160527">Fri 27 May</option>
+
+                                                                    <option value="20160528">Sat 28 May</option>
+
+                                                                    <option value="20160529">Sun 29 May</option>
+
+                                                                    <option value="20160530">Mon 30 May</option>
+
+                                                                    <option value="20160531">Tue 31 May</option>
+
+                                                                    <option value="20160601">Wed 01 Jun</option>
+
+                                                                    <option value="20160602">Thu 02 Jun</option>
+
+                                                                    <option value="20160603">Fri 03 Jun</option>
+
+                                                                    <option value="20160604">Sat 04 Jun</option>
+
+                                                                    <option value="20160605">Sun 05 Jun</option>
+
+                                                                    <option value="20160606">Mon 06 Jun</option>
+
+                                                                    <option value="20160607">Tue 07 Jun</option>
+
+                                                                    <option value="20160608">Wed 08 Jun</option>
+
+                                                                    <option value="20160609">Thu 09 Jun</option>
+
+                                                                    <option value="20160610">Fri 10 Jun</option>
+
+                                                                    <option value="20160611">Sat 11 Jun</option>
+
+                                                                    <option value="20160612">Sun 12 Jun</option>
+
+                                                                    <option value="20160613">Mon 13 Jun</option>
+
+                                                                    <option value="20160614">Tue 14 Jun</option>
+
+                                                                    <option value="20160615">Wed 15 Jun</option>
+
+                                                                    <option value="20160616">Thu 16 Jun</option>
+
+                                                                    <option value="20160617">Fri 17 Jun</option>
+
+                                                                    <option value="20160618">Sat 18 Jun</option>
+
+                                                                    <option value="20160619">Sun 19 Jun</option>
+
+                                                                    <option value="20160620">Mon 20 Jun</option>
+
+                                                                </select>
+
+                                                            </div>
+
+                                                            <div class="selector hours">
+
+                                                                <label class="visually-hidden" for="Time">Time</label>
+
+                                                                <select id="Time" name="Time">
+
+                                                                    <option value="0000">00:00</option>
+
+                                                                    <option value="0015">00:15</option>
+
+                                                                    <option value="0030">00:30</option>
+
+                                                                    <option value="0045">00:45</option>
+
+                                                                    <option value="0100">01:00</option>
+
+                                                                    <option value="0115">01:15</option>
+
+                                                                    <option value="0130">01:30</option>
+
+                                                                    <option value="0145">01:45</option>
+
+                                                                    <option value="0200">02:00</option>
+
+                                                                    <option value="0215">02:15</option>
+
+                                                                    <option value="0230">02:30</option>
+
+                                                                    <option value="0245">02:45</option>
+
+                                                                    <option value="0300">03:00</option>
+
+                                                                    <option value="0315">03:15</option>
+
+                                                                    <option value="0330">03:30</option>
+
+                                                                    <option value="0345">03:45</option>
+
+                                                                    <option value="0400">04:00</option>
+
+                                                                    <option value="0415">04:15</option>
+
+                                                                    <option value="0430">04:30</option>
+
+                                                                    <option value="0445">04:45</option>
+
+                                                                    <option value="0500">05:00</option>
+
+                                                                    <option value="0515">05:15</option>
+
+                                                                    <option value="0530">05:30</option>
+
+                                                                    <option value="0545">05:45</option>
+
+                                                                    <option value="0600">06:00</option>
+
+                                                                    <option value="0615">06:15</option>
+
+                                                                    <option value="0630">06:30</option>
+
+                                                                    <option value="0645">06:45</option>
+
+                                                                    <option value="0700">07:00</option>
+
+                                                                    <option value="0715">07:15</option>
+
+                                                                    <option value="0730">07:30</option>
+
+                                                                    <option value="0745">07:45</option>
+
+                                                                    <option value="0800">08:00</option>
+
+                                                                    <option value="0815">08:15</option>
+
+                                                                    <option value="0830">08:30</option>
+
+                                                                    <option value="0845">08:45</option>
+
+                                                                    <option value="0900">09:00</option>
+
+                                                                    <option value="0915">09:15</option>
+
+                                                                    <option value="0930">09:30</option>
+
+                                                                    <option value="0945">09:45</option>
+
+                                                                    <option value="1000">10:00</option>
+
+                                                                    <option value="1015">10:15</option>
+
+                                                                    <option value="1030">10:30</option>
+
+                                                                    <option value="1045">10:45</option>
+
+                                                                    <option value="1100">11:00</option>
+
+                                                                    <option value="1115">11:15</option>
+
+                                                                    <option value="1130">11:30</option>
+
+                                                                    <option value="1145">11:45</option>
+
+                                                                    <option value="1200">12:00</option>
+
+                                                                    <option value="1215">12:15</option>
+
+                                                                    <option value="1230">12:30</option>
+
+                                                                    <option value="1245">12:45</option>
+
+                                                                    <option value="1300">13:00</option>
+
+                                                                    <option value="1315">13:15</option>
+
+                                                                    <option value="1330">13:30</option>
+
+                                                                    <option value="1345">13:45</option>
+
+                                                                    <option value="1400">14:00</option>
+
+                                                                    <option value="1415">14:15</option>
+
+                                                                    <option value="1430">14:30</option>
+
+                                                                    <option value="1445">14:45</option>
+
+                                                                    <option value="1500">15:00</option>
+
+                                                                    <option value="1515">15:15</option>
+
+                                                                    <option value="1530">15:30</option>
+
+                                                                    <option value="1545">15:45</option>
+
+                                                                    <option value="1600">16:00</option>
+
+                                                                    <option value="1615">16:15</option>
+
+                                                                    <option value="1630">16:30</option>
+
+                                                                    <option value="1645">16:45</option>
+
+                                                                    <option value="1700">17:00</option>
+
+                                                                    <option value="1715">17:15</option>
+
+                                                                    <option value="1730">17:30</option>
+
+                                                                    <option value="1745">17:45</option>
+
+                                                                    <option value="1800">18:00</option>
+
+                                                                    <option selected="selected" value="1815">18:15</option>
+
+                                                                    <option value="1830">18:30</option>
+
+                                                                    <option value="1845">18:45</option>
+
+                                                                    <option value="1900">19:00</option>
+
+                                                                    <option value="1915">19:15</option>
+
+                                                                    <option value="1930">19:30</option>
+
+                                                                    <option value="1945">19:45</option>
+
+                                                                    <option value="2000">20:00</option>
+
+                                                                    <option value="2015">20:15</option>
+
+                                                                    <option value="2030">20:30</option>
+
+                                                                    <option value="2045">20:45</option>
+
+                                                                    <option value="2100">21:00</option>
+
+                                                                    <option value="2115">21:15</option>
+
+                                                                    <option value="2130">21:30</option>
+
+                                                                    <option value="2145">21:45</option>
+
+                                                                    <option value="2200">22:00</option>
+
+                                                                    <option value="2215">22:15</option>
+
+                                                                    <option value="2230">22:30</option>
+
+                                                                    <option value="2245">22:45</option>
+
+                                                                    <option value="2300">23:00</option>
+
+                                                                    <option value="2315">23:15</option>
+
+                                                                    <option value="2330">23:30</option>
+
+                                                                    <option value="2345">23:45</option>
+
+                                                                </select>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>-->
+
+                                                </div>
+
+                                                <div class="extra-options clearfix">
+
+                                                    <a class="toggle-options more-options" href="javascript:appendJPParams(this," />Travel options & accessibility</a>
+
+                                                </div>
+
+                                                <input type="submit" class="primary-button plan-journey-button" value="Plan my journey" />
+
+                                                <a style="margin-top:10px" href="" class="primary-button plan-journey-button"> Recent Journeys</a>
+
+                                            </fieldset>
+
+                                        </div>
+
+                                    </div>
+
+                                    <!--<div id="more-journey-options">
+
+                                        <div>
+
+                                            <fieldset>
+
+                                                <legend class="visually-hidden">More options</legend>
+
+                                                <ul class="tabs-style-2">
+
+                                                    <li class="publictransport"><a href="#">Public transport</a></li>
+
+                                                    <li class="cycling "><a href="#" class="icon-left cycle"><span>Cycling</span>&nbsp;</a></li>
+
+                                                    <li class="walking "><a href="#" class="icon-left walking"><span>Walking</span>&nbsp;</a></li>
+
+                                                </ul>
+
+                                                <fieldset class="modes-of-transport jp-mode-publictransport input-group">
+
+                                                    <legend class="bold heading">Travel by</legend>
+
+                                                    <div class="t-row">
+
+                                                        <div class="t-cell select-deselect-container">
+
+                                                            <div class='select-deselect-option jp-select-all'><a href='javascript:void(0);'>select all</a></div>
+
+                                                            <div class='select-deselect-option jp-deselect-all'><a href='javascript:void(0);'>deselect all</a></div>
+
+                                                        </div>
+
+                                                    </div>
+
+
+
+                                                    <label class="visually-hidden" for="Mode">Travelling by</label>
+
+                                                    <select class="to-checkbox-list&#32;two-col&#32;with-logos&#32;select-all" data-val="true" data-val-required="The&#32;Travelling&#32;by&#32;field&#32;is&#32;required." id="Mode" multiple="multiple" name="Mode">
+
+                                                        <option selected="selected" value="bus">Bus</option>
+
+                                                        <option selected="selected" value="tube">Tube</option>
+
+                                                        <option selected="selected" value="national-rail">National Rail</option>
+
+                                                        <option selected="selected" value="dlr">DLR</option>
+
+                                                        <option selected="selected" value="overground">London Overground</option>
+
+
+
+                                                        <option selected="selected" value="river-bus">River Bus</option>
+
+                                                        <option selected="selected" value="tram">Tram</option>
+
+                                                        <option selected="selected" value="cable-car">Emirates Air Line</option>
+
+                                                        <option selected="selected" value="coach">Coach</option>
+
+                                                    </select>
+
+                                                    <span class="field-validation-valid" data-valmsg-for="Mode" data-valmsg-replace="true"></span>
+
+                                                </fieldset>
+
+
+
+
+
+                                                <fieldset class="search-cycling-options input-group hidden">
+
+                                                    <legend class="bold">For cycling journeys, I want to</legend>
+
+
+
+                                                    <div class="input-group">
+
+                                                        <div class='form-control-wrapper  full-width-form-module '><div class='form-control'><input id="CyclePreference_0" name="CyclePreference" type="radio" value="CycleHire" /><label class='boxed-label-for-input' for=CyclePreference_0>Use Cycle Hire</label><input checked="checked" id="CyclePreference_1" name="CyclePreference" type="radio" value="AllTheWay" /><label class='boxed-label-for-input' for=CyclePreference_1>Cycle directly to my destination</label><input id="CyclePreference_2" name="CyclePreference" type="radio" value="TakeOnTransport" /><label class='boxed-label-for-input' for=CyclePreference_2>Take my cycle on public transport</label><input id="CyclePreference_3" name="CyclePreference" type="radio" value="LeaveAtStation" /><label class='boxed-label-for-input' for=CyclePreference_3>Leave my bike at a station</label></div><div class='field-validation-wrap'><span class="field-validation-valid" data-valmsg-for="CyclePreference" data-valmsg-replace="true"></span></div></div>
+
+                                                    </div>
+
+                                                </fieldset>
+
+
+
+                                                <fieldset class="search-walking-options input-group hidden">
+
+                                                    <legend class="bold">My walking speed is</legend>
+
+
+
+                                                    <div class="input-group">
+
+                                                        <div class='form-control-wrapper  full-width-form-module '><div class='form-control'><input id="WalkingSpeedWalking_0" name="WalkingSpeedWalking" type="radio" value="slow" /><label class='boxed-label-for-input' for=WalkingSpeedWalking_0>Slow</label><input checked="checked" id="WalkingSpeedWalking_1" name="WalkingSpeedWalking" type="radio" value="average" /><label class='boxed-label-for-input' for=WalkingSpeedWalking_1>Average</label><input id="WalkingSpeedWalking_2" name="WalkingSpeedWalking" type="radio" value="fast" /><label class='boxed-label-for-input' for=WalkingSpeedWalking_2>Fast</label></div><div class='field-validation-wrap'><span class="field-validation-valid" data-valmsg-for="WalkingSpeedWalking" data-valmsg-replace="true"></span></div></div>
+
+                                                    </div>
+
+                                                </fieldset>
+
+
+
+                                                <ul class="stacked-fields search-public-options level-one clearfix">
+
+                                                    <li class="show-me-list">
+
+                                                        <label class="heading" for="JourneyPreference">Show me</label>
+
+                                                        <div class="input-group">
+
+                                                            <div class='form-control-wrapper  full-width-form-module '><div class='form-control'><input checked="checked" id="JourneyPreference_0" name="JourneyPreference" type="radio" value="leasttime" /><label class='boxed-label-for-input' for=JourneyPreference_0>The fastest routes</label><input id="JourneyPreference_1" name="JourneyPreference" type="radio" value="leastinterchange" /><label class='boxed-label-for-input' for=JourneyPreference_1>Routes with fewest changes</label><input id="JourneyPreference_2" name="JourneyPreference" type="radio" value="leastwalking" /><label class='boxed-label-for-input' for=JourneyPreference_2>Routes with least walking</label></div><div class='field-validation-wrap'><span class="field-validation-valid" data-valmsg-for="JourneyPreference" data-valmsg-replace="true"></span></div></div>
+
+                                                        </div>
+
+                                                    </li>
+
+                                                    <li>
+
+                                                        <label class="heading" for="AccessibilityPreference">Access options</label>
+
+                                                        <div class="input-group">
+
+                                                            <div class='form-control-wrapper  full-width-form-module '><div class='form-control'><input checked="checked" id="AccessibilityPreference_0" name="AccessibilityPreference" type="radio" value="norequirements" /><label class='boxed-label-for-input' for=AccessibilityPreference_0>No accessibility requirement</label><input id="AccessibilityPreference_1" name="AccessibilityPreference" type="radio" value="nosolidstairs" /><label class='boxed-label-for-input' for=AccessibilityPreference_1>Use escalators, not stairs</label><input id="AccessibilityPreference_2" name="AccessibilityPreference" type="radio" value="noescalators" /><label class='boxed-label-for-input' for=AccessibilityPreference_2>Use stairs, not escalators</label><input id="AccessibilityPreference_3" name="AccessibilityPreference" type="radio" value="stepfreetovehicle" /><label class='boxed-label-for-input' for=AccessibilityPreference_3>Step-free to platform only</label><input id="AccessibilityPreference_4" name="AccessibilityPreference" type="radio" value="stepfreetoplatform" /><label class='boxed-label-for-input' for=AccessibilityPreference_4>Full step-free access</label></div><div class='field-validation-wrap'><span class="field-validation-valid" data-valmsg-for="AccessibilityPreference" data-valmsg-replace="true"></span></div></div>
+
+                                                        </div>
+
+                                                    </li>
+
+                                                </ul>
+
+                                                <h4 class="mocklabel">Preferences</h4>
+
+                                                <ul class="stacked-fields search-public-options clearfix">
+
+                                                    <li>
+
+
+
+                                                        <label class="heading" for="MaxWalkingMinutes">I only want to walk for a maximum of</label>
+
+                                                        <div class="selector jp-more-options-input">
+
+                                                            <select data-val="true" data-val-number="The&#32;field&#32;MaxWalkingMinutes&#32;must&#32;be&#32;a&#32;number." id="MaxWalkingMinutes" name="MaxWalkingMinutes">
+
+                                                                <option value="5">5 mins</option>
+
+                                                                <option value="10">10 mins</option>
+
+                                                                <option value="15">15 mins</option>
+
+                                                                <option value="20">20 mins</option>
+
+                                                                <option value="25">25 mins</option>
+
+                                                                <option value="30">30 mins</option>
+
+                                                                <option value="35">35 mins</option>
+
+                                                                <option selected="selected" value="40">40 mins</option>
+
+                                                                <option value="45">45 mins</option>
+
+                                                                <option value="50">50 mins</option>
+
+                                                                <option value="55">55 mins</option>
+
+                                                                <option value="60">60 mins</option>
+
+                                                            </select>
+
+                                                        </div>
+
+                                                    </li>
+
+                                                    <li>
+
+                                                        <label class="heading" for="WalkingSpeedTransport">My walking speed is</label>
+
+                                                        <div class="selector jp-more-options-input">
+
+                                                            <select id="WalkingSpeedTransport" name="WalkingSpeedTransport">
+
+                                                                <option value="slow">Slow</option>
+
+                                                                <option selected="selected" value="average">Average</option>
+
+                                                                <option value="fast">Fast</option>
+
+                                                            </select>
+
+                                                        </div>
+
+                                                    </li>
+
+                                                    <li>
+
+                                                        <label for="InputVia" class="heading">Travel via</label>
+
+                                                        <div class="go-via jp-via-more-options">
+
+
+
+
+
+                                                            <div id="search-filter-form-2">
+
+
+
+                                                                <label class="heading&#32;visually-hidden" for="InputVia">InputVia</label><input autocorrect="off" class="jpVia" id="InputVia" maxlength="100" name="InputVia" placeholder="Enter&#32;a&#32;location&#32;to&#32;travel&#32;via" type="text" value="" />
+
+                                                                <span class="field-validation-error geolocation-error hidden">&nbsp;</span>
+
+                                                                <input id="DataSetsJson" name="DataSetsJson" type="hidden" value="[[&quot;stopPoints&quot;,&quot;journeyPlannerNoSubmit?Input={{input}}&quot;]]" /><input id="Modes" name="Modes" type="hidden" value="tube,dlr,overground,tflrail,bus,river-bus,tram,cable-car,national-rail" />
+
+
+
+                                                            </div>
+
+
+
+                                                            <input id="Via" name="Via" type="hidden" value="" /><input id="ViaId" name="ViaId" type="hidden" value="" /><input id="PreviousVia" name="PreviousVia" type="hidden" value="" />
+
+                                                        </div>
+
+                                                    </li>
+
+                                                    <li>
+
+                                                        <h4 class="mocklabel">Outside London</h4>
+
+                                                        <div class="styled-checkbox outside-london">
+
+                                                            <input data-jumpto="#more-journey-options&#32;:tabbable:first" id="NationalSearch" name="NationalSearch" type="checkbox" value="true" /><input name="NationalSearch" type="hidden" value="false" />
+
+                                                            <label class="boxed-label-for-input" for="NationalSearch">Search outside London</label>
+
+                                                        </div>
+
+                                                    </li>
+
+                                                    <li>
+
+                                                        <h4 class="mocklabel">Optimise for walking</h4>
+
+                                                        <div class="styled-checkbox outside-london">
+
+                                                            <input id="WalkingOptimization" name="WalkingOptimization" type="checkbox" value="true" /><input name="WalkingOptimization" type="hidden" value="false" />
+
+                                                            <label class="boxed-label-for-input" for="WalkingOptimization">I&#39;d rather walk if it makes my journey quicker</label>
+
+                                                        </div>
+
+                                                    </li>
+
+                                                </ul>
+
+                                                <div id="save-journey-planner-preferences">
+
+                                                    <div class="styled-checkbox">
+
+                                                        <input data-jumpto="#recent-journeys&#32;a:first:visible" id="SavePreferences" name="SavePreferences" type="checkbox" value="true" /><input name="SavePreferences" type="hidden" value="false" />
+
+                                                        <label class="styled-checkbox-label" for="SavePreferences">Save these preferences for future visits</label>
+
+                                                    </div>
+
+                                                </div>
+
+                                                <input type="submit" class="primary-button plan-journey-button" value="Plan my journey" />
+
+                                            </fieldset>
+
+                                        </div>
+
+                                    </div>-->
+
+
+
+                                </div>
+
+                                <input id="IsMultipleJourneySelection" name="IsMultipleJourneySelection" type="hidden" value="False" />
+
+                                <input id="JourneyType" name="JourneyType" type="hidden" value="" />
+
+                                <input id="IsPastWarning" name="IsPastWarning" type="hidden" value="False" />
+
+                            </form>
+
+
+
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div data-set="reserved-teaser" class="large tertiary-teaser">
+
+                <div class="moving-source-order">
+
+                    <div class="news-teaser">
+
+                        <a href="">
+                            <div class="text-link">
+
+                                <h2>Advertisement 1</h2>
+
+                                <p>Find out about upcoming works or events across London which may affect your journey</p>
+
+                            </div>
+
+                            <img src="Images/promos/thames-clipper_rdax_400x200.jpg" alt="Central London traffic" />
+
+
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="large">
+
+                <div class="news-teaser">
+
+                    <a href="">
+
+                        <div class="text-link">
+
+                            <h2>Advertisement 2</h2><p>You can now use Android Pay to pay as you go. Find out more</p>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="main">
+
+            <div class="sub-main">
+
+
+                <div class="secondary-teaser">
+
+                    <div class="news-teaser">
+
+                        <a href="">
+
+                            <img src="Images/promos/thames-clipper_rdax_400x200.jpg" alt="Site visit from Tfl staff, construction site in Blackfriars, London" />
+                            <div class="text-link"><h2>Advertisement 3</h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
+
+                        </a>
+
+                    </div>
+
+                </div>
+                <div data-set="reserved-teaser" class="small-medium tertiary-teaser"></div>
+
+                <div class="medium-large">
+
+                    <div class="news-teaser">
+
+                        <a href="">
+
+                            <div class="text-link">
+
+                                <h2>Advertisement 4</h2><p>Open up London by boat. Discover the beauty of the city by river</p>
+
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="large">
+
+                    <div class="news-teaser">
+
+                        <a href="">
+
+                            <div class="text-link">
+
+                                <h2>Advertisement 5</h2><p>You can now use Android Pay to pay as you go. Find out more</p>
+
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                            </div>
+
+
+            <div class="sub-main">
+                <!--Div for pop up starts-->
+                <div><div class="container">
+
+    <div id="modal" class="popupContainer" style="display:none;">
+        <header class="popupHeader">
+            <span class="header_title">Login</span>
+            <span class="modal_close"><i class="fa fa-times"></i></span>
+        </header>
+
+        <section class="popupBody">
+            <!-- Social Login -->
+
+            <form>
+                <label>Email / Username</label>
+
+                <input type="text" />
+                <br />
+                <label>Password</label>
+
+                <input type="text" />
+                <br /><br />
+                <div>
+
+
+                    <input type="checkbox" id="check" />
+
+                    <label for="remember">Remember me on this computer </label>
+
+                    </div>
+                <div class="action_btns">
+
+                    <div class="one_half last"><a href="BookedTicketHistory.html" class="btn btn_red">Login</a></div>
+                </div>
+            </form>
+            <a href="#" class="forgot_password">Forgot password?</a>
+
+
+            <!-- Username & Password Login form -->
+
+            <!-- Register Form -->
+
+        </section>
+    </div>
+</div></div>
+                <!--div for popup ends-->
+
+
+                <div class="main-services">
+                    <div class="section-style-login">
+                        <a style="text-decoration:none; color:#CCCCCC" href="#modal" id="modal_trigger"><img src="Images/login.png" />Login</a> 
+                        <a style="text-decoration:none; color:#CCCCCC" href="">Or</a>
+                        <a style="text-decoration:none; color:#CCCCCC" href="Registration.html">Registration</a>
+                    </div>
+                    <div data-set="reserved-teaser" class="large tertiary-teaser">
+                        <div style="background-color:#f8f7f7">
+                            <h3 align="center" style="padding-top:5px">Need a New Fleet Owner License?</h3>
+                            <p align="center" style="padding-bottom:5px"> <a href="Licensepage.html" class="btn btn-info" role="button">Click Here..</a></p>
+
+                        </div>
+
+                    </div>
+                    <div class="clearfix">
+
+                        <a href="/fares-and-payments/oyster" class="flat-button top-icon">
+
+                            <img src="Images/logos/oyster-homepage-icon.png" alt="" />
+
+                            Top up Oyster
+
+                        </a><a href="/modes/driving/congestion-charge" class="flat-button top-icon">
+
+                            <img src="Images/logos/congestion-homepage-charge-icon.png" alt="" /> Congestion Charge
+                        </a>
+
+                    </div>
+                    <div class="clearfix">
+
+                        <a href="/modes/cycling/santander-cycles" class="flat-button top-icon">
+
+                            <img src="Images/logos/cycle-hire-homepage-icon.png" alt="" />
+
+                            Santander Cycles
+
+                        </a><a href="/modes/emirates-air-line/" class="flat-button top-icon">
+
+                            <img src="Images/logos/airline-homepage-icon.png" alt="" /> Emirates Air Line
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div data-set="reserved-teaser" class="large tertiary-teaser">
+
+                    <div class="moving-source-order">
+
+                        <div class="news-teaser">
+
+                            <a href="">
+
+                                <img src="Images/promos/thames-clipper_rdax_400x200.jpg" alt="Central London traffic" />
+
+                                <div class="text-link">
+
+                                    <h2>Advertisement 6</h2>
+
+                                    <p>Find out about upcoming works or events across London which may affect your journey</p>
+
+                                </div>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="vertical-button-container">
+
+                    <a href="/travel-information/stations-stops-and-piers/" class="plain-button">Stations, stops &amp; piers</a>
+
+
+
+                    <a href="/travel-information/timetables/" class="plain-button">Timetables</a>
+
+                    <a href="/help-and-contact/" class="plain-button">Help &amp; contacts</a>
+
+                    <a href="/travel-information/visiting-london/" class="plain-button">Visiting London</a>
+
+                    <a href="/transport-accessibility/" class="plain-button">Transport accessibility</a>
+
+                    <a href="/travel-information/social-media-and-email-updates/" class="plain-button">Social media &amp; email updates</a>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div style="display:none;">
+
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="footer" tabindex="0">
+
+                <h2 class="visually-hidden">Site footer</h2>
+
+
+
+                <div class="primary-footer r">
+                    <h2 class="visually-hidden">About TfL</h2><ul class="footer-links"><li><a href="/help-and-contact/">Help &amp; contacts</a></li><li><a class="" href="/corporate/careers/">Careers</a></li><li><a class="" href="/corporate/about-tfl/">About TfL</a></li><li><a class="" href="/corporate/safety-and-security/">Safety &amp; security</a></li><li><a class="" href="/corporate/transparency/">Transparency</a></li><li><a class="" href="/corporate/publications-and-reports/">Publications &amp; reports</a></li><li><a class="" href="/corporate/tfl-shop/">Gift Shop</a></li><li><a class="" href="/travel-information/social-media-and-email-updates/">Social media &amp; email updates</a></li><li><a class="languages-footer" href="/travel-information/other-languages/">Other languages</a></li></ul><h2 class="heading">Information for...</h2><ul class="info-for clearfix"><li><a href="/info-for/media/">Media</a></li><li><a href="/info-for/business-and-commercial/">Business &amp; commercial</a></li><li><a href="/info-for/boroughs/">Boroughs</a></li><li><a href="/info-for/schools-and-young-people/">Schools &amp; young people</a></li><li><a href="/info-for/deliveries-in-london/">Deliveries in London</a></li><li><a href="/info-for/urban-planning-and-construction/">Urban planning &amp; construction</a></li><li><a href="/info-for/taxis-and-private-hire/">Taxi &amp; private hire </a></li><li><a href="/info-for/suppliers-and-contractors/">Suppliers &amp; contractors</a></li><li><a href="/info-for/bus-operators/">Bus operators</a></li><li><a href="/info-for/open-data-users/">Open data users</a></li><li><a href="/info-for/coach-drivers/">Coach drivers</a></li><li><a href="/info-for/investors/">Investors</a></li></ul>
+                </div>
+                <div class="secondary-footer"><h2 class="visually-hidden">Site structure and legal information</h2><div class="r"><ul><li><a href="/corporate/terms-and-conditions/">Terms &amp; conditions </a></li><li><a href="/corporate/privacy-and-cookies/">Privacy &amp; cookies</a></li><li><a href="/corporate/website-accessibility/">Website accessibility</a></li></ul><span class="heading">Copyright Interbus</span></div></div>
+                <div>
+                </div>
+
+
+
             </div>
         </div>
     </div>
-    <!--END THEME SETTING--><!--BEGIN BACK TO TOP--><a id="totop" href="#"><i class="fa fa-angle-up"></i></a><!--END BACK TO TOP--><!--BEGIN TOPBAR-->
-    <div id="header-topbar-option-demo" class="page-header-topbar">
-        <nav id="topbar" role="navigation" style="margin-bottom: 0;" data-step="3" class="navbar navbar-header">
 
-            <div class="topbar-main" style="margin-left:auto;margin-right:auto">
+    <script>
 
-                <!--<a id="" href="" class="hidden-xs"><i class=""></i></a>-->
-                <ul class="nav navbar-nav horizontal-menu hidden-sm hidden-xs">
+        var myIndex = 0;
 
+        carousel();
 
-                    <li class=" "><a href="Index.html">Home &nbsp;</a></li>
-                    <li><a href="AboutUs.html">AboutUs&nbsp;</a></li>
-                    <li class=""><a href="ContactUs.html"> ContactUs &nbsp;</a></li>
-                    <li class=""><a href="Schedules.html"> Schedules &nbsp;</a></li>
+// script for slider
 
-                    <li class=""><a href="CheckFare.html">CheckFare &nbsp;</a></li>
-                    <li class=""> <a href="Cancellation.html">Cancellation &nbsp;</a></li>
-                    <li class=""> <a href="FeedBack.html">FeedBack &nbsp;</a></li>
-                    <li class=""><a href="Login.html">Login &nbsp;</a></li>
-                    <li class=""><a href="registrationform.html">Registration &nbsp;</a></li>
-                </ul>
-            </div>
+        function carousel() {
 
-        </nav>
-    </div>
+            var i;
 
-    <div style="display:table-cell; text-align:center" class="col-lg-12">
+            var x = document.getElementsByClassName("mySlides");
 
+            for (i = 0; i < x.length; i++) {
 
-            <table  class="col-lg-12">
-        <tr style="height: 100px;">
-            <td width="30%" style="height: 40px;">
-                <div><img src="images/1.jpg" style="justify-content:center" height="200" /></div>
-            </td>
-            <td style="height: 100px;"rowspan="2">
-                <div>
-                    <div class="col-lg-12">
-                        <div class="panel panel-violet">
-                            <div class="panel-heading">Check Availability</div>
-                            <div class="panel-body pan">
-                                <form action="#" class="form-horizontal form-seperated form-row-stripped">
-                                    <div class="form-body">
+                x[i].style.display = "none";
 
-                                        <br />
-                                        <label class="col-md-3 control-label">From:</label>
+            }
 
+            myIndex++;
 
-                                        <div class="col-md-8">
+            if (myIndex > x.length) { myIndex = 1 }
 
-                                            <select class="form-control" ng-options="S.Name for S in Stops track by S.Id" ng-model="S">
-                                                <option value="">Select Source</option>
-                                            </select>
-                                        </div>
-                                        <br /><br /><br />
-                                        <label class="col-md-3 control-label">To:</label>
+            x[myIndex - 1].style.display = "block";
 
-                                        <div class="col-md-8">
-                                            <select class="form-control" ng-options="D.Name for D in Stops track by D.Id" ng-model="D">
-                                                <option value="">Select Destination</option>
-                                            </select>
-                                            <br />
-                                        </div>
+            setTimeout(carousel, 3000); // Change image every 3 seconds
 
+        }
 
-                                       
-
-                                        <label for="inputFirstName" class="col-md-3 control-label">OnWordDate</label>
-
-                                        <div class="col-md-8"><input id="inputMiddleName" type="text" placeholder="Onward Date" class="form-control" ng-model="User.MiddleName" /><span class="help-block"></span></div>
-
-
-                                        <br /><br />
-                                        <label for="inputFirstName" class="col-md-3 control-label">ReturnDate</label>
-
-                                        <div class="col-md-8"><input id="inputMiddleName" type="text" placeholder="Return Date" class="form-control" ng-model="User.MiddleName" /><span class="help-block"></span></div>
-
-
-                                        <br />
-                                     
-
-
-
-                                        <label for="inputMiddleName" class="col-md-3 control-label">CoachType</label>
-
-                                        <div class="col-md-8">
-
-                                            <select class="form-control">
-                                                <option>Select</option>
-                                                <option>Seat</option>
-                                                <option>Sleeper</option>
-                                            </select>
-                                            <br />
-                                        </div>
-
-                                    
-           
-                        <label for="inputMiddleName" class="col-md-3 control-label">BookingType</label>
-
-                                    <div class="col-md-8">
-
-                                        <select class="form-control" name="ddlBusType" id="ddlBusType" tabindex="6">
-                                            <option value="1">Select</option>
-                                            <option value="2">Booking Type</option>
-                                            <option value="3">Hiring Type</option>
-                                        </select>
-                                        <br />
-                                    </div>
-
-
-     <button type="button" class="btn btn-primary" id="searchType" onclick="fun();" value="Search" style="margin-bottom:10px">Search</button>
-
-
-                    </div>
-                    </div>
-                        </div>
-                    </div>
-                  
-
-
-</td>
-            <td style="height: 100px;" width="30%"><div><img src="images/3.jpg" id="ctl00_cpEndUserMain_impRightTop" alt="" width="244" height="154" /></div></td>
-        </tr>
-        <tr style="height: 100px;">
-            <td width="30%" style="height: 100px;"><div><img src="images/2.jpg" id="ctl00_cpEndUserMain_impLeftBottom" height="90" width="266" vspace="7" /></div></td>
-            
-            <td style="height: 100px;" width="30%"><div><a href="LicensePage.html">  <img src="images/interbus.jpg" id="ctl00_cpEndUserMain_impRightBottom" width="244" height="126" /></a></div></td>
-        </tr>
-        </table>
-
-        <!--<table>
-            <tr>
-                <td>
-
-
-
-                    <table border="0" cellspacing="0" cellpadding="0">
-                        <tr>
-                            <td align="left" valign="top" style="height: 18px;">
-                                <img src="commercialsite2.png" width="1" height="1" />
-                            </td>
-                        </tr>
-                        <tr>
-
-                            <td valign="top" align="left">
-                                <table cellspacing="0" cellpadding="0" width="100%" border="0">
-
-                                    <tr>
-                                        <td style="WIDTH: 11px" valign="top" align="left"><img height="0" src="download.png" width="1" /></td>
-                                        <td style="WIDTH: 266px" valign="top" align="left">
-                                            <table cellspacing="0" cellpadding="0" width="100%" border="0">
-                                                <tr>
-                                                    <td><img src="images/1.jpg" id="ctl00_cpEndUserMain_impLeftTop" height="207" width="266" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td style=" BACKGROUND-COLOR: #ffffff;padding" valign="top" align="left">
-                                                        <table cellspacing="0" cellpadding="0" width="100%" border="0">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td valign="top" align="left">
-
-                                                                        <img src="images/2.jpg" id="ctl00_cpEndUserMain_impLeftBottom" height="90" width="266" vspace="7" />
-
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                        <td style="WIDTH: 26px" valign="top" align="left"><img height=1 src="download.png" width="0" /></td>
-                                        <td valign="top" align="left">
-                                            <table cellspacing="0" cellpadding="0" width="100%" border="0">
-
-                                                <tbody>
-                                                    <tr>
-                                                        <td style="HEIGHT: 25px" valign="top" align="left">
-                                                            <table style="HEIGHT: 25px" cellspacing="0" cellpadding="0" width="100%" border="0">
-                                                                <tbody style="background-color:lightgray" height="25px" cellspacing="0" cellpadding="0" width="100%" border="0">
-
-                                                                    <tr><td colspan="3" class="" style="padding-bottom:2px" valign="bottom" align="center">Check Availability</td></tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="black-table-border" valign="top" width="50%">
-                                                            <table cellspacing="0" cellpadding="0" width="100%" align=center border="1" style="background-color:white">
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td style="HEIGHT: 20px" align="center">
-                                                                            <div style="color:black">
-                                                                                <table width="90%" border="0" cellspacing="0" cellpadding="0" align="center">
-                                                                                    <tr>
-                                                                                        <td valign="top" align="center" style="height: 53px">
-                                                                                            <table cellpadding="0" cellspacing="0" width="100%" border="0" align="center">
-                                                                                                <tr>
-                                                                                                    <td align="left" valign="top" class="fildstext" style="padding-bottom:1px;">From:</td>
-
-
-
-                                                                                                    <td align="left" valign="top" class="fildstext" style="padding-bottom:9px;">
-                                                                                                        <select tabindex="2" ng-options="S.Name for S in Stops track by S.Id" ng-model="S" style="width:130px;">
-                                                                                                            <option value="">Select Source</option>
-                                                                                                        </select>
-
-                                                                                                </tr>
-                                                                                        </td>
-
-                                                                                    <tr>
-                                                                                        <td align="left" valign="top" class="fildstext" style="padding-bottom:1px;">To:</td>
-
-
-
-                                                                                        <td align="left" class="fildstext" style="padding-bottom:8px;">
-                                                                                            <select style="width:130px;" ng-options="D.Name for D in Stops track by D.Id" ng-model="D">
-                                                                                                <option value="">Select Destination</option>
-
-                                                                                            </select>
-                                                                                    </tr>
-                                                                        </td>
-
-
-                                                                    <tr>
-                                                                        <td style="padding-bottom:2px;">Onward journey Date:</td>
-
-
-                                                                        <td>
-
-                                                                        </td>
-
-                                                                    </tr>
-
-
-                                                                    <tr>
-                                                                        <td style="padding-bottom:2px;">Return Date:</td>
-
-
-                                                                        <td></td>
-
-                                                                    </tr>
-
-
-                                                                    <tr>
-                                                                        <td align="left" valign="top" class="fildstext" style="padding-bottom:2px;">CoachType:</td>
-                                                                        <td align="left" valign="top" class="fildstext" style="padding-bottom:8px;">
-                                                                            <select name="ctl00$cpEndUserMain$ucSearchRoute$ddlBusType" id="ctl00_cpEndUserMain_ucSearchRoute_ddlBusType" tabindex="6" class="formfileds" style="width:94px;">
-                                                                                <option selected="selected" value="0">--Any--</option>
-                                                                                <option value="1">Seat</option>
-                                                                                <option value="2">Sleeper</option>
-                                                                            </select>
-                                                                        </td>
-                                                                    </tr>
-
-
-                                                                    <tr>
-                                                                        <td align="left" valign="top" class="fildstext" style="padding-bottom:2px;">BookingType:</td>
-                                                                        <td align="left" valign="top" class="fildstext" style="padding-bottom:8px;">
-                                                                            <select name="ddlBusType" id="ddlBusType" tabindex="6" class="formfileds" style="width:94px;">
-                                                                                <option value="1">Select Type</option>
-                                                                                <option value="2">Booking Type</option>
-                                                                                <option value="3">Hiring Type</option>
-                                                                            </select>
-                                                                    </tr>
-
-                                                                    <tr>
-
-                                                                        <td align="center" style="padding-bottom:18px;" colspan="2">
-
-                                                                            <input type="button" id="searchType" onclick="fun();" value="Search" style="margin-bottom:10px" />
-
-                                                                        </td>
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div id="ctl00_cpEndUserMain_ucSearchRoute_uppgrSearchRoute" style="display:none;">
-                                                                                <div style="Z-INDEX: 1; LEFT: 0px; POSITION: absolute; TOP:0px;width:100%;height:100%;" class="darkClass">
-
-
-                                                                                </div>
-                                                                                <div style="Z-INDEX: 100; LEFT: 0px; POSITION: absolute; TOP:0px;width:100%;height:100%;">
-                                                                                    <table align="center" border="0" cellspacing="0" cellpadding="0" height="100%"></table>
-                                                                                </div>
-                                                                            </div>
-
-                                                                        </td>
-                                                                    </tr>
-
-                                                            </table>
-
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </table>
-
-
-                            </td>
-                            <td style="WIDTH: 26px" valign="top" align="left"><img height=1 src="images/6.jpg" width=1 /></td>
-
-                            <td style="WIDTH: 266px;height:100%" valign="top" align="left">
-
-
-                                <table border="0" width="244px">
-
-
-                                    <tr>
-                                        <td>
-                                            <img src="images/3.jpg" id="ctl00_cpEndUserMain_impRightTop" alt="" width="244" height="154" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="height:10px"><img src="" width="1" height="1" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="LicensePage.html">  <img src="images/interbus.jpg" id="ctl00_cpEndUserMain_impRightBottom" width="244" height="126" /></a>
-                                        </td>
-                                    </tr>
-
-                                </table>
-                            </td>
-                            <td style="WIDTH: 11px" valign="top" align="left"><img height="1" src="images/8.jpeg" width="1" /></td>
-                        </tr>
-
-
-                    </table>
-                </td>
-            </tr>
-
-        </table>-->
-
-    </div>
-    <script src="js/jquery-1.10.2.min.js"></script>
-    <script src="js/jquery-migrate-1.2.1.min.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <!--loading bootstrap js-->
-    <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
-    <script src="vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
-    
-    <script src="vendors/metisMenu/jquery.metisMenu.js"></script>
-    <script src="vendors/slimScroll/jquery.slimscroll.js"></script>
-    <script src="vendors/jquery-cookie/jquery.cookie.js"></script>
-    <script src="vendors/iCheck/icheck.min.js"></script>
-    <script src="vendors/iCheck/custom.min.js"></script>
-    <script src="vendors/jquery-news-ticker/jquery.news-ticker.js"></script>
-    <script src="js/jquery.menu.js"></script>
-    <script src="vendors/jquery-pace/pace.min.js"></script>
-    <script src="vendors/holder/holder.js"></script>
-    <script src="vendors/responsive-tabs/responsive-tabs.js"></script>
-    <script src="vendors/jplist/html/js/jplist.min.js"></script>
-    <script src="js/jplist.js"></script>
-    <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
-
-    <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
-
-    
-    <script src="js/angular.js"></script>
-    <script src="js/Index.js"></script>
+    </script>
     <script type="text/javascript">
-        $(window).load(function () {
-            $('#slider').nivoSlider();
+        $("#modal_trigger").leanModal({ top: 200, overlay: 0.6, closeButton: ".modal_close" });
+
+        $(function () {
+            // Calling Login Form
+            $("#login_form").click(function () {
+                $(".social_login").hide();
+                $(".user_login").show();
+                return false;
+            });
+
+            // Calling Register Form
+            $("#register_form").click(function () {
+                $(".social_login").hide();
+                $(".user_register").show();
+                $(".header_title").text('Register');
+                return false;
         });
+
+            // Going back to Social Forms
+            $(".back_btn").click(function () {
+                $(".user_login").hide();
+                $(".user_register").hide();
+                $(".social_login").show();
+                $(".header_title").text('Login');
+                return false;
+        });
+
+        })
     </script>
 
 </body>
+
 </html>
+
