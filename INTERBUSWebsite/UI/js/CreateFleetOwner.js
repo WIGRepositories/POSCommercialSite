@@ -1,8 +1,6 @@
-// JavaScript source code
-// JavaScript source code
-var app = angular.module('myApp', [])
-var ctrl = app.controller('Mycntrlr', function ($scope, $http) {
-
+var app = angular.module('myApp', ['ngStorage'])
+var ctrl = app.controller('MyCtrl', function ($scope, $http) {
+   // $scope.uname = $localStorage.uname;   
     //app.controller('showHide', function ($scope) {
     //  $scope.toggle = function () {
     //    if (!$scope.myForm.email - input.$valid) {
@@ -11,7 +9,7 @@ var ctrl = app.controller('Mycntrlr', function ($scope, $http) {
     //};
 
     $scope.save = function (Fleet, flag) {
-
+       
         var Fleet = {
             Id: Fleet.Id,
             FirstName: Fleet.FirstName,
@@ -29,9 +27,9 @@ var ctrl = app.controller('Mycntrlr', function ($scope, $http) {
             insupdflag: flag
 
         }
-      
+
         $http({
-            url: 'http://localhost:52800/api/fleetownerlicense/CreateNewFO',
+            url: 'http://localhost:52800/api/FleetOwnerReq/CreateNewFO',
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             data: Fleet
@@ -53,6 +51,5 @@ var ctrl = app.controller('Mycntrlr', function ($scope, $http) {
     $scope.clearUsers = function () {
         $scope.User1 = null;
     }
-
 
 });

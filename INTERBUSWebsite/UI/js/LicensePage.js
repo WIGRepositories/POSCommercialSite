@@ -1,6 +1,6 @@
 ﻿// JavaScript source code
 var app = angular.module('myApp', [])
-var ctrl = app.controller('myCtrl', function ($scope, $http) {
+var ctrl = app.controller('MyCtrl', function ($scope, $http) {
 
     $scope.GoToConfirmation = function (code) {
 
@@ -9,7 +9,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http) {
             return false;
         }
         else {
-            $http.get('http://localhost:52800/api/fleetownerlicense/validatefleetowner?fleetownercode=' + code).then(function (response, req) {
+            $http.get('http://localhost:52800/api/fleetownerlicense/validatefleetowner?fleetownercode=' + code).then(function (response, data) {
                 $scope.result = response.data;
 
                 if ($scope.result > 0)
