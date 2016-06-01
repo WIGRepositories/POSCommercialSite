@@ -1,90 +1,26 @@
-﻿<!doctype html>
-
-<!-- tfl-probe -->
-<!--[if IE 7]>         <html lang="en" class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" class="no-js lt-ie10 lt-ie9"> <![endif]-->
-<!--[if IE 9]>         <html lang="en" class="no-js lt-ie10"> <![endif]-->
-<!--[if gt IE 9]><!-->
-
-<html lang="en" class="no-js no-touch">
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-controller="myCtrl">
 <!--<![endif]-->
 <head>
 
-    <script type="text/javascript" src="js/jquery-1.11.0.min.js" ></script>
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
-
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/w3.css">
     <!-- Latest compiled and minified CSS -->
     <!-- Optional theme -->
 
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
 
-
-
-    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
-
-    <meta name="HandheldFriendly" content="True">
-
-    
-
-
-
-    <script src="js/bootstrap.min.js" ></script>
-
-
-
-
     <title>Interbus - Get Moving Anywhere, Comfortably</title>
 
 
-
-
-
-    <meta name="description" content="Information on all forms of transport in London including cycle hire. Routes, maps, plan a journey, tickets sales, realtime traffic and travel updates." />
-
-    <meta name="keywords" />
-
-    <meta name="author" content="Interbus | Get Moving Anywhere, Comfortably" />
-
-    <meta property="og:url" content="" />
-
-    <meta property="og:title" content="Every Journey Matters" />
-
-    <meta property="og:description" content="Information on all forms of transport in London including cycle hire. Routes, maps, plan a journey, tickets sales, realtime traffic and travel updates." />
-
-    <meta property="og:site_name" content="Transport for London" />
-
-    <meta property="article:publisher" content="https://facebook.com/" />
-
-    <meta property="article:author" content="https://facebook.com/" />
-
-    <meta name="twitter:creator" content="&#64;tfl" />
-
-
-
     <link href="css/StyleSheet2.css" media="screen,print" rel="stylesheet" />
-
     <link href="css/StyleSheet1.css" media="screen,print" rel="stylesheet" />
-
     <link href="css/StyleSheet4.css" media="screen,&#32;print" rel="stylesheet" />
-
     <link href="css/StyleSheet3.css" media="screen&#32;and&#32;(min-width:&#32;580px),print" rel="stylesheet" />
-
-
-
     <link href="css/StyleSheet5.css" media="screen&#32;and&#32;(min-width:&#32;900px)" rel="stylesheet" />
-
-
-
-
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <style>
-     
         rr.div a {
             text-decoration: none;
             color: white;
@@ -108,165 +44,63 @@
                 .rr ul li:hover {
                     background: #555;
                 }
+
         .rr .active {
             background: #555;
         }
 
 
-                    .rr ul li:hover ul {
-                        display: block;
-                    }
+        .rr ul li:hover ul {
+            display: block;
+        }
 
-                .rr ul li ul {
-                    position: absolute;
-                    width: 100px;
-                    display: none;
+        .rr ul li ul {
+            position: absolute;
+            width: 100px;
+            display: none;
+        }
+
+            .rr ul li ul li {
+                background: #555;
+                display: block;
+                border-bottom: 1px solid white;
+                width: 170px;
+            }
+
+                .rr ul li ul li a {
+                    display: block !important;
+                    text-decoration: none;
                 }
 
-                    .rr ul li ul li {
-                        background: #555;
-                        display: block;
-                        border-bottom:1px solid white;
-                        width:170px;
-                    }
+                .rr ul li ul li:hover {
+                    background: #666;
+                }
 
-                        .rr ul li ul li a {
-                            display: block !important;
-                            text-decoration: none;
-                        }
-
-                        .rr ul li ul li:hover {
-                            background: #666;
-                        }
-
-                        .rr ul li ul li a:hover {
-                            text-decoration: none;
-                        }       
+                .rr ul li ul li a:hover {
+                    text-decoration: none;
+                }
     </style>
 
     <script type="text/javascript">
-
         var h = document.documentElement;
-
         h.className = h.className.replace(/\bno-js\b/, '');
-
         var isTouch = !!("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0;
 
-
-
         if (isTouch) {
-
             // remove class which defines hover behavior
-
             h.className = h.className.replace(/\bno-touch\b/, '');
-
         }
-
     </script>
-     <script type="text/javascript">
 
-        // Instructions: please embed this snippet directly into every page in your website template.
-
-        // For optimal performance, this must be embedded directly into the template, not referenced
-
-        // as an external file.
-
-
-
-        // Answers Cloud Services Embed Script v1.02
-
-        // DO NOT MODIFY BELOW THIS LINE *****************************************
-
-        ; (function (g) {
-
-            var d = document, i, am = d.createElement('script'), h = d.head || d.getElementsByTagName("head")[0],
-
-            aex = {
-
-                "src": "//gateway.answerscloud.com/tfl-gov-uk/production/gateway.min.js",
-
-                "type": "text/javascript",
-
-                "async": "true",
-
-                "data-vendor": "acs",
-
-                "data-role": "gateway"
-
-            };
-
-            for (var attr in aex) { am.setAttribute(attr, aex[attr]); }
-
-            h.appendChild(am);
-
-            g['acsReady'] = function () { var aT = '__acsReady__', args = Array.prototype.slice.call(arguments, 0), k = setInterval(function () { if (typeof g[aT] === 'function') { clearInterval(k); for (i = 0; i < args.length; i++) { g[aT].call(g, function (fn) { return function () { setTimeout(fn, 1) }; }(args[i])); } } }, 50); };
-
-        })(window);
-
-        // DO NOT MODIFY ABOVE THIS LINE *****************************************
-
-    </script>
-    
-
-       
-    
-
-
-    
 </head>
 
-<body class="personalisation-active bus-favourites-inactive">
+<body ng-init="GetStops();">
 
     <div id="c-mask" class="c-mask disable-touch-scrolling"></div>
     <!--start header-->
     <div class="parentDisable">
         <div id="container">
-            <!--Start Logo and Search box-->
-            <!--<div class="top-row-top" style="background-color:#FFFFFF">
 
-                <div class="r">
-
-                    <div class="logo">
-
-                        <a style="color:white" href="#">
-                            <img src="Images/logos/interbusLogo.png" style="width:180px; height:65px" />
-                            <span class="main-roundel">&nbsp;</span>
-                            <span class="tfl-name">
-
-                                Transport<br /> for London
-
-                            </span>
-
-                        </a>
-
-                    </div>
-
-                    <div class="top-row-extras">
-
-                        <form action="/search/" method="GET">
-
-                            <div class="search-tools">
-
-                                <label for="q" class="visually-hidden">Search the site</label>
-
-                                <div class="remove-content-container empty" style="position: relative;">
-
-                                    <input type="text" placeholder="Search" id="q" name="q" />
-
-                                </div>
-
-                                <input id="search-button" class="hide-text" type="submit" value="Search" data-jumpto="#full-width-content :tabbable:first">
-
-                            </div>
-
-                        </form>
-
-                    </div>
-
-                </div>
-
-            </div>-->
-            <!--End Logo and Search box-->
             <!--Start Menu -->
             <div class="mainnav" id="mainnav" tabindex="0">
 
@@ -274,12 +108,12 @@
 
                     <div class="r">
                         <div class="rr">
-                            <a style="margin-top: 0px; padding-top: 0px; margin-right: 50px; float:left" href="Index.html"><img style="height:56px" src="Images/logos/interbusLogo.png" alt="Alternate Text" /> </a>
+                            <a style="margin-top: 0px; padding-top: 0px; margin-right: 50px; float:left" href="index.html"><img style="height:56px" src="Images/logos/interbusLogo.png" alt="Alternate Text" /> </a>
                             <ul class="collapsible-menu clearfix" style="margin-left:0px;">
 
                                 <li style="margin-left:90px">
 
-                                    <a class="active" style="text-decoration:none" href="Index.html">Home</a>
+                                    <a style="text-decoration:none" href="index.html">Home</a>
 
                                 </li>
                                 <li>
@@ -290,7 +124,7 @@
                                         <li><a href="#">Schedules</a></li>
                                         <li><a href="#">CheckFare</a></li>
                                         <li><a href="#">Cancellation</a></li>
-                                        <li><a href="Licensepage.html">Fleet Owner Lisence</a></li>
+
 
                                     </ul>
                                 </li>
@@ -302,23 +136,23 @@
                                 <li>
 
                                     <a style="text-decoration:none" href="#">Products</a>
-
+                                    <ul><li><a href="Licensepage.html">Fleet Owner Lisence</a></li></ul>
                                 </li>
 
                                 <li>
 
-                                    <a style="text-decoration:none" href="About.html">About Us</a>
+                                    <a style="text-decoration:none" href="#">About Us</a>
                                     <ul>
-                                        <li><a href="Contact.html">ContactUs</a></li>
+                                        <li><a href="#">ContactUs</a></li>
 
                                     </ul>
 
                                 </li>
 
-                                <li style="margin-left:150px;">
+                                <li style="margin-left:150px">
 
-                                    <div style="float:right; padding-top:11px;">
-                                        <input type="text" placeholder="Search.." id="q" name="q" style="border-radius:30px; width:120px; height:35px; color:red;" />
+                                    <div style="float:right; padding-top:11px">
+                                        <input type="text" placeholder="Search" id="q" name="q" style="border-radius:30px; width:120px; height:35px" />
 
 
                                     </div>
@@ -341,43 +175,25 @@
 
         <div id="main-hero" style="margin-top:58px">
             <img class="mySlides" src="Images/promos/thames-clipper_rdax_400x200.jpg" style="width:100%; height:350px;">
-
             <img class="mySlides" src="Images/promos/santanderfreehire-hp-1400x700.jpg" style="width:100%; height:350px;">
-
             <img class="mySlides" src="Images/promos/travel-disruptions_rdax_400x200.jpg" style="width:100%; height:350px;">
-
         </div>
 
         <div class="main-and-aside one-row r">
-
             <!--plan journey form-->
-
             <div class="aside">
-
                 <div class="widget-wrapper homepage-style">
-
                     <div class="expandable-box">
-
                         <div class="content">
-
                             <div class="always-visible widget-heading primary">
-
                                 <div class="controls">&nbsp;</div>
-
                                 <div class="section-style">Plan a journey</div>
-
                             </div>
 
                             <div class="start-hidden widget-content journey-planner-widget">
-
-
-
                                 <form autocomplete="off" action="booking.html" class="publictransport">
-
                                     <div class="journey-form">
-
                                         <div class="basic-journey-options">
-
                                             <div id="plan-a-journey">
 
                                                 <fieldset>
@@ -390,7 +206,9 @@
 
                                                             <label class="heading&#32;visually-hidden" for="InputFrom">From</label>
 
-                                                            <input autocorrect="off" class="jpFrom" data-val="true" id="InputFrom" maxlength="100" name="InputFrom" placeholder="From" type="text" value="" />
+                                                            <select class="form-control" ng-options="S.Name for S in Stops track by S.Id" ng-model="S">
+                                                                <option value="">Select Source</option>
+                                                            </select>
 
                                                         </div>
 
@@ -399,7 +217,9 @@
 
 
                                                             <label class="heading&#32;visually-hidden" for="InputTo">To</label>
-                                                            <input autocorrect="off" class="jpTo" data-val="true" id="InputTo" maxlength="100" name="InputTo" placeholder="To" type="text" value="" /><span class="field-validation-valid" data-valmsg-for="InputTo" data-valmsg-replace="true"></span>
+                                                            <select class="form-control" ng-options="D.Name for D in Stops track by D.Id" ng-model="D">
+                                                                <option value="">Select Destination</option>
+                                                            </select>
 
                                                         </div>
 
@@ -421,315 +241,13 @@
 
                                                         </div>
 
-                                                        <!--<div class="change-time-options">
 
-                                                            <div class="clearfix">
-
-                                                                <ul class="horizontal-toggle-buttons leaving-or-arriving clearfix">
-
-                                                                    <li class="selected">
-
-                                                                        <label for="departing">Leaving</label>
-
-                                                                        <input id="departing" name="TimeIs" type="radio" value="departing" />
-
-                                                                    </li>
-
-                                                                    <li class="">
-
-                                                                        <label for="arriving">Arriving</label>
-
-                                                                        <input id="arriving" name="TimeIs" type="radio" value="arriving" />
-
-                                                                    </li>
-
-                                                                </ul>
-
-                                                            </div>
-
-                                                            <div class="hours-mins clearfix">
-
-                                                                <div class="selector date-of-departure">
-
-                                                                    <label class="visually-hidden" for="Date">Date of departure</label>
-
-                                                                    <select id="Date" name="Date">
-
-                                                                        <option selected="selected" value="20160522">Today</option>
-
-                                                                        <option value="20160523">Tomorrow</option>
-
-                                                                        <option value="20160524">Tue 24 May</option>
-
-                                                                        <option value="20160525">Wed 25 May</option>
-
-                                                                        <option value="20160526">Thu 26 May</option>
-
-                                                                        <option value="20160527">Fri 27 May</option>
-
-                                                                        <option value="20160528">Sat 28 May</option>
-
-                                                                        <option value="20160529">Sun 29 May</option>
-
-                                                                        <option value="20160530">Mon 30 May</option>
-
-                                                                        <option value="20160531">Tue 31 May</option>
-
-                                                                        <option value="20160601">Wed 01 Jun</option>
-
-                                                                        <option value="20160602">Thu 02 Jun</option>
-
-                                                                        <option value="20160603">Fri 03 Jun</option>
-
-                                                                        <option value="20160604">Sat 04 Jun</option>
-
-                                                                        <option value="20160605">Sun 05 Jun</option>
-
-                                                                        <option value="20160606">Mon 06 Jun</option>
-
-                                                                        <option value="20160607">Tue 07 Jun</option>
-
-                                                                        <option value="20160608">Wed 08 Jun</option>
-
-                                                                        <option value="20160609">Thu 09 Jun</option>
-
-                                                                        <option value="20160610">Fri 10 Jun</option>
-
-                                                                        <option value="20160611">Sat 11 Jun</option>
-
-                                                                        <option value="20160612">Sun 12 Jun</option>
-
-                                                                        <option value="20160613">Mon 13 Jun</option>
-
-                                                                        <option value="20160614">Tue 14 Jun</option>
-
-                                                                        <option value="20160615">Wed 15 Jun</option>
-
-                                                                        <option value="20160616">Thu 16 Jun</option>
-
-                                                                        <option value="20160617">Fri 17 Jun</option>
-
-                                                                        <option value="20160618">Sat 18 Jun</option>
-
-                                                                        <option value="20160619">Sun 19 Jun</option>
-
-                                                                        <option value="20160620">Mon 20 Jun</option>
-
-                                                                    </select>
-
-                                                                </div>
-
-                                                                <div class="selector hours">
-
-                                                                    <label class="visually-hidden" for="Time">Time</label>
-
-                                                                    <select id="Time" name="Time">
-
-                                                                        <option value="0000">00:00</option>
-
-                                                                        <option value="0015">00:15</option>
-
-                                                                        <option value="0030">00:30</option>
-
-                                                                        <option value="0045">00:45</option>
-
-                                                                        <option value="0100">01:00</option>
-
-                                                                        <option value="0115">01:15</option>
-
-                                                                        <option value="0130">01:30</option>
-
-                                                                        <option value="0145">01:45</option>
-
-                                                                        <option value="0200">02:00</option>
-
-                                                                        <option value="0215">02:15</option>
-
-                                                                        <option value="0230">02:30</option>
-
-                                                                        <option value="0245">02:45</option>
-
-                                                                        <option value="0300">03:00</option>
-
-                                                                        <option value="0315">03:15</option>
-
-                                                                        <option value="0330">03:30</option>
-
-                                                                        <option value="0345">03:45</option>
-
-                                                                        <option value="0400">04:00</option>
-
-                                                                        <option value="0415">04:15</option>
-
-                                                                        <option value="0430">04:30</option>
-
-                                                                        <option value="0445">04:45</option>
-
-                                                                        <option value="0500">05:00</option>
-
-                                                                        <option value="0515">05:15</option>
-
-                                                                        <option value="0530">05:30</option>
-
-                                                                        <option value="0545">05:45</option>
-
-                                                                        <option value="0600">06:00</option>
-
-                                                                        <option value="0615">06:15</option>
-
-                                                                        <option value="0630">06:30</option>
-
-                                                                        <option value="0645">06:45</option>
-
-                                                                        <option value="0700">07:00</option>
-
-                                                                        <option value="0715">07:15</option>
-
-                                                                        <option value="0730">07:30</option>
-
-                                                                        <option value="0745">07:45</option>
-
-                                                                        <option value="0800">08:00</option>
-
-                                                                        <option value="0815">08:15</option>
-
-                                                                        <option value="0830">08:30</option>
-
-                                                                        <option value="0845">08:45</option>
-
-                                                                        <option value="0900">09:00</option>
-
-                                                                        <option value="0915">09:15</option>
-
-                                                                        <option value="0930">09:30</option>
-
-                                                                        <option value="0945">09:45</option>
-
-                                                                        <option value="1000">10:00</option>
-
-                                                                        <option value="1015">10:15</option>
-
-                                                                        <option value="1030">10:30</option>
-
-                                                                        <option value="1045">10:45</option>
-
-                                                                        <option value="1100">11:00</option>
-
-                                                                        <option value="1115">11:15</option>
-
-                                                                        <option value="1130">11:30</option>
-
-                                                                        <option value="1145">11:45</option>
-
-                                                                        <option value="1200">12:00</option>
-
-                                                                        <option value="1215">12:15</option>
-
-                                                                        <option value="1230">12:30</option>
-
-                                                                        <option value="1245">12:45</option>
-
-                                                                        <option value="1300">13:00</option>
-
-                                                                        <option value="1315">13:15</option>
-
-                                                                        <option value="1330">13:30</option>
-
-                                                                        <option value="1345">13:45</option>
-
-                                                                        <option value="1400">14:00</option>
-
-                                                                        <option value="1415">14:15</option>
-
-                                                                        <option value="1430">14:30</option>
-
-                                                                        <option value="1445">14:45</option>
-
-                                                                        <option value="1500">15:00</option>
-
-                                                                        <option value="1515">15:15</option>
-
-                                                                        <option value="1530">15:30</option>
-
-                                                                        <option value="1545">15:45</option>
-
-                                                                        <option value="1600">16:00</option>
-
-                                                                        <option value="1615">16:15</option>
-
-                                                                        <option value="1630">16:30</option>
-
-                                                                        <option value="1645">16:45</option>
-
-                                                                        <option value="1700">17:00</option>
-
-                                                                        <option value="1715">17:15</option>
-
-                                                                        <option value="1730">17:30</option>
-
-                                                                        <option value="1745">17:45</option>
-
-                                                                        <option value="1800">18:00</option>
-
-                                                                        <option selected="selected" value="1815">18:15</option>
-
-                                                                        <option value="1830">18:30</option>
-
-                                                                        <option value="1845">18:45</option>
-
-                                                                        <option value="1900">19:00</option>
-
-                                                                        <option value="1915">19:15</option>
-
-                                                                        <option value="1930">19:30</option>
-
-                                                                        <option value="1945">19:45</option>
-
-                                                                        <option value="2000">20:00</option>
-
-                                                                        <option value="2015">20:15</option>
-
-                                                                        <option value="2030">20:30</option>
-
-                                                                        <option value="2045">20:45</option>
-
-                                                                        <option value="2100">21:00</option>
-
-                                                                        <option value="2115">21:15</option>
-
-                                                                        <option value="2130">21:30</option>
-
-                                                                        <option value="2145">21:45</option>
-
-                                                                        <option value="2200">22:00</option>
-
-                                                                        <option value="2215">22:15</option>
-
-                                                                        <option value="2230">22:30</option>
-
-                                                                        <option value="2245">22:45</option>
-
-                                                                        <option value="2300">23:00</option>
-
-                                                                        <option value="2315">23:15</option>
-
-                                                                        <option value="2330">23:30</option>
-
-                                                                        <option value="2345">23:45</option>
-
-                                                                    </select>
-
-                                                                </div>
-
-                                                            </div>
-
-                                                        </div>-->
 
                                                     </div>
 
                                                     <div class="extra-options clearfix">
 
-                                                        <a class="toggle-options more-options" href="javascript:appendJPParams(this," />Travel options & accessibility</a>
+                                                        <a class="toggle-options more-options" href="#" />Travel options & accessibility</a>
 
                                                     </div>
 
@@ -743,284 +261,6 @@
 
                                         </div>
 
-                                        <!--<div id="more-journey-options">
-
-                                            <div>
-
-                                                <fieldset>
-
-                                                    <legend class="visually-hidden">More options</legend>
-
-                                                    <ul class="tabs-style-2">
-
-                                                        <li class="publictransport"><a href="#">Public transport</a></li>
-
-                                                        <li class="cycling "><a href="#" class="icon-left cycle"><span>Cycling</span>&nbsp;</a></li>
-
-                                                        <li class="walking "><a href="#" class="icon-left walking"><span>Walking</span>&nbsp;</a></li>
-
-                                                    </ul>
-
-                                                    <fieldset class="modes-of-transport jp-mode-publictransport input-group">
-
-                                                        <legend class="bold heading">Travel by</legend>
-
-                                                        <div class="t-row">
-
-                                                            <div class="t-cell select-deselect-container">
-
-                                                                <div class='select-deselect-option jp-select-all'><a href='javascript:void(0);'>select all</a></div>
-
-                                                                <div class='select-deselect-option jp-deselect-all'><a href='javascript:void(0);'>deselect all</a></div>
-
-                                                            </div>
-
-                                                        </div>
-
-
-
-                                                        <label class="visually-hidden" for="Mode">Travelling by</label>
-
-                                                        <select class="to-checkbox-list&#32;two-col&#32;with-logos&#32;select-all" data-val="true" data-val-required="The&#32;Travelling&#32;by&#32;field&#32;is&#32;required." id="Mode" multiple="multiple" name="Mode">
-
-                                                            <option selected="selected" value="bus">Bus</option>
-
-                                                            <option selected="selected" value="tube">Tube</option>
-
-                                                            <option selected="selected" value="national-rail">National Rail</option>
-
-                                                            <option selected="selected" value="dlr">DLR</option>
-
-                                                            <option selected="selected" value="overground">London Overground</option>
-
-
-
-                                                            <option selected="selected" value="river-bus">River Bus</option>
-
-                                                            <option selected="selected" value="tram">Tram</option>
-
-                                                            <option selected="selected" value="cable-car">Emirates Air Line</option>
-
-                                                            <option selected="selected" value="coach">Coach</option>
-
-                                                        </select>
-
-                                                        <span class="field-validation-valid" data-valmsg-for="Mode" data-valmsg-replace="true"></span>
-
-                                                    </fieldset>
-
-
-
-
-
-                                                    <fieldset class="search-cycling-options input-group hidden">
-
-                                                        <legend class="bold">For cycling journeys, I want to</legend>
-
-
-
-                                                        <div class="input-group">
-
-                                                            <div class='form-control-wrapper  full-width-form-module '><div class='form-control'><input id="CyclePreference_0" name="CyclePreference" type="radio" value="CycleHire" /><label class='boxed-label-for-input' for=CyclePreference_0>Use Cycle Hire</label><input checked="checked" id="CyclePreference_1" name="CyclePreference" type="radio" value="AllTheWay" /><label class='boxed-label-for-input' for=CyclePreference_1>Cycle directly to my destination</label><input id="CyclePreference_2" name="CyclePreference" type="radio" value="TakeOnTransport" /><label class='boxed-label-for-input' for=CyclePreference_2>Take my cycle on public transport</label><input id="CyclePreference_3" name="CyclePreference" type="radio" value="LeaveAtStation" /><label class='boxed-label-for-input' for=CyclePreference_3>Leave my bike at a station</label></div><div class='field-validation-wrap'><span class="field-validation-valid" data-valmsg-for="CyclePreference" data-valmsg-replace="true"></span></div></div>
-
-                                                        </div>
-
-                                                    </fieldset>
-
-
-
-                                                    <fieldset class="search-walking-options input-group hidden">
-
-                                                        <legend class="bold">My walking speed is</legend>
-
-
-
-                                                        <div class="input-group">
-
-                                                            <div class='form-control-wrapper  full-width-form-module '><div class='form-control'><input id="WalkingSpeedWalking_0" name="WalkingSpeedWalking" type="radio" value="slow" /><label class='boxed-label-for-input' for=WalkingSpeedWalking_0>Slow</label><input checked="checked" id="WalkingSpeedWalking_1" name="WalkingSpeedWalking" type="radio" value="average" /><label class='boxed-label-for-input' for=WalkingSpeedWalking_1>Average</label><input id="WalkingSpeedWalking_2" name="WalkingSpeedWalking" type="radio" value="fast" /><label class='boxed-label-for-input' for=WalkingSpeedWalking_2>Fast</label></div><div class='field-validation-wrap'><span class="field-validation-valid" data-valmsg-for="WalkingSpeedWalking" data-valmsg-replace="true"></span></div></div>
-
-                                                        </div>
-
-                                                    </fieldset>
-
-
-
-                                                    <ul class="stacked-fields search-public-options level-one clearfix">
-
-                                                        <li class="show-me-list">
-
-                                                            <label class="heading" for="JourneyPreference">Show me</label>
-
-                                                            <div class="input-group">
-
-                                                                <div class='form-control-wrapper  full-width-form-module '><div class='form-control'><input checked="checked" id="JourneyPreference_0" name="JourneyPreference" type="radio" value="leasttime" /><label class='boxed-label-for-input' for=JourneyPreference_0>The fastest routes</label><input id="JourneyPreference_1" name="JourneyPreference" type="radio" value="leastinterchange" /><label class='boxed-label-for-input' for=JourneyPreference_1>Routes with fewest changes</label><input id="JourneyPreference_2" name="JourneyPreference" type="radio" value="leastwalking" /><label class='boxed-label-for-input' for=JourneyPreference_2>Routes with least walking</label></div><div class='field-validation-wrap'><span class="field-validation-valid" data-valmsg-for="JourneyPreference" data-valmsg-replace="true"></span></div></div>
-
-                                                            </div>
-
-                                                        </li>
-
-                                                        <li>
-
-                                                            <label class="heading" for="AccessibilityPreference">Access options</label>
-
-                                                            <div class="input-group">
-
-                                                                <div class='form-control-wrapper  full-width-form-module '><div class='form-control'><input checked="checked" id="AccessibilityPreference_0" name="AccessibilityPreference" type="radio" value="norequirements" /><label class='boxed-label-for-input' for=AccessibilityPreference_0>No accessibility requirement</label><input id="AccessibilityPreference_1" name="AccessibilityPreference" type="radio" value="nosolidstairs" /><label class='boxed-label-for-input' for=AccessibilityPreference_1>Use escalators, not stairs</label><input id="AccessibilityPreference_2" name="AccessibilityPreference" type="radio" value="noescalators" /><label class='boxed-label-for-input' for=AccessibilityPreference_2>Use stairs, not escalators</label><input id="AccessibilityPreference_3" name="AccessibilityPreference" type="radio" value="stepfreetovehicle" /><label class='boxed-label-for-input' for=AccessibilityPreference_3>Step-free to platform only</label><input id="AccessibilityPreference_4" name="AccessibilityPreference" type="radio" value="stepfreetoplatform" /><label class='boxed-label-for-input' for=AccessibilityPreference_4>Full step-free access</label></div><div class='field-validation-wrap'><span class="field-validation-valid" data-valmsg-for="AccessibilityPreference" data-valmsg-replace="true"></span></div></div>
-
-                                                            </div>
-
-                                                        </li>
-
-                                                    </ul>
-
-                                                    <h4 class="mocklabel">Preferences</h4>
-
-                                                    <ul class="stacked-fields search-public-options clearfix">
-
-                                                        <li>
-
-
-
-                                                            <label class="heading" for="MaxWalkingMinutes">I only want to walk for a maximum of</label>
-
-                                                            <div class="selector jp-more-options-input">
-
-                                                                <select data-val="true" data-val-number="The&#32;field&#32;MaxWalkingMinutes&#32;must&#32;be&#32;a&#32;number." id="MaxWalkingMinutes" name="MaxWalkingMinutes">
-
-                                                                    <option value="5">5 mins</option>
-
-                                                                    <option value="10">10 mins</option>
-
-                                                                    <option value="15">15 mins</option>
-
-                                                                    <option value="20">20 mins</option>
-
-                                                                    <option value="25">25 mins</option>
-
-                                                                    <option value="30">30 mins</option>
-
-                                                                    <option value="35">35 mins</option>
-
-                                                                    <option selected="selected" value="40">40 mins</option>
-
-                                                                    <option value="45">45 mins</option>
-
-                                                                    <option value="50">50 mins</option>
-
-                                                                    <option value="55">55 mins</option>
-
-                                                                    <option value="60">60 mins</option>
-
-                                                                </select>
-
-                                                            </div>
-
-                                                        </li>
-
-                                                        <li>
-
-                                                            <label class="heading" for="WalkingSpeedTransport">My walking speed is</label>
-
-                                                            <div class="selector jp-more-options-input">
-
-                                                                <select id="WalkingSpeedTransport" name="WalkingSpeedTransport">
-
-                                                                    <option value="slow">Slow</option>
-
-                                                                    <option selected="selected" value="average">Average</option>
-
-                                                                    <option value="fast">Fast</option>
-
-                                                                </select>
-
-                                                            </div>
-
-                                                        </li>
-
-                                                        <li>
-
-                                                            <label for="InputVia" class="heading">Travel via</label>
-
-                                                            <div class="go-via jp-via-more-options">
-
-
-
-
-
-                                                                <div id="search-filter-form-2">
-
-
-
-                                                                    <label class="heading&#32;visually-hidden" for="InputVia">InputVia</label><input autocorrect="off" class="jpVia" id="InputVia" maxlength="100" name="InputVia" placeholder="Enter&#32;a&#32;location&#32;to&#32;travel&#32;via" type="text" value="" />
-
-                                                                    <span class="field-validation-error geolocation-error hidden">&nbsp;</span>
-
-                                                                    <input id="DataSetsJson" name="DataSetsJson" type="hidden" value="[[&quot;stopPoints&quot;,&quot;journeyPlannerNoSubmit?Input={{input}}&quot;]]" /><input id="Modes" name="Modes" type="hidden" value="tube,dlr,overground,tflrail,bus,river-bus,tram,cable-car,national-rail" />
-
-
-
-                                                                </div>
-
-
-
-                                                                <input id="Via" name="Via" type="hidden" value="" /><input id="ViaId" name="ViaId" type="hidden" value="" /><input id="PreviousVia" name="PreviousVia" type="hidden" value="" />
-
-                                                            </div>
-
-                                                        </li>
-
-                                                        <li>
-
-                                                            <h4 class="mocklabel">Outside London</h4>
-
-                                                            <div class="styled-checkbox outside-london">
-
-                                                                <input data-jumpto="#more-journey-options&#32;:tabbable:first" id="NationalSearch" name="NationalSearch" type="checkbox" value="true" /><input name="NationalSearch" type="hidden" value="false" />
-
-                                                                <label class="boxed-label-for-input" for="NationalSearch">Search outside London</label>
-
-                                                            </div>
-
-                                                        </li>
-
-                                                        <li>
-
-                                                            <h4 class="mocklabel">Optimise for walking</h4>
-
-                                                            <div class="styled-checkbox outside-london">
-
-                                                                <input id="WalkingOptimization" name="WalkingOptimization" type="checkbox" value="true" /><input name="WalkingOptimization" type="hidden" value="false" />
-
-                                                                <label class="boxed-label-for-input" for="WalkingOptimization">I&#39;d rather walk if it makes my journey quicker</label>
-
-                                                            </div>
-
-                                                        </li>
-
-                                                    </ul>
-
-                                                    <div id="save-journey-planner-preferences">
-
-                                                        <div class="styled-checkbox">
-
-                                                            <input data-jumpto="#recent-journeys&#32;a:first:visible" id="SavePreferences" name="SavePreferences" type="checkbox" value="true" /><input name="SavePreferences" type="hidden" value="false" />
-
-                                                            <label class="styled-checkbox-label" for="SavePreferences">Save these preferences for future visits</label>
-
-                                                        </div>
-
-                                                    </div>
-
-                                                    <input type="submit" class="primary-button plan-journey-button" value="Plan my journey" />
-
-                                                </fieldset>
-
-                                            </div>
-
-                                        </div>-->
-
-
-
                                     </div>
 
                                     <input id="IsMultipleJourneySelection" name="IsMultipleJourneySelection" type="hidden" value="False" />
@@ -1030,10 +270,6 @@
                                     <input id="IsPastWarning" name="IsPastWarning" type="hidden" value="False" />
 
                                 </form>
-
-
-
-
 
                             </div>
 
@@ -1205,58 +441,6 @@
 
                 <div class="sub-main">
                     <!--Div for pop up starts-->
-                 <!--  <div>
-                        <div class="container">
-
-                            <div id="modal" class="popupContainer" style="display:none;">
-                                <header class="popupHeader">
-
-                                    <span class="header_title">Login</span>
-                                    <span class="modal_close"><i class="fa fa-times"></i></span>
-                                </header>
-
-                                <section class="popupBody">
-                              
-                                    <form>
-                                        <label>Email / Username</label><input type="text" class="form-control" />
-
-                                        <label>Password</label><input type="text" class="form-control" />
-                                        <br />
-                                        <div class="dropdown">
-                                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                                                Login As
-                                                <span class="caret"></span>
-                                            </button>
-                                            <ul class="dropdown-menu">
-
-                                                <li><a href="#">Guest</a></li>
-                                                <li><a href="#">Admin</a></li>
-                                                <li><a href="#">Passenger</a></li>
-                                                <li><a href="#">Fleet Owner</a></li>
-
-
-                                            </ul>
-                                        </div>
-
-                                        <div>
-                                            <input type="checkbox" id="check" />
-
-                                            <label for="remember">Remember me on this computer </label>
-
-                                        </div>
-
-                                        <div class="action_btns">
-
-                                            <div class="one_half last"><a href="BookedTicketHistory.html" class="btn btn_red">Login</a></div>
-                                        </div>
-                                    </form>
-                                    <a href="#" class="forgot_password">Forgot password?</a>
-
-                                </section>
-                            </div>
-                        </div>
-                    </div>-->
-                 
                     <!---->
                     <div class="modal fade" id="myModal" role="dialog">
                         <div class="modal-dialog">
@@ -1298,7 +482,8 @@
 
                                         <div class="action_btns">
 
-                                            <div class="one_half last" style="margin-left:150px"><a href="BookedTicketHistory.html" class="btn btn_red">Login</a>
+                                            <div class="one_half last" style="margin-left:150px">
+                                                <a href="BookedTicketHistory.html" class="btn btn_red">Login</a>
                                             </div>
                                         </div>
                                     </form>
@@ -1319,7 +504,7 @@
                             <a style="text-decoration:none; color:#CCCCCC" href="" data-toggle="modal" data-target="#myModal"><img src="Images/login.png" />Login</a>
                             <!--<a style="text-decoration:none; color:#CCCCCC" href="#modal" id="modal_trigger"><img src="Images/login.png" />Login</a>-->
                             <a style="text-decoration:none; color:#CCCCCC" href="">Or</a>
-                            <a style="text-decoration:none; color:#CCCCCC" href="Registration.html">Registration</a>
+                            <a style="text-decoration:none; color:#CCCCCC" href="Registration.html">Create and Account</a>
                         </div>
                         <!--<div data-set="reserved-teaser" class="large tertiary-teaser">
                             <div style="background-color:#f8f7f7">
@@ -1426,7 +611,6 @@
 
 
                     <div class="primary-footer r">
-
                         <h2 class="visually-hidden">About Interbus</h2>
                         <ul class="footer-links">
                             <li><a href="/help-and-contact/">Help &amp; contacts</a></li>
@@ -1438,9 +622,7 @@
                             <li><a class="" href="/corporate/tfl-shop/">Gift Shop</a></li>
                             <li><a class="" href="/travel-information/social-media-and-email-updates/">Social media &amp; email updates</a></li>
                             <li><a class="languages-footer" href="/travel-information/other-languages/">Other languages</a></li>
-                        </ul>
-
-                        <h2 class="heading">Information for...</h2><ul class="info-for clearfix">
+                        </ul><h2 class="heading">Information for...</h2><ul class="info-for clearfix">
                             <li><a href="/info-for/media/">Media</a></li>
                             <li><a href="/info-for/business-and-commercial/">Business &amp; commercial</a></li>
                             <li><a href="/info-for/boroughs/">Get Support online 24/7</a></li>
@@ -1472,7 +654,7 @@
 
         carousel();
 
-// script for slider
+        // script for slider
 
         function carousel() {
 
@@ -1514,7 +696,7 @@
                 $(".user_register").show();
                 $(".header_title").text('Register');
                 return false;
-        });
+            });
 
             // Going back to Social Forms
             $(".back_btn").click(function () {
@@ -1523,13 +705,16 @@
                 $(".social_login").show();
                 $(".header_title").text('Login');
                 return false;
-        });
+            });
 
         })
     </script>
-    
-
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>
+
+
 
