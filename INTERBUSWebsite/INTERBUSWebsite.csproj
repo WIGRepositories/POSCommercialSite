@@ -101,6 +101,7 @@
     <Content Include="UI\Contact.html" />
     <Content Include="UI\ContactUs.html" />
     <Content Include="UI\css\bootstrap-theme.min.css" />
+    <Content Include="UI\css\bootstrap.min.css" />
     <Content Include="UI\css\Main.css" />
     <Content Include="UI\css\style-responsive.css" />
     <Content Include="UI\css\style.css" />
