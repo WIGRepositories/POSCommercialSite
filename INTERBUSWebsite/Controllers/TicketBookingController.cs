@@ -9,11 +9,11 @@ using System.Web.Http;
 
 namespace KESENENI2.Controllers
 {
-    public class KESENINE3Controller : ApiController
+    public class TicketBookingController : ApiController
     {
           [HttpGet]
 
-        public DataTable commericialsite()
+        public DataTable GetAvailableServices(int srcId, int destId)
         {
             DataTable Tbl = new DataTable();
 
@@ -25,7 +25,9 @@ namespace KESENENI2.Controllers
 
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "Gettable2";
+              cmd.CommandText = "Getsp_Availableseats";
+              cmd.Parameters.Add("Src_Id", SqlDbType.Int).Value = srcId;
+              cmd.Parameters.Add("Des_Id", SqlDbType.Int).Value = destId;
             cmd.Connection = conn;
           
             DataSet ds = new DataSet();

@@ -102,6 +102,7 @@
     <Content Include="UI\Contact.html" />
     <Content Include="UI\ContactUs.html" />
     <Content Include="UI\css\bootstrap-theme.min.css" />
+    <Content Include="UI\css\bootstrap.min.css" />
     <Content Include="UI\css\Main.css" />
     <Content Include="UI\css\style-responsive.css" />
     <Content Include="UI\css\style.css" />
@@ -222,7 +223,9 @@
     <Content Include="UI\js\jquery.nivo.slider.js" />
     <Content Include="UI\js\LicensePage.js" />
     <Content Include="UI\js\main.js" />
+    <Content Include="UI\js\ngStorage.js" />
     <Content Include="UI\js\SeatSelection.js" />
+    <Content Include="UI\js\Stops.js" />
     <Content Include="UI\js\VehicleAvailability.js" />
     <Content Include="UI\LicenseConfirmation.html" />
     <Content Include="UI\LicensePage.html" />
