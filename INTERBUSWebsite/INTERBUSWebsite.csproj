@@ -96,6 +96,7 @@
     <Content Include="UI\CancelTicket.html" />
     <Content Include="UI\cancelticketinformation.html" />
     <Content Include="UI\Cancel_Ticket.html" />
+    <Content Include="UI\Cartdetails.html" />
     <Content Include="UI\CheckFare.html" />
     <Content Include="UI\CheckOut.html" />
     <Content Include="UI\Contact.html" />
@@ -222,7 +223,9 @@
     <Content Include="UI\js\jquery.nivo.slider.js" />
     <Content Include="UI\js\LicensePage.js" />
     <Content Include="UI\js\main.js" />
+    <Content Include="UI\js\ngStorage.js" />
     <Content Include="UI\js\SeatSelection.js" />
+    <Content Include="UI\js\Stops.js" />
     <Content Include="UI\js\VehicleAvailability.js" />
     <Content Include="UI\LicenseConfirmation.html" />
     <Content Include="UI\LicensePage.html" />
@@ -237,6 +240,7 @@
     <Content Include="UI\seats.html" />
     <Content Include="UI\SeatSelection.html" />
     <Content Include="UI\Status_and_Updates.html" />
+    <Content Include="UI\success.html" />
     <Content Include="UI\vehicleAvailability.html" />
     <Content Include="UI\vendors\animate.css\animate.css" />
     <Content Include="UI\vendors\bootstrap-colorpicker\css\colorpicker.css" />
