@@ -96,6 +96,7 @@
     <Content Include="UI\CancelTicket.html" />
     <Content Include="UI\cancelticketinformation.html" />
     <Content Include="UI\Cancel_Ticket.html" />
+    <Content Include="UI\Cartdetails.html" />
     <Content Include="UI\CheckFare.html" />
     <Content Include="UI\CheckOut.html" />
     <Content Include="UI\Contact.html" />
@@ -246,6 +247,7 @@
     <Content Include="UI\seats.html" />
     <Content Include="UI\SeatSelection.html" />
     <Content Include="UI\Status_and_Updates.html" />
+    <Content Include="UI\success.html" />
     <Content Include="UI\vehicleAvailability.html" />
     <Content Include="UI\vendors\animate.css\animate.css" />
     <Content Include="UI\vendors\bootstrap-colorpicker\css\colorpicker.css" />
