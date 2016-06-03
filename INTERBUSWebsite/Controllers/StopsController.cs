@@ -13,7 +13,7 @@ namespace INTERBUSWebsite.Controllers
     {
         [HttpGet]
 
-        public DataTable commericialsite()
+        public DataTable GetStops()
         {
             DataTable Tbl = new DataTable();
 

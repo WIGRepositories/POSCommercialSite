@@ -1,51 +1,38 @@
-﻿<!doctype html>
-
-<!-- tfl-probe -->
-<!--[if IE 7]>         <html lang="en" class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" class="no-js lt-ie10 lt-ie9"> <![endif]-->
-<!--[if IE 9]>         <html lang="en" class="no-js lt-ie10"> <![endif]-->
-<!--[if gt IE 9]><!-->
-
-<html lang="en" class="no-js no-touch">
-
-<!--<![endif]-->
+﻿
+<html lang="en" ng-app="myApp" ng-controller="myCtrl">
 <head>
+    <title>INTERRBUS | Create Fleet Owner</title>
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
     <meta charset="utf-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="stylesheet" href="css/w3.css">
-
-   
-
     <!-- links for table -->
-    <!--Loading bootstrap css-->  
-    <link type="text/css" rel="stylesheet" href="vendors/jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
+
     <link type="text/css" rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
     <link type="text/css" rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
     <!--LOADING STYLESHEET FOR PAGE--><!--Loading style vendors-->
-    <link type="text/css" rel="stylesheet" href="vendors/animate.css/animate.css">
+
     <link type="text/css" rel="stylesheet" href="vendors/jquery-pace/pace.css">
     <link type="text/css" rel="stylesheet" href="vendors/iCheck/skins/all.css">
-    <link type="text/css" rel="stylesheet" href="vendors/jquery-news-ticker/jquery.news-ticker.css">
+
     <!--Loading style-->
     <link type="text/css" rel="stylesheet" href="css/themes/style2/pink-blue.css" id="theme-change" class="style-change color-change">
     <link type="text/css" rel="stylesheet" href="css/style-responsive.css">
     <link rel="stylesheet" type="text/css" href="css/Main.css">
-  
+
 
     <!-- Optional theme -->
 
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css" >
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
 
 
 
     <!-- Latest compiled and minified JavaScript -->
 
-    
+
 
     <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
 
@@ -54,125 +41,22 @@
     <script type="text/javascript">
 
         var h = document.documentElement;
-
         h.className = h.className.replace(/\bno-js\b/, '');
-
         var isTouch = !!("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0;
-
-
-
         if (isTouch) {
-
             // remove class which defines hover behavior
-
             h.className = h.className.replace(/\bno-touch\b/, '');
-
         }
-
     </script>
-
-
-
     <script src="js/bootstrap.min.js"></script>
-    <title>Interbus - Get Moving Anywhere, Comfortably</title>
 
-    <meta name="description" content="Information on all forms of transport in London including cycle hire. Routes, maps, plan a journey, tickets sales, realtime traffic and travel updates." />
-
-    <meta name="keywords" />
-
-    <meta name="author" content="Interbus | Get Moving Anywhere, Comfortably" />
-
-    <meta property="og:url" content="https://www..com/" />
-
-    <meta property="og:title" content="Every Journey Matters" />
-
-    <meta property="og:description" content="Information on all forms of transport in London including cycle hire. Routes, maps, plan a journey, tickets sales, realtime traffic and travel updates." />
-
-    <meta property="og:site_name" content="Transport for London" />
-
-    <meta property="article:publisher" content="https://facebook.com/" />
-
-    <meta property="article:author" content="https://facebook.com/" />
-
-    <meta name="twitter:creator" content="&#64;tfl" />
-
-
-
-<link href="css/StyleSheet2.css" media="screen,print" rel="stylesheet" />
-
+    <link href="css/StyleSheet2.css" media="screen,print" rel="stylesheet" />
     <link href="css/StyleSheet1.css" media="screen,print" rel="stylesheet" />
-
-    <link href="css/StyleSheet4.css" media="screen,&#32;print" rel="stylesheet" />    
-
+    <link href="css/StyleSheet4.css" media="screen,&#32;print" rel="stylesheet" />
     <link href="css/StyleSheet3.css" media="screen&#32;and&#32;(min-width:&#32;580px),print" rel="stylesheet" />
-
-
-
     <link href="css/StyleSheet5.css" media="screen&#32;and&#32;(min-width:&#32;900px)" rel="stylesheet" />
-
-    <!--<link href="/cdn/static/styles/core/min/print.min.bbf3e026.css" media="print" rel="stylesheet" />-->        
-
-            
-
+    <!--<link href="/cdn/static/styles/core/min/print.min.bbf3e026.css" media="print" rel="stylesheet" />-->
     <link href="css/StyleSheet6.css" media="screen" rel="stylesheet" />
-
-        
-
-
-
-   
-
-        <!--[if lte IE 9]>
-
-            <link href="/cdn/static/styles/core/min/ie.min.0b308d8c.css" media="screen" rel="stylesheet" />
-
-        <![endif]-->
-
-
-<script type="text/javascript">
-
- // Instructions: please embed this snippet directly into every page in your website template.
-
- // For optimal performance, this must be embedded directly into the template, not referenced
-
- // as an external file.
-
-
-
- // Answers Cloud Services Embed Script v1.02
-
- // DO NOT MODIFY BELOW THIS LINE *****************************************
-
-        ; (function (g) {
-
- var d = document, i, am = d.createElement('script'), h = d.head || d.getElementsByTagName("head")[0],
-
- aex = {
-
- "src": "//gateway.answerscloud.com/tfl-gov-uk/production/gateway.min.js",
-
- "type": "text/javascript",
-
- "async": "true",
-
- "data-vendor": "acs",
-
- "data-role": "gateway"
-
- };
-
-            for (var attr in aex) { am.setAttribute(attr, aex[attr]); }
-
- h.appendChild(am);
-
-            g['acsReady'] = function () { var aT = '__acsReady__', args = Array.prototype.slice.call(arguments, 0), k = setInterval(function () { if (typeof g[aT] === 'function') { clearInterval(k); for (i = 0; i < args.length; i++) { g[aT].call(g, function (fn) { return function () { setTimeout(fn, 1) }; }(args[i])); } } }, 50); };
-
- })(window);
-
- // DO NOT MODIFY ABOVE THIS LINE *****************************************
-
-</script>
-
     <style>
         rr.div a {
             text-decoration: none;
@@ -230,32 +114,31 @@
     </style>
 
 
-
 </head>
 
-<body class="personalisation-active bus-favourites-inactive">
-    
+<body ng-model="Fleet">
 
 
+    <div id="c-mask" class="c-mask disable-touch-scrolling"></div>
 
     <!--Start Header-->
     <div id="container">
 
-              <!--start of white bar above menu-->
- <!--End of white bar above menu-->
-<!--Start Menu-->
+        <!--start of white bar above menu-->
+        <!--End of white bar above menu-->
+        <!--Start Menu-->
         <div class="mainnav" id="mainnav" tabindex="0">
 
-            <div class="top-row" style="position:fixed; width:100%; z-index:1">
+            <div class="top-row" style="position:fixed; width:100%; z-index:3">
 
                 <div class="r">
                     <div class="rr">
-                        <a style="margin-top: 0px; padding-top: 0px; margin-right: 50px; float:left" href="Index.html"><img style="height:56px" src="Images/logos/interbusLogo.png" alt="Alternate Text" /> </a>
+                        <a style="margin-top: 0px; padding-top: 0px; margin-right: 50px; float:left" href="index.html"><img style="height:56px" src="Images/logos/interbusLogo.png" alt="Alternate Text" /> </a>
                         <ul class="collapsible-menu clearfix" style="margin-left:0px;">
 
                             <li style="margin-left:90px">
 
-                                <a style="text-decoration:none" href="Index.html">Home</a>
+                                <a style="text-decoration:none" href="index.html">Home</a>
 
                             </li>
                             <li>
@@ -266,7 +149,7 @@
                                     <li><a href="#">Schedules</a></li>
                                     <li><a href="#">CheckFare</a></li>
                                     <li><a href="#">Cancellation</a></li>
-                                    <li><a href="Licensepage.html">Fleet Owner Lisence</a></li>
+
 
                                 </ul>
                             </li>
@@ -278,7 +161,7 @@
                             <li>
 
                                 <a style="text-decoration:none" href="#">Products</a>
-
+                                <ul><li><a href="Licensepage.html">Fleet Owner Lisence</a></li></ul>
                             </li>
 
                             <li>
@@ -309,284 +192,183 @@
             </div>
 
         </div>
-                    <!--End Menu-->
-                    
-                </div>
-<!--End Header-->
-
-<div class="row">
-                      <div class="col-lg-12">
-                      
-            <div class="page-form" style="margin-top:80px">
-
-                <form action="LicenseConfirmation.html">
-            <div class="header-content"><h1>Interbus fleet owner request</h1></div>
-            <div class="body-content">
-                <div class="form-group">
-                            <div class="input-icon right">
-                                <i class="fa fa-user"></i><input type="text" placeholder="First Name" name="First Name" class="form-control">
-                       </div>
-                </div>
-                <div class="form-group">
-                            <div class="input-icon right"><i class="fa fa-user"></i><input type="text" placeholder="Last Name" name="Last Name" class="form-control"></div>
-                </div>
-                <div class="form-group">
-                            <div class="input-icon right"><i class="fa fa-envelope"></i><input type="email" placeholder="Email" name="email" class="form-control"></div>
-                </div>
-                <div class="form-group">
-                    <div class="input-icon right"><i class="fa fa-mobilephone"></i><input type="text" placeholder="Mobile No" name="Mobile No" class="form-control"></div>
-                </div>
-                <div class="form-group">
-                    <div class="input-icon right"><i class="fa fa-envelope"></i><input type="text" placeholder="CompanyName" name="CompanyName" class="form-control"></div>
-                </div>
-                <div class="form-group">
-                    <div class="input-icon right"><i class="fa fa-envelope"></i><input type="text" placeholder="Description " name="CompanyInfo " class="form-control"></div>
-                </div>
-                <div class="form-group">
-
-
-                    <div class="col-md-14">
-                        <select id="selusertype" class="form-control">
-                            <option value="3" selected disabled>Select License Type</option>
-                            <option value="4">Basic</option>
-                            <option value="5">Professional</option>
-                            <option value="6">Business</option>
-                            <option value="6">Unlimited</option>
-                        </select>
-                    </div>
-                </div>
-                <center>
-                   
-                            <input type="submit" data-toggle="modal" class="btn btn-primary" value="Submit" />
-                           
-
-</center>
-                <!--<div class="form-group">
-                            <div class="input-icon right"><label for="inputPhone" class="control-label">Phone</label><input id="inputPhone" type="text" placeholder="" class="form-control" /></div>
-                    </div>
-                </div>-->
-
-
-            </div>
-        </form>
+        <!--End Menu-->
 
     </div>
-            
-                    
-                    
-            </div>
-                      </div>   
+    <!--End Header-->
 
-<div class="row">
-<div class="col-lg-12">
-<div id="footer" tabindex="0">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="page-form" style="margin-top:80px">
+
+
+                <div class="page-form">
+                    <form class="form">
+                        <div class="header-content"><h1>Interbus fleet owner request</h1></div>
+                        <div class="body-content">
+                            <div class="form-group">
+                                <div class="input-icon right">
+                                    <i class="fa fa-user"></i><input type="text" ng-model="Fleet.FirstName" data-val="true" data-val-required="First name&#39; should not be empty." maxlength="12" placeholder="First Name" name="First Name" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-icon right"><i class="fa fa-user"></i><input type="text" ng-model="Fleet.LastName" placeholder="Last Name" name="Last Name" data-val="true" data-val-required="&#39;Last name&#39; should not be empty." maxlength="12" class="form-control"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-icon right"><i class="fa fa-envelope"></i><input type="email" ng-model="Fleet.Email" placeholder="email" name="email" data-val-required="Please enter Valid EmailId" pattern="[^ @]*@[^ @]*" class="form-control"><p class="form-helper hidden" id="emailHint">Enter a valid email address</p></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-icon right"><i class="fa fa-mobilephone"></i><input id="Mbile No" ng-model="Fleet.MobileNo" type="tel" placeholder="Mobile No" name="Mobile No" class="form-control"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-icon right"><i class="fa fa-envelope"></i><input type="text" ng-model="Fleet.CompanyName" placeholder="CompanyName" name="CompanyName" class="form-control"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-icon right"><i class="fa fa-envelope"></i><input type="text" ng-model="Fleet.Description" placeholder="Description " name="CompanyInfo " class="form-control"></div>
+                            </div>
+                            <div class="form-group">
+
+
+                                <div class="col-md-14">
+                                    <select id="selusertype" class="form-control" ng-model="t">
+                                        <option value="" selected disabled>Select License Type</option>
+                                        <option value="4">Basic</option>
+                                        <option value="5">Professional</option>
+                                        <option value="6">Business</option>
+                                        <option value="6">Unlimited</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <center>
+
+                                <button type="submit" data-target="#Modal-header-primary" data-toggle="modal" class="btn btn-primary" ng-click="save(Fleet,'I')">
+                                    Submit
+                                </button>
+
+                            </center>
+                            <!--<div class="form-group">
+                                        <div class="input-icon right"><label for="inputPhone" class="control-label">Phone</label><input id="inputPhone" type="text" placeholder="" class="form-control" /></div>
+                                </div>
+                            </div>-->
+
+
+                        </div>
+                    </form>
+
+                </div>
+
+
+
+            </div>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="footer" tabindex="0">
 
                     <h2 class="visually-hidden">Site footer</h2>
 
 
 
                     <div class="primary-footer r">
-                    <h2 class="visually-hidden">About Interbus</h2><ul class="footer-links"><li><a href="/help-and-contact/">Help &amp; contacts</a></li><li><a class="" href="/corporate/careers/">Careers</a></li><li><a class="" href="/corporate/about-tfl/">About TfL</a></li><li><a class="" href="/corporate/safety-and-security/">Safety &amp; security</a></li><li><a class="" href="/corporate/transparency/">Transparency</a></li><li><a class="" href="/corporate/publications-and-reports/">Publications &amp; reports</a></li><li><a class="" href="/corporate/tfl-shop/">Gift Shop</a></li><li><a class="" href="/travel-information/social-media-and-email-updates/">Social media &amp; email updates</a></li><li><a class="languages-footer" href="/travel-information/other-languages/">Other languages</a></li></ul><h2 class="heading">Information for...</h2><ul class="info-for clearfix"><li><a href="/info-for/media/">Media</a></li><li><a href="/info-for/business-and-commercial/">Business &amp; commercial</a></li><li><a href="/info-for/boroughs/">Boroughs</a></li><li><a href="/info-for/schools-and-young-people/">Schools &amp; young people</a></li><li><a href="/info-for/deliveries-in-london/">Deliveries in London</a></li><li><a href="/info-for/urban-planning-and-construction/">Urban planning &amp; construction</a></li><li><a href="/info-for/taxis-and-private-hire/">Taxi &amp; private hire </a></li><li><a href="/info-for/suppliers-and-contractors/">Suppliers &amp; contractors</a></li><li><a href="/info-for/bus-operators/">Bus operators</a></li><li><a href="/info-for/open-data-users/">Open data users</a></li><li><a href="/info-for/coach-drivers/">Coach drivers</a></li><li><a href="/info-for/investors/">Investors</a></li></ul>
-                </div>
+                        <h2 class="visually-hidden">About Interbus</h2>
+                        <ul class="footer-links">
+                            <li><a href="/help-and-contact/">Help &amp; contacts</a></li>
+                            <li><a class="" href="/corporate/careers/">Careers</a></li>
+                            <li><a class="" href="/corporate/about-tfl/">About Interbus</a></li>
+                            <li><a class="" href="/corporate/safety-and-security/">Safety &amp; security</a></li>
+                            <li><a class="" href="/corporate/transparency/">Transparency</a></li>
+                            <li><a class="" href="/corporate/publications-and-reports/">Publications &amp; reports</a></li>
+                            <li><a class="" href="/corporate/tfl-shop/">Gift Shop</a></li>
+                            <li><a class="" href="/travel-information/social-media-and-email-updates/">Social media &amp; email updates</a></li>
+                            <li><a class="languages-footer" href="/travel-information/other-languages/">Other languages</a></li>
+                        </ul><h2 class="heading">Information for...</h2><ul class="info-for clearfix">
+                            <li><a href="/info-for/media/">Media</a></li>
+                            <li><a href="/info-for/business-and-commercial/">Business &amp; commercial</a></li>
+                            <li><a href="/info-for/boroughs/">Get Support online 24/7</a></li>
+                            <li><a href="/info-for/schools-and-young-people/">Schools &amp; young people</a></li>
+                            <li><a href="/info-for/deliveries-in-london/">Deliveries in Zimbabwe</a></li>
+                            <li><a href="/info-for/urban-planning-and-construction/">Urban planning &amp; construction</a></li>
+                            <li><a href="/info-for/taxis-and-private-hire/">Taxi &amp; private hire </a></li>
+                            <li><a href="/info-for/suppliers-and-contractors/">Suppliers &amp; contractors</a></li>
+                            <li><a href="/info-for/bus-operators/">Bus operators</a></li>
+                            <li><a href="/info-for/open-data-users/">Open data users</a></li>
+                            <li><a href="/info-for/coach-drivers/">Coach drivers</a></li>
+                            <li><a href="/info-for/investors/">Investors</a></li>
+                            <li><a href="/info-for/investors/">Download Interbus App   </a></li>
+                        </ul>
+                    </div>
                     <div class="secondary-footer"><h2 class="visually-hidden">Site structure and legal information</h2><div class="r"><ul><li><a href="/corporate/terms-and-conditions/">Terms &amp; conditions </a></li><li><a href="/corporate/privacy-and-cookies/">Privacy &amp; cookies</a></li><li><a href="/corporate/website-accessibility/">Website accessibility</a></li></ul><span class="heading">Copyright Interbus</span></div></div>
                     <div>
                     </div>
 
 
+
                 </div>
-</div>
-     </div>           
+            </div>
+        </div>
 
-   
+        <script>
 
-          
+            var myIndex = 0;
 
+            carousel();
 
 
-    <script>
 
-var myIndex = 0;
+            function carousel() {
 
-carousel();
+                var i;
 
+                var x = document.getElementsByClassName("mySlides");
 
+                for (i = 0; i < x.length; i++) {
 
-function carousel() {
-
-    var i;
-
-    var x = document.getElementsByClassName("mySlides");
-
-    for (i = 0; i < x.length; i++) {
-
-       x[i].style.display = "none";  
-
-    }
-
-    myIndex++;
-
-            if (myIndex > x.length) { myIndex = 1 }
-
-            x[myIndex - 1].style.display = "block";
-
-    setTimeout(carousel, 4000); // Change image every 2 seconds
-
-}
-
-</script>
-
-
-
-
-            <script>
-
-                queue.push(function () {
-
-                    $("#From").attr("data-jumpback", ".show-mobile-search:visible, #search-button:visible");
-
-                });
-
-            </script>
-
-
-
-            <script>
-
-                queue.push(function () {
-
-
-
-                    if (!$('body').hasClass('personalisation-active')) {
-
-                        $('#home-status-updates-default').css("visibility", "visible");
-
-                    }
-
-
-
-                });</script>
-
-
-
-
-            <script>
-
-                queue.push(
-
-                    function () {
-
-                        tfl.searchFilter.setNearUrl("/maps");
-
-                    }, null
-
-                );
-
-            </script>
-
-
-            <script>
-
-                queue.push(
-
-                    function () {
-
-                        tfl.serviceStatus.initServiceBoardAutoRefresh("/StatusUpdates/StatusBoard?modes=traffic&collapsed=True&isFavouritesPanel=False", "rainbow-list-roads", "traffic", "False".toLowerCase());
-
-                    }, null
-
-                    );
-
-            </script>
-
-            <script>
-
-                var $L = $LAB;
-
-                for (var i = 0, len = queue.length; i < len; i++) {
-
-                    if (typeof queue[i] == "string") {
-
-                        $L = $L.script(queue[i]);
-
-                    } else if (!queue[i]) {
-
-                        $L = $L.wait();
-
-                    } else if (typeof queue[i] == "function") {
-
-                        $L = $L.wait(queue[i]);
-
-                    }
+                    x[i].style.display = "none";
 
                 }
 
-            </script>
+                myIndex++;
+
+                if (myIndex > x.length) { myIndex = 1 }
+
+                x[myIndex - 1].style.display = "block";
+
+                setTimeout(carousel, 4000); // Change image every 2 seconds
+
+            }
+
+        </script>
 
 
 
+        <script src="js/jquery-1.10.2.min.js"></script>
+        <script src="js/jquery-migrate-1.2.1.min.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <!--loading bootstrap js-->
+        <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+        <script src="vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
 
+        <script src="vendors/metisMenu/jquery.metisMenu.js"></script>
+        <script src="vendors/slimScroll/jquery.slimscroll.js"></script>
+        <script src="vendors/jquery-cookie/jquery.cookie.js"></script>
+        <script src="vendors/iCheck/icheck.min.js"></script>
+        <script src="vendors/iCheck/custom.min.js"></script>
+        <script src="vendors/jquery-news-ticker/jquery.news-ticker.js"></script>
+        <script src="js/jquery.menu.js"></script>
+        <script src="vendors/jquery-pace/pace.min.js"></script>
+        <script src="vendors/holder/holder.js"></script>
+        <script src="vendors/responsive-tabs/responsive-tabs.js"></script>
+        <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
 
-            <script type="text/javascript">
-
-        <!--
-
-        tfl.stats.code = s.t(); if (tfl.stats.code) document.write(tfl.stats.code);
-
-        if (navigator.appVersion.indexOf('MSIE') >= 0) document.write(unescape('%3C') + '\!-' + '-');
-
-        //-->
-
-            </script>
-
-            <script src="https://tags.crwdcntrl.net/c/8190/cc_af.js"></script>
-
-            <noscript>
-
-                <img src="http://tfl.d3.sc.omtrdc.net/b/ss/tfl-global/1/H.26--NS/0?[AQB]&cdp=3&[AQE]" height="1" width="1" alt="" />
-
-            </noscript>
-
-            <!-- End SiteCatalyst -->
-             <script>
-                        function test() {
-                            var currstyle = document.getElementById('imgTd').style.display;
-                            document.getElementById('imgTd').style.display = (currstyle == "none") ? "table-cell" : "none";
-                        }
-                    </script>
-
-
-
-                    <script src="js/jquery-1.10.2.min.js"></script>
-                    <script src="js/jquery-migrate-1.2.1.min.js"></script>
-                    <script src="js/jquery-ui.js"></script>
-                    <!--loading bootstrap js-->
-                    <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
-                    <script src="vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
-                    <script src="js/html5shiv.js"></script>
-                    <script src="js/respond.min.js"></script>
-                    <script src="vendors/metisMenu/jquery.metisMenu.js"></script>
-                    <script src="vendors/slimScroll/jquery.slimscroll.js"></script>
-                    <script src="vendors/jquery-cookie/jquery.cookie.js"></script>
-                    <script src="vendors/iCheck/icheck.min.js"></script>
-                    <script src="vendors/iCheck/custom.min.js"></script>
-                    <script src="vendors/jquery-news-ticker/jquery.news-ticker.js"></script>
-                    <script src="js/jquery.menu.js"></script>
-                    <script src="vendors/jquery-pace/pace.min.js"></script>
-                    <script src="vendors/holder/holder.js"></script>
-                    <script src="vendors/responsive-tabs/responsive-tabs.js"></script>
-                    <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
-
-                    <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
-
-
-                    <script src="js/main.js"></script>
-                    <script src="js/angular.js"></script>
-                    <script src="js/Index.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/angular.js"></script>
+        <script src="js/CreateFleetOwner.js"></script>
 
 
 
 </body>
 
 </html>
-
 
