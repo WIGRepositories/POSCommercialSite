@@ -112,4 +112,13 @@ namespace BTPOSDashboardAPI.Models
         public DateTime dateandtime { get; set; }
         
     }
+    public class Licence
+    {
+        public int Id { get; set; }
+        public int LicenseCatId { get; set; }
+        public String LicenseType { get; set; }
+        public String Description { get; set; }
+        public int Active { get; set; }
+
+    }
 }
