@@ -2,7 +2,7 @@
 var app = angular.module('myApp', ['ngStorage'])
 
 var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
-        
+
     $scope.GetStops = function () {
 
         $http.get('http://localhost:52800/api/Stops/GetStops').then(function (response, req) {
@@ -12,12 +12,12 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
     $scope.GetServices = function () {
         $localStorage.srcId = $scope.S.Id;
-        $localStorage.destId = $scope.D.Id; 
+        $localStorage.destId = $scope.D.Id;
 
         window.location.href = "booking.html";
     }
-   
-    
+
+});
 
 
 function fun() {

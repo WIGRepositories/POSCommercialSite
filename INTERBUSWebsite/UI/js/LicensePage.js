@@ -2,6 +2,14 @@
 var app = angular.module('myApp', [])
 var ctrl = app.controller('myCtrl', function ($scope, $http) {
 
+    $scope.GetLicense = function () {
+
+        $http.get('http://localhost:52800/api/LicensePage/GetLicense?catId=8').then(function (response, req) {
+            $scope.License = response.data;
+        })
+
+    }
+
     $scope.GoToConfirmation = function (code) {
 
         if (code == null) {
