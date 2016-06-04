@@ -19,4 +19,22 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
     }
 
+    $scope.savedata = function (Booking) {
+        var book = {
+            Fname: Booking.fname1,
+            Lname: Booking.lname1,
+          
+        };
+
+        var req = {
+            method: 'POST',
+            url: 'http://localhost:52800/api/TicketBooking/SaveBookingDetails',
+            data: book
+        }
+
+        $http(req).then(function (res) {
+            alert('saved successfully');
+        });
+    }
+
     });

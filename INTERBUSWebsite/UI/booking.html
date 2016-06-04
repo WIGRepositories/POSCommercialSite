@@ -202,7 +202,7 @@
 
 </head>
 
-<body ng-init="GetAvailableServices();">
+<body ng-init="GetAvailableServices();" ng-model="Booking">
 
 
     <div id="c-mask" class="c-mask disable-touch-scrolling"></div>
@@ -412,10 +412,10 @@
 
 
                     </td>
-                    <td >
-                      
+                    <td>
+
                         <a onclick="test();">
-                            <button type="button" class="btn btn-primary" >
+                            <button type="button" class="btn btn-primary">
                                 select seats
                             </button>
                         </a>
@@ -425,48 +425,16 @@
 
                 <tr>
                     <td id="imgTd" style="display:none" colspan="6">
-                      
+
                         <div class="col-md-8 col-md-offset-1">
                             <div class="row">
                                 <form>
                                     <table>
-                                        <tr>
-<td><label>Passenger 1:</label></td>
-                                            <td><input type="text" id="fname1" placeholder="First Name" /></td>
-                                            <td><input type="text" id="lname1" placeholder="Last Name" /></td>
-                                            <td>
-                                                <select name="Age">
-                                                    <option value="0">--Select Age--</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                    <option value="6">6</option>
-                                                    <option value="7">7</option>
-                                                    <option value="8">8</option>
-                                                    <option value="9">9</option>
-                                                    <option value="10">10</option>
-                                                </select>
-                                            </td>
 
-                                            <td>
-                                                <select name="Sex">
-                                                    <option value="0">--Select Sex--</option>
-                                                    <option value="male">Male</option>
-                                                    <option value="female">FeMale</option>
-                                                </select>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </form>
-                            </div>
-                            <div class="row">
-                                <form>
-                                    <table>
-                                        <tr><td><label>Passenger 2:</label></td>
-                                            <td><input type="text" id="fname1" placeholder="First Name" /></td>
-                                            <td><input type="text" id="lname1" placeholder="Last Name" /></td>
+                                        <tr>
+                                            <td><label>Passenger 1:</label></td>
+                                            <td><input type="text" id="fname1" placeholder="First Name" ng-model="Booking.fname1" /></td>
+                                            <td><input type="text" id="lname1" placeholder="Last Name" ng-model="Booking.lname1" /></td>
                                             <td>
                                                 <select name="Age">
                                                     <option value="0">--Select Age--</option>
@@ -498,9 +466,9 @@
                                 <form>
                                     <table>
                                         <tr>
-<td><label>Passenger 3:</label></td>
-                                            <td><input type="text" id="fname1" placeholder="First Name" /></td>
-                                            <td><input type="text" id="lname1" placeholder="Last Name" /></td>
+                                            <td><label>Passenger 2:</label></td>
+                                            <td><input type="text" id="fname1" placeholder="First Name" ng-model="Booking.fname2" /></td>
+                                            <td><input type="text" id="lname1" placeholder="Last Name" ng-model="Booking.lname2" /></td>
                                             <td>
                                                 <select name="Age">
                                                     <option value="0">--Select Age--</option>
@@ -527,16 +495,50 @@
                                         </tr>
                                     </table>
                                 </form>
-                            </div> 
+                            </div>
+                            <div class="row">
+                                <form>
+                                    <table>
+                                        <tr>
+                                            <td><label>Passenger 3:</label></td>
+                                            <td><input type="text" id="fname1" placeholder="First Name" ng-model="Booking.fname3" /></td>
+                                            <td><input type="text" id="lname1" placeholder="Last Name" ng-model="Booking.lname3" /></td>
+                                            <td>
+                                                <select name="Age">
+                                                    <option value="0">--Select Age--</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                </select>
+                                            </td>
+
+                                            <td>
+                                                <select name="Sex">
+                                                    <option value="0">--Select Sex--</option>
+                                                    <option value="male">Male</option>
+                                                    <option value="female">FeMale</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </form>
+                            </div>
                             <center>
                                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                <a href="Invoice.html">  <button type="button" class="btn btn-primary">booking</button></a>
+                                <button type="button" class="btn btn-primary" ng-click="savedata(Booking);">booking</button>
                             </center>
                         </div>
                     </td>
                 </tr>
-                
-                
+
+
 
 
 
