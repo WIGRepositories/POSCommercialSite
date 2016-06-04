@@ -79,4 +79,37 @@ namespace BTPOSDashboardAPI.Models
         public String Description { get; set; }
         public string insupdflag { get; set; }
     }
+
+    public class Booking
+    {
+        public int Pnr_ID { get; set; }
+        public string Pnr_No {get; set;}
+        public int No_Seats { get; set; }
+        public int cost { get; set; }
+        public DateTime dateandtime { get; set; }
+        public string src { get; set; }
+        public string dest { get; set; }
+        public string vehicle_No { get; set; }
+
+        public int PassengerId { get; set; }
+        public string Fname { get; set; }
+        public string Lname { get; set; }
+        public int Age { get; set; }
+        public int Sex { get; set; }
+        public string Identityproof { get; set; }
+
+        public int TransactionId { get; set; }
+        public string Transaction_Number { get; set; }
+        public int Amount { get; set; }
+        public int Paymentmode { get; set; }
+        public string Gateway_transId { get; set; }
+
+        //public int Bookedhistory_Id { get; set; }
+        //public int UserId { get; set; }
+
+        public int PSID { get; set; }
+        public string SeatNo { get; set; }
+        public DateTime dateandtime { get; set; }
+        
+    }
 }

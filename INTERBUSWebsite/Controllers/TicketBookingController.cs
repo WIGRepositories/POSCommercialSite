@@ -6,8 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using BTPOSDashboardAPI.Models;
 
-namespace KESENENI2.Controllers
+namespace INTERBUSWebsite.Controllers
 {
     public class TicketBookingController : ApiController
     {
@@ -39,6 +40,28 @@ namespace KESENENI2.Controllers
             return Tbl;
 
         }
+
+    [HttpPost]
+          public void SaveBookingDetails(Booking B)
+          {
+              DataTable Tbl = new DataTable();
+
+
+              //connect to database
+              SqlConnection conn = new SqlConnection();
+              //connetionString="Data Source=ServerName;Initial Catalog=DatabaseName;User ID=UserName;Password=Password"
+              conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["btposdb"].ToString();
+
+              SqlCommand cmd = new SqlCommand();
+              SqlCommand insert = new SqlCommand("insert into PassengerDetails(Fname, Lname) values(@Fname, @Lname)", conn);
+
+
+              cmd.Parameters.AddWithValue("@Fname", B.Fname);
+              cmd.Parameters.AddWithValue("@Lname", B.Lname );
+              conn.Open();
+              cmd.ExecuteNonQuery();
+             
+          }
 
     }
 }
