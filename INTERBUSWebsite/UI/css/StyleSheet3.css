@@ -2383,7 +2383,7 @@ ul.image-list {
 
 #plan-a-journey {
     position: relative;
-    z-index: 99;
+    /*z-index: 99;*/
     padding: 10px;
     margin-top: 42px;
     background-color: #EEE;

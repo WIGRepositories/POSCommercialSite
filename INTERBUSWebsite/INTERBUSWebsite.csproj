@@ -85,6 +85,7 @@
     <Content Include="obj\Debug\INTERBUSWebsite.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\INTERBUSWebsite.dll" />
     <Content Include="obj\Debug\INTERBUSWebsite.pdb" />
+    <Content Include="UI\About.html" />
     <Content Include="UI\AboutUs.html" />
     <Content Include="UI\AddTroubleTicketingDetails.html" />
     <Content Include="UI\BookedTicketHistory.html" />
@@ -95,10 +96,13 @@
     <Content Include="UI\CancelTicket.html" />
     <Content Include="UI\cancelticketinformation.html" />
     <Content Include="UI\Cancel_Ticket.html" />
+    <Content Include="UI\Cartdetails.html" />
     <Content Include="UI\CheckFare.html" />
     <Content Include="UI\CheckOut.html" />
+    <Content Include="UI\Contact.html" />
     <Content Include="UI\ContactUs.html" />
     <Content Include="UI\css\bootstrap-theme.min.css" />
+    <Content Include="UI\css\bootstrap.min.css" />
     <Content Include="UI\css\Main.css" />
     <Content Include="UI\css\style-responsive.css" />
     <Content Include="UI\css\style.css" />
@@ -108,14 +112,8 @@
     <Content Include="UI\css\StyleSheet4.css" />
     <Content Include="UI\css\StyleSheet5.css" />
     <Content Include="UI\css\StyleSheet6.css" />
-    <Content Include="UI\css\themes\style2\blue-dark.css" />
-    <Content Include="UI\css\themes\style2\blue-grey.css" />
-    <Content Include="UI\css\themes\style2\green-blue.css" />
     <Content Include="UI\css\themes\style2\green-dark.css" />
     <Content Include="UI\css\themes\style2\green-grey.css" />
-    <Content Include="UI\css\themes\style2\orange-blue.css" />
-    <Content Include="UI\css\themes\style2\orange-grey.css" />
-    <Content Include="UI\css\themes\style2\orange-violet.css" />
     <Content Include="UI\css\themes\style2\pink-blue.css" />
     <Content Include="UI\css\themes\style2\pink-brown.css" />
     <Content Include="UI\css\themes\style2\pink-dark.css" />
@@ -124,10 +122,6 @@
     <Content Include="UI\css\themes\style2\pink-violet.css" />
     <Content Include="UI\css\themes\style2\red-dark.css" />
     <Content Include="UI\css\themes\style2\red-grey.css" />
-    <Content Include="UI\css\themes\style2\yellow-blue.css" />
-    <Content Include="UI\css\themes\style2\yellow-dark.css" />
-    <Content Include="UI\css\themes\style2\yellow-green.css" />
-    <Content Include="UI\css\themes\style2\yellow-grey.css" />
     <Content Include="UI\css\w3.css" />
     <Content Include="UI\datepicker.html" />
     <Content Include="UI\Fares_and_payments.html" />
@@ -229,7 +223,9 @@
     <Content Include="UI\js\jquery.nivo.slider.js" />
     <Content Include="UI\js\LicensePage.js" />
     <Content Include="UI\js\main.js" />
+    <Content Include="UI\js\ngStorage.js" />
     <Content Include="UI\js\SeatSelection.js" />
+    <Content Include="UI\js\Stops.js" />
     <Content Include="UI\js\VehicleAvailability.js" />
     <Content Include="UI\LicenseConfirmation.html" />
     <Content Include="UI\LicensePage.html" />
@@ -244,6 +240,7 @@
     <Content Include="UI\seats.html" />
     <Content Include="UI\SeatSelection.html" />
     <Content Include="UI\Status_and_Updates.html" />
+    <Content Include="UI\success.html" />
     <Content Include="UI\vehicleAvailability.html" />
     <Content Include="UI\vendors\animate.css\animate.css" />
     <Content Include="UI\vendors\bootstrap-colorpicker\css\colorpicker.css" />

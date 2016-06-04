@@ -1,20 +1,24 @@
 
-var app = angular.module('myApp', [])
-var ctrl = app.controller('myCtrl', function ($scope, $http) {
-   // $http.get('http://localhost:52800/api/Stops/commericialsite').then(function (response, req) {
-       // $scope.Stops = response.data;
-    $scope.GetLicense = function () {
+var app = angular.module('myApp', ['ngStorage'])
 
-        $http.get('http://localhost:52800/api/LicensePage/GetLicense').then(function (response, req) {
-            $scope.License = response.data;
+var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
+        
+    $scope.GetStops = function () {
+
+        $http.get('http://localhost:52800/api/Stops/GetStops').then(function (response, req) {
+            $scope.Stops = response.data;
         })
-
     }
-});
+
+    $scope.GetServices = function () {
+        $localStorage.srcId = $scope.S.Id;
+        $localStorage.destId = $scope.D.Id; 
+
+        window.location.href = "booking.html";
+    }
+   
     
 
-
-   
 
 function fun() {
     if (document.getElementById("ddlBusType").value == 2) {//if Booking Type
@@ -25,3 +29,5 @@ function fun() {
         window.location.href = "vehicleavailability.html";
     }
 }
+
+
