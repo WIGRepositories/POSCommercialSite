@@ -1028,6 +1028,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BookingController.cs" />
+    <Compile Include="Controllers\LicensePageController.cs" />
     <Compile Include="Controllers\StopsController.cs" />
     <Compile Include="Controllers\FleetOwnerLicenseController.cs" />
     <Compile Include="Controllers\TicketBookingController.cs" />
