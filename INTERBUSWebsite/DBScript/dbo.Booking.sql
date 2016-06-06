@@ -202,6 +202,184 @@ SET ANSI_PADDING OFF
 GO
 
 
+/****** Object:  Table [dbo].[UserInfo]    Script Date: 06/06/2016 19:25:13 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[UserInfo](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[FirstName] [varchar](50) NULL,
+	[LastName] [nvarchar](50) NULL,
+	[UserName] [nvarchar](50) NULL,
+	[EmailAddress] [nvarchar](50) NULL,
+	[Password] [nvarchar](50) NULL,
+	[ConfirmPassword] [nvarchar](50) NULL,
+	[Gender] [nvarchar](50) NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+/****** Object:  Table [dbo].[UserLogin1]    Script Date: 06/06/2016 19:26:00 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[UserLogin1](
+	[LoginInfo] [nvarchar](50) NOT NULL,
+	[PassKey] [nvarchar](50) NOT NULL,
+	[Id] [int] NOT NULL,
+	[UserId] [nchar](10) NOT NULL,
+	[salt] [varchar](50) NULL,
+	[Active] [int] NOT NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+/****** Object:  StoredProcedure [dbo].[GetUserInfo]    Script Date: 06/06/2016 19:26:53 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[GetUserInfo]
+
+AS
+BEGIN
+
+SELECT U.[Id]
+      ,U.[FirstName]
+      ,U.[LastName]      
+      
+      ,U.[EmailAddress]
+     
+      ,ul.logininfo as UserName
+      ,ul.passkey as [Password]            
+      
+  FROM [POSDashboard].[dbo].[UserInfo] U
+  
+ 
+left OUTER join dbo.userlogin1 ul on ul.userid = U.id    
+ 
+end
+
+GO
+
+
+/****** Object:  StoredProcedure [dbo].[GetUserLogin1]    Script Date: 06/06/2016 19:27:15 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+create PROCEDURE [dbo].[GetUserLogin1]
+
+AS
+BEGIN
+
+SELECT U.[Id]
+        
+      ,U.[Active]
+      
+      ,u.logininfo as UserName
+      ,u.passkey as [Password]            
+      
+  FROM [POSDashboard].[dbo].[UserLogin1] U
+  
+  left outer join dbo.userinfo u1 on u.userid = U.id    
+  
+end
+
+
+GO
+
+
+/****** Object:  StoredProcedure [dbo].[InsUpdUserInfo]    Script Date: 06/06/2016 19:27:46 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE procedure [dbo].[InsUpdUserInfo](
+@FirstName varchar(50)
+,@LastName varchar(50)
+
+,@UserName varchar(50)  
+,@Password varchar(50)  
+,@EmailAddress varchar(50)
+
+,@ConfirmPassword varchar(50)
+,@Gender varchar(50))
+
+ AS
+BEGIN
+
+	
+INSERT INTO [POSDashboard].[dbo].[UserInfo]
+           ([FirstName]
+           ,[LastName]
+           ,[UserName]
+           ,[EmailAddress]
+           ,[Password]
+           ,[ConfirmPassword]
+           ,[Gender])
+     VALUES
+           (@FirstName
+           ,@LastName
+           ,@UserName
+           ,@EmailAddress
+           ,@Password
+           ,@ConfirmPassword
+           ,@Gender)
+END
+GO
+
+
+/****** Object:  StoredProcedure [dbo].[ValidateCredentials1]    Script Date: 06/06/2016 19:28:16 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE procedure [dbo].[ValidateCredentials1](@logininfo varchar(50) = null, @passkey varchar(50) = null)
+as
+begin
+
+select logininfo,FirstName, Lastname,u.Id 
+from userlogin1 ul 
+inner join userInfo u on 
+u.id = ul.UserId
+
+where LoginInfo=@logininfo and [PassKey]=@passkey
+
+end
+
+
+
+
+GO
 
 
 
