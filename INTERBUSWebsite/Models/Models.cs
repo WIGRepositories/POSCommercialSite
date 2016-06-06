@@ -86,17 +86,14 @@ namespace BTPOSDashboardAPI.Models
         public string Pnr_No {get; set;}
         public int No_Seats { get; set; }
         public int cost { get; set; }
-        public DateTime dateandtime { get; set; }
+        public string dateandtime { get; set; }
         public string src { get; set; }
         public string dest { get; set; }
         public string vehicle_No { get; set; }
-
+        public string JourneyDate { get; set; }
+        public string ArrivalTime { get; set; }
+        public string DeptTime { get; set; }
         public int PassengerId { get; set; }
-        public string Fname { get; set; }
-        public string Lname { get; set; }
-        public int Age { get; set; }
-        public int Sex { get; set; }
-        public string Identityproof { get; set; }
 
         public int TransactionId { get; set; }
         public string Transaction_Number { get; set; }
@@ -107,11 +104,26 @@ namespace BTPOSDashboardAPI.Models
         //public int Bookedhistory_Id { get; set; }
         //public int UserId { get; set; }
 
-        public int PSID { get; set; }
+        public int PnrSeatsID { get; set; }
         public string SeatNo { get; set; }
-        public DateTime dateandtime { get; set; }
+        public int RouteId { get; set; }
+        public int fleetOwnerId { get; set; }
+      
+        public IEnumerable<passengerDetails> passengersList { get; set; }
         
     }
+
+    public class passengerDetails {
+        public string SeatId { get; set; }
+        public string Fname { get; set; }
+        public string Lname { get; set; }
+        public int Age { get; set; }
+        public int Sex { get; set; }
+        public string Identityproof { get; set; }
+    }
+
+    
+
     public class Licence
     {
         public int Id { get; set; }
