@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿
 <html lang="en" ng-app="myApp" ng-controller="myCtrl">
 <!--<![endif]-->
 <head>
@@ -111,7 +111,7 @@
                             <a style="margin-top: 0px; padding-top: 0px; margin-right: 50px; float:left" href="index.html"><img style="height:56px" src="Images/logos/interbusLogo.png" alt="Alternate Text" /> </a>
                             <ul class="collapsible-menu clearfix" style="margin-left:0px;">
 
-                                <li style="margin-left:90px">
+                                <li style="margin-left:22px">
 
                                     <a style="text-decoration:none" href="index.html">Home</a>
 
@@ -439,7 +439,7 @@
                 </div>
 
 
-                <div class="sub-main">
+                <div class="sub-main" ng-model="type">
                     <!--Div for pop up starts-->
                     <!---->
                     <div class="modal fade" id="myModal" role="dialog">
@@ -452,10 +452,10 @@
                                     <h3 class="modal-title" style="text-align:center">Login</h3>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="BookedTicketHistory.html">
-                                        <label>Email / Username</label><input type="text" class="form-control" />
+                                    <form>
+                                        <label>Email / Username</label><input type="text" class="form-control" ng-model="UserName" />
 
-                                        <label>Password</label><input type="text" class="form-control" />
+                                        <label>Password</label><input type="text" class="form-control" ng-model="Password" />
                                         <br />
                                         <div class="dropdown">
                                             <button class="btn btn-info btn-lg" type="button" data-toggle="dropdown">
@@ -480,12 +480,14 @@
 
                                         </div>
 
-                                        <div class="action_btns">
+                                        <div class="action_btns">{{2+2}}
 
                                             <div class="one_half last" style="margin-left:150px">
-                                                <a href="BookedTicketHistory.html" class="btn btn_red">Login</a>
-                                            </div>
+                                                <div class="btn btn_red" ng-click="Signin()">
+                                                    Login
+                                                </div>
                                         </div>
+                                            </div>
                                     </form>
                                     <a style="text-align:center" href="#" class="forgot_password">Forgot password?</a>
 
@@ -507,13 +509,13 @@
                             <a style="text-decoration:none; color:#CCCCCC" href="Registration.html">Create and Account</a>
                         </div>
                         <!--<div data-set="reserved-teaser" class="large tertiary-teaser">
-                            <div style="background-color:#f8f7f7">
-                                <h3 align="center" style="padding-top:5px">Need a New Fleet Owner License?</h3>
-                                <p align="center" style="padding-bottom:5px"> <a href="Licensepage.html" class="btn btn-info" role="button">Click Here..</a></p>
+                <div style="background-color:#f8f7f7">
+                    <h3 align="center" style="padding-top:5px">Need a New Fleet Owner License?</h3>
+                    <p align="center" style="padding-bottom:5px"> <a href="Licensepage.html" class="btn btn-info" role="button">Click Here..</a></p>
 
-                            </div>
+                </div>
 
-                        </div>-->
+            </div>-->
                         <div class="clearfix">
 
                             <a href="/fares-and-payments/oyster" class="flat-button top-icon">
@@ -713,6 +715,7 @@
     <script src="js/angular.js"></script>
     <script src="js/ngStorage.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/Login.js"></script>
 </body>
 
 </html>

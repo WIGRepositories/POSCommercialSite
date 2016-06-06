@@ -3,7 +3,7 @@
 <head>
 
     <title>INTERBUS CommercialSite | Index</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
     <meta charset="utf-8">
 
@@ -22,37 +22,55 @@
     <link type="text/css" rel="stylesheet" href="css/themes/style2/pink-blue.css" id="theme-change" class="style-change color-change">
     <link type="text/css" rel="stylesheet" href="css/style-responsive.css">
     <link rel="stylesheet" type="text/css" href="css/Main.css">
-  
+
 
     <!-- Optional theme -->
 
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
 
 
 
     <!-- Latest compiled and minified JavaScript -->
 
-    
+
 
     <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
 
     <meta name="HandheldFriendly" content="True">
 
+    <script type="text/javascript">
 
+        var h = document.documentElement;
+
+        h.className = h.className.replace(/\bno-js\b/, '');
+
+        var isTouch = !!("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0;
+
+
+
+        if (isTouch) {
+
+            // remove class which defines hover behavior
+
+            h.className = h.className.replace(/\bno-touch\b/, '');
+
+        }
+
+    </script>
 
 
 
     <script src="js/bootstrap.min.js"></script>
 
-    
 
 
 
-<link href="css/StyleSheet2.css" media="screen,print" rel="stylesheet" />
+
+    <link href="css/StyleSheet2.css" media="screen,print" rel="stylesheet" />
 
     <link href="css/StyleSheet1.css" media="screen,print" rel="stylesheet" />
 
-    <link href="css/StyleSheet4.css" media="screen,&#32;print" rel="stylesheet" />    
+    <link href="css/StyleSheet4.css" media="screen,&#32;print" rel="stylesheet" />
 
     <link href="css/StyleSheet3.css" media="screen&#32;and&#32;(min-width:&#32;580px),print" rel="stylesheet" />
 
@@ -60,146 +78,103 @@
 
     <link href="css/StyleSheet5.css" media="screen&#32;and&#32;(min-width:&#32;900px)" rel="stylesheet" />
 
-    <!--<link href="/cdn/static/styles/core/min/print.min.bbf3e026.css" media="print" rel="stylesheet" />-->        
+    <!--<link href="/cdn/static/styles/core/min/print.min.bbf3e026.css" media="print" rel="stylesheet" />-->
 
-            
+
 
     <link href="css/StyleSheet6.css" media="screen" rel="stylesheet" />
 
-        
-
-    <!--<script type="text/javascript">
-
- // Instructions: please embed this snippet directly into every page in your website template.
-
- // For optimal performance, this must be embedded directly into the template, not referenced
-
- // as an external file.
 
 
 
- // Answers Cloud Services Embed Script v1.02
 
- // DO NOT MODIFY BELOW THIS LINE *****************************************
+    <style>
+        rr.div a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            padding: 15px;
+            display: inline-block;
+        }
 
-            ; (function (g) {
-
- var d = document, i, am = d.createElement('script'), h = d.head || d.getElementsByTagName("head")[0],
-
- aex = {
-
- "src": "//gateway.answerscloud.com/tfl-gov-uk/production/gateway.min.js",
-
- "type": "text/javascript",
-
- "async": "true",
-
- "data-vendor": "acs",
-
- "data-role": "gateway"
-
- };
-
-                for (var attr in aex) { am.setAttribute(attr, aex[attr]); }
-
- h.appendChild(am);
-
-                g['acsReady'] = function () { var aT = '__acsReady__', args = Array.prototype.slice.call(arguments, 0), k = setInterval(function () { if (typeof g[aT] === 'function') { clearInterval(k); for (i = 0; i < args.length; i++) { g[aT].call(g, function (fn) { return function () { setTimeout(fn, 1) }; }(args[i])); } } }, 50); };
-
- })(window);
-
- // DO NOT MODIFY ABOVE THIS LINE *****************************************
-
-    </script>-->
+        .rr ul {
+            display: inline;
+            margin: 0;
+            padding: 0;
+        }
 
 
-        <style>
-            rr.div a {
-                text-decoration: none;
-                color: white;
-                font-size: 20px;
-                padding: 15px;
+            .rr ul li {
                 display: inline-block;
+                color: white;
             }
 
-            .rr ul {
-                display: inline;
-                margin: 0;
-                padding: 0;
-            }
-
-
-                .rr ul li {
-                    display: inline-block;
-                    color: white;
+                .rr ul li:hover {
+                    background: #555;
                 }
 
-                    .rr ul li:hover {
+                    .rr ul li:hover ul {
+                        display: block;
+                    }
+
+                .rr ul li ul {
+                    position: absolute;
+                    width: 100px;
+                    display: none;
+                }
+
+                    .rr ul li ul li {
                         background: #555;
+                        display: block;
+                        border-bottom: 1px solid white;
+                        width: 170px;
                     }
 
-                        .rr ul li:hover ul {
-                            display: block;
+                        .rr ul li ul li a {
+                            display: block !important;
+                            text-decoration: none;
                         }
 
-                    .rr ul li ul {
-                        position: absolute;
-                        width: 100px;
-                        display: none;
-                    }
-
-                        .rr ul li ul li {
-                            background: #555;
-                            display: block;
-                            border-bottom: 1px solid white;
-                            width: 170px;
+                        .rr ul li ul li:hover {
+                            background: #666;
                         }
 
-                            .rr ul li ul li a {
-                                display: block !important;
-                                text-decoration: none;
-                            }
-
-                            .rr ul li ul li:hover {
-                                background: #666;
-                            }
-
-                            .rr ul li ul li a:hover {
-                                text-decoration: none;
-                            }
-        </style>
+                        .rr ul li ul li a:hover {
+                            text-decoration: none;
+                        }
+    </style>
 
 
 </head>
 
-<body ng-controller="myCtrl">
-    
+<body ng-controller="myCtrl" ng-init="GetLicense();">
 
-<div id="c-mask" class="c-mask disable-touch-scrolling"></div>
+
+    <div id="c-mask" class="c-mask disable-touch-scrolling"></div>
 
     <!--Start Header-->
     <div id="container">
 
-              <!--start of white bar above menu-->
- <!--End of white bar above menu-->
-<!--Start Menu-->
-                <div class="mainnav" id="mainnav" tabindex="0">
+        <!--start of white bar above menu-->
+        <!--End of white bar above menu-->
+        <!--Start Menu-->
+        <div class="mainnav" id="mainnav" tabindex="0">
 
             <div class="top-row" style="position:fixed; width:100%; z-index:3">
 
-                            <div class="r">
+                <div class="r">
                     <div class="rr">
                         <a style="margin-top: 0px; padding-top: 0px; margin-right: 50px; float:left" href="index.html"><img style="height:56px" src="Images/logos/interbusLogo.png" alt="Alternate Text" /> </a>
                         <ul class="collapsible-menu clearfix" style="margin-left:0px;">
 
-                            <li style="margin-left:90px">
+                            <li style="margin-left:30px">
 
-                            <a style="text-decoration:none" href="index.html">Home</a>
+                                <a style="text-decoration:none" href="index.html">Home</a>
 
-                                    </li>
-                        <li>
+                            </li>
+                            <li>
 
-                                        <a style="text-decoration:none" href="Fares_and_payments.html">Fares / Payments</a>
+                                <a style="text-decoration:none" href="Fares_and_payments.html">Fares / Payments</a>
 
                                 <ul>
                                     <li><a href="#">Schedules</a></li>
@@ -208,171 +183,119 @@
 
 
                                 </ul>
-                                    </li>
-                                    <li>
+                            </li>
+                            <li>
 
-                                        <a style="text-decoration:none" href="Status_and_Updates.html">Status & Updates</a>
+                                <a style="text-decoration:none" href="Status_and_Updates.html">Status & Updates</a>
 
-                                    </li>
-                                    <li>
+                            </li>
+                            <li>
 
-                                        <a style="text-decoration:none" href="#">Products</a>
+                                <a style="text-decoration:none" href="#">Products</a>
                                 <ul><li><a href="Licensepage.html">Fleet Owner Lisence</a></li></ul>
-                                    </li>
+                            </li>
 
-                                    <li>
+                            <li>
 
-                                        <a style="text-decoration:none" href="#">About Us</a>      
+                                <a style="text-decoration:none" href="#">About Us</a>
                                 <ul>
                                     <li><a href="#">ContactUs</a></li>
 
                                 </ul>
 
-                        </li>
+                            </li>
 
                             <li style="margin-left:150px">
 
-                            <div style="float:right; padding-top:11px">
+                                <div style="float:right; padding-top:11px">
                                     <input type="text" placeholder="Search.." id="q" name="q" style="border-radius: 30px; width: 120px; height: 35px; color: red;" />
 
 
-                            </div>
+                                </div>
 
 
-                                    </li>
-                                     
-                                </ul>
-                            </div>
+                            </li>
+
+                        </ul>
+                    </div>
                 </div>
 
-                        </div>
-
-                    </div>
-                    <!--End Menu-->
-                    
-                </div>
-<!--End Header-->
-
-                           
-<div class="row" style="margin-top:60px">
-
-<div class="container">
-<div class="row">
-<div class="col-md-8 col-md-offset-2">
-<h2 style="padding-top:10px; text-align:center"> Please choose below license options available:</h2>
-                    <div class="row" style="margin-top:25px; margin-bottom:5px"><div class="col-md-4 col-md-offset-2">
-                        <h3 align="center" style="line-height:38px">Enter Fleet owner code:</h3></div><div class="col-md-4">
-                        <input type="text" ng-model="txt"></div>
-                    </div>
-                    <h4 style="padding-top:10px;text-align:center">Do not have a fleet owner code? please <a href="Fleetownerrequest.html" style="color:red">
-                        click here</a> to contact INTERBUS administrator </h4>
- 
- </div>
-</div>
-</div>
-        <div class="container" >
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="page-content">
-       
-    
-                        <div class="row row-merge">
-                            <div class="col-md-3 col-sm-6">
-                                <div class="pricing-widget">
-                                    <div class="pricing-head">Basic</div>
-                                    <div class="pricing-body">
-                                        <div class="pricing-cost" style="background-color:black">
-                                            <strong style="display: block">$19</strong>
-                                            <small>per month</small>
-                                        </div>
-                                        <ul class="pricing-list text-center">
-
-
-                                            <li>Tickets per month <strong>100</strong></li>
-
-
-                                            <li>24/7 Unlimited Support <strong>YES</strong></li>
-                                            <li>Support Tickets per month <strong>10</strong></li>
-                                            <li class="text-center"><a ng-click="GoToConfirmation(txt);" class="btn btn-danger" style="background-color: #EF0505">Buy Now</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6">
-                                <div class="pricing-widget active">
-                                    <div class="pricing-head" ng-repeat="L in License">{{L.LicenseType}}</div>
-                                    <div class="pricing-body">
-                                        <div class="pricing-cost" style="background-color:black">
-                                            <strong style="display: block"><span>$</span>39</strong>
-                                            <small>per month</small>
-                                        </div>
-                                        <ul class="pricing-list text-center">
-
-
-                                            <li>Tickets per month <strong>200</strong></li>
-
-                                            <li>24/7 Unlimited Support <strong>YES</strong></li>
-                                            <li>Support Tickets per month <strong>30</strong></li>
-                                            <li class="text-center"><a ng-click="GoToConfirmation(txt);" class="btn btn-danger">Buy Now</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6">
-                                <div class="pricing-widget">
-                                    <div class="pricing-head" ng-repeat="L in License">{{L.LicenseType}}</div>
-                                    <div class="pricing-body">
-                                        <div class="pricing-cost" style="background-color:black">
-                                            <strong style="display: block">$59</strong>
-                                            <small>per month</small>
-                                        </div>
-                                        <ul class="pricing-list text-center">
-
-                                            <li>Tickets per month <strong>500</strong></li>
-
-                                            <li>24/7 Unlimited Support <strong>YES</strong></li>
-                                            <li>Support Tickets per month <strong>50</strong></li>
-                                            <li class="text-center"><a ng-click="GoToConfirmation(txt);" class="btn btn-danger">Buy Now</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6">
-                                <div class="pricing-widget">
-                                    <div class="pricing-head"ng-repeat="L in License">{{L.LicenseType}}</div>
-                                    <div class="pricing-body">
-                                        <div class="pricing-cost" style="background-color:black">
-                                            <strong style="display: block">$79</strong>
-                                            <small>per month</small>
-                                        </div>
-                                        <ul class="pricing-list text-center">
-
-                                            <li>Tickets per month <strong>800</strong></li>
-
-                                            <li>24/7 Unlimited Support <strong>YES</strong></li>
-                                            <li>Support Tickets per month <strong>80</strong></li>
-                                            <li class="text-center"><a ng-click="GoToConfirmation(txt);" class="btn btn-danger">Buy Now</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-         
-</div>
             </div>
-                      </div>   
-<div class="row">
-<div class="col-lg-12">
-<div id="footer" tabindex="0">
 
-                    <h2 class="visually-hidden">Site footer</h2>
+        </div>
+        <!--End Menu-->
+
+    </div>
+    <!--End Header-->
+
+
+    <div class="row" style="margin-top:60px">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h2 style="padding-top:10px; text-align:center"> Please choose below license options available:</h2>
+                    <div class="row" style="margin-top:25px; margin-bottom:5px">
+                        <div class="col-md-4 col-md-offset-2">
+                            <h3 align="center" style="line-height:38px">Enter Fleet owner code:</h3>
+                        </div><div class="col-md-4">
+                            <input type="text" ng-model="txt">
+                        </div>
+                    </div>
+                    <h4 style="padding-top:10px;text-align:center">
+                        Do not have a fleet owner code? please <a href="Fleetownerrequest.html" style="color:red">
+                            click here
+                        </a> to contact INTERBUS administrator
+                    </h4>
+
+                </div>
+            </div>
+        </div>
+        <div class="container" ng-model="License">
+        
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="row row-merge1">
+                        <div class="page-content">
+
+                            <div ng-repeat="Lt in License.Table">
+                         
+                                <div class="col-md-4" style="margin:0px; padding:1px">
+                                    <div class="pricing-widget active">
+                                        <div class="pricing-head" style="background-color: #EF0505">{{Lt.LicenseType}}</div>
+                                        <div class="pricing-body">
+                                            <div class="pricing-cost" style="background-color:black"
+                                                 ng-repeat="p in License.Table2 | filter:{ LicenseId: Lt.Id }">
+                                                <strong style="display: block">${{p.UnitPrice}}</strong>
+                                                <small>per month</small>
+                                            </div>
+                                            <ul class="pricing-list text-center">
+
+                                                <li ng-repeat="f in License.Table1 | filter:{ LicenseTypeId: Lt.Id }">{{f.FeatureLabel}} <strong>{{f.FeatureValue}}</strong></li>
+
+                                                <li class="text-center"><a ng-click="GoToConfirmation(txt);" class="btn btn-danger" style="background-color: #EF0505">Buy Now</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                               
+                            </div>
+                        </div>
+
+                    </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="footer" tabindex="0">
+
+                <h2 class="visually-hidden">Site footer</h2>
 
 
 
-                    <div class="primary-footer r">
+                <div class="primary-footer r">
                     <h2 class="visually-hidden">About Interbus</h2>
                     <ul class="footer-links">
                         <li><a href="/help-and-contact/">Help &amp; contacts</a></li>
@@ -400,45 +323,81 @@
                         <li><a href="/info-for/investors/">Download Interbus App   </a></li>
                     </ul>
                 </div>
-                    <div class="secondary-footer"><h2 class="visually-hidden">Site structure and legal information</h2><div class="r"><ul><li><a href="/corporate/terms-and-conditions/">Terms &amp; conditions </a></li><li><a href="/corporate/privacy-and-cookies/">Privacy &amp; cookies</a></li><li><a href="/corporate/website-accessibility/">Website accessibility</a></li></ul><span class="heading">Copyright Interbus</span></div></div>
-                    <div>
-                    </div>
-
-
-
+                <div class="secondary-footer"><h2 class="visually-hidden">Site structure and legal information</h2><div class="r"><ul><li><a href="/corporate/terms-and-conditions/">Terms &amp; conditions </a></li><li><a href="/corporate/privacy-and-cookies/">Privacy &amp; cookies</a></li><li><a href="/corporate/website-accessibility/">Website accessibility</a></li></ul><span class="heading">Copyright Interbus</span></div></div>
+                <div>
                 </div>
-</div>
+
+
+
+            </div>
+        </div>
     </div>
 
 
 
 
 
-                    <script src="js/jquery-1.10.2.min.js"></script>
-                    <script src="js/jquery-migrate-1.2.1.min.js"></script>
-                    <script src="js/jquery-ui.js"></script>
-                    <!--loading bootstrap js-->
-                    <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
-                    <script src="vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
-
-                    <script src="vendors/metisMenu/jquery.metisMenu.js"></script>
-                    <script src="vendors/slimScroll/jquery.slimscroll.js"></script>
-                    <script src="vendors/jquery-cookie/jquery.cookie.js"></script>
-                    <script src="vendors/iCheck/icheck.min.js"></script>
-                    <script src="vendors/iCheck/custom.min.js"></script>
-                    <script src="vendors/jquery-news-ticker/jquery.news-ticker.js"></script>
-                    <script src="js/jquery.menu.js"></script>
-                    <script src="vendors/jquery-pace/pace.min.js"></script>
-                    <script src="vendors/holder/holder.js"></script>
-                    <script src="vendors/responsive-tabs/responsive-tabs.js"></script>
-                    <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
-
-                    <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
 
 
-                    <script src="js/main.js"></script>
-                    <script src="js/angular.js"></script>
-    <script src="js/LicensePage.js"></script> 
+    <script>
+
+        var myIndex = 0;
+
+        carousel();
+
+
+
+        function carousel() {
+
+            var i;
+
+            var x = document.getElementsByClassName("mySlides");
+
+            for (i = 0; i < x.length; i++) {
+
+                x[i].style.display = "none";
+
+            }
+
+            myIndex++;
+
+            if (myIndex > x.length) { myIndex = 1 }
+
+            x[myIndex - 1].style.display = "block";
+
+            setTimeout(carousel, 4000); // Change image every 2 seconds
+
+        }
+
+    </script>
+
+
+
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <!--loading bootstrap js-->
+    <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
+
+    <script src="vendors/metisMenu/jquery.metisMenu.js"></script>
+    <script src="vendors/slimScroll/jquery.slimscroll.js"></script>
+    <script src="vendors/jquery-cookie/jquery.cookie.js"></script>
+    <script src="vendors/iCheck/icheck.min.js"></script>
+    <script src="vendors/iCheck/custom.min.js"></script>
+    <script src="vendors/jquery-news-ticker/jquery.news-ticker.js"></script>
+    <script src="js/jquery.menu.js"></script>
+    <script src="vendors/jquery-pace/pace.min.js"></script>
+    <script src="vendors/holder/holder.js"></script>
+    <script src="vendors/responsive-tabs/responsive-tabs.js"></script>
+    <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
+
+    <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
+
+
+    <script src="js/main.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/LicensePage.js"></script>
 
 
 </body>
@@ -446,6 +405,4 @@
 
 
 </html>
-
-
 

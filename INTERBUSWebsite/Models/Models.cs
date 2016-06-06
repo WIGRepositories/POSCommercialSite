@@ -112,7 +112,7 @@ namespace BTPOSDashboardAPI.Models
         public IEnumerable<passengerDetails> passengersList { get; set; }
         
     }
-
+        
     public class passengerDetails {
         public string SeatId { get; set; }
         public string Fname { get; set; }
@@ -131,6 +131,30 @@ namespace BTPOSDashboardAPI.Models
         public String LicenseType { get; set; }
         public String Description { get; set; }
         public int Active { get; set; }
+
+    }
+
+    public class UserIn
+    {
+      
+        public String FirstName { get; set; }
+        public String LastName { get; set; }
+        public String UserName { get; set; }
+        public String Password { get; set; }
+        public String EmailAddress { get; set; }
+        public String ConfirmPassword { get; set; }
+        public String Gender { get; set; }
+       
+
+    }
+    public class UserLogin
+    {
+        public int Id { set; get; }
+        public int UserId { set; get; }
+        public string LoginInfo { set; get; }
+        public string Passkey { set; get; }
+        public string Salt { set; get; }
+        public string Active { set; get; }
 
     }
 }
