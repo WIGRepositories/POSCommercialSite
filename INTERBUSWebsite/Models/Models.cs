@@ -131,7 +131,9 @@ namespace BTPOSDashboardAPI.Models
         public String Password { get; set; }
         public String EmailAddress { get; set; }
         public String ConfirmPassword { get; set; }
-        public String Gender { get; set; }
+        public String Gender { get; set; } 
+        public String salt { set; get; }
+     
        
 
     }
@@ -141,7 +143,7 @@ namespace BTPOSDashboardAPI.Models
         public int UserId { set; get; }
         public string LoginInfo { set; get; }
         public string Passkey { set; get; }
-        public string Salt { set; get; }
+        public string salt { set; get; }
         public string Active { set; get; }
 
     }

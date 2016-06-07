@@ -202,7 +202,7 @@ SET ANSI_PADDING OFF
 GO
 
 
-/****** Object:  Table [dbo].[UserInfo]    Script Date: 06/06/2016 19:25:13 ******/
+/****** Object:  Table [dbo].[UserInfo]    Script Date: 06/07/2016 12:29:24 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -229,7 +229,7 @@ SET ANSI_PADDING OFF
 GO
 
 
-/****** Object:  Table [dbo].[UserLogin1]    Script Date: 06/06/2016 19:26:00 ******/
+/****** Object:  Table [dbo].[UserLogin1]    Script Date: 06/07/2016 12:30:48 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -242,7 +242,7 @@ GO
 CREATE TABLE [dbo].[UserLogin1](
 	[LoginInfo] [nvarchar](50) NOT NULL,
 	[PassKey] [nvarchar](50) NOT NULL,
-	[Id] [int] NOT NULL,
+	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[UserId] [nchar](10) NOT NULL,
 	[salt] [varchar](50) NULL,
 	[Active] [int] NOT NULL
@@ -254,14 +254,14 @@ SET ANSI_PADDING OFF
 GO
 
 
-/****** Object:  StoredProcedure [dbo].[GetUserInfo]    Script Date: 06/06/2016 19:26:53 ******/
+
+
+/****** Object:  StoredProcedure [dbo].[GetUserInfo]    Script Date: 06/07/2016 12:31:24 ******/
 SET ANSI_NULLS ON
 GO
-
 SET QUOTED_IDENTIFIER ON
 GO
-
-CREATE PROCEDURE [dbo].[GetUserInfo]
+ALTER PROCEDURE [dbo].[GetUserInfo]
 
 AS
 BEGIN
@@ -279,20 +279,15 @@ SELECT U.[Id]
   
  
 left OUTER join dbo.userlogin1 ul on ul.userid = U.id    
- 
+ left OUTER join dbo.UserInfo u2 on ul.userid = U.id   
 end
 
-GO
-
-
-/****** Object:  StoredProcedure [dbo].[GetUserLogin1]    Script Date: 06/06/2016 19:27:15 ******/
+/****** Object:  StoredProcedure [dbo].[GetUserLogin1]    Script Date: 06/07/2016 12:32:02 ******/
 SET ANSI_NULLS ON
 GO
-
 SET QUOTED_IDENTIFIER ON
 GO
-
-create PROCEDURE [dbo].[GetUserLogin1]
+ALTER PROCEDURE [dbo].[GetUserLogin1]
 
 AS
 BEGIN
@@ -301,8 +296,8 @@ SELECT U.[Id]
         
       ,U.[Active]
       
-      ,u.logininfo as UserName
-      ,u.passkey as [Password]            
+      ,UserName as logininfo
+      ,[Password] as passkey            
       
   FROM [POSDashboard].[dbo].[UserLogin1] U
   
@@ -311,30 +306,23 @@ SELECT U.[Id]
 end
 
 
-GO
-
-
-/****** Object:  StoredProcedure [dbo].[InsUpdUserInfo]    Script Date: 06/06/2016 19:27:46 ******/
+/****** Object:  StoredProcedure [dbo].[InsUpdUserInfo]    Script Date: 06/07/2016 12:32:55 ******/
 SET ANSI_NULLS ON
 GO
-
 SET QUOTED_IDENTIFIER ON
 GO
-
-CREATE procedure [dbo].[InsUpdUserInfo](
+ALTER procedure [dbo].[InsUpdUserInfo](
 @FirstName varchar(50)
 ,@LastName varchar(50)
-
 ,@UserName varchar(50)  
 ,@Password varchar(50)  
 ,@EmailAddress varchar(50)
-
 ,@ConfirmPassword varchar(50)
-,@Gender varchar(50))
+,@Gender varchar(50),@salt varchar(50)=null,@Active int=1,@userid int = -1)
 
  AS
 BEGIN
-
+DECLARE @LASTID int
 	
 INSERT INTO [POSDashboard].[dbo].[UserInfo]
            ([FirstName]
@@ -351,11 +339,29 @@ INSERT INTO [POSDashboard].[dbo].[UserInfo]
            ,@EmailAddress
            ,@Password
            ,@ConfirmPassword
-           ,@Gender)
+           ,@Gender
+       )
+           
+ set @LASTID=SCOPE_IDENTITY();
+           
+           INSERT INTO [POSDashboard].[dbo].[UserLogin1]
+           ([LoginInfo]
+           ,[PassKey]
+       
+           ,[UserId]
+           ,[salt]
+           ,[Active])
+     VALUES
+           (@UserName
+           ,@Password
+           ,@LASTID
+           ,@salt
+           ,@Active
+           )
+           
+
+
 END
-GO
-
-
 /****** Object:  StoredProcedure [dbo].[ValidateCredentials1]    Script Date: 06/06/2016 19:28:16 ******/
 SET ANSI_NULLS ON
 GO

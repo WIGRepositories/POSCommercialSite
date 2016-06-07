@@ -72,8 +72,13 @@ namespace INTERBUSWebsite.Controllers
             wid.ParameterName = "@Gender";
             wid.SqlDbType = SqlDbType.VarChar;
             wid.Value = b.Gender;
-            cmd.Parameters.Add(wid);
+             cmd.Parameters.Add(wid);
 
+             SqlParameter salt = new SqlParameter();
+             salt.ParameterName = "@salt";
+             salt.SqlDbType = SqlDbType.VarChar;
+             salt.Value = b.salt;
+             cmd.Parameters.Add(salt);
 
             //DataSet ds = new DataSet();
             //SqlDataAdapter db = new SqlDataAdapter(cmd);
