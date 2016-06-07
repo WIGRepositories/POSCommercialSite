@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -19,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <TypeScriptToolsVersion>1.0</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -225,6 +227,7 @@
     <Content Include="UI\js\Login.js" />
     <Content Include="UI\js\main.js" />
     <Content Include="UI\js\ngStorage.js" />
+    <Content Include="UI\js\ResetPassword.js" />
     <Content Include="UI\js\SeatSelection.js" />
     <Content Include="UI\js\Stops.js" />
     <Content Include="UI\js\UserInfo.js" />
@@ -237,6 +240,7 @@
     <Content Include="UI\Refund.html" />
     <Content Include="UI\Registration.html" />
     <Content Include="UI\registrationform.html" />
+    <Content Include="UI\resetpassword.html" />
     <Content Include="UI\Re_fund.html" />
     <Content Include="UI\Schedules.html" />
     <Content Include="UI\seats.html" />
@@ -1001,6 +1005,7 @@
     <Content Include="UI\vendors\mixitup\docs\api-methods.html" />
     <Content Include="UI\vendors\mixitup\Gruntfile.js" />
     <Content Include="UI\vendors\mixitup\src\jquery.mixitup.js" />
+    <Content Include="UI\vendors\resetpassword.html" />
     <Content Include="UI\vendors\responsive-tabs\responsive-tabs.js" />
     <Content Include="UI\vendors\rundll32.exe" />
     <Content Include="UI\vendors\slimScroll\examples\allow-page-scroll.html" />
@@ -1031,6 +1036,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\LicensePageController.cs" />
+    <Compile Include="Controllers\ResetPassordController.cs" />
     <Compile Include="Controllers\StopsController.cs" />
     <Compile Include="Controllers\FleetOwnerLicenseController.cs" />
     <Compile Include="Controllers\TicketBookingController.cs" />
@@ -1161,6 +1167,7 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>
