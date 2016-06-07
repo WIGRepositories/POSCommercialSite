@@ -159,4 +159,13 @@ namespace BTPOSDashboardAPI.Models
         public string Active { set; get; }
 
     }
+    public class reset
+    {
+      
+        public string UserName { set; get; }
+        public string OldPassword { set; get; }
+        public string NewPassword { set; get; }
+        public string ReenterNewPassword { set; get; }
+
+    }
 }

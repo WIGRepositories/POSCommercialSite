@@ -387,6 +387,59 @@ end
 
 GO
 
+/****** Object:  Table [dbo].[ResetPassword]    Script Date: 06/07/2016 19:40:00 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[ResetPassword](
+	[UserName] [varchar](50) NULL,
+	[OldPassword] [varchar](50) NULL,
+	[NewPassword] [varchar](50) NULL,
+	[ReenterNewPassword] [varchar](50) NULL,
+	[Id] [int] NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  StoredProcedure [dbo].[InsUpdresetpassword]    Script Date: 06/07/2016 19:40:47 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROCEDURE [dbo].[InsUpdresetpassword]
+	-- Add the parameters for the stored procedure here
+
+	@UserName varchar(50)
+,@OldPassword varchar(50)
+,@NewPassword varchar(50)  
+,@ReenterNewPassword varchar(50)  
+
+AS
+BEGIN
+	UPDATE UserInfo
+SET Password=@NewPassword where UserName = @UserName
+and Password = @OldPassword
+
+
+END
+select * from UserInfo
+select * from resetpassword
+
+GO
+
+
 
 
 
