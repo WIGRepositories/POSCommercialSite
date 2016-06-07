@@ -21,26 +21,10 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
     $scope.savedata = function (Booking) {
         var book = {
-            "No_Seats": "5",
-            "cost": "1500",
-            "passengersList": [
-                 { "SeatId": 1,
-                     "Fname": Lokesh,
-                     "Lname": Godem,
-                     "Age": 30,
-                     "Sex": 0,
-                     "Identityproof": adhar
-                 },
-                 {
-                     "SeatId": 2,
-                     "Fname": Sanjay,
-                     "Lname": Gandham,
-                     "Age": 33,
-                     "Sex": 0,
-                     "Identityproof": pan
-                 }
-            ]
-            };
+            "No_Seats": "5", "cost": "1500",
+            "passengersList": [{ "SeatNo": "1", "Fname": "Lokesh1", "Lname": "Godem1", "Age": "30", "Sex": "0", "Identityproof": "adhar" },
+                               { "SeatNo": "2", "Fname": "Sanjay1", "Lname": "Gandham1", "Age": "33", "Sex": "0", "Identityproof": "pan" }]
+                    };
 
         /*
         {
@@ -83,8 +67,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
       "Identityproof": null
     }
   ]
-}
-        */
+}*/
 
         var req = {
             method: 'POST',
