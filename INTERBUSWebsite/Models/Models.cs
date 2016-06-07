@@ -105,6 +105,7 @@ namespace BTPOSDashboardAPI.Models
         //public int UserId { get; set; }
         public int RouteId { get; set; }
         public int fleetOwnerId { get; set; }
+        public int TransactionStatus { get; set; }
       
         public IEnumerable<passengerDetails> passengersList { get; set; }
         

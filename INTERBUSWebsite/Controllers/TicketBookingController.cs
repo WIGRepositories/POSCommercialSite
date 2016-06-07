@@ -68,10 +68,10 @@ namespace INTERBUSWebsite.Controllers
             SqlDataAdapter db = new SqlDataAdapter(cmd);
             db.Fill(ds);
             Tbl = ds.Tables[0];
+            int a = Tbl.Rows.Count;
 
-            // int found = 0;
-            return Tbl;
-
+                return Tbl;
+       
         }
 
     [HttpPost]
@@ -189,6 +189,10 @@ namespace INTERBUSWebsite.Controllers
               SqlParameter Gateway_transId = new SqlParameter("Gateway_transId", SqlDbType.VarChar, 20);
               Gateway_transId.Value = B.Gateway_transId;
               PaymentDetailscmd.Parameters.Add(Gateway_transId);
+
+              SqlParameter TransactionStatus = new SqlParameter("TransactionStatus", SqlDbType.VarChar, 20);
+              TransactionStatus.Value = B.TransactionStatus;
+              PaymentDetailscmd.Parameters.Add(TransactionStatus);
              
 
               PaymentDetailscmd.ExecuteNonQuery();

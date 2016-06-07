@@ -21,6 +21,12 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
     $scope.savedata = function (Booking) {
         var book = {
+            //Fname1: Booking.psngr1.fname1,
+            //Lname1: Booking.psngr1.Lname1,
+            //Fname2: Booking.psngr2.Fname2,
+            //Lname2: Booking.psngr2.Lname2,
+            //Fname3: Booking.psngr3.Fname3,
+            //Lname3: Booking.psngr3.Lname3,
             "No_Seats": "5", "cost": "1500",
             "passengersList": [{ "SeatNo": "1", "Fname": "Lokesh1", "Lname": "Godem1", "Age": "30", "Sex": "0", "Identityproof": "adhar" },
                                { "SeatNo": "2", "Fname": "Sanjay1", "Lname": "Gandham1", "Age": "33", "Sex": "0", "Identityproof": "pan" }]
@@ -69,7 +75,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
   ]
 }*/
 
-        var req = {
+              var req = {
             method: 'POST',
             url: 'http://localhost:52800/api/TicketBooking/SaveBookingDetails',
             data: book
