@@ -103,23 +103,22 @@ namespace BTPOSDashboardAPI.Models
 
         //public int Bookedhistory_Id { get; set; }
         //public int UserId { get; set; }
-
-        public int PnrSeatsID { get; set; }
-        public string SeatNo { get; set; }
         public int RouteId { get; set; }
         public int fleetOwnerId { get; set; }
+        public int TransactionStatus { get; set; }
       
         public IEnumerable<passengerDetails> passengersList { get; set; }
         
     }
         
     public class passengerDetails {
-        public string SeatId { get; set; }
+        public string SeatNo { get; set; }
         public string Fname { get; set; }
         public string Lname { get; set; }
         public int Age { get; set; }
         public int Sex { get; set; }
         public string Identityproof { get; set; }
+        public string datetime { get; set; }
     }
 
     
