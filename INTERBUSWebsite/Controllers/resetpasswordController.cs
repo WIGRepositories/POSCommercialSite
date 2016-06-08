@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BTPOSDashboardAPI.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -9,10 +10,10 @@ using System.Web.Http;
 
 namespace INTERBUSWebsite.Controllers
 {
-    public class ResetPassordController : ApiController
+    public class resetpasswordController : ApiController
     {
-         
          [HttpPost]
+  
           public DataTable saveresetpassword(reset b)
         {
             DataTable Tbl = new DataTable();
@@ -25,61 +26,41 @@ namespace INTERBUSWebsite.Controllers
           
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "InsUpdUserInfo";
+            cmd.CommandText = "InsUpdelresetpassword";
             cmd.Connection = conn;
             conn.Open();
        
 
             SqlParameter Gid = new SqlParameter();
-            Gid.ParameterName = "@FirstName";
+            Gid.ParameterName = "@UserName";
             Gid.SqlDbType = SqlDbType.VarChar;
-            Gid.Value = b.FirstName;
+            Gid.Value = b.UserName;
             cmd.Parameters.Add(Gid);
 
 
             SqlParameter pid = new SqlParameter();
-            pid.ParameterName = "@LastName";
+            pid.ParameterName = "@OldPassword";
             pid.SqlDbType = SqlDbType.VarChar;
-            pid.Value = b.LastName;
+            pid.Value = b.OldPassword;
             cmd.Parameters.Add(pid);
 
-            
-            SqlParameter lid = new SqlParameter();
-            lid.ParameterName = "@UserName";
-            lid.SqlDbType = SqlDbType.VarChar;
-            lid.Value = b.UserName;
-            cmd.Parameters.Add(lid);
+           
+
+
+            SqlParameter kid = new SqlParameter();
+            kid.ParameterName = "@NewPassword";
+            kid.SqlDbType = SqlDbType.VarChar;
+            kid.Value = b.NewPassword;
+            cmd.Parameters.Add(kid);
 
             SqlParameter gid = new SqlParameter();
-            gid.ParameterName = "@Password";
+            gid.ParameterName = "@ReenterNewPassword";
             gid.SqlDbType = SqlDbType.VarChar;
-            gid.Value = b.Password;
+            gid.Value = b.ReenterNewPassword;
             cmd.Parameters.Add(gid);
 
             SqlParameter oid = new SqlParameter();
-            oid.ParameterName = "@EmailAddress";
-            oid.SqlDbType = SqlDbType.VarChar;
-            oid.Value = b.EmailAddress;
-            cmd.Parameters.Add(oid);
             
-             SqlParameter rid = new SqlParameter();
-            rid.ParameterName = "@ConfirmPassword";
-            rid.SqlDbType = SqlDbType.VarChar;
-            rid.Value = b.ConfirmPassword;
-            cmd.Parameters.Add(rid);
-
-             SqlParameter wid = new SqlParameter();
-            wid.ParameterName = "@Gender";
-            wid.SqlDbType = SqlDbType.VarChar;
-            wid.Value = b.Gender;
-             cmd.Parameters.Add(wid);
-
-             SqlParameter salt = new SqlParameter();
-             salt.ParameterName = "@salt";
-             salt.SqlDbType = SqlDbType.VarChar;
-             salt.Value = b.salt;
-             cmd.Parameters.Add(salt);
-
             //DataSet ds = new DataSet();
             //SqlDataAdapter db = new SqlDataAdapter(cmd);
             //db.Fill(ds);
@@ -89,12 +70,9 @@ namespace INTERBUSWebsite.Controllers
             // int found = 0;
             return Tbl;
         }
-        public void Options() { }
+  
 
     }
     }
-
 
   
-    }
-}

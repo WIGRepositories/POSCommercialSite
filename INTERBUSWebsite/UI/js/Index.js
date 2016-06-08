@@ -36,7 +36,7 @@ $scope.Signin = function () {
 
     var req = {
         method: 'POST',
-        url: 'http://localhost:52800/api/ValidateCredentials1/ValidateCredentials',
+        url: 'http://localhost:52800/api/ValidateCredentials/ValidateCredentials',
         data: inputcred
     }
 

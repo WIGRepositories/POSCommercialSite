@@ -1037,12 +1037,12 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\LicensePageController.cs" />
-    <Compile Include="Controllers\ResetPassordController.cs" />
+    <Compile Include="Controllers\resetpasswordController.cs" />
     <Compile Include="Controllers\StopsController.cs" />
     <Compile Include="Controllers\FleetOwnerLicenseController.cs" />
     <Compile Include="Controllers\TicketBookingController.cs" />
     <Compile Include="Controllers\UserInfoController.cs" />
-    <Compile Include="Controllers\ValidateCredentials1Controller.cs" />
+    <Compile Include="Controllers\ValidateCredentialsController.cs" />
     <Compile Include="Controllers\VehicleAvailabilityController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

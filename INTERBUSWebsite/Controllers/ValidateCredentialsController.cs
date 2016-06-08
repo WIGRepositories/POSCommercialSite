@@ -10,12 +10,12 @@ using System.Web.Http;
 
 namespace INTERBUSWebsite.Controllers
 {
-    public class ValidateCredentials1Controller : ApiController
+    public class ValidateCredentialsController : ApiController
     {
-        
+
 
         [HttpPost]
-
+        [Route("api/ValidateCredentials/ValidateCredentials")]
         public DataTable ValidateCredentials(UserLogin u)
         {
             DataTable Tbl = new DataTable();
@@ -30,7 +30,7 @@ namespace INTERBUSWebsite.Controllers
 
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "dbo.ValidateCredentials1";
+            cmd.CommandText = "dbo.ValidateCredentials";
 
             cmd.Connection = conn;
 
@@ -50,15 +50,18 @@ namespace INTERBUSWebsite.Controllers
 
             return Tbl;
 
+
         }
-
-
         public void Options() { }
 
-
+   
     
-
+    
+   
+    
+   
   [HttpPost]
+  [Route("api/ValidateCredentials/saveresetpassword")]
           public DataTable saveresetpassword(reset b)
         {
             DataTable Tbl = new DataTable();
@@ -71,7 +74,7 @@ namespace INTERBUSWebsite.Controllers
           
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "InsUpdUserInfo";
+            cmd.CommandText = "InsUpdelresetpassword";
             cmd.Connection = conn;
             conn.Open();
        
@@ -113,7 +116,7 @@ namespace INTERBUSWebsite.Controllers
             // int found = 0;
             return Tbl;
         }
-        public void Options() { }
+  
 
     }
     }
