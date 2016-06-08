@@ -141,10 +141,14 @@ namespace INTERBUSWebsite.Controllers
               DeptTime.Value = strDate;
               PnrDeatilscmd.Parameters.Add(DeptTime);
 
-              string AuthCode = "AUTH" + Guid.NewGuid().ToString().Substring(0, 6);
+              Random r = new Random();
+              var x = r.Next(0, 1000000);
+              string s = x.ToString("00000000");
+          
+           //   string AuthCode = "AUTH" + Guid.NewGuid().ToString().Substring(0, 6);
 
               SqlParameter Aut = new SqlParameter("AuthCode", SqlDbType.VarChar, 10);
-              Aut.Value = AuthCode;
+              Aut.Value = s;
               PnrDeatilscmd.Parameters.Add(Aut);
 
               SqlParameter Journeytype = new SqlParameter("JourneyType", SqlDbType.VarChar, 20);
@@ -295,7 +299,7 @@ namespace INTERBUSWebsite.Controllers
                SqlParameter Date = new SqlParameter("Date", SqlDbType.VarChar, 30);
                Date.Value = staDate;
                PnrToSeatscmd.Parameters.Add(Date);
-
+              
                PnrToSeatscmd.ExecuteNonQuery();
                PnrToSeatscmd.Parameters.Clear();
            }
@@ -303,11 +307,6 @@ namespace INTERBUSWebsite.Controllers
            conn.Close();
 
  return Tbl;
-        
-        
-         
-
-            
              
           }
 
