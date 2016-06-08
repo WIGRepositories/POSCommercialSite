@@ -5,6 +5,31 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
     //    $scope.routes = response.data;
 
     // })
+    $scope.selectedSeats = new Array();
+    $scope.selectedSeats.pssngr = new Array();
+
+    $scope.test = function () {
+        var currstyle = document.getElementById('imgTd').style.display;
+        document.getElementById('imgTd').style.display = (currstyle == "none") ? "table-cell" : "none";
+    }
+
+    $scope.AddSeats = function (x) {
+        
+        //var item = {
+        //    "SelectedSeatId": x + $scope.selectedSeats.length
+        //}
+        var item = {
+            "SeatId": x
+            , "SeatNo": ""
+            , "Fname": ""
+            , "Lname": ""
+            , "Age": ""
+            , "Sex": ""
+            , "Identityproof": ""
+        }
+        $scope.selectedSeats.pssngr.push(item);
+    }
+
 
     $scope.GetAvailableServices = function ()
     {
@@ -19,18 +44,19 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
     }
 
-    $scope.savedata = function (Booking) {
-        var book = {
-            //Fname1: Booking.psngr1.fname1,
-            //Lname1: Booking.psngr1.Lname1,
+    $scope.savedata = function (selectedSeats) {
+        var book = { "No_Seats": "5", "cost": "1500", "JourneyType": "1", "passengersList": selectedSeats.pssngr };
+            //for(int i=0; i<selectedSeats.length; i++){}
+           // passengersList: [{ "SeatId": "1", SeatNo: selectedSeats.SelectedSeatId, Fname: seat.pssngr.fname, Lname: seat.pssngr.lname, "Age": "30", "Sex": "0", "Identityproof": "adhar" }]
+        
             //Fname2: Booking.psngr2.Fname2,
             //Lname2: Booking.psngr2.Lname2,
             //Fname3: Booking.psngr3.Fname3,
             //Lname3: Booking.psngr3.Lname3,
-            "No_Seats": "5", "cost": "1500",
-            "passengersList": [{ "SeatNo": "1", "Fname": "Lokesh1", "Lname": "Godem1", "Age": "30", "Sex": "0", "Identityproof": "adhar" },
-                               { "SeatNo": "2", "Fname": "Sanjay1", "Lname": "Gandham1", "Age": "33", "Sex": "0", "Identityproof": "pan" }]
-                    };
+            //"No_Seats": "5", "cost": "1500", "JourneyType": "1",
+            //"passengersList": [{ "SeatId": "1","SeatNo": "A1", "Age": "30", "Sex": "0", "Identityproof": "adhar" },
+            //                  ]
+                    //};
 
         /*
         {
