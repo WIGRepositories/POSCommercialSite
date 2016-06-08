@@ -15,7 +15,7 @@ var mycrtl1 = myapp1.controller('Mycntrl', function ($scope, $http) {
 
         var req = {
             method: 'POST',
-            url: ('http://localhost:1476/api/RegisterForm/pos'),
+            url: ('http://localhost:52800/api/resetpassword/saveresetpassword"'),
             //headers: {
             //    'Content-Type': undefined
 

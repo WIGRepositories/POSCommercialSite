@@ -10,55 +10,10 @@ using System.Web.Http;
 
 namespace INTERBUSWebsite.Controllers
 {
-    public class ValidateCredentials1Controller : ApiController
+    public class resetpasswordController : ApiController
     {
-        
-
-        [HttpPost]
-
-        public DataTable ValidateCredentials(UserLogin u)
-        {
-            DataTable Tbl = new DataTable();
-
-            string username = u.LoginInfo;
-            string pwd = u.Passkey;
-
-            //connect to database
-            SqlConnection conn = new SqlConnection();
-            //connetionString="Data Source=ServerName;Initial Catalog=DatabaseName;User ID=UserName;Password=Password"
-            conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["btposdb"].ToString();
-
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "dbo.ValidateCredentials1";
-
-            cmd.Connection = conn;
-
-            SqlParameter lUserName = new SqlParameter("@logininfo", SqlDbType.VarChar, 50);
-            lUserName.Value = username;
-            lUserName.Direction = ParameterDirection.Input;
-            cmd.Parameters.Add(lUserName);
-
-
-            SqlParameter lPassword = new SqlParameter("@passkey", SqlDbType.VarChar, 50);
-            lPassword.Value = pwd;
-            lPassword.Direction = ParameterDirection.Input;
-            cmd.Parameters.Add(lPassword);
-
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(Tbl);
-
-            return Tbl;
-
-        }
-
-
-     
-
-
-    
-
-  [HttpPost]
+         [HttpPost]
+  
           public DataTable saveresetpassword(reset b)
         {
             DataTable Tbl = new DataTable();
@@ -71,7 +26,7 @@ namespace INTERBUSWebsite.Controllers
           
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "InsUpdUserInfo";
+            cmd.CommandText = "InsUpdelresetpassword";
             cmd.Connection = conn;
             conn.Open();
        
@@ -89,12 +44,14 @@ namespace INTERBUSWebsite.Controllers
             pid.Value = b.OldPassword;
             cmd.Parameters.Add(pid);
 
-            
-            SqlParameter lid = new SqlParameter();
-            lid.ParameterName = "@UserName";
-            lid.SqlDbType = SqlDbType.VarChar;
-            lid.Value = b.NewPassword;
-            cmd.Parameters.Add(lid);
+           
+
+
+            SqlParameter kid = new SqlParameter();
+            kid.ParameterName = "@NewPassword";
+            kid.SqlDbType = SqlDbType.VarChar;
+            kid.Value = b.NewPassword;
+            cmd.Parameters.Add(kid);
 
             SqlParameter gid = new SqlParameter();
             gid.ParameterName = "@ReenterNewPassword";
@@ -113,7 +70,9 @@ namespace INTERBUSWebsite.Controllers
             // int found = 0;
             return Tbl;
         }
-        public void Options() { }
+  
 
     }
     }
+
+  
