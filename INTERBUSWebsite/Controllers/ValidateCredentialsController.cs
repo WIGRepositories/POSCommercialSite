@@ -30,7 +30,7 @@ namespace INTERBUSWebsite.Controllers
 
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "dbo.ValidateCredentials";
+            cmd.CommandText = "dbo.WebsiteValidateCredentials";
 
             cmd.Connection = conn;
 
@@ -61,8 +61,8 @@ namespace INTERBUSWebsite.Controllers
     
 
   [HttpPost]
-  [Route("api/ValidateCredentials/saveresetpassword")]
-          public DataTable saveresetpassword(reset b)
+  [Route("api/ValidateCredentials/savepassword")]
+          public DataTable savepassword(reset b)
         {
             DataTable Tbl = new DataTable();
 
@@ -74,7 +74,7 @@ namespace INTERBUSWebsite.Controllers
           
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "InsUpdelresetpassword";
+            cmd.CommandText = "InsUpdwebsiteresetpassword";
             cmd.Connection = conn;
             conn.Open();
        
@@ -93,12 +93,7 @@ namespace INTERBUSWebsite.Controllers
             cmd.Parameters.Add(pid);
 
             
-            SqlParameter lid = new SqlParameter();
-            lid.ParameterName = "@UserName";
-            lid.SqlDbType = SqlDbType.VarChar;
-            lid.Value = b.NewPassword;
-            cmd.Parameters.Add(lid);
-
+          
             SqlParameter gid = new SqlParameter();
             gid.ParameterName = "@ReenterNewPassword";
             gid.SqlDbType = SqlDbType.VarChar;

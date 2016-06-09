@@ -25,7 +25,7 @@ namespace INTERBUSWebsite.Controllers
           
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "InsUpdUserInfo";
+            cmd.CommandText = "InsUpdWebsiteUserInfo";
             cmd.Connection = conn;
             conn.Open();
        

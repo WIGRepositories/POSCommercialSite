@@ -26,7 +26,7 @@ namespace INTERBUSWebsite.Controllers
           
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "InsUpdelresetpassword";
+            cmd.CommandText = "InsUpdwebsiteresetpassword";
             cmd.Connection = conn;
             conn.Open();
        
