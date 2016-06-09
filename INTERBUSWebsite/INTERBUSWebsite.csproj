@@ -213,6 +213,7 @@
     <Content Include="UI\js\Booking.js" />
     <Content Include="UI\js\bootstrap.min.js" />
     <Content Include="UI\js\cc_af.js" />
+    <Content Include="UI\js\CheckOut.js" />
     <Content Include="UI\js\createfleet.js" />
     <Content Include="UI\js\CreateFleetOwner.js" />
     <Content Include="UI\js\Index.js" />
