@@ -249,6 +249,7 @@
     <Content Include="UI\SeatSelection.html" />
     <Content Include="UI\Status_and_Updates.html" />
     <Content Include="UI\success.html" />
+    <Content Include="UI\TicketPage.html" />
     <Content Include="UI\UserTicketCancellation.html" />
     <Content Include="UI\vehicleAvailability.html" />
     <Content Include="UI\vendors\animate.css\animate.css" />
