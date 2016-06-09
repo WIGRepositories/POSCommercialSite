@@ -212,7 +212,7 @@ GO
 SET ANSI_PADDING ON
 GO
 
-CREATE TABLE [dbo].[UserInfo](
+CREATE TABLE [dbo].[WebsiteUserInfo](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[FirstName] [varchar](50) NULL,
 	[LastName] [nvarchar](50) NULL,
@@ -229,7 +229,7 @@ SET ANSI_PADDING OFF
 GO
 
 
-/****** Object:  Table [dbo].[interbusUserLogin]    Script Date: 06/08/2016 16:10:38 ******/
+/****** Object:  Table [dbo].[WebsiteUserLogin]    Script Date: 06/08/2016 16:10:38 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -239,7 +239,7 @@ GO
 SET ANSI_PADDING ON
 GO
 
-CREATE TABLE [dbo].[interbusUserLogin](
+CREATE TABLE [dbo].[websiteUserLogin](
 	[LoginInfo] [nvarchar](50) NOT NULL,
 	[PassKey] [nvarchar](50) NOT NULL,
 	[Id] [int] IDENTITY(1,1) NOT NULL,
@@ -254,12 +254,12 @@ SET ANSI_PADDING OFF
 GO
 
 
-/****** Object:  StoredProcedure [dbo].[GetUserInfo]    Script Date: 06/08/2016 16:09:26 ******/
+/****** Object:  StoredProcedure [dbo].[WebsiteUserInfo]    Script Date: 06/08/2016 16:09:26 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-ALTER PROCEDURE [dbo].[GetUserInfo]
+create PROCEDURE [dbo].[GetWebsiteUserInfo]
 
 AS
 BEGIN
@@ -273,11 +273,11 @@ SELECT U.[Id]
       ,ul.logininfo as UserName
       ,ul.passkey as [Password]            
       
-  FROM [POSDashboard].[dbo].[UserInfo] U
+  FROM [POSDashboard].[dbo].[WebsiteUserInfo] U
   
  
-left OUTER join dbo.interbususerlogin ul on ul.userid = U.id    
- left OUTER join dbo.UserInfo u2 on ul.userid = U.id   
+left OUTER join dbo.websiteUserLogin ul on ul.userid = U.id    
+ left OUTER join dbo.WebsiteUserInfo u2 on ul.userid = U.id   
 end
 
 /****** Object:  StoredProcedure [dbo].[GetinterbusUserLogin]    Script Date: 06/08/2016 16:08:17 ******/
@@ -285,7 +285,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-create PROCEDURE [dbo].[GetinterbusUserLogin]
+create PROCEDURE [dbo].[GetwebsiteUserLogin]
 
 AS
 BEGIN
@@ -297,21 +297,21 @@ SELECT U.[Id]
       ,UserName as logininfo
       ,[Password] as passkey            
       
-  FROM [POSDashboard].[dbo].[interbusUserLogin] U
+  FROM [POSDashboard].[dbo].[websiteUserLogin] U
   
-  left outer join dbo.userinfo u1 on u.userid = U.id    
+  left outer join dbo.WebsiteUserInfo u1 on u.userid = U.id    
   
 end
 
 
 
 
-/****** Object:  StoredProcedure [dbo].[InsUpdUserInfo]    Script Date: 06/08/2016 16:06:52 ******/
+/****** Object:  StoredProcedure [dbo].[InsUpdWebsiteUserInfo]    Script Date: 06/08/2016 16:06:52 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-create procedure [dbo].[InsUpdUserInfo](
+create procedure [dbo].[InsUpdWebsiteUserInfo](
 @FirstName varchar(50)
 ,@LastName varchar(50)
 ,@UserName varchar(50)  
@@ -324,7 +324,7 @@ create procedure [dbo].[InsUpdUserInfo](
 BEGIN
 DECLARE @LASTID int
 	
-INSERT INTO [POSDashboard].[dbo].[UserInfo]
+INSERT INTO [POSDashboard].[dbo].[WebsiteUserInfo]
            ([FirstName]
            ,[LastName]
            ,[UserName]
@@ -344,7 +344,7 @@ INSERT INTO [POSDashboard].[dbo].[UserInfo]
            
  set @LASTID=SCOPE_IDENTITY();
            
-           INSERT INTO [POSDashboard].[dbo].[InterbusUserLogin]
+           INSERT INTO [POSDashboard].[dbo].[WebsiteUserLogin]
            ([LoginInfo]
            ,[PassKey]
        
@@ -369,13 +369,13 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-create procedure [dbo].[ValidateCredentials](@logininfo varchar(50) = null, @passkey varchar(50) = null)
+create procedure [dbo].[WebsiteValidateCredentials](@logininfo varchar(50) = null, @passkey varchar(50) = null)
 as
 begin
 
 select logininfo,FirstName, Lastname,u.Id 
-from interbusUserlogin ul 
-inner join userInfo u on 
+from WebsiteUserlogin ul 
+inner join WebsiteuserInfo u on 
 u.id = ul.UserId
 
 where LoginInfo=@logininfo and [PassKey]=@passkey
@@ -394,7 +394,7 @@ GO
 SET ANSI_PADDING ON
 GO
 
-CREATE TABLE [dbo].[ResetPassword](
+CREATE TABLE [dbo].[WebsiteResetPassword](
 	[UserName] [varchar](50) NULL,
 	[OldPassword] [varchar](50) NULL,
 	[NewPassword] [varchar](50) NULL,
@@ -407,7 +407,7 @@ GO
 SET ANSI_PADDING OFF
 GO
 
-/****** Object:  StoredProcedure [dbo].[InsUpdresetpassword]    Script Date: 06/07/2016 19:40:47 ******/
+/****** Object:  StoredProcedure [dbo].[InsUpdwebsiteresetpassword]    Script Date: 06/07/2016 19:40:47 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -415,7 +415,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE PROCEDURE [dbo].[InsUpdresetpassword]
+CREATE PROCEDURE [dbo].[InsUpdwebsiteresetpassword]
 	-- Add the parameters for the stored procedure here
 
 	@UserName varchar(50)
@@ -425,18 +425,17 @@ CREATE PROCEDURE [dbo].[InsUpdresetpassword]
 
 AS
 BEGIN
-	UPDATE UserInfo
+	UPDATE WebsiteUserInfo
 SET Password=@NewPassword where UserName = @UserName
 and Password = @OldPassword
 
 
 END
-select * from UserInfo
-select * from resetpassword
+
 
 GO
 
-/****** Object:  Table [dbo].[InterbusUserregister]    Script Date: 06/08/2016 16:11:14 ******/
+/****** Object:  Table [dbo].[WebsiteUserregister]    Script Date: 06/08/2016 16:11:14 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -446,7 +445,7 @@ GO
 SET ANSI_PADDING ON
 GO
 
-CREATE TABLE [dbo].[InterbusUserregister](
+CREATE TABLE [dbo].[WebsiteUserregister](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[FirstName] [varchar](50) NULL,
 	[LastName] [nvarchar](50) NULL,
@@ -462,28 +461,28 @@ GO
 SET ANSI_PADDING OFF
 GO
 
-/****** Object:  StoredProcedure [dbo].[InsUpdresetpassword]    Script Date: 06/08/2016 16:11:54 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
+/****** Object:  StoredProcedure [dbo].[InsUpdWebsiteresetpassword]    Script Date: 06/08/2016 16:11:54 ******/
+--SET ANSI_NULLS ON
+--GO
+--SET QUOTED_IDENTIFIER ON
+--GO
 
-ALTER PROCEDURE [dbo].[InsUpdresetpassword]
-	-- Add the parameters for the stored procedure here
+--create PROCEDURE [dbo].[InsUpdWebsiteresetpassword]
+--	-- Add the parameters for the stored procedure here
 
-	@UserName varchar(50)
-,@OldPassword varchar(50)
-,@NewPassword varchar(50)  
-,@ReenterNewPassword varchar(50)  
-AS
-BEGIN
+--	@UserName varchar(50)
+--,@OldPassword varchar(50)
+--,@NewPassword varchar(50)  
+--,@ReenterNewPassword varchar(50)  
+--AS
+--BEGIN
 
-	UPDATE UserInfo
-SET Password=@NewPassword where UserName = @UserName
-and Password = @OldPassword
+--	UPDATE UserInfo
+--SET Password=@NewPassword where UserName = @UserName
+--and Password = @OldPassword
 
 
-END
+--END
 
 
 
