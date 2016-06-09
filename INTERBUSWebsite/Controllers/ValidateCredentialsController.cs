@@ -12,7 +12,7 @@ namespace INTERBUSWebsite.Controllers
 {
     public class ValidateCredentialsController : ApiController
     {
-
+        
 
         [HttpPost]
         [Route("api/ValidateCredentials/ValidateCredentials")]
@@ -54,12 +54,12 @@ namespace INTERBUSWebsite.Controllers
         }
         public void Options() { }
 
+
+
    
+
     
-    
-   
-    
-   
+
   [HttpPost]
   [Route("api/ValidateCredentials/savepassword")]
           public DataTable savepassword(reset b)

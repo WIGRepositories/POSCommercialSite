@@ -106,6 +106,8 @@ namespace BTPOSDashboardAPI.Models
         public int RouteId { get; set; }
         public int fleetOwnerId { get; set; }
         public int TransactionStatus { get; set; }
+        public string AuthCode { get; set; }
+        public int JourneyType { get; set; }
       
         public IEnumerable<passengerDetails> passengersList { get; set; }
         
@@ -113,6 +115,7 @@ namespace BTPOSDashboardAPI.Models
         
     public class passengerDetails {
         public string SeatNo { get; set; }
+        public int SeatId { get; set; }
         public string Fname { get; set; }
         public string Lname { get; set; }
         public int Age { get; set; }

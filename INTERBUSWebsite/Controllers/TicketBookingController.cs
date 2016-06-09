@@ -12,11 +12,6 @@ namespace INTERBUSWebsite.Controllers
 {
     public class TicketBookingController : ApiController
     {
-        public static void main() {
-            TicketBookingController ob = new TicketBookingController();
-            ob.SaveBookingDetails(null);
-        
-        }
 
         //[HttpGet]
 
@@ -145,6 +140,20 @@ namespace INTERBUSWebsite.Controllers
               SqlParameter DeptTime = new SqlParameter("DeptTime", SqlDbType.VarChar, 30);
               DeptTime.Value = strDate;
               PnrDeatilscmd.Parameters.Add(DeptTime);
+
+              Random r = new Random();
+              var x = r.Next(0, 1000000);
+              string s = x.ToString("00000000");
+          
+           //   string AuthCode = "AUTH" + Guid.NewGuid().ToString().Substring(0, 6);
+
+              SqlParameter Aut = new SqlParameter("AuthCode", SqlDbType.VarChar, 10);
+              Aut.Value = s;
+              PnrDeatilscmd.Parameters.Add(Aut);
+
+              SqlParameter Journeytype = new SqlParameter("JourneyType", SqlDbType.VarChar, 20);
+              Journeytype.Value = B.JourneyType;
+              PnrDeatilscmd.Parameters.Add(Journeytype);
              
 
               PnrDeatilscmd.ExecuteNonQuery();
@@ -275,6 +284,10 @@ namespace INTERBUSWebsite.Controllers
                seatNo.Value = result.SeatNo;
                PnrToSeatscmd.Parameters.Add(seatNo);
 
+               SqlParameter SeatId = new SqlParameter("SeatId", SqlDbType.Int);
+               SeatId.Value = result.SeatId;
+               PnrToSeatscmd.Parameters.Add(SeatId);
+
                SqlParameter VehicleNo = new SqlParameter("VehicleNo", SqlDbType.VarChar, 30);
                VehicleNo.Value = B.vehicle_No;
                PnrToSeatscmd.Parameters.Add(VehicleNo);
@@ -286,7 +299,7 @@ namespace INTERBUSWebsite.Controllers
                SqlParameter Date = new SqlParameter("Date", SqlDbType.VarChar, 30);
                Date.Value = staDate;
                PnrToSeatscmd.Parameters.Add(Date);
-
+              
                PnrToSeatscmd.ExecuteNonQuery();
                PnrToSeatscmd.Parameters.Clear();
            }
@@ -294,11 +307,6 @@ namespace INTERBUSWebsite.Controllers
            conn.Close();
 
  return Tbl;
-        
-        
-         
-
-            
              
           }
 
