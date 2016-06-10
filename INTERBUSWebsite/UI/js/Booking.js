@@ -14,26 +14,26 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
     }
     $scope.count = 0;
     $scope.AddSeats = function (x) {
-        
+        var item = {
+            "SeatId": x
+           , "SeatNo": ""
+            ,"NoOfSeats":$scope.count
+           , "Fname": ""
+           , "Lname": ""
+           , "Age": ""
+           , "Sex": ""
+           , "Identityproof": ""
+
+        }
         //var item = {
         //    "SelectedSeatId": x + $scope.selectedSeats.length
         //}
         
        
         $scope.selectedSeats.pssngr.push(item);
-        var i = $scope.selectedSeats.pssngr.length;
-       // if (i == 0) { i = 1; }
+    
         $scope.count = $scope.selectedSeats.pssngr.length;
-        var item = {
-            "SeatId": x
-            , "SeatNo": ""
-            , "Fname": ""
-            , "Lname": ""
-            , "Age": ""
-            , "Sex": ""
-            , "Identityproof": ""
-     
-        }
+       
     }
 
 
