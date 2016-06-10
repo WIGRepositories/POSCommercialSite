@@ -1,7 +1,7 @@
-﻿<!doctype html>
-
+﻿<!DOCTYPE html>
 <html lang="en" ng-app="myApp" ng-controller="myCtrl">
 
+<!--<![endif]-->
 <head>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -10,17 +10,16 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
     <link rel="stylesheet" href="css/w3.css">
 
 
 
     <!-- links for table -->
     <!--Loading bootstrap css-->
-    <link type="text/css" rel="stylesheet" href="vendors/jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
     <link type="text/css" rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
     <link type="text/css" rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
     <!--LOADING STYLESHEET FOR PAGE--><!--Loading style vendors-->
-    <link type="text/css" rel="stylesheet" href="vendors/animate.css/animate.css">
     <link type="text/css" rel="stylesheet" href="vendors/jquery-pace/pace.css">
     <link type="text/css" rel="stylesheet" href="vendors/iCheck/skins/all.css">
     <link type="text/css" rel="stylesheet" href="vendors/jquery-news-ticker/jquery.news-ticker.css">
@@ -33,13 +32,14 @@
     <!-- Optional theme -->
 
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
 
     <script src="js/bootstrap.min.js"></script>
+
 
     <title>Interbus - Get Moving Anywhere, Comfortably</title>
+
+
+
 
     <link href="css/StyleSheet2.css" media="screen,print" rel="stylesheet" />
 
@@ -60,25 +60,56 @@
     <link href="css/StyleSheet6.css" media="screen" rel="stylesheet" />
 
 
+
+
+
+
+
     <script type="text/javascript">
 
-        var h = document.documentElement;
+        // Instructions: please embed this snippet directly into every page in your website template.
 
-        h.className = h.className.replace(/\bno-js\b/, '');
+        // For optimal performance, this must be embedded directly into the template, not referenced
 
-        var isTouch = !!("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0;
+        // as an external file.
 
 
 
-        if (isTouch) {
+        // Answers Cloud Services Embed Script v1.02
 
-            // remove class which defines hover behavior
+        // DO NOT MODIFY BELOW THIS LINE *****************************************
 
-            h.className = h.className.replace(/\bno-touch\b/, '');
+        ; (function (g) {
 
-        }
+            var d = document, i, am = d.createElement('script'), h = d.head || d.getElementsByTagName("head")[0],
+
+            aex = {
+
+                "src": "//gateway.answerscloud.com/tfl-gov-uk/production/gateway.min.js",
+
+                "type": "text/javascript",
+
+                "async": "true",
+
+                "data-vendor": "acs",
+
+                "data-role": "gateway"
+
+            };
+
+            for (var attr in aex) { am.setAttribute(attr, aex[attr]); }
+
+            h.appendChild(am);
+
+            g['acsReady'] = function () { var aT = '__acsReady__', args = Array.prototype.slice.call(arguments, 0), k = setInterval(function () { if (typeof g[aT] === 'function') { clearInterval(k); for (i = 0; i < args.length; i++) { g[aT].call(g, function (fn) { return function () { setTimeout(fn, 1) }; }(args[i])); } } }, 50); };
+
+        })(window);
+
+        // DO NOT MODIFY ABOVE THIS LINE *****************************************
 
     </script>
+
+
     <style>
         rr.div a {
             text-decoration: none;
@@ -136,12 +167,9 @@
     </style>
 
 
-
 </head>
 
-<body ng-model="TicketDetails" ng-init="GetDetails();">
-
-    <!--Start Header-->
+<body ng-init="GetAvailableServices();" ng-model="Booking">
     <div id="container">
 
         <!--start of white bar above menu-->
@@ -215,183 +243,58 @@
             </div>
 
         </div>
+
         <!--End Menu-->
-
     </div>
-    <!--End Header-->
-
-    <div class="row" style="margin-top: 80px; margin-bottom: 20px">
-        <div class="col-md-10 col-md-offset-1">
-            <h2 style="margin-left:30px">Checkout Form</h2>
-            <div class="col-md-7" style="border-radius: 5px; background-color: #F5F5F5">
-                <!--#F5F5F5-->
-
-                <form action="">
-                    <div class="panel-body pan">
-
-                        <div class="form-body pal">
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="input-icon"><i class="fa fa-user"></i><!--<input id="inputFirstName" type="text" placeholder="First Name" class="form-control" />-->{{FirstName}}</div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="input-icon"><i class="fa fa-user"></i><input id="inputLastName" type="text" placeholder="Last Name" class="form-control" /></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="input-icon"><i class="fa fa-envelope"></i><input id="inputEmail" type="text" placeholder="E-mail" class="form-control" /></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="input-icon"><i class="fa fa-phone"></i><input id="inputPhone" type="text" placeholder="Phone" class="form-control" /></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <select class="form-control">
-                                            <option>Country</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group"><input id="inputCity" type="text" placeholder="City" class="form-control" /></div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group"><input id="inputPostCode" type="text" placeholder="Post code" class="form-control" /></div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <div style="margin-bottom:10px">
-                                                <input type="radio" name=address id="address1" checked /><label for="address1">Permenent Address</label>
-                                            </div>
-                                            <textarea rows="5" placeholder="Permenent Address" class="form-control"></textarea>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <div style="margin-bottom:10px">
-                                                <input type="radio" name=address id="address2" /><label for="address2">Temporary Address</label>
-                                            </div>
-                                            <textarea rows="5" placeholder="Temporary Address" class="form-control"></textarea>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-8 col-md-offset-2">
-                                    <input type="radio" name=myradio id="1" checked /><label for="1">Visa</label>
-                                    <input type="radio" name=myradio id="2" /><label for="2">MasterCard</label>
-                                    <input type="radio" name=myradio id="3" /><label for="3">Net Banking</label>
-                                    <input type="radio" name=myradio id="4" /><label for="4">Pay Pal </label>
 
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="col-md-11">
-                                    <input id="inputNameCard" type="text" placeholder="Name on card" class="form-control" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="col-md-8">
-                                <div class="form-group"><input id="inputCardNumber" type="text" placeholder="Card number" class="form-control" /></div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group"><input id="inputCVV2" type="text" placeholder="CVV" class="form-control" /></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-11">
-                            <div class="col-md-2"></div>
-                            <div class="col-md-2">
-                                <div class="form-group"><label class="pts">Expiration date:</label></div>
-                            </div>
-                            <div class="col-md-5">
-                                <div class="form-group">
-                                    <select class="form-control">
-                                        <option>Month</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group mbn"><input id="inputYear" type="text" placeholder="Year" class="form-control" /></div>
-                            </div>
-                        </div>
-                    </div>
 
 
-                </form>
+
+    <div class="row" style="margin-top:60px">
+        <div class="container">
+            <div class="row" style="margin-bottom:10px">
+                <div style="float:right">
+    <button type="button" class="btn btn-primary">Print Ticket</button>
+                </div>
             </div>
+            <div class="col-md-12" style="margin-top:10px">
+                <div class="row" style="border-bottom:1px solid #b8b3b3;">
+                    <div class="col-md-4"><h2>Bangalore  ->  Hyderabad</h2></div><div class="col-md-4"><h3>Sunday, May 29, 2016</h3></div><div class="col-md-4">
+                        <strong>Ticket no: TJ6T32828245</strong>
 
-            <div class="col-md-4" style="margin-left:20px">
-                <div class="row">
-                    <div class="col-md-12" style="padding-top:15px">
-                        <h3 style="text-align:center">Order Summary</h3>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <th><h4>PRODUCT</h4></th>
-                                </tr>
-                                <tr>
-                                    <td><label class="form-group">Product  <span> x1</span></label></td>
-                                    <td> <label class="form-group">&#x20B9 1000</label>  </td>
-                                </tr>
-
-
-                                <tr>
-                                    <td><label class="form-group">Shipping </label></td>
-                                    <td><label class="form-group">Free Shipping </label></td>
-                                </tr>
-                                <tr>
-                                    <td><label class="form-group">Tax </label></td>
-                                    <td><label class="form-group">&#x20B9 10</label></td>
-                                </tr>
-                                <tr>
-                                    <td><label class="form-group">Discount</label></td>
-                                    <td><label class="form-group">0 %</label></td>
-                                </tr>
-                                <tr>
-                                    <td><label class="form-group">Order Total </label></td>
-                                    <td><label class="form-group">&#x20B9 1010</label></td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <div class="form-actions text-center pal">
-                            <button type="submit" class="btn btn-primary">Continue</button>
-                        </div>
+                        <p><strong>PNR no :</strong> TS-RB29620448WJW/107405/SLT-02</p>
                     </div>
+                </div>
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-md-3"><h4>SL Travels</h4><p>Non A/C Seater (2+2)</p></div>
+                    <div class="col-md-2"><h4>07:05 PM</h4><p>Arrival Time</p></div>
+                    <div class="col-md-2"><h4>12:30 AM</h4><p>Departure time</p></div>
+                   
+                    <div class="col-md-2"><h4>3</h4><p>Total Seats</p></div><div class="col-md-3"><h4>A5</h4><p>Seat numbers</p></div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-8">
+                        <table class="table table-hover">
+                            <tr><th>S.No</th><th>Name</th><th>Age</th><th>Sex</th></tr>
+                            <tr><td>1.</td><td>Lokesh</td><td>24</td><td>Male</td></tr>
+                            <tr><td>1.</td><td>Lokesh</td><td>24</td><td>Male</td></tr>
+                        </table>
+                    </div>
+                    <div class="col-md-4">
+                        <table class="table table-bordered">
 
+                            <tr><td>Each Ticket</td><td>240</td></tr>
+                            <tr><td>Tax</td><td>20</td></tr>
+                            <tr><td>Discount</td><td>10</td></tr>
+                            <tr><td><strong>Total Fare</strong></td><td><strong>1240</strong></td></tr>
+                        </table>
+                    </div>
                 </div>
 
             </div>
-
-
-        </div>
+            </div>
     </div>
     <div class="row">
         <div class="col-lg-12">
@@ -407,9 +310,25 @@
                 <div class="secondary-footer"><h2 class="visually-hidden">Site structure and legal information</h2><div class="r"><ul><li><a href="/corporate/terms-and-conditions/">Terms &amp; conditions </a></li><li><a href="/corporate/privacy-and-cookies/">Privacy &amp; cookies</a></li><li><a href="/corporate/website-accessibility/">Website accessibility</a></li></ul><span class="heading">Copyright Interbus</span></div></div>
                 <div>
                 </div>
+
+
+
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
+
+    <!-- End SiteCatalyst -->
+    <script>
+
+    </script>
+
 
 
     <script src="js/jquery-1.10.2.min.js"></script>
@@ -438,10 +357,7 @@
     <script src="js/main.js"></script>
     <script src="js/angular.js"></script>
     <script src="js/ngStorage.js"></script>
-    <script src="js/CheckOut.js"></script>
-
-
-
+  
 </body>
 
 </html>

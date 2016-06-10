@@ -12,7 +12,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         var currstyle = document.getElementById('imgTd').style.display;
         document.getElementById('imgTd').style.display = (currstyle == "none") ? "table-cell" : "none";
     }
-
+    $scope.count = 0;
     $scope.AddSeats = function (x) {
         
         //var item = {
@@ -27,7 +27,11 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
             , "Sex": ""
             , "Identityproof": ""
         }
+       
         $scope.selectedSeats.pssngr.push(item);
+        var i = $scope.selectedSeats.pssngr.length;
+       // if (i == 0) { i = 1; }
+        $scope.count = $scope.selectedSeats.pssngr.length;
     }
 
 
@@ -44,8 +48,20 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
     }
 
+    //$scope.ticketdetails = function (Booking)
+    //{
+
+    //    $localStorage.Pnr = $scope.pnrnumber;
+    //    var details = {};
+    //    var request = {
+    //        method: 'GET',
+    //        url: 'http://localhost:52800/api/TicketBooking/SaveBookingDetails',
+    //        data: book
+    //    }
+    //}
+
     $scope.savedata = function (selectedSeats) {
-        var book = { "No_Seats": "5", "cost": "1500", "JourneyType": "1", "passengersList": selectedSeats.pssngr };
+        var book = { "No_Seats": "5", "cost": "1500", "JourneyType": "1", "passengersList": selectedSeats.pssngr, "Seatcost":"900" };
             //for(int i=0; i<selectedSeats.length; i++){}
            // passengersList: [{ "SeatId": "1", SeatNo: selectedSeats.SelectedSeatId, Fname: seat.pssngr.fname, Lname: seat.pssngr.lname, "Age": "30", "Sex": "0", "Identityproof": "adhar" }]
         
@@ -100,6 +116,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
     }
   ]
 }*/
+        $localStorage.book = book;
 
               var req = {
             method: 'POST',
@@ -108,7 +125,9 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         }
 
         $http(req).then(function (res) {
-            alert('saved successfully');
+           
+
+            window.location.href = "CheckOut.html";
         });
     }
 

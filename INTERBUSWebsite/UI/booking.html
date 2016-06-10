@@ -372,7 +372,7 @@
 
                     <td>
                         <div class="col-md-3 col-sm-4"><div class="col-md-3 col-sm-4"></div></div>
-                        <div class="col-md-3 col-sm-4">
+                        <div class="col-md-3 col-sm-4" ng-model="Booking.Cost=b.Cost">
                             <strong>Rs.{{b.Cost}}</strong>
                         </div>
 
@@ -532,11 +532,12 @@
         </div>-->
 
                         </div>
-                        <center>
+                        <center ng-init="Booking.Cost = 0">
 
-                            
+
                             <!--<button type="button" class="btn btn-primary" ng-click="AddSeats();">Add seats</button>-->
                             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            <label>Count{{count*Booking.Cost}}</label>
                             <button type="button" class="btn btn-primary" ng-click="savedata(selectedSeats);">booking</button>
                         </center>
                     </td>
