@@ -15,7 +15,7 @@ namespace INTERBUSWebsite.Controllers
         
 
         [HttpPost]
-        [Route("api/ValidateCredentials/ValidateCredentials")]
+        
         public DataTable ValidateCredentials(UserLogin u)
         {
             DataTable Tbl = new DataTable();
@@ -51,14 +51,7 @@ namespace INTERBUSWebsite.Controllers
             return Tbl;
 
 
-        }
-        public void Options() { }
-
-
-
-   
-
-    
+        }    
 
   [HttpPost]
   [Route("api/ValidateCredentials/savepassword")]
@@ -92,6 +85,11 @@ namespace INTERBUSWebsite.Controllers
             pid.Value = b.OldPassword;
             cmd.Parameters.Add(pid);
 
+            SqlParameter uid = new SqlParameter();
+            uid.ParameterName = "@NewPassword";
+            uid.SqlDbType = SqlDbType.VarChar;
+            uid.Value = b.NewPassword;
+            cmd.Parameters.Add(uid);
             
           
             SqlParameter gid = new SqlParameter();
@@ -111,7 +109,8 @@ namespace INTERBUSWebsite.Controllers
             // int found = 0;
             return Tbl;
         }
-  
+
+  public void Options() { }
 
     }
     }

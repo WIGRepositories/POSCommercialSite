@@ -1,7 +1,7 @@
 ﻿var myapp1 = angular.module('myApp', [])
 var mycrtl1 = myapp1.controller('Mycntrl', function ($scope, $http) {
 
-   
+
     $scope.save = function (type) {
 
         var type = {
@@ -10,12 +10,12 @@ var mycrtl1 = myapp1.controller('Mycntrl', function ($scope, $http) {
             oldPassword: type.oldPassword,
             newPassword: type.newPassword,
             reenternewPassword: type.reenternewPassword,
-           
+
         };
 
         var req = {
             method: 'POST',
-            url: ('http://localhost:52800/api/ValidateCredentials/savetpassword"'),
+            url: 'http://localhost:52800/api/ValidateCredentials/savepassword',            
             //headers: {
             //    'Content-Type': undefined
 
@@ -23,8 +23,8 @@ var mycrtl1 = myapp1.controller('Mycntrl', function ($scope, $http) {
 
 
         }
-        $http(req).then(function (response) { });
+        $http(req).then(function (response) {
 
+        })
     }
-
 });
