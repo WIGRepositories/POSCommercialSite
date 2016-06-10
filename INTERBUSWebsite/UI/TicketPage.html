@@ -169,7 +169,7 @@
 
 </head>
 
-<body ng-init="GetAvailableServices();" ng-model="Booking">
+<body ng-init="GetDetails();" ng-model="TicketDetails">
     <div id="container">
 
         <!--start of white bar above menu-->
@@ -255,46 +255,158 @@
         <div class="container">
             <div class="row" style="margin-bottom:10px">
                 <div style="float:right">
-    <button type="button" class="btn btn-primary">Print Ticket</button>
+                    <button type="button" class="btn btn-primary">Print Ticket</button>
                 </div>
             </div>
-            <div class="col-md-12" style="margin-top:10px">
-                <div class="row" style="border-bottom:1px solid #b8b3b3;">
-                    <div class="col-md-4"><h2>Bangalore  ->  Hyderabad</h2></div><div class="col-md-4"><h3>Sunday, May 29, 2016</h3></div><div class="col-md-4">
-                        <strong>Ticket no: TJ6T32828245</strong>
+            <div class="col-md-12">
+                <h1>e-Ticket Details</h1>
+            </div>
 
-                        <p><strong>PNR no :</strong> TS-RB29620448WJW/107405/SLT-02</p>
+
+            <div class="col-md-11 col-md-offset-1" style="margin-top:20px; margin-bottom:20px">
+                <div class="row" style="margin-bottom:5px">
+                    <div class="col-md-6">
+                        <div class="col-md-4"><label>Ticket No:</label></div>
+                        <div class="col-md-6"><label>TJ6T32828245</label></div>
+                        <!--<div><label></label></div>-->
+                    </div>
+                    <div class="col-md-6">
+                        <div class="col-md-4"><label>Booking Date:</label></div>
+                        <div class="col-md-6"><label>10/6/2016</label></div>
+                        <!--<div><label></label></div>-->
                     </div>
                 </div>
-                <div class="row" style="margin-top: 20px;">
-                    <div class="col-md-3"><h4>SL Travels</h4><p>Non A/C Seater (2+2)</p></div>
-                    <div class="col-md-2"><h4>07:05 PM</h4><p>Arrival Time</p></div>
-                    <div class="col-md-2"><h4>12:30 AM</h4><p>Departure time</p></div>
+
+                <div class="row" style="margin-bottom:5px">
+
+                    <div class="col-md-6">
+                        <div class="col-md-4"><label>From:</label></div>
+                        <div class="col-md-6"><label>Hyd</label></div>
+                        <!--<div><label></label></div>-->
+                    </div>
+                    <div class="col-md-6">
+                        <div class="col-md-4"><label>To:</label></div>
+                        <div class="col-md-6"><label>Vij</label></div>
+                        <!--<div><label></label></div>-->
+                    </div>
+
+                </div>
+
+                <div class="row" style="margin-bottom:5px">
+                    <div class="col-md-6">
+                        <div class="col-md-4"><label>No Of Seats:</label></div>
+                        <div class="col-md-6"><label>{{firstName}}</label></div>
+                        <!--<div><label></label></div>-->
+                    </div>
+                    <div class="col-md-6">
+                        <div class="col-md-4"><label>Seats:</label></div>
+                        <div class="col-md-6"><label>A1,A2</label></div>
+                        <!--<div><label></label></div>-->
+                    </div>
+                </div>
+
+                <div class="row" style="margin-bottom:5px">
+                    <div class="col-md-6">
+                        <div class="col-md-4"><label>Journey Date:</label></div>
+                        <div class="col-md-6"><label>15/6/2016</label></div>
+                        <!--<div><label></label></div>-->
+                    </div>
+                    <div class="col-md-6">
+                        <div class="col-md-4"><label>Ticket Fare:</label></div>
+                        <div class="col-md-6"><label>200</label></div>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom:5px">
                    
-                    <div class="col-md-2"><h4>3</h4><p>Total Seats</p></div><div class="col-md-3"><h4>A5</h4><p>Seat numbers</p></div>
-                </div>
-                
-                <div class="row">
-                    <div class="col-md-8">
-                        <table class="table table-hover">
-                            <tr><th>S.No</th><th>Name</th><th>Age</th><th>Sex</th></tr>
-                            <tr><td>1.</td><td>Lokesh</td><td>24</td><td>Male</td></tr>
-                            <tr><td>1.</td><td>Lokesh</td><td>24</td><td>Male</td></tr>
-                        </table>
-                    </div>
-                    <div class="col-md-4">
-                        <table class="table table-bordered">
-
-                            <tr><td>Each Ticket</td><td>240</td></tr>
-                            <tr><td>Tax</td><td>20</td></tr>
-                            <tr><td>Discount</td><td>10</td></tr>
-                            <tr><td><strong>Total Fare</strong></td><td><strong>1240</strong></td></tr>
-                        </table>
+                    <div class="col-md-6">
+                        <div class="col-md-4"><label>Journey Type:</label></div>
+                        <div class="col-md-6"><label>{{JourneyType}}</label></div>
                     </div>
                 </div>
 
+
             </div>
+            <div><h2 style="text-align:center">Passenger Details</h2></div>
+            <div>
+                <div class="col-md-6">
+                    <div ng-repeat="fname in GetDetails.details">hai{{Names}}</div>
+                    <table>
+                        <tr><th>S.No</th><th>Name</th><th>Gender</th><th>Age</th></tr>
+                        <tr><td>1</td><td>Lokesh</td><td>Male</td><td>24</td></tr>
+                        <tr><td>2</td><td>Phani</td><td>Male</td><td>24</td></tr>
+                        <tr><td></td><td></td><td><strong>Sub Total</strong></td><td><strong>400</strong></td></tr>
+
+                    </table>
+                </div>
+                <div class="col-md-6">
+                    <table>
+                        <tr><th>S.No</th><th>Name</th><th>Gender</th><th>Age</th></tr>
+                        <tr><td>1</td><td>Lokesh</td><td>Male</td><td>24</td></tr>
+                        <tr><td>2</td><td>Phani</td><td>Male</td><td>24</td></tr>
+                        <tr><td></td><td></td><td><strong>Sub Total</strong></td><td><strong>600</strong></td></tr>
+
+                    </table>
+                </div>
             </div>
+            <div class="col-md-11 col-md-offset-1" style="margin-top:20px; margin-bottom:20px; border-top:2px solid #d6d3d3; padding-top:20px">
+                <div class="row" style="margin-bottom:5px">
+                    <div class="col-md-6">
+                        <div class="col-md-4"><label>Ticket No:</label></div>
+                        <div class="col-md-6"><label>TJ6T32828245</label></div>
+                        <!--<div><label></label></div>-->
+                    </div>
+                    <div class="col-md-6">
+                        <div class="col-md-4"><label>Booking Date:</label></div>
+                        <div class="col-md-6"><label>10/6/2016</label></div>
+                        <!--<div><label></label></div>-->
+                    </div>
+                </div>
+
+                <div class="row" style="margin-bottom:5px">
+
+                    <div class="col-md-6">
+                        <div class="col-md-4"><label>From:</label></div>
+                        <div class="col-md-6"><label>Vij</label></div>
+                        <!--<div><label></label></div>-->
+                    </div>
+                    <div class="col-md-6">
+                        <div class="col-md-4"><label>To:</label></div>
+                        <div class="col-md-6"><label>Hyd</label></div>
+                        <!--<div><label></label></div>-->
+                    </div>
+
+                </div>
+
+                <div class="row" style="margin-bottom:5px">
+                    <div class="col-md-6">
+                        <div class="col-md-4"><label>No Of Seats:</label></div>
+                        <div class="col-md-6"><label>{{NoofSeats}}</label></div>
+                        <!--<div><label></label></div>-->
+                    </div>
+                    <div class="col-md-6">
+                        <div class="col-md-4"><label>Seats:</label></div>
+                        <div class="col-md-6"><label>C1,C2</label></div>
+                        <!--<div><label></label></div>-->
+                    </div>
+                </div>
+
+                <div class="row" style="margin-bottom:5px">
+                    <div class="col-md-6">
+                        <div class="col-md-4"><label>Return Date:</label></div>
+                        <div class="col-md-6"><label>18/6/2016</label></div>
+                        <!--<div><label></label></div>-->
+                    </div>
+                    <div class="col-md-6">
+                        <div class="col-md-4"><label>Ticket Fare:</label></div>
+                        <div class="col-md-6"><label>600</label></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8 col-md-offset-2" style="margin-top:10px">
+                <h3 style="text-align:center; margin-bottom:20px">Payment Details</h3><table><tr><td>Amount Deducted:</td><td>1200</td><td>Transaction Id:</td><td>764uydgh</td></tr></table>
+            </div>
+        </div>
     </div>
     <div class="row">
         <div class="col-lg-12">
@@ -305,7 +417,32 @@
 
 
                 <div class="primary-footer r">
-                    <h2 class="visually-hidden">About TfL</h2><ul class="footer-links"><li><a href="/help-and-contact/">Help &amp; contacts</a></li><li><a class="" href="/corporate/careers/">Careers</a></li><li><a class="" href="/corporate/about-tfl/">About TfL</a></li><li><a class="" href="/corporate/safety-and-security/">Safety &amp; security</a></li><li><a class="" href="/corporate/transparency/">Transparency</a></li><li><a class="" href="/corporate/publications-and-reports/">Publications &amp; reports</a></li><li><a class="" href="/corporate/tfl-shop/">Gift Shop</a></li><li><a class="" href="/travel-information/social-media-and-email-updates/">Social media &amp; email updates</a></li><li><a class="languages-footer" href="/travel-information/other-languages/">Other languages</a></li></ul><h2 class="heading">Information for...</h2><ul class="info-for clearfix"><li><a href="/info-for/media/">Media</a></li><li><a href="/info-for/business-and-commercial/">Business &amp; commercial</a></li><li><a href="/info-for/boroughs/">Boroughs</a></li><li><a href="/info-for/schools-and-young-people/">Schools &amp; young people</a></li><li><a href="/info-for/deliveries-in-london/">Deliveries in London</a></li><li><a href="/info-for/urban-planning-and-construction/">Urban planning &amp; construction</a></li><li><a href="/info-for/taxis-and-private-hire/">Taxi &amp; private hire </a></li><li><a href="/info-for/suppliers-and-contractors/">Suppliers &amp; contractors</a></li><li><a href="/info-for/bus-operators/">Bus operators</a></li><li><a href="/info-for/open-data-users/">Open data users</a></li><li><a href="/info-for/coach-drivers/">Coach drivers</a></li><li><a href="/info-for/investors/">Investors</a></li></ul>
+                    <h2 class="visually-hidden">About Interbus</h2>
+                    <ul class="footer-links">
+                        <li><a href="/help-and-contact/">Help &amp; contacts</a></li>
+                        <li><a class="" href="/corporate/careers/">Careers</a></li>
+                        <li><a class="" href="/corporate/about-tfl/">About Interbus</a></li>
+                        <li><a class="" href="/corporate/safety-and-security/">Safety &amp; security</a></li>
+                        <li><a class="" href="/corporate/transparency/">Transparency</a></li>
+                        <li><a class="" href="/corporate/publications-and-reports/">Publications &amp; reports</a></li>
+                        <li><a class="" href="/corporate/tfl-shop/">Gift Shop</a></li>
+                        <li><a class="" href="/travel-information/social-media-and-email-updates/">Social media &amp; email updates</a></li>
+                        <li><a class="languages-footer" href="/travel-information/other-languages/">Other languages</a></li>
+                    </ul><h2 class="heading">Information for...</h2><ul class="info-for clearfix">
+                        <li><a href="/info-for/media/">Media</a></li>
+                        <li><a href="/info-for/business-and-commercial/">Business &amp; commercial</a></li>
+                        <li><a href="/info-for/boroughs/">Get Support online 24/7</a></li>
+                        <li><a href="/info-for/schools-and-young-people/">Schools &amp; young people</a></li>
+                        <li><a href="/info-for/deliveries-in-london/">Deliveries in Zimbabwe</a></li>
+                        <li><a href="/info-for/urban-planning-and-construction/">Urban planning &amp; construction</a></li>
+                        <li><a href="/info-for/taxis-and-private-hire/">Taxi &amp; private hire </a></li>
+                        <li><a href="/info-for/suppliers-and-contractors/">Suppliers &amp; contractors</a></li>
+                        <li><a href="/info-for/bus-operators/">Bus operators</a></li>
+                        <li><a href="/info-for/open-data-users/">Open data users</a></li>
+                        <li><a href="/info-for/coach-drivers/">Coach drivers</a></li>
+                        <li><a href="/info-for/investors/">Investors</a></li>
+                        <li><a href="/info-for/investors/">Download Interbus App   </a></li>
+                    </ul>
                 </div>
                 <div class="secondary-footer"><h2 class="visually-hidden">Site structure and legal information</h2><div class="r"><ul><li><a href="/corporate/terms-and-conditions/">Terms &amp; conditions </a></li><li><a href="/corporate/privacy-and-cookies/">Privacy &amp; cookies</a></li><li><a href="/corporate/website-accessibility/">Website accessibility</a></li></ul><span class="heading">Copyright Interbus</span></div></div>
                 <div>
@@ -357,7 +494,8 @@
     <script src="js/main.js"></script>
     <script src="js/angular.js"></script>
     <script src="js/ngStorage.js"></script>
-  
+    <script src="js/TicketPage.js"></script>
+
 </body>
 
 </html>

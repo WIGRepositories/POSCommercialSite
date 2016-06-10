@@ -232,6 +232,7 @@
     <Content Include="UI\js\ResetPassword.js" />
     <Content Include="UI\js\SeatSelection.js" />
     <Content Include="UI\js\Stops.js" />
+    <Content Include="UI\js\TicketPage.js" />
     <Content Include="UI\js\UserInfo.js" />
     <Content Include="UI\js\VehicleAvailability.js" />
     <Content Include="UI\LicenseConfirmation.html" />

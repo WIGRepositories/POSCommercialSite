@@ -18,6 +18,12 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         //var item = {
         //    "SelectedSeatId": x + $scope.selectedSeats.length
         //}
+        
+       
+        $scope.selectedSeats.pssngr.push(item);
+        var i = $scope.selectedSeats.pssngr.length;
+       // if (i == 0) { i = 1; }
+        $scope.count = $scope.selectedSeats.pssngr.length;
         var item = {
             "SeatId": x
             , "SeatNo": ""
@@ -26,12 +32,8 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
             , "Age": ""
             , "Sex": ""
             , "Identityproof": ""
+     
         }
-       
-        $scope.selectedSeats.pssngr.push(item);
-        var i = $scope.selectedSeats.pssngr.length;
-       // if (i == 0) { i = 1; }
-        $scope.count = $scope.selectedSeats.pssngr.length;
     }
 
 
@@ -127,7 +129,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         $http(req).then(function (res) {
            
 
-            window.location.href = "CheckOut.html";
+            window.location.href = "TicketPage.html";
         });
     }
 
