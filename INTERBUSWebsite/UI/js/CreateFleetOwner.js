@@ -55,4 +55,37 @@ var ctrl = app.controller('myCtrl', function ($scope, $http) {
     }
 
 
+    $scope.save = function (FleetOwnerDetails, flag) {
+
+        var FleetOwnerDetails = {
+            Company: FleetOwnerDetails.Company,
+            Title: FleetOwnerDetails.Title,
+            FleetOwnerId: FleetOwnerDetails.FleetOnerId,
+            Gender: FleetOwnerDetails.Gender,
+            FleetOwnerSize: FleetOwnerDetails.FleetOwnerSize,
+            Address: FleetOwnerDetails.Address,
+            EmpId: FleetOwnerDetails.EmpId,
+            insupdflag: flag
+        }
+        var req = {
+            method: 'POST',
+            url: 'http://localhost:52800/api/FleetOwnerLicenseC/CreateNewFO',
+            data: FleetOwnerDetails
+
+        }
+        $http(req).then(function (res) {
+            alert('saved successfully.');
+        });
+                
+       
+    }
+      
 });
+
+
+
+
+
+
+    
+   

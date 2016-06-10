@@ -78,6 +78,16 @@ namespace BTPOSDashboardAPI.Models
         public String CompanyName { get; set; }
         public String Description { get; set; }
         public string insupdflag { get; set; }
+
+        public string Company { get; set; }
+        public string Title { set; get; }
+        public int FleetOwnerId { set; get; }
+        public string Gender { set; get; }
+        public int FleetOwnerSize { set; get; }
+        public string Address { set; get; }
+        public int EmpId { set; get; }
+      
+
     }
 
     public class Booking
@@ -170,4 +180,5 @@ namespace BTPOSDashboardAPI.Models
         public string ReenterNewPassword { set; get; }
 
     }
+   
 }

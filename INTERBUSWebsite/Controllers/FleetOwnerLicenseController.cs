@@ -282,6 +282,77 @@ namespace INTERBUSWebsite.Controllers
 
                 cmd.ExecuteScalar();
 
+                cmd.Parameters.Clear();
+
+                //cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.CommandText = "InsupdFleetOwnerRequest";
+
+                //SqlParameter UId = new SqlParameter("FleetOwnerId", SqlDbType.Int);
+                //UId.Value = 1;
+                //cmd.Parameters.Add(UId);
+
+                //SqlParameter UFirstName = new SqlParameter("@FirstName", SqlDbType.VarChar, 50);
+                //UFirstName.Value = C.FirstName;
+                //cmd.Parameters.Add(UFirstName);
+
+                //SqlParameter LastName = new SqlParameter("@LastName", SqlDbType.VarChar, 50);
+                //LastName.Value = C.LastName;
+                //cmd.Parameters.Add(LastName);
+
+                //SqlParameter UEmail = new SqlParameter("@Email", SqlDbType.VarChar, 15);
+                //UEmail.Value = C.Email;
+                //cmd.Parameters.Add(UEmail);
+
+                //SqlParameter UMobileNo = new SqlParameter("@MobileNo", SqlDbType.VarChar, 15);
+                //UMobileNo.Value = C.MobileNo;
+                //cmd.Parameters.Add(UMobileNo);
+
+                //SqlParameter CCompanyName = new SqlParameter("@CompanyName", SqlDbType.VarChar, 15);
+                //CCompanyName.Value = C.CompanyName;
+                //cmd.Parameters.Add(CCompanyName);
+
+                //SqlParameter Description = new SqlParameter("@Description", SqlDbType.VarChar, 15);
+                //Description.Value = C.Description;
+                //cmd.Parameters.Add(Description);
+
+                //SqlParameter insupdflag = new SqlParameter("@insupdflag", SqlDbType.VarChar, 10);
+                //insupdflag.Value = C.insupdflag;
+                //cmd.Parameters.Add(insupdflag);
+
+
+                //cmd.ExecuteScalar();
+
+                //cmd.Parameters.Clear();
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "InsUpdDelFleetOwnerDetails";
+
+                SqlParameter Company = new SqlParameter("@Company", SqlDbType.Int);
+                Company.Value = C.Company;
+                cmd.Parameters.Add(Company);
+
+                SqlParameter Title = new SqlParameter("@Title", SqlDbType.VarChar, 50);
+                Title.Value = C.Title;
+                cmd.Parameters.Add(Title);              
+
+                SqlParameter FleetOwnerId = new SqlParameter("@FleetOwnerId", SqlDbType.VarChar, 15);
+               FleetOwnerId.Value = C.FleetOwnerId;
+                cmd.Parameters.Add(FleetOwnerId);
+
+                SqlParameter Gender = new SqlParameter("@Gender", SqlDbType.VarChar, 15);
+                Gender.Value = C.Gender;
+                cmd.Parameters.Add(Gender);
+
+                SqlParameter Address = new SqlParameter("@Address", SqlDbType.VarChar, 15);
+                Address.Value = C.Address;
+                cmd.Parameters.Add(Address);               
+
+                SqlParameter EmpId = new SqlParameter("@EmpId", SqlDbType.VarChar, 15);
+                Description.Value = C.Description;
+                cmd.Parameters.Add(Description);   
+
+                cmd.ExecuteScalar();
+
                 conn.Close();
 
             }
