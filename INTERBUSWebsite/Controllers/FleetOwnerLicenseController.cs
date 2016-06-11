@@ -247,9 +247,9 @@ namespace INTERBUSWebsite.Controllers
                 conn.Open();
 
 
-                SqlParameter UId = new SqlParameter("Id", SqlDbType.Int);
-                UId.Value = C.Id;
-                cmd.Parameters.Add(UId);
+               // SqlParameter UId = new SqlParameter("Id", SqlDbType.Int);
+               // UId.Value = C.Id;
+               // cmd.Parameters.Add(UId);
 
                 SqlParameter UFirstName = new SqlParameter("@FirstName", SqlDbType.VarChar, 50);
                 UFirstName.Value = C.FirstName;
@@ -327,29 +327,35 @@ namespace INTERBUSWebsite.Controllers
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "InsUpdDelFleetOwnerDetails";
 
-                SqlParameter Company = new SqlParameter("@Company", SqlDbType.Int);
+                SqlParameter Company = new SqlParameter("@Company", SqlDbType.VarChar,50);
                 Company.Value = C.Company;
                 cmd.Parameters.Add(Company);
 
-                SqlParameter Title = new SqlParameter("@Title", SqlDbType.VarChar, 50);
+                SqlParameter Title = new SqlParameter("@Title", SqlDbType.VarChar, 10);
                 Title.Value = C.Title;
                 cmd.Parameters.Add(Title);              
 
-                SqlParameter FleetOwnerId = new SqlParameter("@FleetOwnerId", SqlDbType.VarChar, 15);
+                SqlParameter FleetOwnerId = new SqlParameter("@FleetOwnerId",SqlDbType. Int);
                FleetOwnerId.Value = C.FleetOwnerId;
                 cmd.Parameters.Add(FleetOwnerId);
 
-                SqlParameter Gender = new SqlParameter("@Gender", SqlDbType.VarChar, 15);
+                SqlParameter FleetOwnerSize = new SqlParameter("@FleetOwnerSize",SqlDbType.Int);
+                FleetOwnerSize.Value = C.FleetOwnerSize;
+                cmd.Parameters.Add(FleetOwnerSize);
+
+                SqlParameter Gender = new SqlParameter("@Gender", SqlDbType.VarChar, 10);
                 Gender.Value = C.Gender;
                 cmd.Parameters.Add(Gender);
 
-                SqlParameter Address = new SqlParameter("@Address", SqlDbType.VarChar, 15);
+                SqlParameter Address = new SqlParameter("@Address", SqlDbType.VarChar, 50);
                 Address.Value = C.Address;
                 cmd.Parameters.Add(Address);               
 
-                SqlParameter EmpId = new SqlParameter("@EmpId", SqlDbType.VarChar, 15);
-                Description.Value = C.Description;
-                cmd.Parameters.Add(Description);   
+                SqlParameter EmpId = new SqlParameter("@EmpId",SqlDbType.Int);
+                EmpId.Value = C.EmpId;
+                cmd.Parameters.Add(EmpId);
+
+              
 
                 cmd.ExecuteScalar();
 
