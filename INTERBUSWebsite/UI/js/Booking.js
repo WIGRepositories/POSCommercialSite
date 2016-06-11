@@ -31,7 +31,10 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         
        
         $scope.selectedSeats.pssngr.push(item);
-    
+        //if ($scope.selectedSeats.pssngr.length == 0)
+        //{
+        //    $scope.count = 1;
+        //}
         $scope.count = $scope.selectedSeats.pssngr.length;
        
     }

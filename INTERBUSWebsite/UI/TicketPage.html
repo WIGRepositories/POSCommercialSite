@@ -264,6 +264,7 @@
 
 
             <div class="col-md-11 col-md-offset-1" style="margin-top:20px; margin-bottom:20px">
+                <div style="margin-bottom:20px"><h3 style="text-align:center;">To Journey</h3></div>
                 <div class="row" style="margin-bottom:5px">
                     <div class="col-md-6">
                         <div class="col-md-4"><label>Ticket No:</label></div>
@@ -326,29 +327,8 @@
 
 
             </div>
-            <div><h2 style="text-align:center">Passenger Details</h2></div>
-            <div>
-                <div class="col-md-6">
-                    <div ng-repeat="fname in GetDetails.details">hai{{Names}}</div>
-                    <table>
-                        <tr><th>S.No</th><th>Name</th><th>Gender</th><th>Age</th></tr>
-                        <tr><td>1</td><td>Lokesh</td><td>Male</td><td>24</td></tr>
-                        <tr><td>2</td><td>Phani</td><td>Male</td><td>24</td></tr>
-                        <tr><td></td><td></td><td><strong>Sub Total</strong></td><td><strong>400</strong></td></tr>
-
-                    </table>
-                </div>
-                <div class="col-md-6">
-                    <table>
-                        <tr><th>S.No</th><th>Name</th><th>Gender</th><th>Age</th></tr>
-                        <tr><td>1</td><td>Lokesh</td><td>Male</td><td>24</td></tr>
-                        <tr><td>2</td><td>Phani</td><td>Male</td><td>24</td></tr>
-                        <tr><td></td><td></td><td><strong>Sub Total</strong></td><td><strong>600</strong></td></tr>
-
-                    </table>
-                </div>
-            </div>
             <div class="col-md-11 col-md-offset-1" style="margin-top:20px; margin-bottom:20px; border-top:2px solid #d6d3d3; padding-top:20px">
+                <div style="margin-bottom:20px"><h3 style="text-align:center;">From Journey</h3></div>
                 <div class="row" style="margin-bottom:5px">
                     <div class="col-md-6">
                         <div class="col-md-4"><label>Ticket No:</label></div>
@@ -402,6 +382,35 @@
                     </div>
                 </div>
             </div>
+            <div><h2 style="text-align:center">Passenger Details</h2></div>
+            <div>
+                <div class="col-md-10 col-md-offset-1">
+                    <div>
+                        <table>
+                            <tr><th>S.No</th><th>Name</th><th>Gender</th><th>Age</th></tr>
+                            <tr ng-repeat="p in details.passengersList">
+                                <td>{{p.NoOfSeats+1}}</td>
+                                <td>{{p.fname}}</td>
+                                <td>Male</td>
+                                <td>24</td>
+                            </tr>
+                            <tr><td>2</td><td>Phani</td><td>Male</td><td>24</td></tr>
+                            <tr><td></td><td></td><td><strong>Sub Total</strong></td><td><strong>400</strong></td></tr>
+
+                        </table>
+                    </div>
+                </div>
+                <!--<div class="col-md-6">
+                    <table>
+                        <tr><th>S.No</th><th>Name</th><th>Gender</th><th>Age</th></tr>
+                        <tr><td>1</td><td>Lokesh</td><td>Male</td><td>24</td></tr>
+                        <tr><td>2</td><td>Phani</td><td>Male</td><td>24</td></tr>
+                        <tr><td></td><td></td><td><strong>Sub Total</strong></td><td><strong>600</strong></td></tr>
+
+                    </table>
+                </div>-->
+            </div>
+            
 
             <div class="col-lg-8 col-md-offset-2" style="margin-top:10px">
                 <h3 style="text-align:center; margin-bottom:20px">Payment Details</h3><table><tr><td>Amount Deducted:</td><td>1200</td><td>Transaction Id:</td><td>764uydgh</td></tr></table>
