@@ -13,7 +13,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http) {
     $scope.save = function (Fleet, flag) {
 
         var Fleet = {
-            Id: Fleet.Id,
+            //Id: Fleet.Id,
             FirstName: Fleet.FirstName,
             LastName: Fleet.LastName,
 
@@ -26,12 +26,20 @@ var ctrl = app.controller('myCtrl', function ($scope, $http) {
 
             CompanyName: Fleet.CompanyName,
             Description: Fleet.Description,
-            insupdflag: flag
+            insupdflag: flag,
+            Company: Fleet.Company,
+            Title: Fleet.Title,
+            FleetOwnerId: Fleet.FleetOnerId,
+            Gender: Fleet.Gender,
+            FleetOwnerSize: Fleet.FleetOwnerSize,
+            Address: Fleet.Address,
+            EmpId: Fleet.EmpId,
+
 
         }
-      
+
         $http({
-            url: 'http://localhost:52800/api/fleetownerlicense/CreateNewFO',
+            url: 'http://localhost:52800/api/FleetOwnerLicense/CreateNewFO',
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             data: Fleet
@@ -53,34 +61,49 @@ var ctrl = app.controller('myCtrl', function ($scope, $http) {
     $scope.clearUsers = function () {
         $scope.User1 = null;
     }
+});
 
 
-    $scope.save = function (FleetOwnerDetails, flag) {
+    
+//    $scope.save = function (FleetOwnerDetails, flag) {
 
-        var FleetOwnerDetails = {
-            Company: FleetOwnerDetails.Company,
-            Title: FleetOwnerDetails.Title,
-            FleetOwnerId: FleetOwnerDetails.FleetOnerId,
-            Gender: FleetOwnerDetails.Gender,
-            FleetOwnerSize: FleetOwnerDetails.FleetOwnerSize,
-            Address: FleetOwnerDetails.Address,
-            EmpId: FleetOwnerDetails.EmpId,
-            insupdflag: flag
-        }
-        var req = {
-            method: 'POST',
-            url: 'http://localhost:52800/api/FleetOwnerLicenseC/CreateNewFO',
-            data: FleetOwnerDetails
+//        var FleetOwnerDetails = {
+//            Company: FleetOwnerDetails.Company,
+//            Title: FleetOwnerDetails.Title,
+//            FleetOwnerId: FleetOwnerDetails.FleetOnerId,
+//            Gender: FleetOwnerDetails.Gender,
+//            FleetOwnerSize: FleetOwnerDetails.FleetOwnerSize,
+//            Address: FleetOwnerDetails.Address,
+//            EmpId: FleetOwnerDetails.EmpId,
 
-        }
-        $http(req).then(function (res) {
-            alert('saved successfully.');
-        });
+//            Id: FleetOwnerId.Id,
+//            FirstName: FleetOwnerId.FirstName,
+//            LastName: FleetOwnerId.LastName,
+
+//            Email: FleetOwnerId.Email,
+
+//            MobileNo: FleetOwnerId.MobileNo,
+//            //RoleId: (role) ? 2 : User.Role,
+
+//            CompanyName: FleetOwnerId.CompanyName,
+//            Description: FleetOwnerId.Description,
+
+//            insupdflag: flag
+//        }
+//        var req = {
+//            method: 'POST',
+//            url: 'http://localhost:52800/api/FleetOwnerLicense/CreateNewFO',
+//            data: FleetOwnerDetails
+
+//        }
+//        $http(req).then(function (res) {
+//            alert('saved successfully.');
+//        });
                 
        
-    }
+//    }
       
-});
+//});
 
 
 

@@ -116,7 +116,7 @@
 
 </head>
 
-<body ng-model="Fleet">
+<body ng-model="FleetOwnerDetails">
 
 
     <div id="c-mask" class="c-mask disable-touch-scrolling"></div>
@@ -198,243 +198,275 @@
     <!--End Header-->
 
     <div class="row">
-        <div class="col-md-12">
-            <div class="col-md-6">
+        <div class="col-md-9 col-md-offset-2">
+            <div style="margin-top: 80px; background-color: #e6e6e6;margin-bottom:10px; padding: 10px">
 
-                <div class="page-form" style="margin-top:80px">
+                <form class="form">
+                    <div class="header-content"><h1>Interbus fleet owner request</h1></div>
+                    <div class="body-content">
+                        <div class="row">
+                            <div class="col-md-6">
 
-
-                    <div class="page-form">
-                        <form class="form">
-                            <div class="header-content"><h1>Interbus fleet owner request</h1></div>
-                            <div class="body-content">
                                 <div class="form-group">
                                     <div class="input-icon right">
                                         <i class="fa fa-user"></i><input type="text" ng-model="Fleet.FirstName" data-val="true" data-val-required="First name&#39; should not be empty." maxlength="12" placeholder="First Name" name="First Name" class="form-control">
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="input-icon right"><i class="fa fa-user"></i><input type="text" ng-model="Fleet.LastName" placeholder="Last Name" name="Last Name" data-val="true" data-val-required="&#39;Last name&#39; should not be empty." maxlength="12" class="form-control"></div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
                                 <div class="form-group">
-                                    <div class="input-icon right"><i class="fa fa-envelope"></i><input type="email" ng-model="Fleet.Email" placeholder="email" name="email" data-val-required="Please enter Valid EmailId" pattern="[^ @]*@[^ @]*" class="form-control"><p class="form-helper hidden" id="emailHint">Enter a valid email address</p></div>
+                                    <div class="input-icon right"><input type="email" ng-model="Fleet.Email" placeholder="email" name="email" data-val-required="Please enter Valid EmailId" pattern="[^ @]*@[^ @]*" class="form-control"><p class="form-helper hidden" id="emailHint">Enter a valid email address</p></div>
                                 </div>
+                            </div>
+                            <div class="col-md-6">
                                 <div class="form-group">
-                                    <div class="input-icon right"><i class="fa fa-mobilephone"></i><input id="Mbile No" ng-model="Fleet.MobileNo" type="tel" placeholder="Mobile No" name="Mobile No" class="form-control"></div>
+                                    <div class="input-icon right"><input id="Mbile No" ng-model="Fleet.MobileNo" type="tel" placeholder="Mobile No" name="Mobile No" class="form-control"></div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
                                 <div class="form-group">
-                                    <div class="input-icon right"><i class="fa fa-envelope"></i><input type="text" ng-model="Fleet.CompanyName" placeholder="CompanyName" name="CompanyName" class="form-control"></div>
+                                    <div class="input-icon right"><input type="text" ng-model="Fleet.CompanyName" placeholder="CompanyName" name="CompanyName" class="form-control"></div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="input-icon right"><i class="fa fa-envelope"></i><input type="text" ng-model="Fleet.Description" placeholder="Description " name="CompanyInfo " class="form-control"></div>
-                                </div>
-                                <div class="form-group">
+                            </div>
 
-
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="input-icon right"></i><input type="text" ng-model="Fleet.Description" placeholder="Description " name="CompanyInfo " class="form-control"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
                                     <div class="col-md-14">
-                                        <select id="selusertype" class="form-control" ng-model="t">
+                                        <select id="selusertype" class="form-control" ng-model="">
                                             <option value="" selected disabled>Select License Type</option>
                                             <option value="4">Basic</option>
                                             <option value="5">Professional</option>
                                             <option value="6">Business</option>
-                                            <option value="6">Unlimited</option>
+                                            <option value="7">Unlimited</option>
                                         </select>
                                     </div>
                                 </div>
-                                <center>
-
-                                    <button type="submit" data-target="#Modal-header-primary" data-toggle="modal" class="btn btn-primary" ng-click="save(Fleet,'I')">
-                                        Submit
-                                    </button>
-
-                                </center>
-                                <!--<div class="form-group">
-                                    <div class="input-icon right"><label for="inputPhone" class="control-label">Phone</label><input id="inputPhone" type="text" placeholder="" class="form-control" /></div>
                             </div>
-                        </div>-->
+                        </div>
 
-
+                        <div>
+                            <div class="col-md-12" style="background-color: #b3b3b3; border-radius:5px; margin-bottom:20px;">
+                                <div class="row">
+                                    <h2 style="text-align:center">Fleet Owner Details</h2>
+                                </div>
                             </div>
-                        </form>
-
-                    </div>
-
-
-
-                </div>
-            </div>
-            <div class="col-md-6">
-
-                <div class="page-form" style="margin-top:80px">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="input-icon lift">
+                                            <i class="fa fa-user"></i><input type="text" ng-model="Fleet.Company" data-val="true" maxlength="12" placeholder="Company" name="Company" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
 
 
-                    <div class="page-form">
-                        <form class="form">
-                            <div class="header-content"><h1>New</h1></div>
-                            <div class="body-content">
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="input-icon right"><i class="fa fa-user"></i><input type="text" ng-model="Fleet.Title" placeholder="Title" name="Title" data-val="true" data-val-required="&#39;Last name&#39; should not be empty." maxlength="12" class="form-control"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="input-icon right"><input type="text" ng-model="Fleet.FleetOwnerSize" placeholder="FelletOwnerSize" name="FelletOwnerSize" data-val-required="Please enter Valid FleetOwnerId" class="form-control"><p class="form-helper hidden" id="emailHint">Enter a valid email address</p></div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="input-icon right"><i class="fa fa-mobilephone"></i><input type="text" ng-model="Fleet.Address" placeholder="Address" name="Address" class="form-control"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="input-icon right"><i class="fa fa-user"></i><input type="text" ng-model="Fleet.FleetOnerId" placeholder="FleetOnerId" name="FleetOnerId" data-val="true" data-val-required="&#39;Last name&#39; should not be empty." maxlength="12" class="form-control"></div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="input-icon right"><input type="text" ng-model="Fleet.EmpId" placeholder="EmpId " name="EmpId " class="form-control"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <select id="selusertype" class="form-control" ng-model="Fleet.Gender">
+                                            <option value="" selected disabled>Gender</option>
+                                            <option value="1">Male</option>
+                                            <option value="2">FeMale</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12" style="background-color: #b3b3b3; border-radius:5px; margin-bottom:20px;">
+                            <div class="row">
+                                <h2 style="text-align:center">Fleet Owner Request </h2>
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-8 col-md-offset-2">
+
                                 <div class="form-group">
                                     <div class="input-icon right">
-                                        <i class="fa fa-user"></i><input type="text" ng-model="FleetOwnerDetails.Company" data-val="true" data-val-required="First name&#39; should not be empty." maxlength="12" placeholder="Company" name="Company" class="form-control">
+                                        <i class="fa fa-user"></i><input type="text" ng-model="Fleet.how did you hear about us" data-val="true" maxlength="12" placeholder="how did you hear about us" name="how did you hear about us" class="form-control">
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2">
                                 <div class="form-group">
-                                    <div class="input-icon right"><i class="fa fa-user"></i><input type="text" ng-model="FleetOwnerDetails.Title" placeholder="Title" name="Title" data-val="true" data-val-required="&#39;Last name&#39; should not be empty." maxlength="12" class="form-control"></div>
+                                    <div class="input-icon right"><i class="fa fa-user"></i><input type="text" ng-model="Fleet.FleetOwnerRequestId" placeholder="Fleet Owner RequestId" name="Fleet Owner RequestId" data-val="true" data-val-required="&#39;Last name&#39; should not be empty." maxlength="12" class="form-control"></div>
                                 </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2">
                                 <div class="form-group">
-                                    <div class="input-icon right"><i class="fa fa-envelope"></i><input type="text" ng-model="FleetOwnerDetails.FleetOwnerId" placeholder="FelletOwnerSize" name="FleetOwnerId" data-val-required="Please enter Valid FleetOwnerId"  class="form-control"><p class="form-helper hidden" id="emailHint">Enter a valid email address</p></div>
+                                    <div class="input-icon right"><i class="fa fa-mobilephone"></i><input id="text" ng-model="Fleet.MobileNo" type="email" placeholder=" Sent New Products Emails" name=" Sent New Products Emails" class="form-control"></div>
                                 </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2">
                                 <div class="form-group">
-                                    <div class="input-icon right"><i class="fa fa-mobilephone"></i><input type="text" ng-model="FleetOwnerDetails.Address" type="tel" placeholder="Address" name="Address" class="form-control"></div>
-                                </div>                                
-                                <div class="form-group">
-                                    <div class="input-icon right"><i class="fa fa-user"></i><input type="text" ng-model="FleetOwnerDetails.FleetOnerId" placeholder="FleetOnerId" name="FleetOnerId" data-val="true" data-val-required="&#39;Last name&#39; should not be empty." maxlength="12" class="form-control"></div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="input-icon right"><i class="fa fa-envelope"></i><input type="text" ng-model="FleetOwnerDetails.EmpId" placeholder="EmpId " name="EmpId " class="form-control"></div>
-                                </div>
-                                <div class="form-group">
-                                    <select id="selusertype" class="form-control" ng-model="FleetOwnerDetails.Gender">
-                                        <option value="" selected disabled>Gender</option>
-                                        <option value="1">Male</option>
-                                        <option value="2">FeMale</option>
+                                    <select id="selusertype" class="form-control" ng-model="Fleet.Contact">
+                                        <option value="" selected disabled>Contact</option>
+                                        <option value="1">Phone</option>
+                                        <option value="2">Email</option>
                                     </select>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2">
+                                <div class="form-group">
+                                    <div>
+                                       <input type="checkbox" ng-model="Fleet.Agree to terms and conditions" name="agree to terms and conditions" class="form-control">&nbsp; Agree To Terms and Conditions
+
                                     </div>
                                 </div>
-                                <!--<div class="form-group">
-
-                                    <div class="col-md-12">
-                                        <select id="selusertype" class="form-control" ng-model="t">
-                                            <option value="" selected disabled>Select License Type</option>
-                                            <option value="4">Basic</option>
-                                            <option value="5">Professional</option>
-                                            <option value="6">Business</option>
-                                            <option value="6">Unlimited</option>
-                                        </select>
-                                    </div>
-                                </div>-->
-                                <center>
-
-                                    <button type="submit" data-target="#Modal-header-primary" data-toggle="modal" class="btn btn-primary" ng-click="save(FleetOwnerDetails,'I')">
-                                        Submit
-                                    </button>
-
-                                </center>
-                                <!--<div class="form-group">
-                                    <div class="input-icon right"><label for="inputPhone" class="control-label">Phone</label><input id="inputPhone" type="text" placeholder="" class="form-control" /></div>
                             </div>
-                        </div>-->
+                        </div>
+                </form>
 
+            </div>
 
-                            </div>
-                        </form>
+                <center>
 
-                    </div>
+                    <button type="submit" data-target="#Modal-header-primary" data-toggle="modal" class="btn btn-primary" ng-click="save(Fleet,'I')">
+                        Submit
+                    </button>
 
+                </center>
 
-
-                </div>
             </div>
         </div>
     </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div id="footer" tabindex="0">
 
-                    <h2 class="visually-hidden">Site footer</h2>
+    
 
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="footer" tabindex="0">
 
-
-                    <div class="primary-footer r">
-                        <h2 class="visually-hidden">About Interbus</h2>
-                        <ul class="footer-links">
-                            <li><a href="/help-and-contact/">Help &amp; contacts</a></li>
-                            <li><a class="" href="/corporate/careers/">Careers</a></li>
-                            <li><a class="" href="/corporate/about-tfl/">About Interbus</a></li>
-                            <li><a class="" href="/corporate/safety-and-security/">Safety &amp; security</a></li>
-                            <li><a class="" href="/corporate/transparency/">Transparency</a></li>
-                            <li><a class="" href="/corporate/publications-and-reports/">Publications &amp; reports</a></li>
-                            <li><a class="" href="/corporate/tfl-shop/">Gift Shop</a></li>
-                            <li><a class="" href="/travel-information/social-media-and-email-updates/">Social media &amp; email updates</a></li>
-                            <li><a class="languages-footer" href="/travel-information/other-languages/">Other languages</a></li>
-                        </ul><h2 class="heading">Information for...</h2><ul class="info-for clearfix">
-                            <li><a href="/info-for/media/">Media</a></li>
-                            <li><a href="/info-for/business-and-commercial/">Business &amp; commercial</a></li>
-                            <li><a href="/info-for/boroughs/">Get Support online 24/7</a></li>
-                            <li><a href="/info-for/schools-and-young-people/">Schools &amp; young people</a></li>
-                            <li><a href="/info-for/deliveries-in-london/">Deliveries in Zimbabwe</a></li>
-                            <li><a href="/info-for/urban-planning-and-construction/">Urban planning &amp; construction</a></li>
-                            <li><a href="/info-for/taxis-and-private-hire/">Taxi &amp; private hire </a></li>
-                            <li><a href="/info-for/suppliers-and-contractors/">Suppliers &amp; contractors</a></li>
-                            <li><a href="/info-for/bus-operators/">Bus operators</a></li>
-                            <li><a href="/info-for/open-data-users/">Open data users</a></li>
-                            <li><a href="/info-for/coach-drivers/">Coach drivers</a></li>
-                            <li><a href="/info-for/investors/">Investors</a></li>
-                            <li><a href="/info-for/investors/">Download Interbus App   </a></li>
-                        </ul>
-                    </div>
-                    <div class="secondary-footer"><h2 class="visually-hidden">Site structure and legal information</h2><div class="r"><ul><li><a href="/corporate/terms-and-conditions/">Terms &amp; conditions </a></li><li><a href="/corporate/privacy-and-cookies/">Privacy &amp; cookies</a></li><li><a href="/corporate/website-accessibility/">Website accessibility</a></li></ul><span class="heading">Copyright Interbus</span></div></div>
-                    <div>
-                    </div>
+                <h2 class="visually-hidden">Site footer</h2>
 
 
 
+                <div class="primary-footer r">
+                    <h2 class="visually-hidden">About Interbus</h2>
+                    <ul class="footer-links">
+                        <li><a href="/help-and-contact/">Help &amp; contacts</a></li>
+                        <li><a class="" href="/corporate/careers/">Careers</a></li>
+                        <li><a class="" href="/corporate/about-tfl/">About Interbus</a></li>
+                        <li><a class="" href="/corporate/safety-and-security/">Safety &amp; security</a></li>
+                        <li><a class="" href="/corporate/transparency/">Transparency</a></li>
+                        <li><a class="" href="/corporate/publications-and-reports/">Publications &amp; reports</a></li>
+                        <li><a class="" href="/corporate/tfl-shop/">Gift Shop</a></li>
+                        <li><a class="" href="/travel-information/social-media-and-email-updates/">Social media &amp; email updates</a></li>
+                        <li><a class="languages-footer" href="/travel-information/other-languages/">Other languages</a></li>
+                    </ul><h2 class="heading">Information for...</h2><ul class="info-for clearfix">
+                        <li><a href="/info-for/media/">Media</a></li>
+                        <li><a href="/info-for/business-and-commercial/">Business &amp; commercial</a></li>
+                        <li><a href="/info-for/boroughs/">Get Support online 24/7</a></li>
+                        <li><a href="/info-for/schools-and-young-people/">Schools &amp; young people</a></li>
+                        <li><a href="/info-for/deliveries-in-london/">Deliveries in Zimbabwe</a></li>
+                        <li><a href="/info-for/urban-planning-and-construction/">Urban planning &amp; construction</a></li>
+                        <li><a href="/info-for/taxis-and-private-hire/">Taxi &amp; private hire </a></li>
+                        <li><a href="/info-for/suppliers-and-contractors/">Suppliers &amp; contractors</a></li>
+                        <li><a href="/info-for/bus-operators/">Bus operators</a></li>
+                        <li><a href="/info-for/open-data-users/">Open data users</a></li>
+                        <li><a href="/info-for/coach-drivers/">Coach drivers</a></li>
+                        <li><a href="/info-for/investors/">Investors</a></li>
+                        <li><a href="/info-for/investors/">Download Interbus App   </a></li>
+                    </ul>
                 </div>
+                <div class="secondary-footer"><h2 class="visually-hidden">Site structure and legal information</h2><div class="r"><ul><li><a href="/corporate/terms-and-conditions/">Terms &amp; conditions </a></li><li><a href="/corporate/privacy-and-cookies/">Privacy &amp; cookies</a></li><li><a href="/corporate/website-accessibility/">Website accessibility</a></li></ul><span class="heading">Copyright Interbus</span></div></div>
+                <div>
+                </div>
+
+
+
             </div>
         </div>
-
-        <script>
-
-            var myIndex = 0;
-
-            carousel();
+    </div>
 
 
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <!--loading bootstrap js-->
+    <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
 
-            function carousel() {
+    <script src="vendors/metisMenu/jquery.metisMenu.js"></script>
+    <script src="vendors/slimScroll/jquery.slimscroll.js"></script>
+    <script src="vendors/jquery-cookie/jquery.cookie.js"></script>
+    <script src="vendors/iCheck/icheck.min.js"></script>
+    <script src="vendors/iCheck/custom.min.js"></script>
+    <script src="vendors/jquery-news-ticker/jquery.news-ticker.js"></script>
+    <script src="js/jquery.menu.js"></script>
+    <script src="vendors/jquery-pace/pace.min.js"></script>
+    <script src="vendors/holder/holder.js"></script>
+    <script src="vendors/responsive-tabs/responsive-tabs.js"></script>
+    <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
 
-                var i;
-
-                var x = document.getElementsByClassName("mySlides");
-
-                for (i = 0; i < x.length; i++) {
-
-                    x[i].style.display = "none";
-
-                }
-
-                myIndex++;
-
-                if (myIndex > x.length) { myIndex = 1 }
-
-                x[myIndex - 1].style.display = "block";
-
-                setTimeout(carousel, 4000); // Change image every 2 seconds
-
-            }
-
-        </script>
-<script src="js/jquery-1.10.2.min.js"></script>
-<script src="js/jquery-migrate-1.2.1.min.js"></script>
-<script src="js/jquery-ui.js"></script>
-<!--loading bootstrap js-->
-<script src="vendors/bootstrap/js/bootstrap.min.js"></script>
-<script src="vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
-
-<script src="vendors/metisMenu/jquery.metisMenu.js"></script>
-<script src="vendors/slimScroll/jquery.slimscroll.js"></script>
-<script src="vendors/jquery-cookie/jquery.cookie.js"></script>
-<script src="vendors/iCheck/icheck.min.js"></script>
-<script src="vendors/iCheck/custom.min.js"></script>
-<script src="vendors/jquery-news-ticker/jquery.news-ticker.js"></script>
-<script src="js/jquery.menu.js"></script>
-<script src="vendors/jquery-pace/pace.min.js"></script>
-<script src="vendors/holder/holder.js"></script>
-<script src="vendors/responsive-tabs/responsive-tabs.js"></script>
-<!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
-
-<script src="js/main.js"></script>
-<script src="js/angular.js"></script>
-<script src="js/CreateFleetOwner.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/CreateFleetOwner.js"></script>
 </body>
 
 </html>
