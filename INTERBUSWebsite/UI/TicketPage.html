@@ -61,10 +61,6 @@
 
 
 
-
-
-
-
     <script type="text/javascript">
 
         // Instructions: please embed this snippet directly into every page in your website template.
@@ -252,155 +248,158 @@
 
 
     <div class="row" style="margin-top:60px">
-        <div class="container">
-            <div class="row" style="margin-bottom:10px">
-                <div style="float:right">
-                    <button type="button" class="btn btn-primary">Print Ticket</button>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <h1>e-Ticket Details</h1>
-            </div>
 
-
-            <div class="col-md-11 col-md-offset-1" style="margin-top:20px; margin-bottom:20px">
-                <div style="margin-bottom:20px"><h3 style="text-align:center;">To Journey</h3></div>
-                <div class="row" style="margin-bottom:5px">
-                    <div class="col-md-6">
-                        <div class="col-md-4"><label>Ticket No:</label></div>
-                        <div class="col-md-6"><label>TJ6T32828245</label></div>
-                        <!--<div><label></label></div>-->
-                    </div>
-                    <div class="col-md-6">
-                        <div class="col-md-4"><label>Booking Date:</label></div>
-                        <div class="col-md-6"><label>10/6/2016</label></div>
-                        <!--<div><label></label></div>-->
+        <form>
+            <div class="container">
+                <div class="row" style="margin-bottom:10px">
+                    <div style="float:right">
+                        <!--<a href="javascript:window.print()" class="btn btn-primary">Print Ticket</a>-->
+                        <button type="button" class="btn btn-primary" onclick="window.print()">Print Ticket</button>
                     </div>
                 </div>
-
-                <div class="row" style="margin-bottom:5px">
-
-                    <div class="col-md-6">
-                        <div class="col-md-4"><label>From:</label></div>
-                        <div class="col-md-6"><label>Hyd</label></div>
-                        <!--<div><label></label></div>-->
-                    </div>
-                    <div class="col-md-6">
-                        <div class="col-md-4"><label>To:</label></div>
-                        <div class="col-md-6"><label>Vij</label></div>
-                        <!--<div><label></label></div>-->
-                    </div>
-
-                </div>
-
-                <div class="row" style="margin-bottom:5px">
-                    <div class="col-md-6">
-                        <div class="col-md-4"><label>No Of Seats:</label></div>
-                        <div class="col-md-6"><label>{{firstName}}</label></div>
-                        <!--<div><label></label></div>-->
-                    </div>
-                    <div class="col-md-6">
-                        <div class="col-md-4"><label>Seats:</label></div>
-                        <div class="col-md-6"><label>A1,A2</label></div>
-                        <!--<div><label></label></div>-->
-                    </div>
-                </div>
-
-                <div class="row" style="margin-bottom:5px">
-                    <div class="col-md-6">
-                        <div class="col-md-4"><label>Journey Date:</label></div>
-                        <div class="col-md-6"><label>15/6/2016</label></div>
-                        <!--<div><label></label></div>-->
-                    </div>
-                    <div class="col-md-6">
-                        <div class="col-md-4"><label>Ticket Fare:</label></div>
-                        <div class="col-md-6"><label>200</label></div>
-                    </div>
-                </div>
-                <div class="row" style="margin-bottom:5px">
-                   
-                    <div class="col-md-6">
-                        <div class="col-md-4"><label>Journey Type:</label></div>
-                        <div class="col-md-6"><label>{{JourneyType}}</label></div>
-                    </div>
+                <div class="col-md-12">
+                    <h1>e-Ticket Details</h1>
                 </div>
 
 
-            </div>
-            <div class="col-md-11 col-md-offset-1" style="margin-top:20px; margin-bottom:20px; border-top:2px solid #d6d3d3; padding-top:20px">
-                <div style="margin-bottom:20px"><h3 style="text-align:center;">From Journey</h3></div>
-                <div class="row" style="margin-bottom:5px">
-                    <div class="col-md-6">
-                        <div class="col-md-4"><label>Ticket No:</label></div>
-                        <div class="col-md-6"><label>TJ6T32828245</label></div>
-                        <!--<div><label></label></div>-->
+                <div class="col-md-11 col-md-offset-1" style="margin-top:20px; margin-bottom:20px">
+                    <div style="margin-bottom:20px"><h3 style="text-align:center;">To Journey</h3></div>
+                    <div class="row" style="margin-bottom:5px">
+                        <div class="col-md-6">
+                            <div class="col-md-4"><label>Ticket No:</label></div>
+                            <div class="col-md-6"><label>TJ6T32828245</label></div>
+                            <!--<div><label></label></div>-->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="col-md-4"><label>Booking Date:</label></div>
+                            <div class="col-md-6"><label>10/6/2016</label></div>
+                            <!--<div><label></label></div>-->
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="col-md-4"><label>Booking Date:</label></div>
-                        <div class="col-md-6"><label>10/6/2016</label></div>
-                        <!--<div><label></label></div>-->
+
+                    <div class="row" style="margin-bottom:5px">
+
+                        <div class="col-md-6">
+                            <div class="col-md-4"><label>From:</label></div>
+                            <div class="col-md-6"><label>Hyd</label></div>
+                            <!--<div><label></label></div>-->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="col-md-4"><label>To:</label></div>
+                            <div class="col-md-6"><label>Vij</label></div>
+                            <!--<div><label></label></div>-->
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="margin-bottom:5px">
+                        <div class="col-md-6">
+                            <div class="col-md-4"><label>No Of Seats:</label></div>
+                            <div class="col-md-6"><label>{{firstName}}</label></div>
+                            <!--<div><label></label></div>-->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="col-md-4"><label>Seats:</label></div>
+                            <div class="col-md-6"><label>A1,A2</label></div>
+                            <!--<div><label></label></div>-->
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-bottom:5px">
+                        <div class="col-md-6">
+                            <div class="col-md-4"><label>Journey Date:</label></div>
+                            <div class="col-md-6"><label>15/6/2016</label></div>
+                            <!--<div><label></label></div>-->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="col-md-4"><label>Ticket Fare:</label></div>
+                            <div class="col-md-6"><label>200</label></div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom:5px">
+
+                        <div class="col-md-6">
+                            <div class="col-md-4"><label>Journey Type:</label></div>
+                            <div class="col-md-6"><label>{{JourneyType}}</label></div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-11 col-md-offset-1" style="margin-top:20px; margin-bottom:20px; border-top:2px solid #d6d3d3; padding-top:20px">
+                    <div style="margin-bottom:20px"><h3 style="text-align:center;">From Journey</h3></div>
+                    <div class="row" style="margin-bottom:5px">
+                        <div class="col-md-6">
+                            <div class="col-md-4"><label>Ticket No:</label></div>
+                            <div class="col-md-6"><label>TJ6T32828245</label></div>
+                            <!--<div><label></label></div>-->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="col-md-4"><label>Booking Date:</label></div>
+                            <div class="col-md-6"><label>10/6/2016</label></div>
+                            <!--<div><label></label></div>-->
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-bottom:5px">
+
+                        <div class="col-md-6">
+                            <div class="col-md-4"><label>From:</label></div>
+                            <div class="col-md-6"><label>Vij</label></div>
+                            <!--<div><label></label></div>-->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="col-md-4"><label>To:</label></div>
+                            <div class="col-md-6"><label>Hyd</label></div>
+                            <!--<div><label></label></div>-->
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="margin-bottom:5px">
+                        <div class="col-md-6">
+                            <div class="col-md-4"><label>No Of Seats:</label></div>
+                            <div class="col-md-6"><label>{{NoofSeats}}</label></div>
+                            <!--<div><label></label></div>-->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="col-md-4"><label>Seats:</label></div>
+                            <div class="col-md-6"><label>C1,C2</label></div>
+                            <!--<div><label></label></div>-->
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-bottom:5px">
+                        <div class="col-md-6">
+                            <div class="col-md-4"><label>Return Date:</label></div>
+                            <div class="col-md-6"><label>18/6/2016</label></div>
+                            <!--<div><label></label></div>-->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="col-md-4"><label>Ticket Fare:</label></div>
+                            <div class="col-md-6"><label>600</label></div>
+                        </div>
                     </div>
                 </div>
+                <div><h2 style="text-align:center">Passenger Details</h2></div>
+                <div>
+                    <div class="col-md-10 col-md-offset-1">
+                        <div>
+                            <table>
+                                <tr><th>S.No</th><th>Name</th><th>Gender</th><th>Age</th></tr>
+                                <tr ng-repeat="p in details.passengersList">
+                                    <td>{{p.NoOfSeats+1}}</td>
+                                    <td>{{p.fname}}</td>
+                                    <td>Male</td>
+                                    <td>24</td>
+                                </tr>
+                                <tr><td>2</td><td>Phani</td><td>Male</td><td>24</td></tr>
+                                <tr><td></td><td></td><td><strong>Sub Total</strong></td><td><strong>400</strong></td></tr>
 
-                <div class="row" style="margin-bottom:5px">
-
-                    <div class="col-md-6">
-                        <div class="col-md-4"><label>From:</label></div>
-                        <div class="col-md-6"><label>Vij</label></div>
-                        <!--<div><label></label></div>-->
+                            </table>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="col-md-4"><label>To:</label></div>
-                        <div class="col-md-6"><label>Hyd</label></div>
-                        <!--<div><label></label></div>-->
-                    </div>
-
-                </div>
-
-                <div class="row" style="margin-bottom:5px">
-                    <div class="col-md-6">
-                        <div class="col-md-4"><label>No Of Seats:</label></div>
-                        <div class="col-md-6"><label>{{NoofSeats}}</label></div>
-                        <!--<div><label></label></div>-->
-                    </div>
-                    <div class="col-md-6">
-                        <div class="col-md-4"><label>Seats:</label></div>
-                        <div class="col-md-6"><label>C1,C2</label></div>
-                        <!--<div><label></label></div>-->
-                    </div>
-                </div>
-
-                <div class="row" style="margin-bottom:5px">
-                    <div class="col-md-6">
-                        <div class="col-md-4"><label>Return Date:</label></div>
-                        <div class="col-md-6"><label>18/6/2016</label></div>
-                        <!--<div><label></label></div>-->
-                    </div>
-                    <div class="col-md-6">
-                        <div class="col-md-4"><label>Ticket Fare:</label></div>
-                        <div class="col-md-6"><label>600</label></div>
-                    </div>
-                </div>
-            </div>
-            <div><h2 style="text-align:center">Passenger Details</h2></div>
-            <div>
-                <div class="col-md-10 col-md-offset-1">
-                    <div>
-                        <table>
-                            <tr><th>S.No</th><th>Name</th><th>Gender</th><th>Age</th></tr>
-                            <tr ng-repeat="p in details.passengersList">
-                                <td>{{p.NoOfSeats+1}}</td>
-                                <td>{{p.fname}}</td>
-                                <td>Male</td>
-                                <td>24</td>
-                            </tr>
-                            <tr><td>2</td><td>Phani</td><td>Male</td><td>24</td></tr>
-                            <tr><td></td><td></td><td><strong>Sub Total</strong></td><td><strong>400</strong></td></tr>
-
-                        </table>
-                    </div>
-                </div>
-                <!--<div class="col-md-6">
+                    <!--<div class="col-md-6">
                     <table>
                         <tr><th>S.No</th><th>Name</th><th>Gender</th><th>Age</th></tr>
                         <tr><td>1</td><td>Lokesh</td><td>Male</td><td>24</td></tr>
@@ -409,13 +408,14 @@
 
                     </table>
                 </div>-->
-            </div>
-            
+                </div>
 
-            <div class="col-lg-8 col-md-offset-2" style="margin-top:10px">
-                <h3 style="text-align:center; margin-bottom:20px">Payment Details</h3><table><tr><td>Amount Deducted:</td><td>1200</td><td>Transaction Id:</td><td>764uydgh</td></tr></table>
+
+                <div class="col-lg-8 col-md-offset-2" style="margin-top:10px">
+                    <h3 style="text-align:center; margin-bottom:20px">Payment Details</h3><table><tr><td>Amount Deducted:</td><td>1200</td><td>Transaction Id:</td><td>764uydgh</td></tr></table>
+                </div>
             </div>
-        </div>
+        </form>
     </div>
     <div class="row">
         <div class="col-lg-12">
@@ -499,7 +499,11 @@
 
     <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
 
-
+    <script language="JavaScript">
+        if (window.print) {
+            document.write('<form><input type=button name=print value="Print" onClick="window.print()"></form>');
+        }
+    </script>
     <script src="js/main.js"></script>
     <script src="js/angular.js"></script>
     <script src="js/ngStorage.js"></script>
