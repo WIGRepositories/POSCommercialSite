@@ -116,7 +116,7 @@
 
 </head>
 
-<body ng-model="FleetOwnerDetails">
+<body ng-model="FleetOwnerRequest">
 
 
     <div id="c-mask" class="c-mask disable-touch-scrolling"></div>
@@ -248,7 +248,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <div class="col-md-14">
-                                        <select id="selusertype" class="form-control" ng-model="">
+                                        <select id="selusertype" class="form-control" ng-model="t">
                                             <option value="" selected disabled>Select License Type</option>
                                             <option value="4">Basic</option>
                                             <option value="5">Professional</option>
@@ -259,144 +259,143 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div>
-                            <div class="col-md-12" style="background-color: #b3b3b3; border-radius:5px; margin-bottom:20px;">
-                                <div class="row">
-                                    <h2 style="text-align:center">Fleet Owner Details</h2>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="input-icon lift">
-                                            <i class="fa fa-user"></i><input type="text" ng-model="Fleet.Company" data-val="true" maxlength="12" placeholder="Company" name="Company" class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="input-icon right"><i class="fa fa-user"></i><input type="text" ng-model="Fleet.Title" placeholder="Title" name="Title" data-val="true" data-val-required="&#39;Last name&#39; should not be empty." maxlength="12" class="form-control"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="input-icon right"><input type="text" ng-model="Fleet.FleetOwnerSize" placeholder="FelletOwnerSize" name="FelletOwnerSize" data-val-required="Please enter Valid FleetOwnerId" class="form-control"><p class="form-helper hidden" id="emailHint">Enter a valid email address</p></div>
-                                    </div>
-                                </div>
-
-
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="input-icon right"><i class="fa fa-mobilephone"></i><input type="text" ng-model="Fleet.Address" placeholder="Address" name="Address" class="form-control"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="input-icon right"><i class="fa fa-user"></i><input type="text" ng-model="Fleet.FleetOnerId" placeholder="FleetOnerId" name="FleetOnerId" data-val="true" data-val-required="&#39;Last name&#39; should not be empty." maxlength="12" class="form-control"></div>
-                                    </div>
-                                </div>
-
-
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="input-icon right"><input type="text" ng-model="Fleet.EmpId" placeholder="EmpId " name="EmpId " class="form-control"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <select id="selusertype" class="form-control" ng-model="Fleet.Gender">
-                                            <option value="" selected disabled>Gender</option>
-                                            <option value="1">Male</option>
-                                            <option value="2">FeMale</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-12" style="background-color: #b3b3b3; border-radius:5px; margin-bottom:20px;">
-                            <div class="row">
-                                <h2 style="text-align:center">Fleet Owner Request </h2>
-                            </div>
-                        </div>
-
-                        <div class="row">
-
-                            <div class="col-md-8 col-md-offset-2">
-
-                                <div class="form-group">
-                                    <div class="input-icon right">
-                                        <i class="fa fa-user"></i><input type="text" ng-model="Fleet.how did you hear about us" data-val="true" maxlength="12" placeholder="how did you hear about us" name="how did you hear about us" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-8 col-md-offset-2">
-                                <div class="form-group">
-                                    <div class="input-icon right"><i class="fa fa-user"></i><input type="text" ng-model="Fleet.FleetOwnerRequestId" placeholder="Fleet Owner RequestId" name="Fleet Owner RequestId" data-val="true" data-val-required="&#39;Last name&#39; should not be empty." maxlength="12" class="form-control"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        
-                        <div class="row">
-                            <div class="col-md-8 col-md-offset-2">
-                                <div class="form-group">
-                                    <div class="input-icon right"><i class="fa fa-mobilephone"></i><input id="text" ng-model="Fleet.MobileNo" type="email" placeholder=" Sent New Products Emails" name=" Sent New Products Emails" class="form-control"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-8 col-md-offset-2">
-                                <div class="form-group">
-                                    <select id="selusertype" class="form-control" ng-model="Fleet.Contact">
-                                        <option value="" selected disabled>Contact</option>
-                                        <option value="1">Phone</option>
-                                        <option value="2">Email</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="row">
-                            <div class="col-md-8 col-md-offset-2">
-                                <div class="form-group">
-                                    <div>
-                                       <input type="checkbox" ng-model="Fleet.Agree to terms and conditions" name="agree to terms and conditions" class="form-control">&nbsp; Agree To Terms and Conditions
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                 </form>
 
             </div>
 
-                <center>
+            <center>
 
-                    <button type="submit" data-target="#Modal-header-primary" data-toggle="modal" class="btn btn-primary" ng-click="save(Fleet,'I')">
-                        Submit
-                    </button>
+                <button type="submit" data-target="#Modal-header-primary" data-toggle="modal" class="btn btn-primary" ng-click="save(Fleet,'I')">
+                    Submit
+                </button>
 
-                </center>
+            </center>
 
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="portlet box portlet-pink">
+                <div class="portlet-header">
+                    <div class="caption">Fleet Owner Request</div>
+
+                </div>
+                <div class="portlet-body">
+                    <form role="form">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="firtsname">First Name:</label>
+                                    <input type="text" ng-model="FleetOwnerRequest1.FirstName" id="firtsname" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="InputEmail">Email Address</label>
+                                    <div class="input-group"><span class="input-group-addon"><i class="fa fa-envelope"></i></span><input type="text" ng-model="FleetOwnerRequest1.EmailAddress" class="form-control" /></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="InputPassword">Title</label>
+                                    <div class="input-group"><input type="text" ng-model="FleetOwnerRequest1.Title" class="form-control" /><span class="input-group-addon"></span></div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Current System In Use</label>
+                                    <div class="input-icon"><i class="fa fa-bell"></i><input type="text" ng-model="FleetOwnerRequest1.CurrentSystemInUse" class="form-control" /></div>
+                                </div>
+                                <div class="form-group">
+                                    <label>how did you hear about us?</label><select class="form-control" ng-model="FleetOwnerRequest1. howdidyouhearaboutus">
+    <option>Select Type</option>
+    <option>Friends</option>
+    <option>Paper Advertisement</option>
+    <option>Social Media</option>
+</select>
+                                </div>
+                                <!--<div class="form-group">
+                                    <label for="InputDropdown">Multiple Select</label><select multiple="multiple" class="form-control">
+                                        <option>Option 1</option>
+                                        <option>Option 2</option>
+                                        <option>Option 3</option>
+                                        <option>Option 4</option>
+                                        <option>Option 5</option>
+                                    </select>
+                                </div>-->
+                                <div class="form-group">
+
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" ng-model="FleetOwnerRequest1.Agreetotermsandconditions" />&nbsp;
+                                            Agree to terms and conditions
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                    <div class="input-icon"><i class="fa fa-bell"></i><input type="text" ng-model="FleetOwnerRequest1.LastName" class="form-control" /></div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Company Name</label>
+                                    <div class="input-icon right"><i class="fa fa-microphone"></i><input type="text" ng-model="FleetOwnerRequest1.CompanyName" class="form-control" /></div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Fleet size</label>
+                                    <div class="input-icon right"><i class="fa fa-spinner fa-spin"></i><input type="text" ng-model="FleetOwnerRequest1.FleetSize" class="form-control" /></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="InputEmail">Sent New Products Emails</label>
+                                    <div class="input-group"><span class="input-group-addon"><i class="fa fa-envelope"></i></span><input type="text" ng-model="FleetOwnerRequest1.SentNewProductsEmails" class="form-control" /></div>
+                                </div>
+                                <!--<div class="form-group">
+                                    <label>Radio</label>
+                                    <div class="radio">
+                                        <label>
+                                            <input id="optionsRadios1" type="radio" name="optionsRadios" value="option1" checked="checked" />&nbsp;
+                                            Option 1
+                                        </label><label>
+                                            <input id="optionsRadios2" type="radio" name="optionsRadios" value="option2" />&nbsp;
+                                            Option 2
+                                        </label><label>
+                                            <input id="optionsRadios3" type="radio" name="optionsRadios" value="option3"/>&nbsp;
+                                            Disabled
+                                        </label>
+                                    </div>
+                                </div>-->
+                                <div class="form-group"><label>Address</label><textarea rows="3" ng-model="FleetOwnerRequest1.Address" class="form-control"></textarea></div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group"><label>Phone No</label><input type="text" ng-model="FleetOwnerRequest1.PhoneNo" class="form-control" /></div>
+                                <div class="form-group"><label>Description</label><input type="text" ng-model="FleetOwnerRequest1.Description" class="form-control" /></div>
+                                <div class="form-group">
+                                    <label>Company Employee Size</label>
+                                    <div class="input-icon"><i class="fa fa-bell"></i><input type="text" ng-model="FleetOwnerRequest1.CompanyEmployeSize" class="form-control" /></div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Gender</label><select class="form-control" ng-model="FleetOwnerRequest1.Gender">
+                                  <option value="">Select Type</option>
+                                  <option value="1">Mail</option>
+                                 <option value="2">Femail</option>
+                                   </select>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </form>
+                    <center>
+
+                        <button type="submit" data-target="#Modal-header-primary" data-toggle="modal" class="btn btn-primary" ng-click="save(FleetOwnerRequest1,'I')">
+                            Submit
+                        </button>
+
+                    </center>
+                </div>
             </div>
         </div>
     </div>
 
-    
+
 
     <div class="row">
         <div class="col-lg-12">
