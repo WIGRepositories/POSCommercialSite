@@ -25,16 +25,10 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
            , "Identityproof": ""
 
         }
-        //var item = {
-        //    "SelectedSeatId": x + $scope.selectedSeats.length
-        //}
-        
+       
        
         $scope.selectedSeats.pssngr.push(item);
-        //if ($scope.selectedSeats.pssngr.length == 0)
-        //{
-        //    $scope.count = 1;
-        //}
+        
         $scope.count = $scope.selectedSeats.pssngr.length;
        
     }
@@ -44,8 +38,13 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
     {
         $scope.srcId = $localStorage.srcId;
         $scope.destId = $localStorage.destId;
+        $scope.way = $localStorage.waytype;
 
         //make a get request to database and show in a tabular form
+        //if ($scope.way == 1)
+        //{
+        //    window.location.href = "TicketPage.html";
+        //}
 
         $http.get('http://localhost:52800/api/TicketBooking/GetAvailableServices?srcId=' + $scope.srcId + '&destId=' + $scope.destId).then(function (response, req) {
             $scope.services = response.data;
@@ -64,6 +63,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
     //        data: book
     //    }
     //}
+
 
     $scope.savedata = function (selectedSeats) {
         var book = { "No_Seats": "5", "cost": "1500", "JourneyType": "1", "passengersList": selectedSeats.pssngr, "Seatcost":"900" };
@@ -122,18 +122,24 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
   ]
 }*/
         $localStorage.book = book;
-
               var req = {
             method: 'POST',
             url: 'http://localhost:52800/api/TicketBooking/SaveBookingDetails',
             data: book
+              }
+        if ($localStorage.waytype == 1)
+        {
+            $http(req).then(function (res) {
+                window.location.href = "TicketPage.html";
+            });
+        }
+        if ($localStorage.waytype == 2) {
+            $http.get('http://localhost:52800/api/TicketBooking/GetAvailableServices?srcId=' + $scope.destId + '&destId=' + $scope.srcId).then(function (response, req) {
+                $scope.services = response.data;
+            })
         }
 
-        $http(req).then(function (res) {
-           
-
-            window.location.href = "TicketPage.html";
-        });
+       
     }
 
     });

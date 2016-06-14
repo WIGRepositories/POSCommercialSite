@@ -13,7 +13,8 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
     $scope.GetServices = function () {
         $localStorage.srcId = $scope.S.Id;
         $localStorage.destId = $scope.D.Id;
-
+        $scope.way1 = $scope.result ;
+        $localStorage.waytype = $scope.way1;
         window.location.href = "booking.html";
     }
 $scope.Signin = function () {
