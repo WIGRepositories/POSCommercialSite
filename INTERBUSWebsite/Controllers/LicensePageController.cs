@@ -9,14 +9,13 @@ using System.Web.Http;
 
 namespace INTERBUSWebsite.Controllers
 {
-    public class StopsController : ApiController
+    public class LicensePageController : ApiController
     {
         [HttpGet]
-
-        public DataTable GetStops()
+        [Route("api/LicensePage/GetLicense")]
+        public DataSet GetLicense(int catId)
         {
             DataTable Tbl = new DataTable();
-
 
             //connect to database
             SqlConnection conn = new SqlConnection();
@@ -25,17 +24,22 @@ namespace INTERBUSWebsite.Controllers
 
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "GetStops";
+            cmd.CommandText = "GetLicensePageDetails";
             cmd.Connection = conn;
+
+            
+            SqlParameter mm = new SqlParameter("@catId", SqlDbType.Int);
+            mm.Value = catId;
+            cmd.Parameters.Add(mm);
 
             DataSet ds = new DataSet();
             SqlDataAdapter db = new SqlDataAdapter(cmd);
+
             db.Fill(ds);
-            Tbl = ds.Tables[0];
+            // Tbl = ds.Tables[0];
 
             // int found = 0;
-            return Tbl;
-
+            return ds;
         }
     }
 }

@@ -1,23 +1,36 @@
-﻿<!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+﻿<!doctype html>
+
+<!-- tfl-probe -->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html lang="en" class="no-js lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!-->
+
+<html lang="en" class="no-js no-touch">
+
+<!--<![endif]-->
 <head>
 
-    <title>INTERBUS CommercialSite | Index</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
     <meta charset="utf-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/w3.css">
-    <!-- links for table -->
 
+    <link rel="stylesheet" href="css/w3.css">
+
+
+
+    <!-- links for table -->
+    <!--Loading bootstrap css-->
+    <link type="text/css" rel="stylesheet" href="vendors/jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
     <link type="text/css" rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
     <link type="text/css" rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
     <!--LOADING STYLESHEET FOR PAGE--><!--Loading style vendors-->
-
+    <link type="text/css" rel="stylesheet" href="vendors/animate.css/animate.css">
     <link type="text/css" rel="stylesheet" href="vendors/jquery-pace/pace.css">
     <link type="text/css" rel="stylesheet" href="vendors/iCheck/skins/all.css">
-
+    <link type="text/css" rel="stylesheet" href="vendors/jquery-news-ticker/jquery.news-ticker.css">
     <!--Loading style-->
     <link type="text/css" rel="stylesheet" href="css/themes/style2/pink-blue.css" id="theme-change" class="style-change color-change">
     <link type="text/css" rel="stylesheet" href="css/style-responsive.css">
@@ -28,15 +41,6 @@
 
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
 
-
-
-    <!-- Latest compiled and minified JavaScript -->
-
-
-
-    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
-
-    <meta name="HandheldFriendly" content="True">
 
     <script type="text/javascript">
 
@@ -57,12 +61,40 @@
         }
 
     </script>
+    <!-- Latest compiled and minified JavaScript -->
 
 
 
     <script src="js/bootstrap.min.js"></script>
 
+    <meta name="HandheldFriendly" content="True">
+    <script src="js/bootstrap.min.js"></script>
 
+    <title>Interbus - Get Moving Anywhere, Comfortably</title>
+
+
+
+
+
+    <meta name="description" content="Information on all forms of transport in London including cycle hire. Routes, maps, plan a journey, tickets sales, realtime traffic and travel updates." />
+
+    <meta name="keywords" />
+
+    <meta name="author" content="Interbus | Get Moving Anywhere, Comfortably" />
+
+    <meta property="og:url" content="" />
+
+    <meta property="og:title" content="Every Journey Matters" />
+
+    <meta property="og:description" content="Information on all forms of transport in London including cycle hire. Routes, maps, plan a journey, tickets sales, realtime traffic and travel updates." />
+
+    <meta property="og:site_name" content="Transport for London" />
+
+    <meta property="article:publisher" content="https://facebook.com/" />
+
+    <meta property="article:author" content="https://facebook.com/" />
+
+    <meta name="twitter:creator" content="&#64;tfl" />
 
 
 
@@ -83,8 +115,6 @@
 
 
     <link href="css/StyleSheet6.css" media="screen" rel="stylesheet" />
-
-
 
 
 
@@ -113,45 +143,54 @@
                     background: #555;
                 }
 
-                    .rr ul li:hover ul {
-                        display: block;
-                    }
+        .rr .active {
+            background: #555;
+        }
 
-                .rr ul li ul {
-                    position: absolute;
-                    width: 100px;
-                    display: none;
+
+        .rr ul li:hover ul {
+            display: block;
+        }
+
+        .rr ul li ul {
+            position: absolute;
+            width: 100px;
+            display: none;
+        }
+
+            .rr ul li ul li {
+                background: #555;
+                display: block;
+                border-bottom: 1px solid white;
+                width: 170px;
+            }
+
+                .rr ul li ul li a {
+                    display: block !important;
+                    text-decoration: none;
                 }
 
-                    .rr ul li ul li {
-                        background: #555;
-                        display: block;
-                        border-bottom: 1px solid white;
-                        width: 170px;
-                    }
+                .rr ul li ul li:hover {
+                    background: #666;
+                }
 
-                        .rr ul li ul li a {
-                            display: block !important;
-                            text-decoration: none;
-                        }
-
-                        .rr ul li ul li:hover {
-                            background: #666;
-                        }
-
-                        .rr ul li ul li a:hover {
-                            text-decoration: none;
-                        }
+                .rr ul li ul li a:hover {
+                    text-decoration: none;
+                }
     </style>
+
+
+
+
+
 
 
 </head>
 
-<body ng-controller="myCtrl" ng-init="GetLicense();">
+<body >
 
 
     <div id="c-mask" class="c-mask disable-touch-scrolling"></div>
-
     <!--Start Header-->
     <div id="container">
 
@@ -160,16 +199,16 @@
         <!--Start Menu-->
         <div class="mainnav" id="mainnav" tabindex="0">
 
-            <div class="top-row" style="position:fixed; width:100%; z-index:3">
+            <div class="top-row" style="position:fixed; width:100%; z-index:1">
 
                 <div class="r">
                     <div class="rr">
-                        <a style="margin-top: 0px; padding-top: 0px; margin-right: 50px; float:left" href="index.html"><img style="height:56px" src="Images/logos/interbusLogo.png" alt="Alternate Text" /> </a>
+                        <a style="margin-top: 0px; padding-top: 0px; margin-right: 50px; float:left" href="Index.html"><img style="height:56px" src="Images/logos/interbusLogo.png" alt="Alternate Text" /> </a>
                         <ul class="collapsible-menu clearfix" style="margin-left:0px;">
 
-                            <li style="margin-left:30px">
+                            <li style="margin-left:90px">
 
-                                <a style="text-decoration:none" href="index.html">Home</a>
+                                <a style="text-decoration:none" href="Index.html">Home</a>
 
                             </li>
                             <li>
@@ -180,7 +219,7 @@
                                     <li><a href="#">Schedules</a></li>
                                     <li><a href="#">CheckFare</a></li>
                                     <li><a href="#">Cancellation</a></li>
-
+                                    
 
                                 </ul>
                             </li>
@@ -193,26 +232,25 @@
 
                                 <a style="text-decoration:none" href="#">Products</a>
                                 <ul>
-                                    <li><a href="Licensepage.html">Fleet Owner Lisence</a></li>
-                                    <li><a href="Licensepage.html">BTPOS Lisence</a></li>
-                                    <li><a href="Licensepage.html">TroubleTicket Lisence</a></li>
+                                    <li><a href="Licensepage.html">Fleet Owner License</a></li>
+
                                 </ul>
                             </li>
 
                             <li>
 
-                                <a style="text-decoration:none" href="#">About Us</a>
+                                <a class="active" style="text-decoration:none" href="About.html">About Us</a>
                                 <ul>
-                                    <li><a href="#">ContactUs</a></li>
+                                    <li class="active"><a href="Contact.html">ContactUs</a></li>
 
                                 </ul>
 
                             </li>
 
-                            <li style="margin-left:150px">
+                            <li style="margin-left:150px;">
 
-                                <div style="float:right; padding-top:11px">
-                                    <input type="text" placeholder="Search.." id="q" name="q" style="border-radius: 30px; width: 120px; height: 35px; color: red;" />
+                                <div style="float:right; padding-top:11px;">
+                                    <input type="text" placeholder="Search.." id="q" name="q" style="border-radius:30px; width:120px; height:35px; color:red;" />
 
 
                                 </div>
@@ -231,66 +269,26 @@
 
     </div>
     <!--End Header-->
+    <div class="container" style="margin-top:100px">
+        <h2 style="text-align:center">CONTACT US</h2><br />
 
-
-    <div class="row" style="margin-top:60px">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <h2 style="padding-top:10px; text-align:center"> Please choose below license options available:</h2>
-                    <div class="row" style="margin-top:25px; margin-bottom:5px">
-                        <div class="col-md-4 col-md-offset-2">
-                            <h3 align="center" style="line-height:38px">Enter Fleet owner code:</h3>
-                        </div><div class="col-md-4">
-                            <input type="text" ng-model="txt">
-                        </div>
-                    </div>
-                    <h4 style="padding-top:10px;text-align:center">
-                        Do not have a fleet owner code? please <a href="Fleetownerrequest.html" style="color:red">
-                            click here
-                        </a> to contact INTERBUS administrator
-                    </h4>
-
-                </div>
-            </div>
-        </div>
-        <div class="container" ng-model="License">
-        
-                <div class="col-md-10 col-md-offset-1">
-                    <div class="row row-merge1">
-                        <div class="page-content">
-
-                            <div ng-repeat="Lt in License.Table">
-                         
-                                <div class="col-md-4" style="margin:0px; padding:1px">
-                                    <div class="pricing-widget active">
-                                        <div class="pricing-head" style="background-color: #EF0505">{{Lt.LicenseType}}</div>
-                                        <div class="pricing-body">
-                                            <div class="pricing-cost" style="background-color:black"
-                                                 ng-repeat="p in License.Table2 | filter:{ LicenseId: Lt.Id }">
-                                                <strong style="display: block">${{p.UnitPrice}}</strong>
-                                                <small>per month</small>
-                                            </div>
-                                            <ul class="pricing-list text-center">
-
-                                                <li ng-repeat="f in License.Table1 | filter:{ LicenseTypeId: Lt.Id }">{{f.FeatureLabel}} <strong>{{f.FeatureValue}}</strong></li>
-
-                                                <li class="text-center"><a ng-click="GoToConfirmation(txt);" class="btn btn-danger" style="background-color: #EF0505">Buy Now</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                               
-                            </div>
-                        </div>
-
-                    </div>
-
-            </div>
-        </div>
+        <table>
+            <tr><td>Regional Office:</td><td>Bangalore - Anandarao Circle</td></tr>
+            <tr><td>Kesineni's #1-124, Nizampet, Hyderabad-500072</td><td>Shop No. 1, Basement Floor, Travelers point, Anandarao Circle, Bangalore.</td></tr>
+            <tr><td>Andhra Pradesh,India.</td><td>karnataka</td></tr>
+            <tr><td>Phone: 040 - 44771777 </td><td>Phone: 080 - 22380555 / 22380666 </td></tr>
+            <tr><td>Mobile:+919959 111 777</td><td>Mobile:+9198454 71955</td></tr>
+            <tr><td>e-mail:info@kesinenitravels.com</td><td>e-mail:blrarcmgr@kesinenitravels.com</td></tr>
+            <tr><td>Bangalore - Kalasipalyam </td><td>Chennai - Koyambedu</td></tr>
+            <tr><td>No.22, JVA Complex, TSP Road, Kalasipalyam, Bangalore</td><td>Shop No. 41, Private Omini Bus stand, Koyambedu, Chennai. </td></tr>
+            <tr><td>Phone: 080 – 26703444 / 26705444 </td><td>Phone: 044 - 23454994</td></tr>
+            <tr><td>Mobile:+9198454 71955</td><td>Mobile:+9199400 68966</td></tr>
+          
+            <tr><td>e-mail:blrklspmgr@kesinenitravels.com</td><td>e-mail:chnkymmgr@kesinenitravels.com</td></tr>
+            <tr><td colspan="2" align="center">Help Line: 040 - 4477 1777 (Open: 24/7)</td></tr>
+        </table>
     </div>
+
     <div class="row">
         <div class="col-lg-12">
             <div id="footer" tabindex="0">
@@ -338,11 +336,6 @@
     </div>
 
 
-
-
-
-
-
     <script>
 
         var myIndex = 0;
@@ -375,6 +368,51 @@
 
     </script>
 
+   
+
+    <script>
+
+        var $L = $LAB;
+
+        for (var i = 0, len = queue.length; i < len; i++) {
+
+            if (typeof queue[i] == "string") {
+
+                $L = $L.script(queue[i]);
+
+            } else if (!queue[i]) {
+
+                $L = $L.wait();
+
+            } else if (typeof queue[i] == "function") {
+
+                $L = $L.wait(queue[i]);
+
+            }
+
+        }
+
+    </script>
+
+
+
+    <!-- SiteCatalyst code version: H.26. -->
+
+    <script type="text/javascript">
+
+        tfl.stats.account = 'tfl-global';
+
+    </script>
+
+
+    <!-- End SiteCatalyst -->
+    <script>
+        function test() {
+            var currstyle = document.getElementById('imgTd').style.display;
+            document.getElementById('imgTd').style.display = (currstyle == "none") ? "table-cell" : "none";
+        }
+    </script>
+
 
 
     <script src="js/jquery-1.10.2.min.js"></script>
@@ -383,7 +421,8 @@
     <!--loading bootstrap js-->
     <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
     <script src="vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
-
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
     <script src="vendors/metisMenu/jquery.metisMenu.js"></script>
     <script src="vendors/slimScroll/jquery.slimscroll.js"></script>
     <script src="vendors/jquery-cookie/jquery.cookie.js"></script>
@@ -401,12 +440,11 @@
 
     <script src="js/main.js"></script>
     <script src="js/angular.js"></script>
-    <script src="js/LicensePage.js"></script>
+    <script src="js/Index.js"></script>
+
 
 
 </body>
-
-
 
 </html>
 

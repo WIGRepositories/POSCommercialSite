@@ -1,6 +1,14 @@
 ﻿// JavaScript source code
 var app = angular.module('myApp', [])
-var ctrl = app.controller('MyCtrl', function ($scope, $http) {
+var ctrl = app.controller('myCtrl', function ($scope, $http) {
+
+    $scope.GetLicense = function () {
+
+        $http.get('http://localhost:52800/api/LicensePage/GetLicense?catId=8').then(function (response, req) {
+            $scope.License = response.data;
+        })
+
+    }
 
     $scope.GoToConfirmation = function (code) {
 
@@ -9,7 +17,7 @@ var ctrl = app.controller('MyCtrl', function ($scope, $http) {
             return false;
         }
         else {
-            $http.get('http://localhost:52800/api/fleetownerlicense/validatefleetowner?fleetownercode=' + code).then(function (response, data) {
+   $http.get('http://localhost:52800/api/fleetownerlicense/validatefleetowner?fleetownercode=' + code).then(function (response, req) {
                 $scope.result = response.data;
 
                 if ($scope.result > 0)

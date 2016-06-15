@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -19,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <TypeScriptToolsVersion>1.0</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -85,6 +87,7 @@
     <Content Include="obj\Debug\INTERBUSWebsite.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\INTERBUSWebsite.dll" />
     <Content Include="obj\Debug\INTERBUSWebsite.pdb" />
+    <Content Include="UI\About.html" />
     <Content Include="UI\AboutUs.html" />
     <Content Include="UI\AddTroubleTicketingDetails.html" />
     <Content Include="UI\BookedTicketHistory.html" />
@@ -95,10 +98,13 @@
     <Content Include="UI\CancelTicket.html" />
     <Content Include="UI\cancelticketinformation.html" />
     <Content Include="UI\Cancel_Ticket.html" />
+    <Content Include="UI\Cartdetails.html" />
     <Content Include="UI\CheckFare.html" />
     <Content Include="UI\CheckOut.html" />
+    <Content Include="UI\Contact.html" />
     <Content Include="UI\ContactUs.html" />
     <Content Include="UI\css\bootstrap-theme.min.css" />
+    <Content Include="UI\css\bootstrap.min.css" />
     <Content Include="UI\css\Main.css" />
     <Content Include="UI\css\style-responsive.css" />
     <Content Include="UI\css\style.css" />
@@ -108,14 +114,8 @@
     <Content Include="UI\css\StyleSheet4.css" />
     <Content Include="UI\css\StyleSheet5.css" />
     <Content Include="UI\css\StyleSheet6.css" />
-    <Content Include="UI\css\themes\style2\blue-dark.css" />
-    <Content Include="UI\css\themes\style2\blue-grey.css" />
-    <Content Include="UI\css\themes\style2\green-blue.css" />
     <Content Include="UI\css\themes\style2\green-dark.css" />
     <Content Include="UI\css\themes\style2\green-grey.css" />
-    <Content Include="UI\css\themes\style2\orange-blue.css" />
-    <Content Include="UI\css\themes\style2\orange-grey.css" />
-    <Content Include="UI\css\themes\style2\orange-violet.css" />
     <Content Include="UI\css\themes\style2\pink-blue.css" />
     <Content Include="UI\css\themes\style2\pink-brown.css" />
     <Content Include="UI\css\themes\style2\pink-dark.css" />
@@ -124,11 +124,8 @@
     <Content Include="UI\css\themes\style2\pink-violet.css" />
     <Content Include="UI\css\themes\style2\red-dark.css" />
     <Content Include="UI\css\themes\style2\red-grey.css" />
-    <Content Include="UI\css\themes\style2\yellow-blue.css" />
-    <Content Include="UI\css\themes\style2\yellow-dark.css" />
-    <Content Include="UI\css\themes\style2\yellow-green.css" />
-    <Content Include="UI\css\themes\style2\yellow-grey.css" />
     <Content Include="UI\css\w3.css" />
+    <Content Include="UI\css\wickedpicker.min.css" />
     <Content Include="UI\datepicker.html" />
     <Content Include="UI\Fares_and_payments.html" />
     <Content Include="UI\FeedBack.html" />
@@ -157,6 +154,7 @@
     <Content Include="UI\images\blogs\9.jpg" />
     <Content Include="UI\images\blogs\blog_item1.jpg" />
     <Content Include="UI\images\busimages\acbus.jpg" />
+    <Content Include="UI\images\busimages\Busseats.html" />
     <Content Include="UI\images\busimages\nonac.jpg" />
     <Content Include="UI\images\busimages\seat.jpg" />
     <Content Include="UI\images\busimages\selction seats.jpg" />
@@ -199,6 +197,10 @@
     <Content Include="UI\images\promos\50-fares-and-payment-cc-icon.png" />
     <Content Include="UI\images\promos\52-fares-and-payment-lez-icon.png" />
     <Content Include="UI\images\promos\53-fares-and-payment-oyster-icon.png" />
+    <Content Include="UI\images\promos\bus1.jpg" />
+    <Content Include="UI\images\promos\bus3.jpg" />
+    <Content Include="UI\images\promos\bus4.jpg" />
+    <Content Include="UI\images\promos\bus6.jpg" />
     <Content Include="UI\images\promos\contactless-homepage-promo.jpg" />
     <Content Include="UI\images\promos\santanderfreehire-hp-1400x700.jpg" />
     <Content Include="UI\images\promos\thames-clipper_rdax_400x200.jpg" />
@@ -216,6 +218,7 @@
     <Content Include="UI\js\Booking.js" />
     <Content Include="UI\js\bootstrap.min.js" />
     <Content Include="UI\js\cc_af.js" />
+    <Content Include="UI\js\CheckOut.js" />
     <Content Include="UI\js\createfleet.js" />
     <Content Include="UI\js\CreateFleetOwner.js" />
     <Content Include="UI\js\Index.js" />
@@ -228,9 +231,16 @@
     <Content Include="UI\js\jquery.menu.js" />
     <Content Include="UI\js\jquery.nivo.slider.js" />
     <Content Include="UI\js\LicensePage.js" />
+    <Content Include="UI\js\Login.js" />
     <Content Include="UI\js\main.js" />
+    <Content Include="UI\js\ngStorage.js" />
+    <Content Include="UI\js\ResetPassword.js" />
     <Content Include="UI\js\SeatSelection.js" />
+    <Content Include="UI\js\Stops.js" />
+    <Content Include="UI\js\TicketPage.js" />
+    <Content Include="UI\js\UserInfo.js" />
     <Content Include="UI\js\VehicleAvailability.js" />
+    <Content Include="UI\js\wickedpicker.min.js" />
     <Content Include="UI\LicenseConfirmation.html" />
     <Content Include="UI\LicensePage.html" />
     <Content Include="UI\Login.html" />
@@ -239,11 +249,15 @@
     <Content Include="UI\Refund.html" />
     <Content Include="UI\Registration.html" />
     <Content Include="UI\registrationform.html" />
+    <Content Include="UI\resetpassword.html" />
     <Content Include="UI\Re_fund.html" />
     <Content Include="UI\Schedules.html" />
     <Content Include="UI\seats.html" />
     <Content Include="UI\SeatSelection.html" />
     <Content Include="UI\Status_and_Updates.html" />
+    <Content Include="UI\success.html" />
+    <Content Include="UI\TicketPage.html" />
+    <Content Include="UI\UserTicketCancellation.html" />
     <Content Include="UI\vehicleAvailability.html" />
     <Content Include="UI\vendors\animate.css\animate.css" />
     <Content Include="UI\vendors\bootstrap-colorpicker\css\colorpicker.css" />
@@ -1002,6 +1016,7 @@
     <Content Include="UI\vendors\mixitup\docs\api-methods.html" />
     <Content Include="UI\vendors\mixitup\Gruntfile.js" />
     <Content Include="UI\vendors\mixitup\src\jquery.mixitup.js" />
+    <Content Include="UI\vendors\resetpassword.html" />
     <Content Include="UI\vendors\responsive-tabs\responsive-tabs.js" />
     <Content Include="UI\vendors\rundll32.exe" />
     <Content Include="UI\vendors\slimScroll\examples\allow-page-scroll.html" />
@@ -1031,10 +1046,12 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BookingController.cs" />
-    <Compile Include="Controllers\FleetOwnerReqController.cs" />
+    <Compile Include="Controllers\LicensePageController.cs" />
     <Compile Include="Controllers\StopsController.cs" />
     <Compile Include="Controllers\FleetOwnerLicenseController.cs" />
     <Compile Include="Controllers\TicketBookingController.cs" />
+    <Compile Include="Controllers\UserInfoController.cs" />
+    <Compile Include="Controllers\ValidateCredentialsController.cs" />
     <Compile Include="Controllers\VehicleAvailabilityController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1160,6 +1177,7 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>

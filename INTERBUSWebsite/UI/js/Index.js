@@ -1,57 +1,60 @@
 
-var app = angular.module('myApp', [])
-var ctrl = app.controller('MyCtrl', function ($scope, $http) {
+var app = angular.module('myApp', ['ngStorage'])
+
+var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
+
     $scope.GetStops = function () {
-        $http.get('http://localhost:52800/api/Stops/StopsData').then(function (response, req) {
-            $scope.SrcStops = response.data;
 
-            $scope.DestStops = response.data;
-        });
+        $http.get('http://localhost:52800/api/Stops/GetStops').then(function (response, req) {
+            $scope.Stops = response.data;
+        })
     }
-    $scope.GoToConfirmation = function (code) {
 
-        if (code == null) {
-            alert('please enter valid fleet owner code or contact administrator.');
-            return false;
+    $scope.GetServices = function () {
+        $localStorage.srcId = $scope.S.Id;
+        $localStorage.destId = $scope.D.Id;
+        $scope.way1 = $scope.result ;
+        $localStorage.waytype = $scope.way1;
+        window.location.href = "booking.html";
+    }
+$scope.Signin = function () {
+
+    var u = $scope.UserName;
+    var p = $scope.Password
+
+    if (u == null) {
+        alert('Please enter username');
+        return;
+    }
+
+    if (p == null) {
+        alert('Please enter password');
+        return;
+    }
+
+    var inputcred = { LoginInfo: u, Passkey: p }
+
+
+    var req = {
+        method: 'POST',
+        url: 'http://localhost:52800/api/ValidateCredentials/ValidateCredentials',
+        data: inputcred
+    }
+
+    $http(req).then(function (res) {
+        if (res.data.length == 0) {
+            alert('invalid credentials');
         }
         else {
-            $http.get('http://localhost:52800/api/fleetownerlicense/validatefleetowner?fleetownercode=' + code).then(function (response, req) {
-                $scope.result = response.data;
-
-                if ($scope.result > 0)
-                    window.location.href = "http://localhost:52800/CommercialSite/LicenseConfirmation.html";
-                else
-                    alert('invalid fleet owner code');
-
-            });
+            //if the user has role, then get the details and save in session
+            $localStorage.uname = res.data[0].name;
+            $localStorage.userdetails = res.data;
+            window.location.href = "BookedTicketHistory.html";
         }
-    };
+    });
+}
 
-    $scope.GoTobuy = function (code, units) {
-
-        if (code == null) {
-            alert('please enter valid fleet owner code or contact INTERBUS administrator.');
-            return false;
-        } else {
-            if (units == null) {
-                alert('please enter valid no. of units.');
-                return false;
-            }
-            else {
-                $http.get('http://localhost:52800/api/fleetownerlicense/updatebtpos?fleetownercode=' + code + '&units=' + units).then(function (response, req) {
-                    $scope.result = response.data;
-
-                    if ($scope.result == 0)
-                        alert('invalid fleet owner code or BT POS units not available. Please contact INTERBUS admin');
-                    else
-                        alert('Please login into BT POS dashboard and activate the BT POS ' + units + ' unit(s)');
-
-                });
-            }
-        }
-    };
 });
-    
 
 
 function fun() {
@@ -63,3 +66,5 @@ function fun() {
         window.location.href = "vehicleavailability.html";
     }
 }
+
+

@@ -1,7 +1,14 @@
 ﻿<!doctype html>
 
-<html lang="en" ng-app="myApp" ng-controller="myCtrl">
+<!-- tfl-probe -->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html lang="en" class="no-js lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!-->
 
+<html lang="en" class="no-js no-touch">
+
+<!--<![endif]-->
 <head>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -29,6 +36,13 @@
     <link type="text/css" rel="stylesheet" href="css/style-responsive.css">
     <link rel="stylesheet" type="text/css" href="css/Main.css">
 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 
     <!-- Optional theme -->
 
@@ -36,7 +50,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
-
+    <meta name="HandheldFriendly" content="True">
     <script src="js/bootstrap.min.js"></script>
 
     <title>Interbus - Get Moving Anywhere, Comfortably</title>
@@ -49,36 +63,12 @@
 
     <link href="css/StyleSheet3.css" media="screen&#32;and&#32;(min-width:&#32;580px),print" rel="stylesheet" />
 
-
-
     <link href="css/StyleSheet5.css" media="screen&#32;and&#32;(min-width:&#32;900px)" rel="stylesheet" />
-
-    <!--<link href="/cdn/static/styles/core/min/print.min.bbf3e026.css" media="print" rel="stylesheet" />-->
-
-
 
     <link href="css/StyleSheet6.css" media="screen" rel="stylesheet" />
 
 
-    <script type="text/javascript">
 
-        var h = document.documentElement;
-
-        h.className = h.className.replace(/\bno-js\b/, '');
-
-        var isTouch = !!("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0;
-
-
-
-        if (isTouch) {
-
-            // remove class which defines hover behavior
-
-            h.className = h.className.replace(/\bno-touch\b/, '');
-
-        }
-
-    </script>
     <style>
         rr.div a {
             text-decoration: none;
@@ -139,7 +129,9 @@
 
 </head>
 
-<body ng-model="TicketDetails" ng-init="GetDetails();">
+<body >
+
+
 
     <!--Start Header-->
     <div id="container">
@@ -169,7 +161,7 @@
                                     <li><a href="#">Schedules</a></li>
                                     <li><a href="#">CheckFare</a></li>
                                     <li><a href="#">Cancellation</a></li>
-
+                                    <li><a href="Licensepage.html">Fleet Owner Lisence</a></li>
 
                                 </ul>
                             </li>
@@ -182,9 +174,11 @@
 
                                 <a style="text-decoration:none" href="#">Products</a>
                                 <ul>
-                                    <li><a href="Licensepage.html">Fleet Owner License</a></li>
-
+                                    <li><a href="Licensepage.html">Fleet Owner Lisence</a></li>
+                                    <li><a href="Licensepage.html">BTPOS Lisence</a></li>
+                                    <li><a href="Licensepage.html">TroubleTicket Lisence</a></li>
                                 </ul>
+
                             </li>
 
                             <li>
@@ -219,180 +213,79 @@
 
     </div>
     <!--End Header-->
-
-    <div class="row" style="margin-top: 80px; margin-bottom: 20px">
+    <div style="margin-top:80px; margin-bottom:20px">
         <div class="col-md-10 col-md-offset-1">
-            <h2 style="margin-left:30px">Checkout Form</h2>
-            <div class="col-md-7" style="border-radius: 5px; background-color: #F5F5F5">
-                <!--#F5F5F5-->
-
-                <form action="">
-                    <div class="panel-body pan">
-
-                        <div class="form-body pal">
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="input-icon"><i class="fa fa-user"></i><!--<input id="inputFirstName" type="text" placeholder="First Name" class="form-control" />-->{{FirstName}}</div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="input-icon"><i class="fa fa-user"></i><input id="inputLastName" type="text" placeholder="Last Name" class="form-control" /></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="input-icon"><i class="fa fa-envelope"></i><input id="inputEmail" type="text" placeholder="E-mail" class="form-control" /></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="input-icon"><i class="fa fa-phone"></i><input id="inputPhone" type="text" placeholder="Phone" class="form-control" /></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <select class="form-control">
-                                            <option>Country</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group"><input id="inputCity" type="text" placeholder="City" class="form-control" /></div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group"><input id="inputPostCode" type="text" placeholder="Post code" class="form-control" /></div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <div style="margin-bottom:10px">
-                                                <input type="radio" name=address id="address1" checked /><label for="address1">Permenent Address</label>
-                                            </div>
-                                            <textarea rows="5" placeholder="Permenent Address" class="form-control"></textarea>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <div style="margin-bottom:10px">
-                                                <input type="radio" name=address id="address2" /><label for="address2">Temporary Address</label>
-                                            </div>
-                                            <textarea rows="5" placeholder="Temporary Address" class="form-control"></textarea>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-8 col-md-offset-2">
-                                    <input type="radio" name=myradio id="1" checked /><label for="1">Visa</label>
-                                    <input type="radio" name=myradio id="2" /><label for="2">MasterCard</label>
-                                    <input type="radio" name=myradio id="3" /><label for="3">Net Banking</label>
-                                    <input type="radio" name=myradio id="4" /><label for="4">Pay Pal </label>
-
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="col-md-11">
-                                    <input id="inputNameCard" type="text" placeholder="Name on card" class="form-control" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="col-md-8">
-                                <div class="form-group"><input id="inputCardNumber" type="text" placeholder="Card number" class="form-control" /></div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group"><input id="inputCVV2" type="text" placeholder="CVV" class="form-control" /></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-11">
-                            <div class="col-md-2"></div>
-                            <div class="col-md-2">
-                                <div class="form-group"><label class="pts">Expiration date:</label></div>
-                            </div>
-                            <div class="col-md-5">
-                                <div class="form-group">
-                                    <select class="form-control">
-                                        <option>Month</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group mbn"><input id="inputYear" type="text" placeholder="Year" class="form-control" /></div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </form>
+            <div class=" alert alert-success">
+                <span style="font-size:large">Success...!</span>&nbsp; Your Order has been Processed...
             </div>
 
-            <div class="col-md-4" style="margin-left:20px">
-                <div class="row">
-                    <div class="col-md-12" style="padding-top:15px">
-                        <h3 style="text-align:center">Order Summary</h3>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <th><h4>PRODUCT</h4></th>
-                                </tr>
-                                <tr>
-                                    <td><label class="form-group">Product  <span> x1</span></label></td>
-                                    <td> <label class="form-group">&#x20B9 1000</label>  </td>
-                                </tr>
+            <div class="row">
+                <div class="col-md-12">
+                    <div style="margin-left:10px">
+                        your order is confirmed. your paisapay id
+                        <strong>589421</strong>
+                        <button style="float:right;" type="button" class="btn btn-info">Print</button>
+                    </div>
+                </div>
+            </div>
 
 
-                                <tr>
-                                    <td><label class="form-group">Shipping </label></td>
-                                    <td><label class="form-group">Free Shipping </label></td>
-                                </tr>
-                                <tr>
-                                    <td><label class="form-group">Tax </label></td>
-                                    <td><label class="form-group">&#x20B9 10</label></td>
-                                </tr>
-                                <tr>
-                                    <td><label class="form-group">Discount</label></td>
-                                    <td><label class="form-group">0 %</label></td>
-                                </tr>
-                                <tr>
-                                    <td><label class="form-group">Order Total </label></td>
-                                    <td><label class="form-group">&#x20B9 1010</label></td>
-                                </tr>
-                            </tbody>
-                        </table>
+            <div style="margin-top:20px">
 
-                        <div class="form-actions text-center pal">
-                            <button type="submit" class="btn btn-primary">Continue</button>
-                        </div>
+                <div class="col-md-3" style="margin-top:30px">
+                    <div style="background-color: wheat; padding-top: 10px; padding-left:10px; padding-bottom:1px"><h4>Delivary Address :</h4></div>
+                    
+                    <div style="padding: 10px; border: 1px solid #E0DFDB; ">
+                        Gowthami Nagar,<br />
+                        Krishna Lanka,<br />
+                        Vijayawada,<br />
+                        Pincode:520001,<br />
+                        Andhra Pradesh.
                     </div>
 
                 </div>
+                <div class="col-md-5">
+                    <h4>Payment Details :</h4>
+                    <table class="table">
+                        <tr><td>Paid By:</td><td>Creadit card</td></tr>
+                        <tr><td>Order Total:</td><td>Rs. 500.00</td></tr>
+                        <tr><td>Tax:</td><td>Rs. 10.00</td></tr>
+                        <tr><td>Discount:</td><td>Rs. 0.00</td></tr>
+                        <tr><td><strong>Total:</strong></td><td><strong>Rs. 510.00</strong></td></tr>
+                    </table>
 
+
+                </div>
+
+
+                <div class="col-md-4" style="margin-top:26px">
+                    <div class="row" style="background-color:wheat; padding:10px; margin-top:5px">
+                        your item(s) details
+                    </div>
+                    <div class="row" style="border: 1px solid #E0DFDB">
+                        <div class="col-md-3">
+                            <img style="height:120px; width:70px" src="images/logos/cycle-hire-homepage-icon.png" />
+                        </div>
+                        <div class="col-md-9">
+                            <table style="margin:0px; padding:0px">
+
+                                <tr><td>Product Name:</td><td>Productname</td></tr>
+                                <tr><td>Product Id:</td><td>1254LR</td></tr>
+                                <tr><td>Qty:</td><td>1</td></tr>
+                                <tr><td>Unit Price</td><td>500</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-
+           
         </div>
-    </div>
+
+        <div class="row"><div class="col-md-10 col-md-offset-2"> <p>7897897891 - You will receive SMS alerts for order on this number</p></div> </div>
+
+            
+        </div>
+
     <div class="row">
         <div class="col-lg-12">
             <div id="footer" tabindex="0">
@@ -407,10 +300,24 @@
                 <div class="secondary-footer"><h2 class="visually-hidden">Site structure and legal information</h2><div class="r"><ul><li><a href="/corporate/terms-and-conditions/">Terms &amp; conditions </a></li><li><a href="/corporate/privacy-and-cookies/">Privacy &amp; cookies</a></li><li><a href="/corporate/website-accessibility/">Website accessibility</a></li></ul><span class="heading">Copyright Interbus</span></div></div>
                 <div>
                 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </div>
         </div>
     </div>
-
 
     <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/jquery-migrate-1.2.1.min.js"></script>
@@ -437,14 +344,11 @@
 
     <script src="js/main.js"></script>
     <script src="js/angular.js"></script>
-    <script src="js/ngStorage.js"></script>
-    <script src="js/CheckOut.js"></script>
+    <script src="js/Index.js"></script>
 
 
 
 </body>
 
 </html>
-
-
 

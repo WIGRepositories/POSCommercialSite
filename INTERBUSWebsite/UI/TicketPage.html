@@ -1,0 +1,538 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-controller="myCtrl">
+
+<!--<![endif]-->
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="css/w3.css">
+
+
+
+    <!-- links for table -->
+    <!--Loading bootstrap css-->
+    <link type="text/css" rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
+    <!--LOADING STYLESHEET FOR PAGE--><!--Loading style vendors-->
+    <link type="text/css" rel="stylesheet" href="vendors/jquery-pace/pace.css">
+    <link type="text/css" rel="stylesheet" href="vendors/iCheck/skins/all.css">
+    <link type="text/css" rel="stylesheet" href="vendors/jquery-news-ticker/jquery.news-ticker.css">
+    <!--Loading style-->
+    <link type="text/css" rel="stylesheet" href="css/themes/style2/pink-blue.css" id="theme-change" class="style-change color-change">
+    <link type="text/css" rel="stylesheet" href="css/style-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/Main.css">
+
+
+    <!-- Optional theme -->
+
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+    <script src="js/bootstrap.min.js"></script>
+
+
+    <title>Interbus - Get Moving Anywhere, Comfortably</title>
+
+
+
+
+    <link href="css/StyleSheet2.css" media="screen,print" rel="stylesheet" />
+
+    <link href="css/StyleSheet1.css" media="screen,print" rel="stylesheet" />
+
+    <link href="css/StyleSheet4.css" media="screen,&#32;print" rel="stylesheet" />
+
+    <link href="css/StyleSheet3.css" media="screen&#32;and&#32;(min-width:&#32;580px),print" rel="stylesheet" />
+
+
+
+    <link href="css/StyleSheet5.css" media="screen&#32;and&#32;(min-width:&#32;900px)" rel="stylesheet" />
+
+    <!--<link href="/cdn/static/styles/core/min/print.min.bbf3e026.css" media="print" rel="stylesheet" />-->
+
+
+
+    <link href="css/StyleSheet6.css" media="screen" rel="stylesheet" />
+
+
+
+    <script type="text/javascript">
+
+        // Instructions: please embed this snippet directly into every page in your website template.
+
+        // For optimal performance, this must be embedded directly into the template, not referenced
+
+        // as an external file.
+
+
+
+        // Answers Cloud Services Embed Script v1.02
+
+        // DO NOT MODIFY BELOW THIS LINE *****************************************
+
+        ; (function (g) {
+
+            var d = document, i, am = d.createElement('script'), h = d.head || d.getElementsByTagName("head")[0],
+
+            aex = {
+
+                "src": "//gateway.answerscloud.com/tfl-gov-uk/production/gateway.min.js",
+
+                "type": "text/javascript",
+
+                "async": "true",
+
+                "data-vendor": "acs",
+
+                "data-role": "gateway"
+
+            };
+
+            for (var attr in aex) { am.setAttribute(attr, aex[attr]); }
+
+            h.appendChild(am);
+
+            g['acsReady'] = function () { var aT = '__acsReady__', args = Array.prototype.slice.call(arguments, 0), k = setInterval(function () { if (typeof g[aT] === 'function') { clearInterval(k); for (i = 0; i < args.length; i++) { g[aT].call(g, function (fn) { return function () { setTimeout(fn, 1) }; }(args[i])); } } }, 50); };
+
+        })(window);
+
+        // DO NOT MODIFY ABOVE THIS LINE *****************************************
+
+    </script>
+
+
+    <style>
+        @media print {
+            .hideWhilePrinting {
+                display: none;
+            }
+        }
+        rr.div a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            padding: 15px;
+            display: inline-block;
+        }
+
+        .rr ul {
+            display: inline;
+            margin: 0;
+            padding: 0;
+        }
+
+
+            .rr ul li {
+                display: inline-block;
+                color: white;
+            }
+
+                .rr ul li:hover {
+                    background: #555;
+                }
+
+                    .rr ul li:hover ul {
+                        display: block;
+                    }
+
+                .rr ul li ul {
+                    position: absolute;
+                    width: 100px;
+                    display: none;
+                }
+
+                    .rr ul li ul li {
+                        background: #555;
+                        display: block;
+                        border-bottom: 1px solid white;
+                        width: 170px;
+                    }
+
+                        .rr ul li ul li a {
+                            display: block !important;
+                            text-decoration: none;
+                        }
+
+                        .rr ul li ul li:hover {
+                            background: #666;
+                        }
+
+                        .rr ul li ul li a:hover {
+                            text-decoration: none;
+                        }
+    </style>
+
+
+</head>
+
+<body ng-init="GetDetails();" ng-model="TicketDetails">
+    <div id="container" class="hideWhilePrinting">
+
+        <!--start of white bar above menu-->
+        <!--End of white bar above menu-->
+        <!--Start Menu-->
+        <div class="mainnav" id="mainnav" tabindex="0">
+
+            <div class="top-row" style="position:fixed; width:100%; z-index:1">
+
+                <div class="r">
+                    <div class="rr">
+                        <a style="margin-top: 0px; padding-top: 0px; margin-right: 50px; float:left" href="index.html"><img style="height:56px" src="Images/logos/interbusLogo.png" alt="Alternate Text" /> </a>
+                        <ul class="collapsible-menu clearfix" style="margin-left:0px;">
+
+                            <li style="margin-left:90px">
+
+                                <a style="text-decoration:none" href="index.html">Home</a>
+
+                            </li>
+                            <li>
+
+                                <a style="text-decoration:none" href="Fares_and_payments.html">Fares / Payments</a>
+
+                                <ul>
+                                    <li><a href="#">Schedules</a></li>
+                                    <li><a href="#">CheckFare</a></li>
+                                    <li><a href="#">Cancellation</a></li>
+
+
+                                </ul>
+                            </li>
+                            <li>
+
+                                <a style="text-decoration:none" href="Status_and_Updates.html">Status & Updates</a>
+
+                            </li>
+                            <li>
+
+                                <a style="text-decoration:none" href="#">Products</a>
+                                <ul>
+                                    <li><a href="Licensepage.html">Fleet Owner Lisence</a></li>
+                                    <li><a href="Licensepage.html">BTPOS Lisence</a></li>
+                                    <li><a href="Licensepage.html">TroubleTicket Lisence</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+
+                                <a style="text-decoration:none" href="#">About Us</a>
+                                <ul>
+                                    <li><a href="#">ContactUs</a></li>
+
+                                </ul>
+
+                            </li>
+
+                            <li style="margin-left:150px">
+
+                                <div style="float:right; padding-top:11px">
+                                    <input type="text" placeholder="Search" id="q" name="q" style="border-radius:30px; width:120px; height:35px" />
+
+
+                                </div>
+
+
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--End Menu-->
+    </div>
+
+    <div class="row" style="margin-top:60px">
+
+        <form>
+            <div class="container">
+                <div class="row">
+                    <div style="float:right">
+                        <!--<a href="javascript:window.print()" class="btn btn-primary">Print Ticket</a>-->
+                        <button type="button" class="hideWhilePrinting btn btn-primary"  onclick="window.print()">Print Ticket</button>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                    <h1>e-Ticket Details</h1>
+                </div>
+
+
+                <div class="col-md-11 col-md-offset-1 col-sm-11 col-sm-offset-1" style="margin-top:20px; margin-bottom:20px">
+                    <div style="margin-bottom:20px"><h3 style="text-align:center;">To Journey</h3></div>
+                    <div class="row" style="margin-bottom:5px">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div class="col-md-4 col-sm-6 col-xs-6"><label>Ticket No:</label></div>
+                            <div class="col-md-6 col-sm-5 col-xs-5"><label>TJ6T32828245</label></div>
+                            <!--<div><label></label></div>-->
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div class="col-md-4 col-sm-6 col-xs-6"><label>Booking Date:</label></div>
+                            <div class="col-md-6 col-sm-5 col-xs-5"><label>10/6/2016</label></div>
+                            <!--<div><label></label></div>-->
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-bottom:5px">
+
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div class="col-md-4 col-sm-6 col-xs-6"><label>From:</label></div>
+                            <div class="col-md-6 col-sm-5 col-xs-5"><label>Hyd</label></div>
+                            <!--<div><label></label></div>-->
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div class="col-md-4 col-sm-6 col-xs-6"><label>To:</label></div>
+                            <div class="col-md-6 col-sm-5 col-xs-5"><label>Vij</label></div>
+                            <!--<div><label></label></div>-->
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="margin-bottom:5px">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div class="col-md-4 col-sm-6 col-xs-6"><label>No Of Seats:</label></div>
+                            <div class="col-md-6 col-sm-5 col-xs-5"><label>{{firstName}}</label></div>
+                            <!--<div><label></label></div>-->
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div class="col-md-4 col-sm-6 col-xs-6"><label>Seats:</label></div>
+                            <div class="col-md-6 col-sm-5 col-xs-5"><label>A1,A2</label></div>
+                            <!--<div><label></label></div>-->
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-bottom:5px">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div class="col-md-4 col-sm-6 col-xs-6"><label>Journey Date:</label></div>
+                            <div class="col-md-6 col-sm-6 col-xs-6"><label>15/6/2016</label></div>
+                            <!--<div><label></label></div>-->
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div class="col-md-4 col-sm-6 col-xs-6"><label>Ticket Fare:</label></div>
+                            <div class="col-md-6 col-sm-5 col-xs-5"><label>200</label></div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom:5px">
+
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div class="col-md-4 col-sm-6 col-xs-6"><label>Journey Type:</label></div>
+                            <div class="col-md-6 col-sm-6 col-xs-6"><label>{{JourneyType}}</label></div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-11 col-sm-11 col-md-offset-1 col-sm-offset-1" style="margin-top:20px; margin-bottom:20px; border-top:2px solid #d6d3d3; padding-top:20px">
+                    <div style="margin-bottom:20px"><h3 style="text-align:center;">From Journey</h3></div>
+                    <div class="row" style="margin-bottom:5px">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div class="col-md-6 col-sm-6 col-xs-6"><label>Ticket No:</label></div>
+                            <div class="col-md-6 col-sm-6 col-xs-6"><label>TJ6T32828245</label></div>
+                            <!--<div><label></label></div>-->
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div class="col-md-6 col-sm-6 col-xs-6"><label>Booking Date:</label></div>
+                            <div class="col-md-6 col-sm-6 col-xs-6"><label>10/6/2016</label></div>
+                            <!--<div><label></label></div>-->
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-bottom:5px">
+
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div class="col-md-6 col-sm-6 col-xs-6"><label>From:</label></div>
+                            <div class="col-md-6 col-sm-6 col-xs-6"><label>Vij</label></div>
+                            <!--<div><label></label></div>-->
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div class="col-md-6 col-sm-6 col-xs-6"><label>To:</label></div>
+                            <div class="col-md-6 col-sm-6 col-xs-6"><label>Hyd</label></div>
+                            <!--<div><label></label></div>-->
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="margin-bottom:5px">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div class="col-md-6 col-sm-6 col-xs-6"><label>No Of Seats:</label></div>
+                            <div class="col-md-6 col-sm-6 col-xs-6"><label>{{NoofSeats}}</label></div>
+                            <!--<div><label></label></div>-->
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div class="col-md-6 col-sm-6 col-xs-6"><label>Seats:</label></div>
+                            <div class="col-md-6 col-sm-6 col-xs-6"><label>C1,C2</label></div>
+                            <!--<div><label></label></div>-->
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-bottom:5px">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div class="col-md-6 col-sm-6 col-xs-6"><label>Return Date:</label></div>
+                            <div class="col-md-6 col-sm-6 col-xs-6"><label>18/6/2016</label></div>
+                            <!--<div><label></label></div>-->
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div class="col-md-6 col-sm-6 col-xs-6"><label>Ticket Fare:</label></div>
+                            <div class="col-md-6 col-sm-6 col-xs-6"><label>600</label></div>
+                        </div>
+                    </div>
+                </div>
+                <div><h2 style="text-align:center">Passenger Details</h2></div>
+                <div>
+                    <div class="col-md-10 col-md-offset-1">
+                        <div>
+                            <table>
+                                <tr><th>S.No</th><th>Name</th><th>Gender</th><th>Age</th></tr>
+                                <tr ng-repeat="p in details.passengersList">
+                                    <td>{{p.NoOfSeats+1}}</td>
+                                    <td>{{p.fname}}</td>
+                                    <td>Male</td>
+                                    <td>24</td>
+                                </tr>
+                                <tr><td>2</td><td>Phani</td><td>Male</td><td>24</td></tr>
+                                <tr><td></td><td></td><td><strong>Sub Total</strong></td><td><strong>400</strong></td></tr>
+
+                            </table>
+                        </div>
+                    </div>
+                    <!--<div class="col-md-6">
+                    <table>
+                        <tr><th>S.No</th><th>Name</th><th>Gender</th><th>Age</th></tr>
+                        <tr><td>1</td><td>Lokesh</td><td>Male</td><td>24</td></tr>
+                        <tr><td>2</td><td>Phani</td><td>Male</td><td>24</td></tr>
+                        <tr><td></td><td></td><td><strong>Sub Total</strong></td><td><strong>600</strong></td></tr>
+
+                    </table>
+                </div>-->
+                </div>
+
+
+                <div class="col-md-10 col-md-offset-1" style="margin-top:10px; margin-bottom:20px">
+                    <h3 style="text-align:center;">Payment Details</h3>
+                    <table>
+                        <tr>
+                            <td>Amount Deducted:</td>
+                            <td>1200</td>
+                            <td>Transaction Id:</td>
+                            <td>764uydgh</td>
+                            <td>Transaction Status</td>
+                            <td>Success</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="col-md-11 col-md-offset-1" style="margin-top:10px">
+                    <h3 style="text-align:center;">Terms And Conditions</h3>
+                    <ul style="list-style:none">
+                        <li>1.Condition 1</li>
+                        <li>2.Condition 2</li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="footer" tabindex="0" class="hideWhilePrinting">
+
+                <h2 class="visually-hidden">Site footer</h2>
+
+
+
+                <div class="primary-footer r">
+                    <h2 class="visually-hidden">About Interbus</h2>
+                    <ul class="footer-links">
+                        <li><a href="/help-and-contact/">Help &amp; contacts</a></li>
+                        <li><a class="" href="/corporate/careers/">Careers</a></li>
+                        <li><a class="" href="/corporate/about-tfl/">About Interbus</a></li>
+                        <li><a class="" href="/corporate/safety-and-security/">Safety &amp; security</a></li>
+                        <li><a class="" href="/corporate/transparency/">Transparency</a></li>
+                        <li><a class="" href="/corporate/publications-and-reports/">Publications &amp; reports</a></li>
+                        <li><a class="" href="/corporate/tfl-shop/">Gift Shop</a></li>
+                        <li><a class="" href="/travel-information/social-media-and-email-updates/">Social media &amp; email updates</a></li>
+                        <li><a class="languages-footer" href="/travel-information/other-languages/">Other languages</a></li>
+                    </ul><h2 class="heading">Information for...</h2><ul class="info-for clearfix">
+                        <li><a href="/info-for/media/">Media</a></li>
+                        <li><a href="/info-for/business-and-commercial/">Business &amp; commercial</a></li>
+                        <li><a href="/info-for/boroughs/">Get Support online 24/7</a></li>
+                        <li><a href="/info-for/schools-and-young-people/">Schools &amp; young people</a></li>
+                        <li><a href="/info-for/deliveries-in-london/">Deliveries in Zimbabwe</a></li>
+                        <li><a href="/info-for/urban-planning-and-construction/">Urban planning &amp; construction</a></li>
+                        <li><a href="/info-for/taxis-and-private-hire/">Taxi &amp; private hire </a></li>
+                        <li><a href="/info-for/suppliers-and-contractors/">Suppliers &amp; contractors</a></li>
+                        <li><a href="/info-for/bus-operators/">Bus operators</a></li>
+                        <li><a href="/info-for/open-data-users/">Open data users</a></li>
+                        <li><a href="/info-for/coach-drivers/">Coach drivers</a></li>
+                        <li><a href="/info-for/investors/">Investors</a></li>
+                        <li><a href="/info-for/investors/">Download Interbus App   </a></li>
+                    </ul>
+                </div>
+                <div class="secondary-footer"><h2 class="visually-hidden">Site structure and legal information</h2><div class="r"><ul><li><a href="/corporate/terms-and-conditions/">Terms &amp; conditions </a></li><li><a href="/corporate/privacy-and-cookies/">Privacy &amp; cookies</a></li><li><a href="/corporate/website-accessibility/">Website accessibility</a></li></ul><span class="heading">Copyright Interbus</span></div></div>
+                <div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- End SiteCatalyst -->
+    <script>
+
+    </script>
+
+
+
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <!--loading bootstrap js-->
+    <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <script src="vendors/metisMenu/jquery.metisMenu.js"></script>
+    <script src="vendors/slimScroll/jquery.slimscroll.js"></script>
+    <script src="vendors/jquery-cookie/jquery.cookie.js"></script>
+    <script src="vendors/iCheck/icheck.min.js"></script>
+    <script src="vendors/iCheck/custom.min.js"></script>
+    <script src="vendors/jquery-news-ticker/jquery.news-ticker.js"></script>
+    <script src="js/jquery.menu.js"></script>
+    <script src="vendors/jquery-pace/pace.min.js"></script>
+    <script src="vendors/holder/holder.js"></script>
+    <script src="vendors/responsive-tabs/responsive-tabs.js"></script>
+    <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
+
+    <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
+
+    <script language="JavaScript">
+        if (window.print) {
+            ButtonControl.style.visibility = "hidden";
+            document.write('<form><input type=button name=print value="Print" onClick="window.print()"></form>');
+        }
+    </script>
+    <script src="js/main.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/ngStorage.js"></script>
+    <script src="js/TicketPage.js"></script>
+
+</body>
+
+</html>
+
+
+
