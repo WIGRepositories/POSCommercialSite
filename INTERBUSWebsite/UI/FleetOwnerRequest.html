@@ -116,7 +116,7 @@
 
 </head>
 
-<body ng-model="FleetOwnerRequest">
+<body ng-model="FleetOwnerRequest1">
 
 
     <div id="c-mask" class="c-mask disable-touch-scrolling"></div>
@@ -303,82 +303,60 @@
                                     <div class="input-icon"><i class="fa fa-bell"></i><input type="text" ng-model="FleetOwnerRequest1.CurrentSystemInUse" class="form-control" /></div>
                                 </div>
                                 <div class="form-group">
-                                    <label>how did you hear about us?</label><select class="form-control" ng-model="FleetOwnerRequest1. howdidyouhearaboutus">
-    <option>Select Type</option>
-    <option>Friends</option>
-    <option>Paper Advertisement</option>
-    <option>Social Media</option>
-</select>
+                                    <label>how did you hear about us</label><select class="form-control" ng-model="FleetOwnerRequest1.howdidyouhearaboutus">
+                                    
+                                    <option>Friends</option>
+                                    <option>Paper Advertisement</option>
+                                     <option>Social Media</option>
+                                  </select>
                                 </div>
-                                <!--<div class="form-group">
-                                    <label for="InputDropdown">Multiple Select</label><select multiple="multiple" class="form-control">
-                                        <option>Option 1</option>
-                                        <option>Option 2</option>
-                                        <option>Option 3</option>
-                                        <option>Option 4</option>
-                                        <option>Option 5</option>
-                                    </select>
-                                </div>-->
-                                <div class="form-group">
-
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" ng-model="FleetOwnerRequest1.Agreetotermsandconditions" />&nbsp;
-                                            Agree to terms and conditions
-                                        </label>
-                                    </div>
-                                </div>
-
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Last Name</label>
                                     <div class="input-icon"><i class="fa fa-bell"></i><input type="text" ng-model="FleetOwnerRequest1.LastName" class="form-control" /></div>
                                 </div>
-                                <div class="form-group">
-                                    <label>Company Name</label>
-                                    <div class="input-icon right"><i class="fa fa-microphone"></i><input type="text" ng-model="FleetOwnerRequest1.CompanyName" class="form-control" /></div>
-                                </div>
+                                <div class="form-group"><label>Phone No</label><input type="text" ng-model="FleetOwnerRequest1.PhoneNo" class="form-control" /></div>
                                 <div class="form-group">
                                     <label>Fleet size</label>
                                     <div class="input-icon right"><i class="fa fa-spinner fa-spin"></i><input type="text" ng-model="FleetOwnerRequest1.FleetSize" class="form-control" /></div>
+                                </div>                                
+                                
+                                <div class="form-group"><label>Address</label><textarea rows="3" ng-model="FleetOwnerRequest1.Address" class="form-control"></textarea></div><br/>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" ng-model="FleetOwnerRequest1.SentNewProductsEmails"/>&nbsp;
+                                        Sent New Products Emails
+                                    </label>
                                 </div>
-                                <div class="form-group">
-                                    <label for="InputEmail">Sent New Products Emails</label>
-                                    <div class="input-group"><span class="input-group-addon"><i class="fa fa-envelope"></i></span><input type="text" ng-model="FleetOwnerRequest1.SentNewProductsEmails" class="form-control" /></div>
-                                </div>
-                                <!--<div class="form-group">
-                                    <label>Radio</label>
-                                    <div class="radio">
-                                        <label>
-                                            <input id="optionsRadios1" type="radio" name="optionsRadios" value="option1" checked="checked" />&nbsp;
-                                            Option 1
-                                        </label><label>
-                                            <input id="optionsRadios2" type="radio" name="optionsRadios" value="option2" />&nbsp;
-                                            Option 2
-                                        </label><label>
-                                            <input id="optionsRadios3" type="radio" name="optionsRadios" value="option3"/>&nbsp;
-                                            Disabled
-                                        </label>
-                                    </div>
-                                </div>-->
-                                <div class="form-group"><label>Address</label><textarea rows="3" ng-model="FleetOwnerRequest1.Address" class="form-control"></textarea></div>
-                            </div>
+                            </div>                            
                             <div class="col-md-4">
-                                <div class="form-group"><label>Phone No</label><input type="text" ng-model="FleetOwnerRequest1.PhoneNo" class="form-control" /></div>
+                                <div class="form-group">
+                                    <label>Company Name</label>
+                                    <div class="input-icon right"><i class="fa fa-microphone"></i><input type="text" ng-model="FleetOwnerRequest1.CompanyName" class="form-control" /></div>
+                                </div>                                
                                 <div class="form-group"><label>Description</label><input type="text" ng-model="FleetOwnerRequest1.Description" class="form-control" /></div>
                                 <div class="form-group">
                                     <label>Company Employee Size</label>
                                     <div class="input-icon"><i class="fa fa-bell"></i><input type="text" ng-model="FleetOwnerRequest1.CompanyEmployeSize" class="form-control" /></div>
                                 </div>
                                 <div class="form-group">
-                                    <label>Gender</label><select class="form-control" ng-model="FleetOwnerRequest1.Gender">
-                                  <option value="">Select Type</option>
-                                  <option value="1">Mail</option>
-                                 <option value="2">Femail</option>
+                                    <label>Gender</label><select class="form-control" ng-model="FleetOwnerRequest1.Gender">                                  
+                                  <option value="1">Male</option>
+                                 <option value="2">Female</option>
                                    </select>
                                 </div>
-
+                                <br/>
+                                <br/>
+                                <div class="form-group">
+                                    <div class="checkbox" >
+                                        <label>
+                                            <input type="checkbox" ng-model="FleetOwnerRequest1.Agreetotermsandconditions"/>&nbsp;
+                                            Agree to terms and conditions
+                                        </label>
+                                    </div>
+                                </div>
+                                
 
                             </div>
                         </div>
