@@ -6,7 +6,7 @@
 <!--[if IE 9]>         <html lang="en" class="no-js lt-ie10"> <![endif]-->
 <!--[if gt IE 9]><!-->
 
-<html lang="en" class="no-js no-touch">
+<html lang="en" ng-app="myApp" ng-controller="myCtrl">
 
 <!--<![endif]-->
 <head>
@@ -39,7 +39,7 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
@@ -175,10 +175,10 @@
 
 </head>
 
-<body >
+<body ng-model="cartdetails">
 
 
-  
+
     <!--Start Header-->
     <div id="container">
 
@@ -240,7 +240,6 @@
 
                                 </div>
 
-
                             </li>
 
                         </ul>
@@ -256,9 +255,9 @@
     <!--End Header-->
     <div style="margin-top:80px">
         <h2 style="text-align:center">Cart Details</h2>
-        
+
         <div class="container" style="margin-bottom:10px">
-           
+
             <table class="table table-bordered">
                 <thead>
                     <tr style="height:50px">
@@ -274,9 +273,9 @@
                 <tbody>
                     <tr>
                         <td>1</td>
-                        <td>Basic Lisence</td>
+                        <td>{{LicenseType1}}</td>
                         <td><input type="number" placeholder="0" style="width:20%" /></td>
-                        <td>$ 19</td>
+                        <td>{{Unitprice1}}</td>
                         <td>0</td>
                         <td>0</td>
                         <td>500</td>
@@ -311,20 +310,22 @@
                         <td>0</td>
                         <td>500</td>
                     </tr>
-                    
+
 
                 </tbody>
-                <tfoot ><tr style="height:50px">
+                <tfoot>
+                    <tr style="height:50px">
 
-    <td colspan="6" align="right">Total</td>
-    <td>500</td>
-</tr></tfoot>
+                        <td colspan="6" align="right">Total</td>
+                        <td>500</td>
+                    </tr>
+                </tfoot>
             </table>
-           
-                <button style="float:right" type="button" class="btn btn-primary">Payment</button>
-           
+
+            <button style="float:right" type="button" class="btn btn-primary">Payment</button>
+
         </div>
-    
+
     </div>
 
     <div class="row">
@@ -412,6 +413,7 @@
     <script src="js/main.js"></script>
     <script src="js/angular.js"></script>
     <script src="js/Index.js"></script>
+    <script src="js/Cartdetails.js"></script>
 
 
 

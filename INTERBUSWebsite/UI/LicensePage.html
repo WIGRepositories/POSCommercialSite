@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en" ng-app="myApp" ng-controller="myCtrl">
 <head>
 
     <title>INTERBUS CommercialSite | Index</title>
@@ -147,7 +147,7 @@
 
 </head>
 
-<body ng-controller="myCtrl" ng-init="GetLicense();">
+<body ng-controller="myCtrl" ng-init="GetLicense();" ng-model="License">
 
 
     <div id="c-mask" class="c-mask disable-touch-scrolling"></div>
@@ -256,37 +256,40 @@
             </div>
         </div>
         <div class="container" ng-model="License">
-        
-                <div class="col-md-10 col-md-offset-1">
-                    <div class="row row-merge1">
-                        <div class="page-content">
 
-                            <div ng-repeat="Lt in License.Table">
-                         
-                                <div class="col-md-4" style="margin:0px; padding:1px">
-                                    <div class="pricing-widget active">
-                                        <div class="pricing-head" style="background-color: #EF0505">{{Lt.LicenseType}}</div>
-                                        <div class="pricing-body">
-                                            <div class="pricing-cost" style="background-color:black"
-                                                 ng-repeat="p in License.Table2 | filter:{ LicenseId: Lt.Id }">
-                                                <strong style="display: block">${{p.UnitPrice}}</strong>
-                                                <small>per month</small>
-                                            </div>
-                                            <ul class="pricing-list text-center">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row row-merge1">
+                    <div class="page-content">
 
-                                                <li ng-repeat="f in License.Table1 | filter:{ LicenseTypeId: Lt.Id }">{{f.FeatureLabel}} <strong>{{f.FeatureValue}}</strong></li>
+                        <div ng-repeat="Lt in License.Table">
 
-                                                <li class="text-center"><a ng-click="GoToConfirmation(txt);" class="btn btn-danger" style="background-color: #EF0505">Buy Now</a></li>
-                                            </ul>
+                            <div class="col-md-4" style="margin:0px; padding:1px">
+                                <div class="pricing-widget active">
+                                    <div class="pricing-head" style="background-color: #EF0505">{{Lt.LicenseType}}</div>
+                                    <div class="pricing-body">
+                                        <div class="pricing-cost" style="background-color:black"
+                                             ng-repeat="p in License.Table2 | filter:{ LicenseId: Lt.Id }">
+                                            <strong style="display: block">${{p.UnitPrice}}</strong>
+                                            <small>per month</small>
                                         </div>
+                                        <ul class="pricing-list text-center">
+
+                                            <li ng-repeat="f in License.Table1 | filter:{ LicenseTypeId: Lt.Id }">{{f.FeatureLabel}} <strong>{{f.FeatureValue}}</strong></li>
+
+                                            <li class="text-center"><a ng-click="GoToConfirmation(txt);" class="btn btn-danger" style="background-color: #EF0505">Buy Now</a></li>
+                                        </ul>
                                     </div>
                                 </div>
-
-                               
                             </div>
+
+
                         </div>
+                    </div>
+                    <div class="modal-dialog">
 
                     </div>
+
+                </div>
 
             </div>
         </div>

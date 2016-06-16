@@ -1,24 +1,25 @@
 ﻿// JavaScript source code
 var app = angular.module('myApp', [])
-var ctrl = app.controller('myCtrl', function ($scope, $http) {
+var ctrl = app.controller('myCtrl', function ($scope, $http,$localstorage) {
 
     $scope.GetLicense = function () {
 
         $http.get('http://localhost:52800/api/LicensePage/GetLicense?catId=8').then(function (response, req) {
             $scope.License = response.data;
         })
-
+      
     }
 
-    $scope.GoToConfirmation = function (code) {
-
+   $scope.GoToConfirmation = function (txt) {
+      
         if (code == null) {
             alert('please enter valid fleet owner code or contact administrator.');
             return false;
         }
         else {
    $http.get('http://localhost:52800/api/fleetownerlicense/validatefleetowner?fleetownercode=' + code).then(function (response, req) {
-                $scope.result = response.data;
+       $scope.result = response.data;
+       save();
 
                 if ($scope.result > 0)
                     window.location.href = "http://localhost:52800/UI/LicenseConfirmation.html";
@@ -26,8 +27,36 @@ var ctrl = app.controller('myCtrl', function ($scope, $http) {
                     alert('invalid fleet owner code');
 
             });
-        }   
-    };
+        }
+       
+       
+   };
+   $scope.save = function (License, flag) {
+
+       var License = {
+           LicenseType: License.LicenseType,
+           Id: License.Id,
+           Unitprice: License.Unitprice,
+           FeatureName: License.FeatureName,
+           FeatureValue: License.FeatureValue,
+
+
+       };
+       $localstorage.value = License;
+       window.location.href = "Cartdetails.html";
+       
+
+       var req = {
+           method: 'POST',
+           url: 'http://localhost:52800/api/LicensePage/SaveLicence',
+           data: License
+       }
+       $http(req).then(function (response) {
+
+       });
+   };
+
+
 
     $scope.GoTobuy = function (code, units) {
 
@@ -52,4 +81,6 @@ var ctrl = app.controller('myCtrl', function ($scope, $http) {
             }
         }
     };
+
+   
 });

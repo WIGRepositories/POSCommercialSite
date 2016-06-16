@@ -202,5 +202,21 @@ namespace BTPOSDashboardAPI.Models
          public string insupdflag {get; set;}
            
     }
+    public class LicensePage
+    {
+        public int Id { get; set; }
+        public string LicenseType {get; set;}
+
+        public Decimal Unitprice { get; set; }
+        public int FeatureName { get; set; }
+        public int FeatureLabel { get; set; }
+        public int FeatureValue { get; set; }
+
+      
+        public string insupdflag { get; set; }
+
+        public int LicenseCatId { get; set; }
+
+    }
    
 }
