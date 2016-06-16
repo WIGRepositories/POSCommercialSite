@@ -204,5 +204,39 @@ namespace BTPOSDashboardAPI.Models
          public string insupdflag {get; set;}
            
     }
+
+    public class Fleet
+    {
+
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
+        public string PhoneNo { get; set; }
+        public string EmailAddress { get; set; }
+
+        public string CompanyName { get; set; }
+        public string Description { get; set; }
+
+        public string Title { get; set; }
+        public string CompanyEmployeSize { set; get; }
+
+        public string FleetSize { set; get; }
+
+        public string CurrentSystemInUse { set; get; }
+
+        public int SentNewProductsEmails { set; get; }
+
+        public string Gender { set; get; }
+
+        public string howdidyouhearaboutus { get; set; }
+
+        public int Agreetotermsandconditions { get; set; }
+
+        public string Address { get; set; }
+
+       // public string insupdflag { get; set; }
+
+    }
+
    
 }
