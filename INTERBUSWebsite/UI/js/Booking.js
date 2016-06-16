@@ -5,55 +5,65 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
     //    $scope.routes = response.data;
 
     // })
+    var stat = 0;
     $scope.selectedSeats = new Array();
     $scope.selectedSeats.pssngr = new Array();
     $scope.selectedSeats.returnpssngr = new Array();
 
-   
-    $scope.test = function () {
-        var currstyle = document.getElementById('imgTd').style.display;
-        document.getElementById('imgTd').style.display = (currstyle == "none") ? "table-cell" : "none";
-    }
-    $scope.count = 0;
-    $scope.AddSeats = function (x) {
-        var item = {
-            "SeatId": x
-           , "SeatNo": ""
-            ,"NoOfSeats":$scope.count
-           , "Fname": ""
-           , "Lname": ""
-           , "Age": ""
-           , "Sex": ""
-           , "Identityproof": ""
-
-        }
-        if ($localStorage.waytype == 1) {
-            $scope.selectedSeats.pssngr.push(item);
-
-            $scope.count = $scope.selectedSeats.pssngr.length;
-        } else if ($localStorage.waytype == 2) {
-            $scope.selectedSeats.returnpssngr.push(item);
-
-            //$scope.returncount = $scope.selectedSeats.returnpssngr.length;
-        }
-       
-    }
-
-
-    $scope.GetAvailableServices = function ()
-    {
+    $scope.GetAvailableServices = function () {
         $scope.srcId = $localStorage.srcId;
         $scope.destId = $localStorage.destId;
         $scope.way = $localStorage.waytype;
 
         //make a get request to database and show in a tabular form
-       
+
         $http.get('http://localhost:52800/api/TicketBooking/GetAvailableServices?srcId=' + $scope.srcId + '&destId=' + $scope.destId).then(function (response, req) {
-            $scope.services = response.data;
-        })
+            $scope.services = response.data;     });
 
     }
-    var stat = 0;
+
+    $scope.test = function () {
+        var currstyle = document.getElementById('imgTd').style.display;
+        document.getElementById('imgTd').style.display = (currstyle == "none") ? "table-cell" : "none";
+    }
+
+    $scope.count = 0;
+    $scope.AddSeats = function (x) {
+
+        if ($localStorage.waytype == 1 || ($localStorage.waytype == 2 && stat < 1)) {
+            var item = {
+                "SeatId": x
+        , "SeatNo": ""
+         , "NoOfSeats": $scope.count
+        , "Fname": ""
+        , "Lname": ""
+        , "Age": ""
+        , "Sex": ""
+        , "Identityproof": ""
+
+            }
+            $scope.selectedSeats.pssngr.push(item);
+
+            $scope.count = $scope.selectedSeats.pssngr.length;
+            $csope.subtotal = $scope.count * $scope.Booking.Cost;
+        }
+
+        else if ($localStorage.waytype == 2 && stat == 1) {
+            var returndata = {
+                "SeatId": x
+      , "SeatNo": ""
+            }
+            $scope.selectedSeats.pssngr.push(returndata);
+
+            $scope.count = $scope.selectedSeats.pssngr.length;
+        }
+        // $scope.seats = $scope.count;
+
+    }
+
+
+
+   
     $scope.savedata = function (selectedSeats) {
         if ($localStorage.waytype == 1) {
             var book = { "No_Seats": "5", "cost": "1500", "JourneyType": "1", "passengersList": selectedSeats.pssngr, "Seatcost": "900" };
@@ -72,19 +82,26 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         {
           "SeatId": null,    "Fname": null,     "Lname": null,    "Age": 33,    "Sex": 0,   "Identityproof": null   }  ]
     }*/
+            $scope.showDiv = true;
             $localStorage.book = book;
             var req = { method: 'POST', url: 'http://localhost:52800/api/TicketBooking/SaveBookingDetails', data: book }
             $http(req).then(function (res) { window.location.href = "TicketPage.html"; });
-        } else if ($localStorage.waytype == 2 && stat <= 1)
+        }
+        else if ($localStorage.waytype == 2 && stat <= 1)
         {
-            var book = { "No_Seats": "5", "cost": "1500", "JourneyType": "1", "passengersList": selectedSeats.returnpssngr, "Seatcost": "900" };
+         
+            var book = { "No_Seats": "5", "cost": "1500", "JourneyType": "1", "passengersList": selectedSeats.pssngr, "Seatcost": "900" };
             $localStorage.book = book;
             var req = { method: 'POST', url: 'http://localhost:52800/api/TicketBooking/SaveBookingDetails', data: book }
             // $http(req).then(function (res) { window.location.href = "TicketPage.html"; });
+          
             stat++;
             if (stat == 1) {
+              
                 $http.get('http://localhost:52800/api/TicketBooking/GetAvailableServices?srcId=' + $scope.destId + '&destId=' + $scope.srcId).then(function (response, req) {
                     $scope.services = response.data;
+                    $scope.showDiv = false;
+                   
                 })
             } else { window.location.href = "TicketPage.html"; }
         }

@@ -67,7 +67,24 @@ namespace INTERBUSWebsite.Controllers
 
                 return Tbl;
           }
+    [HttpGet]
+          public DataTable GetCities(int srcId, int destId)
+          { 
+              DataTable dt=new DataTable();
+              //connect to database
+              SqlConnection conn = new SqlConnection();
+              //connetionString="Data Source=ServerName;Initial Catalog=DatabaseName;User ID=UserName;Password=Password"
+              conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["btposdb"].ToString();
 
+              SqlCommand cmd = new SqlCommand("select CityName from CitiesTable where CityId in('" + srcId + "','" + destId + "')", conn);
+             
+              DataSet ds = new DataSet();
+              SqlDataAdapter db = new SqlDataAdapter(cmd);
+              db.Fill(ds);
+              dt = ds.Tables[0];
+              int a = dt.Rows.Count;
+              return dt;
+          }
 //[HttpGet]
 //          public DataTable GetTicketDetails(int srcId, int destId)
 //          {
