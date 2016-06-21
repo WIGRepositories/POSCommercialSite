@@ -9,7 +9,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
             $scope.Stops = response.data;
         })
        
-        $http.get('http://localhost:1476/api/Stops/TypesByGroupId?groupid=3').then(function (res, data) {
+        $http.get('http://localhost:52800/api/Stops/TypesByGroupId?groupid=3').then(function (res, data) {
             $scope.licenses = res.data;
 
         });
@@ -24,7 +24,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         $localStorage.waytype = $scope.way1;
         window.location.href = "booking.html";
     }
-$scope.Signin = function () {
+    $scope.Signin = function () {
 
     var u = $scope.UserName;
     var p = $scope.Password
@@ -61,6 +61,10 @@ $scope.Signin = function () {
     });
 }
 
+    $scope.GotToLicensePage = function (t) {
+        $localStorage.licenseId = t.Id;
+        window.location.href = "LicensePage.html";
+    }
 });
 
 
