@@ -254,37 +254,42 @@
     </div>
     <!--End Header-->
     <div style="margin-top:80px">
-        <h2>Fleet owner code: FL001</h2>
-        <h2 style="text-align:center">Cart Details</h2>
+      
+        <div class="col-md-5">
+            Fleet Owner Code:<select ng-show="{{fleetownercode}}">
 
-        <div class="container" style="margin-bottom:10px">
+                <option value="">Select</option>
+            </select>
+            <h2 style="text-align:center">Cart Details</h2>
 
-            <table class="table table-bordered">
-                <thead>
-                    <tr style="height:50px">
-                        <th>S.No</th>
-                        <th>Item</th>
-                        <th>Renewal Type</th>
-                        <th>No. of Months</th>                        
-                        <th>Unit Price</th>
-                        <th>Tax</th>
-                        <th>Discout</th>
-                        <th>Subtotal</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>{{selLicense.LicenseType}}</td>
-                        <td>Monthly</td>
-                        <td><input type="number" placeholder="0" style="width:20%" ng-init="qty=0" ng-model="qty"/></td>                        
-                        <td>$ {{selLicensePrice.UnitPrice}}</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>{{qty * selLicensePrice.UnitPrice}}</td>
-                    </tr>
+            <div class="container" style="margin-bottom:10px">
 
-                    <!--<tr>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr style="height:50px">
+                            <th>S.No</th>
+                            <th>Item</th>
+                            <th>Renewal Type</th>
+                            <th>No. of Months</th>
+                            <th>Unit Price</th>
+                            <th>Tax</th>
+                            <th>Discout</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>{{selLicense.LicenseType}}</td>
+                            <td>Monthly</td>
+                            <td><input type="number" placeholder="0" style="width:20%" ng-init="qty=0" ng-model="qty" /></td>
+                            <td>$ {{selLicensePrice.UnitPrice}}</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>{{qty * selLicensePrice.UnitPrice}}</td>
+                        </tr>
+
+                        <!--<tr>
                         <td>1</td>
                         <td>Basic Lisence</td>
                         <td><input type="number" placeholder="0" style="width:20%" /></td>
@@ -315,21 +320,21 @@
                     </tr>-->
 
 
-                </tbody>
-                <tfoot>
-                    <tr style="height:50px">
+                    </tbody>
+                    <tfoot>
+                        <tr style="height:50px">
 
-                        <td colspan="7" align="right">Total</td>
-                        <td>$ {{qty * selLicensePrice.UnitPrice}}</td>
-                    </tr>
-                </tfoot>
-            </table>
+                            <td colspan="7" align="right">Total</td>
+                            <td>$ {{qty * selLicensePrice.UnitPrice}}</td>
+                        </tr>
+                    </tfoot>
+                </table>
 
-            <button style="float:right" type="button" class="btn btn-primary" ng-click="processPymt();">Payment</button>
+                <button style="float:right" type="button" class="btn btn-primary" ng-click="processPymt();">Payment</button>
+
+            </div>
 
         </div>
-
-    </div>
 
     <div class="row">
         <div class="col-lg-12">

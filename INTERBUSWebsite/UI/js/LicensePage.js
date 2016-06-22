@@ -3,6 +3,7 @@ var app = angular.module('myApp', ['ngStorage'])
 var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
     $scope.licenseCatId = $localStorage.licenseId;
+    $scope.FleetOwnerCode = $localStorage.code;
 
     $scope.GetLicense = function () {
 
@@ -21,33 +22,34 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
       
     }
 
-    $scope.GoToConfirmation = function (code, License, Lid) {
-      
+    $scope.GoToConfirmation = function (code, License, Lid, result) {
+
         if (code == null) {
             alert('please enter valid fleet owner code or contact administrator.');
             return false;
         }
         else {
 
-            $scope.save(lic, code);
+            $http.get('http://localhost:52800/api/fleetownerlicense/validatefleetowner?fleetownercode=' + $scope.code).then(function (response, req) {
+                $scope.result = response.data;
 
-   /*$http.get('http://localhost:52800/api/fleetownerlicense/validatefleetowner?fleetownercode=' + code).then(function (response, req) {
-       $scope.result = response.data;
-       if ($scope.result > 0) {
-
-                if ($scope.result > 0) {
+                if ($scope.result < 0) {
+                    alert('invalid fleet owner code');
+                   
+                }
+                else {
                     $localStorage.License = License;
                     $localStorage.LicenseTypeId = Lid;
+                    $localStorage.FleetOwnerCode = $scope.result;
+
                     window.location.href = "http://localhost:52800/UI/Cartdetails.html";
                 }
-       else
-           alert('invalid fleet owner code');
-
-            });*/
+                   
+              
+            });
         }
-       
-       
-   };
+    };
+
    $scope.save = function (LicenseTypeId, code) {
 
        var License = {
