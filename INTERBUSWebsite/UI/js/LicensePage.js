@@ -11,29 +11,32 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
             alert('No license details configured for the selected license category. Please contact INTERBUS administartor.');
             return;
         }
-        $http.get('http://localhost:52800/api/LicensePage/GetLicense?catId=8').then(function (response, req) {
+        $http.get('http://localhost:52800/api/LicensePage/GetLicense?catId='+$scope.licenseCatId).then(function (response, req) {
             $scope.License = response.data;
-            if($scope.License == null)
-            {
+            if ($scope.License == null) {
                 alert('No license details configured for the selected license category. Please contact INTERBUS administartor.');
                 return;
             }
-        })
+        });
 
     }
 
-    $scope.GoToConfirmation = function (code) {
+    $scope.GoToConfirmation = function (code, License, Lid) {
 
         if (code == null) {
             alert('please enter valid fleet owner code or contact administrator.');
             return false;
         }
         else {
+
    $http.get('http://localhost:52800/api/fleetownerlicense/validatefleetowner?fleetownercode=' + code).then(function (response, req) {
                 $scope.result = response.data;
 
-                if ($scope.result > 0)
-                    window.location.href = "http://localhost:52800/UI/LicenseConfirmation.html";
+                if ($scope.result > 0) {
+                    $localStorage.License = License;
+                    $localStorage.LicenseTypeId = Lid;
+                    window.location.href = "http://localhost:52800/UI/Cartdetails.html";
+                }
                 else
                     alert('invalid fleet owner code');
 
