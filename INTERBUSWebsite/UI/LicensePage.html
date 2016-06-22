@@ -276,7 +276,7 @@
 
                                             <li ng-repeat="f in License.Table1 | filter:{ LicenseTypeId: Lt.Id }">{{f.FeatureLabel}} <strong>{{f.FeatureValue}}</strong></li>
 
-                                            <li class="text-center"><a ng-click="GoToConfirmation(txt);" class="btn btn-danger" style="background-color: #EF0505">Buy Now</a></li>
+                                            <li class="text-center"><a ng-click="GoToConfirmation(Lt.Id, txt);" class="btn btn-danger" style="background-color: #EF0505">Buy Now</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -338,45 +338,7 @@
 
             </div>
         </div>
-    </div>
-
-
-
-
-
-
-
-    <script>
-
-        var myIndex = 0;
-
-        carousel();
-
-
-
-        function carousel() {
-
-            var i;
-
-            var x = document.getElementsByClassName("mySlides");
-
-            for (i = 0; i < x.length; i++) {
-
-                x[i].style.display = "none";
-
-            }
-
-            myIndex++;
-
-            if (myIndex > x.length) { myIndex = 1 }
-
-            x[myIndex - 1].style.display = "block";
-
-            setTimeout(carousel, 4000); // Change image every 2 seconds
-
-        }
-
-    </script>
+    </div>  
 
 
 
@@ -404,6 +366,7 @@
 
     <script src="js/main.js"></script>
     <script src="js/angular.js"></script>
+    <script src="js/ngStorage.js"></script>
     <script src="js/LicensePage.js"></script>
 
 

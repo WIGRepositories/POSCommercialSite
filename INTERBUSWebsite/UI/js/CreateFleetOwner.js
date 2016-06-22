@@ -58,9 +58,10 @@ var ctrl = app.controller('myCtrl', function ($scope, $http) {
 
 
     $scope.save = function (FleetOwnerRequest1, flag) {
-
+       
         var FleetOwnerRequest1 = {
             //Id: Fleet.Id,
+            
             FirstName: FleetOwnerRequest1.FirstName,
             LastName: FleetOwnerRequest1.LastName,
 
@@ -77,11 +78,11 @@ var ctrl = app.controller('myCtrl', function ($scope, $http) {
             CompanyEmployeSize: FleetOwnerRequest1.CompanyEmployeSize,
             FleetSize: FleetOwnerRequest1.FleetSize,
             CurrentSystemInUse: FleetOwnerRequest1.CurrentSystemInUse,
-            SentNewProductsEmails: FleetOwnerRequest1.SentNewProductsEmails,
+            SentNewProductsEmails: 1,
             Gender: FleetOwnerRequest1.Gender,
             howdidyouhearaboutus: FleetOwnerRequest1.howdidyouhearaboutus,
-            Agreetotermsandconditions: FleetOwnerRequest1.Agreetotermsandconditions,
-            Address: FleetOwnerRequest1.Address,
+            Agreetotermsandconditions: 1,
+             Address: FleetOwnerRequest1.Address,
             insupdflag: flag         
        
         }

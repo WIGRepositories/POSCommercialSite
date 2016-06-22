@@ -205,8 +205,9 @@ namespace BTPOSDashboardAPI.Models
     public class LicensePage
     {
         public int Id { get; set; }
+        public int LicenseTypeId { get; set; }
         public string LicenseType {get; set;}
-
+        public string fleetownercode { get; set; }
         public Decimal Unitprice { get; set; }
         public int FeatureName { get; set; }
         public int FeatureLabel { get; set; }

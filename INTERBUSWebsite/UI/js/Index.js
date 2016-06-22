@@ -8,6 +8,13 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         $http.get('http://localhost:52800/api/Stops/GetStops').then(function (response, req) {
             $scope.Stops = response.data;
         })
+       
+        $http.get('http://localhost:1476/api/Stops/TypesByGroupId?groupid=3').then(function (res, data) {
+            $scope.licenses = res.data;
+
+        });
+
+
     }
 
     $scope.GetServices = function () {

@@ -43,6 +43,8 @@ namespace INTERBUSWebsite.Controllers
             // int found = 0;
             return ds;
         }
+
+        [HttpPost]
         public DataTable SaveLicence(LicensePage n)
         {
             DataTable Tbl = new DataTable();
@@ -72,11 +74,11 @@ namespace INTERBUSWebsite.Controllers
                 gsa.Value = Convert.ToString(n.Id);
                 cmd1.Parameters.Add(gsa);
 
-                SqlParameter gsa1 = new SqlParameter();
-                gsa1.ParameterName = "@LicenseCatId";
-                gsa1.SqlDbType = SqlDbType.Int;
-                gsa1.Value = Convert.ToString(n.LicenseCatId);
-                cmd1.Parameters.Add(gsa1);
+                //SqlParameter gsa1 = new SqlParameter();
+                //gsa1.ParameterName = "@LicenseCatId";
+                //gsa1.SqlDbType = SqlDbType.Int;
+                //gsa1.Value = Convert.ToString(n.LicenseCatId);
+                //cmd1.Parameters.Add(gsa1);
 
                 SqlParameter gid = new SqlParameter();
                 gid.ParameterName = "@Unitprice";

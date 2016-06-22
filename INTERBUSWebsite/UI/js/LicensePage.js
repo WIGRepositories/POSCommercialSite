@@ -1,6 +1,6 @@
 ﻿// JavaScript source code
-var app = angular.module('myApp', [])
-var ctrl = app.controller('myCtrl', function ($scope, $http,$localstorage) {
+var app = angular.module('myApp', ['ngStorage'])
+var ctrl = app.controller('myCtrl', function ($scope, $http, $localstorage) {
 
     $scope.GetLicense = function () {
 
@@ -10,50 +10,48 @@ var ctrl = app.controller('myCtrl', function ($scope, $http,$localstorage) {
       
     }
 
-   $scope.GoToConfirmation = function (txt) {
+    $scope.GoToConfirmation = function (lic, code) {
       
         if (code == null) {
             alert('please enter valid fleet owner code or contact administrator.');
             return false;
         }
         else {
-   $http.get('http://localhost:52800/api/fleetownerlicense/validatefleetowner?fleetownercode=' + code).then(function (response, req) {
+
+            $scope.save(lic, code);
+
+   /*$http.get('http://localhost:52800/api/fleetownerlicense/validatefleetowner?fleetownercode=' + code).then(function (response, req) {
        $scope.result = response.data;
-       save();
+       if ($scope.result > 0) {
 
-                if ($scope.result > 0)
-                    window.location.href = "http://localhost:52800/UI/LicenseConfirmation.html";
-                else
-                    alert('invalid fleet owner code');
+           window.location.href = "http://localhost:52800/UI/LicenseConfirmation.html";
+       }
+       else
+           alert('invalid fleet owner code');
 
-            });
+            });*/
         }
        
        
    };
-   $scope.save = function (License, flag) {
+   $scope.save = function (LicenseTypeId, code) {
 
        var License = {
-           LicenseType: License.LicenseType,
-           Id: License.Id,
-           Unitprice: License.Unitprice,
-           FeatureName: License.FeatureName,
-           FeatureValue: License.FeatureValue,
-
-
+           LicenseTypeId: LicenseTypeId,
+           fleetownercode:code 
        };
        $localstorage.value = License;
-       window.location.href = "Cartdetails.html";
-       
-
        var req = {
            method: 'POST',
            url: 'http://localhost:52800/api/LicensePage/SaveLicence',
            data: License
        }
        $http(req).then(function (response) {
-
+           alert(response.data);
+           window.location.href = "Cartdetails.html";
        });
+
+       //
    };
 
 

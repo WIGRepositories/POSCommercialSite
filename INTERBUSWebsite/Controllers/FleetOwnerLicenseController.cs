@@ -1,5 +1,4 @@
 ﻿using BTPOSDashboardAPI.Models;
-
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -242,12 +241,12 @@ namespace INTERBUSWebsite.Controllers
                 //conn.ConnectionString = "Data Source=localhost;Initial Catalog=MyAlerts;integrated security=sspi;";
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "InsupdCreateFleetOwner";
+                cmd.CommandText = "InSupdFleetOwnerRequest1";
                 cmd.Connection = conn;
                 conn.Open();
 
 
-                SqlParameter UId = new SqlParameter("Id", SqlDbType.Int);
+                 SqlParameter UId = new SqlParameter("Id", SqlDbType.Int);
                  UId.Value = C.Id;
                  cmd.Parameters.Add(UId);
 
@@ -293,6 +292,7 @@ namespace INTERBUSWebsite.Controllers
             return Tbl;
         }
         [HttpPost]
+        [Route("api/FleetOwnerLicense/CreateNewFOR")]
         public DataTable CreateNewFOR(FleetOwnerRequest1 FR)
         {
             DataTable Tbl = new DataTable();
@@ -307,14 +307,14 @@ namespace INTERBUSWebsite.Controllers
                 //conn.ConnectionString = "Data Source=localhost;Initial Catalog=MyAlerts;integrated security=sspi;";
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "InsFleetOwnerRequest";
+                cmd.CommandText = "InSupdFleetOwnerRequestDetails";
                 cmd.Connection = conn;
                 conn.Open();
 
 
-                SqlParameter FRId = new SqlParameter("Id", SqlDbType.Int);
-                FRId.Value = FR.Id;
-                cmd.Parameters.Add(FRId);
+                //SqlParameter FRId = new SqlParameter("Id", SqlDbType.Int);
+                //FRId.Value = FR.Id;
+                //cmd.Parameters.Add(FRId);
 
                 SqlParameter FRFirstName = new SqlParameter("@FirstName", SqlDbType.VarChar, 50);
                 FRFirstName.Value = FR.FirstName;
@@ -324,15 +324,15 @@ namespace INTERBUSWebsite.Controllers
                 LastName.Value = FR.LastName;
                 cmd.Parameters.Add(LastName);
 
-                SqlParameter FREmailAdress = new SqlParameter("@EmailAdress ", SqlDbType.VarChar, 50);
-                FREmailAdress.Value = FR.EmailAdress;
-                cmd.Parameters.Add(FREmailAdress);
+                SqlParameter FREmailAddress = new SqlParameter("@EmailAddress ", SqlDbType.VarChar, 50);
+                FREmailAddress.Value = FR.EmailAdress;
+                cmd.Parameters.Add(FREmailAddress);
 
                 SqlParameter FRTitle = new SqlParameter("@Title", SqlDbType.VarChar, 20);
                 FRTitle.Value = FR.Title;
                 cmd.Parameters.Add(FRTitle);
 
-                SqlParameter FRCompanyName = new SqlParameter("@CompanyName", SqlDbType.VarChar, 15);
+                SqlParameter FRCompanyName = new SqlParameter("@CompanyName", SqlDbType.VarChar, 20);
                 FRCompanyName.Value = FR.CompanyName;
                 cmd.Parameters.Add(FRCompanyName);
 
@@ -346,42 +346,64 @@ namespace INTERBUSWebsite.Controllers
 
                 SqlParameter FleetSize = new SqlParameter("@FleetSize", SqlDbType.Int);
                 FleetSize.Value = FR.FleetSize;
-                cmd.Parameters.Add(FleetSize);
+                cmd.Parameters.Add(FleetSize);               
 
-                SqlParameter CurrentSystemInUse = new SqlParameter("@CurrentSystemInUse", SqlDbType.VarChar, 15);
-                CurrentSystemInUse.Value = FR.CurrentSystemInUse;
-                cmd.Parameters.Add(CurrentSystemInUse);
-
-                SqlParameter SentNewProductsEmails = new SqlParameter("@SentNewProductsEmails", SqlDbType.VarChar, 15);
-                SentNewProductsEmails.Value = FR.SentNewProductsEmails;
-                cmd.Parameters.Add(SentNewProductsEmails);
-
-                SqlParameter Gender = new SqlParameter("@Gender", SqlDbType.VarChar, 20);
+                SqlParameter Gender = new SqlParameter("@Gender", SqlDbType.Int);
                 Gender.Value = FR.Gender;
-                cmd.Parameters.Add(Gender);
-
-                SqlParameter howdidyouhearaboutus = new SqlParameter("@howdidyouhearaboutus", SqlDbType.VarChar, 50);
-                howdidyouhearaboutus.Value = FR.howdidyouhearaboutus;
-                cmd.Parameters.Add(howdidyouhearaboutus);
-
-                SqlParameter Agreetotermsandconditions = new SqlParameter("@Agreetotermsandconditions", SqlDbType.Int);
-                Agreetotermsandconditions.Value = FR.Agreetotermsandconditions;
-                cmd.Parameters.Add(Agreetotermsandconditions);
+                cmd.Parameters.Add(Gender);            
 
 
                 SqlParameter Address = new SqlParameter("@Address", SqlDbType.VarChar, 15);
                 Address.Value = FR.Address;
                 cmd.Parameters.Add(Address);
 
-               
+                SqlParameter PhoneNo = new SqlParameter("@PhoneNo", SqlDbType.VarChar,50);
+                PhoneNo.Value = FR.PhoneNo;
+                cmd.Parameters.Add(PhoneNo);
+
+
                 SqlParameter insupdflag = new SqlParameter("@insupdflag", SqlDbType.VarChar, 10);
                 insupdflag.Value = FR.insupdflag;
                 cmd.Parameters.Add(insupdflag);
 
-
                 cmd.ExecuteScalar();
-
                 cmd.Parameters.Clear();
+                conn.Close();
+
+
+                //connetionString="Data Source=ServerName;Initial Catalog=DatabaseName;User ID=UserName;Password=Password"
+                conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["btposdb"].ToString();
+                //conn.ConnectionString = "Data Source=localhost;Initial Catalog=MyAlerts;integrated security=sspi;";
+                SqlCommand cmd1 = new SqlCommand();
+                cmd1.CommandType = CommandType.StoredProcedure;
+                cmd1.CommandText = "InSupdFleetOwnerRequest";
+                cmd1.Connection = conn;
+                conn.Open();
+
+                SqlParameter CurrentSystemInUse = new SqlParameter("@CurrentSystemInUse", SqlDbType.VarChar, 50);
+                CurrentSystemInUse.Value = FR.CurrentSystemInUse;
+                cmd1.Parameters.Add(CurrentSystemInUse);
+
+                SqlParameter SentNewProductsEmails = new SqlParameter("@SentNewProductsEmails", SqlDbType.Int);
+                SentNewProductsEmails.Value = FR.SentNewProductsEmails;
+                cmd1.Parameters.Add(SentNewProductsEmails);
+
+                SqlParameter howdidyouhearaboutus = new SqlParameter("@howdidyouhearaboutus", SqlDbType.VarChar, 50);
+                howdidyouhearaboutus.Value = FR.howdidyouhearaboutus;
+                cmd1.Parameters.Add(howdidyouhearaboutus);
+
+                SqlParameter Agreetotermsandconditions = new SqlParameter("@Agreetotermsandconditions", SqlDbType.Int);
+                Agreetotermsandconditions.Value = FR.Agreetotermsandconditions;
+                cmd1.Parameters.Add(Agreetotermsandconditions);
+
+                SqlParameter insupdflag1 = new SqlParameter("@insupdflag", SqlDbType.VarChar, 10);
+                insupdflag1.Value = FR.insupdflag;
+                cmd1.Parameters.Add(insupdflag1);
+
+                cmd1.ExecuteScalar();
+                cmd1.Parameters.Clear();
+                
+
             }
             catch (Exception ex)
             {
@@ -391,7 +413,7 @@ namespace INTERBUSWebsite.Controllers
             // int found = 0;
             return Tbl;
         }
-
+       
         public void Options()
         {
 

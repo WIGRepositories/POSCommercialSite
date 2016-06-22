@@ -144,9 +144,14 @@
                                 <li>
 
                                     <a style="text-decoration:none" href="#">Products</a>
-                                    <ul><li><a href="Licensepage.html">Fleet Owner Lisence</a></li>
+                                    <ul ng-repeat="t in licenses">
+                                        <div>
+                                            <li id="{{t.Id}}"><a href="Licensepage.html">{{t.Name}}</a></li>
+                                            <input type="text" />
+                                        </div>
+                                        <!--<li><a href="Licensepage.html">Fleet Owner Lisence</a></li>
                                         <li><a href="Licensepage.html">BTPOS Lisence</a></li>
-                                        <li><a href="Licensepage.html">TroubleTicket Lisence</a></li>
+                                        <li><a href="Licensepage.html">TroubleTicket Lisence</a></li>-->
                                     </ul>
                                 </li>
 
