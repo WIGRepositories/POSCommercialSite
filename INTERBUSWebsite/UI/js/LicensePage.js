@@ -1,16 +1,27 @@
 ﻿// JavaScript source code
 var app = angular.module('myApp', ['ngStorage'])
-var ctrl = app.controller('myCtrl', function ($scope, $http, $localstorage) {
+var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
+
+    $scope.licenseCatId = $localStorage.licenseId;
 
     $scope.GetLicense = function () {
 
-        $http.get('http://localhost:52800/api/LicensePage/GetLicense?catId=8').then(function (response, req) {
+        if($scope.licenseCatId == null)
+        {
+            alert('No license details configured for the selected license category. Please contact INTERBUS administartor.');
+            return;
+        }
+        $http.get('http://localhost:52800/api/LicensePage/GetLicense?catId='+$scope.licenseCatId).then(function (response, req) {
             $scope.License = response.data;
-        })
+            if ($scope.License == null) {
+                alert('No license details configured for the selected license category. Please contact INTERBUS administartor.');
+                return;
+            }
+        });
       
     }
 
-    $scope.GoToConfirmation = function (lic, code) {
+    $scope.GoToConfirmation = function (code, License, Lid) {
       
         if (code == null) {
             alert('please enter valid fleet owner code or contact administrator.');
@@ -24,8 +35,11 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localstorage) {
        $scope.result = response.data;
        if ($scope.result > 0) {
 
-           window.location.href = "http://localhost:52800/UI/LicenseConfirmation.html";
-       }
+                if ($scope.result > 0) {
+                    $localStorage.License = License;
+                    $localStorage.LicenseTypeId = Lid;
+                    window.location.href = "http://localhost:52800/UI/Cartdetails.html";
+                }
        else
            alert('invalid fleet owner code');
 
