@@ -174,13 +174,12 @@ namespace BTPOSDashboardAPI.Models
     public class FleetOwnerRequest1
     { 
 
-     //   public int  Id {get; set;}
+        public int  Id {get; set;}
        public string  FirstName {get; set;}
 
         public string LastName{get; set;}
-        public string PhoneNo{get; set;}
-        public  string EmailAddress {get; set;}
-
+        public int PhoneNo{get; set;}
+        public  string EmailAdress {get; set;}
         public string CompanyName {get; set;}
         public string Description {get; set;}
 
@@ -190,19 +189,35 @@ namespace BTPOSDashboardAPI.Models
         public string FleetSize {set; get;}
         
         public string CurrentSystemInUse {set; get;}
-
-        public int  SentNewProductsEmails { set; get; }
+        public string SentNewProductsEmails {set;get;}
           
         public string Gender {set; get;}  
 
         public string howdidyouhearaboutus {get; set;}
-
-        public int Agreetotermsandconditions { get; set; }
+           
+         public int Agreetotermsandconditions {get; set;}
 
          public  string Address {get; set;}
           
          public string insupdflag {get; set;}
            
+    }
+    public class LicensePage
+    {
+        public int Id { get; set; }
+        public int LicenseTypeId { get; set; }
+        public string LicenseType {get; set;}
+        public string fleetownercode { get; set; }
+        public Decimal Unitprice { get; set; }
+        public int FeatureName { get; set; }
+        public int FeatureLabel { get; set; }
+        public int FeatureValue { get; set; }
+
+      
+        public string insupdflag { get; set; }
+
+        public int LicenseCatId { get; set; }
+
     }
    
 }

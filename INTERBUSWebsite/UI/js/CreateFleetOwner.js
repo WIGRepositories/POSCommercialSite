@@ -78,10 +78,10 @@ var ctrl = app.controller('myCtrl', function ($scope, $http) {
             CompanyEmployeSize: FleetOwnerRequest1.CompanyEmployeSize,
             FleetSize: FleetOwnerRequest1.FleetSize,
             CurrentSystemInUse: FleetOwnerRequest1.CurrentSystemInUse,
-            SentNewProductsEmails: FleetOwnerRequest1.SentNewProductsEmails,
+            SentNewProductsEmails: 1,
             Gender: FleetOwnerRequest1.Gender,
             howdidyouhearaboutus: FleetOwnerRequest1.howdidyouhearaboutus,
-            Agreetotermsandconditions: FleetOwnerRequest1.Agreetotermsandconditions,
+            Agreetotermsandconditions: 1,
              Address: FleetOwnerRequest1.Address,
             insupdflag: flag         
        
