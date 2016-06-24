@@ -14,7 +14,6 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
         });
 
-
     }
 
     $scope.GetServices = function () {
@@ -37,11 +36,11 @@ $scope.Signin = function () {
     if (p == null) {
         alert('Please enter password');
         return;
+
     }
 
     var inputcred = { LoginInfo: u, Passkey: p }
-
-
+    
     var req = {
         method: 'POST',
         url: 'http://localhost:52800/api/ValidateCredentials/ValidateCredentials',

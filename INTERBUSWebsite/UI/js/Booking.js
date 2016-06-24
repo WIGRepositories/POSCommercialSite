@@ -18,7 +18,9 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         //make a get request to database and show in a tabular form
 
         $http.get('http://localhost:52800/api/TicketBooking/GetAvailableServices?srcId=' + $scope.srcId + '&destId=' + $scope.destId).then(function (response, req) {
-            $scope.services = response.data;     });
+            $scope.services = response.data;
+            $scope.showDiv = true;
+        });
 
     }
 
@@ -26,11 +28,12 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         var currstyle = document.getElementById('imgTd').style.display;
         document.getElementById('imgTd').style.display = (currstyle == "none") ? "table-cell" : "none";
     }
-
+    $scope.totalseats = 0;
     $scope.count = 0;
     $scope.AddSeats = function (x) {
-
+      
         if ($localStorage.waytype == 1 || ($localStorage.waytype == 2 && stat < 1)) {
+            $scope.showDiv = true;
             var item = {
                 "SeatId": x
         , "SeatNo": ""
@@ -45,17 +48,20 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
             $scope.selectedSeats.pssngr.push(item);
 
             $scope.count = $scope.selectedSeats.pssngr.length;
-            $csope.subtotal = $scope.count * $scope.Booking.Cost;
+            $scope.totalseats = $scope.count;
+            $scope.count = 0;
+          //  $scope.subtotal = $scope.count * $scope.Booking.Cost;
         }
-
+      
         else if ($localStorage.waytype == 2 && stat == 1) {
+          
             var returndata = {
                 "SeatId": x
-      , "SeatNo": ""
+      , "SeatNo": "123"
             }
-            $scope.selectedSeats.pssngr.push(returndata);
-
-            $scope.count = $scope.selectedSeats.pssngr.length;
+            $scope.selectedSeats.returnpssngr.push(returndata);
+          
+            $scope.count = $scope.selectedSeats.returnpssngr.length;
         }
         // $scope.seats = $scope.count;
 
@@ -66,6 +72,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
    
     $scope.savedata = function (selectedSeats) {
         if ($localStorage.waytype == 1) {
+            $scope.showDiv = true; 
             var book = { "No_Seats": "5", "cost": "1500", "JourneyType": "1", "passengersList": selectedSeats.pssngr, "Seatcost": "900" };
             //for(int i=0; i<selectedSeats.length; i++){}
             // passengersList: [{ "SeatId": "1", SeatNo: selectedSeats.SelectedSeatId, Fname: seat.pssngr.fname, Lname: seat.pssngr.lname, "Age": "30", "Sex": "0", "Identityproof": "adhar" }]
@@ -82,19 +89,21 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         {
           "SeatId": null,    "Fname": null,     "Lname": null,    "Age": 33,    "Sex": 0,   "Identityproof": null   }  ]
     }*/
-            $scope.showDiv = true;
+          
             $localStorage.book = book;
             var req = { method: 'POST', url: 'http://localhost:52800/api/TicketBooking/SaveBookingDetails', data: book }
+
             $http(req).then(function (res) { window.location.href = "TicketPage.html"; });
+         
         }
         else if ($localStorage.waytype == 2 && stat <= 1)
         {
          
-            var book = { "No_Seats": "5", "cost": "1500", "JourneyType": "1", "passengersList": selectedSeats.pssngr, "Seatcost": "900" };
+            var book = { "No_Seats": "5", "cost": "1500", "JourneyType": "1", "passengersList": selectedSeats.pssngr, "ReturnpassengersList": selectedSeats.returnpssngr, "Seatcost": "900" };
             $localStorage.book = book;
             var req = { method: 'POST', url: 'http://localhost:52800/api/TicketBooking/SaveBookingDetails', data: book }
             // $http(req).then(function (res) { window.location.href = "TicketPage.html"; });
-          
+         
             stat++;
             if (stat == 1) {
               
