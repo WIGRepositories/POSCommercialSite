@@ -3,9 +3,6 @@
 <!--<![endif]-->
 <head>
 
-    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
-    <script type="text/javascript" src="js/wickedpicker.min.js"></script>
     <link rel="stylesheet" href="css/w3.css">
     <!-- Latest compiled and minified CSS -->
     <!-- Optional theme -->
@@ -14,6 +11,7 @@
 
     <title>Interbus - Get Moving Anywhere, Comfortably</title>
 
+    <link href="css/themes/style2/pink-blue.css" rel="stylesheet" />
 
     <link href="css/StyleSheet2.css" media="screen,print" rel="stylesheet" />
     <link href="css/StyleSheet1.css" media="screen,print" rel="stylesheet" />
@@ -22,6 +20,14 @@
     <link href="css/StyleSheet5.css" media="screen&#32;and&#32;(min-width:&#32;900px)" rel="stylesheet" />
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/wickedpicker.min.css">
+    <link type="text/css" rel="stylesheet" href="vendors/bootstrap-datepicker/css/datepicker.css">
+    <link type="text/css" rel="stylesheet" href="vendors/bootstrap-daterangepicker/daterangepicker-bs3.css">
+    <!--<link type="text/css" rel="stylesheet" href="vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css">-->
+    <link type="text/css" rel="stylesheet" href="vendors/bootstrap-timepicker/css/bootstrap-timepicker.min.css">
+
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
+    <script type="text/javascript" src="js/wickedpicker.min.js"></script>
     <style>
         rr.div a {
             text-decoration: none;
@@ -127,9 +133,8 @@
                                         <li><a href="#">Schedules</a></li>
                                         <li><a href="#">CheckFare</a></li>
                                         <li><a href="#">Cancellation</a></li>
-
-
                                     </ul>
+
                                 </li>
                                 <li>
 
@@ -139,7 +144,14 @@
                                 <li>
 
                                     <a style="text-decoration:none" href="#">Products</a>
-                                    <ul><li><a href="Licensepage.html">Fleet Owner Lisence</a></li></ul>
+                                    <ul >
+                                     
+                                        <li ng-repeat="t in licenses" id="{{t.Id}}" ><a href="#" ng-click="GotToLicensePage(t);">{{t.Name}}</a></li>                                           
+                                       
+                                        <!--<li><a href="Licensepage.html">Fleet Owner Lisence</a></li>
+                                        <li><a href="Licensepage.html">BTPOS Lisence</a></li>
+                                        <li><a href="Licensepage.html">TroubleTicket Lisence</a></li>-->
+                                    </ul>
                                 </li>
 
                                 <li>
@@ -177,10 +189,17 @@
         <!--End header-->
 
         <div id="main-hero" style="margin-top:58px">
-            <img class="mySlides" src="Images/promos/bus4.jpg" style="width:100%; height:350px;">
+            <!--<img class="mySlides" src="Images/promos/bus4.jpg" style="width:100%; height:350px;">
             <img class="mySlides" src="Images/promos/bus1.jpg" style="width:100%; height:350px;">
             <img class="mySlides" src="Images/promos/bus6.jpg" style="width:100%; height:350px;">
-            <img class="mySlides" src="Images/promos/bus3.jpg" style="width:100%; height:350px;"> 
+            <img class="mySlides" src="Images/promos/bus3.jpg" style="width:100%; height:350px;">--> 
+
+            <img class="mySlides" src="Images/3.png" style="width:100%; height:350px;">
+            <img class="mySlides" src="Images/4.png" style="width:100%; height:350px;">
+            <img class="mySlides" src="Images/IMG-20160616-WA0012.jpg" style="width:100%; height:350px;">
+            <img class="mySlides" src="Images/IMG-20160616-WA0013.jpg" style="width:100%; height:350px;"> 
+            <img class="mySlides" src="images/IMG-20160616-WA0016.jpg" style="width:100%; height:350px;"> 
+            <img class="mySlides" src="images/IMG-20160616-WA0007.jpg" style="width:100%; height:350px;"> 
         </div>
 
         <div class="main-and-aside one-row r">
@@ -242,13 +261,18 @@
                                                             </p>
 
                                                             <a class="change-departure-time" href="">change time</a>
+
+                                                            
                                                             <input type="text" name="timepicker" class="timepicker" />
 
                                                         </div>
 
-
-
                                                     </div>
+
+                                               
+                                                        <input ng-model="result" value="1" type="radio" name="triptype"/> One Way
+                                                        <input ng-model="result" value="2" type="radio" name="triptype"/> Two Way
+                                                  
 
                                                     <div class="extra-options clearfix">
 

@@ -70,23 +70,14 @@ namespace BTPOSDashboardAPI.Models
 
     public class FleetOwnerRequest
     {
-       // public int Id { get; set; }
+        public int Id { get; set; }
         public String FirstName { get; set; }
         public String LastName { get; set; }
         public String Email { get; set; }
         public String MobileNo { get; set; }
         public String CompanyName { get; set; }
-        public String Description { get; set; }
+        public String Description { get; set; }       
         public string insupdflag { get; set; }
-
-        public string Company { get; set; }
-        public string Title { set; get; }
-        public int FleetOwnerId { set; get; }
-        public string Gender { set; get; }
-        public int FleetOwnerSize { set; get; }
-        public string Address { set; get; }
-        public int EmpId { set; get; }
-      
 
     }
 
@@ -178,6 +169,54 @@ namespace BTPOSDashboardAPI.Models
         public string OldPassword { set; get; }
         public string NewPassword { set; get; }
         public string ReenterNewPassword { set; get; }
+
+    }
+    public class FleetOwnerRequest1
+    { 
+
+        public int  Id {get; set;}
+       public string  FirstName {get; set;}
+
+        public string LastName{get; set;}
+        public int PhoneNo{get; set;}
+        public  string EmailAdress {get; set;}
+        public string CompanyName {get; set;}
+        public string Description {get; set;}
+
+        public string Title{get; set;}
+        public string CompanyEmployeSize {set; get;}
+
+        public string FleetSize {set; get;}
+        
+        public string CurrentSystemInUse {set; get;}
+        public string SentNewProductsEmails {set;get;}
+          
+        public string Gender {set; get;}  
+
+        public string howdidyouhearaboutus {get; set;}
+           
+         public int Agreetotermsandconditions {get; set;}
+
+         public  string Address {get; set;}
+          
+         public string insupdflag {get; set;}
+           
+    }
+    public class LicensePage
+    {
+        public int Id { get; set; }
+        public int LicenseTypeId { get; set; }
+        public string LicenseType {get; set;}
+        public string fleetownercode { get; set; }
+        public Decimal Unitprice { get; set; }
+        public int FeatureName { get; set; }
+        public int FeatureLabel { get; set; }
+        public int FeatureValue { get; set; }
+
+      
+        public string insupdflag { get; set; }
+
+        public int LicenseCatId { get; set; }
 
     }
    

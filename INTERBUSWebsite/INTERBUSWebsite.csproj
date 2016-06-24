@@ -133,7 +133,9 @@
     <Content Include="UI\images\1.jpg" />
     <Content Include="UI\images\2.jpg" />
     <Content Include="UI\images\3.jpg" />
+    <Content Include="UI\images\3.png" />
     <Content Include="UI\images\3550022623418199410.gif" />
+    <Content Include="UI\images\4.png" />
     <Content Include="UI\images\5.jpg" />
     <Content Include="UI\images\6.jpg" />
     <Content Include="UI\images\arrows.png" />
@@ -183,6 +185,10 @@
     <Content Include="UI\images\homepage_sprite_x2.png" />
     <Content Include="UI\images\icons\FeedBack.html" />
     <Content Include="UI\images\icons\loading.gif" />
+    <Content Include="UI\images\IMG-20160616-WA0007.jpg" />
+    <Content Include="UI\images\IMG-20160616-WA0012.jpg" />
+    <Content Include="UI\images\IMG-20160616-WA0013.jpg" />
+    <Content Include="UI\images\IMG-20160616-WA0016.jpg" />
     <Content Include="UI\images\interbus.jpg" />
     <Content Include="UI\images\login.png" />
     <Content Include="UI\images\logos\48-fares-and-payment-zipoyster-icon.png" />
@@ -217,6 +223,7 @@
     <Content Include="UI\js\angular.js" />
     <Content Include="UI\js\Booking.js" />
     <Content Include="UI\js\bootstrap.min.js" />
+    <Content Include="UI\js\Cartdetails.js" />
     <Content Include="UI\js\cc_af.js" />
     <Content Include="UI\js\CheckOut.js" />
     <Content Include="UI\js\createfleet.js" />
@@ -231,6 +238,7 @@
     <Content Include="UI\js\jquery.menu.js" />
     <Content Include="UI\js\jquery.nivo.slider.js" />
     <Content Include="UI\js\LicensePage.js" />
+    <Content Include="UI\js\licensepage1.js" />
     <Content Include="UI\js\Login.js" />
     <Content Include="UI\js\main.js" />
     <Content Include="UI\js\ngStorage.js" />
@@ -1046,6 +1054,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BookingController.cs" />
+    <Compile Include="Controllers\LicensePage.cs" />
     <Compile Include="Controllers\LicensePageController.cs" />
     <Compile Include="Controllers\StopsController.cs" />
     <Compile Include="Controllers\FleetOwnerLicenseController.cs" />

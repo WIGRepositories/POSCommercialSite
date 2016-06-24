@@ -8,15 +8,23 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         $http.get('http://localhost:52800/api/Stops/GetStops').then(function (response, req) {
             $scope.Stops = response.data;
         })
+       
+        $http.get('http://localhost:52800/api/Stops/TypesByGroupId?groupid=3').then(function (res, data) {
+            $scope.licenses = res.data;
+
+        });
+
+
     }
 
     $scope.GetServices = function () {
         $localStorage.srcId = $scope.S.Id;
         $localStorage.destId = $scope.D.Id;
-
+        $scope.way1 = $scope.result ;
+        $localStorage.waytype = $scope.way1;
         window.location.href = "booking.html";
     }
-$scope.Signin = function () {
+    $scope.Signin = function () {
 
     var u = $scope.UserName;
     var p = $scope.Password
@@ -53,6 +61,10 @@ $scope.Signin = function () {
     });
 }
 
+    $scope.GotToLicensePage = function (t) {
+        $localStorage.licenseId = t.Id;
+        window.location.href = "LicensePage.html";
+    }
 });
 
 

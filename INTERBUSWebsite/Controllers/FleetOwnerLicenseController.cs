@@ -1,5 +1,4 @@
 ﻿using BTPOSDashboardAPI.Models;
-
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -116,8 +115,9 @@ namespace INTERBUSWebsite.Controllers
         //}
 
         [HttpGet]
-        public int validatefleetowner(string fleetownercode)
+        public DataTable validatefleetowner()
         {
+            DataTable Tbl = new DataTable();
             //connect to database
             SqlConnection conn = new SqlConnection();
             //connetionString="Data Source=ServerName;Initial Catalog=DatabaseName;User ID=UserName;Password=Password"
@@ -128,22 +128,13 @@ namespace INTERBUSWebsite.Controllers
             cmd.CommandText = "ValidateFleetOwnerCode";
             cmd.Connection = conn;
 
-            conn.Open();
-            SqlParameter code = new SqlParameter("@fleetownercode", SqlDbType.VarChar, 10);
-            code.Value = fleetownercode;
-            cmd.Parameters.Add(code);
+         
+            DataSet ds = new DataSet();
+            SqlDataAdapter db = new SqlDataAdapter(cmd);
+            db.Fill(ds);
+            Tbl = ds.Tables[0];
 
-            SqlParameter mm = new SqlParameter("@result", SqlDbType.Int);
-            mm.Direction = ParameterDirection.Output;
-            cmd.Parameters.Add(mm);
-
-            cmd.ExecuteNonQuery();
-
-            conn.Close();
-
-            int result = -1;
-            result = Convert.ToInt32(mm.Value);
-            return result;
+            return Tbl;
 
         }
 
@@ -242,14 +233,14 @@ namespace INTERBUSWebsite.Controllers
                 //conn.ConnectionString = "Data Source=localhost;Initial Catalog=MyAlerts;integrated security=sspi;";
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "InsupdCreateFleetOwner";
+                cmd.CommandText = "InSupdFleetOwnerRequest1";
                 cmd.Connection = conn;
                 conn.Open();
 
 
-               // SqlParameter UId = new SqlParameter("Id", SqlDbType.Int);
-               // UId.Value = C.Id;
-               // cmd.Parameters.Add(UId);
+                 SqlParameter UId = new SqlParameter("Id", SqlDbType.Int);
+                 UId.Value = C.Id;
+                 cmd.Parameters.Add(UId);
 
                 SqlParameter UFirstName = new SqlParameter("@FirstName", SqlDbType.VarChar, 50);
                 UFirstName.Value = C.FirstName;
@@ -273,7 +264,7 @@ namespace INTERBUSWebsite.Controllers
 
                 SqlParameter Description = new SqlParameter("@Description", SqlDbType.VarChar, 15);
                 Description.Value = C.Description;
-                cmd.Parameters.Add(Description);
+                cmd.Parameters.Add(Description);              
 
                 SqlParameter insupdflag = new SqlParameter("@insupdflag", SqlDbType.VarChar, 10);
                 insupdflag.Value = C.insupdflag;
@@ -282,84 +273,128 @@ namespace INTERBUSWebsite.Controllers
 
                 cmd.ExecuteScalar();
 
-                cmd.Parameters.Clear();
+                cmd.Parameters.Clear();   
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                string str = ex.Message;
+            }
+            // int found = 0;
+            return Tbl;
+        }
+        [HttpPost]
+        [Route("api/FleetOwnerLicense/CreateNewFOR")]
+        public DataTable CreateNewFOR(FleetOwnerRequest1 FR)
+        {
+            DataTable Tbl = new DataTable();
+            SqlConnection conn = new SqlConnection();
+            try
+            {
 
-                //cmd.CommandType = CommandType.StoredProcedure;
-                //cmd.CommandText = "InsupdFleetOwnerRequest";
+                //connect to database
 
-                //SqlParameter UId = new SqlParameter("FleetOwnerId", SqlDbType.Int);
-                //UId.Value = 1;
-                //cmd.Parameters.Add(UId);
-
-                //SqlParameter UFirstName = new SqlParameter("@FirstName", SqlDbType.VarChar, 50);
-                //UFirstName.Value = C.FirstName;
-                //cmd.Parameters.Add(UFirstName);
-
-                //SqlParameter LastName = new SqlParameter("@LastName", SqlDbType.VarChar, 50);
-                //LastName.Value = C.LastName;
-                //cmd.Parameters.Add(LastName);
-
-                //SqlParameter UEmail = new SqlParameter("@Email", SqlDbType.VarChar, 15);
-                //UEmail.Value = C.Email;
-                //cmd.Parameters.Add(UEmail);
-
-                //SqlParameter UMobileNo = new SqlParameter("@MobileNo", SqlDbType.VarChar, 15);
-                //UMobileNo.Value = C.MobileNo;
-                //cmd.Parameters.Add(UMobileNo);
-
-                //SqlParameter CCompanyName = new SqlParameter("@CompanyName", SqlDbType.VarChar, 15);
-                //CCompanyName.Value = C.CompanyName;
-                //cmd.Parameters.Add(CCompanyName);
-
-                //SqlParameter Description = new SqlParameter("@Description", SqlDbType.VarChar, 15);
-                //Description.Value = C.Description;
-                //cmd.Parameters.Add(Description);
-
-                //SqlParameter insupdflag = new SqlParameter("@insupdflag", SqlDbType.VarChar, 10);
-                //insupdflag.Value = C.insupdflag;
-                //cmd.Parameters.Add(insupdflag);
-
-
-                //cmd.ExecuteScalar();
-
-                //cmd.Parameters.Clear();
-
+                //connetionString="Data Source=ServerName;Initial Catalog=DatabaseName;User ID=UserName;Password=Password"
+                conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["btposdb"].ToString();
+                //conn.ConnectionString = "Data Source=localhost;Initial Catalog=MyAlerts;integrated security=sspi;";
+                SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "InsUpdDelFleetOwnerDetails";
+                cmd.CommandText = "InSupdFleetOwnerRequestDetails";
+                cmd.Connection = conn;
+                conn.Open();
 
-                SqlParameter Company = new SqlParameter("@Company", SqlDbType.VarChar,50);
-                Company.Value = C.Company;
-                cmd.Parameters.Add(Company);
 
-                SqlParameter Title = new SqlParameter("@Title", SqlDbType.VarChar, 10);
-                Title.Value = C.Title;
-                cmd.Parameters.Add(Title);              
+                //SqlParameter FRId = new SqlParameter("Id", SqlDbType.Int);
+                //FRId.Value = FR.Id;
+                //cmd.Parameters.Add(FRId);
 
-                SqlParameter FleetOwnerId = new SqlParameter("@FleetOwnerId",SqlDbType. Int);
-               FleetOwnerId.Value = C.FleetOwnerId;
-                cmd.Parameters.Add(FleetOwnerId);
+                SqlParameter FRFirstName = new SqlParameter("@FirstName", SqlDbType.VarChar, 50);
+                FRFirstName.Value = FR.FirstName;
+                cmd.Parameters.Add(FRFirstName);
 
-                SqlParameter FleetOwnerSize = new SqlParameter("@FleetOwnerSize",SqlDbType.Int);
-                FleetOwnerSize.Value = C.FleetOwnerSize;
-                cmd.Parameters.Add(FleetOwnerSize);
+                SqlParameter LastName = new SqlParameter("@LastName", SqlDbType.VarChar, 50);
+                LastName.Value = FR.LastName;
+                cmd.Parameters.Add(LastName);
 
-                SqlParameter Gender = new SqlParameter("@Gender", SqlDbType.VarChar, 10);
-                Gender.Value = C.Gender;
-                cmd.Parameters.Add(Gender);
+                SqlParameter FREmailAddress = new SqlParameter("@EmailAddress ", SqlDbType.VarChar, 50);
+                FREmailAddress.Value = FR.EmailAdress;
+                cmd.Parameters.Add(FREmailAddress);
 
-                SqlParameter Address = new SqlParameter("@Address", SqlDbType.VarChar, 50);
-                Address.Value = C.Address;
-                cmd.Parameters.Add(Address);               
+                SqlParameter FRTitle = new SqlParameter("@Title", SqlDbType.VarChar, 20);
+                FRTitle.Value = FR.Title;
+                cmd.Parameters.Add(FRTitle);
 
-                SqlParameter EmpId = new SqlParameter("@EmpId",SqlDbType.Int);
-                EmpId.Value = C.EmpId;
-                cmd.Parameters.Add(EmpId);
+                SqlParameter FRCompanyName = new SqlParameter("@CompanyName", SqlDbType.VarChar, 20);
+                FRCompanyName.Value = FR.CompanyName;
+                cmd.Parameters.Add(FRCompanyName);
 
-              
+                SqlParameter Description = new SqlParameter("@Description", SqlDbType.VarChar, 15);
+                Description.Value = FR.Description;
+                cmd.Parameters.Add(Description);
+
+                SqlParameter CompanyEmployeSize = new SqlParameter("@CompanyEmployeSize", SqlDbType.Int);
+                CompanyEmployeSize.Value = FR.CompanyEmployeSize;
+                cmd.Parameters.Add(CompanyEmployeSize);
+
+                SqlParameter FleetSize = new SqlParameter("@FleetSize", SqlDbType.Int);
+                FleetSize.Value = FR.FleetSize;
+                cmd.Parameters.Add(FleetSize);               
+
+                SqlParameter Gender = new SqlParameter("@Gender", SqlDbType.Int);
+                Gender.Value = FR.Gender;
+                cmd.Parameters.Add(Gender);            
+
+
+                SqlParameter Address = new SqlParameter("@Address", SqlDbType.VarChar, 15);
+                Address.Value = FR.Address;
+                cmd.Parameters.Add(Address);
+
+                SqlParameter PhoneNo = new SqlParameter("@PhoneNo", SqlDbType.VarChar,50);
+                PhoneNo.Value = FR.PhoneNo;
+                cmd.Parameters.Add(PhoneNo);
+
+
+                SqlParameter insupdflag = new SqlParameter("@insupdflag", SqlDbType.VarChar, 10);
+                insupdflag.Value = FR.insupdflag;
+                cmd.Parameters.Add(insupdflag);
 
                 cmd.ExecuteScalar();
-
+                cmd.Parameters.Clear();
                 conn.Close();
+
+
+                //connetionString="Data Source=ServerName;Initial Catalog=DatabaseName;User ID=UserName;Password=Password"
+                conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["btposdb"].ToString();
+                //conn.ConnectionString = "Data Source=localhost;Initial Catalog=MyAlerts;integrated security=sspi;";
+                SqlCommand cmd1 = new SqlCommand();
+                cmd1.CommandType = CommandType.StoredProcedure;
+                cmd1.CommandText = "InSupdFleetOwnerRequest";
+                cmd1.Connection = conn;
+                conn.Open();
+
+                SqlParameter CurrentSystemInUse = new SqlParameter("@CurrentSystemInUse", SqlDbType.VarChar, 50);
+                CurrentSystemInUse.Value = FR.CurrentSystemInUse;
+                cmd1.Parameters.Add(CurrentSystemInUse);
+
+                SqlParameter SentNewProductsEmails = new SqlParameter("@SentNewProductsEmails", SqlDbType.Int);
+                SentNewProductsEmails.Value = FR.SentNewProductsEmails;
+                cmd1.Parameters.Add(SentNewProductsEmails);
+
+                SqlParameter howdidyouhearaboutus = new SqlParameter("@howdidyouhearaboutus", SqlDbType.VarChar, 50);
+                howdidyouhearaboutus.Value = FR.howdidyouhearaboutus;
+                cmd1.Parameters.Add(howdidyouhearaboutus);
+
+                SqlParameter Agreetotermsandconditions = new SqlParameter("@Agreetotermsandconditions", SqlDbType.Int);
+                Agreetotermsandconditions.Value = FR.Agreetotermsandconditions;
+                cmd1.Parameters.Add(Agreetotermsandconditions);
+
+                SqlParameter insupdflag1 = new SqlParameter("@insupdflag", SqlDbType.VarChar, 10);
+                insupdflag1.Value = FR.insupdflag;
+                cmd1.Parameters.Add(insupdflag1);
+
+                cmd1.ExecuteScalar();
+                cmd1.Parameters.Clear();
+                
 
             }
             catch (Exception ex)
@@ -370,7 +405,7 @@ namespace INTERBUSWebsite.Controllers
             // int found = 0;
             return Tbl;
         }
-
+       
         public void Options()
         {
 
