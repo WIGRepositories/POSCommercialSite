@@ -22,7 +22,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
       
     }
 
-    $scope.GoToConfirmation = function (code, License, Lid, result) {
+    $scope.GoToConfirmation = function (code, License, Lid) {
 
         if (code == null) {
             alert('please enter valid fleet owner code or contact administrator.');
@@ -30,7 +30,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         }
         else {
 
-            $http.get('http://localhost:52800/api/fleetownerlicense/validatefleetowner?fleetownercode=' + $scope.code).then(function (response, req) {
+            $http.get('http://localhost:52800/api/fleetownerlicense/validatefleetowner?fleetownercode=' + code).then(function (response, req) {
                 $scope.result = response.data;
 
                 if ($scope.result < 0) {

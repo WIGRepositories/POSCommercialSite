@@ -233,7 +233,7 @@
                                             <li ng-repeat="f in License.Table1 | filter:{ LicenseTypeId: Lt.Id }" ng-init="selType=f">{{f.FeatureLabel}} <strong>{{f.FeatureValue}}</strong></li>
                                       
                                          
-                                            <li class="text-center"><a ng-click="GoToConfirmation(txt, License, Lt.Id, result);" class="btn btn-danger" style="background-color: #EF0505">Buy Now</a></li>
+                                            <li class="text-center"><a ng-click="GoToConfirmation(txt, License, Lt.Id);" class="btn btn-danger" style="background-color: #EF0505">Buy Now</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -297,7 +297,7 @@
         </div>
     </div>  
 
-   <script src="js/jquery-1.10.2.min.js"></script>
+  <!-- <script src="js/jquery-1.10.2.min.js"></script>-->
     <script src="js/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/jquery-ui.js"></script>
     <!--loading bootstrap js-->

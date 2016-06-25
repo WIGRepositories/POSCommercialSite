@@ -258,7 +258,10 @@
       
         <div class="col-md-5">
             <h2 style="text-align:center">Fleet Owner Code</h2>
-            <input id="Text1" type="text" value={{selFleetOwnerCode.FleetOwnerCode}} />
+            <form action="display.html" method="GET">
+                <input type="text" name="fleetownercode" />
+               // <input type="submit" value="Submit" />
+            </form>
             <h2 style="text-align:center">Cart Details</h2>
 
             <div class="container" style="margin-bottom:10px">
