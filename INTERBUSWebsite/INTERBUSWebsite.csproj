@@ -1168,6 +1168,7 @@
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="obj\Debug\INTERBUSWebsite.csprojResolveAssemblyReference.cache" />
     <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\INTERBUSSite.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1177,7 +1178,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Properties\" />
     <Folder Include="UI\images\avatar\" />
     <Folder Include="UI\Local Disk\" />
     <Folder Include="UI\vendors\css3-treeview\" />

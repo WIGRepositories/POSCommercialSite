@@ -199,6 +199,7 @@
                                 <a style="text-decoration:none" href="index.html">Home</a>
 
                             </li>
+
                             <li>
 
                                 <a style="text-decoration:none" href="Fares_and_payments.html">Fares / Payments</a>
@@ -256,10 +257,8 @@
     <div style="margin-top:80px">
       
         <div class="col-md-5">
-            Fleet Owner Code:<select ng-show="{{fleetownercode}}">
-
-                <option value="">Select</option>
-            </select>
+            <h2 style="text-align:center">Fleet Owner Code</h2>
+            <input id="Text1" type="text" value={{selFleetOwnerCode.FleetOwnerCode}} />
             <h2 style="text-align:center">Cart Details</h2>
 
             <div class="container" style="margin-bottom:10px">
@@ -401,8 +400,8 @@
     <!--loading bootstrap js-->
     <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
     <script src="vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
+   <!-- <script src="js/html5shiv.js"></script>-->
+   <!-- <script src="js/respond.min.js"></script>-->
     <script src="vendors/metisMenu/jquery.metisMenu.js"></script>
     <script src="vendors/slimScroll/jquery.slimscroll.js"></script>
     <script src="vendors/jquery-cookie/jquery.cookie.js"></script>

@@ -4,11 +4,22 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
     $scope.FillDetails = function () {
         
             $scope.licenseCatId = $localStorage.LicenseTypeId;
-            $scope.fodetails = $localStorage.FleetOwner;
+            $scope.fodetails = $localStorage.FleetOwnerCode;
 
             var ldetails = $localStorage.License;
             $scope.selLicense = "";
             $scope.selLicensePrice = "";
+
+          
+            //displaying the current fleet owner code
+            var fodetails = $localStorage.FleetOwnerCode;
+            $scope.selFleetOwnerCode = "";
+         
+            if (FleetOwnerCode != null)
+            {
+                $scope.selFleetOwnerCode = fodetails.FleetOwnerCode;
+                }
+             
 
             //identify the selected license and display the properties
             for (ltCnt = 0; ltCnt < ldetails.Table.length; ltCnt++) {
@@ -21,13 +32,14 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
             for (ltCnt = 0 ; ltCnt < ldetails.Table2.length; ltCnt++) {
                 if (ldetails.Table2[ltCnt].LicenseId == $scope.selLicense.Id) {
                     $scope.selLicensePrice = ldetails.Table2[ltCnt]
-                }
             }
         }
-    
 
-        $scope.processPymt = function () {
-            //save the details into db for user license
+    }
+
+
+    $scope.processPymt = function () {
+        //save the details into db for user license
             if ($scope.qty <= 0)
             {
                 alert("please select the month(s)");
@@ -56,9 +68,14 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
             ////create a user login for the fleet owner
             ////communicate the same to user
 
-            
-            //    }
-            }
-        }
 
-});
+            //            }
+            //create a user login for the fleet owner
+            //communicate the same to user
+
+            window.location.href = "http://localhost:52800/UI/LicenseConfirmation.html";
+
+        }
+    }
+            });
+
