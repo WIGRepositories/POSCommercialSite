@@ -13,33 +13,7 @@ namespace INTERBUSWebsite.Controllers
     public class TicketBookingController : ApiController
     {
 
-        //[HttpGet]
-
-        //public Booking TestServices()
-        //{
-        //    Booking b = new Booking();
-           
-        //    passengerDetails d1 = new passengerDetails();
-        //    d1.Fname = "Lokesh";
-        //    d1.Lname = "Godem";
-        //    d1.Age = 24;
-        //    d1.Sex = 1;
-        //    d1.Identityproof = "Pan";
-        //    d1.SeatId = "5";
-
-
-        //    passengerDetails d2 = new passengerDetails();
-        //    d2.Fname = "Lokesh1";
-        //    d2.Lname = "Godem1";
-        //    d2.Age = 25;
-        //    d2.Sex = 1;
-        //    d2.Identityproof = "Adr";
-        //    d2.SeatId = "6";
-   
-
-        //    b.passengersList = new List<passengerDetails> {d1, d2};
-        //    return b;
-        //}
+       
           [HttpGet]
 
         public DataTable GetAvailableServices(int srcId, int destId)
@@ -54,9 +28,9 @@ namespace INTERBUSWebsite.Controllers
 
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.StoredProcedure;
-              cmd.CommandText = "Getsp_Availableseats";
-              cmd.Parameters.Add("Src_Id", SqlDbType.Int).Value = srcId;
-              cmd.Parameters.Add("Des_Id", SqlDbType.Int).Value = destId;
+            cmd.CommandText = "GetAvailableServices";
+              cmd.Parameters.Add("@SourceId", SqlDbType.Int).Value = srcId;
+              cmd.Parameters.Add("@DestinationId", SqlDbType.Int).Value = destId;
             cmd.Connection = conn;
           
             DataSet ds = new DataSet();
@@ -68,32 +42,7 @@ namespace INTERBUSWebsite.Controllers
                 return Tbl;
           }
 
-//[HttpGet]
-//          public DataTable GetTicketDetails(int srcId, int destId)
-//          {
-//              DataTable Tbl = new DataTable();
 
-
-//              //connect to database
-//              SqlConnection conn = new SqlConnection();
-//              //connetionString="Data Source=ServerName;Initial Catalog=DatabaseName;User ID=UserName;Password=Password"
-//              conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["btposdb"].ToString();
-
-//              SqlCommand cmd = new SqlCommand();
-//              cmd.CommandType = CommandType.StoredProcedure;
-//              cmd.CommandText = "Getsp_Availableseats";
-//              cmd.Parameters.Add("Src_Id", SqlDbType.Int).Value = srcId;
-//              cmd.Parameters.Add("Des_Id", SqlDbType.Int).Value = destId;
-//              cmd.Connection = conn;
-
-//              DataSet ds = new DataSet();
-//              SqlDataAdapter db = new SqlDataAdapter(cmd);
-//              db.Fill(ds);
-//              Tbl = ds.Tables[0];
-//              int a = Tbl.Rows.Count;
-
-//              return Tbl;
-//          }
 
     [HttpPost]
           public DataTable SaveBookingDetails(Booking B)

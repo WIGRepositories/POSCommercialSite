@@ -29,6 +29,12 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
             return false;
         }
         else {
+            $scope.result = 'FL001';//response.data;
+            $localStorage.License = License;
+            $localStorage.LicenseTypeId = Lid;
+            $localStorage.FleetOwnerCode = $scope.result;
+
+          //  window.location.href = "http://localhost:52800/UI/Cartdetails.html";
 
             $http.get('http://localhost:52800/api/fleetownerlicense/validatefleetowner?fleetownercode=' + $scope.code).then(function (response, req) {
                 $scope.result = response.data;
