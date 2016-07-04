@@ -245,6 +245,7 @@
     <Content Include="UI\js\ResetPassword.js" />
     <Content Include="UI\js\SeatSelection.js" />
     <Content Include="UI\js\Stops.js" />
+    <Content Include="UI\js\TicketCartdetails.js" />
     <Content Include="UI\js\TicketPage.js" />
     <Content Include="UI\js\UserInfo.js" />
     <Content Include="UI\js\VehicleAvailability.js" />
@@ -264,6 +265,7 @@
     <Content Include="UI\SeatSelection.html" />
     <Content Include="UI\Status_and_Updates.html" />
     <Content Include="UI\success.html" />
+    <Content Include="UI\TicketCartdetails.html" />
     <Content Include="UI\TicketPage.html" />
     <Content Include="UI\UserTicketCancellation.html" />
     <Content Include="UI\vehicleAvailability.html" />
