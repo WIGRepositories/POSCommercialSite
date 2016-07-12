@@ -6,21 +6,15 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
             $scope.licenseCatId = $localStorage.LicenseTypeId;
             $scope.fodetails = $localStorage.FleetOwnerCode;
 
+            //displaying the current fleet owner code
+            var fodetails = $localStorage.FleetOwnerCode;
+            $scope.selFleetOwnerCode = "";
+
             var ldetails = $localStorage.License;
             $scope.selLicense = "";
             $scope.selLicensePrice = "";
 
           
-            //displaying the current fleet owner code
-            var fodetails = $localStorage.FleetOwnerCode;
-            $scope.selFleetOwnerCode = "";
-         
-            if (FleetOwnerCode != null)
-            {
-                $scope.selFleetOwnerCode = fodetails.FleetOwnerCode;
-                }
-             
-
             //identify the selected license and display the properties
             for (ltCnt = 0; ltCnt < ldetails.Table.length; ltCnt++) {
                 if (ldetails.Table[ltCnt].Id == $scope.licenseCatId) {
@@ -33,6 +27,12 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
                 if (ldetails.Table2[ltCnt].LicenseId == $scope.selLicense.Id) {
                     $scope.selLicensePrice = ldetails.Table2[ltCnt]
             }
+        }
+        
+
+        if (FleetOwnerCode != null) {
+            $scope.selFleetOwnerCode = fodetails.FleetOwnerCode;
+            document.getElementById("Id").innerHTML = localStorage.getItem("FleetOwnerCode");
         }
 
     }
