@@ -106,8 +106,11 @@
     <Content Include="UI\css\bootstrap-theme.min.css" />
     <Content Include="UI\css\bootstrap.min.css" />
     <Content Include="UI\css\Main.css" />
+    <Content Include="UI\css\owl.carousel.css" />
+    <Content Include="UI\css\responsive.css" />
     <Content Include="UI\css\style-responsive.css" />
     <Content Include="UI\css\style.css" />
+    <Content Include="UI\css\style1.css" />
     <Content Include="UI\css\StyleSheet1.css" />
     <Content Include="UI\css\StyleSheet2.css" />
     <Content Include="UI\css\StyleSheet3.css" />
@@ -139,6 +142,7 @@
     <Content Include="UI\images\5.jpg" />
     <Content Include="UI\images\6.jpg" />
     <Content Include="UI\images\arrows.png" />
+    <Content Include="UI\images\bgImg.png" />
     <Content Include="UI\images\bg\1.jpg" />
     <Content Include="UI\images\bg\2.jpg" />
     <Content Include="UI\images\bg\3.jpg" />
@@ -223,6 +227,7 @@
     <Content Include="UI\js\angular.js" />
     <Content Include="UI\js\Booking.js" />
     <Content Include="UI\js\bootstrap.min.js" />
+    <Content Include="UI\js\bxslider.min.js" />
     <Content Include="UI\js\Cartdetails.js" />
     <Content Include="UI\js\cc_af.js" />
     <Content Include="UI\js\CheckOut.js" />
@@ -241,8 +246,10 @@
     <Content Include="UI\js\licensepage1.js" />
     <Content Include="UI\js\Login.js" />
     <Content Include="UI\js\main.js" />
+    <Content Include="UI\js\moment.js" />
     <Content Include="UI\js\ngStorage.js" />
     <Content Include="UI\js\ResetPassword.js" />
+    <Content Include="UI\js\script.slider.js" />
     <Content Include="UI\js\SeatSelection.js" />
     <Content Include="UI\js\Stops.js" />
     <Content Include="UI\js\TicketCartdetails.js" />
