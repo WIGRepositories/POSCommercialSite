@@ -254,6 +254,7 @@
     <Content Include="UI\js\Stops.js" />
     <Content Include="UI\js\TicketCartdetails.js" />
     <Content Include="UI\js\TicketPage.js" />
+    <Content Include="UI\js\ui-bootstrap-tpls-1.3.3.js" />
     <Content Include="UI\js\UserInfo.js" />
     <Content Include="UI\js\VehicleAvailability.js" />
     <Content Include="UI\js\wickedpicker.min.js" />
