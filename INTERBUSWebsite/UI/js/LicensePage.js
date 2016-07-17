@@ -7,12 +7,12 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
     $scope.GetLicense = function () {
 
-        if($scope.licenseCatId == null)
+        if($scope.licenseCatId == null || $scope.licenseCatId.Id == null)
         {
             alert('No license details configured for the selected license category. Please contact INTERBUS administartor.');
             return;
         }
-        $http.get('http://localhost:52800/api/LicensePage/GetLicense?catId=' + $scope.licenseCatId).then(function (response, req) {
+        $http.get('http://localhost:52800/api/LicensePage/GetLicense?catId=' + $scope.licenseCatId.Id).then(function (response, req) {
             $scope.License = response.data;
             if ($scope.License == null) {
                 alert('No license details configured for the selected license category. Please contact INTERBUS administartor.');
@@ -31,7 +31,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         else {           
             $localStorage.License = License;
             $localStorage.LicenseTypeId = Lid;
-            $localStorage.FleetOwnerCode = $scope.code;          
+            $localStorage.FleetOwnerCode = code;          
 
             $http.get('http://localhost:52800/api/fleetownerlicense/validatefleetowner?fleetownercode=' + code).then(function (response, req) {
                 $scope.result = response.data;
@@ -41,8 +41,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
                 }
                 else {
                     $localStorage.License = License;
-                    $localStorage.LicenseTypeId = Lid;
-
+                    $localStorage.LicenseTypeId = Lid;                   
                     window.location.href = "http://localhost:52800/UI/Cartdetails.html";
                 }
             });
