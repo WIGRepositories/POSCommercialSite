@@ -219,5 +219,18 @@ namespace BTPOSDashboardAPI.Models
         public int LicenseCatId { get; set; }
 
     }
+    public class CartDetails
+    {
+
+        public string LicenseType{ set; get; }
+        public int Frequency{ set; get; }
+        public string NoOfMonths  { set; get; }
+        public int TotalAmount { set; get; }
+        public DateTime CreateDate{ set; get; }
+        public string TransId{ set; get; }
+        public int UnitPrice { set; get; }
+        public string FleetOwner{ set; get; }         
+
+    }
    
 }

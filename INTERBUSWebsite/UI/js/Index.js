@@ -61,7 +61,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 }
 
     $scope.GotToLicensePage = function (t) {
-        $localStorage.licenseId = t.Id;
+        $localStorage.licenseId = t;
         window.location.href = "LicensePage.html";
     }
 });

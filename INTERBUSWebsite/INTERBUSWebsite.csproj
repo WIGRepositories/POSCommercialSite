@@ -1064,6 +1064,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BookingController.cs" />
+    <Compile Include="Controllers\CartPaymentDetailsController.cs" />
     <Compile Include="Controllers\LicensePage.cs" />
     <Compile Include="Controllers\LicensePageController.cs" />
     <Compile Include="Controllers\StopsController.cs" />
