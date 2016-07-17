@@ -40,9 +40,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>References\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PayPal, Version=1.7.3.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>References\PayPal.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -87,6 +95,8 @@
     <Content Include="obj\Debug\INTERBUSWebsite.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\INTERBUSWebsite.dll" />
     <Content Include="obj\Debug\INTERBUSWebsite.pdb" />
+    <Content Include="References\log4net.dll" />
+    <Content Include="References\PayPal.dll" />
     <Content Include="UI\About.html" />
     <Content Include="UI\AboutUs.html" />
     <Content Include="UI\AddTroubleTicketingDetails.html" />
@@ -1077,6 +1087,7 @@
     <Compile Include="Controllers\CartPaymentDetailsController.cs" />
     <Compile Include="Controllers\LicensePage.cs" />
     <Compile Include="Controllers\LicensePageController.cs" />
+    <Compile Include="Controllers\PaymentsController.cs" />
     <Compile Include="Controllers\StopsController.cs" />
     <Compile Include="Controllers\FleetOwnerLicenseController.cs" />
     <Compile Include="Controllers\TicketBookingController.cs" />
