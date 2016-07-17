@@ -22,30 +22,29 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
       
     }
 
-    $scope.GoToConfirmation = function (code, License, Lid, result) {
+    $scope.GoToConfirmation = function (code, License, Lid) {
 
         if (code == null) {
             alert('please enter valid fleet owner code or contact administrator.');
             return false;
         }
-        else {
+        else {           
+            $localStorage.License = License;
+            $localStorage.LicenseTypeId = Lid;
+            $localStorage.FleetOwnerCode = $scope.code;          
 
-            $http.get('http://localhost:52800/api/fleetownerlicense/validatefleetowner?fleetownercode=' + $scope.code).then(function (response, req) {
+            $http.get('http://localhost:52800/api/fleetownerlicense/validatefleetowner?fleetownercode=' + code).then(function (response, req) {
                 $scope.result = response.data;
 
                 if ($scope.result < 0) {
                     alert('invalid fleet owner code');
-                   
                 }
                 else {
                     $localStorage.License = License;
                     $localStorage.LicenseTypeId = Lid;
-                    $localStorage.FleetOwnerCode = $scope.result;
 
                     window.location.href = "http://localhost:52800/UI/Cartdetails.html";
                 }
-                   
-              
             });
         }
     };

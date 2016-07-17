@@ -13,12 +13,25 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
             $scope.licenses = res.data;
 
         });
-
     }
 
     $scope.GetServices = function () {
-        $localStorage.srcId = $scope.S.Id;
-        $localStorage.destId = $scope.D.Id;
+        if ($scope.S == null)
+        {
+            alert('Please select source.');
+            return;
+        }
+
+        if ($scope.D == null)
+        {
+            alert('Please select destination.');
+            return;
+    }
+
+        $localStorage.src = $scope.S;
+        $localStorage.dest = $scope.D;
+        //$rootscope.src = $scope.RS;
+        //$rootscope.dest = $scope.RD;
         $scope.way1 = $scope.result ;
         $localStorage.waytype = $scope.way1;
         window.location.href = "booking.html";
@@ -40,7 +53,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
     }
 
     var inputcred = { LoginInfo: u, Passkey: p }
-    
+
     var req = {
         method: 'POST',
         url: 'http://localhost:52800/api/ValidateCredentials/ValidateCredentials',

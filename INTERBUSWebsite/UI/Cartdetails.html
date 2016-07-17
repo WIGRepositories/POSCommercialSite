@@ -191,7 +191,7 @@
 
                 <div class="r">
                     <div class="rr">
-                        <a style="margin-top: 0px; padding-top: 0px; margin-right: 50px; float:left" href="index.html"><img style="height:56px" src="Images/logos/interbusLogo.png" alt="Alternate Text" /> </a>
+                        <a style="margin-top: 0px; padding-top: 0px; margin-right: 50px; float:left" href="index.html"><img style="height:76px" src="Images/logos/interbusLogo.png" alt="Alternate Text" /> </a>
                         <ul class="collapsible-menu clearfix" style="margin-left:0px;">
 
                             <li style="margin-left:90px">
@@ -258,7 +258,10 @@
       
         <div class="col-md-5">
             <h2 style="text-align:center">Fleet Owner Code</h2>
-            <input id="Text1" type="text" value={{selFleetOwnerCode.FleetOwnerCode}} />
+            <form action="display.html" method="GET">
+                <input type="text" name="fleetownercode" />
+               // <input type="submit" value="Submit" />
+            </form>
             <h2 style="text-align:center">Cart Details</h2>
 
             <div class="container" style="margin-bottom:10px">
