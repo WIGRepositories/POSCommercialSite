@@ -15,7 +15,7 @@ namespace INTERBUSWebsite.Controllers
     {
         [HttpGet]
         [Route("api/LicensePage/GetLicense")]
-        public DataSet GetLicense(int catId)
+        public DataSet GetLicense(int LicenseCatId)
         {
             DataTable Tbl = new DataTable();
 
@@ -29,9 +29,9 @@ namespace INTERBUSWebsite.Controllers
             cmd.CommandText = "GetLicensePageDetails";
             cmd.Connection = conn;
 
-            
-            SqlParameter mm = new SqlParameter("@catId", SqlDbType.Int);
-            mm.Value = catId;
+
+            SqlParameter mm = new SqlParameter("@LicenseCatId", SqlDbType.Int);
+            mm.Value = LicenseCatId;
             cmd.Parameters.Add(mm);
 
             DataSet ds = new DataSet();
