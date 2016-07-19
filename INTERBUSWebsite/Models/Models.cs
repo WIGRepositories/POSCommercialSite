@@ -5,7 +5,7 @@ using System.Web;
 
 namespace BTPOSDashboardAPI.Models
 {
-   
+
 
     public class FleetOwner
     {
@@ -33,7 +33,7 @@ namespace BTPOSDashboardAPI.Models
 
     }
 
-   
+
 
     public class BOTPOSL
     {
@@ -66,7 +66,7 @@ namespace BTPOSDashboardAPI.Models
         public DateTime date { set; get; }
         public int TransactionId { set; get; }
     }
-   
+
 
     public class FleetOwnerRequest
     {
@@ -76,7 +76,7 @@ namespace BTPOSDashboardAPI.Models
         public String Email { get; set; }
         public String MobileNo { get; set; }
         public String CompanyName { get; set; }
-        public String Description { get; set; }       
+        public String Description { get; set; }
         public string insupdflag { get; set; }
 
     }
@@ -84,7 +84,7 @@ namespace BTPOSDashboardAPI.Models
     public class Booking
     {
         public int Pnr_ID { get; set; }
-        public string Pnr_No {get; set;}
+        public string Pnr_No { get; set; }
         public int No_Seats { get; set; }
         public int cost { get; set; }
         public string dateandtime { get; set; }
@@ -109,12 +109,13 @@ namespace BTPOSDashboardAPI.Models
         public int TransactionStatus { get; set; }
         public string AuthCode { get; set; }
         public int JourneyType { get; set; }
-      
+
         public IEnumerable<passengerDetails> passengersList { get; set; }
-        
+
     }
-        
-    public class passengerDetails {
+
+    public class passengerDetails
+    {
         public string SeatNo { get; set; }
         public int SeatId { get; set; }
         public string Fname { get; set; }
@@ -125,7 +126,7 @@ namespace BTPOSDashboardAPI.Models
         public string datetime { get; set; }
     }
 
-    
+
 
     public class Licence
     {
@@ -139,17 +140,17 @@ namespace BTPOSDashboardAPI.Models
 
     public class UserIn
     {
-      
+
         public String FirstName { get; set; }
         public String LastName { get; set; }
         public String UserName { get; set; }
         public String Password { get; set; }
         public String EmailAddress { get; set; }
         public String ConfirmPassword { get; set; }
-        public String Gender { get; set; } 
+        public String Gender { get; set; }
         public String salt { set; get; }
-     
-       
+
+
 
     }
     public class UserLogin
@@ -164,7 +165,7 @@ namespace BTPOSDashboardAPI.Models
     }
     public class reset
     {
-      
+
         public string UserName { set; get; }
         public string OldPassword { set; get; }
         public string NewPassword { set; get; }
@@ -172,48 +173,48 @@ namespace BTPOSDashboardAPI.Models
 
     }
     public class FleetOwnerRequest1
-    { 
+    {
 
-        public int  Id {get; set;}
-       public string  FirstName {get; set;}
+        public int Id { get; set; }
+        public string FirstName { get; set; }
 
-        public string LastName{get; set;}
-        public int PhoneNo{get; set;}
-        public  string EmailAdress {get; set;}
-        public string CompanyName {get; set;}
-        public string Description {get; set;}
+        public string LastName { get; set; }
+        public int PhoneNo { get; set; }
+        public string EmailAdress { get; set; }
+        public string CompanyName { get; set; }
+        public string Description { get; set; }
 
-        public string Title{get; set;}
-        public string CompanyEmployeSize {set; get;}
+        public string Title { get; set; }
+        public string CompanyEmployeSize { set; get; }
 
-        public string FleetSize {set; get;}
-        
-        public string CurrentSystemInUse {set; get;}
-        public string SentNewProductsEmails {set;get;}
-          
-        public string Gender {set; get;}  
+        public string FleetSize { set; get; }
 
-        public string howdidyouhearaboutus {get; set;}
-           
-         public int Agreetotermsandconditions {get; set;}
+        public string CurrentSystemInUse { set; get; }
+        public string SentNewProductsEmails { set; get; }
 
-         public  string Address {get; set;}
-          
-         public string insupdflag {get; set;}
-           
+        public string Gender { set; get; }
+
+        public string howdidyouhearaboutus { get; set; }
+
+        public int Agreetotermsandconditions { get; set; }
+
+        public string Address { get; set; }
+
+        public string insupdflag { get; set; }
+
     }
     public class LicensePage
     {
         public int Id { get; set; }
         public int LicenseTypeId { get; set; }
-        public string LicenseType {get; set;}
+        public string LicenseType { get; set; }
         public string fleetownercode { get; set; }
         public Decimal Unitprice { get; set; }
         public int FeatureName { get; set; }
         public int FeatureLabel { get; set; }
         public int FeatureValue { get; set; }
 
-      
+
         public string insupdflag { get; set; }
 
         public int LicenseCatId { get; set; }
@@ -222,15 +223,75 @@ namespace BTPOSDashboardAPI.Models
     public class CartDetails
     {
 
-        public string LicenseType{ set; get; }
-        public int Frequency{ set; get; }
-        public string NoOfMonths  { set; get; }
+        public string LicenseType { set; get; }
+        public int Frequency { set; get; }
+        public string NoOfMonths { set; get; }
         public int TotalAmount { set; get; }
-        public DateTime CreateDate{ set; get; }
-        public string TransId{ set; get; }
+        public DateTime CreateDate { set; get; }
+        public string TransId { set; get; }
         public int UnitPrice { set; get; }
-        public string FleetOwner{ set; get; }         
+        public string FleetOwner { set; get; }
 
     }
-   
+
+
+    public class UserLicense
+    {
+        public int Id { set; get; }
+        public int UserId { set; get; }
+        public int FOId { set; get; }
+        public int LicenseTypeId { set; get; }
+        public DateTime StartDate { set; get; }
+        public DateTime ExpiryOn { set; get; }
+        public int GracePeriod { set; get; }
+        public DateTime ActualExpiry { set; get; }
+        public DateTime LastUpdatedOn { set; get; }
+        public int Active { set; get; }
+        public int StatusId { set; get; }
+    }
+
+    public class UserLicensePayments
+    {
+        public int Id { set; get; }
+        public int ULId { set; get; }
+        public DateTime CreatedOn { set; get; }
+        public decimal Amount { set; get; }
+        public decimal UnitPrice { set; get; }
+        public decimal Units { set; get; }
+        public int StatusId { set; get; }
+        public int LicensePymtTransId { set; get; }
+        public int IsRenewal { set; get; }
+    }
+
+    public class UserLicensePymtTransactions
+    {
+        public int Id { set; get; }
+        public string TransId { set; get; }
+        public string GatewayTransId { set; get; }
+        public decimal Amount { set; get; }
+        public DateTime TransDate { set; get; }
+        public int ULPymtId { set; get; }
+        public int StatusId { set; get; }
+        public string Desc { set; get; }
+
+    }
+    public class ULPymtTransDetails
+    {
+        public int Id { set; get; }
+        public int ULPPymtTransId { set; get; }
+        public int PaymentTypeId { set; get; }
+        public int StatusId { set; get; }
+        public decimal Discount { set; get; }
+        public decimal Tax { set; get; }
+        public decimal Amount { set; get; }
+        public DateTime TransDate { set; get; }
+    }
+    public class ULFeatures
+    {
+        public int Id { set; get; }
+        public int ULPymtId { set; get; }
+        public int FeatureId { set; get; }
+        public string FeatureValue { set; get; }
+        public string FeatureDesc { set; get; }
+    }
 }

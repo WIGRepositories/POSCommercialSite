@@ -1091,7 +1091,13 @@
     <Compile Include="Controllers\StopsController.cs" />
     <Compile Include="Controllers\FleetOwnerLicenseController.cs" />
     <Compile Include="Controllers\TicketBookingController.cs" />
+    <Compile Include="Controllers\ULFeaturesController.cs" />
+    <Compile Include="Controllers\ULPymtTransDetailsController.cs" />
     <Compile Include="Controllers\UserInfoController.cs" />
+    <Compile Include="Controllers\UserLicenseController.cs" />
+    <Compile Include="Controllers\UserLicensePaymentsController.cs" />
+    <Compile Include="Controllers\UserLicensePymtTransactionsController.cs" />
+    <Compile Include="Controllers\UserLicensesController.cs" />
     <Compile Include="Controllers\ValidateCredentialsController.cs" />
     <Compile Include="Controllers\VehicleAvailabilityController.cs" />
     <Compile Include="Global.asax.cs">
