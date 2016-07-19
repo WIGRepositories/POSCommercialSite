@@ -60,11 +60,11 @@ namespace INTERBUSWebsite.Controllers
                 
 	
 
-                SqlParameter Cid = new SqlParameter();
-                Cid.ParameterName = "@Id";
-                Cid.SqlDbType = SqlDbType.Int;
-                Cid.Value = Convert.ToInt32(b.Id);
-                cmd.Parameters.Add(Cid);
+                //SqlParameter Cid = new SqlParameter();
+                //Cid.ParameterName = "@Id";
+                //Cid.SqlDbType = SqlDbType.Int;
+                //Cid.Value = Convert.ToInt32(b.Id);
+                //cmd.Parameters.Add(Cid);
                 
                 SqlParameter fid = new SqlParameter();
                 fid.ParameterName = "@ULPymtId";

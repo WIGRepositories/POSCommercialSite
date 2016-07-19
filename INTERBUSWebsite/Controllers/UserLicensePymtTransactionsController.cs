@@ -59,11 +59,11 @@ namespace INTERBUSWebsite.Controllers
                 conn.Open();
 
        
-                SqlParameter Cid = new SqlParameter();
-                Cid.ParameterName = "@Id";
-                Cid.SqlDbType = SqlDbType.Int;
-                Cid.Value = Convert.ToInt32(b.Id);
-                cmd.Parameters.Add(Cid);
+                //SqlParameter Cid = new SqlParameter();
+                //Cid.ParameterName = "@Id";
+                //Cid.SqlDbType = SqlDbType.Int;
+                //Cid.Value = Convert.ToInt32(b.Id);
+                //cmd.Parameters.Add(Cid);
 
                 SqlParameter Gid = new SqlParameter();
                 Gid.ParameterName = "@TransId";

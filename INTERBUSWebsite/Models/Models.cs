@@ -237,6 +237,7 @@ namespace BTPOSDashboardAPI.Models
 
     public class UserLicense
     {
+        public List<ULLicense> ULP{ get; set; }
         public int Id { set; get; }
         public int UserId { set; get; }
         public int FOId { set; get; }
@@ -249,8 +250,7 @@ namespace BTPOSDashboardAPI.Models
         public int Active { set; get; }
         public int StatusId { set; get; }
     }
-
-    public class UserLicensePayments
+    public class ULLicense
     {
         public int Id { set; get; }
         public int ULId { set; get; }
@@ -261,6 +261,19 @@ namespace BTPOSDashboardAPI.Models
         public int StatusId { set; get; }
         public int LicensePymtTransId { set; get; }
         public int IsRenewal { set; get; }
+        
+    }
+    public class UserLicensePayments
+    {
+        public int Id { set; get;}
+        public int ULId { set; get;}
+        public DateTime CreatedOn { set; get;}
+        public decimal Amount { set; get;}
+        public decimal UnitPrice { set; get;}
+        public decimal Units { set; get;}
+        public int StatusId { set; get;}
+        public int LicensePymtTransId { set; get;}
+        public int IsRenewal { set; get;}
     }
 
     public class UserLicensePymtTransactions
