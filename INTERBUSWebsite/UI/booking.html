@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en" ng-app="myApp" ng-controller="myCtrl">
+<html lang="en" >
 
 <!--<![endif]-->
 <head>
@@ -58,11 +58,6 @@
 
 
     <link href="css/StyleSheet6.css" media="screen" rel="stylesheet" />
-
-
-
-
-
 
 
     <script type="text/javascript">
@@ -169,7 +164,7 @@
 
 </head>
 
-<body ng-init="GetAvailableServices();" ng-model="Booking">
+<body ng-app="myApp" ng-controller="myCtrl"  ng-init="GetAvailableServices();" ng-model="Booking">
 
 
 
@@ -185,7 +180,7 @@
 
                 <div class="r">
                     <div class="rr">
-                        <a style="margin-top: 0px; padding-top: 0px; margin-right: 50px; float:left" href="index.html"><img style="height:56px" src="Images/logos/interbusLogo.png" alt="Alternate Text" /> </a>
+                        <a style="margin-top: 0px; padding-top: 0px; margin-right: 50px; float:left" href="index.html"><img style="height:76px" src="Images/logos/interbusLogo.png" alt="Alternate Text" /> </a>
                         <ul class="collapsible-menu clearfix" style="margin-left:0px;">
 
                             <li style="margin-left:90px">
@@ -259,9 +254,10 @@
 
         <div>
             <div class="col-lg-12">
-                <div class="col-lg-6" style="background-color: #8d9db6; border-right: 1px solid white; padding: 10px"><div style="float:right; color:white; font-size:16px"><strong>Vijayawada -> Hyderabad</strong><div style="text-align:center">< 17-6-2016 ></div></div></div>
-                <div class="col-lg-6" style="background-color: #8d9db6; padding: 10px"><div style="float: left; color: #618685; font-size: 16px; ">Hyderabad -> Vijayawada<br /><div style="text-align:center">< 20-6-2016 ></div></div></div>
-            </div></div>
+                <div class="col-lg-6" style="background-color: #8d9db6; border-right: 1px solid white; padding: 10px"><div style="float:right; color:white; font-size:16px"><strong>Stage1 -> Stage4</strong><div style="text-align:center">< 17-6-2016 ></div></div></div>
+                <div class="col-lg-6" style="background-color: #8d9db6; padding: 10px"><div style="float: left; color: #618685; font-size: 16px; ">Stage4 -> Stage1<br /><div style="text-align:center">< 20-6-2016 ></div></div></div>
+            </div>
+        </div>
 
         <div class="col-lg-12" ng-model="Booking.first" ng-value="fst" id="one">
 
@@ -275,8 +271,8 @@
                             &nbsp;<b class="caret"></b>
                         </a>
                         <ul role="menu" aria-labelledby="navbarDrop1" class="dropdown-menu">
-                            <li><a href="#one" tabindex="-1">apsrtc</a></li>
-                            <li><a href="#two" tabindex="-1">kesineni</a></li>
+                            <li><a href="#one" tabindex="-1">Webingate</a></li>
+                            <li><a href="#two" tabindex="-1">ZUPCO</a></li>
                             <li class="divider"></li>
                             <li><a href="#three" tabindex="-1">orange</a></li>
                         </ul>
@@ -293,7 +289,7 @@
                             <li><a href="#three" tabindex="-1">sleeper</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
+                    <!--<li class="dropdown">
                         <a id="navbarDrop1" href="#" data-toggle="dropdown" class="dropdown-toggle">
                             Amenities
                             &nbsp;<b class="caret"></b>
@@ -308,9 +304,9 @@
 
                             <li><a href="#three" tabindex="-1">Reading light</a></li>
                         </ul>
-                    </li>
+                    </li>-->
 
-                    <li class="dropdown">
+                    <!--<li class="dropdown">
                         <a id="navbarDrop1" href="#" data-toggle="dropdown" class="dropdown-toggle">
                             Boarding
                             &nbsp;<b class="caret"></b>
@@ -345,23 +341,23 @@
 
 
                         </ul>
-                    </li>
+                    </li>-->
                 </ul>
             </div>
 
             <table class="table table-hover table-striped table-bordered table-advanced tablesorter" ng-repeat="b in services">
                 <tr>
-                    <td><img src="Images/busimages/nonac.jpg"></img></td>
-                    <td>
-                        <strong>  {{b.Travelsname}}</strong>
+                    <td width="15%"><img src="Images/busimages/nonac.jpg"></img></td>
+                    <td width="25%">
+                        <strong>  {{b.name}}</strong>
                         <div class="message-inner">
 
                             <div class="qa-message-content">
-                                {{b.Bustype}}
+                                {{b.vehicletype}}
                             </div>
                         </div>
                     </td>
-                    <td>
+                    <td width="15%">
                         <img src="Images/busimages/time.jpg" /><strong> {{b.From_Time}} -  {{b.To_Time}}</strong>
 
 
@@ -372,30 +368,31 @@
                             </div>
                         </div>
                     </td>
-                    <td>
+                    <td width="15%">
                         <img src="Images/busimages/seat.jpg" />
                         <strong>  {{b.Availableseats}}Seats </strong><br />
                     </td>
 
-                    <td>
+                    <td width="10%">
                         <div class="col-md-3 col-sm-4"><div class="col-md-3 col-sm-4"></div></div>
                         <div class="col-md-3 col-sm-4" ng-model="Booking.Cost=b.Cost">
-                            <strong>Rs.{{b.Cost}}</strong>
+                            <strong>Rs.{{b.amount}}</strong>
                         </div>
 
 
 
                     </td>
                     <td>
-
+                        <button ng-click="test(b);" type="button" class="btn btn-primary">
                         
-                        <button ng-click="test();" type="button" class="btn btn-primary">
                             select seats
                         </button>
                         
                     </td>
                 </tr>
 
+             </table>
+                        <table>
 
                 <tr>
                     <td id="imgTd" style="display:none" colspan="6">
@@ -405,41 +402,44 @@
                                     <img id='masterimg' src="images/busimages/selction seats.jpg" alt="Planets" usemap="#seats" style="width:956px;height:261px;">
 
                                     <map name="seats">
-                                        <area shape="rect" style="background-color:red" coords="212,34,192,52" alt="Sun" href="#" ng-click="AddSeats('1');">
+                                                    <!--<area shape="rect" style="background-color:red" coords="212,34,192,52" alt="Sun" href="#" ng-click="AddSeats('1');">
                                         <area shape="rect" style="background-color:red" coords="234,34,217,52" alt="Sun" href="#" ng-click="AddSeats('2');">
                                         <area shape="rect" style="background-color:red" coords="258,34,242,52" alt="Sun" href="#" ng-click="AddSeats('3');">
-                                        <area shape="rect" style="background-color:red" coords="283,34,266,52" alt="Sun" href="#" ng-click="AddSeats('4');">
-                                        <area shape="rect" style="background-color:red" coords="307,34,290,52" alt="Sun" href="#" ng-click="AddSeats(A3);">
-                                        <area shape="rect" style="background-color:red" coords="331,34,314,52" alt="Sun" href="#" ng-click="AddSeats(A3);">
-                                        <area shape="rect" style="background-color:red" coords="354,34,338,52" alt="Sun" href="#" ng-click="AddSeats(A3);">
-                                        <area shape="rect" style="background-color:red" coords="378,34,362,52" alt="Sun" href="#" ng-click="AddSeats(A3);">
-                                        <area shape="rect" style="background-color:red" coords="402,34,386,52" alt="Sun" href="#" ng-click="AddSeats(A3);">
-                                        <area shape="rect" style="background-color:red" coords="425,34,410,52" alt="Sun" href="#" ng-click="AddSeats(A3);">
+                                                    <area shape="rect" style="background-color:red" coords="283,34,266,52" alt="Sun" href="#" ng-click="AddSeats('4');">-->
+                                                    <area id="1" shape="rect" style="background-color:red" coords="352,34,372,52" alt="Sun" href="#" ng-click="AddSeats('A5');">
+                                                    <area shape="rect" style="background-color:red" coords="378,34,395,52" alt="Sun" href="#" ng-click="AddSeats('A6');">
+                                                    <area shape="rect" style="background-color:red" coords="400,34,420,52" alt="Sun" href="#" ng-click="AddSeats('A7');">
+                                                    <area shape="rect" style="background-color:red" coords="426,34,445,52" alt="Sun" href="#" ng-click="AddSeats('A8');">
+                                                    <!--<area shape="rect" style="background-color:red" coords="402,34,386,52" alt="Sun" href="#" ng-click="AddSeats('A3');">
+                                                    <area shape="rect" style="background-color:red" coords="425,34,410,52" alt="Sun" href="#" ng-click="AddSeats('A3');">-->
 
 
-                                        <area shape="rect" style="background-color:red" coords="212,59,192,71" alt="Sun" href="#" onclick="alert('B1 Selected');">
+                                                    <!--<area shape="rect" style="background-color:red" coords="212,59,192,71" alt="Sun" href="#" onclick="alert('B1 Selected');">
                                         <area shape="rect" style="background-color:red" coords="234,59,217,71" alt="Sun" href="#" onclick="alert('B2 Selected');">
                                         <area shape="rect" style="background-color:red" coords="258,59,242,71" alt="Sun" href="#" onclick="alert('B3 Selected');">
                                         <area shape="rect" style="background-color:red" coords="283,59,266,71" alt="Sun" href="#" onclick="alert('B4 Selected');">
                                         <area shape="rect" style="background-color:red" coords="307,59,290,71" alt="Sun" href="#" onclick="alert('B5 Selected');">
                                         <area shape="rect" style="background-color:red" coords="331,59,314,71" alt="Sun" href="#" onclick="alert('B6 Selected');">
-                                        <area shape="rect" style="background-color:red" coords="354,59,338,71" alt="Sun" href="#" onclick="alert('B7 Selected');">
-                                        <area shape="rect" style="background-color:red" coords="378,59,362,71" alt="Sun" href="#" onclick="alert('B8 Selected');">
-                                        <area shape="rect" style="background-color:red" coords="402,59,386,71" alt="Sun" href="#" onclick="alert('B9 Selected');">
-                                        <area shape="rect" style="background-color:red" coords="425,59,410,71" alt="Sun" href="#" onclick="alert('B10 Selected');">
+                                                    <area shape="rect" style="background-color:red" coords="354,59,338,71" alt="Sun" href="#" onclick="alert('B7 Selected');">-->
+                                                    <area shape="rect" style="background-color:red" coords="352,56,372,72" alt="Sun" href="#" ng-click="AddSeats('B8 Selected');">
+                                                    <area shape="rect" style="background-color:red" coords="378,56,395,72" alt="Sun" href="#" ng-click="AddSeats('B9 Selected');">
+                                                    <area shape="rect" style="background-color:red" coords="402,56,420,72" alt="Sun" href="#" ng-click="AddSeats('B10 Selected');">
+                                                    <area shape="rect" style="background-color:red" coords="426,56,445,72" alt="Sun" href="#" ng-click="AddSeats('B10 Selected');">
                                     </map>
                                 </td>
-                                <td><table><tr><td><label>Seat(s):{{count}}</label></td></tr>
-                                        <tr><td><label>Base Fare:{{Booking.Cost}}</label></td></tr>
-                                        <tr><td><label>Total Fare:{{count*Booking.Cost}}</label></td></tr>
-                                    </table></td>
+                                            <td>
+                                                <table>
+                                                    <tr><td><label>Seat(s):{{count}}</label></td></tr>
+                                                    <tr><td><label>Base Fare:{{basePrice}}</label></td></tr>
+                                                    <tr><td><label>Total Fare:{{count*basePrice}}</label></td></tr>
+                                                </table>
+                                            </td>
                                 <!--<td><label>Seat(s):{{count}}</label></td>
                                 <td><label>Base Fare:{{Booking.Cost}}</label></td>
                                 <td><label>Total Fare:{{count*Booking.Cost}}</label></td>-->
                             </tr>
                         </table>
-
-                        <div class="col-md-8 col-md-offset-1" ng-repeat="seat in selectedSeats.pssngr">
+                                    <div class="col-md-8 col-md-offset-1" ng-repeat="seat in selectedSeats.pssngr">
                             <div class="row">
                                 <form>
                                     <table>

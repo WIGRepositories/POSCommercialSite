@@ -7,12 +7,12 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
     $scope.GetLicense = function () {
 
-        if($scope.licenseCatId == null)
+        if($scope.licenseCatId == null || $scope.licenseCatId.Id == null)
         {
             alert('No license details configured for the selected license category. Please contact INTERBUS administartor.');
             return;
         }
-        $http.get('http://localhost:52800/api/LicensePage/GetLicense?catId='+$scope.licenseCatId).then(function (response, req) {
+        $http.get('http://localhost:52800/api/LicensePage/GetLicense?catId=' + $scope.licenseCatId.Id).then(function (response, req) {
             $scope.License = response.data;
             if ($scope.License == null) {
                 alert('No license details configured for the selected license category. Please contact INTERBUS administartor.');
@@ -22,30 +22,28 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
       
     }
 
-    $scope.GoToConfirmation = function (code, License, Lid, result) {
+    $scope.GoToConfirmation = function (code, License, Lid) {
 
         if (code == null) {
             alert('please enter valid fleet owner code or contact administrator.');
             return false;
         }
-        else {
+        else {           
+            $localStorage.License = License;
+            $localStorage.LicenseTypeId = Lid;
+            $localStorage.FleetOwnerCode = code;          
 
-            $http.get('http://localhost:52800/api/fleetownerlicense/validatefleetowner?fleetownercode=' + $scope.code).then(function (response, req) {
+            $http.get('http://localhost:52800/api/fleetownerlicense/validatefleetowner?fleetownercode=' + code).then(function (response, req) {
                 $scope.result = response.data;
 
                 if ($scope.result < 0) {
                     alert('invalid fleet owner code');
-                   
                 }
                 else {
                     $localStorage.License = License;
-                    $localStorage.LicenseTypeId = Lid;
-                    $localStorage.FleetOwnerCode = $scope.result;
-
+                    $localStorage.LicenseTypeId = Lid;                   
                     window.location.href = "http://localhost:52800/UI/Cartdetails.html";
                 }
-                   
-              
             });
         }
     };

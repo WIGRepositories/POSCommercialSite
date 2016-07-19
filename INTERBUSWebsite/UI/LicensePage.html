@@ -119,7 +119,7 @@
 
                 <div class="r">
                     <div class="rr">
-                        <a style="margin-top: 0px; padding-top: 0px; margin-right: 50px; float:left" href="index.html"><img style="height:56px" src="Images/logos/interbusLogo.png" alt="Alternate Text" /> </a>
+                        <a style="margin-top: 0px; padding-top: 0px; margin-right: 50px; float:left" href="index.html"><img style="height:76px" src="Images/logos/interbusLogo.png" alt="Alternate Text" /> </a>
                         <ul class="collapsible-menu clearfix" style="margin-left:0px;">
 
                             <li style="margin-left:30px">
@@ -221,7 +221,7 @@
 
                             <div class="col-md-4" style="margin:0px; padding:1px">
                                 <div class="pricing-widget active">
-                                    <div class="pricing-head" style="background-color: #EF0505">{{Lt.LicenseType}}</div>
+                                    <div class="pricing-head">{{Lt.LicenseType}}</div>
                                     <div class="pricing-body">
                                         <div class="pricing-cost" style="background-color:black"
                                              ng-repeat="p in License.Table2 | filter:{ LicenseId: Lt.Id }">
@@ -230,10 +230,10 @@
                                         </div>
                                         <ul class="pricing-list text-center">
 
-                                            <li ng-repeat="f in License.Table1 | filter:{ LicenseTypeId: Lt.Id }" ng-init="selType=f">{{f.FeatureLabel}} <strong>{{f.FeatureValue}}</strong></li>
-                                      
+                                            <li ng-repeat="f in License.Table1 | filter:{ LicenseTypeId: Lt.Id }" ng-init="selType=f">{{f.FeatureLabel}} <strong>{{f.FeatureValue}}</strong></li>                                      
                                          
-                                            <li class="text-center"><a ng-click="GoToConfirmation(txt, License, Lt.Id, result);" class="btn btn-danger" style="background-color: #EF0505">Buy Now</a></li>
+                                            <li class="text-center"><button ng-click="GoToConfirmation(txt, License, Lt.Id);" class="btn btn-primary">Buy Now</button></li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -297,7 +297,7 @@
         </div>
     </div>  
 
-   <script src="js/jquery-1.10.2.min.js"></script>
+  <!-- <script src="js/jquery-1.10.2.min.js"></script>-->
     <script src="js/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/jquery-ui.js"></script>
     <!--loading bootstrap js-->

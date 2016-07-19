@@ -40,9 +40,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>References\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PayPal, Version=1.7.3.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>References\PayPal.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -87,6 +95,8 @@
     <Content Include="obj\Debug\INTERBUSWebsite.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\INTERBUSWebsite.dll" />
     <Content Include="obj\Debug\INTERBUSWebsite.pdb" />
+    <Content Include="References\log4net.dll" />
+    <Content Include="References\PayPal.dll" />
     <Content Include="UI\About.html" />
     <Content Include="UI\AboutUs.html" />
     <Content Include="UI\AddTroubleTicketingDetails.html" />
@@ -106,8 +116,11 @@
     <Content Include="UI\css\bootstrap-theme.min.css" />
     <Content Include="UI\css\bootstrap.min.css" />
     <Content Include="UI\css\Main.css" />
+    <Content Include="UI\css\owl.carousel.css" />
+    <Content Include="UI\css\responsive.css" />
     <Content Include="UI\css\style-responsive.css" />
     <Content Include="UI\css\style.css" />
+    <Content Include="UI\css\style1.css" />
     <Content Include="UI\css\StyleSheet1.css" />
     <Content Include="UI\css\StyleSheet2.css" />
     <Content Include="UI\css\StyleSheet3.css" />
@@ -139,6 +152,7 @@
     <Content Include="UI\images\5.jpg" />
     <Content Include="UI\images\6.jpg" />
     <Content Include="UI\images\arrows.png" />
+    <Content Include="UI\images\bgImg.png" />
     <Content Include="UI\images\bg\1.jpg" />
     <Content Include="UI\images\bg\2.jpg" />
     <Content Include="UI\images\bg\3.jpg" />
@@ -199,10 +213,20 @@
     <Content Include="UI\images\logos\interbus.jpg" />
     <Content Include="UI\images\logos\interbusLogo.png" />
     <Content Include="UI\images\logos\oyster-homepage-icon.png" />
+    <Content Include="UI\images\promos\1.jpg" />
+    <Content Include="UI\images\promos\1.png" />
+    <Content Include="UI\images\promos\2.jpg" />
+    <Content Include="UI\images\promos\2.png" />
+    <Content Include="UI\images\promos\3.jpg" />
+    <Content Include="UI\images\promos\3.png" />
+    <Content Include="UI\images\promos\4.jpg" />
+    <Content Include="UI\images\promos\4.png" />
     <Content Include="UI\images\promos\48-fares-and-payment-pcn-logo-icon.png" />
     <Content Include="UI\images\promos\50-fares-and-payment-cc-icon.png" />
     <Content Include="UI\images\promos\52-fares-and-payment-lez-icon.png" />
     <Content Include="UI\images\promos\53-fares-and-payment-oyster-icon.png" />
+    <Content Include="UI\images\promos\7.jpg" />
+    <Content Include="UI\images\promos\7.png" />
     <Content Include="UI\images\promos\bus1.jpg" />
     <Content Include="UI\images\promos\bus3.jpg" />
     <Content Include="UI\images\promos\bus4.jpg" />
@@ -223,6 +247,7 @@
     <Content Include="UI\js\angular.js" />
     <Content Include="UI\js\Booking.js" />
     <Content Include="UI\js\bootstrap.min.js" />
+    <Content Include="UI\js\bxslider.min.js" />
     <Content Include="UI\js\Cartdetails.js" />
     <Content Include="UI\js\cc_af.js" />
     <Content Include="UI\js\CheckOut.js" />
@@ -241,11 +266,15 @@
     <Content Include="UI\js\licensepage1.js" />
     <Content Include="UI\js\Login.js" />
     <Content Include="UI\js\main.js" />
+    <Content Include="UI\js\moment.js" />
     <Content Include="UI\js\ngStorage.js" />
     <Content Include="UI\js\ResetPassword.js" />
+    <Content Include="UI\js\script.slider.js" />
     <Content Include="UI\js\SeatSelection.js" />
     <Content Include="UI\js\Stops.js" />
+    <Content Include="UI\js\TicketCartdetails.js" />
     <Content Include="UI\js\TicketPage.js" />
+    <Content Include="UI\js\ui-bootstrap-tpls-1.3.3.js" />
     <Content Include="UI\js\UserInfo.js" />
     <Content Include="UI\js\VehicleAvailability.js" />
     <Content Include="UI\js\wickedpicker.min.js" />
@@ -264,6 +293,7 @@
     <Content Include="UI\SeatSelection.html" />
     <Content Include="UI\Status_and_Updates.html" />
     <Content Include="UI\success.html" />
+    <Content Include="UI\TicketCartdetails.html" />
     <Content Include="UI\TicketPage.html" />
     <Content Include="UI\UserTicketCancellation.html" />
     <Content Include="UI\vehicleAvailability.html" />
@@ -1054,8 +1084,10 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BookingController.cs" />
+    <Compile Include="Controllers\CartPaymentDetailsController.cs" />
     <Compile Include="Controllers\LicensePage.cs" />
     <Compile Include="Controllers\LicensePageController.cs" />
+    <Compile Include="Controllers\PaymentsController.cs" />
     <Compile Include="Controllers\StopsController.cs" />
     <Compile Include="Controllers\FleetOwnerLicenseController.cs" />
     <Compile Include="Controllers\TicketBookingController.cs" />

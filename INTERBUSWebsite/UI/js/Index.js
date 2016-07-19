@@ -13,13 +13,25 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
             $scope.licenses = res.data;
 
         });
-
-
     }
 
     $scope.GetServices = function () {
-        $localStorage.srcId = $scope.S.Id;
-        $localStorage.destId = $scope.D.Id;
+        if ($scope.S == null)
+        {
+            alert('Please select source.');
+            return;
+        }
+
+        if ($scope.D == null)
+        {
+            alert('Please select destination.');
+            return;
+    }
+
+        $localStorage.src = $scope.S;
+        $localStorage.dest = $scope.D;
+        //$rootscope.src = $scope.RS;
+        //$rootscope.dest = $scope.RD;
         $scope.way1 = $scope.result ;
         $localStorage.waytype = $scope.way1;
         window.location.href = "booking.html";
@@ -37,10 +49,10 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
     if (p == null) {
         alert('Please enter password');
         return;
+
     }
 
     var inputcred = { LoginInfo: u, Passkey: p }
-
 
     var req = {
         method: 'POST',
@@ -62,7 +74,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 }
 
     $scope.GotToLicensePage = function (t) {
-        $localStorage.licenseId = t.Id;
+        $localStorage.licenseId = t;
         window.location.href = "LicensePage.html";
     }
 });

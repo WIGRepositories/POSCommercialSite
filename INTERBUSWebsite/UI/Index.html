@@ -20,6 +20,10 @@
     <link href="css/StyleSheet5.css" media="screen&#32;and&#32;(min-width:&#32;900px)" rel="stylesheet" />
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/wickedpicker.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
     <link type="text/css" rel="stylesheet" href="vendors/bootstrap-datepicker/css/datepicker.css">
     <link type="text/css" rel="stylesheet" href="vendors/bootstrap-daterangepicker/daterangepicker-bs3.css">
     <!--<link type="text/css" rel="stylesheet" href="vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css">-->
@@ -107,7 +111,7 @@
 <body ng-init="GetStops();">
 
     <!--start header-->
-    <div class="parentDisable">
+    <!--<div class="parentDisable">-->
         <div id="container">
 
             <!--Start Menu -->
@@ -117,10 +121,10 @@
 
                     <div class="r">
                         <div class="rr">
-                            <a style="margin-top: 0px; padding-top: 0px; margin-right: 50px; float:left" href="index.html"><img style="height:56px" src="Images/logos/interbusLogo.png" alt="Alternate Text" /> </a>
+                        <!--<a style="margin-left:0px; margin-top: 0px; padding-top: 0px; margin-right: 20px; float:left" href="index.html"></a>-->
                             <ul class="collapsible-menu clearfix" style="margin-left:0px;">
 
-                                <li style="margin-left:22px">
+                            <li style="margin-left:52px">
 
                                     <a style="text-decoration:none" href="index.html">Home</a>
 
@@ -144,14 +148,15 @@
                                 <li>
 
                                     <a style="text-decoration:none" href="#">Products</a>
-                                    <ul >
+                                <ul>
                                      
-                                        <li ng-repeat="t in licenses" id="{{t.Id}}" ><a href="#" ng-click="GotToLicensePage(t);">{{t.Name}}</a></li>                                           
+                                    <li ng-repeat="t in licenses" id="{{t.Id}}"><a href="#" ng-click="GotToLicensePage(t);">{{t.Name}}</a></li>
                                        
                                         <!--<li><a href="Licensepage.html">Fleet Owner Lisence</a></li>
                                         <li><a href="Licensepage.html">BTPOS Lisence</a></li>
-                                        <li><a href="Licensepage.html">TroubleTicket Lisence</a></li>-->
-                                    </ul>
+                                        <li><a href="Licensepage.html">Advertisement Lisence</a></li>
+                                        <li><a href="Licensepage.html">TroubleTicket Lisence</a></li>
+                                    </ul>-->
                                 </li>
 
                                 <li>
@@ -164,17 +169,12 @@
 
                                 </li>
 
-                                <li style="margin-left:150px">
+                            <li style="margin-left:250px">
 
                                     <div style="float:right; padding-top:11px">
                                         <input type="text" placeholder="Search" id="q" name="q" style="border-radius:30px; width:120px; height:35px" />
-
-
                                     </div>
-
-
                                 </li>
-
                             </ul>
                         </div>
                     </div>
@@ -182,26 +182,62 @@
                 </div>
 
             </div>
-            <!--End Menu-->
-
-        </div>
         <div class="clearfix"></div>
+        <!--End Menu-->
         <!--End header-->
 
-        <div id="main-hero" style="margin-top:58px">
-            <!--<img class="mySlides" src="Images/promos/bus4.jpg" style="width:100%; height:350px;">
-            <img class="mySlides" src="Images/promos/bus1.jpg" style="width:100%; height:350px;">
-            <img class="mySlides" src="Images/promos/bus6.jpg" style="width:100%; height:350px;">
-            <img class="mySlides" src="Images/promos/bus3.jpg" style="width:100%; height:350px;">--> 
+        <table style="height:80px">
+            <tr>
+                <td width="22%"><img src="images/logos/interbuslogo.png" style="height:100%; width:100%" /></td>
+                <td>
 
-            <img class="mySlides" src="Images/3.png" style="width:100%; height:350px;">
-            <img class="mySlides" src="Images/4.png" style="width:100%; height:350px;">
-            <img class="mySlides" src="Images/IMG-20160616-WA0012.jpg" style="width:100%; height:350px;">
-            <img class="mySlides" src="Images/IMG-20160616-WA0013.jpg" style="width:100%; height:350px;"> 
-            <img class="mySlides" src="images/IMG-20160616-WA0016.jpg" style="width:100%; height:350px;"> 
-            <img class="mySlides" src="images/IMG-20160616-WA0007.jpg" style="width:100%; height:350px;"> 
+                    <div class="slider-area" style="height:100%; width:100%">
+                        <!-- Slider -->
+                        <div class=" block-slider block-slider4" style="height:100%; width:100%">
+                            <ul id="bxslider-home4">
+                                <li>
+                                    <img src="Images/promos/bus4.jpg" alt="Slide">
+                                    <!--<div class="caption-group">
+                                        <h2 class="caption title">
+                                            iPhone <span class="primary">6 <strong>Plus</strong></span>
+                                        </h2>
+                                        <h4 class="caption subtitle">Dual SIM</h4>
+                                        <a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+                                    </div>-->
+                                </li>
+                                <li>
+                                    <img src="Images/promos/bus1.jpg" alt="Slide">
+                                    <!--<div class="caption-group">
+                                        <h2 class="caption title">
+                                            by one, get one <span class="primary">50% <strong>off</strong></span>
+                                        </h2>
+                                        <h4 class="caption subtitle">school supplies & backpacks.*</h4>
+                                        <a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+                                    </div>-->
+                                </li>
+                                <li>
+                                    <img src="Images/promos/bus6.jpg" alt="Slide">
+                                    <!--<div class="caption-group">
+                                        <h2 class="caption title">
+                                            Apple <span class="primary">Store <strong>Ipod</strong></span>
+                                        </h2>
+                                        <h4 class="caption subtitle">Select Item</h4>
+                                        <a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+                                    </div>-->
+                                </li>
+
+                            </ul>
         </div>
+                        <!-- ./Slider -->
+                    </div>
+                </td>
+                <td width="15%"><img src="images/bgImg.png" style="height:100%; width:100%" /></td>
+            </tr>
+        </table>
 
+       
+
+    </div>
         <div class="main-and-aside one-row r">
             <!--plan journey form-->
             <div class="aside">
@@ -220,9 +256,6 @@
                                             <div id="plan-a-journey">
 
                                                 <fieldset>
-
-
-
                                                     <div class="from-and-to clearfix">
 
                                                         <div class="geolocation-box clearfix">
@@ -236,9 +269,6 @@
                                                         </div>
 
                                                         <div id="search-filter-form-1">
-
-
-
                                                             <label class="heading&#32;visually-hidden" for="InputTo">To</label>
                                                             <select class="form-control" ng-options="D.Name for D in Stops track by D.Id" ng-model="D">
                                                                 <option value="">Select Destination</option>
@@ -262,16 +292,16 @@
 
                                                             <a class="change-departure-time" href="">change time</a>
 
+                                                            <div class="input-group datetimepicker-disable-date date"><input type="text" class="form-control" /><span class="input-group-addon"><i class="fa fa-clock-o"></i></span></div>
+                                                            <!--<input type="text" name="timepicker" class="timepicker" />-->
                                                             
-                                                            <input type="text" name="timepicker" class="timepicker" />
-
                                                         </div>
 
                                                     </div>
 
                                                
-                                                        <input ng-model="result" value="1" type="radio" name="triptype"/> One Way
-                                                        <input ng-model="result" value="2" type="radio" name="triptype"/> Two Way
+                                                    <input ng-model="result" value="1" type="radio" name="triptype" checked ng-init="result=1"/> One Way
+                                                    <input ng-model="result" value="2" type="radio" name="triptype" /> Two Way
                                                   
 
                                                     <div class="extra-options clearfix">
@@ -497,8 +527,6 @@
                                                 <li><a href="#">Admin</a></li>
                                                 <li><a href="#">Passenger</a></li>
                                                 <li><a href="#">Fleet Owner</a></li>
-
-
                                             </ul>
                                         </div><br />
 
@@ -577,75 +605,42 @@
                     </div>
 
                     <div data-set="reserved-teaser" class="large tertiary-teaser">
-
                         <div class="moving-source-order">
-
                             <div class="news-teaser">
-
                                 <a href="">
-
                                     <img src="Images/promos/thames-clipper_rdax_400x200.jpg" alt="Central London traffic" />
-
                                     <div class="text-link">
-
                                         <h2>Major works and Events</h2>
-
                                         <p>Find out about upcoming works or events across Zimbabwe which may affect your journey</p>
-
                                     </div>
-
                                 </a>
-
                             </div>
-
                         </div>
-
                     </div>
 
                     <div class="vertical-button-container">
-
                         <a href="/travel-information/stations-stops-and-piers/" class="plain-button">Stations, stops &amp; piers</a>
-
-
-
                         <a href="/travel-information/timetables/" class="plain-button">Timetables</a>
-
                         <a href="/help-and-contact/" class="plain-button">Help &amp; contacts</a>
-
                         <a href="/travel-information/visiting-london/" class="plain-button">Shop for Products online</a>
-
                         <a href="/transport-accessibility/" class="plain-button">Transport accessibility</a>
-
                         <a href="/travel-information/social-media-and-email-updates/" class="plain-button">Social media &amp; email updates</a>
                         <a href="/transport-accessibility/" class="plain-button">Interbus Digital Blog</a>
-
-
-
-                    </div>
-
                 </div>
 
             </div>
 
         </div>
-        <div style="display:none;">
 
         </div>
-    </div>
 
-
-
-    <div>
+    <!--</div>-->
         
-    </div>
 
-        <div class="row">
+    <!--<div class="row">
             <div class="col-lg-12">
                 <div id="footer" tabindex="0">
-
                     <h2 class="visually-hidden">Site footer</h2>
-
-
 
                     <div class="primary-footer r">
                         <h2 class="visually-hidden">About Interbus</h2>
@@ -659,7 +654,9 @@
                             <li><a class="" href="/corporate/tfl-shop/">Gift Shop</a></li>
                             <li><a class="" href="/travel-information/social-media-and-email-updates/">Social media &amp; email updates</a></li>
                             <li><a class="languages-footer" href="/travel-information/other-languages/">Other languages</a></li>
-                        </ul><h2 class="heading">Information for...</h2><ul class="info-for clearfix">
+                    </ul>
+                    <h2 class="heading">Information for...</h2>
+                    <ul class="info-for clearfix">
                             <li><a href="/info-for/media/">Media</a></li>
                             <li><a href="/info-for/business-and-commercial/">Business &amp; commercial</a></li>
                             <li><a href="/info-for/boroughs/">Get Support online 24/7</a></li>
@@ -674,6 +671,37 @@
                             <li><a href="/info-for/investors/">Investors</a></li>
                             <li><a href="/info-for/investors/">Download Interbus App   </a></li>
                         </ul>
+                </div>
+                <div class="secondary-footer">
+                    <h2 class="visually-hidden">Site structure and legal information</h2>
+                <div class="r">
+                    <ul>
+                    <li><a href="/corporate/terms-and-conditions/">Terms &amp; conditions </a></li>
+                    <li><a href="/corporate/privacy-and-cookies/">Privacy &amp; cookies</a></li>
+                    <li><a href="/corporate/website-accessibility/">Website accessibility</a></li>
+                    </ul>
+                    <span class="heading">Copyright Interbus</span>
+                    </div>
+                </div>
+                <div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>-->
+    
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="footer" tabindex="0">
+
+                <h2 class="visually-hidden">Site footer</h2>
+
+
+
+                <div class="primary-footer r">
+                    <h2 class="visually-hidden">About TfL</h2><ul class="footer-links"><li><a href="/help-and-contact/">Help &amp; contacts</a></li><li><a class="" href="/corporate/careers/">Careers</a></li><li><a class="" href="/corporate/about-tfl/">About TfL</a></li><li><a class="" href="/corporate/safety-and-security/">Safety &amp; security</a></li><li><a class="" href="/corporate/transparency/">Transparency</a></li><li><a class="" href="/corporate/publications-and-reports/">Publications &amp; reports</a></li><li><a class="" href="/corporate/tfl-shop/">Gift Shop</a></li><li><a class="" href="/travel-information/social-media-and-email-updates/">Social media &amp; email updates</a></li><li><a class="languages-footer" href="/travel-information/other-languages/">Other languages</a></li></ul><h2 class="heading">Information for...</h2><ul class="info-for clearfix"><li><a href="/info-for/media/">Media</a></li><li><a href="/info-for/business-and-commercial/">Business &amp; commercial</a></li><li><a href="/info-for/boroughs/">Boroughs</a></li><li><a href="/info-for/schools-and-young-people/">Schools &amp; young people</a></li><li><a href="/info-for/deliveries-in-london/">Deliveries in London</a></li><li><a href="/info-for/urban-planning-and-construction/">Urban planning &amp; construction</a></li><li><a href="/info-for/taxis-and-private-hire/">Taxi &amp; private hire </a></li><li><a href="/info-for/suppliers-and-contractors/">Suppliers &amp; contractors</a></li><li><a href="/info-for/bus-operators/">Bus operators</a></li><li><a href="/info-for/open-data-users/">Open data users</a></li><li><a href="/info-for/coach-drivers/">Coach drivers</a></li><li><a href="/info-for/investors/">Investors</a></li></ul>
                     </div>
                     <div class="secondary-footer"><h2 class="visually-hidden">Site structure and legal information</h2><div class="r"><ul><li><a href="/corporate/terms-and-conditions/">Terms &amp; conditions </a></li><li><a href="/corporate/privacy-and-cookies/">Privacy &amp; cookies</a></li><li><a href="/corporate/website-accessibility/">Website accessibility</a></li></ul><span class="heading">Copyright Interbus</span></div></div>
                     <div>
@@ -685,37 +713,27 @@
             </div>
         </div>
     
-    <script>
+    <!--<script>
 
         var myIndex = 0;
-
         carousel();
 
         // script for slider
-
         function carousel() {
 
             var i;
-
             var x = document.getElementsByClassName("mySlides");
-
             for (i = 0; i < x.length; i++) {
-
                 x[i].style.display = "none";
-
             }
 
             myIndex++;
-
             if (myIndex > x.length) { myIndex = 1 }
-
             x[myIndex - 1].style.display = "block";
-
-            setTimeout(carousel, 3000); // Change image every 3 seconds
-
+            setTimeout(carousel, 10000); // Change image every 3 seconds
         }
 
-    </script>
+    </script>-->
     <script type="text/javascript">
         $("#modal_trigger").leanModal({ top: 200, overlay: 0.6, closeButton: ".modal_close" });
 
@@ -746,11 +764,16 @@
 
         })
     </script>
-    <script>
-        $('.timepicker').wickedpicker({ twentyFour: true }); //24 hours clock
-     //   var timepickers = $('.timepicker').wickedpicker(); console.log(timepickers.wickedpicker('time', 1)); //12 hours clock
-    </script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="vendors/bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js"></script>
+    <script>
+        $('.datetimepicker-disable-date').datetimepicker({
+            pickDate: false
+        });
+    </script>
+    <script type="text/javascript" src="js/bxslider.min.js"></script> 
+    <script type="text/javascript" src="js/script.slider.js"></script>
     <script src="js/angular.js"></script>
     <script src="js/ngStorage.js"></script>
     <script src="js/index.js"></script>

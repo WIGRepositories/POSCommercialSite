@@ -115,9 +115,8 @@ namespace INTERBUSWebsite.Controllers
         //}
 
         [HttpGet]
-        public DataTable validatefleetowner()
+        public int validatefleetowner(string fleetownercode)
         {
-            DataTable Tbl = new DataTable();
             //connect to database
             SqlConnection conn = new SqlConnection();
             //connetionString="Data Source=ServerName;Initial Catalog=DatabaseName;User ID=UserName;Password=Password"
@@ -128,13 +127,22 @@ namespace INTERBUSWebsite.Controllers
             cmd.CommandText = "ValidateFleetOwnerCode";
             cmd.Connection = conn;
 
-         
-            DataSet ds = new DataSet();
-            SqlDataAdapter db = new SqlDataAdapter(cmd);
-            db.Fill(ds);
-            Tbl = ds.Tables[0];
+            conn.Open();
+            SqlParameter code = new SqlParameter("@fleetownercode", SqlDbType.VarChar, 10);
+            code.Value = fleetownercode;
+            cmd.Parameters.Add(code);
 
-            return Tbl;
+            SqlParameter mm = new SqlParameter("@result", SqlDbType.Int);
+            mm.Direction = ParameterDirection.Output;
+            cmd.Parameters.Add(mm);
+
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
+
+            int result = -1;
+            result = Convert.ToInt32(mm.Value);
+            return result;
 
         }
 
