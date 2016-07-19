@@ -301,7 +301,7 @@ namespace BTPOSDashboardAPI.Models
     }
     public class ULFeatures
     {
-        public int Id { set; get; }
+       // public int Id { set; get; }
         public int ULPymtId { set; get; }
         public int FeatureId { set; get; }
         public string FeatureValue { set; get; }

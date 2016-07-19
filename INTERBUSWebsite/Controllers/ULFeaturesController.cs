@@ -54,7 +54,7 @@ namespace INTERBUSWebsite.Controllers
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "InsUpdTypes";
+                cmd.CommandText = "InsUpdDelULFeatures";
                 cmd.Connection = conn;
                 conn.Open();
                 

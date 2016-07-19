@@ -54,7 +54,7 @@ namespace INTERBUSWebsite.Controllers
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "InsUpdTypes";
+                cmd.CommandText = "InsUpdDelULPymtTransDetails";
                 cmd.Connection = conn;
                 conn.Open();
 
@@ -78,9 +78,9 @@ namespace INTERBUSWebsite.Controllers
                 
                 SqlParameter Gid = new SqlParameter();
                 Gid.ParameterName = "@StatusId";
-                 Cid.SqlDbType = SqlDbType.Int;
-                Cid.Value = Convert.ToInt32(b.StatusId);
-                cmd.Parameters.Add(Cid);
+                Gid.SqlDbType = SqlDbType.Int;
+                Gid.Value = Convert.ToInt32(b.StatusId);
+                cmd.Parameters.Add(Gid);
               
                
                 SqlParameter hid = new SqlParameter();
