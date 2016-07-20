@@ -241,6 +241,7 @@ namespace BTPOSDashboardAPI.Models
         public int Id { set; get; }
         public int UserId { set; get; }
         public int FOId { set; get; }
+        public string FOCode { set; get; }
         public int LicenseTypeId { set; get; }
         public DateTime StartDate { set; get; }
         public DateTime ExpiryOn { set; get; }
@@ -249,6 +250,7 @@ namespace BTPOSDashboardAPI.Models
         public DateTime LastUpdatedOn { set; get; }
         public int Active { set; get; }
         public int StatusId { set; get; }
+
     }
     public class ULLicense
     {

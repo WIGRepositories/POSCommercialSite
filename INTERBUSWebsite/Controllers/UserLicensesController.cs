@@ -42,7 +42,7 @@ namespace INTERBUSWebsite.Controllers
         }
     
         [HttpPost]
-        public HttpResponseMessage saveFleetOwnerRoutefare(UserLicense RouteFareConfig)
+        public HttpResponseMessage InsUpdDelUserLicenseDetails(UserLicense userlicense)
         {
             SqlConnection conn = new SqlConnection();
             try
@@ -125,10 +125,10 @@ namespace INTERBUSWebsite.Controllers
               
                   
                 List<ULLicense> License = null;
-                if (RouteFareConfig.routeFare != null && RouteFareConfig.routeFare.Count > 0)
-                {
-                    License = RouteFareConfig.routeFare;
-                }
+                //if (RouteFareConfig != null && RouteFareConfig.Count > 0)
+                //{
+                //    License = RouteFareConfig.routeFare;
+                //}
 
 
                 foreach (ULLicense b in License)

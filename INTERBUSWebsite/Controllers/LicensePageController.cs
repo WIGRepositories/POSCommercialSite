@@ -30,7 +30,7 @@ namespace INTERBUSWebsite.Controllers
             cmd.Connection = conn;
 
 
-            SqlParameter mm = new SqlParameter("@LicenseCatId", SqlDbType.Int);
+            SqlParameter mm = new SqlParameter("@catId", SqlDbType.Int);
             mm.Value = LicenseCatId;
             cmd.Parameters.Add(mm);
 
