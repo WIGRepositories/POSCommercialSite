@@ -52,7 +52,7 @@ namespace INTERBUSWebsite.Controllers
 
                     SqlCommand cmd1 = new SqlCommand();
                     cmd1.CommandType = CommandType.StoredProcedure;
-                    cmd1.CommandText = "InsUpdDelUserLicense";
+                    cmd1.CommandText = "InsUpdDelUserLicenseDetails";
                     cmd1.Connection = conn;
                     conn.Open();
                 
@@ -60,31 +60,31 @@ namespace INTERBUSWebsite.Controllers
                     SqlParameter vid1 = new SqlParameter();
                     vid1.ParameterName = "@UserId";
                     vid1.SqlDbType = SqlDbType.Int;
-                    vid1.Value = RouteFareConfig.UserId;
+                    vid1.Value = userlicense.UserId;
                     cmd1.Parameters.Add(vid1);
 
                     SqlParameter ccd1 = new SqlParameter();
                     ccd1.ParameterName = "@FOId";
                     ccd1.SqlDbType = SqlDbType.Int;
-                    ccd1.Value = RouteFareConfig.FOId;
+                    ccd1.Value = userlicense.FOId;
                     cmd1.Parameters.Add(ccd1);
 
                     SqlParameter pu = new SqlParameter();
                     pu.ParameterName = "@LicenseTypeId";
                     pu.SqlDbType = SqlDbType.Int;
-                    pu.Value = RouteFareConfig.LicenseTypeId;
+                    pu.Value = userlicense.LicenseTypeId;
                     cmd1.Parameters.Add(pu);
 
                      SqlParameter pid = new SqlParameter();
                     pid.ParameterName = "@GracePeriod";
                     pid.SqlDbType = SqlDbType.Int;
-                    pid.Value = RouteFareConfig.GracePeriod;
+                    pid.Value = userlicense.GracePeriod;
                     cmd1.Parameters.Add(pid);
                 
                     SqlParameter fd1 = new SqlParameter();
                     fd1.ParameterName = "@ActualExpiry";
                     fd1.SqlDbType = SqlDbType.DateTime;
-                    fd1.Value = RouteFareConfig.ActualExpiry;
+                    fd1.Value = userlicense.ActualExpiry;
                     cmd1.Parameters.Add(fd1);
 
                 
@@ -92,25 +92,25 @@ namespace INTERBUSWebsite.Controllers
                     SqlParameter fid = new SqlParameter();
                     fid.ParameterName = "@StartDate";
                     fid.SqlDbType = SqlDbType.DateTime;
-                    fid.Value = RouteFareConfig.StartDate;
+                    fid.Value = userlicense.StartDate;
                     cmd1.Parameters.Add(fid);
                   
                     SqlParameter sid = new SqlParameter();
                     sid.ParameterName = "@LastUpdatedOn";
                     sid.SqlDbType = SqlDbType.DateTime;
-                    sid.Value = RouteFareConfig.LastUpdatedOn;
+                    sid.Value = userlicense.LastUpdatedOn;
                     cmd1.Parameters.Add(sid);
                    
                     SqlParameter td1 = new SqlParameter();
                     td1.ParameterName = "@ExpiryOn";
                     td1.SqlDbType = SqlDbType.DateTime;
-                    td1.Value = RouteFareConfig.ExpiryOn;
+                    td1.Value = userlicense.ExpiryOn;
                     cmd1.Parameters.Add(td1);
 
                     SqlParameter hid = new SqlParameter();
                     hid.ParameterName = "@StatusId";
                     hid.SqlDbType = SqlDbType.Int;
-                    hid.Value = RouteFareConfig.StatusId;
+                    hid.Value = userlicense.StatusId;
                     cmd1.Parameters.Add(hid);
 
                 

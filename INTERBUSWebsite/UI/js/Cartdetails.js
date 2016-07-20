@@ -47,6 +47,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         //public int Id { set; get; }
         //public int UserId { set; get; }
         //public int FOId { set; get; }
+        // public string FOCode { set; get; }
         //public int LicenseTypeId { set; get; }
         //public DateTime StartDate { set; get; }
         //public DateTime ExpiryOn { set; get; }
@@ -54,52 +55,43 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         //public DateTime ActualExpiry { set; get; }
         //public DateTime LastUpdatedOn { set; get; }
         //public int Active { set; get; }
+        //public int RenewFreqTypeId { set; get; }
         //public int StatusId { set; get; }
 
-        for (var cnt = 0; cnt < configFareList.length; cnt++) {
-            var arrTime = configFareList[cnt].arrivaltime; //12:00 AM
+      
 
-            var atimeAtt = arrTime.split(' ')
-            var atArr = atimeAtt[0].split(':');
+        //    var FVS = {
 
-            var depTime = configFareList[cnt].departuretime; //12:00 AM
+        //        StopId: configFareList[cnt].stopid,
+        //        ArrivalHr: atArr[0],
+        //        DepartureHr: dtArr[0],
 
-            var dtimeAtt = depTime.split(' ')
-            var dtArr = dtimeAtt[0].split(':');
+        //        ArrivalMin: atArr[1],
+        //        DepartureMin: dtArr[1],
+        //        ArrivalAMPM: atimeAtt[1],
+        //        DepartureAmPm: dtimeAtt[1],
+        //        Duration: stop.Duration,
 
+        //        arrivaltime: arrTime,
+        //        departuretime: depTime,
 
-            var FVS = {
+        //        insupddelflag: 'U'
+        //    }
+        //    FleetOwnerVS.push(FVS);
+        
+        //foSchedule.VSchedule = FleetOwnerVS;
+        //$http({
+        //    url: 'http://localhost:1476/api/FleetOwnerVehicleSchedule/saveFORSchedule',
+        //    method: 'POST',
+        //    headers: { 'Content-Type': 'application/json' },
+        //    data: foSchedule,
 
-                StopId: configFareList[cnt].stopid,
-                ArrivalHr: atArr[0],
-                DepartureHr: dtArr[0],
-
-                ArrivalMin: atArr[1],
-                DepartureMin: dtArr[1],
-                ArrivalAMPM: atimeAtt[1],
-                DepartureAmPm: dtimeAtt[1],
-                Duration: stop.Duration,
-
-                arrivaltime: arrTime,
-                departuretime: depTime,
-
-                insupddelflag: 'U'
-            }
-            FleetOwnerVS.push(FVS);
-        }
-        foSchedule.VSchedule = FleetOwnerVS;
-        $http({
-            url: 'http://localhost:1476/api/FleetOwnerVehicleSchedule/saveFORSchedule',
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            data: foSchedule,
-
-        }).success(function (data, status, headers, config) {
-            alert('Fleet owner Vehicle Schedule Saved successfully');
-            $scope.GetFORoutes();
-        }).error(function (ata, status, headers, config) {
-            alert(ata);
-        });
+        //}).success(function (data, status, headers, config) {
+        //    alert('Fleet owner Vehicle Schedule Saved successfully');
+        //    $scope.GetFORoutes();
+        //}).error(function (ata, status, headers, config) {
+        //    alert(ata);
+        //});
 
         window.location.href = "http://localhost:52800/UI/CheckOut.html";
     }

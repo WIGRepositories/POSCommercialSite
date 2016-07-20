@@ -249,6 +249,7 @@ namespace BTPOSDashboardAPI.Models
         public DateTime ActualExpiry { set; get; }
         public DateTime LastUpdatedOn { set; get; }
         public int Active { set; get; }
+        public int RenewFreqTypeId { set; get; }
         public int StatusId { set; get; }
 
     }
