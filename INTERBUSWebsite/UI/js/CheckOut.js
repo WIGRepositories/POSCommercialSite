@@ -8,6 +8,8 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         $scope.FirstName = $scope.details.No_Seats;
     }
 
+   
+
     $scope.processPymt = function () {
 
         if ($scope.qty <= 0) {
@@ -49,6 +51,16 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
                 window.location.href = "LicenseConfirmation.html";
             }
         });
+
+    }
+
+
+    $scope.getcheckdetails = function () {
+
+        $http.get('http://localhost:52800/api/Checkout/getcheckdetails').then(function (response, req) {
+            $scope.check = response.data;
+
+        })
 
     }
 

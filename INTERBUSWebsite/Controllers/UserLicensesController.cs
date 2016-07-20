@@ -13,12 +13,12 @@ namespace INTERBUSWebsite.Controllers
     public class UserLicensesController : ApiController
     {
         [HttpGet]
-
+        [Route("api/UserLicenses/getUserLicenses")]
         public DataTable getUserLicenses()
         {
             DataTable Tbl = new DataTable();
 
-
+            
             //connect to database
             SqlConnection conn = new SqlConnection();
             //connetionString="Data Source=ServerName;Initial Catalog=DatabaseName;User ID=UserName;Password=Password"
@@ -42,7 +42,8 @@ namespace INTERBUSWebsite.Controllers
         }
     
         [HttpPost]
-        public HttpResponseMessage InsUpdDelUserLicenseDetails(UserLicense userlicense)
+        [Route("api/UserLicenses/SaveUserLicenseDetails")]
+        public HttpResponseMessage SaveUserLicenseDetails(UserLicenseDetails userlicense)
         {
             SqlConnection conn = new SqlConnection();
             try
@@ -55,8 +56,11 @@ namespace INTERBUSWebsite.Controllers
                     cmd1.CommandText = "InsUpdDelUserLicenseDetails";
                     cmd1.Connection = conn;
                     conn.Open();
-                
-       
+
+                List<ULLicense> vSchedList = userlicense.checkSchedule;
+
+                foreach (ULLicense n in vSchedList)
+                {     
                     SqlParameter vid1 = new SqlParameter();
                     vid1.ParameterName = "@UserId";
                     vid1.SqlDbType = SqlDbType.Int;
@@ -114,84 +118,93 @@ namespace INTERBUSWebsite.Controllers
                     cmd1.Parameters.Add(hid);
 
                 
+                    SqlParameter nActive = new SqlParameter("@Active", SqlDbType.Int);
+                    nActive.Value = userlicense.Active;
+                    cmd1.Parameters.Add(nActive);
+                   
+                    SqlParameter yid = new SqlParameter();
+                    yid.ParameterName = "@RenewFreqTypeId";
+                    yid.SqlDbType = SqlDbType.Int;
+                    yid.Value = userlicense.RenewFreqTypeId;
+                    cmd1.Parameters.Add(yid);
 
-                    cmd1.ExecuteScalar();
+                    //cmd1.ExecuteScalar();
 
 
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "InsUpdDelUserLicensePayments";
-                cmd.Connection = conn;
+                //SqlCommand cmd = new SqlCommand();
+                //cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.CommandText = "InsUpdDelUserLicensePayments";
+                //cmd.Connection = conn;
               
                   
-                List<ULLicense> License = null;
+                //List<ULLicense> License = null;
                 //if (RouteFareConfig != null && RouteFareConfig.Count > 0)
                 //{
                 //    License = RouteFareConfig.routeFare;
                 //}
+          
 
-
-                foreach (ULLicense b in License)
-                {
+                //foreach (ULLicense b in License)
+                //{
                   
-       
                   
                     SqlParameter aid = new SqlParameter();
                     aid.ParameterName = "@ULId";
                     aid.SqlDbType = SqlDbType.Int;
-                    aid.Value = b.ULId;
-                    cmd.Parameters.Add(aid);
+                    aid.Value = n.ULId;
+                    cmd1.Parameters.Add(aid);
 
                     SqlParameter s1id = new SqlParameter();
                     s1id.ParameterName = "@StatusId";
                     s1id.SqlDbType = SqlDbType.Int;
-                    s1id.Value = b.StatusId;
-                    cmd.Parameters.Add(s1id);
+                    s1id.Value = n.StatusId;
+                    cmd1.Parameters.Add(s1id);
                        
                      SqlParameter cci= new SqlParameter();
                      cci.ParameterName = "@LicensePymtTransId";
                      cci.SqlDbType = SqlDbType.Int;
-                     cci.Value = b.LicensePymtTransId;
-                     cmd.Parameters.Add(cci);
+                     cci.Value = n.LicensePymtTransId;
+                     cmd1.Parameters.Add(cci);
                     
                     SqlParameter tid = new SqlParameter();
                     tid.ParameterName = "@IsRenewal";
                     tid.SqlDbType = SqlDbType.Int;
-                    tid.Value = b.IsRenewal;
-                    cmd.Parameters.Add(tid);
+                    tid.Value = n.IsRenewal;
+                    cmd1.Parameters.Add(tid);
                    
 
 
                     SqlParameter dd = new SqlParameter();
                     dd.ParameterName = "@Amount";
                     dd.SqlDbType = SqlDbType.Decimal;
-                    dd.Value = b.Amount;
-                    cmd.Parameters.Add(dd);
+                    dd.Value = n.Amount;
+                    cmd1.Parameters.Add(dd);
 
                     SqlParameter lid = new SqlParameter();
                     lid.ParameterName = "@UnitPrice";
                     lid.SqlDbType = SqlDbType.Decimal;
-                    lid.Value = b.UnitPrice;
-                    cmd.Parameters.Add(lid);
+                    lid.Value = n.UnitPrice;
+                    cmd1.Parameters.Add(lid);
 
                     SqlParameter kki = new SqlParameter();
                     kki.ParameterName = "@Units";
                     kki.SqlDbType = SqlDbType.Decimal;
-                    kki.Value = b.Units;
-                    cmd.Parameters.Add(kki);
+                    kki.Value = n.Units;
+                    cmd1.Parameters.Add(kki);
 
                     SqlParameter qqi = new SqlParameter();
                     qqi.ParameterName = "@CreatedOn";
                     qqi.SqlDbType = SqlDbType.DateTime;
-                    qqi.Value = b.CreatedOn;
-                    cmd.Parameters.Add(qqi);
+                    qqi.Value = n.CreatedOn;
+                    cmd1.Parameters.Add(qqi);
 
-                    cmd.ExecuteScalar();
+                     cmd1.ExecuteScalar();
 
-                    cmd.Parameters.Clear();
+                    cmd1.Parameters.Clear();
                 }
-               //connect to database
+
                 conn.Close();
+
                 return new HttpResponseMessage(HttpStatusCode.OK);
             }
             catch (Exception ex)
@@ -204,13 +217,10 @@ namespace INTERBUSWebsite.Controllers
                 return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex);
             }
         }
-
-        public void Options()
+         public void Options()
         {
 
         }
 
     }
 }
-
-  

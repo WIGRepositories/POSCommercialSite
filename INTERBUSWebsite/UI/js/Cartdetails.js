@@ -1,6 +1,9 @@
 ﻿var app = angular.module('myApp', ['ngStorage'])
 var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
+
+    
+
     
     $scope.FillDetails = function () {
         
@@ -37,61 +40,52 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         //}
 
     }
-
+    var checkoutsv = [];
+    var focheckout = new Object();
     $scope.CheckOut = function () {
 
-        //insert the details into user license tables and return the fleet owner details 
-        //then redirect to checkout page
+       
+        var userlicense = {
 
-        //public List<ULLicense> ULP{ get; set; }
-        //public int Id { set; get; }
-        //public int UserId { set; get; }
-        //public int FOId { set; get; }
-        // public string FOCode { set; get; }
-        //public int LicenseTypeId { set; get; }
-        //public DateTime StartDate { set; get; }
-        //public DateTime ExpiryOn { set; get; }
-        //public int GracePeriod { set; get; }
-        //public DateTime ActualExpiry { set; get; }
-        //public DateTime LastUpdatedOn { set; get; }
-        //public int Active { set; get; }
-        //public int RenewFreqTypeId { set; get; }
-        //public int StatusId { set; get; }
+                   UserId: ch.UserId,
+                   FOId:ch.FOId,
+                   FOCode:ch.FOCode,
+                   LicenseTypeId:ch.LicenseTypeId,
+                   StartDate:ch.StartDate,
+                   ExpiryOn:ch.ExpiryOn,
+                   GracePeriod:ch.GracePeriod,
+                   ActualExpiry:ch.ActualExpiry,
+                   LastUpdatedOn:ch.LastUpdatedOn,
+                   Active:ch.Active,
+                   RenewFreqTypeId:ch.RenewFreqTypeId,
+                  StatusId: ch.StatusId,
+                   
+                  ULId:ch.ULId,
+                   CreatedOn:ch.CreatedOn,
+                   Amount:ch.Amount,
+                   UnitPrice:ch.UnitPrice,
+                   StatusId:ch.StatusId,
+                   LicensePymtTransId:ch.LicensePymtTransId,
+                   IsRenewal:ch.IsRenewal,
 
-      
+                   insupddelflag: 'I'
 
-        //    var FVS = {
-
-        //        StopId: configFareList[cnt].stopid,
-        //        ArrivalHr: atArr[0],
-        //        DepartureHr: dtArr[0],
-
-        //        ArrivalMin: atArr[1],
-        //        DepartureMin: dtArr[1],
-        //        ArrivalAMPM: atimeAtt[1],
-        //        DepartureAmPm: dtimeAtt[1],
-        //        Duration: stop.Duration,
-
-        //        arrivaltime: arrTime,
-        //        departuretime: depTime,
-
-        //        insupddelflag: 'U'
-        //    }
-        //    FleetOwnerVS.push(FVS);
+            }
+                checkoutsv.push(CheckOut);
         
-        //foSchedule.VSchedule = FleetOwnerVS;
-        //$http({
-        //    url: 'http://localhost:1476/api/FleetOwnerVehicleSchedule/saveFORSchedule',
-        //    method: 'POST',
-        //    headers: { 'Content-Type': 'application/json' },
-        //    data: foSchedule,
+                focheckout.checkSchedule = checkoutsv;
+       $http({
+           url: 'http://localhost:52800/api/UserLicenses/SaveUserLicenseDetails',
+          method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            data: focheckout,
 
-        //}).success(function (data, status, headers, config) {
-        //    alert('Fleet owner Vehicle Schedule Saved successfully');
-        //    $scope.GetFORoutes();
-        //}).error(function (ata, status, headers, config) {
-        //    alert(ata);
-        //});
+        }).success(function (data, status, headers, config) {
+            alert('Fleet owner Vehicle Schedule Saved successfully');
+            $scope.GetFORoutes();
+        }).error(function (ata, status, headers, config) {
+            alert(ata);
+        });
 
         window.location.href = "http://localhost:52800/UI/CheckOut.html";
     }

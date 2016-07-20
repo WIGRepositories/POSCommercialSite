@@ -230,11 +230,18 @@
                                         </div>
                                         <ul class="pricing-list text-center">
 
-                                            <li ng-repeat="f in License.Table1 | filter:{ LicenseTypeId: Lt.Id }" ng-init="selType=f">{{f.FeatureLabel}} <strong>{{f.FeatureValue}}</strong></li>                                      
-                                         
+                                            <li ng-repeat="f in License.Table1 | filter:{ LicenseTypeId: Lt.Id }" ng-init="selType=f">{{f.FeatureLabel}} <strong>{{f.FeatureValue}}</strong></li>
+
                                             <li class="text-center"><button ng-click="GoToConfirmation(txt, License, Lt.Id);" class="btn btn-primary">Buy Now</button></li>
-                                            
                                         </ul>
+                                       
+                                            <ul class="pricing-list text-center">
+
+                                                <li ng-repeat="f in License.Table2 | filter:{ LicenseTypeId: Lt.Id }" ng-init="selType=f">{{f.FeatureLabel}} <strong>{{f.FeatureValue}}</strong></li>
+
+                                                <li class="text-center"><button ng-click="GoToConfirmation1(txt, License, Lt.Id);" class="btn btn-primary">Renewal</button></li>
+                                            </ul>
+                                        
                                     </div>
                                 </div>
                             </div>

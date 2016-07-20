@@ -18,8 +18,21 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
                 alert('No license details configured for the selected license category. Please contact INTERBUS administartor.');
                 return;
             }
+            
         });
       
+    }
+
+    $scope.getUserLicenses = function () {
+
+        $http.get('http://localhost:52800/api/UserLicenses/getUserLicenses').then(function (response, req) {
+            $scope.License = response.data;
+            if ($scope.License == null) {
+                alert('No license details configured for the selected license category. Please contact INTERBUS administartor.');
+                return;
+            }
+        })
+
     }
 
     $scope.GoToConfirmation = function (code, License, Lid) {
@@ -42,6 +55,32 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
                 else {
                     $localStorage.License = License;
                     $localStorage.LicenseTypeId = Lid;                   
+                    window.location.href = "http://localhost:52800/UI/Cartdetails.html";
+                }
+            });
+        }
+    };
+
+    $scope.GoToConfirmation1 = function (code, License, Lid) {
+
+        if (code == null) {
+            alert('please enter valid fleet owner code or contact administrator.');
+            return false;
+        }
+        else {           
+            $localStorage.License = License;
+            $localStorage.LicenseTypeId = Lid;
+            $localStorage.FleetOwnerCode = code;    
+
+            $http.get('http://localhost:52800/api/fleetownerlicense/validatefleetowner?fleetownercode=' + code).then(function (response, req) {
+                $scope.result1 = response.data;
+
+                if ($scope.result1 < 0) {
+                    alert('invalid fleet owner code');
+                }
+                else {
+                    $localStorage.License = License;
+                    $localStorage.LicenseTypeId = Lid;
                     window.location.href = "http://localhost:52800/UI/Cartdetails.html";
                 }
             });

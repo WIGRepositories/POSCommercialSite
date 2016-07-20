@@ -235,9 +235,9 @@ namespace BTPOSDashboardAPI.Models
     }
 
 
-    public class UserLicense
+    public class UserLicenseDetails
     {
-        public List<ULLicense> ULP{ get; set; }
+        public List<ULLicense> checkSchedule { get; set; }
         public int Id { set; get; }
         public int UserId { set; get; }
         public int FOId { set; get; }
