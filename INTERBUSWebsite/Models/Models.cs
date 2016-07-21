@@ -266,6 +266,7 @@ namespace BTPOSDashboardAPI.Models
         public int IsRenewal { set; get; }
         
     }
+  
     public class UserLicensePayments
     {
         public int Id { set; get;}
@@ -277,6 +278,8 @@ namespace BTPOSDashboardAPI.Models
         public int StatusId { set; get;}
         public int LicensePymtTransId { set; get;}
         public int IsRenewal { set; get;}
+
+        public DateTime PaymentTypeId { get; set; }
     }
 
     public class UserLicensePymtTransactions

@@ -53,7 +53,7 @@ namespace INTERBUSWebsite.Controllers
 
                     SqlCommand cmd1 = new SqlCommand();
                     cmd1.CommandType = CommandType.StoredProcedure;
-                    cmd1.CommandText = "InsUpdDelUserLicenseDetails";
+                    cmd1.CommandText = "InsUpdDelUserLicense";
                     cmd1.Connection = conn;
                     conn.Open();
 
@@ -148,55 +148,55 @@ namespace INTERBUSWebsite.Controllers
                 //{
                   
                   
-                    SqlParameter aid = new SqlParameter();
-                    aid.ParameterName = "@ULId";
-                    aid.SqlDbType = SqlDbType.Int;
-                    aid.Value = n.ULId;
-                    cmd1.Parameters.Add(aid);
+                    //SqlParameter aid = new SqlParameter();
+                    //aid.ParameterName = "@ULId";
+                    //aid.SqlDbType = SqlDbType.Int;
+                    //aid.Value = n.ULId;
+                    //cmd1.Parameters.Add(aid);
 
-                    SqlParameter s1id = new SqlParameter();
-                    s1id.ParameterName = "@StatusId";
-                    s1id.SqlDbType = SqlDbType.Int;
-                    s1id.Value = n.StatusId;
-                    cmd1.Parameters.Add(s1id);
+                    //SqlParameter s1id = new SqlParameter();
+                    //s1id.ParameterName = "@StatusId";
+                    //s1id.SqlDbType = SqlDbType.Int;
+                    //s1id.Value = n.StatusId;
+                    //cmd1.Parameters.Add(s1id);
                        
-                     SqlParameter cci= new SqlParameter();
-                     cci.ParameterName = "@LicensePymtTransId";
-                     cci.SqlDbType = SqlDbType.Int;
-                     cci.Value = n.LicensePymtTransId;
-                     cmd1.Parameters.Add(cci);
+                    // SqlParameter cci= new SqlParameter();
+                    // cci.ParameterName = "@LicensePymtTransId";
+                    // cci.SqlDbType = SqlDbType.Int;
+                    // cci.Value = n.LicensePymtTransId;
+                    // cmd1.Parameters.Add(cci);
                     
-                    SqlParameter tid = new SqlParameter();
-                    tid.ParameterName = "@IsRenewal";
-                    tid.SqlDbType = SqlDbType.Int;
-                    tid.Value = n.IsRenewal;
-                    cmd1.Parameters.Add(tid);
+                    //SqlParameter tid = new SqlParameter();
+                    //tid.ParameterName = "@IsRenewal";
+                    //tid.SqlDbType = SqlDbType.Int;
+                    //tid.Value = n.IsRenewal;
+                    //cmd1.Parameters.Add(tid);
                    
 
 
-                    SqlParameter dd = new SqlParameter();
-                    dd.ParameterName = "@Amount";
-                    dd.SqlDbType = SqlDbType.Decimal;
-                    dd.Value = n.Amount;
-                    cmd1.Parameters.Add(dd);
+                    //SqlParameter dd = new SqlParameter();
+                    //dd.ParameterName = "@Amount";
+                    //dd.SqlDbType = SqlDbType.Decimal;
+                    //dd.Value = n.Amount;
+                    //cmd1.Parameters.Add(dd);
 
-                    SqlParameter lid = new SqlParameter();
-                    lid.ParameterName = "@UnitPrice";
-                    lid.SqlDbType = SqlDbType.Decimal;
-                    lid.Value = n.UnitPrice;
-                    cmd1.Parameters.Add(lid);
+                    //SqlParameter lid = new SqlParameter();
+                    //lid.ParameterName = "@UnitPrice";
+                    //lid.SqlDbType = SqlDbType.Decimal;
+                    //lid.Value = n.UnitPrice;
+                    //cmd1.Parameters.Add(lid);
 
-                    SqlParameter kki = new SqlParameter();
-                    kki.ParameterName = "@Units";
-                    kki.SqlDbType = SqlDbType.Decimal;
-                    kki.Value = n.Units;
-                    cmd1.Parameters.Add(kki);
+                    //SqlParameter kki = new SqlParameter();
+                    //kki.ParameterName = "@Units";
+                    //kki.SqlDbType = SqlDbType.Decimal;
+                    //kki.Value = n.Units;
+                    //cmd1.Parameters.Add(kki);
 
-                    SqlParameter qqi = new SqlParameter();
-                    qqi.ParameterName = "@CreatedOn";
-                    qqi.SqlDbType = SqlDbType.DateTime;
-                    qqi.Value = n.CreatedOn;
-                    cmd1.Parameters.Add(qqi);
+                    //SqlParameter qqi = new SqlParameter();
+                    //qqi.ParameterName = "@CreatedOn";
+                    //qqi.SqlDbType = SqlDbType.DateTime;
+                    //qqi.Value = n.CreatedOn;
+                    //cmd1.Parameters.Add(qqi);
 
                      cmd1.ExecuteScalar();
 
