@@ -11,7 +11,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
    
 
     $scope.processPymt = function () {
-
+        
         if ($scope.qty <= 0) {
             alert('Please select the number of units.');
             return;

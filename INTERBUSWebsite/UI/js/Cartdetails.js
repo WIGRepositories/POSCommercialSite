@@ -44,7 +44,20 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
     var focheckout = new Object();
     $scope.CheckOut = function () {
 
-       
+        $localStorage.Isrenewal = 1;
+
+        //get other details
+        //insert the details int UserLicensePayments
+        //if saved successfully
+        //in return get the fo details
+
+        $localStorage.focheckoutDetails = <output>;
+
+        //now go to checkout page
+
+
+        window.location.href = "http://localhost:52800/UI/CheckOut.html";
+
         var userlicense = {
 
                    UserId: ch.UserId,
