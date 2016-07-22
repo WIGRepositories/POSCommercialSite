@@ -43,9 +43,10 @@ namespace INTERBUSWebsite.Controllers
     
         [HttpPost]
         [Route("api/UserLicenses/SaveUserLicenseDetails")]
-        public HttpResponseMessage SaveUserLicenseDetails(UserLicenseDetails userlicense)
+        public DataTable SaveUserLicenseDetails(UserLicenseDetails userlicense)
         {
             SqlConnection conn = new SqlConnection();
+            DataTable Tbl = new DataTable();
             try
             {
                     //connetionString="Data Source=ServerName;Initial Catalog=DatabaseName;User ID=UserName;Password=Password"
@@ -57,10 +58,7 @@ namespace INTERBUSWebsite.Controllers
                     cmd1.Connection = conn;
                     conn.Open();
 
-                List<ULLicense> vSchedList = userlicense.checkSchedule;
-
-                foreach (ULLicense n in vSchedList)
-                {     
+                    
                     SqlParameter vid1 = new SqlParameter();
                     vid1.ParameterName = "@UserId";
                     vid1.SqlDbType = SqlDbType.Int;
@@ -117,95 +115,28 @@ namespace INTERBUSWebsite.Controllers
                     hid.Value = userlicense.StatusId;
                     cmd1.Parameters.Add(hid);
 
-                
+
                     SqlParameter nActive = new SqlParameter("@Active", SqlDbType.Int);
                     nActive.Value = userlicense.Active;
                     cmd1.Parameters.Add(nActive);
-                   
+
                     SqlParameter yid = new SqlParameter();
                     yid.ParameterName = "@RenewFreqTypeId";
                     yid.SqlDbType = SqlDbType.Int;
                     yid.Value = userlicense.RenewFreqTypeId;
                     cmd1.Parameters.Add(yid);
 
-                    //cmd1.ExecuteScalar();
+                    SqlParameter flag = new SqlParameter();
+                    flag.ParameterName = "@insupddelflag";
+                    flag.SqlDbType = SqlDbType.VarChar;
+                    flag.Value = userlicense.insupddelflag;
+                    cmd1.Parameters.Add(flag);
 
-
-                //SqlCommand cmd = new SqlCommand();
-                //cmd.CommandType = CommandType.StoredProcedure;
-                //cmd.CommandText = "InsUpdDelUserLicensePayments";
-                //cmd.Connection = conn;
-              
                   
-                //List<ULLicense> License = null;
-                //if (RouteFareConfig != null && RouteFareConfig.Count > 0)
-                //{
-                //    License = RouteFareConfig.routeFare;
-                //}
-          
-
-                //foreach (ULLicense b in License)
-                //{
-                  
-                  
-                    //SqlParameter aid = new SqlParameter();
-                    //aid.ParameterName = "@ULId";
-                    //aid.SqlDbType = SqlDbType.Int;
-                    //aid.Value = n.ULId;
-                    //cmd1.Parameters.Add(aid);
-
-                    //SqlParameter s1id = new SqlParameter();
-                    //s1id.ParameterName = "@StatusId";
-                    //s1id.SqlDbType = SqlDbType.Int;
-                    //s1id.Value = n.StatusId;
-                    //cmd1.Parameters.Add(s1id);
-                       
-                    // SqlParameter cci= new SqlParameter();
-                    // cci.ParameterName = "@LicensePymtTransId";
-                    // cci.SqlDbType = SqlDbType.Int;
-                    // cci.Value = n.LicensePymtTransId;
-                    // cmd1.Parameters.Add(cci);
-                    
-                    //SqlParameter tid = new SqlParameter();
-                    //tid.ParameterName = "@IsRenewal";
-                    //tid.SqlDbType = SqlDbType.Int;
-                    //tid.Value = n.IsRenewal;
-                    //cmd1.Parameters.Add(tid);
+                    SqlDataAdapter db = new SqlDataAdapter(cmd1);
+                    db.Fill(Tbl);
                    
-
-
-                    //SqlParameter dd = new SqlParameter();
-                    //dd.ParameterName = "@Amount";
-                    //dd.SqlDbType = SqlDbType.Decimal;
-                    //dd.Value = n.Amount;
-                    //cmd1.Parameters.Add(dd);
-
-                    //SqlParameter lid = new SqlParameter();
-                    //lid.ParameterName = "@UnitPrice";
-                    //lid.SqlDbType = SqlDbType.Decimal;
-                    //lid.Value = n.UnitPrice;
-                    //cmd1.Parameters.Add(lid);
-
-                    //SqlParameter kki = new SqlParameter();
-                    //kki.ParameterName = "@Units";
-                    //kki.SqlDbType = SqlDbType.Decimal;
-                    //kki.Value = n.Units;
-                    //cmd1.Parameters.Add(kki);
-
-                    //SqlParameter qqi = new SqlParameter();
-                    //qqi.ParameterName = "@CreatedOn";
-                    //qqi.SqlDbType = SqlDbType.DateTime;
-                    //qqi.Value = n.CreatedOn;
-                    //cmd1.Parameters.Add(qqi);
-
-                     cmd1.ExecuteScalar();
-
-                    cmd1.Parameters.Clear();
-                }
-
-                conn.Close();
-
-                return new HttpResponseMessage(HttpStatusCode.OK);
+                    return Tbl;     
             }
             catch (Exception ex)
             {
@@ -214,7 +145,96 @@ namespace INTERBUSWebsite.Controllers
                     conn.Close();
                 }
                 string str = ex.Message;
-                return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex);
+                return Tbl;
+            }
+        }
+
+        [HttpPost]
+        [Route("api/UserLicenses/SaveUserLicensePayment")]
+        public DataTable SaveUserLicensePayment(ULLicense n)
+        {
+            SqlConnection conn = new SqlConnection();
+            DataTable Tbl = new DataTable();
+            try
+            {
+               // connetionString="Data Source=ServerName;Initial Catalog=DatabaseName;User ID=UserName;Password=Password"
+                conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["btposdb"].ToString();
+
+                SqlCommand cmd1 = new SqlCommand();
+                cmd1.CommandType = CommandType.StoredProcedure;
+                cmd1.CommandText = "InsUpdDelUserLicensePayments";
+                cmd1.Connection = conn;
+                conn.Open();
+
+                SqlParameter aid = new SqlParameter();
+                aid.ParameterName = "@ULId";
+                aid.SqlDbType = SqlDbType.Int;
+                aid.Value = n.ULId;
+                cmd1.Parameters.Add(aid);
+
+                SqlParameter s1id = new SqlParameter();
+                s1id.ParameterName = "@StatusId";
+                s1id.SqlDbType = SqlDbType.Int;
+                s1id.Value = n.StatusId;
+                cmd1.Parameters.Add(s1id);
+
+                SqlParameter cci = new SqlParameter();
+                cci.ParameterName = "@LicensePymtTransId";
+                cci.SqlDbType = SqlDbType.Int;
+                cci.Value = n.LicensePymtTransId;
+                cmd1.Parameters.Add(cci);
+
+                SqlParameter tid = new SqlParameter();
+                tid.ParameterName = "@IsRenewal";
+                tid.SqlDbType = SqlDbType.Int;
+                tid.Value = n.IsRenewal;
+                cmd1.Parameters.Add(tid);
+
+
+
+                SqlParameter dd = new SqlParameter();
+                dd.ParameterName = "@Amount";
+                dd.SqlDbType = SqlDbType.Decimal;
+                dd.Value = n.Amount;
+                cmd1.Parameters.Add(dd);
+
+                SqlParameter lid = new SqlParameter();
+                lid.ParameterName = "@UnitPrice";
+                lid.SqlDbType = SqlDbType.Decimal;
+                lid.Value = n.UnitPrice;
+                cmd1.Parameters.Add(lid);
+
+                SqlParameter kki = new SqlParameter();
+                kki.ParameterName = "@Units";
+                kki.SqlDbType = SqlDbType.Decimal;
+                kki.Value = n.Units;
+                cmd1.Parameters.Add(kki);
+
+                SqlParameter qqi = new SqlParameter();
+                qqi.ParameterName = "@CreatedOn";
+                qqi.SqlDbType = SqlDbType.DateTime;
+                qqi.Value = n.CreatedOn;
+                cmd1.Parameters.Add(qqi);
+
+                SqlParameter flag = new SqlParameter();
+                flag.ParameterName = "@insupddelflag";
+                flag.SqlDbType = SqlDbType.VarChar;
+                flag.Value = n.insupddelflag;
+                cmd1.Parameters.Add(flag);
+                
+                SqlDataAdapter db = new SqlDataAdapter(cmd1);
+                db.Fill(Tbl);
+
+                return Tbl;
+            }
+            catch (Exception ex)
+            {
+                if (conn != null && conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+                string str = ex.Message;
+                return Tbl;
             }
         }
          public void Options()

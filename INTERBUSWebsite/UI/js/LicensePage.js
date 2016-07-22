@@ -34,7 +34,8 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
     }
 
-    
+    $scope.showBuyBtn = 0;
+    $scope.showRenewBtn = 0;
 
     $scope.ValidateFOCode = function (code) {
 
@@ -46,12 +47,13 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
             $http.get('http://localhost:52800/api/fleetownerlicense/validatefleetowner?fleetownercode=' + code).then(function (response, req) {
                 $scope.foLicenseDetails = response.data;
-
-                if ($scope.foLicenseDetails.Table2[0].result == 0) {
+                if ($scope.foLicenseDetails.Table2[0].result == 0) {                    
                     alert('invalid fleet owner code');
                 }
                 else {
                     $localStorage.foLicenseDetails = $scope.foLicenseDetails;
+                    $scope.showBuyBtn = ($scope.foLicenseDetails.Table == null) ? 1 : 0;
+                    $scope.showRenewBtn = ($scope.foLicenseDetails.Table == null) ? 0 : 1;
                 }
             });
         }
@@ -67,11 +69,11 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
     $scope.buy = true;
     $scope.Renew = true;
-    $scope.ShowHide = function () {
-        //If DIV is hidden it will be visible and vice versa.
-        $scope.buy = $scope.buy ? false : true;
-        $scope.Renew = $scope.Renew ? false : true;
-    }
+    //$scope.ShowHide = function () {
+    //    //If DIV is hidden it will be visible and vice versa.
+    //    $scope.buy = $scope.buy ? false : true;
+    //    $scope.Renew = $scope.Renew ? false : true;
+    //}
 
      
    // $scope.licenseId = '';
@@ -82,20 +84,21 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         
     //}
         
-    $scope.saves = function () {
+    $scope.saveUserLicense = function () {
 
-        var License = {
+        var userlicense = {
       
-            UserId: $localStorage.UserId,
-            FOId: $localStorage.FOId,
+            UserId: $localStorage.foLicenseDetails.Table[0].userid,
+            FOId: $localStorage.foLicenseDetails.Table[0].foid,
+            FOCode: $localStorage.foLicenseDetails.Table[0].FleetOwnerCode,
             LicenseTypeId: $localStorage.LicenseTypeId,
             StartDate: $localStorage.StartDate,
             ExpiryOn: $localStorage.ExpiryOn,
-            GracePeriod: $localStorage.GracePeriod,
+            GracePeriod: 7,//$localStorage.GracePeriod,
             ActualExpiry: $localStorage.ActualExpiry,
             LastUpdatedOn: $localStorage.LastUpdatedOn,
-            StatusId: $localStorage.StatusId,
-            RenewFreqTypeId:$localStorage.RenewFreqTypeId,
+            StatusId: 1,//$localStorage.StatusId,
+            RenewFreqTypeId: 1,//$localStorage.foLicenseDetails.Table[1].RenewFreqTypeId,
            // ULId:$localStorage.ULId,
           //  CreatedOn:$localStorage.CreatedOn,
           //  Amount: $localStorage.Amount,
@@ -103,16 +106,16 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
            // Units: $localStorage.Units,
            // LicensePymtTransId: $localStorage.LicensePymtTransId,
           //  IsRenewal: $localStorage.IsRenewal,
-            insupddelflag: 'I'
+            insupddelflag: 'I' 
 
         }
        var req = {
            method: 'POST',
            url: 'http://localhost:52800/api/UserLicenses/SaveUserLicenseDetails',
-           data: License
+           data: userlicense
        }
        $http(req).then(function (response) {
-           alert(response.data);
+           $localStorage.UselicenseRecord = response.data;
            window.location.href = "Cartdetails.html";
        });
 
