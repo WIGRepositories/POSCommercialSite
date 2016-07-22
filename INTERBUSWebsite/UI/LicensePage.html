@@ -200,7 +200,7 @@
                         </div><div class="col-md-4">
                             <input type="text" ng-model="txt">
                         </div>
-                        <div ng-click="ShowHide()">
+                        <div>
                             <button ng-click="ValidateFOCode(txt);" class="btn btn-primary">Validate</button>
                         </div>
                     </div>
@@ -235,11 +235,11 @@
 
                                             <li ng-repeat="f in License.Table1 | filter:{ LicenseTypeId: Lt.Id }" ng-init="selType=f">{{f.FeatureLabel}} <strong>{{f.FeatureValue}}</strong></li>
 
-                                            <li class="text-center"><button id="buy" class=" btn btn-primary" ng-hide="buy" ng-click="saves();">Buy Now</button></li>
+                                            <li class="text-center"><button id="buy" class=" btn btn-primary"  ng-click="saveUserLicense();">Buy Now</button></li>
                                         </ul>
                                        
                                             <ul class="pricing-list text-center">
-                                                <li class="text-center"><button id="Renew" ng-hide="Renew" ng-click="GoToConfirmation1(txt, License, Lt.Id);" class="btn btn-primary">Renew</button></li>
+                                                <li class="text-center"><button id="Renew" ng-click="GoToConfirmation1(txt, License, Lt.Id);" class="btn btn-primary">Renew</button></li>
                                             </ul>
                                         
                                     </div>

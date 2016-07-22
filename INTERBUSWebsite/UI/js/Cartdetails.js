@@ -44,6 +44,12 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
     var focheckout = new Object();
     $scope.CheckOut = function () {
 
+        if ($scope.qty <= 0)
+        {
+            alert("please select the month(s)");
+            return;
+        }       
+
         $localStorage.Isrenewal = 1;
 
         //get other details
@@ -51,56 +57,40 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         //if saved successfully
         //in return get the fo details
 
-        $localStorage.focheckoutDetails = <output>;
+        var ul = $localStorage.UselicenseRecord;
 
-        //now go to checkout page
+        //now go to checkout page     
 
-
-        window.location.href = "http://localhost:52800/UI/CheckOut.html";
-
-        var userlicense = {
-
-                   UserId: ch.UserId,
-                   FOId:ch.FOId,
-                   FOCode:ch.FOCode,
-                   LicenseTypeId:ch.LicenseTypeId,
-                   StartDate:ch.StartDate,
-                   ExpiryOn:ch.ExpiryOn,
-                   GracePeriod:ch.GracePeriod,
-                   ActualExpiry:ch.ActualExpiry,
-                   LastUpdatedOn:ch.LastUpdatedOn,
-                   Active:ch.Active,
-                   RenewFreqTypeId:ch.RenewFreqTypeId,
-                  StatusId: ch.StatusId,
+        var userlicense = {                
                    
-                  ULId:ch.ULId,
-                   CreatedOn:ch.CreatedOn,
-                   Amount:ch.Amount,
-                   UnitPrice:ch.UnitPrice,
-                   StatusId:ch.StatusId,
-                   LicensePymtTransId:ch.LicensePymtTransId,
-                   IsRenewal:ch.IsRenewal,
-
+                   ULId: ul[0].Id,
+                   CreatedOn:null,
+                   Amount: eval($scope.qty) * eval($scope.selLicensePrice.UnitPrice),
+                   UnitPrice: $scope.selLicensePrice.UnitPrice,
+                   StatusId:1,//ch.StatusId,
+                   LicensePymtTransId:-1,//ch.LicensePymtTransId,
+                   IsRenewal:0,//ch.IsRenewal,
+                   Units:$scope.qty,
                    insupddelflag: 'I'
 
             }
-                checkoutsv.push(CheckOut);
-        
-                focheckout.checkSchedule = checkoutsv;
+               
        $http({
-           url: 'http://localhost:52800/api/UserLicenses/SaveUserLicenseDetails',
+           url: 'http://localhost:52800/api/UserLicenses/SaveUserLicensePayment',
           method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            data: focheckout,
+            data: userlicense,
 
         }).success(function (data, status, headers, config) {
-            alert('Fleet owner Vehicle Schedule Saved successfully');
-            $scope.GetFORoutes();
+            alert('Saved successfully');
+            $localStorage.focheckoutDetails = data;
+            window.location.href = "http://localhost:52800/UI/CheckOut.html";
+           
         }).error(function (ata, status, headers, config) {
             alert(ata);
         });
 
-        window.location.href = "http://localhost:52800/UI/CheckOut.html";
+       
     }
        
         //window.location.href = "http://localhost:52800/UI/LicenseConfirmation.html";
