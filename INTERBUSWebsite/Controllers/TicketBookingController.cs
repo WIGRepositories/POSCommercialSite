@@ -6,7 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using BTPOSDashboardAPI.Models;
+using INTERBUSWebsite.Models;
 
 namespace INTERBUSWebsite.Controllers
 {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace BTPOSDashboardAPI.Models
+namespace INTERBUSWebsite.Models
 {
 
 
@@ -32,9 +32,7 @@ namespace BTPOSDashboardAPI.Models
         public int typegrpid { get; set; }
 
     }
-
-
-
+    
     public class BOTPOSL
     {
         public int Id { set; get; }
@@ -66,8 +64,7 @@ namespace BTPOSDashboardAPI.Models
         public DateTime date { set; get; }
         public int TransactionId { set; get; }
     }
-
-
+    
     public class FleetOwnerRequest
     {
         public int Id { get; set; }
@@ -125,9 +122,7 @@ namespace BTPOSDashboardAPI.Models
         public string Identityproof { get; set; }
         public string datetime { get; set; }
     }
-
-
-
+        
     public class Licence
     {
         public int Id { get; set; }
@@ -233,8 +228,7 @@ namespace BTPOSDashboardAPI.Models
         public string FleetOwner { set; get; }
 
     }
-
-
+    
     public class UserLicenseDetails
     {
         public List<ULLicense> checkSchedule { get; set; }
@@ -283,8 +277,7 @@ namespace BTPOSDashboardAPI.Models
 
         public DateTime PaymentTypeId { get; set; }
     }
-
-    public class UserLicensePymtTransactions
+        public class UserLicensePymtTransactions
     {
         public int Id { set; get; }
         public string TransId { set; get; }
@@ -315,4 +308,9 @@ namespace BTPOSDashboardAPI.Models
         public string FeatureValue { set; get; }
         public string FeatureDesc { set; get; }
     }
+
+    public class payPalPymnt { 
+    
+    }
+
 }

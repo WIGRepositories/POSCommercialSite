@@ -16,7 +16,7 @@ namespace INTERBUSWebsite.Controllers
     public class PaymentsController : ApiController
     {
         [HttpGet]
-        public HttpResponseMessage MakePayment() {           
+        public DataTable MakePayment() {           
             try
             {
 
@@ -42,7 +42,7 @@ namespace INTERBUSWebsite.Controllers
                             tax = "1"
                         }
                     },
-                    description = "This is the payment transaction description.",
+                    description = "This is the license payment transaction.",
                     item_list = new ItemList()
                     {
                         items = new List<Item>()
@@ -112,14 +112,37 @@ namespace INTERBUSWebsite.Controllers
                 };
 
                 // Create a payment using a valid APIContext
-                var createdPayment = payment.Create(apiContext);               
+                var createdPayment = payment.Create(apiContext);
 
-                return new HttpResponseMessage(HttpStatusCode.OK);
+                DataTable dt = new DataTable();
+                dt.Columns.Add("result");
+                dt.Columns.Add("detail");
+
+                DataRow dr = dt.NewRow();
+                dr[0] = "Success";
+                dr[1] = createdPayment.id;
+
+                dt.Rows.Add(dr);
+
+
+                return dt;
+
             }
             catch (Exception ex)
             {               
                 string str = ex.Message;
-                return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex);
+               // return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex);
+                DataTable dt = new DataTable();
+                dt.Columns.Add("result");
+                dt.Columns.Add("detail");
+
+                DataRow dr = dt.NewRow();
+                dr[0] = "Failed";
+                dr[1] = str;
+
+                dt.Rows.Add(dr);
+                
+                return dt;
             }
         }       
     }

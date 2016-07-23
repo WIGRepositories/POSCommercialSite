@@ -23,6 +23,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
             for (ltCnt = 0; ltCnt < ldetails.Table.length; ltCnt++) {
                 if (ldetails.Table[ltCnt].Id == $scope.licenseCatId) {
                     $scope.selLicense = ldetails.Table[ltCnt];
+                    $localStorage.selLicense = $scope.selLicense;
                     break;
                 }
             }
@@ -84,6 +85,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         }).success(function (data, status, headers, config) {
             alert('Saved successfully');
             $localStorage.focheckoutDetails = data;
+            $localStorage.UselicensePymtRecord = userlicense;
             window.location.href = "http://localhost:52800/UI/CheckOut.html";
            
         }).error(function (ata, status, headers, config) {
@@ -93,43 +95,6 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
        
     }
        
-        //window.location.href = "http://localhost:52800/UI/LicenseConfirmation.html";
 
 });
-
-
-            //save the details into db for user license
-            //if ($scope.qty <= 0)
-            //{
-            //    alert("please select the month(s)");
-            //}
-            //else {
-
-            //    alert('Payment gateway integration will done here and on successful payment fleet owner will be sent a confirmation email with dashboard login details.')
-            //    window.location.href = "http://localhost:52800/UI/LicenseConfirmation.html";
-
-            //    $scope.Licensepayments = function () {
-
-            //        var pmnt = {
-            //            LicenseTypeId: LicenseTypeId,
-            //            fleetownercode:code 
-            //        };
-            //        $localstorage.value = pmnt;
-            //        var req = {
-            //            method: 'POST',
-            //            url: 'http://localhost:52800/api/LicensePage/SaveLicence',
-            //            data: pmnt
-            //        }
-            //        $http(req).then(function (response) {
-            //            alert(response.data);
-            //            window.location.href = "http://localhost:52800/UI/LicenseConfirmation.html";
-            //        })
-            ////create a user login for the fleet owner
-            ////communicate the same to user
-
-
-            //            }
-            //create a user login for the fleet owner
-            //communicate the same to user
-
-           // window.location.href = "http://localhost:52800/UI/LicenseConfirmation.html";
+           

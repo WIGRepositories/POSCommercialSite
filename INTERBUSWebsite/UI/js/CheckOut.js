@@ -1,6 +1,6 @@
-﻿var app = angular.module('myApp', ['ngStorage'])
+﻿var app = angular.module('myApp', ['ngStorage', 'ui.bootstrap'])
 
-var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
+var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uibModal) {
 
     $scope.GetDetails = function (TicketDetails)
     {
@@ -11,63 +11,76 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
    
 
     $scope.processPymt = function () {
+        $('#Modal-header-new').modal('show');
+       
+
+        //$scope.modal_instance = $uibModal.open({
+        //    animation: $scope.animationsEnabled,
+        //    backdrop:false,
+        //    templateUrl: 'http://localhost:52800/UI/PopupTest.html',
+        //    // controller: 'ModalInstanceCtrl',
+        //    resolve: {
+        //        mssg: function () {
+        //            return 'test';
+        //        }
+        //    }
+        //    backdrop: 'static',
+        //    keyboard: false,
+        //    animation: $scope.animationsEnabled,
+        //templateUrl: '/Scripts/angularApp/views/user-modal.html',
+        //controller: 'UserModalCtrl',
+
+        //});
+
+        //$http.get('http://localhost:52800/api/Payments/MakePayment').then(function (response, req) {
+        //    $scope.transDetails = response.data;
+
+        //});
+
+        //$http({
+        //    url: 'http://localhost:52800/api/Payments/MakePayment',
+        //    method: 'GET'
+        //}).success(function (data, status, headers, config) {
+        //    alert('Saved successfully');
+        //    //do the post payment updates
+
+        //}).error(function (ata, status, headers, config) {
+        //    alert(ata);
+        //    //insert the failed transaction details
+        //});
+
+        //$scope.modal_instance.close();
+        //$scope.modal_instance.dismiss();
+       
+        $('#Modal-header-new').modal('hide');
         
-        if ($scope.qty <= 0) {
-            alert('Please select the number of units.');
-            return;
-        }
+    }
 
-        var processPymt1 =
-         [
+    $scope.popupTest = function () {
 
-             {
-                 LicenseType: 'BTPOS1',
-                 Frequency: '2333',
-                 UnitPrice: '12.2',
-                 FleetOwner: '002',
-                 NoOfMonths: '4Months',
-                 TotalAmount: '2345',
-                 CreateDate: '01/01/2016',
-                 TransId: 'we34'
-             }
-         ];
-
-        var req = {
-            method: 'POST',
-            url: 'http://localhost:52800/api/CartPaymentDetails/SaveType',
-            //headers: {
-            //    'Content-Type': undefined
-            data: processPymt1[0]
-        }
-
-        $http(req).then(function (res) {
-            if (res.data.length == 0) {
-                alert('invalid credentials');
-            }
-            else {
-                //if the user has role, then get the details and save in session
-                $localStorage.uname = res.data[0].name;
-                $localStorage.userdetails = res.data;
-                window.location.href = "LicenseConfirmation.html";
+        var modalInstance = $uibModal.open({
+            animation: $scope.animationsEnabled,
+            templateUrl: 'http://localhost:52800/UI/PopupTest.html',
+           // controller: 'ModalInstanceCtrl',
+            resolve: {
+                mssg: function () {
+                    return 'test';
+                }
             }
         });
-
     }
 
 
     $scope.getcheckdetails = function () {
+        
+        $scope.c = $localStorage.focheckoutDetails[0];
+        $scope.ld = $localStorage.selLicense;
+        $scope.ld.amt = $localStorage.UselicensePymtRecord.Amount;
 
-        $http.get('http://localhost:52800/api/Checkout/getcheckdetails').then(function (response, req) {
-            $scope.check = response.data;
+        //$http.get('http://localhost:52800/api/Checkout/getcheckdetails').then(function (response, req) {
+        //    $scope.check = response.data;
 
-        })
+        //})
 
-    }
-
-    //for (var v = 0; v < details.length; v++)
-    //{
-
-    //}
-    
-    
+    }    
 });

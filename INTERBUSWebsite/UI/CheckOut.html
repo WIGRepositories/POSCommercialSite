@@ -33,11 +33,7 @@
     <!-- Optional theme -->
 
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-
-    <script src="js/bootstrap.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->   
 
     <title>Interbus - Get Moving Anywhere, Comfortably</title>
 
@@ -139,7 +135,7 @@
 
 </head>
 
-<body ng-model="TicketDetails" ng-init="getcheckdetails();">
+<body ng-init="getcheckdetails();">
 
     <!--Start Header-->
     <div id="container">
@@ -235,7 +231,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <div class="input-icon">
-                                            <i class="fa fa-user"></i><input id="inputFirstName" type="text" value={{c.Firstname}} class="form-control" disabled />
+                                            <i class="fa fa-user"></i><input id="inputFirstName" type="text" value={{c.FirstName}} class="form-control" disabled />
                                         </div>
                                     </div>
                                 </div>
@@ -248,12 +244,12 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <div class="input-icon"><i class="fa fa-envelope"></i><input id="inputEmail" type="text" value={{c.EmailAddress}} class="form-control" disabled /></div>
+                                        <div class="input-icon"><i class="fa fa-envelope"></i><input id="inputEmail" type="text" value={{c.Email}} class="form-control" disabled /></div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <div class="input-icon"><i class="fa fa-phone"></i><input id="inputPhone" type="text" value={{c.PhoneNo}} class="form-control" disabled /></div>
+                                        <div class="input-icon"><i class="fa fa-phone"></i><input id="inputPhone" type="text" value={{c.MobileNo}} class="form-control" disabled /></div>
                                     </div>
                                 </div>
                             </div>
@@ -298,10 +294,10 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
-                                    <input type="radio" name=myradio id="1" checked /><label for="1">Visa</label>
+                                    <input type="radio" name=myradio id="1" /><label for="1">Visa</label>
                                     <input type="radio" name=myradio id="2" /><label for="2">MasterCard</label>
                                     <input type="radio" name=myradio id="3" /><label for="3">Net Banking</label>
-                                    <input type="radio" name=myradio id="4" /><label for="4">Pay Pal </label>
+                                    <input type="radio" name=myradio id="4" checked /><label for="4">Pay Pal </label>
 
 
                                 </div>
@@ -312,7 +308,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="col-md-11">
-                                    <input id="inputNameCard" type="text" placeholder="Name on card" class="form-control" />
+                                    <input id="inputNameCard" type="text" value="Test User" class="form-control" />
                                 </div>
                             </div>
                         </div>
@@ -320,28 +316,34 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="col-md-8">
-                                <div class="form-group"><input id="inputCardNumber" type="text" placeholder="Card number" class="form-control" /></div>
+                                <div class="form-group"><input id="inputCardNumber" type="text" value="4024007185826731" class="form-control" /></div>
                             </div>
                             <div class="col-md-3">
-                                <div class="form-group"><input id="inputCVV2" type="text" placeholder="CVV" class="form-control" /></div>
+                                <div class="form-group"><input id="inputCVV2" type="text" value="874" class="form-control" /></div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-11">
-                            <div class="col-md-2"></div>
                             <div class="col-md-2">
                                 <div class="form-group"><label class="pts">Expiration date:</label></div>
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <select class="form-control">
-                                        <option>Month</option>
+                                        <option>11</option>
                                     </select>
                                 </div>
                             </div>
+                            <div class="col-md-2">
+                                <div class="form-group"><label class="pts">Expiration Year:</label></div>
+                            </div>
                             <div class="col-md-3">
-                                <div class="form-group mbn"><input id="inputYear" type="text" placeholder="Year" class="form-control" /></div>
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option>2018</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -350,18 +352,18 @@
                 </form>
             </div>
 
-            <div class="col-md-4" style="margin-left:20px">
+            <div class="col-md-4" style="margin-left:20px" ng-model="ld">
                 <div class="row">
                     <div class="col-md-12" style="padding-top:15px">
                         <h3 style="text-align:center">Order Summary</h3>
                         <table>
                             <tbody>
                                 <tr>
-                                    <th><h4>PRODUCT</h4></th>
+                                    <th colspan="2"><h4>PRODUCT</h4></th>
                                 </tr>
                                 <tr>
-                                    <td><label class="form-group">Product  <span> x1</span></label></td>
-                                    <td> <label class="form-group">&#x20B9 1000</label>  </td>
+                                    <td><label class="form-group">{{ld.LicenseType}}  <span> x1</span></label></td>
+                                    <td> <label class="form-group">&#x20B9 {{ld.amt}}</label>  </td>
                                 </tr>
 
 
@@ -371,7 +373,7 @@
                                 </tr>
                                 <tr>
                                     <td><label class="form-group">Tax </label></td>
-                                    <td><label class="form-group">&#x20B9 10</label></td>
+                                    <td><label class="form-group">&#x20B9 0</label></td>
                                 </tr>
                                 <tr>
                                     <td><label class="form-group">Discount</label></td>
@@ -379,7 +381,7 @@
                                 </tr>
                                 <tr>
                                     <td><label class="form-group">Order Total </label></td>
-                                    <td><label class="form-group">&#x20B9 1010</label></td>
+                                    <td><label class="form-group">&#x20B9 {{ld.amt}}</label></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -396,6 +398,21 @@
 
         </div>
     </div>
+    <div id="Modal-header-new" tabindex="-1" role="dialog" aria-labelledby="modal-header-primary-label" aria-hidden="true" class="modal" style="align-content:center;text-align:center">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                
+                <div class="modal-body">
+
+                    PROCESSING.....
+                    
+                </div>
+                
+
+            </div>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-lg-12">
             <div id="footer" tabindex="0">
@@ -440,6 +457,7 @@
 
     <script src="js/main.js"></script>
     <script src="js/angular.js"></script>
+    <script src="js/ui-bootstrap-tpls-1.3.3.js"></script>
     <script src="js/ngStorage.js"></script>
     <script src="js/CheckOut.js"></script>
 
