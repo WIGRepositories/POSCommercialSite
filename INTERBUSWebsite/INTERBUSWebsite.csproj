@@ -101,6 +101,16 @@
     <Content Include="UI\About.html" />
     <Content Include="UI\AboutUs.html" />
     <Content Include="UI\AddTroubleTicketingDetails.html" />
+    <Content Include="UI\assets\css\bootstrap-theme.css" />
+    <Content Include="UI\assets\css\bootstrap.css" />
+    <Content Include="UI\assets\css\style.css" />
+    <Content Include="UI\assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="UI\assets\img\main-bg.jpg" />
+    <Content Include="UI\assets\img\slide1.png" />
+    <Content Include="UI\assets\img\slide2.png" />
+    <Content Include="UI\assets\img\slide3.png" />
+    <Content Include="UI\assets\js\bootstrap.min.js" />
+    <Content Include="UI\assets\js\jquery.countdown.min.js" />
     <Content Include="UI\BookedTicketHistory.html" />
     <Content Include="UI\booking.html" />
     <Content Include="UI\BuyBTPOS.html" />
@@ -112,6 +122,7 @@
     <Content Include="UI\Cartdetails.html" />
     <Content Include="UI\CheckFare.html" />
     <Content Include="UI\CheckOut.html" />
+    <Content Include="UI\Construction.html" />
     <Content Include="UI\Contact.html" />
     <Content Include="UI\ContactUs.html" />
     <Content Include="UI\css\bootstrap-theme.min.css" />
@@ -214,6 +225,7 @@
     <Content Include="UI\images\logos\interbus.jpg" />
     <Content Include="UI\images\logos\interbusLogo.png" />
     <Content Include="UI\images\logos\oyster-homepage-icon.png" />
+    <Content Include="UI\images\one1.jpg" />
     <Content Include="UI\images\promos\1.jpg" />
     <Content Include="UI\images\promos\1.png" />
     <Content Include="UI\images\promos\2.jpg" />
@@ -1208,6 +1220,9 @@
     <Content Include="obj\Debug\INTERBUSWebsite.csprojResolveAssemblyReference.cache" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\INTERBUSSite.pubxml" />
+    <Content Include="UI\assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="UI\assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="UI\assets\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

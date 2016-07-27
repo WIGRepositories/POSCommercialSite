@@ -159,7 +159,7 @@
 
 </head>
 
-<body ng-init="TicketDetails">
+<body ng-init="TicketDetails" style="background-image:url(images/one1.jpg)">
 
     <div id="container">
 
@@ -245,14 +245,15 @@
                 <h2 style="text-align:center">Ticket cancellation and refund</h2>
                 <div class="col-md-6 col-md-offset-3">
                     <p style="text-align:center">Follow our simple and hassle-free 2 step process to cancel your ticket. Once your ticket is cancelled, stay constantly informed on the status of your refund. Get going with it right away!</p>
-                </div></div>
+                </div>
+            </div>
         </div>
         <div class="row">
 
             <div class="col-md-8 col-md-offset-4">
 
                 <div class="col-md-5">
-                    <input type="text" id="pnrnumber" name="pnrnumber" class="form-control" placeholder="Enter PNR Number" ng-model="TicketDetails.pnrnumber" /> 
+                    <input type="text" id="pnrnumber" name="pnrnumber" class="form-control" placeholder="Enter PNR Number" ng-model="TicketDetails.pnrnumber" />
                 </div>
                 <div class="col-md-5">
                     <input type="button" class="btn btn-primary" name="button" value="Submit" ng-click="ticketdetails();" />
