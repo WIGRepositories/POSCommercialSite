@@ -253,6 +253,7 @@ namespace INTERBUSWebsite.Models
     {
         public int Id { set; get; }
         public int ULId { set; get; }
+        public string TransId { set; get; }
         public DateTime? CreatedOn { set; get; }
         public decimal Amount { set; get; }
         public decimal UnitPrice { set; get; }
@@ -274,10 +275,10 @@ namespace INTERBUSWebsite.Models
         public int StatusId { set; get;}
         public int LicensePymtTransId { set; get;}
         public int IsRenewal { set; get;}
-
+        public string TransId { set; get; }
         public DateTime PaymentTypeId { get; set; }
     }
-        public class UserLicensePymtTransactions
+    public class UserLicensePymtTransactions
     {
         public int Id { set; get; }
         public string TransId { set; get; }
@@ -287,6 +288,10 @@ namespace INTERBUSWebsite.Models
         public int ULPymtId { set; get; }
         public int StatusId { set; get; }
         public string Desc { set; get; }
+        public string insupddelflag { set; get; }
+        public decimal Tax { set; get; }
+        public decimal Discount { set; get; }
+        public int PymtTypeId { set; get; }
 
     }
     public class ULPymtTransDetails
@@ -311,6 +316,23 @@ namespace INTERBUSWebsite.Models
 
     public class payPalPymnt { 
     
+    }
+
+    public class ULConfirmDetails
+    { 
+        public int Id { set; get; }
+        public int ULId { set; get; }
+        public int ULPymtId { set; get; }
+        public int foId { set; get; }
+        public int userId { set; get; }
+        public string TransId { set; get; }
+        public string GatewayTransId { set; get; }
+        public int itemId { set; get; }
+        public string address { set; get; }
+        public decimal Amount { set; get; }
+        public decimal Units { set; get; }        
+        public int IsRenewal { set; get; }
+        public string insupddelflag { set; get; }
     }
 
 }

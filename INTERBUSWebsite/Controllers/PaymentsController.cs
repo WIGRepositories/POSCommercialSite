@@ -16,6 +16,7 @@ namespace INTERBUSWebsite.Controllers
     public class PaymentsController : ApiController
     {
         [HttpGet]
+        [Route("api/Payments/MakePayment")]
         public DataTable MakePayment() {           
             try
             {

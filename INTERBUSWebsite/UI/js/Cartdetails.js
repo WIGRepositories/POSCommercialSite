@@ -1,9 +1,5 @@
 ﻿var app = angular.module('myApp', ['ngStorage'])
 var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
-
-
-    
-
     
     $scope.FillDetails = function () {
         
@@ -84,8 +80,8 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
         }).success(function (data, status, headers, config) {
             alert('Saved successfully');
-            $localStorage.focheckoutDetails = data;
-            $localStorage.UselicensePymtRecord = userlicense;
+            $localStorage.focheckoutDetails = data.Table;
+            $localStorage.UselicensePymtRecord = data.Table1;
             window.location.href = "http://localhost:52800/UI/CheckOut.html";
            
         }).error(function (ata, status, headers, config) {

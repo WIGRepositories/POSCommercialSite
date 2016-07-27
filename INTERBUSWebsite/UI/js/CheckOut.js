@@ -8,9 +8,128 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
         $scope.FirstName = $scope.details.No_Seats;
     }
 
-   
-
     $scope.processPymt = function () {
+        var ulD = $localStorage.UselicensePymtRecord[0];
+        $('#Modal-header-new').modal('show');
+
+        var UserLicensePymtTransactions = {
+            TransId: ulD.TransId,
+            GatewayTransId:'-1',
+            TransDate:null,
+            ULPymtId: ulD.Id,
+            Desc:"",
+            Tax:0,
+            Discount:0,
+            PymtTypeId:1, 
+            Amount: ulD.Amount,
+            StatusId: 1,
+        LicensePymtTransId: -1,
+        insupddelflag: 'I'
+    }
+
+        $http({
+            url: 'http://localhost:52800/api/UserLicensePymtTransactions/UserLicensePymtTransactions',
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            data: UserLicensePymtTransactions,
+
+        }).success(function (data, status, headers, config) {
+            alert('Saved successfully');           
+            $localStorage.UselicensePymtTranRecord = UserLicensePymtTransactions;
+                                 
+                                $http({
+                                    // url: 'http://localhost:52800/api/Payments/MakePayment',
+                                    url: 'http://localhost:52800/api/Payments/325435',
+                                    method: 'GET'
+                                }).success(function (data, status, headers, config) {
+                                    alert('Saved successfully');
+
+                                    $localStorage.GatewayTransId = data[0].detail;
+                                    //do the post payment updates
+      
+                                        var fo = $localStorage.foLicenseDetails
+                                        /*******prepare post license confirm details *******/
+                                        var ULConfirmDetails = {
+                                            TransId: ulD.TransId,
+                                            GatewayTransId: $localStorage.GatewayTransId,
+                                            itemId: 1,
+                                            ULPymtId: ulD.Id,
+                                            ULId: ulD.ULId,
+                                            IsRenewal: 0,
+                                            Amount: ulD.Amount,
+                                            Units: ulD.Units,
+                                            insupddelflag: 'I',
+                                            userId: fo.Table[0].userid,
+                                            foId: fo.Table[0].foid,
+                                            address: 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
+                                        }
+
+                                        $http({
+                                            url: 'http://localhost:52800/api/UserLicenses/SaveULConfirmDetails',
+                                            method: 'POST',
+                                            headers: { 'Content-Type': 'application/json' },
+                                            data: ULConfirmDetails,
+
+                                        }).success(function (data, status, headers, config) {
+                                            alert('Saved successfully');
+                                            $localStorage.ULConfirmDetails = ULConfirmDetails;
+                                            $localStorage.ULConfirmDetailsRes = data;
+                                            $scope.ShowConfirmationMssg(data);
+                                            //   $('#Modal-header-new').modal('hide');
+                                        });
+                                }).error(function (ata, status, headers, config) {
+                                    alert(ata);
+
+                                //    $localStorage.GatewayTransId = 'TEST123';
+                                //    //do the post payment updates
+
+                                //    var fo = $localStorage.foLicenseDetails
+                                //    /*******prepare post license confirm details *******/
+                                //    var ULConfirmDetails = {
+                                //        TransId: ulD.TransId,
+                                //        GatewayTransId: $localStorage.GatewayTransId,
+                                //        itemId: 1,
+                                //        ULPymtId: ulD.Id,
+                                //        ULId: ulD.ULId,
+                                //        IsRenewal: 0,
+                                //        Amount: ulD.Amount,
+                                //        Units: ulD.Units,
+                                //        insupddelflag: 'I',
+                                //        userId: fo.Table[0].userid,
+                                //        foId: fo.Table[0].foid,
+                                //        address: 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
+                                //    }
+
+                                //    $http({
+                                //        url: 'http://localhost:52800/api/UserLicenses/SaveULConfirmDetails',
+                                //        method: 'POST',
+                                //        headers: { 'Content-Type': 'application/json' },
+                                //        data: ULConfirmDetails,
+
+                                //    }).success(function (data, status, headers, config) {
+                                //        alert('Saved successfully');
+                                //        $localStorage.ULConfirmDetails = ULConfirmDetails;
+                                //        $localStorage.ULConfirmDetailsRes = data;
+                                //        $scope.ShowConfirmationMssg(data);
+                                //    //  $('#Modal-header-new').modal('hide');
+                                //});
+                       
+
+                        }).error(function (ata, status, headers, config) {
+                            alert(ata);
+                            //insert the failed transaction details
+                        });
+        })
+            .error(function (ata, status, headers, config) {
+            alert(ata);
+            //  $('#Modal-header-new').modal('hide');
+        });
+
+        $('#Modal-header-new').modal('hide');
+    }
+
+
+    $scope.processPymt1 = function () {
         $('#Modal-header-new').modal('show');
        
 
@@ -82,5 +201,32 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
 
         //})
 
-    }    
+    }
+
+    $scope.ShowConfirmationMssg = function (message) {
+
+        var modalInstance = $uibModal.open({
+            animation: $scope.animationsEnabled,
+            backdrop: false,
+            templateUrl: 'myModalContent.html',
+            controller: 'ModalInstanceCtrl',            
+            resolve: {
+                mssg: function () {
+                    return message;
+                }
+            }
+        });
+    }
+});
+
+app.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, mssg) {
+
+    $scope.confirm = mssg[0];
+    $scope.ok = function () {
+        $uibModalInstance.close('test');
+    };
+
+    $scope.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+    };
 });

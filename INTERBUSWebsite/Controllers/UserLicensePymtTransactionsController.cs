@@ -42,7 +42,7 @@ namespace INTERBUSWebsite.Controllers
         }
 
         [HttpPost]
-        public HttpResponseMessage SaveType(UserLicensePymtTransactions b)
+        public HttpResponseMessage SaveUserLicensePymtTransactions(UserLicensePymtTransactions b)
         {
 
             //connect to database
@@ -105,15 +105,35 @@ namespace INTERBUSWebsite.Controllers
                 SqlParameter pDesc = new SqlParameter();
                 pDesc.ParameterName = "@TransDate";
                 pDesc.SqlDbType = SqlDbType.DateTime;
-                pDesc.Value = b.TransDate;
+                pDesc.Value = DateTime.Now;
                 cmd.Parameters.Add(pDesc);
 
-
-              
-
+                 SqlParameter pid = new SqlParameter();
+                 pid.ParameterName = "@PymtTypeId";
+                 pid.SqlDbType = SqlDbType.Int;
+                 pid.Value = b.PymtTypeId;
+                 cmd.Parameters.Add(pid);   
                
+                SqlParameter tax = new SqlParameter();
+                tax.ParameterName = "@Tax";
+                tax.SqlDbType = SqlDbType.Decimal;
+                tax.Value = b.Tax;
+                cmd.Parameters.Add(tax);
+
+                  SqlParameter disc = new SqlParameter();
+                  disc.ParameterName = "@Discount";
+                  disc.SqlDbType = SqlDbType.Decimal;
+                  disc.Value = b.Discount;
+                  cmd.Parameters.Add(disc);
 
 
+                SqlParameter flag = new SqlParameter();
+                flag.ParameterName = "@insupddelflag";
+                flag.SqlDbType = SqlDbType.VarChar;
+                flag.Value = b.insupddelflag;
+                cmd.Parameters.Add(flag);               
+
+      
                 cmd.ExecuteScalar();
                 conn.Close();
                 return new HttpResponseMessage(HttpStatusCode.OK);

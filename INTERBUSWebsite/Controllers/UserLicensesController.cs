@@ -151,10 +151,10 @@ namespace INTERBUSWebsite.Controllers
 
         [HttpPost]
         [Route("api/UserLicenses/SaveUserLicensePayment")]
-        public DataTable SaveUserLicensePayment(ULLicense n)
+        public DataSet SaveUserLicensePayment(ULLicense n)
         {
             SqlConnection conn = new SqlConnection();
-            DataTable Tbl = new DataTable();
+            DataSet ds = new DataSet();
             try
             {
                // connetionString="Data Source=ServerName;Initial Catalog=DatabaseName;User ID=UserName;Password=Password"
@@ -171,6 +171,12 @@ namespace INTERBUSWebsite.Controllers
                 aid.SqlDbType = SqlDbType.Int;
                 aid.Value = n.ULId;
                 cmd1.Parameters.Add(aid);
+
+                SqlParameter trid = new SqlParameter();
+                trid.ParameterName = "@TransId";
+                trid.SqlDbType = SqlDbType.VarChar;
+                trid.Value = "TR"+Common.GetRandomInvoiceNumber();
+                cmd1.Parameters.Add(trid);
 
                 SqlParameter s1id = new SqlParameter();
                 s1id.ParameterName = "@StatusId";
@@ -223,6 +229,114 @@ namespace INTERBUSWebsite.Controllers
                 cmd1.Parameters.Add(flag);
                 
                 SqlDataAdapter db = new SqlDataAdapter(cmd1);
+                db.Fill(ds);
+
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                if (conn != null && conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+                string str = ex.Message;
+                return ds;
+            }
+        }
+
+        [HttpPost]
+        [Route("api/UserLicenses/SaveULConfirmDetails")]
+        public DataTable SaveULConfirmDetails(ULConfirmDetails ulconfirm)
+        {
+            DataTable Tbl = new DataTable();
+            SqlConnection conn = new SqlConnection();
+            try
+            {
+                // connetionString="Data Source=ServerName;Initial Catalog=DatabaseName;User ID=UserName;Password=Password"
+                conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["btposdb"].ToString();
+
+                SqlCommand cmd1 = new SqlCommand();
+                cmd1.CommandType = CommandType.StoredProcedure;
+                cmd1.CommandText = "InsUpdDelUserLicenseConfirmDetails";
+                cmd1.Connection = conn;
+                conn.Open();        
+      
+                SqlParameter foId = new SqlParameter();
+                foId.ParameterName = "@foId";
+                foId.SqlDbType = SqlDbType.Int;
+                foId.Value = ulconfirm.foId;
+                cmd1.Parameters.Add(foId);
+
+                SqlParameter userId = new SqlParameter();
+                userId.ParameterName = "@userId";
+                userId.SqlDbType = SqlDbType.Int;
+                userId.Value = ulconfirm.userId;
+                cmd1.Parameters.Add(userId);
+
+                SqlParameter aid = new SqlParameter();
+                aid.ParameterName = "@ULId";
+                aid.SqlDbType = SqlDbType.Int;
+                aid.Value = ulconfirm.ULId;
+                cmd1.Parameters.Add(aid);
+
+                SqlParameter ULPymtId = new SqlParameter();
+                ULPymtId.ParameterName = "@ULPymtId";
+                ULPymtId.SqlDbType = SqlDbType.Int;
+                ULPymtId.Value = ulconfirm.ULPymtId;
+                cmd1.Parameters.Add(ULPymtId);
+
+
+                SqlParameter trid = new SqlParameter();
+                trid.ParameterName = "@TransId";
+                trid.SqlDbType = SqlDbType.VarChar;
+                trid.Value = ulconfirm.TransId;
+                cmd1.Parameters.Add(trid);
+
+                SqlParameter s1id = new SqlParameter();
+                s1id.ParameterName = "@GatewayTransId";
+                s1id.SqlDbType = SqlDbType.VarChar;
+                s1id.Value = ulconfirm.GatewayTransId;
+                cmd1.Parameters.Add(s1id);
+
+                SqlParameter cci = new SqlParameter();
+                cci.ParameterName = "@address";
+                cci.SqlDbType = SqlDbType.VarChar;
+                cci.Value = ulconfirm.address;
+                cmd1.Parameters.Add(cci);
+
+                SqlParameter tid = new SqlParameter();
+                tid.ParameterName = "@IsRenewal";
+                tid.SqlDbType = SqlDbType.Int;
+                tid.Value = ulconfirm.IsRenewal;
+                cmd1.Parameters.Add(tid);
+
+
+
+                SqlParameter dd = new SqlParameter();
+                dd.ParameterName = "@Amount";
+                dd.SqlDbType = SqlDbType.Decimal;
+                dd.Value = ulconfirm.Amount;
+                cmd1.Parameters.Add(dd);
+
+                SqlParameter lid = new SqlParameter();
+                lid.ParameterName = "@itemId";
+                lid.SqlDbType = SqlDbType.Int;
+                lid.Value = ulconfirm.itemId;
+                cmd1.Parameters.Add(lid);
+
+                SqlParameter kki = new SqlParameter();
+                kki.ParameterName = "@Units";
+                kki.SqlDbType = SqlDbType.Decimal;
+                kki.Value = ulconfirm.Units;
+                cmd1.Parameters.Add(kki);
+
+                SqlParameter flag = new SqlParameter();
+                flag.ParameterName = "@insupddelflag";
+                flag.SqlDbType = SqlDbType.VarChar;
+                flag.Value = ulconfirm.insupddelflag;
+                cmd1.Parameters.Add(flag);
+
+                SqlDataAdapter db = new SqlDataAdapter(cmd1);
                 db.Fill(Tbl);
 
                 return Tbl;
@@ -236,6 +350,8 @@ namespace INTERBUSWebsite.Controllers
                 string str = ex.Message;
                 return Tbl;
             }
+
+           
         }
          public void Options()
         {
