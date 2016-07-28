@@ -1,24 +1,25 @@
 ﻿var app = angular.module('myApp', ['ngStorage'])
 var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
-
+    
     $scope.FillDetails = function () {
         
             $scope.licenseCatId = $localStorage.LicenseTypeId;
-            $scope.fodetails = $localStorage.FleetOwnerCode;
+            $scope.focode = $localStorage.FleetOwnerCode;
 
             //displaying the current fleet owner code
             var fodetails = $localStorage.FleetOwnerCode;
             $scope.selFleetOwnerCode = "";
-
+         
             var ldetails = $localStorage.License;
             $scope.selLicense = "";
             $scope.selLicensePrice = "";
+             
 
-          
             //identify the selected license and display the properties
             for (ltCnt = 0; ltCnt < ldetails.Table.length; ltCnt++) {
                 if (ldetails.Table[ltCnt].Id == $scope.licenseCatId) {
                     $scope.selLicense = ldetails.Table[ltCnt];
+                    $localStorage.selLicense = $scope.selLicense;
                     break;
                 }
             }
@@ -26,56 +27,70 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
             for (ltCnt = 0 ; ltCnt < ldetails.Table2.length; ltCnt++) {
                 if (ldetails.Table2[ltCnt].LicenseId == $scope.selLicense.Id) {
                     $scope.selLicensePrice = ldetails.Table2[ltCnt]
+                }
             }
-        }
-        
 
-        if (FleetOwnerCode != null) {
-            $scope.selFleetOwnerCode = fodetails.FleetOwnerCode;
-            document.getElementById("Id").innerHTML = localStorage.getItem("FleetOwnerCode");
-        }
+
+        //if (FleetOwnerCode != null) {
+        //    $scope.selFleetOwnerCode = fodetails.FleetOwnerCode;
+        //    document.getElementById("Id").innerHTML = localStorage.getItem("FleetOwnerCode");
+        //}
 
     }
+    var checkoutsv = [];
+    var focheckout = new Object();
+    $scope.CheckOut = function () {
 
+        if ($scope.qty <= 0)
+        {
+            alert("please select the month(s)");
+            return;
+        }       
 
-    $scope.processPymt = function () {
-        //save the details into db for user license
-            if ($scope.qty <= 0)
-            {
-                alert("please select the month(s)");
+        $localStorage.Isrenewal = 1;
+
+        //get other details
+        //insert the details int UserLicensePayments
+        //if saved successfully
+        //in return get the fo details
+
+        var ul = $localStorage.UselicenseRecord;
+
+        //now go to checkout page     
+
+        var userlicense = {                
+                   
+                   ULId: ul[0].Id,
+                   CreatedOn:null,
+                   Amount: eval($scope.qty) * eval($scope.selLicensePrice.UnitPrice),
+                   UnitPrice: $scope.selLicensePrice.UnitPrice,
+                   StatusId:1,//ch.StatusId,
+                   LicensePymtTransId:-1,//ch.LicensePymtTransId,
+                   IsRenewal:0,//ch.IsRenewal,
+                   Units:$scope.qty,
+                   insupddelflag: 'I'
+
             }
-            else {
+               
+       $http({
+           url: 'http://localhost:52800/api/UserLicenses/SaveUserLicensePayment',
+          method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            data: userlicense,
 
-                alert('Payment gateway integration will done here and on successful payment fleet owner will be sent a confirmation email with dashboard login details.')
-                window.location.href = "http://localhost:52800/UI/LicenseConfirmation.html";
+        }).success(function (data, status, headers, config) {
+            alert('Saved successfully');
+            $localStorage.focheckoutDetails = data.Table;
+            $localStorage.UselicensePymtRecord = data.Table1;
+            window.location.href = "http://localhost:52800/UI/CheckOut.html";
+           
+        }).error(function (ata, status, headers, config) {
+            alert(ata);
+        });
 
-            //    $scope.Licensepayments = function () {
-
-            //        var pmnt = {
-            //            LicenseTypeId: LicenseTypeId,
-            //            fleetownercode:code 
-            //        };
-            //        $localstorage.value = pmnt;
-            //        var req = {
-            //            method: 'POST',
-            //            url: 'http://localhost:52800/api/LicensePage/SaveLicence',
-            //            data: pmnt
-            //        }
-            //        $http(req).then(function (response) {
-            //            alert(response.data);
-            //            window.location.href = "http://localhost:52800/UI/LicenseConfirmation.html";
-            //        })
-            ////create a user login for the fleet owner
-            ////communicate the same to user
-
-
-            //            }
-            //create a user login for the fleet owner
-            //communicate the same to user
-
-            window.location.href = "http://localhost:52800/UI/LicenseConfirmation.html";
-
-        }
+       
     }
-            });
+       
 
+});
+           

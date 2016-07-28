@@ -110,33 +110,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http) {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             data: FleetOwnerRequest1
-        })
-       // $http(req).then(function (response) {
-
-       //     $scope.showDialog("Saved successfully!!");
-
-       // }
-       //, function (errres) {
-       //    var errdata = errres.data;
-       //    var errmssg = "";
-       //    errmssg = (errdata && errdata.ExceptionMessage) ? errdata.ExceptionMessage : errdata.Message;
-       //    $scope.showDialog(errmssg);
-
-       //});
-
-        //$scope.showDialog = function (message) {
-
-        //    var modalInstance = $uibModal.open({
-        //        animation: $scope.animationsEnabled,
-        //        templateUrl: 'myModalContent.html',
-        //        controller: 'ModalInstanceCtrl',
-        //        resolve: {
-        //            mssg: function () {
-        //                return message;
-        //            }
-        //        }
-        //    });
-        //}
+        })   
             .success(function (data, status, headers, config) {
                 alert('saved successfully');              
                 

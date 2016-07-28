@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace BTPOSDashboardAPI.Models
+namespace INTERBUSWebsite.Models
 {
    
 
@@ -32,8 +32,6 @@ namespace BTPOSDashboardAPI.Models
         public int typegrpid { get; set; }
 
     }
-
-   
 
     public class BOTPOSL
     {
@@ -67,7 +65,6 @@ namespace BTPOSDashboardAPI.Models
         public int TransactionId { set; get; }
     }
    
-
     public class FleetOwnerRequest
     {
         public int Id { get; set; }
@@ -84,7 +81,7 @@ namespace BTPOSDashboardAPI.Models
     public class Booking
     {
         public int Pnr_ID { get; set; }
-        public string Pnr_No {get; set;}
+        public string Pnr_No { get; set; }
         public int No_Seats { get; set; }
         public int cost { get; set; }
         public string dateandtime { get; set; }
@@ -114,7 +111,8 @@ namespace BTPOSDashboardAPI.Models
         
     }
         
-    public class passengerDetails {
+    public class passengerDetails
+    {
         public string SeatNo { get; set; }
         public int SeatId { get; set; }
         public string Fname { get; set; }
@@ -124,8 +122,6 @@ namespace BTPOSDashboardAPI.Models
         public string Identityproof { get; set; }
         public string datetime { get; set; }
     }
-
-    
 
     public class Licence
     {
@@ -174,8 +170,8 @@ namespace BTPOSDashboardAPI.Models
     public class FleetOwnerRequest1
     { 
 
-        public int  Id {get; set;}
-       public string  FirstName {get; set;}
+        public int Id { get; set; }
+        public string FirstName { get; set; }
 
         public string LastName{get; set;}
         public int PhoneNo{get; set;}
@@ -183,30 +179,30 @@ namespace BTPOSDashboardAPI.Models
         public string CompanyName {get; set;}
         public string Description {get; set;}
 
-        public string Title{get; set;}
-        public string CompanyEmployeSize {set; get;}
+        public string Title { get; set; }
+        public string CompanyEmployeSize { set; get; }
 
-        public string FleetSize {set; get;}
+        public string FleetSize { set; get; }
         
-        public string CurrentSystemInUse {set; get;}
-        public string SentNewProductsEmails {set;get;}
+        public string CurrentSystemInUse { set; get; }
+        public string SentNewProductsEmails { set; get; }
           
-        public string Gender {set; get;}  
+        public string Gender { set; get; }
 
-        public string howdidyouhearaboutus {get; set;}
+        public string howdidyouhearaboutus { get; set; }
            
-         public int Agreetotermsandconditions {get; set;}
+        public int Agreetotermsandconditions { get; set; }
 
-         public  string Address {get; set;}
+        public string Address { get; set; }
           
-         public string insupdflag {get; set;}
+        public string insupdflag { get; set; }
            
     }
     public class LicensePage
     {
         public int Id { get; set; }
         public int LicenseTypeId { get; set; }
-        public string LicenseType {get; set;}
+        public string LicenseType { get; set; }
         public string fleetownercode { get; set; }
         public Decimal Unitprice { get; set; }
         public int FeatureName { get; set; }
@@ -218,6 +214,125 @@ namespace BTPOSDashboardAPI.Models
 
         public int LicenseCatId { get; set; }
 
+    }
+    public class CartDetails
+    {
+
+        public string LicenseType { set; get; }
+        public int Frequency { set; get; }
+        public string NoOfMonths { set; get; }
+        public int TotalAmount { set; get; }
+        public DateTime CreateDate { set; get; }
+        public string TransId { set; get; }
+        public int UnitPrice { set; get; }
+        public string FleetOwner { set; get; }
+
+    }
+    
+    public class UserLicenseDetails
+    {
+        public List<ULLicense> checkSchedule { get; set; }
+        public int Id { set; get; }
+        public int UserId { set; get; }
+        public int FOId { set; get; }
+        public string FOCode { set; get; }
+        public int LicenseTypeId { set; get; }
+        public DateTime? StartDate { set; get; }
+        public DateTime? ExpiryOn { set; get; }
+        public int GracePeriod { set; get; }
+        public DateTime? ActualExpiry { set; get; }
+        public DateTime? LastUpdatedOn { set; get; }
+        public int Active { set; get; }
+        public int RenewFreqTypeId { set; get; }
+        public int StatusId { set; get; }
+
+        public string insupddelflag { set; get; }
+
+    }
+    public class ULLicense
+    {
+        public int Id { set; get; }
+        public int ULId { set; get; }
+        public string TransId { set; get; }
+        public DateTime? CreatedOn { set; get; }
+        public decimal Amount { set; get; }
+        public decimal UnitPrice { set; get; }
+        public decimal Units { set; get; }
+        public int StatusId { set; get; }
+        public int LicensePymtTransId { set; get; }
+        public int IsRenewal { set; get; }
+        public string insupddelflag { set; get; }
+    }
+  
+    public class UserLicensePayments
+    {
+        public int Id { set; get;}
+        public int ULId { set; get;}
+        public DateTime CreatedOn { set; get;}
+        public decimal Amount { set; get;}
+        public decimal UnitPrice { set; get;}
+        public decimal Units { set; get;}
+        public int StatusId { set; get;}
+        public int LicensePymtTransId { set; get;}
+        public int IsRenewal { set; get;}
+        public string TransId { set; get; }
+        public DateTime PaymentTypeId { get; set; }
+    }
+    public class UserLicensePymtTransactions
+    {
+        public int Id { set; get; }
+        public string TransId { set; get; }
+        public string GatewayTransId { set; get; }
+        public decimal Amount { set; get; }
+        public DateTime TransDate { set; get; }
+        public int ULPymtId { set; get; }
+        public int StatusId { set; get; }
+        public string Desc { set; get; }
+        public string insupddelflag { set; get; }
+        public decimal Tax { set; get; }
+        public decimal Discount { set; get; }
+        public int PymtTypeId { set; get; }
+
+    }
+    public class ULPymtTransDetails
+    {
+        public int Id { set; get; }
+        public int ULPPymtTransId { set; get; }
+        public int PaymentTypeId { set; get; }
+        public int StatusId { set; get; }
+        public decimal Discount { set; get; }
+        public decimal Tax { set; get; }
+        public decimal Amount { set; get; }
+        public DateTime TransDate { set; get; }
+    }
+    public class ULFeatures
+    {
+       // public int Id { set; get; }
+        public int ULPymtId { set; get; }
+        public int FeatureId { set; get; }
+        public string FeatureValue { set; get; }
+        public string FeatureDesc { set; get; }
+    }
+
+    public class payPalPymnt { 
+    
+    }
+
+    public class ULConfirmDetails
+    { 
+        public int Id { set; get; }
+        public int ULId { set; get; }
+        public int ULPymtId { set; get; }
+        public int foId { set; get; }
+        public int userId { set; get; }
+        public string TransId { set; get; }
+        public string GatewayTransId { set; get; }
+        public int itemId { set; get; }
+        public string address { set; get; }
+        public decimal Amount { set; get; }
+        public decimal Units { set; get; }        
+        public int IsRenewal { set; get; }
+        public string insupddelflag { set; get; }
     }
    
 }

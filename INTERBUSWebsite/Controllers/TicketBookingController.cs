@@ -6,14 +6,14 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using BTPOSDashboardAPI.Models;
+using INTERBUSWebsite.Models;
 
 namespace INTERBUSWebsite.Controllers
 {
     public class TicketBookingController : ApiController
     {
 
-       
+
           [HttpGet]
 
         public DataTable GetAvailableServices(int srcId, int destId)

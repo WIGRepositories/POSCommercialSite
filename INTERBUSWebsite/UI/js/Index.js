@@ -3,7 +3,7 @@ var app = angular.module('myApp', ['ngStorage'])
 
 var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
-    $scope.GetStops = function () {       
+    $scope.GetStops = function () {
 
         $http.get('http://localhost:52800/api/Stops/GetStops').then(function (response, req) {
             $scope.Stops = response.data;
@@ -26,7 +26,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         {
             alert('Please select destination.');
             return;
-        }
+    }
 
         $localStorage.src = $scope.S;
         $localStorage.dest = $scope.D;
@@ -49,10 +49,10 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
     if (p == null) {
         alert('Please enter password');
         return;
+
     }
 
     var inputcred = { LoginInfo: u, Passkey: p }
-
 
     var req = {
         method: 'POST',
@@ -74,7 +74,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 }
 
     $scope.GotToLicensePage = function (t) {
-        $localStorage.licenseId = t.Id;
+        $localStorage.licenseId = t;
         window.location.href = "LicensePage.html";
     }
 });
