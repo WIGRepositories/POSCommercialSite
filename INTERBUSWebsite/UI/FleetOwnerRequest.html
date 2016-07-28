@@ -129,7 +129,7 @@
         <!--Start Menu-->
         <div class="mainnav" id="mainnav" tabindex="0">
 
-            <div class="top-row" style="position:fixed; width:100%; z-index:3">
+            <div class="top-row" style="position:fixed; width:100%; z-index:1">
 
                 <div class="r">
                     <div class="rr">
@@ -138,12 +138,12 @@
 
                             <li style="margin-left:52px">
 
-                                <a style="text-decoration:none" href="index.html">Home</a>
+                                <a style="text-decoration:none" href="Index.html">Home</a>
 
                             </li>
                             <li>
 
-                                <a style="text-decoration:none" href="Fares_and_payments.html">Fares / Payments</a>
+                                <a class="active" style="text-decoration:none" href="Fares_and_payments.html">Fares / Payments</a>
 
                                 <ul>
                                     <li><a href="#">Schedules</a></li>
@@ -172,26 +172,21 @@
 
                             <li>
 
-                                <a style="text-decoration:none" href="#">About Us</a>
+                                <a style="text-decoration:none" href="About.html">About Us</a>
                                 <ul>
-                                    <li><a href="#">ContactUs</a></li>
+                                    <li><a href="Contact.html">ContactUs</a></li>
 
                                 </ul>
 
                             </li>
 
-                            <li style="margin-left:250px">
 
+                        </ul>
                                 <div style="float:right; padding-top:11px">
                                     <input type="text" placeholder="Search" id="q" name="q" style="border-radius:30px; width:120px; height:35px" />
 
 
                                 </div>
-
-
-                            </li>
-
-                        </ul>
                     </div>
                 </div>
 
@@ -304,18 +299,18 @@
                                 <div class="form-group">
         <label>Last Name</label>
         <div><input type="text" ng-model="FleetOwnerRequest1.LastName" class="form-control" /></div>
-    </div>
+                                </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="form-group">
+                                <div class="form-group">
                                         <label>Company Name</label>
                                         <div><input type="text" ng-model="FleetOwnerRequest1.CompanyName" class="form-control" /></div>
-                                    </div>
+                                </div>
                                 </div>
                                 </div>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <div class="form-group">
+                                <div class="form-group">
                                     <label for="InputEmail">Email Address</label>
                                         <div class="input-group"><input type="text" ng-model="FleetOwnerRequest1.EmailAddress" class="form-control" /><span class="input-group-addon"><i class="fa fa-envelope"></i></span></div>
                                 </div>
@@ -331,22 +326,22 @@
                                             <option value="1">Male</option>
                                             <option value="2">Female</option>
                                             <option value="3">Others</option>
-                                        </select>
-                                    </div>
+                                    </select>
                                 </div>
+                            </div>
                              </div>
                             <div class="row">
-                                <div class="col-md-4">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="InputPassword">Title</label>
     <!--<div class="input-group"><input type="text" ng-model="FleetOwnerRequest1.Title" class="form-control" /></div>-->
                                     <div><input type="text" ng-model="FleetOwnerRequest1.Title" class="form-control" /></div>
 </div></div>
                                 <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Fleet size</label>
-                                        <div class="input-icon right"><i class="fa fa-spinner fa-spin"></i><input type="text" ng-model="FleetOwnerRequest1.FleetSize" class="form-control" /></div>
-                                    </div>
+                                <div class="form-group">
+                                    <label>Fleet size</label>
+                                    <div class="input-icon right"><i class="fa fa-spinner fa-spin"></i><input type="text" ng-model="FleetOwnerRequest1.FleetSize" class="form-control" /></div>
+                                </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
@@ -359,10 +354,10 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Address</label><textarea rows="3" ng-model="FleetOwnerRequest1.Address" class="form-control"></textarea>
-                                    </div>
                                 </div>
+                            </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
+                                <div class="form-group">
                                         <label>Description</label>
                                         <textarea rows="3" ng-model="FleetOwnerRequest1.Description" class="form-control"></textarea>
                                     </div>
@@ -382,7 +377,7 @@
                                     <option>Friends</option>
                                     <option>Paper Advertisement</option>
                                      <option>Social Media</option>
-                                  </select>
+                                    </select>
                                 </div>
                                 </div>
                                 </div>                                
