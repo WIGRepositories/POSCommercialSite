@@ -191,6 +191,7 @@
     <Content Include="UI\images\commercialsite2.jpg" />
     <Content Include="UI\images\commercialsite3.jpg" />
     <Content Include="UI\images\commercialsite4.jpg" />
+    <Content Include="UI\images\construction.png" />
     <Content Include="UI\images\fleetownerReq.jpg" />
     <Content Include="UI\images\Fwd_ arrows.html" />
     <Content Include="UI\images\gallery\1.jpg" />
@@ -282,6 +283,7 @@
     <Content Include="UI\js\moment.js" />
     <Content Include="UI\js\ngStorage.js" />
     <Content Include="UI\js\ResetPassword.js" />
+    <Content Include="UI\js\Schedules1.js" />
     <Content Include="UI\js\script.slider.js" />
     <Content Include="UI\js\SeatSelection.js" />
     <Content Include="UI\js\Stops.js" />
@@ -304,6 +306,7 @@
     <Content Include="UI\resetpassword.html" />
     <Content Include="UI\Re_fund.html" />
     <Content Include="UI\Schedules.html" />
+    <Content Include="UI\Schedules1.html" />
     <Content Include="UI\seats.html" />
     <Content Include="UI\SeatSelection.html" />
     <Content Include="UI\Status_and_Updates.html" />
@@ -1104,6 +1107,7 @@
     <Compile Include="Controllers\LicensePage.cs" />
     <Compile Include="Controllers\LicensePageController.cs" />
     <Compile Include="Controllers\PaymentsController.cs" />
+    <Compile Include="Controllers\Schedules1Controller.cs" />
     <Compile Include="Controllers\StopsController.cs" />
     <Compile Include="Controllers\FleetOwnerLicenseController.cs" />
     <Compile Include="Controllers\TicketBookingController.cs" />
