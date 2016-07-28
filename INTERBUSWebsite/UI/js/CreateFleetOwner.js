@@ -10,55 +10,74 @@ var ctrl = app.controller('myCtrl', function ($scope, $http) {
     //}
     //};
 
-    $scope.save = function (Fleet, flag) {
+    //$scope.save = function (Fleet, flag) {
 
-        var Fleet = {
-            //Id: Fleet.Id,
-            FirstName: Fleet.FirstName,
-            LastName: Fleet.LastName,
+        
 
-            //UserTypeId: (role) ? 2 : User.UserType,
 
-            Email: Fleet.Email,
+    //    var Fleet = {
+    //        //Id: Fleet.Id,
+    //        FirstName: Fleet.FirstName,
+    //        LastName: Fleet.LastName,
 
-            MobileNo: Fleet.MobileNo,
-            //RoleId: (role) ? 2 : User.Role,
+    //        //UserTypeId: (role) ? 2 : User.UserType,
 
-            CompanyName: Fleet.CompanyName,
-            Description: Fleet.Description,
-            insupdflag: flag           
-        }
+    //        Email: Fleet.Email,
 
-        $http({
-            url: 'http://localhost:52800/api/FleetOwnerLicense/CreateNewFO',
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            data: Fleet
-        }).success(function (data, status, headers, config) {
-            alert('saved successfully');
-            window.location.href = "http://localhost:52800/UI/LicenseConfirmation.html";
-        }).error(function (ata, status, headers, config) {
-            alert(ata);
-        });
+    //        MobileNo: Fleet.MobileNo,
+    //        //RoleId: (role) ? 2 : User.Role,
 
-        $scope.User1 = null;
-    };
+    //        CompanyName: Fleet.CompanyName,
+    //        Description: Fleet.Description,
+    //        insupdflag: flag           
+    //    }
 
-    $scope.setUsers = function (usr) {
-        $scope.User1 = usr;
+    //    $http({
+    //        url: 'http://localhost:52800/api/FleetOwnerLicense/CreateNewFO',
+    //        method: 'POST',
+    //        headers: { 'Content-Type': 'application/json' },
+    //        data: Fleet
+    //    }).success(function (data, status, headers, config) {
+    //        alert('saved successfully');
+    //        window.location.href = "http://localhost:52800/UI/LicenseConfirmation.html";
+    //    }).error(function (ata, status, headers, config) {
+    //        alert(ata);
+    //    });
 
-    };
+    //    $scope.User1 = null;
+    //};
 
-    $scope.clearUsers = function () {
-        $scope.User1 = null;
-    }
-  
-    
-    
+    //$scope.setUsers = function (usr) {
+    //    $scope.User1 = usr;
+
+    //};
+
+    //$scope.clearUsers = function () {
+    //    $scope.User1 = null;
+    //} 
 
 
     $scope.save = function (FleetOwnerRequest1, flag) {
-       
+        if (FleetOwnerRequest1 == null) {
+            alert('Please enter FirstName.');
+            return;
+        }
+        if (FleetOwnerRequest1.FirstName == null) {
+            alert('Please enter FirstName.');
+            return;
+        }
+        if (FleetOwnerRequest1.LastName == null) {
+            alert('Please enter LastName.');
+            return;
+        }
+        if (FleetOwnerRequest1.CompanyName == null) {
+            alert('Please enter CompanyName.');
+            return;
+        }
+        if (FleetOwnerRequest1.PhoneNo == null) {
+            alert('Please enter PhoneNo.');
+            return;
+        }
         var FleetOwnerRequest1 = {
             //Id: Fleet.Id,
             
@@ -83,7 +102,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http) {
             howdidyouhearaboutus: FleetOwnerRequest1.howdidyouhearaboutus,
             Agreetotermsandconditions: 1,
              Address: FleetOwnerRequest1.Address,
-            insupdflag: flag         
+             insupdflag: 'I',
        
         }
         $http({
@@ -91,19 +110,59 @@ var ctrl = app.controller('myCtrl', function ($scope, $http) {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             data: FleetOwnerRequest1
-        }).success(function (data, status, headers, config) {
-            alert('saved successfully');
-            window.location.href = "http://localhost:52800/UI/LicenseConfirmation.html";
+        })
+       // $http(req).then(function (response) {
+
+       //     $scope.showDialog("Saved successfully!!");
+
+       // }
+       //, function (errres) {
+       //    var errdata = errres.data;
+       //    var errmssg = "";
+       //    errmssg = (errdata && errdata.ExceptionMessage) ? errdata.ExceptionMessage : errdata.Message;
+       //    $scope.showDialog(errmssg);
+
+       //});
+
+        //$scope.showDialog = function (message) {
+
+        //    var modalInstance = $uibModal.open({
+        //        animation: $scope.animationsEnabled,
+        //        templateUrl: 'myModalContent.html',
+        //        controller: 'ModalInstanceCtrl',
+        //        resolve: {
+        //            mssg: function () {
+        //                return message;
+        //            }
+        //        }
+        //    });
+        //}
+            .success(function (data, status, headers, config) {
+                alert('saved successfully');              
+                
+           // window.location.href = "http://localhost:52800/UI/LicenseConfirmation.html";
         }).error(function (ata, status, headers, config) {
             alert(ata);
         });
+
+        $scope.clearFleetOwnerRequest1 = function () {
+            $scope.FleetOwnerRequest1 = null;
+        };
     }
 
 
-
-
-
 });
+//app.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, mssg) {
+
+//    $scope.mssg = mssg;
+//    $scope.ok = function () {
+//        $uibModalInstance.close('test');
+//    };
+
+//    $scope.cancel = function () {
+//        $uibModalInstance.dismiss('cancel');
+//    };
+//});
 
       
 

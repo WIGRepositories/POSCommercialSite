@@ -179,7 +179,7 @@ namespace BTPOSDashboardAPI.Models
 
         public string LastName{get; set;}
         public int PhoneNo{get; set;}
-        public  string EmailAdress {get; set;}
+        public string EmailAddress { get; set; }
         public string CompanyName {get; set;}
         public string Description {get; set;}
 
