@@ -31,7 +31,7 @@ namespace INTERBUSWebsite.Controllers
 
             DataSet ds = new DataSet();
             SqlDataAdapter db = new SqlDataAdapter(cmd);
-            db.Fill(ds);
+            VehicleAvailabilitydb.Fill(ds);
             Tbl = ds.Tables[0];
 
             // int found = 0;

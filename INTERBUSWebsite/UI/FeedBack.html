@@ -1,17 +1,21 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Horizontal Menu | Layouts</title>
-    <meta charset="utf-8">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="images/icons/favicon.ico">
-    <link rel="apple-touch-icon" href="images/icons/favicon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/icons/favicon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/icons/favicon-114x114.png">
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/cdn/static/assets/icons/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="css/w3.css">
+
+
+
+    <!-- links for table -->
     <!--Loading bootstrap css-->
-    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700">
-    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700,300">
     <link type="text/css" rel="stylesheet" href="vendors/jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
     <link type="text/css" rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
     <link type="text/css" rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
@@ -23,311 +27,499 @@
     <!--Loading style-->
     <link type="text/css" rel="stylesheet" href="css/themes/style2/pink-blue.css" id="theme-change" class="style-change color-change">
     <link type="text/css" rel="stylesheet" href="css/style-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/Main.css">
+
+
+    <!-- Optional theme -->
+
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+
+
+    <!-- Latest compiled and minified JavaScript -->
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <meta name="HandheldFriendly" content="True">
+
+    <script type="text/javascript">
+
+        var h = document.documentElement;
+
+        h.className = h.className.replace(/\bno-js\b/, '');
+
+        var isTouch = !!("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0;
+
+
+
+        if (isTouch) {
+
+            // remove class which defines hover behavior
+
+            h.className = h.className.replace(/\bno-touch\b/, '');
+
+        }
+
+    </script>
+
+
+
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+
+    <title>Interbus - Get Moving Anywhere, Comfortably</title>
+
+
+
+
+
+    <meta name="description" content="Information on all forms of transport in London including cycle hire. Routes, maps, plan a journey, tickets sales, realtime traffic and travel updates." />
+
+    <meta name="keywords" />
+
+    <meta name="author" content="Interbus | Get Moving Anywhere, Comfortably" />
+
+    <link href="css/StyleSheet2.css" media="screen,print" rel="stylesheet" />
+
+    <link href="css/StyleSheet1.css" media="screen,print" rel="stylesheet" />
+
+    <link href="css/StyleSheet4.css" media="screen,&#32;print" rel="stylesheet" />
+
+    <link href="css/StyleSheet3.css" media="screen&#32;and&#32;(min-width:&#32;580px),print" rel="stylesheet" />
+
+
+
+    <link href="css/StyleSheet5.css" media="screen&#32;and&#32;(min-width:&#32;900px)" rel="stylesheet" />
+
+    <!--<link href="/cdn/static/styles/core/min/print.min.bbf3e026.css" media="print" rel="stylesheet" />-->
+
+
+
+    <link href="css/StyleSheet6.css" media="screen" rel="stylesheet" />
+
+
+
+
+
+
+
+    <!--[if lte IE 9]>
+
+        <link href="/cdn/static/styles/core/min/ie.min.0b308d8c.css" media="screen" rel="stylesheet" />
+
+    <![endif]-->
+
+
+    <script type="text/javascript">
+
+        // Instructions: please embed this snippet directly into every page in your website template.
+
+        // For optimal performance, this must be embedded directly into the template, not referenced
+
+        // as an external file.
+
+
+
+        // Answers Cloud Services Embed Script v1.02
+
+        // DO NOT MODIFY BELOW THIS LINE *****************************************
+
+        ;(function (g) {
+
+            var d = document, i, am = d.createElement('script'), h = d.head || d.getElementsByTagName("head")[0],
+
+            aex = {
+
+                "src": "//gateway.answerscloud.com/tfl-gov-uk/production/gateway.min.js",
+
+                "type": "text/javascript",
+
+                "async": "true",
+
+                "data-vendor": "acs",
+
+                "data-role": "gateway"
+
+            };
+
+            for (var attr in aex) { am.setAttribute(attr,aex[attr]); }
+
+            h.appendChild(am);
+
+            g['acsReady'] = function () {var aT = '__acsReady__', args = Array.prototype.slice.call(arguments, 0),k = setInterval(function () {if (typeof g[aT] === 'function') {clearInterval(k);for (i = 0; i < args.length; i++) {g[aT].call(g, function(fn) { return function() { setTimeout(fn, 1) };}(args[i]));}}}, 50);};
+
+        })(window);
+
+        // DO NOT MODIFY ABOVE THIS LINE *****************************************
+
+    </script>
+
+    <style>
+        rr.div a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            padding: 15px;
+            display: inline-block;
+        }
+
+        .rr ul {
+            display: inline;
+            margin: 0;
+            padding: 0;
+        }
+
+        .rr .active {
+            background: #555;
+        }
+
+
+        .rr ul li {
+            display: inline-block;
+            color: white;
+        }
+
+            .rr ul li:hover {
+                background: #555;
+            }
+
+                .rr ul li:hover ul {
+                    display: block;
+                }
+
+            .rr ul li ul {
+                position: absolute;
+                width: 100px;
+                display: none;
+            }
+
+                .rr ul li ul li {
+                    background: #555;
+                    display: block;
+                    border-bottom: 1px solid white;
+                    width: 170px;
+                }
+
+                    .rr ul li ul li a {
+                        display: block !important;
+                        text-decoration: none;
+                    }
+
+                    .rr ul li ul li:hover {
+                        background: #666;
+                    }
+
+                    .rr ul li ul li a:hover {
+                        text-decoration: none;
+                    }
+    </style>
+
+
+
 </head>
+
 <body class="horizontal-menu-page">
-    <img src="images/commercialsite2.jpg" width="100%" />
-    <!--END THEME SETTING--><!--BEGIN BACK TO TOP--><a id="totop" href="#"><i class="fa fa-angle-up"></i></a><!--END BACK TO TOP--><!--BEGIN TOPBAR-->
-    <div id="header-topbar-option-demo" class="page-header-topbar">
-        <nav id="topbar" role="navigation" style="margin-bottom: 0;" data-step="3" data-intro="&lt;b&gt;Topbar&lt;/b&gt; has other styles with live demo. Go to &lt;b&gt;Layouts-&gt;Header&amp;Topbar&lt;/b&gt; and check it out." class="navbar navbar-default navbar-static-top">
+    <!--Start Menu-->
+    <div class="mainnav" id="mainnav" tabindex="0">
 
-            <div class="topbar-main">
-                <a id="" href="" class="hidden-xs"><i class=""></i></a>
-                <ul class="nav navbar-nav horizontal-menu hidden-sm hidden-xs  ">
+        <div class="top-row" style="position:fixed; width:100%; z-index:1">
 
-                    <li class=" "><a href="Index.html">Home &nbsp;</a></li>
-                    <li><a href="AboutUs.html">AboutUs&nbsp;</a></li>
-                    <li class=""><a href="ContactUs.html"> ContactUs &nbsp;</a></li>
-                    <li class=""><a href="Schedules.html"> Schedules &nbsp;</a></li>
+            <div class="r">
+                <div class="rr" style="width:94%">
+                    <a style="margin-top: 0px; padding-top: 0px; margin-left: 35px; float:left" href="index.html"><img style="height:76px" src="Images/logos/interbusLogo.png" alt="Alternate Text" /> </a>
+                    <ul class="collapsible-menu clearfix" style="margin-left:0px;height:76px">
 
-                    <li class=""><a href="CheckFare.html">CheckFare &nbsp;</a></li>
-                    <li class=""> <a href="Cancellation.html">Cancellation &nbsp;</a></li>
-                    <li class=""> <a href="FeedBack.html">FeedBack &nbsp;</a></li>
-                    <li class=""><a href="Login.html">Login &nbsp;</a></li>
-                    <li class=""><a href="registrationform.html">Registration &nbsp;</a></li>
-                   
+                        <li>
 
-        </nav>
+                            <a style="text-decoration:none" href="Index.html">Home</a>
 
+                        </li>
+                        <li>
 
+                            <a class="active" style="text-decoration:none" href="Fares_and_payments.html">Fares / Payments</a>
 
-
-        <!-- Mirrored from www.INTERBUStravels.com/Contactus.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Apr 2016 10:05:20 GMT -->
-        <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
-        <head id="ctl00_header">
-            <link href="App_Themes/OBRS_EndUser/enduser.css" type="text/css" rel="stylesheet" />
-            <title>
-                INTERBUS® Online Ticket Booking | Online Bus Reservation | Contact Us
-            </title>
+                            <ul>
+                                <li><a href="Schedules.html">Schedules</a></li>
+                                <li><a href="CheckFare.html">CheckFare</a></li>
+                                <li><a href="Cancel_Ticket.html">Cancellation</a></li>
 
 
+                            </ul>
+                        </li>
+                        <li>
 
-            <!-- Menu End From Here-->
-            <!-- Top End Part -->
-            <!-- Middle Part -->
-            <tr>
-                <td>
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableBg">
+                            <a style="text-decoration:none" href="Status_and_Updates.html">Status & Updates</a>
+
+                        </li>
+                        <li>
+
+                            <a style="text-decoration:none" href="#">Products</a>
+                            <ul>
+                                <li><a href="Licensepage.html">Fleet Owner License</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li>
+
+                            <a style="text-decoration:none" href="About.html">About Us</a>
+                            <ul>
+                                <li><a href="Contact.html">ContactUs</a></li>
+
+                            </ul>
+
+                        </li>
+
+
+                    </ul>
+                    <div style="float:right; padding-top:11px">
+                        <input type="text" placeholder="Search.." id="q" name="q" style="border-radius: 30px; width: 120px; height: 35px; color: red;" />
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!--End Menu-->
+           
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableBg">
                         <tr>
                             <td>
                                 
                             </td>
                         </tr>
-                    </table>
-                </td>
-            </tr>
-            <!-- Menu End From Here-->
-           
-            <!-- Top End Part -->
-            <!-- Middle Part -->
-            <tr>
-                <td align="left" valign="top">
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                        <tr>
-                            <td align="left" valign="top" style="height: 18px;">
-                                <img src="images/spacer.gif" width="1" height="1">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left" valign="top" style="height: 1px;">
+                    </table>       
 
-                                <table width="100%" border="0" cellpadding="0" cellspacing="0">
-                                    <tr>
-                                        <td align="left" style="width: 11px" valign="top"><img height="1" src="images/spacer.gif" width="1" /></td>
-                                        <td align="left" style="width: 312px" valign="top"></td>
-                                        <td align="left" style="width: 28px" valign="top">
-                                            <img height="1" src="images/spacer.gif" width="1" />
-                                        </td>
-                                        <td align="left" valign="top">
-                                        <td valign="top">
-                                            <table id="ctl00_cpEndUserMain_pnlfeedback" cellpadding="0" cellspacing="0" border="0" width="100%">
-                                                <tr>
-                                                    <td>
+    <table>
+        <tr>
+            <td align="left" valign="top">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td align="left" valign="top" style="height: 18px;">
+                            <img src="images/spacer.gif" width="1" height="1">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="top" style="height: 1px;">
 
-                                                        <table border="0" cellpadding="0" cellspacing="0" width="400px">
-                                                            <tr>
-                                                                <td align="left" style="height: 25px" valign="top">
-                                                                    <table border="0" cellpadding="0" cellspacing="0" style="height: 25px" width="100%">
-                                                                        <tr>
-                                                                            <td align="left" class="gray-head-title" style="padding-bottom:2px" valign="bottom">Feedback</td>
-                                                                        </tr>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td align="center" class="gray-table-border" valign="top">
-                                                                    <table width="90%" border="0" cellpadding="0" cellspacing="0">
-                                                                        <tr>
-                                                                            <td style="height:10px; width: 234px;">
-                                                                                <img src="Images/spacer-2.gif" width="1" height="1" />
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td style="height: 25px; text-align: justify; padding-right: 5px;  padding-bottom: 5px; padding-top: 5px;" colspan="2">
-                                                                                We want to hear from you! Please fill in the form below to send us your comments,
-                                                                                questions or requests for additional information. We will get back to you soon..
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td colspan="2" style="padding-right: 5px;  padding-bottom: 5px;
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td align="left" style="width: 11px" valign="top"><img height="1" src="images/spacer.gif" width="1" /></td>
+                                    <td align="left" style="width: 312px" valign="top"></td>
+                                    <td align="left" style="width: 28px" valign="top">
+                                        <img height="1" src="images/spacer.gif" width="1" />
+                                    </td>
+                                    <td align="left" valign="top">
+                                    <td valign="top">
+                                        <table id="ctl00_cpEndUserMain_pnlfeedback" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                            <tr>
+                                                <td>
+
+                                                    <table border="0" cellpadding="0" cellspacing="0" width="400px">
+                                                        <tr>
+                                                            <td align="left" style="height: 25px" valign="top">
+                                                                <table border="0" cellpadding="0" cellspacing="0" style="height: 25px" width="100%">
+                                                                    <tr>
+                                                                        <td align="left" class="gray-head-title" style="padding-bottom:2px" valign="bottom">Feedback</td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td align="center" class="gray-table-border" valign="top">
+                                                                <table width="90%" border="0" cellpadding="0" cellspacing="0">
+                                                                    <tr>
+                                                                        <td style="height:10px; width: 234px;">
+                                                                            <img src="Images/spacer-2.gif" width="1" height="1" />
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="height: 25px; text-align: justify; padding-right: 5px;  padding-bottom: 5px; padding-top: 5px;" colspan="2">
+                                                                            We want to hear from you! Please fill in the form below to send us your comments,
+                                                                            questions or requests for additional information. We will get back to you soon..
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td colspan="2" style="padding-right: 5px;  padding-bottom: 5px;
                                         padding-top: 5px; height: 10px; text-align: justify"></td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td style="text-align: left; height: 30px; width:234px;">
-                                                                                <span id="ctl00_cpEndUserMain_lblName" class="fildstext">Your Name <font color='red'>* </font>:</span>
-                                                                            </td>
-                                                                            <td style="text-align: left; height: 30px;">
-                                                                                <input name="ctl00$cpEndUserMain$txtName" type="text" maxlength="50" id="ctl00_cpEndUserMain_txtName" class="formfileds" valid="m" errname="Your Name" />
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td align="right" style="height: 30px; text-align: left; width: 234px;">
-                                                                                <span id="ctl00_cpEndUserMain_lblMailId" class="fildstext">Your Email Id<font color='red'> * </font>:</span>
-                                                                            </td>
-                                                                            <td style="height: 30px; text-align: left">
-                                                                                <input name="ctl00$cpEndUserMain$txtYourEmailID" type="text" maxlength="100" id="ctl00_cpEndUserMain_txtYourEmailID" class="formfileds" valid="m_e" errname="Your Email Id" />
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td style="height: 25px; text-align: left" align="right">
-                                                                                <span id="ctl00_cpEndUserMain_lblMobileNumber" class="fildstext">Mobile Number <font color='red'>*</font> :</span>
-                                                                            </td>
-                                                                            <td style="height: 19px; text-align: left" colspan="2">
-                                                                                <input name="ctl00$cpEndUserMain$TextBox1" type="text" value="+91" maxlength="11" id="ctl00_cpEndUserMain_TextBox1" disabled="disabled" class="label" errname="Mobile Number" autocomplete="Off" />
-                                                                                <input name="ctl00$cpEndUserMain$txtMobileNumber" type="text" maxlength="11" id="ctl00_cpEndUserMain_txtMobileNumber" class="label" valid="m" errname="Mobile Number" autocomplete="Off" />
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="text-align: left; height: 30px; width:234px;">
+                                                                            <span id="ctl00_cpEndUserMain_lblName" class="fildstext">Your Name <font color='red'>* </font>:</span>
+                                                                        </td>
+                                                                        <td style="text-align: left; height: 30px;">
+                                                                            <input name="ctl00$cpEndUserMain$txtName" type="text" maxlength="50" id="ctl00_cpEndUserMain_txtName" class="formfileds" valid="m" errname="Your Name" />
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align="right" style="height: 30px; text-align: left; width: 234px;">
+                                                                            <span id="ctl00_cpEndUserMain_lblMailId" class="fildstext">Your Email Id<font color='red'> * </font>:</span>
+                                                                        </td>
+                                                                        <td style="height: 30px; text-align: left">
+                                                                            <input name="ctl00$cpEndUserMain$txtYourEmailID" type="text" maxlength="100" id="ctl00_cpEndUserMain_txtYourEmailID" class="formfileds" valid="m_e" errname="Your Email Id" />
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="height: 25px; text-align: left" align="right">
+                                                                            <span id="ctl00_cpEndUserMain_lblMobileNumber" class="fildstext">Mobile Number <font color='red'>*</font> :</span>
+                                                                        </td>
+                                                                        <td style="height: 19px; text-align: left" colspan="2">
+                                                                            <input name="ctl00$cpEndUserMain$TextBox1" type="text" value="+91" maxlength="11" id="ctl00_cpEndUserMain_TextBox1" disabled="disabled" class="label" errname="Mobile Number" autocomplete="Off" />
+                                                                            <input name="ctl00$cpEndUserMain$txtMobileNumber" type="text" maxlength="11" id="ctl00_cpEndUserMain_txtMobileNumber" class="label" valid="m" errname="Mobile Number" autocomplete="Off" />
 
 
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td align="right" style="width: 234px; height: 25px; text-align: left"></td>
-                                                                            <td style="height: 25px; text-align: left">
-                                                                                <table id="ctl00_cpEndUserMain_rbtnlstFeedBackType" border="0" width="200">
-                                                                                    <tr>
-                                                                                        <td><input id="ctl00_cpEndUserMain_rbtnlstFeedBackType_0" type="radio" name="ctl00$cpEndUserMain$rbtnlstFeedBackType" value="M" checked="checked" /><label for="ctl00_cpEndUserMain_rbtnlstFeedBackType_0">Message</label></td>
-                                                                                        <td><input id="ctl00_cpEndUserMain_rbtnlstFeedBackType_1" type="radio" name="ctl00$cpEndUserMain$rbtnlstFeedBackType" value="Q" /><label for="ctl00_cpEndUserMain_rbtnlstFeedBackType_1">Query</label></td>
-                                                                                        <td><input id="ctl00_cpEndUserMain_rbtnlstFeedBackType_2" type="radio" name="ctl00$cpEndUserMain$rbtnlstFeedBackType" value="S" /><label for="ctl00_cpEndUserMain_rbtnlstFeedBackType_2">Suggestion</label></td>
-                                                                                    </tr>
-                                                                                </table>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td align="right" style="height: 25px; text-align: left; width: 234px;">
-                                                                                <span id="ctl00_cpEndUserMain_lblComment" class="fildstext" style="display:inline-block;">Your Comment<font color='red'> * </font>:</span>
-                                                                            </td>
-                                                                            <td style="height: 25px; text-align: left">
-                                                                                <textarea name="ctl00$cpEndUserMain$txtComments" rows="2" cols="20" id="ctl00_cpEndUserMain_txtComments" class="formfileds" valid="m" errname="Your Comment"></textarea>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td colspan="2">
-                                                                                <span id="ctl00_cpEndUserMain_lblMessage"></span>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td style="height:6px; width: 234px;">
-                                                                                <img src="Images/spacer-2.gif" width="1" height="1" />
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td colspan="2" align="center">
-                                                                                <table border="0" cellpadding="0" cellspacing="0">
-                                                                                    <tr>
-                                                                                        <td>
-                                                                                            <div class="cssbutton sample b">
-                                                                                                <input type="submit" name="ctl00$cpEndUserMain$btnSend" value="Submit" onclick="javascript:return ValidMobile(document.forms[0]);" id="ctl00_cpEndUserMain_btnSend" />
-                                                                                            </div>
-                                                                                        </td>
-                                                                                        <td>&nbsp;&nbsp;&nbsp;</td>
-                                                                                        <td>
-                                                                                            <div class="cssbutton sample b">
-                                                                                                <input type="submit" name="ctl00$cpEndUserMain$btnCancel" value="Cancel" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$cpEndUserMain$btnCancel&quot;, &quot;&quot;, false, &quot;&quot;, &quot;Index.aspx&quot;, false, false))" id="ctl00_cpEndUserMain_btnCancel" />
-                                                                                            </div>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                </table>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td style="height:6px; width: 234px;">
-                                                                                <img src="Images/spacer-2.gif" width="1" height="1" />
-                                                                            </td>
-                                                                        </tr>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                        <td align="left" style="width: 28px" valign="top"><img height="1" src="images/spacer.gif" width="1" /></td>
-                                        <td align="left" style="width: 266px" valign="top"></td>
-                                        <td align="left" style="width: 11px" valign="top"><img height="1" src="images/spacer.gif" width="1" /></td>
-                                    </tr>
-                                </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align="right" style="width: 234px; height: 25px; text-align: left"></td>
+                                                                        <td style="height: 25px; text-align: left">
+                                                                            <table id="ctl00_cpEndUserMain_rbtnlstFeedBackType" border="0" width="200">
+                                                                                <tr>
+                                                                                    <td><input id="ctl00_cpEndUserMain_rbtnlstFeedBackType_0" type="radio" name="ctl00$cpEndUserMain$rbtnlstFeedBackType" value="M" checked="checked" /><label for="ctl00_cpEndUserMain_rbtnlstFeedBackType_0">Message</label></td>
+                                                                                    <td><input id="ctl00_cpEndUserMain_rbtnlstFeedBackType_1" type="radio" name="ctl00$cpEndUserMain$rbtnlstFeedBackType" value="Q" /><label for="ctl00_cpEndUserMain_rbtnlstFeedBackType_1">Query</label></td>
+                                                                                    <td><input id="ctl00_cpEndUserMain_rbtnlstFeedBackType_2" type="radio" name="ctl00$cpEndUserMain$rbtnlstFeedBackType" value="S" /><label for="ctl00_cpEndUserMain_rbtnlstFeedBackType_2">Suggestion</label></td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align="right" style="height: 25px; text-align: left; width: 234px;">
+                                                                            <span id="ctl00_cpEndUserMain_lblComment" class="fildstext" style="display:inline-block;">Your Comment<font color='red'> * </font>:</span>
+                                                                        </td>
+                                                                        <td style="height: 25px; text-align: left">
+                                                                            <textarea name="ctl00$cpEndUserMain$txtComments" rows="2" cols="20" id="ctl00_cpEndUserMain_txtComments" class="formfileds" valid="m" errname="Your Comment"></textarea>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td colspan="2">
+                                                                            <span id="ctl00_cpEndUserMain_lblMessage"></span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="height:6px; width: 234px;">
+                                                                            <img src="Images/spacer-2.gif" width="1" height="1" />
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td colspan="2" align="center">
+                                                                            <table border="0" cellpadding="0" cellspacing="0">
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <div class="cssbutton sample b">
+                                                                                            <input type="submit" name="ctl00$cpEndUserMain$btnSend" value="Submit" onclick="javascript:return ValidMobile(document.forms[0]);" id="ctl00_cpEndUserMain_btnSend" />
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td>&nbsp;&nbsp;&nbsp;</td>
+                                                                                    <td>
+                                                                                        <div class="cssbutton sample b">
+                                                                                            <input type="submit" name="ctl00$cpEndUserMain$btnCancel" value="Cancel" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$cpEndUserMain$btnCancel&quot;, &quot;&quot;, false, &quot;&quot;, &quot;Index.aspx&quot;, false, false))" id="ctl00_cpEndUserMain_btnCancel" />
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="height:6px; width: 234px;">
+                                                                            <img src="Images/spacer-2.gif" width="1" height="1" />
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td align="left" style="width: 28px" valign="top"><img height="1" src="images/spacer.gif" width="1" /></td>
+                                    <td align="left" style="width: 266px" valign="top"></td>
+                                    <td align="left" style="width: 11px" valign="top"><img height="1" src="images/spacer.gif" width="1" /></td>
+                                </tr>
+                            </table>
 
 
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-           
-                    <table width="100%">
-                        <tr>
-                            <td width="100%" align="right" valign="bottom">
-                                Follow us on:
-                            </td>
-                            <td>
-                                <a href="http://www.facebook.com/INTERBUSTravel" title="INTERBUS Tours and Travels on Facebook"
-                                   target="_blank" class="social fb">Facebook</a>
-                            </td>
-                            <td>
-                                <a href="http://www.twitter.com/INTERBUSTravel" title="INTERBUS Tours and Travels on Twitter"
-                                   target="_blank" class="social tw">Twitter</a>
-                            </td>
-                        </tr>
-                    </table>
-
-               
-            <!-- Middle Part End -->
-            <!--Author:Sathishkumar.Mailaram-->
-            <tr>
-                <td align="left" valign="top" style="height: 1px; background-color: #e5e4e4;">
-                    <img src="images/spacer.gif" width="1" height="1">
-                </td>
-            </tr>
-            <!-- Bottom Images -->
-            <!-- Bottom Images End-->
-            <tr id="ctl00_trScroller">
-                <td align="center" style="color: Red; font: 12px Arial; height: 25px;">
-                    <div align="center">
-
-                    </div>
-                </td>
-            </tr>
-
-            <tr class="tableBg">
-
-                <td align="center" id="footerText">
-                    24X7 Help Line: +91-40-4477 1777, +91- 9959 111 777
-                </td>
-            </tr>
-            <!-- Footer Starts Here -->
-            <tr>
-                <td align="center" valign="middle" class="bottext11" style="height: 55px;">
-                    <a href="Faq.html" class="bottextlinks">FAQ</a> | <a href="TermsConditions.html"
-                                                                         class="bottextlinks">Terms &amp; Conditions</a> | <a href="MailToFriend.html" class="bottextlinks">
-                        Mail a friend
-                    </a> | <a href="Privacy.html" class="bottextlinks">Privacy Policy</a>
-
-                    | <a href="News.html" class="bottextlinks">News &amp; Media</a> | <a href="Sitemap.html"
-                                                                                         class="bottextlinks">Site Map</a>
-
-                    <br />
-                    <table width="100%" border="0">
-                        <tr>
-                            <td align="center" width="100%">
-                                <div class="bottext11">
-                                    <span class="bottext11">
-                                        INTERBUS Tours &amp; Travels ©
-
-                                        <script language="javascript">var today = new Date();var year = today.getYear();if(year > 2000){document.write(year);}else{year = year + 1900;document.write(year);}</script>
-
-                                        . All Rights Reserved.
-                                    </span>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="right">
-                                <span id="divBrand"></span>
-
-                                <script type="text/javascript">
-                                    var pathName = window.location.pathname.toLowerCase(); if (pathName == "/" || pathName.indexOf("index.aspx") > 0) {document.getElementById('divBrand').innerHTML ='Powered By: <a href="http://www.valuelabs.com" target="_blank"><img src="Images/EndUserImages/vl-logo.gif" height="16" border="0" style="vertical-align: middle;" /></a>';}
-                                </script>
-
-                            </td>
-                        </tr>
-                    </table>
-                    <br />
-                </td>
-            </tr>
-            <!-- Footer Starts End Here -->
-            </table>
+                        </td>
+                    </tr>
+                </table>
             </td>
-            </tr>
-            </table>
+        </tr>
 
-            <input type="hidden" name="__PREVIOUSPAGE" id="__PREVIOUSPAGE" value="UkxaFJnhZ9yuGMPmxgvHPw2" />
+    </table>
+
+            
+    <!--footer-->
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="footer" tabindex="0">
+
+                <h2 class="visually-hidden">Site footer</h2>
+
+
+
+                <div class="primary-footer r">
+                    <h2 class="visually-hidden">About Interbus</h2><ul class="footer-links">
+                        <li><a href="Construction.html">Help &amp; contacts</a></li>
+                        <li><a class="" href="Construction.html">Careers</a></li>
+                        <li><a class="" href="Construction.html">About Interbus</a></li>
+                        <li><a class="" href="Construction.html">Safety &amp; security</a></li>
+                        <li><a class="" href="Construction.html">Transparency</a></li>
+                        <li><a class="" href="Construction.html">Publications &amp; reports</a></li>
+                        <li><a class="" href="Construction.html">Gift Shop</a></li>
+                        <li><a class="" href="Construction.html">Social media &amp; email updates</a></li>
+
+                        <li><a class="languages-footer" href="Construction.html">Other languages</a></li>
+                    </ul><h2 class="heading">Information for...</h2>
+                    <ul class="info-for clearfix">
+                        <li><a href="Construction.html">Media</a></li>
+                        <li><a href="Construction.html">Business &amp; commercial</a></li>
+                        <li><a href="Construction.html">Get Support online 24/7</a></li>
+                        <li><a href="Construction.html">Schools &amp; young people</a></li>
+                        <li><a href="Construction.html">Deliveries in Zimbabwe</a></li>
+                        <li><a href="Construction.html">Urban planning & construction</a></li>
+
+
+                        <li><a href="Construction.html">Taxi &amp; private hire </a></li>
+
+
+                        <li><a href="Construction.html">Bus operators</a></li>
+                        <li><a href="Construction.html">Open data users</a></li>
+                        <li><a href="Construction.html">Coach drivers</a></li>
+                        <li><a href="Construction.html">Investors</a></li>
+                        <li><a href="Construction.html">Download Interbus App</a></li>
+                    </ul>
+                </div>
+                <div class="secondary-footer">
+                    <h2 class="visually-hidden">Site structure and legal information</h2><div class="r">
+                        <ul>
+                            <li><a href="Construction.html">Terms &amp; conditions </a></li>
+                            <li><a href="Construction.html">Privacy &amp; cookies</a></li>
+                            <li><a href="Construction.html">Website accessibility</a></li>
+                        </ul>
+                        <span class="heading">Copyright Interbus</span>
+                    </div>
+                </div>
+                <div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end footer-->
+    <input type="hidden" name="__PREVIOUSPAGE" id="__PREVIOUSPAGE" value="UkxaFJnhZ9yuGMPmxgvHPw2" />
 
             <script type="text/javascript">
                 //<![CDATA[
                 Sys.Application.initialize();
                 //]]>
             </script>
-            </form>
+          
 </body>
-
-<!-- Mirrored from www.INTERBUStravels.com/feedback.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Apr 2016 09:58:50 GMT -->
 </html>
