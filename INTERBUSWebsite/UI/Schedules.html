@@ -223,7 +223,7 @@
 
 </head>
 
-<body class="horizontal-menu-page" style="background-image:url(images/one1.jpg)">
+<body class="horizontal-menu-page" style="background-image:url(images/one1.jpg)" ng-app="myApp" ng-controller="myCtrl" ng-init="GetSchedules();">
     <!--Start Menu-->
     <div class="mainnav" id="mainnav" tabindex="0">
 
@@ -241,14 +241,12 @@
                         </li>
                         <li>
 
-                            <a class="active" style="text-decoration:none" href="Fares_and_payments.html">Fares / Payments</a>
+                            <a style="text-decoration:none" href="Fares_and_payments.html">Fares / Payments</a>
 
                             <ul>
-                                <li><a href="#">Schedules</a></li>
-                                <li><a href="#">CheckFare</a></li>
-                                <li><a href="#">Cancellation</a></li>
-
-
+                                <li><a href="Schedules.html">Schedules</a></li>
+                                <li><a href="CheckFare.html">CheckFare</a></li>
+                                <li><a href="Cancel_Ticket.html">Cancellation</a></li>
                             </ul>
                         </li>
                         <li>
@@ -289,205 +287,84 @@
 
     </div>
     <!--End Menu-->
-    <h2 style="text-align:center;">Schedules </h2>
-        <table align="center" border="0" cellpadding="0" cellspacing="0" style="background-color: #ffffff" 
-               width="998">
-            <tr>
-                <td align="center" valign="top">
-                    <table border="0" cellpadding="0" cellspacing="0" width="998">
-                        <tr>
-                            <td align="left" valign="top">
-                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                    <tr>
-                                        <td align="left" valign="top">
-                                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                                <tr>
+    <div class="container">
+        <div class="row" style="margin-top:80px; margin-bottom:20PX">
+            <h2 style="text-align:center;">Schedules </h2>
+            <table align="center" border="0" cellpadding="0" cellspacing="0" style="background-color: #ffffff"
+                   width="998">
+                <tr>
+                    <td align="center" valign="top">
+                        <table border="0" cellpadding="0" cellspacing="0" width="998">
+                            <tr>
+                                <td align="left" valign="top">
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td align="left" valign="top">
+                                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                    <tr>
 
-                                                    <td align="left" colspan="3" valign="top">
-                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                                            
-                                                            <tr>
-                                                                <td align="left" class="gray-table-border" valign="top">
-                                                                    <table border="0" cellpadding="0" cellspacing="0" style="width: 100%">
-                                                                        <tr>
-                                                                            <td height="10px"></td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td valign="top" align="center" style="padding-left:15px;padding-right:15px;">
-                                                                                <div>
-                                                                                    <table cellspacing="0" rules="rows" border="1" id="ctl00_cpEndUserMain_grdvSchedules" style="border-color:#D1E8F6;border-width:1px;border-style:Solid;font-family:Arial,Helvetica,sans-serif;font-weight:normal;width:100%;border-collapse:collapse;">
-                                                                                        <tr class="tablehead" valign="middle" style="height:25px;">
-                                                                                            <th align="left" scope="col">S.No</th>
-                                                                                            <th align="left" scope="col">Svc.No</th>
-                                                                                            <th align="left" scope="col">From</th>
-                                                                                            <th align="left" scope="col">To</th>
-                                                                                            <th align="left" scope="col">Coach Type</th>
-                                                                                            <th align="left" scope="col">Departure Time</th>
-                                                                                            <th align="left" scope="col">Approx Journey Time</th>
-                                                                                        </tr>
-                                                                                        <tr class="tabletext" align="left" style="height:20px;">
-                                                                                            <td align="left">
-                                                                                                1
-                                                                                            </td>
-                                                                                            <td align="left">SL327</td>
-                                                                                            <td align="left">AHMEDNAGAR</td>
-                                                                                            <td align="left">HYDERABAD</td>
-                                                                                            <td align="left">SLEEPER (AIRCONDITIONED)</td>
-                                                                                            <td align="left">7:00PM</td>
-                                                                                            <td align="left">13:20 Hrs</td>
-                                                                                        </tr>
-                                                                                        <tr class="tabletext-gray" align="left" style="height:20px;">
-                                                                                            <td align="left">
-                                                                                                2
-                                                                                            </td>
-                                                                                            <td align="left">SL327</td>
-                                                                                            <td align="left">AHMEDNAGAR</td>
-                                                                                            <td align="left">ZAHEERABAD</td>
-                                                                                            <td align="left">SLEEPER (AIRCONDITIONED)</td>
-                                                                                            <td align="left">7:00PM</td>
-                                                                                            <td align="left">11:50 Hrs</td>
-                                                                                        </tr>
-                                                                                        <tr class="tabletext" align="left" style="height:20px;">
-                                                                                            <td align="left">
-                                                                                                3
-                                                                                            </td>
-                                                                                            <td align="left">VL131</td>
-                                                                                            <td align="left">AKIVEEDU</td>
-                                                                                            <td align="left">HYDERABAD</td>
-                                                                                            <td align="left">VOLVO-B9R (MULTI AXLE-SEMISLEEPER)</td>
-                                                                                            <td align="left">9:15PM</td>
-                                                                                            <td align="left">10:30 Hrs</td>
-                                                                                        </tr>
-                                                                                        <tr class="tabletext-gray" align="left" style="height:20px;">
-                                                                                            <td align="left">
-                                                                                                4
-                                                                                            </td>
-                                                                                            <td align="left">VL105</td>
-                                                                                            <td align="left">ANAKAPALLI</td>
-                                                                                            <td align="left">HYDERABAD</td>
-                                                                                            <td align="left">VOLVO-B9R (MULTI AXLE-SEMISLEEPER)</td>
-                                                                                            <td align="left">11:00PM</td>
-                                                                                            <td align="left">11:30 Hrs</td>
-                                                                                        </tr>
-                                                                                        <tr class="tabletext" align="left" style="height:20px;">
-                                                                                            <td align="left">
-                                                                                                5
-                                                                                            </td>
-                                                                                            <td align="left">VL108</td>
-                                                                                            <td align="left">ANANTAPURAM</td>
-                                                                                            <td align="left">GUNTUR</td>
-                                                                                            <td align="left">VOLVO-B9R (MULTI AXLE-SEMISLEEPER)</td>
-                                                                                            <td align="left">8:00PM</td>
-                                                                                            <td align="left">8:30 Hrs</td>
-                                                                                        </tr>
-                                                                                        <tr class="tabletext-gray" align="left" style="height:20px;">
-                                                                                            <td align="left">
-                                                                                                6
-                                                                                            </td>
-                                                                                            <td align="left">VL108</td>
-                                                                                            <td align="left">ANANTAPURAM</td>
-                                                                                            <td align="left">NARASARAOPET</td>
-                                                                                            <td align="left">VOLVO-B9R (MULTI AXLE-SEMISLEEPER)</td>
-                                                                                            <td align="left">8:00PM</td>
-                                                                                            <td align="left">8:00 Hrs</td>
-                                                                                        </tr>
-                                                                                        <tr class="tabletext" align="left" style="height:20px;">
-                                                                                            <td align="left">
-                                                                                                7
-                                                                                            </td>
-                                                                                            <td align="left">VL108</td>
-                                                                                            <td align="left">ANANTAPURAM</td>
-                                                                                            <td align="left">VIJAYAWADA</td>
-                                                                                            <td align="left">VOLVO-B9R (MULTI AXLE-SEMISLEEPER)</td>
-                                                                                            <td align="left">8:00PM</td>
-                                                                                            <td align="left">9:30 Hrs</td>
-                                                                                        </tr>
-                                                                                        <tr class="tabletext-gray" align="left" style="height:20px;">
-                                                                                            <td align="left">
-                                                                                                8
-                                                                                            </td>
-                                                                                            <td align="left">11R721</td>
-                                                                                            <td align="left">BANGALORE</td>
-                                                                                            <td align="left">HYDERABAD</td>
-                                                                                            <td align="left">VOLVO-B11R (MULTI AXLE SEMISLEEPER)</td>
-                                                                                            <td align="left">11:30PM</td>
-                                                                                            <td align="left">15:05 Hrs</td>
-                                                                                        </tr>
-                                                                                        <tr class="tabletext" align="left" style="height:20px;">
-                                                                                            <td align="left">
-                                                                                                9
-                                                                                            </td>
-                                                                                            <td align="left">SL309</td>
-                                                                                            <td align="left">BANGALORE</td>
-                                                                                            <td align="left">CHILAKALURIPET</td>
-                                                                                            <td align="left">SLEEPER (AIRCONDITIONED)</td>
-                                                                                            <td align="left">5:45PM</td>
-                                                                                            <td align="left">11:30 Hrs</td>
-                                                                                        </tr>
-                                                                                        <tr class="tabletext-gray" align="left" style="height:20px;">
-                                                                                            <td align="left">
-                                                                                                10
-                                                                                            </td>
-                                                                                            <td align="left">SL309</td>
-                                                                                            <td align="left">BANGALORE</td>
-                                                                                            <td align="left">GUNTUR</td>
-                                                                                            <td align="left">SLEEPER (AIRCONDITIONED)</td>
-                                                                                            <td align="left">5:45PM</td>
-                                                                                            <td align="left">12:30 Hrs</td>
-                                                                                        </tr>
-                                                                                        <tr class="tabletext" align="left" style="height:20px;">
-                                                                                            <td align="left">
-                                                                                                11
-                                                                                            </td>
-                                                                                            <td align="left">SL309</td>
-                                                                                            <td align="left">BANGALORE</td>
-                                                                                            <td align="left">ONGOLE</td>
-                                                                                            <td align="left">SLEEPER (AIRCONDITIONED)</td>
-                                                                                            <td align="left">5:45PM</td>
-                                                                                            <td align="left">10:30 Hrs</td>
-                                                                                        </tr>
-                                                                                        <tr class="tabletext-gray" align="left" style="height:20px;">
-                                                                                            <td align="left">
-                                                                                                12
-                                                                                            </td>
-                                                                                            <td align="left">SL309</td>
-                                                                                            <td align="left">BANGALORE</td>
-                                                                                            <td align="left">TIRUPATHI</td>
-                                                                                            <td align="left">SLEEPER (AIRCONDITIONED)</td>
-                                                                                            <td align="left">5:45PM</td>
-                                                                                            <td align="left">6:45 Hrs</td>
-                                                                                        </tr>
+                                                        <td align="left" colspan="3" valign="top">
+                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                
+                                                                <tr>
+                                                                    <td align="left" class="gray-table-border" valign="top">
+                                                                        <table border="0" cellpadding="0" cellspacing="0" style="width: 100%">
+                                                                        
+                                                                            <tr>
+                                                                                <td valign="top" align="center" style="padding-left:15px;padding-right:15px;">
+                                                                                    <div>
+
+                                                                                        <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
+                                                                                            <thead>
+                                                                                                <tr>
+                                                                                                    <th>S.No</th>
+                                                                                                    <th>Svc No</th>
+                                                                                                    <th>From</th>
+                                                                                                    <th>To</th>
+                                                                                                    <th>CoachType</th>
+                                                                                                    <th>DepartureTime</th>
+                                                                                                    <th>ApproxJourneytime</th>
+
+                                                                                                </tr>
+                                                                                            </thead>
+                                                                                            <tbody>
+
+                                                                                                <tr ng-repeat="R in Schedules" class="gradeA">
+                                                                                                    <td>{{R.S.No}}</td>
+                                                                                                    <td>{{R.Svc.No}}</td>
+                                                                                                    <td>{{R.From}}</td>
+                                                                                                    <td>{{R.To}}</td>
+                                                                                                    <td>{{R.CoachType}}</td>
+                                                                                                    <td>{{R.DepartureTime}}</td>
+                                                                                                    <td>{{R.ApproxJourneytime}}</td>
 
 
 
 
+                                                                                        </table>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
 
-                                                                                    </table>
-                                                                                </div>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td align="center" style="height: 32px" valign="middle">
-                                                                                <span id="ctl00_cpEndUserMain_lblError" class="errmsg"></span>
-                                                                            </td>
-                                                                        </tr>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
     <div class="row">
         <div class="col-lg-12">
             <div id="footer" tabindex="0">
@@ -544,49 +421,51 @@
         </div>
     </div>
 
+    <!--END SIDEBAR MENU--><!--BEGIN CHAT FORM-->
 
 
-
-        <!--END SIDEBAR MENU--><!--BEGIN CHAT FORM-->
-
-
-        <script src="js/jquery-1.10.2.min.js"></script>
-        <script src="js/jquery-migrate-1.2.1.min.js"></script>
-        <script src="js/jquery-ui.js"></script>
-        <!--loading bootstrap js-->
-        <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
-        <script src="vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
-        <script src="js/html5shiv.js"></script>
-        <script src="js/respond.min.js"></script>
-        <script src="vendors/metisMenu/jquery.metisMenu.js"></script>
-        <script src="vendors/slimScroll/jquery.slimscroll.js"></script>
-        <script src="vendors/jquery-cookie/jquery.cookie.js"></script>
-        <script src="vendors/iCheck/icheck.min.js"></script>
-        <script src="vendors/iCheck/custom.min.js"></script>
-        <script src="vendors/jquery-news-ticker/jquery.news-ticker.js"></script>
-        <script src="js/jquery.menu.js"></script>
-        <script src="vendors/jquery-pace/pace.min.js"></script>
-        <script src="vendors/holder/holder.js"></script>
-        <script src="vendors/responsive-tabs/responsive-tabs.js"></script>
-        <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
-        <script src="js/main.js"></script>
-        <script>
-            (function (i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r;
-                i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-                a = s.createElement(o),
-                        m = s.getElementsByTagName(o)[0];
-                a.async = 1;
-                a.src = g;
-                m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-            ga('create', 'UA-145464-12', 'auto');
-            ga('send', 'pageview');
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <!--loading bootstrap js-->
+    <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <script src="vendors/metisMenu/jquery.metisMenu.js"></script>
+    <script src="vendors/slimScroll/jquery.slimscroll.js"></script>
+    <script src="vendors/jquery-cookie/jquery.cookie.js"></script>
+    <script src="vendors/iCheck/icheck.min.js"></script>
+    <script src="vendors/iCheck/custom.min.js"></script>
+    <script src="vendors/jquery-news-ticker/jquery.news-ticker.js"></script>
+    <script src="js/jquery.menu.js"></script>
+    <script src="vendors/jquery-pace/pace.min.js"></script>
+    <script src="vendors/holder/holder.js"></script>
+    <script src="vendors/responsive-tabs/responsive-tabs.js"></script>
+    <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
+    <script src="js/main.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/Schedules1.js"></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-145464-12', 'auto');
+        ga('send', 'pageview');
 
 
-        </script>
+    </script>
+
 </body>
+
+
 
 </html>
