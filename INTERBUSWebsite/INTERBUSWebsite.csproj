@@ -256,7 +256,7 @@
     <Content Include="UI\images\StyleSheet1.css" />
     <Content Include="UI\images\user.jpg" />
     <Content Include="UI\images\vsprite_x2.b9905b1f.png" />
-    <Content Include="UI\Index.html" />
+    <Content Include="Index.html" />
     <Content Include="UI\Invoice.html" />
     <Content Include="UI\js\angular.js" />
     <Content Include="UI\js\Booking.js" />
