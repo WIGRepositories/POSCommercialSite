@@ -93,6 +93,8 @@
     <Content Include="DBScript\dbo.HiringType.sql" />
     <Content Include="DBScript\dbo.table2.sql" />
     <Content Include="Global.asax" />
+    <Content Include="UI\InterBusLogin.html" />
+    <Content Include="UI\vendors\ModifiedLogin.html" />
     <Content Include="obj\Debug\INTERBUSWebsite.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\INTERBUSWebsite.dll" />
     <Content Include="obj\Debug\INTERBUSWebsite.pdb" />
@@ -246,6 +248,7 @@
     <Content Include="UI\images\promos\bus4.jpg" />
     <Content Include="UI\images\promos\bus6.jpg" />
     <Content Include="UI\images\promos\contactless-homepage-promo.jpg" />
+    <Content Include="UI\images\promos\InterBusNewLogo.png" />
     <Content Include="UI\images\promos\santanderfreehire-hp-1400x700.jpg" />
     <Content Include="UI\images\promos\thames-clipper_rdax_400x200.jpg" />
     <Content Include="UI\images\promos\travel-disruptions_rdax_400x200.jpg" />
