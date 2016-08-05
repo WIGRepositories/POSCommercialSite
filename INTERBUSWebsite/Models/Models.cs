@@ -5,7 +5,7 @@ using System.Web;
 
 namespace INTERBUSWebsite.Models
 {
-
+   
 
     public class FleetOwner
     {
@@ -32,7 +32,7 @@ namespace INTERBUSWebsite.Models
         public int typegrpid { get; set; }
 
     }
-    
+
     public class BOTPOSL
     {
         public int Id { set; get; }
@@ -64,7 +64,7 @@ namespace INTERBUSWebsite.Models
         public DateTime date { set; get; }
         public int TransactionId { set; get; }
     }
-    
+   
     public class FleetOwnerRequest
     {
         public int Id { get; set; }
@@ -73,7 +73,7 @@ namespace INTERBUSWebsite.Models
         public String Email { get; set; }
         public String MobileNo { get; set; }
         public String CompanyName { get; set; }
-        public String Description { get; set; }
+        public String Description { get; set; }       
         public string insupdflag { get; set; }
 
     }
@@ -106,11 +106,11 @@ namespace INTERBUSWebsite.Models
         public int TransactionStatus { get; set; }
         public string AuthCode { get; set; }
         public int JourneyType { get; set; }
-
+      
         public IEnumerable<passengerDetails> passengersList { get; set; }
-
+        
     }
-
+        
     public class passengerDetails
     {
         public string SeatNo { get; set; }
@@ -122,7 +122,7 @@ namespace INTERBUSWebsite.Models
         public string Identityproof { get; set; }
         public string datetime { get; set; }
     }
-        
+
     public class Licence
     {
         public int Id { get; set; }
@@ -135,17 +135,17 @@ namespace INTERBUSWebsite.Models
 
     public class UserIn
     {
-
+      
         public String FirstName { get; set; }
         public String LastName { get; set; }
         public String UserName { get; set; }
         public String Password { get; set; }
         public String EmailAddress { get; set; }
         public String ConfirmPassword { get; set; }
-        public String Gender { get; set; }
+        public String Gender { get; set; } 
         public String salt { set; get; }
-
-
+     
+       
 
     }
     public class UserLogin
@@ -160,7 +160,7 @@ namespace INTERBUSWebsite.Models
     }
     public class reset
     {
-
+      
         public string UserName { set; get; }
         public string OldPassword { set; get; }
         public string NewPassword { set; get; }
@@ -168,35 +168,35 @@ namespace INTERBUSWebsite.Models
 
     }
     public class FleetOwnerRequest1
-    {
+    { 
 
         public int Id { get; set; }
         public string FirstName { get; set; }
 
-        public string LastName { get; set; }
-        public int PhoneNo { get; set; }
-        public string EmailAdress { get; set; }
-        public string CompanyName { get; set; }
-        public string Description { get; set; }
+        public string LastName{get; set;}
+        public int PhoneNo{get; set;}
+        public string EmailAddress { get; set; }
+        public string CompanyName {get; set;}
+        public string Description {get; set;}
 
         public string Title { get; set; }
         public string CompanyEmployeSize { set; get; }
 
         public string FleetSize { set; get; }
-
+        
         public string CurrentSystemInUse { set; get; }
         public string SentNewProductsEmails { set; get; }
-
+          
         public string Gender { set; get; }
 
         public string howdidyouhearaboutus { get; set; }
-
+           
         public int Agreetotermsandconditions { get; set; }
 
         public string Address { get; set; }
-
+          
         public string insupdflag { get; set; }
-
+           
     }
     public class LicensePage
     {
@@ -209,7 +209,7 @@ namespace INTERBUSWebsite.Models
         public int FeatureLabel { get; set; }
         public int FeatureValue { get; set; }
 
-
+      
         public string insupdflag { get; set; }
 
         public int LicenseCatId { get; set; }
@@ -334,5 +334,5 @@ namespace INTERBUSWebsite.Models
         public int IsRenewal { set; get; }
         public string insupddelflag { set; get; }
     }
-
+   
 }

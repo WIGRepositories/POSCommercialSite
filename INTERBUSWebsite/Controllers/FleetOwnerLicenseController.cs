@@ -13,7 +13,6 @@ namespace INTERBUSWebsite.Controllers
 {
     public class FleetOwnerLicenseController : ApiController
     {
-        
 
         [HttpGet]
         public DataSet validatefleetowner(string fleetownercode)
@@ -236,8 +235,8 @@ namespace INTERBUSWebsite.Controllers
                 LastName.Value = FR.LastName;
                 cmd.Parameters.Add(LastName);
 
-                SqlParameter FREmailAddress = new SqlParameter("@EmailAddress ", SqlDbType.VarChar, 50);
-                FREmailAddress.Value = FR.EmailAdress;
+                SqlParameter FREmailAddress = new SqlParameter("@EmailAddress", SqlDbType.VarChar, 50);
+                FREmailAddress.Value = FR.EmailAddress;
                 cmd.Parameters.Add(FREmailAddress);
 
                 SqlParameter FRTitle = new SqlParameter("@Title", SqlDbType.VarChar, 20);
@@ -279,18 +278,18 @@ namespace INTERBUSWebsite.Controllers
                 cmd.Parameters.Add(insupdflag);
 
                 cmd.ExecuteScalar();
-                cmd.Parameters.Clear();
-                conn.Close();
+               // conn.Close();
 
 
                 //connetionString="Data Source=ServerName;Initial Catalog=DatabaseName;User ID=UserName;Password=Password"
-                conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["btposdb"].ToString();
+               // conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["btposdb"].ToString();
                 //conn.ConnectionString = "Data Source=localhost;Initial Catalog=MyAlerts;integrated security=sspi;";
                 SqlCommand cmd1 = new SqlCommand();
                 cmd1.CommandType = CommandType.StoredProcedure;
                 cmd1.CommandText = "InSupdFleetOwnerRequest";
                 cmd1.Connection = conn;
-                conn.Open();
+              //  conn.Open();
+               
 
                 SqlParameter CurrentSystemInUse = new SqlParameter("@CurrentSystemInUse", SqlDbType.VarChar, 50);
                 CurrentSystemInUse.Value = FR.CurrentSystemInUse;
@@ -313,14 +312,16 @@ namespace INTERBUSWebsite.Controllers
                 cmd1.Parameters.Add(insupdflag1);
 
                 cmd1.ExecuteScalar();
-                cmd1.Parameters.Clear();
+                conn.Close();
                 
 
             }
+              
             catch (Exception ex)
             {
-                conn.Close();
+               
                 string str = ex.Message;
+                conn.Close();
             }
             // int found = 0;
             return Tbl;

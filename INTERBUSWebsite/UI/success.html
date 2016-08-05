@@ -17,6 +17,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="shortcut icon" href="/cdn/static/assets/icons/favicon.ico" type="image/x-icon" />
+
     <link rel="stylesheet" href="css/w3.css">
 
 
@@ -36,24 +38,60 @@
     <link type="text/css" rel="stylesheet" href="css/style-responsive.css">
     <link rel="stylesheet" type="text/css" href="css/Main.css">
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
 
     <!-- Optional theme -->
 
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+
+
     <!-- Latest compiled and minified JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
 
     <meta name="HandheldFriendly" content="True">
+
+    <script type="text/javascript">
+
+        var h = document.documentElement;
+
+        h.className = h.className.replace(/\bno-js\b/, '');
+
+        var isTouch = !!("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0;
+
+
+
+        if (isTouch) {
+
+            // remove class which defines hover behavior
+
+            h.className = h.className.replace(/\bno-touch\b/, '');
+
+        }
+
+    </script>
+
+
+
     <script src="js/bootstrap.min.js"></script>
 
+
+
+
+
     <title>Interbus - Get Moving Anywhere, Comfortably</title>
+
+
+
+
+
+    <meta name="description" content="Information on all forms of transport in London including cycle hire. Routes, maps, plan a journey, tickets sales, realtime traffic and travel updates." />
+
+    <meta name="keywords" />
+
+    <meta name="author" content="Interbus | Get Moving Anywhere, Comfortably" />
 
     <link href="css/StyleSheet2.css" media="screen,print" rel="stylesheet" />
 
@@ -63,11 +101,72 @@
 
     <link href="css/StyleSheet3.css" media="screen&#32;and&#32;(min-width:&#32;580px),print" rel="stylesheet" />
 
+
+
     <link href="css/StyleSheet5.css" media="screen&#32;and&#32;(min-width:&#32;900px)" rel="stylesheet" />
+
+    <!--<link href="/cdn/static/styles/core/min/print.min.bbf3e026.css" media="print" rel="stylesheet" />-->
+
+
 
     <link href="css/StyleSheet6.css" media="screen" rel="stylesheet" />
 
 
+
+
+
+
+
+    <!--[if lte IE 9]>
+
+        <link href="/cdn/static/styles/core/min/ie.min.0b308d8c.css" media="screen" rel="stylesheet" />
+
+    <![endif]-->
+
+
+    <script type="text/javascript">
+
+        // Instructions: please embed this snippet directly into every page in your website template.
+
+        // For optimal performance, this must be embedded directly into the template, not referenced
+
+        // as an external file.
+
+
+
+        // Answers Cloud Services Embed Script v1.02
+
+        // DO NOT MODIFY BELOW THIS LINE *****************************************
+
+        ; (function (g) {
+
+            var d = document, i, am = d.createElement('script'), h = d.head || d.getElementsByTagName("head")[0],
+
+            aex = {
+
+                "src": "//gateway.answerscloud.com/tfl-gov-uk/production/gateway.min.js",
+
+                "type": "text/javascript",
+
+                "async": "true",
+
+                "data-vendor": "acs",
+
+                "data-role": "gateway"
+
+            };
+
+            for (var attr in aex) { am.setAttribute(attr, aex[attr]); }
+
+            h.appendChild(am);
+
+            g['acsReady'] = function () { var aT = '__acsReady__', args = Array.prototype.slice.call(arguments, 0), k = setInterval(function () { if (typeof g[aT] === 'function') { clearInterval(k); for (i = 0; i < args.length; i++) { g[aT].call(g, function (fn) { return function () { setTimeout(fn, 1) }; }(args[i])); } } }, 50); };
+
+        })(window);
+
+        // DO NOT MODIFY ABOVE THIS LINE *****************************************
+
+    </script>
 
     <style>
         rr.div a {
@@ -84,208 +183,199 @@
             padding: 0;
         }
 
+        .rr .active {
+            background: #555;
+        }
 
-            .rr ul li {
-                display: inline-block;
-                color: white;
+
+        .rr ul li {
+            display: inline-block;
+            color: white;
+        }
+
+            .rr ul li:hover {
+                background: #555;
             }
 
-                .rr ul li:hover {
+                .rr ul li:hover ul {
+                    display: block;
+                }
+
+            .rr ul li ul {
+                position: absolute;
+                width: 100px;
+                display: none;
+            }
+
+                .rr ul li ul li {
                     background: #555;
+                    display: block;
+                    border-bottom: 1px solid white;
+                    width: 170px;
                 }
 
-                    .rr ul li:hover ul {
-                        display: block;
+                    .rr ul li ul li a {
+                        display: block !important;
+                        text-decoration: none;
                     }
 
-                .rr ul li ul {
-                    position: absolute;
-                    width: 100px;
-                    display: none;
-                }
-
-                    .rr ul li ul li {
-                        background: #555;
-                        display: block;
-                        border-bottom: 1px solid white;
-                        width: 170px;
+                    .rr ul li ul li:hover {
+                        background: #666;
                     }
 
-                        .rr ul li ul li a {
-                            display: block !important;
-                            text-decoration: none;
-                        }
-
-                        .rr ul li ul li:hover {
-                            background: #666;
-                        }
-
-                        .rr ul li ul li a:hover {
-                            text-decoration: none;
-                        }
+                    .rr ul li ul li a:hover {
+                        text-decoration: none;
+                    }
     </style>
 
 
 
 </head>
 
+
+
 <body style="background-image:url(images/one1.jpg)">
 
+    <!--Start Menu-->
+    <div class="mainnav" id="mainnav" tabindex="0">
+
+        <div class="top-row" style="position:fixed; width:100%; z-index:1">
+
+            <div class="r">
+                <div class="rr" style="width:94%">
+                    <a style="margin-top: 0px; padding-top: 0px; margin-left: 35px; float:left" href="index.html"><img style="height:76px" src="Images/logos/interbusLogo.png" alt="Alternate Text" /> </a>
+                    <ul class="collapsible-menu clearfix" style="margin-left:0px;height:76px">
+
+                        <li>
+
+                            <a style="text-decoration:none" href="Index.html">Home</a>
+
+                        </li>
+                        <li>
+
+                            <a class="active" style="text-decoration:none" href="Fares_and_payments.html">Fares / Payments</a>
+
+                            <ul>
+                                <li><a href="Schedules.html">Schedules</a></li>
+                                <li><a href="CheckFare.html">CheckFare</a></li>
+                                <li><a href="Cancel_Ticket.html">Cancellation</a></li>
 
 
-    <!--Start Header-->
-    <div id="container">
+                            </ul>
+                        </li>
+                        <li>
 
-        <!--start of white bar above menu-->
-        <!--End of white bar above menu-->
-        <!--Start Menu-->
-        <div class="mainnav" id="mainnav" tabindex="0">
+                            <a style="text-decoration:none" href="Status_and_Updates.html">Status & Updates</a>
 
-            <div class="top-row" style="position:fixed; width:100%; z-index:1">
+                        </li>
+                        <li>
 
-                <div class="r">
-                    <div class="rr">
-                        <a style="margin-top: 0px; padding-top: 0px; margin-right: 50px; float:left" href="index.html"><img style="height:76px" src="Images/logos/interbusLogo.png" alt="Alternate Text" /> </a>
-                        <ul class="collapsible-menu clearfix" style="margin-left:0px;">
+                            <a style="text-decoration:none" href="#">Products</a>
+                            <ul>
+                                <li><a href="Licensepage.html">Fleet Owner License</a></li>
 
-                            <li style="margin-left:90px">
+                            </ul>
+                        </li>
 
-                                <a style="text-decoration:none" href="index.html">Home</a>
+                        <li>
 
-                            </li>
-                            <li>
+                            <a style="text-decoration:none" href="About.html">About Us</a>
+                            <ul>
+                                <li><a href="Contact.html">ContactUs</a></li>
 
-                                <a style="text-decoration:none" href="Fares_and_payments.html">Fares / Payments</a>
+                            </ul>
 
-                                <ul>
-                                    <li><a href="#">Schedules</a></li>
-                                    <li><a href="#">CheckFare</a></li>
-                                    <li><a href="#">Cancellation</a></li>
-                                    <li><a href="Licensepage.html">Fleet Owner Lisence</a></li>
-
-                                </ul>
-                            </li>
-                            <li>
-
-                                <a style="text-decoration:none" href="Status_and_Updates.html">Status & Updates</a>
-
-                            </li>
-                            <li>
-
-                                <a style="text-decoration:none" href="#">Products</a>
-                                <ul>
-                                    <li><a href="Licensepage.html">Fleet Owner Lisence</a></li>
-                                    <li><a href="Licensepage.html">BTPOS Lisence</a></li>
-                                    <li><a href="Licensepage.html">TroubleTicket Lisence</a></li>
-                                </ul>
-
-                            </li>
-
-                            <li>
-
-                                <a style="text-decoration:none" href="#">About Us</a>
-                                <ul>
-                                    <li><a href="#">ContactUs</a></li>
-
-                                </ul>
-
-                            </li>
-
-                            <li style="margin-left:150px">
-
-                                <div style="float:right; padding-top:11px">
-                                    <input type="text" placeholder="Search" id="q" name="q" style="border-radius:30px; width:120px; height:35px" />
+                        </li>
 
 
-                                </div>
+                    </ul>
+                    <div style="float:right; padding-top:11px">
+                        <input type="text" placeholder="Search.." id="q" name="q" style="border-radius: 30px; width: 120px; height: 35px; color: red;" />
 
 
-                            </li>
-
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-        <!--End Menu-->
-
-    </div>
-    <!--End Header-->
-    <div style="margin-top:80px; margin-bottom:20px">
-        <div class="col-md-10 col-md-offset-1">
-            <div class=" alert alert-success">
-                <span style="font-size:large">Success...!</span>&nbsp; Your Order has been Processed...
-            </div>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <div style="margin-left:10px">
-                        your order is confirmed. your paisapay id
-                        <strong>589421</strong>
-                        <button style="float:right;" type="button" class="btn btn-info">Print</button>
-                    </div>
-                </div>
-            </div>
-
-
-            <div style="margin-top:20px">
-
-                <div class="col-md-3" style="margin-top:30px">
-                    <div style="background-color: wheat; padding-top: 10px; padding-left:10px; padding-bottom:1px"><h4>Delivary Address :</h4></div>
-
-                    <div style="padding: 10px; border: 1px solid #E0DFDB; ">
-                        Gowthami Nagar,<br />
-                        Krishna Lanka,<br />
-                        Vijayawada,<br />
-                        Pincode:520001,<br />
-                        Andhra Pradesh.
-                    </div>
-
-                </div>
-                <div class="col-md-5">
-                    <h4>Payment Details :</h4>
-                    <table class="table">
-                        <tr><td>Paid By:</td><td>Creadit card</td></tr>
-                        <tr><td>Order Total:</td><td>Rs. 500.00</td></tr>
-                        <tr><td>Tax:</td><td>Rs. 10.00</td></tr>
-                        <tr><td>Discount:</td><td>Rs. 0.00</td></tr>
-                        <tr><td><strong>Total:</strong></td><td><strong>Rs. 510.00</strong></td></tr>
-                    </table>
-
-
-                </div>
-
-
-                <div class="col-md-4" style="margin-top:26px">
-                    <div class="row" style="background-color:wheat; padding:10px; margin-top:5px">
-                        your item(s) details
-                    </div>
-                    <div class="row" style="border: 1px solid #E0DFDB">
-                        <div class="col-md-3">
-                            <img style="height:120px; width:70px" src="images/logos/cycle-hire-homepage-icon.png" />
-                        </div>
-                        <div class="col-md-9">
-                            <table style="margin:0px; padding:0px">
-
-                                <tr><td>Product Name:</td><td>Productname</td></tr>
-                                <tr><td>Product Id:</td><td>1254LR</td></tr>
-                                <tr><td>Qty:</td><td>1</td></tr>
-                                <tr><td>Unit Price</td><td>500</td></tr>
-                            </table>
-                        </div>
                     </div>
                 </div>
             </div>
 
         </div>
 
-        <div class="row"><div class="col-md-10 col-md-offset-2"> <p>7897897891 - You will receive SMS alerts for order on this number</p></div> </div>
-
-
     </div>
+    <!--End Menu-->
+    <div class="container">
+        <div style="margin-top:80px; margin-bottom:20px">
+            <div class="col-md-10 col-md-offset-1">
+                <div class=" alert alert-success">
+                    <span style="font-size:large">Success...!</span>&nbsp; Your Order has been Processed...
+                </div>
 
+                <div class="row">
+                    <div class="col-md-12">
+                        <div style="margin-left:10px">
+                            your order is confirmed. your paisapay id
+                            <strong>589421</strong>
+                            <button style="float:right;" type="button" class="btn btn-info">Print</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div style="margin-top:20px">
+
+                    <div class="col-md-3" style="margin-top:30px">
+                        <div style="background-color: wheat; padding-top: 10px; padding-left:10px; padding-bottom:1px"><h4>Delivary Address :</h4></div>
+
+                        <div style="padding: 10px; border: 1px solid #E0DFDB; ">
+                            Gowthami Nagar,<br />
+                            Krishna Lanka,<br />
+                            Vijayawada,<br />
+                            Pincode:520001,<br />
+                            Andhra Pradesh.
+                        </div>
+
+                    </div>
+                    <div class="col-md-5">
+                        <h4>Payment Details :</h4>
+                        <table class="table">
+                            <tr><td>Paid By:</td><td>Creadit card</td></tr>
+                            <tr><td>Order Total:</td><td>Rs. 500.00</td></tr>
+                            <tr><td>Tax:</td><td>Rs. 10.00</td></tr>
+                            <tr><td>Discount:</td><td>Rs. 0.00</td></tr>
+                            <tr><td><strong>Total:</strong></td><td><strong>Rs. 510.00</strong></td></tr>
+                        </table>
+
+
+                    </div>
+
+
+                    <div class="col-md-4" style="margin-top:26px">
+                        <div class="row" style="background-color:wheat; padding:10px; margin-top:5px">
+                            your item(s) details
+                        </div>
+                        <div class="row" style="border: 1px solid #E0DFDB">
+                            <div class="col-md-3">
+                                <img style="height:120px; width:70px" src="images/logos/cycle-hire-homepage-icon.png" />
+                            </div>
+                            <div class="col-md-9">
+                                <table style="margin:0px; padding:0px">
+
+                                    <tr><td>Product Name:</td><td>Productname</td></tr>
+                                    <tr><td>Product Id:</td><td>1254LR</td></tr>
+                                    <tr><td>Qty:</td><td>1</td></tr>
+                                    <tr><td>Unit Price</td><td>500</td></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row"><div class="col-md-10 col-md-offset-2"> <p>7897897891 - You will receive SMS alerts for order on this number</p></div> </div>
+
+
+        </div>
+    </div>
+    <!--footer-->
     <div class="row">
         <div class="col-lg-12">
             <div id="footer" tabindex="0">
@@ -341,6 +431,7 @@
             </div>
         </div>
     </div>
+    <!--end footer--> 
 
     <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/jquery-migrate-1.2.1.min.js"></script>

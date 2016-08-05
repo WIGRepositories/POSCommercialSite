@@ -1,9 +1,20 @@
 ﻿<!DOCTYPE html>
 <html lang="en" ng-app="myApp" ng-controller="myCtrl">
 <head>
-    <title>Dashboard</title>
-    <meta charset="utf-8">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/cdn/static/assets/icons/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="css/w3.css">
+
+
+
+    <!-- links for table -->
     <!--Loading bootstrap css-->
     <link type="text/css" rel="stylesheet" href="vendors/jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
     <link type="text/css" rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
@@ -16,42 +27,277 @@
     <!--Loading style-->
     <link type="text/css" rel="stylesheet" href="css/themes/style2/pink-blue.css" id="theme-change" class="style-change color-change">
     <link type="text/css" rel="stylesheet" href="css/style-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/Main.css">
+
+
+    <!-- Optional theme -->
+
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+
+
+    <!-- Latest compiled and minified JavaScript -->
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <meta name="HandheldFriendly" content="True">
+
+    <script type="text/javascript">
+
+        var h = document.documentElement;
+
+        h.className = h.className.replace(/\bno-js\b/, '');
+
+        var isTouch = !!("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0;
+
+
+
+        if (isTouch) {
+
+            // remove class which defines hover behavior
+
+            h.className = h.className.replace(/\bno-touch\b/, '');
+
+        }
+
+    </script>
+
+
+
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+
+    <title>Interbus - Get Moving Anywhere, Comfortably</title>
+
+
+
+
+
+    <meta name="description" content="Information on all forms of transport in London including cycle hire. Routes, maps, plan a journey, tickets sales, realtime traffic and travel updates." />
+
+    <meta name="keywords" />
+
+    <meta name="author" content="Interbus | Get Moving Anywhere, Comfortably" />
+
+    <link href="css/StyleSheet2.css" media="screen,print" rel="stylesheet" />
+
+    <link href="css/StyleSheet1.css" media="screen,print" rel="stylesheet" />
+
+    <link href="css/StyleSheet4.css" media="screen,&#32;print" rel="stylesheet" />
+
+    <link href="css/StyleSheet3.css" media="screen&#32;and&#32;(min-width:&#32;580px),print" rel="stylesheet" />
+
+
+
+    <link href="css/StyleSheet5.css" media="screen&#32;and&#32;(min-width:&#32;900px)" rel="stylesheet" />
+
+    <!--<link href="/cdn/static/styles/core/min/print.min.bbf3e026.css" media="print" rel="stylesheet" />-->
+
+
+
+    <link href="css/StyleSheet6.css" media="screen" rel="stylesheet" />
+
+
+
+
+
+
+
+    <!--[if lte IE 9]>
+
+        <link href="/cdn/static/styles/core/min/ie.min.0b308d8c.css" media="screen" rel="stylesheet" />
+
+    <![endif]-->
+
+
+    <script type="text/javascript">
+
+        // Instructions: please embed this snippet directly into every page in your website template.
+
+        // For optimal performance, this must be embedded directly into the template, not referenced
+
+        // as an external file.
+
+
+
+        // Answers Cloud Services Embed Script v1.02
+
+        // DO NOT MODIFY BELOW THIS LINE *****************************************
+
+        ; (function (g) {
+
+            var d = document, i, am = d.createElement('script'), h = d.head || d.getElementsByTagName("head")[0],
+
+            aex = {
+
+                "src": "//gateway.answerscloud.com/tfl-gov-uk/production/gateway.min.js",
+
+                "type": "text/javascript",
+
+                "async": "true",
+
+                "data-vendor": "acs",
+
+                "data-role": "gateway"
+
+            };
+
+            for (var attr in aex) { am.setAttribute(attr, aex[attr]); }
+
+            h.appendChild(am);
+
+            g['acsReady'] = function () { var aT = '__acsReady__', args = Array.prototype.slice.call(arguments, 0), k = setInterval(function () { if (typeof g[aT] === 'function') { clearInterval(k); for (i = 0; i < args.length; i++) { g[aT].call(g, function (fn) { return function () { setTimeout(fn, 1) }; }(args[i])); } } }, 50); };
+
+        })(window);
+
+        // DO NOT MODIFY ABOVE THIS LINE *****************************************
+
+    </script>
+
+    <style>
+        rr.div a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            padding: 15px;
+            display: inline-block;
+        }
+
+        .rr ul {
+            display: inline;
+            margin: 0;
+            padding: 0;
+        }
+
+        .rr .active {
+            background: #555;
+        }
+
+
+        .rr ul li {
+            display: inline-block;
+            color: white;
+        }
+
+            .rr ul li:hover {
+                background: #555;
+            }
+
+                .rr ul li:hover ul {
+                    display: block;
+                }
+
+            .rr ul li ul {
+                position: absolute;
+                width: 100px;
+                display: none;
+            }
+
+                .rr ul li ul li {
+                    background: #555;
+                    display: block;
+                    border-bottom: 1px solid white;
+                    width: 170px;
+                }
+
+                    .rr ul li ul li a {
+                        display: block !important;
+                        text-decoration: none;
+                    }
+
+                    .rr ul li ul li:hover {
+                        background: #666;
+                    }
+
+                    .rr ul li ul li a:hover {
+                        text-decoration: none;
+                    }
+    </style>
+
+
+
 </head>
 
+
 <body ng-model="dashboardDS">
-    <div>
+    
         <!--BEGIN THEME SETTING-->
-        <!--BEGIN BACK TO TOP--><a id="totop" href="#"><i class="fa fa-angle-up"></i></a><!--END BACK TO TOP--><!--BEGIN TOPBAR-->
+        <!--BEGIN BACK TO TOP-->
+    <div>
+        <a id="totop" href="#"><i class="fa fa-angle-up"></i></a><!--END BACK TO TOP--><!--BEGIN TOPBAR-->
         <div id="header-topbar-option-demo" class="page-header-topbar">
             <nav id="topbar" role="navigation" style="margin-bottom: 0;" data-step="3" class="navbar navbar-default navbar-static-top">
                 <div class="topbar-main">
 
                     <a id="" href="" class="hidden-xs"><i class=""></i></a>
-                    <ul class="nav navbar-nav horizontal-menu hidden-sm hidden-xs  ">
+                    <div class="mainnav" id="mainnav" tabindex="0">
+
+                        <div class="top-row" style="position:fixed; width:100%; z-index:1">
+
+                            <div class="r">
+                                <div class="rr" style="width:94%">
+                                    <a style="margin-top: 0px; padding-top: 0px; margin-left: 35px; float:left" href="index.html"><img style="height:76px" src="Images/logos/interbusLogo.png" alt="Alternate Text" /> </a>
+                                    <ul class="collapsible-menu clearfix" style="margin-left:0px;height:76px">
+
+                                        <li>
+
+                                            <a style="text-decoration:none" href="Index.html">Home</a>
+
+                                        </li>
+                                        <li>
+
+                                            <a class="active" style="text-decoration:none" href="Fares_and_payments.html">Fares / Payments</a>
+
+                                            <ul>
+                                                <li><a href="Schedules.html">Schedules</a></li>
+                                                <li><a href="CheckFare.html">CheckFare</a></li>
+                                                <li><a href="Cancel_Ticket.html">Cancellation</a></li>
 
 
-                        <li class=" "><a href="Index.html">Home &nbsp;</a></li>
-                        <li><a href="AboutUs.html">AboutUs&nbsp;</a></li>
-                        <li class=""><a href="ContactUs.html"> ContactUs &nbsp;</a></li>
-                        <li class=""><a href="Schedules.html"> Schedules &nbsp;</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
 
-                        <li class=""><a href="CheckFare.html">CheckFare &nbsp;</a></li>
-                        <li class=""> <a href="Cancellation.html">Cancellation &nbsp;</a></li>
-                        <li class=""> <a href="FeedBack.html">FeedBack/complaints &nbsp;</a></li>
-                        <li class="dropdown topbar-user">
-                            <a data-hover="dropdown" href="#" class="dropdown-toggle">&nbsp;<span class="hidden-xs">Jay</span>&nbsp;<span class="caret"></span></a>
-                            <ul class="dropdown-menu dropdown-user pull-right">
-                                <li><a href="extra-profile.html"><i class="fa fa-user"></i>My Profile</a></li>
-                                <li><a href="page-calendar.html"><i class="fa fa-calendar"></i>My Calendar</a></li>
-                                <li><a href="email-inbox.html"><i class="fa fa-envelope"></i>My Inbox<span class="badge badge-danger">3</span></a></li>
-                                <li><a href="#"><i class="fa fa-tasks"></i>My Tasks<span class="badge badge-success">7</span></a></li>
-                                <li class="divider"></li>
-                                <li><a href="extra-lock-screen.html"><i class="fa fa-lock"></i>Lock Screen</a></li>
-                                <li><a href="extra-signin.html"><i class="fa fa-key"></i>Log Out</a></li>
-                            </ul>
-                        </li>
+                                            <a style="text-decoration:none" href="Status_and_Updates.html">Status & Updates</a>
 
-                    </ul>
+                                        </li>
+                                        <li>
+
+                                            <a style="text-decoration:none" href="#">Products</a>
+                                            <ul>
+                                                <li><a href="Licensepage.html">Fleet Owner License</a></li>
+
+                                            </ul>
+                                        </li>
+
+                                        <li>
+
+                                            <a style="text-decoration:none" href="About.html">About Us</a>
+                                            <ul>
+                                                <li><a href="Contact.html">ContactUs</a></li>
+
+                                            </ul>
+
+                                        </li>
+
+
+                                    </ul>
+                                    <div style="float:right; padding-top:11px">
+                                        <input type="text" placeholder="Search.." id="q" name="q" style="border-radius: 30px; width: 120px; height: 35px; color: red;" />
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
                 </div>
 
             </nav>
@@ -324,7 +570,7 @@
                                                 <div class="table-container">
                                                     <div class="row mbm">
 
-                                                        <div id="imgTd1" style="display:none" class="seatlayoutDropDown">
+                                                        <!--<div id="imgTd1" style="display:none" class="seatlayoutDropDown">
                                                             <div class="seatLayoutMain">
                                                                 <div class="seatLayoutBox">
                                                                     <div class="low-rating-window">
@@ -387,7 +633,7 @@
                                                                 </div>
 
                                                             </div>
-                                                        </div>
+                                                        </div>-->
 
                                                         <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
                                                             <tr>
@@ -711,92 +957,58 @@
 
                                                         </table>
 
-
-
-
-
-
-
-
-
-                                                        <div class="row">
-                                                            <div class="col-lg-6">
-
-                                                            </div>
-
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <script>
-                                    function test() {
-                                        var currstyle = document.getElementById('imgTd').style.display;
-                                        document.getElementById('imgTd').style.display = (currstyle == "none") ? "table-cell" : "none";
-                                    }
-                                </script>
-
-
-
-                                <script src="js/jquery-1.10.2.min.js"></script>
-                                <script src="js/jquery-migrate-1.2.1.min.js"></script>
-                                <script src="js/jquery-ui.js"></script>
-                                <!--loading bootstrap js-->
-                                <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
-                                <script src="vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
-                                <script src="js/html5shiv.js"></script>
-                                <script src="js/respond.min.js"></script>
-                                <script src="vendors/metisMenu/jquery.metisMenu.js"></script>
-                                <script src="vendors/slimScroll/jquery.slimscroll.js"></script>
-                                <script src="vendors/jquery-cookie/jquery.cookie.js"></script>
-                                <script src="vendors/iCheck/icheck.min.js"></script>
-                                <script src="vendors/iCheck/custom.min.js"></script>
-                                <script src="vendors/jquery-news-ticker/jquery.news-ticker.js"></script>
-                                <script src="js/jquery.menu.js"></script>
-                                <script src="vendors/jquery-pace/pace.min.js"></script>
-                                <script src="vendors/holder/holder.js"></script>
-                                <script src="vendors/responsive-tabs/responsive-tabs.js"></script>
-                                <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
-
-                                <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
-
-
-                                <script src="js/main.js"></script>
-                                <script src="js/angular.js"></script>
-                                <script src="js/Index.js"></script>
-
-
-
-
-
                             </div>
                         </div>
-
-
-
-
-
-
-
-                        <!--BEGIN TITLE & BREADCRUMB PAGE-->
-                        <!--END TITLE & BREADCRUMB PAGE--><!--BEGIN CONTENT-->
-                        <!--END CONTENT-->
-                        <!--BEGIN FOOTER-->
-                        <div id="footer">
-                            <div class="copyright">2016 © Interbus - Bus Ticketing dashboard portal</div>
-                        </div>
-                        <!--END FOOTER-->
                     </div>
 
                     <!--END PAGE WRAPPER-->
                 </div>
             </div>
 
+
+
         </div>
+
     </div>
+
+    <script>
+    function test() {
+        var currstyle = document.getElementById('imgTd').style.display;
+        document.getElementById('imgTd').style.display = (currstyle == "none") ? "table-cell" : "none";
+    }
+    </script>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <!--loading bootstrap js-->
+    <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <script src="vendors/metisMenu/jquery.metisMenu.js"></script>
+    <script src="vendors/slimScroll/jquery.slimscroll.js"></script>
+    <script src="vendors/jquery-cookie/jquery.cookie.js"></script>
+    <script src="vendors/iCheck/icheck.min.js"></script>
+    <script src="vendors/iCheck/custom.min.js"></script>
+    <script src="vendors/jquery-news-ticker/jquery.news-ticker.js"></script>
+    <script src="js/jquery.menu.js"></script>
+    <script src="vendors/jquery-pace/pace.min.js"></script>
+    <script src="vendors/holder/holder.js"></script>
+    <script src="vendors/responsive-tabs/responsive-tabs.js"></script>
+    <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
+
+    <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
+
+
+    <script src="js/main.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/Index.js"></script>
     <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/jquery-ui.js"></script>

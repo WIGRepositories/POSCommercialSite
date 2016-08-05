@@ -1,17 +1,21 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Horizontal Menu | Layouts</title>
-    <meta charset="utf-8">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="images/icons/favicon.ico">
-    <link rel="apple-touch-icon" href="images/icons/favicon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/icons/favicon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/icons/favicon-114x114.png">
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/cdn/static/assets/icons/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="css/w3.css">
+
+
+
+    <!-- links for table -->
     <!--Loading bootstrap css-->
-    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700">
-    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700,300">
     <link type="text/css" rel="stylesheet" href="vendors/jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
     <link type="text/css" rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
     <link type="text/css" rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
@@ -23,282 +27,445 @@
     <!--Loading style-->
     <link type="text/css" rel="stylesheet" href="css/themes/style2/pink-blue.css" id="theme-change" class="style-change color-change">
     <link type="text/css" rel="stylesheet" href="css/style-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/Main.css">
+
+
+    <!-- Optional theme -->
+
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+
+
+    <!-- Latest compiled and minified JavaScript -->
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <meta name="HandheldFriendly" content="True">
+
+    <script type="text/javascript">
+
+        var h = document.documentElement;
+
+        h.className = h.className.replace(/\bno-js\b/, '');
+
+        var isTouch = !!("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0;
+
+
+
+        if (isTouch) {
+
+            // remove class which defines hover behavior
+
+            h.className = h.className.replace(/\bno-touch\b/, '');
+
+        }
+
+    </script>
+
+
+
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+
+    <title>Interbus - Get Moving Anywhere, Comfortably</title>
+
+
+
+
+
+    <meta name="description" content="Information on all forms of transport in London including cycle hire. Routes, maps, plan a journey, tickets sales, realtime traffic and travel updates." />
+
+    <meta name="keywords" />
+
+    <meta name="author" content="Interbus | Get Moving Anywhere, Comfortably" />
+
+    <link href="css/StyleSheet2.css" media="screen,print" rel="stylesheet" />
+
+    <link href="css/StyleSheet1.css" media="screen,print" rel="stylesheet" />
+
+    <link href="css/StyleSheet4.css" media="screen,&#32;print" rel="stylesheet" />
+
+    <link href="css/StyleSheet3.css" media="screen&#32;and&#32;(min-width:&#32;580px),print" rel="stylesheet" />
+
+
+
+    <link href="css/StyleSheet5.css" media="screen&#32;and&#32;(min-width:&#32;900px)" rel="stylesheet" />
+
+    <!--<link href="/cdn/static/styles/core/min/print.min.bbf3e026.css" media="print" rel="stylesheet" />-->
+
+
+
+    <link href="css/StyleSheet6.css" media="screen" rel="stylesheet" />
+
+
+
+
+
+
+
+    <!--[if lte IE 9]>
+
+        <link href="/cdn/static/styles/core/min/ie.min.0b308d8c.css" media="screen" rel="stylesheet" />
+
+    <![endif]-->
+
+
+    <script type="text/javascript">
+
+        // Instructions: please embed this snippet directly into every page in your website template.
+
+        // For optimal performance, this must be embedded directly into the template, not referenced
+
+        // as an external file.
+
+
+
+        // Answers Cloud Services Embed Script v1.02
+
+        // DO NOT MODIFY BELOW THIS LINE *****************************************
+
+        ; (function (g) {
+
+            var d = document, i, am = d.createElement('script'), h = d.head || d.getElementsByTagName("head")[0],
+
+            aex = {
+
+                "src": "//gateway.answerscloud.com/tfl-gov-uk/production/gateway.min.js",
+
+                "type": "text/javascript",
+
+                "async": "true",
+
+                "data-vendor": "acs",
+
+                "data-role": "gateway"
+
+            };
+
+            for (var attr in aex) { am.setAttribute(attr, aex[attr]); }
+
+            h.appendChild(am);
+
+            g['acsReady'] = function () { var aT = '__acsReady__', args = Array.prototype.slice.call(arguments, 0), k = setInterval(function () { if (typeof g[aT] === 'function') { clearInterval(k); for (i = 0; i < args.length; i++) { g[aT].call(g, function (fn) { return function () { setTimeout(fn, 1) }; }(args[i])); } } }, 50); };
+
+        })(window);
+
+        // DO NOT MODIFY ABOVE THIS LINE *****************************************
+
+    </script>
+
+    <style>
+        rr.div a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            padding: 15px;
+            display: inline-block;
+        }
+
+        .rr ul {
+            display: inline;
+            margin: 0;
+            padding: 0;
+        }
+
+        .rr .active {
+            background: #555;
+        }
+
+
+        .rr ul li {
+            display: inline-block;
+            color: white;
+        }
+
+            .rr ul li:hover {
+                background: #555;
+            }
+
+                .rr ul li:hover ul {
+                    display: block;
+                }
+
+            .rr ul li ul {
+                position: absolute;
+                width: 100px;
+                display: none;
+            }
+
+                .rr ul li ul li {
+                    background: #555;
+                    display: block;
+                    border-bottom: 1px solid white;
+                    width: 170px;
+                }
+
+                    .rr ul li ul li a {
+                        display: block !important;
+                        text-decoration: none;
+                    }
+
+                    .rr ul li ul li:hover {
+                        background: #666;
+                    }
+
+                    .rr ul li ul li a:hover {
+                        text-decoration: none;
+                    }
+    </style>
+
+
+
 </head>
-<body class="horizontal-menu-page" style="background-image:url(images/one1.jpg)">
-    <img src="images/commercialsite2.jpg" width="100%" />
-    <!--END THEME SETTING--><!--BEGIN BACK TO TOP--><a id="totop" href="#"><i class="fa fa-angle-up"></i></a><!--END BACK TO TOP--><!--BEGIN TOPBAR-->
-    <div id="header-topbar-option-demo" class="page-header-topbar">
-        <nav id="topbar" role="navigation" style="margin-bottom: 0;" data-step="3" data-intro="&lt;b&gt;Topbar&lt;/b&gt; has other styles with live demo. Go to &lt;b&gt;Layouts-&gt;Header&amp;Topbar&lt;/b&gt; and check it out." class="navbar navbar-default navbar-static-top">
 
-            <div class="topbar-main">
-                <a id="" href="" class="hidden-xs"><i class=""></i></a>
-                <ul class="nav navbar-nav horizontal-menu hidden-sm hidden-xs  ">
+<body class="horizontal-menu-page" style="background-image:url(images/one1.jpg)" ng-app="myApp" ng-controller="myCtrl" ng-init="GetSchedules();">
+    <!--Start Menu-->
+    <div class="mainnav" id="mainnav" tabindex="0">
+
+        <div class="top-row" style="position:fixed; width:100%; z-index:1">
+
+            <div class="r">
+                <div class="rr" style="width:94%">
+                    <a style="margin-top: 0px; padding-top: 0px; margin-left: 35px; float:left" href="index.html"><img style="height:76px" src="Images/logos/interbusLogo.png" alt="Alternate Text" /> </a>
+                    <ul class="collapsible-menu clearfix" style="margin-left:0px;height:76px">
+
+                        <li>
+
+                            <a style="text-decoration:none" href="Index.html">Home</a>
+
+                        </li>
+                        <li>
+
+                            <a style="text-decoration:none" href="Fares_and_payments.html">Fares / Payments</a>
+
+                            <ul>
+                                <li><a href="Schedules.html">Schedules</a></li>
+                                <li><a href="CheckFare.html">CheckFare</a></li>
+                                <li><a href="Cancel_Ticket.html">Cancellation</a></li>
+                            </ul>
+                        </li>
+                        <li>
+
+                            <a style="text-decoration:none" href="Status_and_Updates.html">Status & Updates</a>
+
+                        </li>
+                        <li>
+
+                            <a style="text-decoration:none" href="#">Products</a>
+                            <ul>
+                                <li><a href="Licensepage.html">Fleet Owner License</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li>
+
+                            <a style="text-decoration:none" href="About.html">About Us</a>
+                            <ul>
+                                <li><a href="Contact.html">ContactUs</a></li>
+
+                            </ul>
+
+                        </li>
 
 
-                    <li class=" "><a href="Index.html">Home &nbsp;</a></li>
-                    <li><a href="AboutUs.html">AboutUs&nbsp;</a></li>
-                    <li class=""><a href="ContactUs.html"> ContactUs &nbsp;</a></li>
-                    <li class=""><a href="Schedules.html"> Schedules &nbsp;</a></li>
+                    </ul>
+                    <div style="float:right; padding-top:11px">
+                        <input type="text" placeholder="Search.." id="q" name="q" style="border-radius: 30px; width: 120px; height: 35px; color: red;" />
 
-                    <li class=""><a href="CheckFare.html">CheckFare &nbsp;</a></li>
-                    <li class=""> <a href="Cancellation.html">Cancellation &nbsp;</a></li>
-                    <li class=""> <a href="FeedBack.html">FeedBack &nbsp;</a></li>
-                    <li class=""><a href="Login.html">Login &nbsp;</a></li>
-                    <li class=""><a href="registrationform.html">Registration &nbsp;</a></li>
 
-        </nav>
+                    </div>
+                </div>
+            </div>
 
-        <table align="center" border="0" cellpadding="0" cellspacing="0" style="background-color: #ffffff"
-               width="998">
-            <tr>
-                <td align="center" valign="top">
-                    <table border="0" cellpadding="0" cellspacing="0" width="998">
-                        <tr>
-                            <td align="left" valign="top">
-                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                    <tr>
-                                        <td align="left" valign="top">
-                                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                                <tr>
+        </div>
 
-                                                    <td align="left" colspan="3" valign="top">
-                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                                            <tr>
-                                                                <td align="left" style="height: 25px" valign="top">
-                                                                    <table border="0" cellpadding="0" cellspacing="0" style="height: 25px" width="100%">
-                                                                        <tr>
-                                                                            <td align="left" class="gray-head-title" style="padding-bottom:2px" valign="bottom">Schedules</td>
-                                                                        </tr>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td align="left" class="gray-table-border" valign="top">
-                                                                    <table border="0" cellpadding="0" cellspacing="0" style="width: 100%">
-                                                                        <tr>
-                                                                            <td height="10px"></td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td valign="top" align="center" style="padding-left:15px;padding-right:15px;">
-                                                                                <div>
-                                                                                    <table cellspacing="0" rules="rows" border="1" id="ctl00_cpEndUserMain_grdvSchedules" style="border-color:#D1E8F6;border-width:1px;border-style:Solid;font-family:Arial,Helvetica,sans-serif;font-weight:normal;width:100%;border-collapse:collapse;">
-                                                                                        <tr class="tablehead" valign="middle" style="height:25px;">
-                                                                                            <th align="left" scope="col">S.No</th>
-                                                                                            <th align="left" scope="col">Svc.No</th>
-                                                                                            <th align="left" scope="col">From</th>
-                                                                                            <th align="left" scope="col">To</th>
-                                                                                            <th align="left" scope="col">Coach Type</th>
-                                                                                            <th align="left" scope="col">Departure Time</th>
-                                                                                            <th align="left" scope="col">Approx Journey Time</th>
-                                                                                        </tr>
-                                                                                        <tr class="tabletext" align="left" style="height:20px;">
-                                                                                            <td align="left">
-                                                                                                1
-                                                                                            </td>
-                                                                                            <td align="left">SL327</td>
-                                                                                            <td align="left">AHMEDNAGAR</td>
-                                                                                            <td align="left">HYDERABAD</td>
-                                                                                            <td align="left">SLEEPER (AIRCONDITIONED)</td>
-                                                                                            <td align="left">7:00PM</td>
-                                                                                            <td align="left">13:20 Hrs</td>
-                                                                                        </tr>
-                                                                                        <tr class="tabletext-gray" align="left" style="height:20px;">
-                                                                                            <td align="left">
-                                                                                                2
-                                                                                            </td>
-                                                                                            <td align="left">SL327</td>
-                                                                                            <td align="left">AHMEDNAGAR</td>
-                                                                                            <td align="left">ZAHEERABAD</td>
-                                                                                            <td align="left">SLEEPER (AIRCONDITIONED)</td>
-                                                                                            <td align="left">7:00PM</td>
-                                                                                            <td align="left">11:50 Hrs</td>
-                                                                                        </tr>
-                                                                                        <tr class="tabletext" align="left" style="height:20px;">
-                                                                                            <td align="left">
-                                                                                                3
-                                                                                            </td>
-                                                                                            <td align="left">VL131</td>
-                                                                                            <td align="left">AKIVEEDU</td>
-                                                                                            <td align="left">HYDERABAD</td>
-                                                                                            <td align="left">VOLVO-B9R (MULTI AXLE-SEMISLEEPER)</td>
-                                                                                            <td align="left">9:15PM</td>
-                                                                                            <td align="left">10:30 Hrs</td>
-                                                                                        </tr>
-                                                                                        <tr class="tabletext-gray" align="left" style="height:20px;">
-                                                                                            <td align="left">
-                                                                                                4
-                                                                                            </td>
-                                                                                            <td align="left">VL105</td>
-                                                                                            <td align="left">ANAKAPALLI</td>
-                                                                                            <td align="left">HYDERABAD</td>
-                                                                                            <td align="left">VOLVO-B9R (MULTI AXLE-SEMISLEEPER)</td>
-                                                                                            <td align="left">11:00PM</td>
-                                                                                            <td align="left">11:30 Hrs</td>
-                                                                                        </tr>
-                                                                                        <tr class="tabletext" align="left" style="height:20px;">
-                                                                                            <td align="left">
-                                                                                                5
-                                                                                            </td>
-                                                                                            <td align="left">VL108</td>
-                                                                                            <td align="left">ANANTAPURAM</td>
-                                                                                            <td align="left">GUNTUR</td>
-                                                                                            <td align="left">VOLVO-B9R (MULTI AXLE-SEMISLEEPER)</td>
-                                                                                            <td align="left">8:00PM</td>
-                                                                                            <td align="left">8:30 Hrs</td>
-                                                                                        </tr>
-                                                                                        <tr class="tabletext-gray" align="left" style="height:20px;">
-                                                                                            <td align="left">
-                                                                                                6
-                                                                                            </td>
-                                                                                            <td align="left">VL108</td>
-                                                                                            <td align="left">ANANTAPURAM</td>
-                                                                                            <td align="left">NARASARAOPET</td>
-                                                                                            <td align="left">VOLVO-B9R (MULTI AXLE-SEMISLEEPER)</td>
-                                                                                            <td align="left">8:00PM</td>
-                                                                                            <td align="left">8:00 Hrs</td>
-                                                                                        </tr>
-                                                                                        <tr class="tabletext" align="left" style="height:20px;">
-                                                                                            <td align="left">
-                                                                                                7
-                                                                                            </td>
-                                                                                            <td align="left">VL108</td>
-                                                                                            <td align="left">ANANTAPURAM</td>
-                                                                                            <td align="left">VIJAYAWADA</td>
-                                                                                            <td align="left">VOLVO-B9R (MULTI AXLE-SEMISLEEPER)</td>
-                                                                                            <td align="left">8:00PM</td>
-                                                                                            <td align="left">9:30 Hrs</td>
-                                                                                        </tr>
-                                                                                        <tr class="tabletext-gray" align="left" style="height:20px;">
-                                                                                            <td align="left">
-                                                                                                8
-                                                                                            </td>
-                                                                                            <td align="left">11R721</td>
-                                                                                            <td align="left">BANGALORE</td>
-                                                                                            <td align="left">HYDERABAD</td>
-                                                                                            <td align="left">VOLVO-B11R (MULTI AXLE SEMISLEEPER)</td>
-                                                                                            <td align="left">11:30PM</td>
-                                                                                            <td align="left">15:05 Hrs</td>
-                                                                                        </tr>
-                                                                                        <tr class="tabletext" align="left" style="height:20px;">
-                                                                                            <td align="left">
-                                                                                                9
-                                                                                            </td>
-                                                                                            <td align="left">SL309</td>
-                                                                                            <td align="left">BANGALORE</td>
-                                                                                            <td align="left">CHILAKALURIPET</td>
-                                                                                            <td align="left">SLEEPER (AIRCONDITIONED)</td>
-                                                                                            <td align="left">5:45PM</td>
-                                                                                            <td align="left">11:30 Hrs</td>
-                                                                                        </tr>
-                                                                                        <tr class="tabletext-gray" align="left" style="height:20px;">
-                                                                                            <td align="left">
-                                                                                                10
-                                                                                            </td>
-                                                                                            <td align="left">SL309</td>
-                                                                                            <td align="left">BANGALORE</td>
-                                                                                            <td align="left">GUNTUR</td>
-                                                                                            <td align="left">SLEEPER (AIRCONDITIONED)</td>
-                                                                                            <td align="left">5:45PM</td>
-                                                                                            <td align="left">12:30 Hrs</td>
-                                                                                        </tr>
-                                                                                        <tr class="tabletext" align="left" style="height:20px;">
-                                                                                            <td align="left">
-                                                                                                11
-                                                                                            </td>
-                                                                                            <td align="left">SL309</td>
-                                                                                            <td align="left">BANGALORE</td>
-                                                                                            <td align="left">ONGOLE</td>
-                                                                                            <td align="left">SLEEPER (AIRCONDITIONED)</td>
-                                                                                            <td align="left">5:45PM</td>
-                                                                                            <td align="left">10:30 Hrs</td>
-                                                                                        </tr>
-                                                                                        <tr class="tabletext-gray" align="left" style="height:20px;">
-                                                                                            <td align="left">
-                                                                                                12
-                                                                                            </td>
-                                                                                            <td align="left">SL309</td>
-                                                                                            <td align="left">BANGALORE</td>
-                                                                                            <td align="left">TIRUPATHI</td>
-                                                                                            <td align="left">SLEEPER (AIRCONDITIONED)</td>
-                                                                                            <td align="left">5:45PM</td>
-                                                                                            <td align="left">6:45 Hrs</td>
-                                                                                        </tr>
+    </div>
+    <!--End Menu-->
+    <div class="container">
+        <div class="row" style="margin-top:80px; margin-bottom:20PX">
+            <h2 style="text-align:center;">Schedules </h2>
+            <table align="center" border="0" cellpadding="0" cellspacing="0" style="background-color: #ffffff"
+                   width="998">
+                <tr>
+                    <td align="center" valign="top">
+                        <table border="0" cellpadding="0" cellspacing="0" width="998">
+                            <tr>
+                                <td align="left" valign="top">
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td align="left" valign="top">
+                                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                    <tr>
+
+                                                        <td align="left" colspan="3" valign="top">
+                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                
+                                                                <tr>
+                                                                    <td align="left" class="gray-table-border" valign="top">
+                                                                        <table border="0" cellpadding="0" cellspacing="0" style="width: 100%">
+                                                                        
+                                                                            <tr>
+                                                                                <td valign="top" align="center" style="padding-left:15px;padding-right:15px;">
+                                                                                    <div>
+
+                                                                                        <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
+                                                                                            <thead>
+                                                                                                <tr>
+                                                                                                    <th>S.No</th>
+                                                                                                    <th>Svc No</th>
+                                                                                                    <th>From</th>
+                                                                                                    <th>To</th>
+                                                                                                    <th>CoachType</th>
+                                                                                                    <th>DepartureTime</th>
+                                                                                                    <th>ApproxJourneytime</th>
+
+                                                                                                </tr>
+                                                                                            </thead>
+                                                                                            <tbody>
+
+                                                                                                <tr ng-repeat="R in Schedules" class="gradeA">
+                                                                                                    <td>{{R.S.No}}</td>
+                                                                                                    <td>{{R.Svc.No}}</td>
+                                                                                                    <td>{{R.From}}</td>
+                                                                                                    <td>{{R.To}}</td>
+                                                                                                    <td>{{R.CoachType}}</td>
+                                                                                                    <td>{{R.DepartureTime}}</td>
+                                                                                                    <td>{{R.ApproxJourneytime}}</td>
 
 
 
 
+                                                                                        </table>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
 
-                                                                                    </table>
-                                                                                </div>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td align="center" style="height: 32px" valign="middle">
-                                                                                <span id="ctl00_cpEndUserMain_lblError" class="errmsg"></span>
-                                                                            </td>
-                                                                        </tr>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="footer" tabindex="0">
 
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
-
-
-
-
-
-        <!--END SIDEBAR MENU--><!--BEGIN CHAT FORM-->
+                <h2 class="visually-hidden">Site footer</h2>
 
 
-        <script src="js/jquery-1.10.2.min.js"></script>
-        <script src="js/jquery-migrate-1.2.1.min.js"></script>
-        <script src="js/jquery-ui.js"></script>
-        <!--loading bootstrap js-->
-        <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
-        <script src="vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
-        <script src="js/html5shiv.js"></script>
-        <script src="js/respond.min.js"></script>
-        <script src="vendors/metisMenu/jquery.metisMenu.js"></script>
-        <script src="vendors/slimScroll/jquery.slimscroll.js"></script>
-        <script src="vendors/jquery-cookie/jquery.cookie.js"></script>
-        <script src="vendors/iCheck/icheck.min.js"></script>
-        <script src="vendors/iCheck/custom.min.js"></script>
-        <script src="vendors/jquery-news-ticker/jquery.news-ticker.js"></script>
-        <script src="js/jquery.menu.js"></script>
-        <script src="vendors/jquery-pace/pace.min.js"></script>
-        <script src="vendors/holder/holder.js"></script>
-        <script src="vendors/responsive-tabs/responsive-tabs.js"></script>
-        <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
-        <script src="js/main.js"></script>
-        <script>
-            (function (i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r;
-                i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-                a = s.createElement(o),
-                        m = s.getElementsByTagName(o)[0];
-                a.async = 1;
-                a.src = g;
-                m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-            ga('create', 'UA-145464-12', 'auto');
-            ga('send', 'pageview');
+
+                <div class="primary-footer r">
+                    <h2 class="visually-hidden">About Interbus</h2><ul class="footer-links">
+                        <li><a href="/help-and-contact/">Help &amp; contacts</a></li>
+                        <li><a class="" href="/corporate/careers/">Careers</a></li>
+                        <li><a class="" href="/corporate/about-Interbus/">About Interbus</a></li>
+                        <li><a class="" href="/corporate/safety-and-security/">Safety &amp; security</a></li>
+                        <li><a class="" href="/corporate/transparency/">Transparency</a></li>
+                        <li><a class="" href="/corporate/publications-and-reports/">Publications &amp; reports</a></li>
+                        <li><a class="" href="/corporate/tfl-shop/">Gift Shop</a></li>
+                        <li><a class="" href="/travel-information/social-media-and-email-updates/">Social media &amp; email updates</a></li>
+
+                        <li><a class="languages-footer" href="/travel-information/other-languages/">Other languages</a></li>
+                    </ul><h2 class="heading">Information for...</h2>
+                    <ul class="info-for clearfix">
+                        <li><a href="/info-for/media/">Media</a></li>
+                        <li><a href="/info-for/business-and-commercial/">Business &amp; commercial</a></li>
+                        <li><a href="/info-for/boroughs/">Get Support online 24/7</a></li>
+                        <li><a href="/info-for/schools-and-young-people/">Schools &amp; young people</a></li>
+                        <li><a href="/info-for/deliveries-in-london/">Deliveries in Zimbabwe</a></li>
+                        <li><a href="/info-for/deliveries-in-london/">Urban planning & construction</a></li>
 
 
-        </script>
+                        <li><a href="/info-for/taxis-and-private-hire/">Taxi &amp; private hire </a></li>
+
+
+                        <li><a href="/info-for/bus-operators/">Bus operators</a></li>
+                        <li><a href="/info-for/open-data-users/">Open data users</a></li>
+                        <li><a href="/info-for/coach-drivers/">Coach drivers</a></li>
+                        <li><a href="/info-for/investors/">Investors</a></li>
+                        <li><a href="/info-for/coach-drivers/">Download Interbus App</a></li>
+                    </ul>
+                </div>
+                <div class="secondary-footer">
+                    <h2 class="visually-hidden">Site structure and legal information</h2><div class="r">
+                        <ul>
+                            <li><a href="/corporate/terms-and-conditions/">Terms &amp; conditions </a></li>
+                            <li><a href="/corporate/privacy-and-cookies/">Privacy &amp; cookies</a></li>
+                            <li><a href="/corporate/website-accessibility/">Website accessibility</a></li>
+                        </ul>
+                        <span class="heading">Copyright Interbus</span>
+                    </div>
+                </div>
+                <div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--END SIDEBAR MENU--><!--BEGIN CHAT FORM-->
+
+
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <!--loading bootstrap js-->
+    <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <script src="vendors/metisMenu/jquery.metisMenu.js"></script>
+    <script src="vendors/slimScroll/jquery.slimscroll.js"></script>
+    <script src="vendors/jquery-cookie/jquery.cookie.js"></script>
+    <script src="vendors/iCheck/icheck.min.js"></script>
+    <script src="vendors/iCheck/custom.min.js"></script>
+    <script src="vendors/jquery-news-ticker/jquery.news-ticker.js"></script>
+    <script src="js/jquery.menu.js"></script>
+    <script src="vendors/jquery-pace/pace.min.js"></script>
+    <script src="vendors/holder/holder.js"></script>
+    <script src="vendors/responsive-tabs/responsive-tabs.js"></script>
+    <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
+    <script src="js/main.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/Schedules1.js"></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-145464-12', 'auto');
+        ga('send', 'pageview');
+
+
+    </script>
+
 </body>
+
+
 
 </html>
