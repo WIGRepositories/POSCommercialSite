@@ -29,8 +29,8 @@ namespace INTERBUSWebsite.Controllers
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "GetAvailableServices";
-              cmd.Parameters.Add("@SourceId", SqlDbType.Int).Value = srcId;
-              cmd.Parameters.Add("@DestinationId", SqlDbType.Int).Value = destId;
+            cmd.Parameters.Add("@srcId", SqlDbType.Int).Value = srcId;
+            cmd.Parameters.Add("@destId", SqlDbType.Int).Value = destId;
             cmd.Connection = conn;
           
             DataSet ds = new DataSet();

@@ -10,15 +10,22 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
     $scope.selectedSeats.pssngr = new Array();
     $scope.selectedSeats.returnpssngr = new Array();
 
+    $scope.selectedIndex = -1;
     //$scope.GetAvailableServices = function () {
     //    $scope.srcId = $localStorage.srcId;
     //    $scope.destId = $localStorage.destId;
     //    $scope.way = $localStorage.waytype;
    
     $scope.test = function (b) {
-        var currstyle = document.getElementById('imgTd').style.display;
-        if(currstyle == "none")
-            document.getElementById('imgTd').style.display = "table-cell";
+        if ($scope.selectedIndex != -1)
+        document.getElementById('t_' + $scope.selectedIndex).style.display = "none";
+        var currstyle = document.getElementById('t_'+b).style.display;
+       // var currstyle = document.getElementById('imgTd').style.display;
+        if (currstyle == "none") {
+            document.getElementById('t_' + b).style.display = "table-cell";
+            $scope.selectedIndex = b;
+           // $scope.selectedSeats = [];
+        }
 
         $scope.basePrice = b.amount;
     }
