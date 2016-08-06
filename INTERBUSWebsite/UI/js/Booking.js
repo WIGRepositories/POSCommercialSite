@@ -10,10 +10,10 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
     $scope.selectedSeats.pssngr = new Array();
     $scope.selectedSeats.returnpssngr = new Array();
 
-    $scope.GetAvailableServices = function () {
-        $scope.srcId = $localStorage.srcId;
-        $scope.destId = $localStorage.destId;
-        $scope.way = $localStorage.waytype;
+    //$scope.GetAvailableServices = function () {
+    //    $scope.srcId = $localStorage.srcId;
+    //    $scope.destId = $localStorage.destId;
+    //    $scope.way = $localStorage.waytype;
    
     $scope.test = function (b) {
         var currstyle = document.getElementById('imgTd').style.display;
@@ -53,15 +53,15 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
           //  $scope.subtotal = $scope.count * $scope.Booking.Cost;
         }
 
-            $scope.returncount = $scope.selectedSeats.returnpssngr.length;
-        }
-            $scope.selectedSeats.returnpssngr.push(returndata);
+    //        $scope.returncount = $scope.selectedSeats.returnpssngr.length;
+    //    }
+    //        $scope.selectedSeats.returnpssngr.push(returndata);
        
-            $scope.count = $scope.selectedSeats.returnpssngr.length;
-    }
-        // $scope.seats = $scope.count;
+    //        $scope.count = $scope.selectedSeats.returnpssngr.length;
+    //}
+    //    // $scope.seats = $scope.count;
 
-    }
+    //}
 
     $scope.GetAvailableServices = function ()
     {
