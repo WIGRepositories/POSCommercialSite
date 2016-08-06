@@ -94,6 +94,7 @@
     <Content Include="DBScript\dbo.table2.sql" />
     <Content Include="Global.asax" />
     <Content Include="UI\InterBusLogin.html" />
+    <Content Include="UI\js\WebsiteUserInfo.js" />
     <Content Include="UI\vendors\ModifiedLogin.html" />
     <Content Include="obj\Debug\INTERBUSWebsite.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\INTERBUSWebsite.dll" />
@@ -1122,6 +1123,7 @@
     <Compile Include="Controllers\UserLicensePymtTransactionsController.cs" />
     <Compile Include="Controllers\UserLicensesController.cs" />
     <Compile Include="Controllers\ValidateCredentialsController.cs" />
+    <Compile Include="Controllers\WebsiteUserInfoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
