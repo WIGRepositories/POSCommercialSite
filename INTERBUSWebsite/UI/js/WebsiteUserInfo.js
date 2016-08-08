@@ -11,6 +11,37 @@ var mycrtl1 = myapp1.controller('myCtrl', function ($scope, $http) {
         });
     }
     $scope.save = function (type) {
+        if (type.FirstName == null || type.FirstName == "") {
+            alert('Please enter FirstName.');
+            return;
+        }
+
+        if (type.LastName == null || type.LastName == "") {
+            alert('Please enter LastName.');
+            return;
+        }
+
+        if (type.UserName == null || type.UserName == "") {
+            alert('Please enter UserName.');
+            return;
+        }
+
+        if (type.Password == null || type.Password == "") {
+            alert('Please enter Password.');
+            return;
+        }
+
+        if (type.EmailAddress == null || type.EmailAddress == "") {
+            alert('Please enter EmailAddress.');
+            return;
+        }
+
+        if (type.Mobile == null || type.Mobile == "") {
+            alert('Please enter Mobile.');
+            return;
+        }
+
+
 
         var userinfo = {
             FirstName: type.FirstName,
@@ -31,14 +62,23 @@ var mycrtl1 = myapp1.controller('myCtrl', function ($scope, $http) {
             data: userinfo
 
 
+
+
         }
-        $http(req).then(function (response) { });
+        $http(req).then(function (response) {
+            $scope.showDialog("Saved successfully!!");
+
+            $scope.type = null;
+            $scope.GetWebsiteUserInfo();
+
+        }, function (errres) {
+            var errdata = errres.data;
+            var errmssg = "";
+            errmssg = (errdata && errdata.ExceptionMessage) ? errdata.ExceptionMessage : errdata.Message;
+            $scope.showDialog(errmssg);
+        });
 
     }
-    $scope.filterValue = function ($event) {
-        if (isNaN(String.fromCharCode($event.keyCode))) {
-            $event.preventDefault();
-        }
-    };
 
+   
 });

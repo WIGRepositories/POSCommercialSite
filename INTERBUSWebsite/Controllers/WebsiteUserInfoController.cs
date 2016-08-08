@@ -60,44 +60,44 @@ namespace INTERBUSWebsite.Controllers
 
 
                 //SqlCommand con=new SqlCommand(insertquery,conn);
-                SqlParameter pid = new SqlParameter();
-                pid.ParameterName = "@FirstName ";
-                pid.SqlDbType = SqlDbType.VarChar;
-                pid.Value = b.FirstName;
-                cmd.Parameters.Add(pid);
+                SqlParameter fstn = new SqlParameter();
+                fstn.ParameterName = "@FirstName ";
+                fstn.SqlDbType = SqlDbType.VarChar;
+                fstn.Value = b.FirstName;
+                cmd.Parameters.Add(fstn);
 
-                SqlParameter aa = new SqlParameter();
-                aa.ParameterName = "@LastName";
-                aa.SqlDbType = SqlDbType.VarChar;
-                aa.Value = b.LastName;
-                cmd.Parameters.Add(aa);
+                SqlParameter lstn = new SqlParameter();
+                lstn.ParameterName = "@LastName";
+                lstn.SqlDbType = SqlDbType.VarChar;
+                lstn.Value = b.LastName;
+                cmd.Parameters.Add(lstn);
 
-                SqlParameter Aid = new SqlParameter();
-                Aid.ParameterName = "@UserName";
-                Aid.SqlDbType = SqlDbType.VarChar;
-                Aid.Value = b.UserName;
-                cmd.Parameters.Add(Aid);
+                SqlParameter usn = new SqlParameter();
+                usn.ParameterName = "@UserName";
+                usn.SqlDbType = SqlDbType.VarChar;
+                usn.Value = b.UserName;
+                cmd.Parameters.Add(usn);
 
-                SqlParameter lid = new SqlParameter();
-                lid.ParameterName = "@Password";
-                lid.SqlDbType = SqlDbType.VarChar;
-                lid.Value = b.Password;
-                cmd.Parameters.Add(lid);
+                SqlParameter psw = new SqlParameter();
+                psw.ParameterName = "@Password";
+                psw.SqlDbType = SqlDbType.VarChar;
+                psw.Value = b.Password;
+                cmd.Parameters.Add(psw);
               
 
-                SqlParameter Gid = new SqlParameter();
-                Gid.ParameterName = "@EmailAddress";
-                Gid.SqlDbType = SqlDbType.VarChar;
-                Gid.Value = b.EmailAddress;
-                cmd.Parameters.Add(Gid);
+                SqlParameter Emadd = new SqlParameter();
+                Emadd.ParameterName = "@EmailAddress";
+                Emadd.SqlDbType = SqlDbType.VarChar;
+                Emadd.Value = b.EmailAddress;
+                cmd.Parameters.Add(Emadd);
 
                                              
 
-                SqlParameter aa1 = new SqlParameter();
-                aa1.ParameterName = "@Mobile";
-                aa1.SqlDbType = SqlDbType.VarChar;
-                aa1.Value = b.Mobile;
-                cmd.Parameters.Add(aa1);
+                SqlParameter Mob = new SqlParameter();
+                Mob.ParameterName = "@Mobile";
+                Mob.SqlDbType = SqlDbType.VarChar;
+                Mob.Value = b.Mobile;
+                cmd.Parameters.Add(Mob);
 
 
 
