@@ -352,3 +352,15 @@ namespace INTERBUSWebsite.Models
           
 
       }
+
+
+     public class ResetPassword
+     {
+         public string Username { set; get; }
+
+         public string OldPassword { set; get; }
+
+         public string NewPassword {set;get;}
+
+         public string ReEnterNewPassword {set;get;}
+     }

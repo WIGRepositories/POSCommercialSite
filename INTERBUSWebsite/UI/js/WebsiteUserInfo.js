@@ -65,6 +65,10 @@ var mycrtl1 = myapp1.controller('myCtrl', function ($scope, $http) {
 
 
         }
+        //if (data != null) {
+        //    alert('Saved successfully!!.');
+        //    return;
+        //}
         $http(req).then(function (response) {
             $scope.showDialog("Saved successfully!!");
 
