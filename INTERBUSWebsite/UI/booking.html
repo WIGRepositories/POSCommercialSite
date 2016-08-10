@@ -252,13 +252,17 @@
 
     <div class="row" style="margin-top:60px">
 
-        <div>
+        <div ng-repeat="b in services">
             <div class="col-lg-12">
-                <div class="col-lg-6" style="background-color: #8d9db6; border-right: 1px solid white; padding: 10px"><div style="float:right; color:white; font-size:16px"><strong>Stage1 -> Stage4</strong><div style="text-align:center">< 17-6-2016 ></div></div></div>
-                <div class="col-lg-6" style="background-color: #8d9db6; padding: 10px"><div style="float: left; color: #618685; font-size: 16px; ">Stage4 -> Stage1<br /><div style="text-align:center">< 20-6-2016 ></div></div></div>
+                <div class="col-lg-6" style="background-color: #8d9db6; border-right: 1px solid white; padding: 10px"><div style="float:right; color:white; font-size:16px"><strong>{{b.srcName}}</strong>-<strong>{{b.destName}}</strong><div style="text-align:center">< 17-6-2016 ></div></div></div>
+                <!--<div class="col-lg-6" style="background-color: #8d9db6; padding: 10px"><div style="float: left; color: #618685; font-size: 16px; ">{{b.destName}}<br /><div style="text-align:center">< 20-6-2016 ></div></div></div>-->
             </div>
-        </div>
 
+        </div>
+        <!--<div class="col-lg-12" checked ng-init="result=2">
+            <div class="col-lg-6" style="background-color: #8d9db6; border-right: 1px solid white; padding: 10px"><div style="float:right; color:white; font-size:16px"><strong>{{src.name}}</strong><div style="text-align:center">< 17-6-2016 ></div></div></div>
+            <div class="col-lg-6" style="background-color: #8d9db6; padding: 10px"><div style="float: left; color: #618685; font-size: 16px;">{{src.name}}<br /><div style="text-align:center">< 20-6-2016 ></div></div></div>
+        </div>-->
         <div class="col-lg-12" ng-model="Booking.first" ng-value="fst" id="one">
 
 

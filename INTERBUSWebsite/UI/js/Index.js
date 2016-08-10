@@ -30,6 +30,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
         $localStorage.src = $scope.S;
         $localStorage.dest = $scope.D;
+
         //$rootscope.src = $scope.RS;
         //$rootscope.dest = $scope.RD;
         $scope.way1 = $scope.result ;
