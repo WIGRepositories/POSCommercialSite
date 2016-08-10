@@ -34,7 +34,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         //$rootscope.dest = $scope.RD;
         $scope.way1 = $scope.result ;
         $localStorage.waytype = $scope.way1;
-        window.location.href = "booking.html";
+        window.location.href = "UI/booking.html";
     }
     $scope.Signin = function () {
 

@@ -10,11 +10,6 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
     $scope.selectedSeats.pssngr = new Array();
     $scope.selectedSeats.returnpssngr = new Array();
 
-    $scope.GetAvailableServices = function () {
-        $scope.srcId = $localStorage.srcId;
-        $scope.destId = $localStorage.destId;
-        $scope.way = $localStorage.waytype;
-   
     $scope.test = function (b) {
         var currstyle = document.getElementById('imgTd').style.display;
         if(currstyle == "none")
@@ -22,46 +17,56 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
         $scope.basePrice = b.amount;
     }
-    $scope.totalseats = 0;
-    $scope.count = 0;
-    var selectList = [];
-    $scope.AddSeats = function (x) {
-        document.getElementById('1').src = "http://localhost:52800/UI/images/busimages/acbus.jpg";
+   
+    //$scope.GetAvailableServices = function () {
+    //    $scope.srcId = $localStorage.srcId;
+    //    $scope.destId = $localStorage.destId;
+    //    $scope.way = $localStorage.waytype;
+   
+   
+    //$scope.totalseats = 0;
+    //$scope.count = 0;
+    //var selectList = [];
+    
 
-        document.getElementById('1').style.borderColor = "green";
-        document.getElementById('1').style.backgroundImage = "http://localhost:52800/UI/images/busimages/acbus.jpg";
-
-        if (selectList.indexOf(x) != -1)
-            return;
-        selectList.push(x);
-        var item = {
-            "SeatId": x
-           , "SeatNo": ""
-         , "NoOfSeats": $scope.count
-           , "Fname": ""
-           , "Lname": ""
-           , "Age": ""
-           , "Sex": ""
-           , "Identityproof": ""
-
-        }
-            $scope.selectedSeats.pssngr.push(item);
-
-            $scope.count = $scope.selectedSeats.pssngr.length;
-            $scope.totalseats = $scope.count;
-            $scope.count = 0;
-          //  $scope.subtotal = $scope.count * $scope.Booking.Cost;
-        }
-
-            $scope.returncount = $scope.selectedSeats.returnpssngr.length;
-        }
-            $scope.selectedSeats.returnpssngr.push(returndata);
+    //        $scope.returncount = $scope.selectedSeats.returnpssngr.length;
+    //    }
+    //        $scope.selectedSeats.returnpssngr.push(returndata);
        
-            $scope.count = $scope.selectedSeats.returnpssngr.length;
-    }
-        // $scope.seats = $scope.count;
+    //        $scope.count = $scope.selectedSeats.returnpssngr.length;
+    //}
+    //    // $scope.seats = $scope.count;
+
+    //}
+
+$scope.AddSeats = function (x) {
+    document.getElementById('1').src = "http://localhost:52800/UI/images/busimages/acbus.jpg";
+
+    document.getElementById('1').style.borderColor = "green";
+    document.getElementById('1').style.backgroundImage = "http://localhost:52800/UI/images/busimages/acbus.jpg";
+
+    if (selectList.indexOf(x) != -1)
+        return;
+    selectList.push(x);
+    var item = {
+        "SeatId": x
+       , "SeatNo": ""
+     , "NoOfSeats": $scope.count
+       , "Fname": ""
+       , "Lname": ""
+       , "Age": ""
+       , "Sex": ""
+       , "Identityproof": ""
 
     }
+    $scope.selectedSeats.pssngr.push(item);
+
+    $scope.count = $scope.selectedSeats.pssngr.length;
+    $scope.totalseats = $scope.count;
+    $scope.count = 0;
+    //  $scope.subtotal = $scope.count * $scope.Booking.Cost;
+}
+
 
     $scope.GetAvailableServices = function ()
     {

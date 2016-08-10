@@ -252,10 +252,10 @@
 
     <div class="row" style="margin-top:60px">
 
-        <div>
+        <div ng-repeat="b in services">
             <div class="col-lg-12">
-                <div class="col-lg-6" style="background-color: #8d9db6; border-right: 1px solid white; padding: 10px"><div style="float:right; color:white; font-size:16px"><strong>Stage1 -> Stage4</strong><div style="text-align:center">< 17-6-2016 ></div></div></div>
-                <div class="col-lg-6" style="background-color: #8d9db6; padding: 10px"><div style="float: left; color: #618685; font-size: 16px; ">Stage4 -> Stage1<br /><div style="text-align:center">< 20-6-2016 ></div></div></div>
+                <div class="col-lg-6" style="background-color: #8d9db6; border-right: 1px solid white; padding: 10px"><div style="float:right; color:white; font-size:16px"><strong>{{b.srcName}}</strong><div style="text-align:center">< 17-6-2016 ></div></div></div>
+                <div class="col-lg-6" style="background-color: #8d9db6; padding: 10px"><div style="float: left; color: #618685; font-size: 16px; ">{{b.destName}}<br /><div style="text-align:center">< 20-6-2016 ></div></div></div>
             </div>
         </div>
 
@@ -348,16 +348,16 @@
                 <tr>
                     <td width="15%"><img src="Images/busimages/nonac.jpg"></img></td>
                     <td width="25%">
-                        <strong>  {{b.name}}</strong>
+                        <strong>  {{b.cmpName}}</strong>
                         <div class="message-inner">
 
                             <div class="qa-message-content">
-                                {{b.vehicletype}}
+                                {{b.Name}}
                             </div>
                         </div>
                     </td>
                     <td width="15%">
-                        <img src="Images/busimages/time.jpg" /><strong> {{b.From_Time}} -  {{b.To_Time}}</strong>
+                        <img src="Images/busimages/time.jpg" /><strong> {{b.ArrivalTime}} -  {{b.DepartureTime}}</strong>
 
 
                         <div class="message-inner">
@@ -404,7 +404,7 @@
                                         <!--<area shape="rect" style="background-color:red" coords="212,34,192,52" alt="Sun" href="#" ng-click="AddSeats('1');">
                                         <area shape="rect" style="background-color:red" coords="234,34,217,52" alt="Sun" href="#" ng-click="AddSeats('2');">
                                         <area shape="rect" style="background-color:red" coords="258,34,242,52" alt="Sun" href="#" ng-click="AddSeats('3');">
-                                                    <area shape="rect" style="background-color:red" coords="283,34,266,52" alt="Sun" href="#" ng-click="AddSeats('4');">-->
+                                        <area shape="rect" style="background-color:red" coords="283,34,266,52" alt="Sun" href="#" ng-click="AddSeats('4');">-->
                                         <area id="1" shape="rect" style="background-color:red" coords="352,34,372,52" alt="Sun" href="#" ng-click="AddSeats('A5');">
                                         <area shape="rect" style="background-color:red" coords="378,34,395,52" alt="Sun" href="#" ng-click="AddSeats('A6');">
                                         <area shape="rect" style="background-color:red" coords="400,34,420,52" alt="Sun" href="#" ng-click="AddSeats('A7');">
@@ -417,7 +417,7 @@
                                         <area shape="rect" style="background-color:red" coords="283,59,266,71" alt="Sun" href="#" onclick="alert('B4 Selected');">
                                         <area shape="rect" style="background-color:red" coords="307,59,290,71" alt="Sun" href="#" onclick="alert('B5 Selected');">
                                         <area shape="rect" style="background-color:red" coords="331,59,314,71" alt="Sun" href="#" onclick="alert('B6 Selected');">
-                                                    <area shape="rect" style="background-color:red" coords="354,59,338,71" alt="Sun" href="#" onclick="alert('B7 Selected');">-->
+                                        <area shape="rect" style="background-color:red" coords="354,59,338,71" alt="Sun" href="#" onclick="alert('B7 Selected');">-->
                                         <area shape="rect" style="background-color:red" coords="352,56,372,72" alt="Sun" href="#" ng-click="AddSeats('B8 Selected');">
                                         <area shape="rect" style="background-color:red" coords="378,56,395,72" alt="Sun" href="#" ng-click="AddSeats('B9 Selected');">
                                         <area shape="rect" style="background-color:red" coords="402,56,420,72" alt="Sun" href="#" ng-click="AddSeats('B10 Selected');">
