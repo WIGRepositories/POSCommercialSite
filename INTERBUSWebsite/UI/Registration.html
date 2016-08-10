@@ -6,7 +6,7 @@
 <!--[if IE 9]>         <html lang="en" class="no-js lt-ie10"> <![endif]-->
 <!--[if gt IE 9]><!-->
 
-<html lang="en" class="no-js no-touch" ng-app="myApp" ng-controller="Mycntrlr">
+<html lang="en" class="no-js no-touch" ng-app="myApp" ng-controller="myCtrl">
 
 <!--<![endif]-->
 <head>
@@ -156,9 +156,6 @@
 
 
 
-
-
-
 </head>
 
 <body style="background-image:url(images/one1.jpg)">
@@ -241,34 +238,44 @@
                 <form id="signup-form" class="form">
                     <div class="header-content"><h1>Register</h1></div>
                     <div class="body-content" ng-model="register">
+
+                        <div style="margin-bottom: 15px" class="row">
+                            <table>
+                                <tr>
+                                    <td><div class="col-lg-4"><label><input type="text" placeholder="First Name" name="firstname" ng-model="register.FirstName" class="form-control"></label></div></td>
+                                    <td>
+                                        <div class="col-lg-4">
+                                            <label><input type="text" placeholder="Lastname" name="lastname" ng-model="register.LastName" class="form-control"></label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                        </div>
                         <div class="form-group">
-                            <div class="input-icon right"><i class="fa fa-user"></i><input type="text" placeholder="Username" name="username" class="form-control" ng-model="register.username"></div>
+                            <div class="input-icon right"><i class="fa fa-user"></i><input type="text" placeholder="Username" name="username" ng-model="register.UserName" class="form-control"></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-icon right"><i class="fa fa-key"></i><input id="password" type="password" placeholder="Password" name="password" ng-model="register.Password" class="form-control"></div>
+                        </div>
+                        <!--<div class="form-group">
+                            <div class="input-icon right"><i class="fa fa-key"></i><input type="password" placeholder="ConfirmPassword" name="ConfirmPassword" ng-model="register.ConfirmPassword" class="form-control"></div>
+                        </div>-->
+                        <hr>
+                        <div class="form-group">
+
+                            <div class="input-icon right"><i class="fa fa-envelope"></i><input type="email" placeholder="Emailaddress" name="email" ng-model="register.EmailAddress" class="form-control"></div>
                         </div>
                         <div class="form-group">
 
-                            <div class="input-icon right"><i class="fa fa-envelope"></i><input type="email" placeholder="Emailaddress" name="email" class="form-control" ng-model="register.Emailaddress"></div>
+                            <div class="input-icon right"><i class="fa fa-envelope"></i><input type="text" placeholder="Mobile" name="Mobile" ng-model="register.Mobile" class="form-control" maxlength="10"></div>
                         </div>
-                        <div class="form-group">
-                            <div class="input-icon right"><i class="fa fa-key"></i><input id="password" type="password" placeholder="Password" name="password" class="form-control" ng-model="register.Password"></div>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-icon right"><i class="fa fa-key"></i><input type="password" placeholder="ConfirmPassword" name="passwordConfirm" class="form-control" ng-model="register.ConfirmPassword"></div>
-                        </div>
+
+
                         <hr>
-                        <div style="margin-bottom: 15px" class="row">
-                            <div class="col-lg-6"><label><input type="text" placeholder="First Name" name="firstname" class="form-control" ng-model="register.firstname"></label></div>
-                            <div class="col-lg-6"><label><input type="text" placeholder="Last Name" name="lastname" class="form-control" ng-model="register.lastname"></label></div>
-                        </div>
-                        <div class="form-group">
-                            <label style="display: block" class="select">
-                                <select name="gender" class="form-control" ng-model="register.gender">
-                                    <option value="0" selected disabled>Gender</option>
-                                    <option value="1">Male</option>
-                                    <option value="2">Female</option>
-                                    <option value="3">Other</option>
-                                </select>
-                            </label>
-                        </div>
+
+
                         <!--<div class="form-group">
                         <div class="checkbox-list">
                             <label>
@@ -285,7 +292,7 @@
                                     </label>
                             </div>
                         </div>-->
-                        <hr>
+
                         <div class="form-group mbn">
                             <a href="extra-signin.html" class="btn btn-warning">
                                 <i class="fa fa-chevron-circle-left"></i>&nbsp;
@@ -392,7 +399,7 @@
     <script src="js/main.js"></script>
     <script src="js/angular.js"></script>
     <script src="js/UserInfo.js"></script>
-
+    <script src="js/WebsiteUserInfo.js"></script>
 
 
 </body>

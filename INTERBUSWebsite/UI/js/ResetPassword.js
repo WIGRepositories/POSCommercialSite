@@ -1,15 +1,22 @@
-﻿var myapp1 = angular.module('myApp', [])
-var mycrtl1 = myapp1.controller('Mycntrl', function ($scope, $http) {
+﻿var myApp = angular.module('myApp', [])
+var Mycntrl = myapp1.controller('Mycntrl', function ($scope, $http) {
+    $scope.getdata = function () {
+        $http.get('http://localhost:52800/api/resetpassword/GetResetPassword').then(function (res, data) {
+            $scope.type = res.data;
+
+            //alerts("hi");
+        });
+    }
 
 
     $scope.save = function (type) {
 
         var type = {
 
-            UserName: type.UserName,
-            oldPassword: type.oldPassword,
-            newPassword: type.newPassword,
-            reenternewPassword: type.reenternewPassword,
+            Username: type.Username,
+            OldPassword: type.OldPassword,
+            NewPassword: type.NewPassword,
+            ReEnterNewPassword: type.ReEnterNewPassword,
 
         };
 
