@@ -8,7 +8,7 @@ var Mycntrl = myapp1.controller('Mycntrl', function ($scope, $http) {
         });
     }
 
-
+    
     $scope.save = function (type) {
 
         var type = {
