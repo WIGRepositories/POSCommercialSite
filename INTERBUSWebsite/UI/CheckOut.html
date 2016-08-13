@@ -212,7 +212,7 @@
     <!--End Header-->
 
     <div class="row" style="margin-top: 80px; margin-bottom: 20px">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-8 col-md-offset-2">
             <h2 style="margin-left:30px">Checkout Form</h2>
             <div class="col-md-7" style="border-radius: 5px; background-color: #F5F5F5">
                 <!--#F5F5F5-->
@@ -224,9 +224,10 @@
 
                             <div class="row">
                                 <div class="col-md-6">
+                                   
                                     <div class="form-group">
                                         <div class="input-icon">
-                                            <i class="fa fa-user"></i><input id="inputFirstName" type="text" value={{c.FirstName}} class="form-control" disabled />
+                                           <i class="fa fa-user"></i><input id="inputFirstName" type="text" value={{c.FirstName}} class="form-control" disabled />
                                         </div>
                                     </div>
                                 </div>
@@ -349,47 +350,55 @@
 
             <div class="col-md-4" style="margin-left:20px" ng-model="ld">
                 <div class="row">
-                    <div class="col-md-12" style="padding-top:15px">
-                        <h3 style="text-align:center">Order Summary</h3>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <th colspan="2"><h4>PRODUCT</h4></th>
-                                </tr>
-                                <tr>
-                                    <td><label class="form-group">{{ld.LicenseType}}  <span> x1</span></label></td>
-                                    <td> <label class="form-group">&#x20B9 {{ld.amt}}</label>  </td>
-                                </tr>
+                    <div class="col-xs-12">
+                        <div class="panel panel-blue">
+                            <div class="panel-heading"><h3 class="panel-title text-center">Order Summary</h3></div>
+                            <div class="panel-body pan">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <th colspan="2" style="text-align:center"><h4>PRODUCT</h4></th>
+                                        </tr>
+                                        <tr>
+                                            <td><label class="form-group">{{ld.LicenseType}}  <span> x1</span></label></td>
+                                            <td> <label class="form-group">&#x20B9 {{ld.amt}}</label>  </td>
+                                        </tr>
 
 
-                                <tr>
-                                    <td><label class="form-group">Shipping </label></td>
-                                    <td><label class="form-group">Free Shipping </label></td>
-                                </tr>
-                                <tr>
-                                    <td><label class="form-group">Tax </label></td>
-                                    <td><label class="form-group">&#x20B9 0</label></td>
-                                </tr>
-                                <tr>
-                                    <td><label class="form-group">Discount</label></td>
-                                    <td><label class="form-group">0 %</label></td>
-                                </tr>
-                                <tr>
-                                    <td><label class="form-group">Order Total </label></td>
-                                    <td><label class="form-group">&#x20B9 {{ld.amt}}</label></td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <div class="form-actions text-center pal">
-                            <button type="submit" class="btn btn-primary" ng-click="processPymt();">Pay now</button>
+                                        <tr>
+                                            <td><label class="form-group">Shipping </label></td>
+                                            <td><label class="form-group">Free Shipping </label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label class="form-group">Tax </label></td>
+                                            <td><label class="form-group">&#x20B9 0</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label class="form-group">Discount</label></td>
+                                            <td><label class="form-group">0 %</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label class="form-group">Order Total </label></td>
+                                            <td><label class="form-group">&#x20B9 {{ld.amt}}</label></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <br />
+                            <ul class="pricing-list text-center">
+                                <button type="submit" class="btn btn-primary" ng-click="processPymt();">Pay now</button>
+                                <!--<li class="text-center"><button id="Renew" ng-click="GoToConfirmation1(txt, License, Lt.Id);" class="btn btn-primary">Buy</button></li>-->
+                            </ul>
                         </div>
                     </div>
+
+                    
 
                 </div>
 
             </div>
 
+           
 
         </div>
     </div>

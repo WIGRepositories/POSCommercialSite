@@ -112,11 +112,15 @@ var ctrl = app.controller('myCtrl', function ($scope, $http) {
             data: FleetOwnerRequest1
         })   
             .success(function (data, status, headers, config) {
-                alert('saved successfully');              
+                //if (data[0]['status'] == "0") {
+                //    alert(data[0]['details']);
+                //    return;
+                //}
+                alert('saved successfully. The fleet owner code is '+data[0]+'. please use the code to buy license');              
                 
            // window.location.href = "http://localhost:52800/UI/LicenseConfirmation.html";
         }).error(function (ata, status, headers, config) {
-            alert(ata);
+            alert(ata.ExceptionMessage);
         });
 
         $scope.clearFleetOwnerRequest1 = function () {

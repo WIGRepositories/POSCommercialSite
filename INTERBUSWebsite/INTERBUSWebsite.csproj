@@ -93,9 +93,7 @@
     <Content Include="DBScript\dbo.HiringType.sql" />
     <Content Include="DBScript\dbo.table2.sql" />
     <Content Include="Global.asax" />
-    <Content Include="UI\InterBusLogin.html" />
     <Content Include="UI\js\WebsiteUserInfo.js" />
-    <Content Include="UI\vendors\ModifiedLogin.html" />
     <Content Include="obj\Debug\INTERBUSWebsite.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\INTERBUSWebsite.dll" />
     <Content Include="obj\Debug\INTERBUSWebsite.pdb" />

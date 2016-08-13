@@ -38,8 +38,8 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
             $localStorage.UselicensePymtTranRecord = UserLicensePymtTransactions;
                                  
                                 $http({
-                                    // url: 'http://localhost:52800/api/Payments/MakePayment',
-                                    url: 'http://localhost:52800/api/Payments/325435',
+                                     url: 'http://localhost:52800/api/Payments/MakePayment',
+                                   // url: 'http://localhost:52800/api/Payments/325435',
                                     method: 'GET'
                                 }).success(function (data, status, headers, config) {
                                     alert('Saved successfully');
@@ -194,7 +194,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
         
         $scope.c = $localStorage.focheckoutDetails[0];
         $scope.ld = $localStorage.selLicense;
-        $scope.ld.amt = $localStorage.UselicensePymtRecord.Amount;
+        $scope.ld.amt = $localStorage.UselicensePymtRecord[0].Amount;
 
         //$http.get('http://localhost:52800/api/Checkout/getcheckdetails').then(function (response, req) {
         //    $scope.check = response.data;

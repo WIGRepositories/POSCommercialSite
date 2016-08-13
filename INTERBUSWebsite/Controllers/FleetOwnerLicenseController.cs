@@ -276,8 +276,11 @@ namespace INTERBUSWebsite.Controllers
                 SqlParameter insupdflag = new SqlParameter("@insupdflag", SqlDbType.VarChar, 10);
                 insupdflag.Value = FR.insupdflag;
                 cmd.Parameters.Add(insupdflag);
-
-                cmd.ExecuteScalar();
+                
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(Tbl);
+               
+                // cmd.ExecuteScalar();
                // conn.Close();
 
 
@@ -320,8 +323,19 @@ namespace INTERBUSWebsite.Controllers
             catch (Exception ex)
             {
                
-                string str = ex.Message;
-                conn.Close();
+                if (conn != null && conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+                throw (ex);
+                //string str = ex.Message;
+                //Tbl.Columns.Add("status");
+                //Tbl.Columns.Add("details");
+                //Tbl.Rows.Add(new string[]{"0",ex.Message});
+
+                //string str = ex.Message;
+                //return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex);
+
             }
             // int found = 0;
             return Tbl;

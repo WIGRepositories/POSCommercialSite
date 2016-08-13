@@ -1,6 +1,6 @@
 ﻿// JavaScript source code
-var app = angular.module('myApp', ['ngStorage'])
-var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
+var app = angular.module('myApp', ['ngStorage', 'ui.bootstrap'])
+var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uibModal) {
 
     $scope.licenseCatId = $localStorage.licenseId;
     $scope.FleetOwnerCode = $localStorage.code;
@@ -37,10 +37,15 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
     $scope.showBuyBtn = 0;
     $scope.showRenewBtn = 0;
 
-    $scope.ValidateFOCode = function (code) {
+    $scope.ValidateLicenseCode = function (lcode) {
+
+    }
+
+    $scope.ValidateFOCode = function (code, License, Lid) {
 
         if (code == null) {
-            alert('please enter valid fleet owner code or contact administrator.');
+           
+            $scope.showVDialog('please enter valid fleet owner code or contact administrator.');
             return false;
         }
         else {            
@@ -52,8 +57,9 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
                 }
                 else {
                     $localStorage.foLicenseDetails = $scope.foLicenseDetails;
-                    $scope.showBuyBtn = ($scope.foLicenseDetails.Table == null) ? 1 : 0;
-                    $scope.showRenewBtn = ($scope.foLicenseDetails.Table == null) ? 0 : 1;
+                    $scope.saveUserLicense(License, Lid);
+                    //$scope.showBuyBtn = ($scope.foLicenseDetails.Table == null) ? 1 : 0;
+                    //$scope.showRenewBtn = ($scope.foLicenseDetails.Table == null) ? 0 : 1;
                 }
             });
         }
@@ -69,59 +75,22 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
     $scope.buy = true;
     $scope.Renew = true;
-    //$scope.ShowHide = function () {
-    //    //If DIV is hidden it will be visible and vice versa.
-    //    $scope.buy = $scope.buy ? false : true;
-    //    $scope.Renew = $scope.Renew ? false : true;
-    //}
+    $scope.ShowHide = function () {
+        //If DIV is hidden it will be visible and vice versa.
+        $scope.buy = $scope.buy ? false : true;
+        $scope.Renew = $scope.Renew ? false : true;
+    }
 
      
-   // $scope.licenseId = '';
-    //$scope.ShowHide = function () {
-    //    //If DIV is hidden it will be visible and vice versa.
-    //    $scope.licenseId = $scope.licenseId ? true : false;
+    $scope.licenseId = '';
+    $scope.ShowHide = function () {
+        //If DIV is hidden it will be visible and vice versa.
+        $scope.licenseId = $scope.licenseId ? true : false;
         
         
-    //}
-        
-    $scope.saveUserLicense = function () {
-
-        var userlicense = {
-      
-            UserId: $localStorage.foLicenseDetails.Table[0].userid,
-            FOId: $localStorage.foLicenseDetails.Table[0].foid,
-            FOCode: $localStorage.foLicenseDetails.Table[0].FleetOwnerCode,
-            LicenseTypeId: $localStorage.LicenseTypeId,
-            StartDate: $localStorage.StartDate,
-            ExpiryOn: $localStorage.ExpiryOn,
-            GracePeriod: 7,//$localStorage.GracePeriod,
-            ActualExpiry: $localStorage.ActualExpiry,
-            LastUpdatedOn: $localStorage.LastUpdatedOn,
-            StatusId: 1,//$localStorage.StatusId,
-            RenewFreqTypeId: 1,//$localStorage.foLicenseDetails.Table[1].RenewFreqTypeId,
-           // ULId:$localStorage.ULId,
-          //  CreatedOn:$localStorage.CreatedOn,
-          //  Amount: $localStorage.Amount,
-          //  UnitPrice: $localStorage.UnitPrice,
-           // Units: $localStorage.Units,
-           // LicensePymtTransId: $localStorage.LicensePymtTransId,
-          //  IsRenewal: $localStorage.IsRenewal,
-            insupddelflag: 'I' 
-
-        }
-       var req = {
-           method: 'POST',
-           url: 'http://localhost:52800/api/UserLicenses/SaveUserLicenseDetails',
-           data: userlicense
-       }
-       $http(req).then(function (response) {
-           $localStorage.UselicenseRecord = response.data;
-           window.location.href = "Cartdetails.html";
-       });
-
-       //
-   };
-    $scope.GoTobuy = function (code, License, Lid) {
+    }
+   
+    $scope.SetLicensedetails = function (License, Lid) {
 
 
         $localStorage.License = License;
@@ -134,8 +103,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         //store the id in localstorage
         $localStorage.Isrenewal = 0;
 
-       // $scope.UselicenseRecord = <output>
-        window.location.href = "http://localhost:52800/UI/Cartdetails.html";
+      
         
     };
 
@@ -166,31 +134,69 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
        //
    };
 
+   $scope.saveUserLicense = function (License, Lid) {
 
+       var userlicense = {
 
-    //$scope.GoTobuy = function (code, units) {
+           UserId: $localStorage.foLicenseDetails.Table[0].userid,
+           FOId: $localStorage.foLicenseDetails.Table[0].foid,
+           FOCode: $localStorage.foLicenseDetails.Table[0].FleetOwnerCode,
+           LicenseTypeId: $localStorage.LicenseTypeId,
+           StartDate: $localStorage.StartDate,
+           ExpiryOn: $localStorage.ExpiryOn,
+           GracePeriod: 7,//$localStorage.GracePeriod,
+           ActualExpiry: $localStorage.ActualExpiry,
+           LastUpdatedOn: $localStorage.LastUpdatedOn,
+           StatusId: 1,//$localStorage.StatusId,
+           RenewFreqTypeId: 1,//$localStorage.foLicenseDetails.Table[1].RenewFreqTypeId,
+           // ULId:$localStorage.ULId,
+           //  CreatedOn:$localStorage.CreatedOn,
+           //  Amount: $localStorage.Amount,
+           //  UnitPrice: $localStorage.UnitPrice,
+           // Units: $localStorage.Units,
+           // LicensePymtTransId: $localStorage.LicensePymtTransId,
+           //  IsRenewal: $localStorage.IsRenewal,
+           insupddelflag: 'I'
 
-    //    if (code == null) {
-    //        alert('please enter valid fleet owner code or contact INTERBUS administrator.');
-    //        return false;
-    //    } else {
-    //        if (units == null) {
-    //            alert('please enter valid no. of units.');
-    //            return false;
-    //        }
-    //        else {
-    //            $http.get('http://localhost:52800/api/fleetownerlicense/updatebtpos?fleetownercode=' + code+ '&units='+units).then(function (response, req) {
-    //                $scope.result = response.data;
+       }
+       var req = {
+           method: 'POST',
+           url: 'http://localhost:52800/api/UserLicenses/SaveUserLicenseDetails',
+           data: userlicense
+       }
+       $http(req).then(function (response) {          
+           $localStorage.UselicenseRecord = response.data;
+           window.location.href = "Cartdetails.html";
+       });
 
-    //                if ($scope.result == 0)
-    //                    alert('invalid fleet owner code or BT POS units not available. Please contact INTERBUS admin');
-    //                else
-    //                    alert('Please login into BT POS dashboard and activate the BT POS ' + units + ' unit(s)');
-                    
-    //            });
-    //        }
-    //    }
-    //};
+       //
+   };
+      
 
+   $scope.showVDialog = function (message) {
+
+       var modalInstance = $uibModal.open({
+           animation: $scope.animationsEnabled,
+           templateUrl: 'statusPopup.html',
+           controller: 'ModalInstanceCtrl',
+           resolve: {
+               mssg: function () {
+                   return message;
+               }
+           }
+       });
+   }
    
+});
+
+app.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, mssg) {
+
+    $scope.mssg = mssg;
+    $scope.ok = function () {
+        $uibModalInstance.close('test');
+    };
+
+    $scope.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+    };
 });
