@@ -30,7 +30,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
                     lfeatures.push(ldetails.Table1[ltCnt]);
                     if(ldetails.Table1[ltCnt].FeatureTypeId == 22)
                     {
-                        $localStorage.lfeatures.noOfBTPOSUnits = ldetails.Table1[ltCnt].FeatureValue;
+                        $localStorage.noOfBTPOSUnits = ldetails.Table1[ltCnt].FeatureValue;
                     }
                 }
             }
@@ -55,7 +55,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
         if ($scope.qty <= 0)
         {
-            alert("please select the month(s)");
+            alert("please select the Unit(s)");
             return;
         }       
 

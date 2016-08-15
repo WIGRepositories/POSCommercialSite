@@ -455,13 +455,15 @@
 
         <div class="modal-body">
             <div><h2> Your payment for license is successful and below are the details:</h2></div>
-            <div><h3>Transaction Id for reference: <b> {{confirm.transId}}</b></h3></div>
-            <div><h3> license code : {{confirm.licenseCode}}</h3></div>
-            <div><h3> Activated on: {{confirm.startdate}}</h3></div>
-            <div><h3> Expiry on: {{confirm.expiryon}}</h3></div>
+            <div><h3>Transaction Id : <b> {{confirm.transId}}</b></h3></div>
+            <div><h3> license code  : {{confirm.licenseCode}}</h3></div>
+            <div><h3> Activated on  : {{confirm.startdate}}</h3></div>
+            <div><h3> Expiry on     : {{confirm.expiryon}}</h3></div>
+            <br />
             <div><h3> Shipping order for BT POS units: {{confirm.shipOrder}}</h3></div>
             <div><h3> No.of BTPOS units to be shipped: {{confirm.noofunits}}</h3></div>
-            <div><h3> Your Smart Ticket dashboard login user name: {{confirm.username}}</h3></div>
+            <br />
+            <div><h3> Your Smart Ticket dashboard login user name            : {{confirm.username}}</h3></div>
             <div> <h3>Password will be sent to your registered e-mail address: {{confirm.emailid}}</h3></div>
             <br />
             <div><h3>Please contact interbus admin for any further information!</h3></div>
@@ -471,9 +473,53 @@
         <div class="modal-footer">
             <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
             <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+            <button class="btn btn-primary" type="button" ng-click="ok()">print</button>
+            <button class="btn btn-primary" type="button" ng-click="preview()">Email Preview(only for demo)</button>
         </div>
 
     </script>
+
+    <script type="text/ng-template" id="email.html" data-backdrop="static" class="col-md-12">
+
+        <div class="modal-header">
+            <center> <h2 class="modal-title">Sample email!</h2></center>
+        </div>
+
+        <div class="modal-body">
+            <div><h2> From: admin@interbus.com                          Date:00/00/2016</h2></div>
+            <div><h3> To: <b> a@b.c</b></h3></div>
+            <br />
+            <div><h3> Subject: License confirmation</h3></div>
+            <br />
+            <br />
+            <div><h2>Congratulations!</h2></div>
+            <br />
+                <div><h3>Your license payment is processed successfully!</h3></div>
+                    <br />
+                    <div>
+                        <h3> Your license code is: LC001.</h3><br />
+                        <h3> Please use this for all further correspondences</h3>
+                    </div>
+                    <br />
+                    <div><h3> License Activated on  : 1/1/2016</h3></div>
+                    <div><h3> License Expiry on     : 1/1/2017</h3></div>
+                    <br />
+                    <div><h3> Shipping order for BT POS units: SH001</h3></div>
+                    <div><h3> No.of BTPOS units to be shipped: 10</h3></div>
+                    <br />
+                    <div><h3> Your Smart Ticket dashboard login user name            : FL0044</h3></div>
+                    <div><h3> Your Smart Ticket dashboard login 1 time password is   : FL0044</h3></div>
+                    <br />
+                    <div><h3>Please contact interbus admin for any further information!</h3></div>
+                    <center><div><h3> Happy ticketing!</h3></div></center>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+                <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+            </div>
+
+</script>
 
     <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/jquery-migrate-1.2.1.min.js"></script>

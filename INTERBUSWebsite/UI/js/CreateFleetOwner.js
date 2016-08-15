@@ -1,7 +1,7 @@
 // JavaScript source code
 // JavaScript source code
-var app = angular.module('myApp', [])
-var ctrl = app.controller('myCtrl', function ($scope, $http) {
+var app = angular.module('myApp', ['ngStorage', 'ui.bootstrap'])
+var ctrl = app.controller('myCtrl', function ($scope, $http, $uibModal, $localStorage) {
 
     //app.controller('showHide', function ($scope) {
     //  $scope.toggle = function () {
@@ -116,11 +116,14 @@ var ctrl = app.controller('myCtrl', function ($scope, $http) {
                 //    alert(data[0]['details']);
                 //    return;
                 //}
-                alert('saved successfully. The fleet owner code is '+data[0]+'. please use the code to buy license');              
+
+             //   $localStorage.code = data[0].FleetOwnerCode;
+                $scope.showDialog('saved successfully. The fleet owner code is ' + data[0].FleetOwnerCode + '.\n please use the code to buy license.\n The same has been sent to the given e-mailid:' + FleetOwnerRequest1.EmailAddress+'.',0);
+
                 
            // window.location.href = "http://localhost:52800/UI/LicenseConfirmation.html";
         }).error(function (ata, status, headers, config) {
-            alert(ata.ExceptionMessage);
+            $scope.showDialog(ata.ExceptionMessage,1);
         });
 
         $scope.clearFleetOwnerRequest1 = function () {
@@ -128,19 +131,37 @@ var ctrl = app.controller('myCtrl', function ($scope, $http) {
         };
     }
 
+    $scope.showDialog = function (message,status) {
+
+        var modalInstance = $uibModal.open({
+            animation: $scope.animationsEnabled,
+            templateUrl: 'statusPopup.html',
+            controller: 'ModalInstanceCtrl',
+            resolve: {
+                mssg: function () {
+                    return message;
+                },
+                status: function () {
+                    return status;
+                }
+            }
+        });
+    }
+
 
 });
-//app.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, mssg) {
+app.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, mssg,status) {
 
-//    $scope.mssg = mssg;
-//    $scope.ok = function () {
-//        $uibModalInstance.close('test');
-//    };
+    $scope.mssg = mssg;
+    $scope.status = status;
+    $scope.ok = function () {
+        $uibModalInstance.close('test');
+    };
 
-//    $scope.cancel = function () {
-//        $uibModalInstance.dismiss('cancel');
-//    };
-//});
+    $scope.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+    };
+});
 
       
 

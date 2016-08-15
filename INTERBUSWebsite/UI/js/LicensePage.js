@@ -4,7 +4,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
 
     $scope.licenseCatId = $localStorage.licenseId;
     $scope.FleetOwnerCode = $localStorage.code;
-
+   
     /*the below function gets all the configured licenses for the given category*/
     $scope.GetLicense = function () {
 
