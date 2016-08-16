@@ -12,10 +12,10 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
     $scope.test = function (b) {
         var currstyle = document.getElementById('imgTd').style.display;
-        if(currstyle == "none")
+       // if(currstyle == "none")
             document.getElementById('imgTd').style.display = "table-cell";
 
-        $scope.basePrice = b.amount;
+     //   $scope.basePrice = b.amount;
     }
    
     //$scope.GetAvailableServices = function () {
