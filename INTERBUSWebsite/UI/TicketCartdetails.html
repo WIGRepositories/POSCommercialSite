@@ -272,47 +272,47 @@
                                 <th>Subtotal</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody ng-repeat="b in book1">
                             <tr>
-                                <td>1</td>
-                                <td>Stage1 - Stage4</td>
-                                <td>06-24-2016</td>
-                                <td>5</td>
-                                <td>$ 10</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>$ 50</td>
-                            </tr>
-
-                            <!--<tr>
-                                <td>1</td>
-                                <td>Basic Lisence</td>
-                                <td><input type="number" placeholder="0" style="width:20%" /></td>
-                                <td>$ 19</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>500</td>
+                                <td>{{b.S.No}}</td>
+                                <td>{{b.From-To}}</td>
+                                <td>{{b.JourneyDate}}</td>
+                                <td>{{b.No.ofseats}}</td>
+                                <td>{{b.UnitPrice}}</td>
+                                <td>{{b.Tax}}</td>
+                                <td>{{b.Discout}}</td>
+                                <td>{{b.Subtotal}}</td>
                             </tr>
 
                             <tr>
-                                <td>1</td>
-                                <td>Basic Lisence</td>
-                                <td><input type="number" placeholder="0" style="width:20%" /></td>
-                                <td>$ 19</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>500</td>
-                            </tr>
+            <!--<td>1</td>
+            <td>BasicLisence</td>
+            <td><input type="number" placeholder="0" style="width:20%" /></td>
+            <td>$19</td>
+            <td>0</td>
+            <td>0</td>
+            <td>500</td>
+        </tr>-->
 
-                            <tr>
-                                <td>1</td>
-                                <td>Basic Lisence</td>
-                                <td><input type="number" placeholder="0" style="width:20%" /></td>
-                                <td>$ 19</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>500</td>
-                            </tr>-->
+         <!-- <tr>
+           <td>1</td>
+            <td>Basic Lisence</td>
+            <td><input type="number" placeholder="0" style="width:20%" /></td>
+            <td>$ 19</td>
+            <td>0</td>
+            <td>0</td>
+            <td>500</td>
+        </tr>
+
+        <tr>
+            <td>1</td>
+            <td>Basic Lisence</td>
+            <td><input type="number" placeholder="0" style="width:20%" /></td>
+            <td>$ 19</td>
+            <td>0</td>
+            <td>0</td>
+            <td>500</td>
+        </tr>-->
 
 
                         </tbody>
