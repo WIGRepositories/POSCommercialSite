@@ -23,6 +23,18 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
                     break;
                 }
             }
+            var lfeatures = [];
+        //identify the selected license and display the properties
+            for (ltCnt = 0; ltCnt < ldetails.Table1.length; ltCnt++) {
+                if (ldetails.Table1[ltCnt].LicenseTypeId == $scope.licenseCatId) {
+                    lfeatures.push(ldetails.Table1[ltCnt]);
+                    if(ldetails.Table1[ltCnt].FeatureTypeId == 22)
+                    {
+                        $localStorage.noOfBTPOSUnits = ldetails.Table1[ltCnt].FeatureValue;
+                    }
+                }
+            }
+            $localStorage.lfeatures = lfeatures;
 
             for (ltCnt = 0 ; ltCnt < ldetails.Table2.length; ltCnt++) {
                 if (ldetails.Table2[ltCnt].LicenseId == $scope.selLicense.Id) {
@@ -43,7 +55,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
         if ($scope.qty <= 0)
         {
-            alert("please select the month(s)");
+            alert("please select the Unit(s)");
             return;
         }       
 

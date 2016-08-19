@@ -381,7 +381,7 @@
 
                                 <td width="10%">
                                     <div class="col-md-3 col-sm-4"><div class="col-md-3 col-sm-4"></div></div>
-                                    <div class="col-md-3 col-sm-4">
+                                    <div class="col-md-3 col-sm-4" >
                                         <strong>Rs.{{b.Amount}}</strong>
                                     </div>
 
@@ -455,7 +455,7 @@
                                                                         <td><input type="text" id="lname1" placeholder="Last Name" ng-model="seat.lname" /></td>
                                                                         <td>
                                                                             <select id="Age" ng-model="seat.Age">
-                                                                                <option value="0">--Select Age--</option>
+                                                                                <option value="0" selected>--Select Age--</option>
                                                                                 <option value="1">1</option>
                                                                                 <option value="2">2</option>
                                                                                 <option value="3">3</option>
@@ -501,9 +501,10 @@
 
                                                                         <td>
                                                                             <select name="Sex">
-                                                                                <option value="0">--Select Gender--</option>
+                                                                                <option value="0" selected>--Select Gender--</option>
                                                                                 <option value="1">Male</option>
-                                                                                <option value="2">FeMale</option>
+                                                                                <option value="2">Female</option>
+                                                                                <option value="3">Others</option>
                                                                             </select>
                                                                         </td>
                                                                     </tr>

@@ -34,19 +34,26 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
             data: UserLicensePymtTransactions,
 
         }).success(function (data, status, headers, config) {
-            alert('Saved successfully');           
+          //  alert('Saved successfully');           
             $localStorage.UselicensePymtTranRecord = UserLicensePymtTransactions;
                                  
                                 $http({
-                                    // url: 'http://localhost:52800/api/Payments/MakePayment',
-                                    url: 'http://localhost:52800/api/Payments/325435',
+                                     url: 'http://localhost:52800/api/Payments/MakePayment',
+                                   // url: 'http://localhost:52800/api/Payments/325435',
                                     method: 'GET'
                                 }).success(function (data, status, headers, config) {
-                                    alert('Saved successfully');
-
+                                    
+                                    var result = data[0].result;
+                                    if (result == 'Failed')
+                                    {
+                                        alert('Oops! sorry! Payment could not be processed. Please try again! \n\nbelow are the details of the failure:\n' + data[0].detail + '\n\n if problem continues to persist please contact interbus administrator.')
+                                        return;
+                                    }
                                     $localStorage.GatewayTransId = data[0].detail;
                                     //do the post payment updates
-      
+
+                                  //  alert('Saved successfully');
+
                                         var fo = $localStorage.foLicenseDetails
                                         /*******prepare post license confirm details *******/
                                         var ULConfirmDetails = {
@@ -57,7 +64,8 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
                                             ULId: ulD.ULId,
                                             IsRenewal: 0,
                                             Amount: ulD.Amount,
-                                            Units: ulD.Units,
+                                            //Units: ulD.Units,
+                                            Units: $localStorage.noOfBTPOSUnits,
                                             insupddelflag: 'I',
                                             userId: fo.Table[0].userid,
                                             foId: fo.Table[0].foid,
@@ -71,7 +79,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
                                             data: ULConfirmDetails,
 
                                         }).success(function (data, status, headers, config) {
-                                            alert('Saved successfully');
+                                           // alert('Saved successfully');
                                             $localStorage.ULConfirmDetails = ULConfirmDetails;
                                             $localStorage.ULConfirmDetailsRes = data;
                                             $scope.ShowConfirmationMssg(data);
@@ -194,7 +202,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
         
         $scope.c = $localStorage.focheckoutDetails[0];
         $scope.ld = $localStorage.selLicense;
-        $scope.ld.amt = $localStorage.UselicensePymtRecord.Amount;
+        $scope.ld.amt = $localStorage.UselicensePymtRecord[0].Amount;
 
         //$http.get('http://localhost:52800/api/Checkout/getcheckdetails').then(function (response, req) {
         //    $scope.check = response.data;
@@ -217,9 +225,22 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
             }
         });
     }
+
+    $scope.preview = function () {
+        var modalInstance = $uibModal.open({
+            animation: $scope.animationsEnabled,
+            templateUrl: 'email.html',
+            // controller: 'ModalInstanceCtrl',
+            resolve: {
+                mssg: function () {
+                    return 'test';
+                }
+            }
+        });
+    }
 });
 
-app.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, mssg) {
+app.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance,$uibModal, mssg) {
 
     $scope.confirm = mssg[0];
     $scope.ok = function () {
@@ -229,4 +250,17 @@ app.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, mssg) {
     $scope.cancel = function () {
         $uibModalInstance.dismiss('cancel');
     };
+
+    $scope.preview = function () {
+        var modalInstance = $uibModal.open({
+            animation: $scope.animationsEnabled,
+            templateUrl: 'email.html',
+            // controller: 'ModalInstanceCtrl',
+            resolve: {
+                mssg: function () {
+                    return (mssg[0] = $scope.confirm);
+                }
+            }
+        });
+    }
 });
