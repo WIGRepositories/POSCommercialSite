@@ -101,7 +101,14 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $uibModal, $localSt
             Gender: FleetOwnerRequest1.Gender,
             howdidyouhearaboutus: FleetOwnerRequest1.howdidyouhearaboutus,
             Agreetotermsandconditions: 1,
-             Address: FleetOwnerRequest1.Address,
+            Address: FleetOwnerRequest1.Address,
+            FleetStaff:FleetOwnerRequest1.FleetStaff,
+      Country:FleetOwnerRequest1.Country,
+            Code:FleetOwnerRequest1.Code,
+      Fax:FleetOwnerRequest1.Fax,
+            PermanentAddress:FleetOwnerRequest1.PermanentAddress,
+      TemporaryAddres:FleetOwnerRequest1.TemporaryAddres,
+            state:FleetOwnerRequest1.state,
              insupdflag: 'I',
        
         }
@@ -147,6 +154,12 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $uibModal, $localSt
             }
         });
     }
+
+    $scope.filterValue = function ($event) {
+        if (isNaN(String.fromCharCode($event.keyCode))) {
+            $event.preventDefault();
+        }
+    };
 
 
 });
