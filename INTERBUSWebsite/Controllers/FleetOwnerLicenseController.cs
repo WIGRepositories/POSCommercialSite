@@ -272,6 +272,36 @@ namespace INTERBUSWebsite.Controllers
                 PhoneNo.Value = FR.PhoneNo;
                 cmd.Parameters.Add(PhoneNo);
 
+                SqlParameter FleetStaff = new SqlParameter("@FleetStaff", SqlDbType.VarChar, 50);
+                FleetStaff.Value = FR.FleetStaff;
+                cmd.Parameters.Add(FleetStaff);
+
+                SqlParameter Country = new SqlParameter("@Country", SqlDbType.VarChar, 50);
+                Country.Value = FR.Country;
+                cmd.Parameters.Add(Country);
+
+                SqlParameter Code = new SqlParameter("@Code", SqlDbType.VarChar, 50);
+                Code.Value = FR.Code;
+                cmd.Parameters.Add(Code);
+
+                SqlParameter Fax = new SqlParameter("@Fax", SqlDbType.VarChar, 50);
+                Fax.Value = FR.Fax;
+                cmd.Parameters.Add(Fax);
+
+                SqlParameter PermanentAddress = new SqlParameter("@PermanentAddress", SqlDbType.VarChar, 50);
+                PermanentAddress.Value = FR.PermanentAddress;
+                cmd.Parameters.Add(PermanentAddress);
+
+                SqlParameter TemporaryAddres = new SqlParameter("@TemporaryAddres", SqlDbType.VarChar, 50);
+                TemporaryAddres.Value = FR.TemporaryAddres;
+                cmd.Parameters.Add(TemporaryAddres);
+
+                SqlParameter state = new SqlParameter("@state", SqlDbType.VarChar, 50);
+                state.Value = FR.state;
+                cmd.Parameters.Add(state);
+            
+
+
 
                 SqlParameter insupdflag = new SqlParameter("@insupdflag", SqlDbType.VarChar, 10);
                 insupdflag.Value = FR.insupdflag;

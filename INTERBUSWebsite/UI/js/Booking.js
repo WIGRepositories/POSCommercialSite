@@ -2,7 +2,7 @@
 
 var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
     //$http.get('http://localhost:52800/api/Booking/commericialsite').then(function (response, req) {
-    //    $scope.routes = response.data;
+    //  $scope.routes = response.data;
 
     // })
     var stat = 0;
@@ -27,7 +27,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
             // $scope.selectedSeats = [];
         }
 
-        $scope.basePrice = b.amount;
+     //   $scope.basePrice = b.amount;
     }
     $scope.totalseats = 0;
     $scope.count = 0;
@@ -100,7 +100,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
     $scope.savedata = function (selectedSeats) {
         if ($localStorage.waytype == 1) {
             $scope.showDiv = true; 
-            var book = { "No_Seats": "5", "cost": "1500", "JourneyType": "1", "passengersList": selectedSeats.pssngr, "Seatcost": "900" };
+           var book = { "No_Seats": "5", "cost": "1500", "JourneyType": "1", "passengersList": selectedSeats.pssngr, "Seatcost": "900" };
             //for(int i=0; i<selectedSeats.length; i++){}
             // passengersList: [{ "SeatId": "1", SeatNo: selectedSeats.SelectedSeatId, Fname: seat.pssngr.fname, Lname: seat.pssngr.lname, "Age": "30", "Sex": "0", "Identityproof": "adhar" }]
 
@@ -116,11 +116,28 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         {
           "SeatId": null,    "Fname": null,     "Lname": null,    "Age": 33,    "Sex": 0,   "Identityproof": null   }  ]
     }*/
-            //$localStorage.book = book;
-            //var req = { method: 'POST', url: 'http://localhost:52800/api/TicketBooking/SaveBookingDetails', data: book }
-            //$http(req).then(function (res) { window.location.href = "TicketCartdetails.html"; });
+            //$localStorage.waytype = selectedSeats;
+           var req = {
+                method: 'POST'
+                , url: 'http://localhost:52800/api/TicketBooking/SaveBookingDetails'
+                , data: book
+            }
+         //  $http(req).then(function (res) { window.location.href = "TicketCartdetails.html"; });
 
-            window.location.href = "TicketCartdetails.html";
+           $http({
+               url: 'http://localhost:52800/api/TicketBooking/SaveBookingDetails',
+               method: 'POST',
+               headers: { 'Content-Type': 'application/json' },
+               data: book,
+
+           }).success(function (data, status, headers, config) {
+               alert('Saved successfully');
+               window.location.href = "TicketCartdetails.html";
+           }).error(function (ata, status, headers, config) {
+               alert(ata);
+           });
+
+        //    window.location.href = "TicketCartdetails.html";
 
         } else if ($localStorage.waytype == 2 && stat <= 1)
         {
