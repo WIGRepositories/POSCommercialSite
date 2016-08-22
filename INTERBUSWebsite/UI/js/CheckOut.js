@@ -38,7 +38,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
             $localStorage.UselicensePymtTranRecord = UserLicensePymtTransactions;
                                  
                                 $http({
-                                     url: 'http://localhost:52800/api/Payments/MakePayment',
+                                    url: 'http://localhost:52800/api/Payments/MakePayment?amt=' + ulD.Amount,
                                    // url: 'http://localhost:52800/api/Payments/325435',
                                     method: 'GET'
                                 }).success(function (data, status, headers, config) {
@@ -69,7 +69,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
                                             insupddelflag: 'I',
                                             userId: fo.Table[0].userid,
                                             foId: fo.Table[0].foid,
-                                            address: 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
+                                            address: 'Harare, zimbabwe'
                                         }
 
                                         $http({

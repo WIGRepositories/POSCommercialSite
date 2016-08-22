@@ -35,12 +35,12 @@ namespace INTERBUSWebsite.Controllers
                     amount = new Amount()
                     {
                         currency = "USD",
-                        total = "7",
+                        total = "50",
                         details = new Details()
                         {
-                            shipping = "1",
-                            subtotal = "5",
-                            tax = "1"
+                            shipping = "0",
+                            subtotal = "50",
+                            tax = "0"
                         }
                     },
                     description = "This is the license payment transaction.",
@@ -52,19 +52,19 @@ namespace INTERBUSWebsite.Controllers
                         {
                             name = "Item Name",
                             currency = "USD",
-                            price = "1",
-                            quantity = "5",
+                            price = "50",
+                            quantity = "1",
                             sku = "sku"
                         }
                     },
                         shipping_address = new ShippingAddress
                         {
-                            city = "Johnstown",
+                            city = "Harare",
                             country_code = "US",
                             line1 = "52 N Main ST",
                             postal_code = "43210",
                             state = "OH",
-                            recipient_name = "Joe Buyer"
+                            recipient_name = "admin admin"
                         }
                     },
                     invoice_number = Common.GetRandomInvoiceNumber()
@@ -82,7 +82,7 @@ namespace INTERBUSWebsite.Controllers
                         {
                             billing_address = new Address()
                             {
-                                city = "Johnstown",
+                                city = "Harare",
                                 country_code = "US",
                                 line1 = "52 N Main ST",
                                 postal_code = "43210",
@@ -91,8 +91,8 @@ namespace INTERBUSWebsite.Controllers
                             cvv2 = "874",
                             expire_month = 11,
                             expire_year = 2018,
-                            first_name = "Joe",
-                            last_name = "Shopper",
+                            first_name = "admin",
+                            last_name = "admin",
                             number = "4024007185826731",//"4877274905927862",
                             type = "visa"
                         }

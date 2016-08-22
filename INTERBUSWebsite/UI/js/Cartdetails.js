@@ -91,7 +91,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
             data: userlicense,
 
         }).success(function (data, status, headers, config) {
-            alert('Saved successfully');
+           // alert('Saved successfully');
             $localStorage.focheckoutDetails = data.Table;
             $localStorage.UselicensePymtRecord = data.Table1;
             window.location.href = "http://localhost:52800/UI/CheckOut.html";
