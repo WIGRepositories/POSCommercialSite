@@ -102,7 +102,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $uibModal, $localSt
             howdidyouhearaboutus: FleetOwnerRequest1.howdidyouhearaboutus,
             Agreetotermsandconditions: 1,
             Address: FleetOwnerRequest1.Address,
-            FleetStaff:FleetOwnerRequest1.FleetStaff,
+            StaffSize: FleetOwnerRequest1.StaffSize,
       Country:FleetOwnerRequest1.Country,
             Code:FleetOwnerRequest1.Code,
       Fax:FleetOwnerRequest1.Fax,

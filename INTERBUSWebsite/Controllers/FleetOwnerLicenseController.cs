@@ -272,9 +272,9 @@ namespace INTERBUSWebsite.Controllers
                 PhoneNo.Value = FR.PhoneNo;
                 cmd.Parameters.Add(PhoneNo);
 
-                SqlParameter FleetStaff = new SqlParameter("@FleetStaff", SqlDbType.VarChar, 50);
-                FleetStaff.Value = FR.FleetStaff;
-                cmd.Parameters.Add(FleetStaff);
+                SqlParameter StaffSize = new SqlParameter("@StaffSize", SqlDbType.VarChar, 50);
+                StaffSize.Value = FR.StaffSize;
+                cmd.Parameters.Add(StaffSize);
 
                 SqlParameter Country = new SqlParameter("@Country", SqlDbType.VarChar, 50);
                 Country.Value = FR.Country;
