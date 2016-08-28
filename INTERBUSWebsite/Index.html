@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="UI/css/bootstrap-theme.min.css">
 
     <title>Interbus - Get Moving Anywhere, Comfortably</title>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <!--<link rel="stylesheet" href="UI/css/bootstrap.min.css">-->
-    <script src="UI/js/jquery-1.11.0.min.js"></script>
+    <script src="UI/js/jquery-1.11.0.min"></script>
     <script src="UI/js/bootstrap.min.js"></script>
     <link href="UI/css/themes/style2/pink-blue.css" rel="stylesheet" />
 
@@ -26,17 +26,16 @@
     <link rel="stylesheet" href="UI/css/owl.carousel.css">
     <link rel="stylesheet" href="UI/css/style1.css">
     <link rel="stylesheet" href="UI/css/responsive.css">
-    
+
     <link type="text/css" rel="stylesheet" href="UI/vendors/bootstrap-datepicker/css/datepicker.css">
     <link type="text/css" rel="stylesheet" href="UI/vendors/bootstrap-daterangepicker/daterangepicker-bs3.css">
     <!--<link type="text/css" rel="stylesheet" href="UI/vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css">-->
     <link type="text/css" rel="stylesheet" href="UI/vendors/bootstrap-timepicker/css/bootstrap-timepicker.min.css">
-     
+
     <script type="text/javascript" src="UI/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="UI/js/jquery.leanModal.min.js"></script>
     <script type="text/javascript" src="UI/js/wickedpicker.min.js"></script>
-    <script src="http://code.jquery.com/jquery-1.8.2.min.js" type="text/javascript"></script>
-    <script src="jquery.carouFredSel-6.0.4-packed.js" type="text/javascript"></script>
+
     <style>
         rr.div a {
             text-decoration: none;
@@ -45,10 +44,10 @@
             padding: 15px;
             display: inline-block;
         }
-		
-		#container > table {
-    margin-bottom: 2%;
-}
+
+        #container > table {
+            margin-bottom: 2%;
+        }
 
         .rr ul {
             display: inline;
@@ -100,123 +99,23 @@
                 .rr ul li ul li a:hover {
                     text-decoration: none;
                 }
-				
-				.item > img {
-                    height: 385px !important;
-                   }
+
+        .item > img {
+            height: 385px !important;
+        }
     </style>
 
     <script type="text/javascript">
-        $(function () {
-            $('#carousel').carouFredSel({
-                width: '100%',
-                items: {
-                    visible: 3,
-                    start: -1
-                },
-                scroll: {
-                    items: 1,
-                    duration: 1000,
-                    timeoutDuration: 3000
-                },
-                prev: '#prev',
-                next: '#next',
-                pagination: {
-                    container: '#pager',
-                    deviation: 1
-                }
-            });
-        });
+        var h = document.documentElement;
+        h.className = h.className.replace(/\bno-js\b/, '');
+        var isTouch = !!("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0;
+
+        if (isTouch) {
+            // remove class which defines hover behavior
+            h.className = h.className.replace(/\bno-touch\b/, '');
+        }
     </script>
-    <style type="text/css">
-        html, body {
-            height: 100%;
-            padding: 0;
-            margin: 0;
-        }
 
-        body {
-            min-height: 500px;
-        }
-
-            body * {
-                font-family: Arial, Geneva, SunSans-Regular, sans-serif;
-                font-size: 14px;
-                color: #333;
-                line-height: 22px;
-            }
-
-        #wrapper {
-            background-color: #fff;
-            width: 100%;
-            height: 450px;
-            margin-top: -225px;
-            overflow: hidden;
-            position: absolute;
-            top: 50%;
-            left: 0;
-        }
-
-        #carousel img {
-            display: block;
-            float: left;
-        }
-
-        #prev, #next {
-            background-color: rgba(255, 255, 255, 0.7);
-            display: block;
-            height: 450px;
-            width: 50%;
-            top: 0;
-            position: absolute;
-        }
-
-            #prev:hover, #next:hover {
-                background-color: #fff;
-                background-color: rgba(255, 255, 255, 0.8);
-            }
-
-        #prev {
-            left: -495px;
-        }
-
-        #next {
-            right: -495px;
-        }
-
-        #pager {
-            margin-left: -470px;
-            position: absolute;
-            left: 50%;
-            bottom: 10px;
-        }
-
-            #pager a {
-                border: 2px solid #fff;
-                border-radius: 10px;
-                display: inline-block;
-                width: 10px;
-                height: 10px;
-                margin: 0 5px 0 0;
-            }
-
-                #pager a:hover {
-                    background-color: rgba(255, 255, 255, 0.5);
-                }
-
-                #pager a span {
-                    display: none;
-                }
-
-                #pager a.selected {
-                    background-color: #fff;
-                }
-
-       
-
-       
-    </style>
-   
 </head>
 
 <body ng-init="GetStops();" style="background-image:url(UI/images/one1.jpg)">
@@ -231,25 +130,26 @@
             <div class="top-row" style="position:fixed; width:100%; z-index:1">
 
                 <div class="r">
-                    <div class="rr">
-                        <!--<a style="margin-left:0px; margin-top: 0px; padding-top: 0px; margin-right: 20px; float:left" href="../index.html"></a>-->
-                        <ul class="collapsible-menu clearfix" style="margin-left:0px;">
+                    <div class="rr" style="width:94%">
+                        <a style="margin-top: 0px; padding-top: 0px; margin-left: 35px; float:left" href="../index.html"><img style="height:76px; border-right:1px solid #D0D0D0 ;border-bottom:1px solid #D0D0D0 ; border-left:1px solid #D0D0D0 " src="UI/Images/logos/interbusLogo.png" alt="Alternate Text" /> </a>
+                        <ul class="collapsible-menu clearfix" style="margin-left:0px;height:76px">
 
-                            <li style="margin-left:52px">
+                            <li>
 
                                 <a style="text-decoration:none" href="../index.html">Home</a>
 
                             </li>
                             <li>
 
-                                <a style="text-decoration:none" href="UI/Fares_and_payments.html">Fares / Payments</a>
+                                <a class="active" style="text-decoration:none" href="Fares_and_payments.html">Fares / Payments</a>
 
                                 <ul>
                                     <li><a href="UI/Schedules.html">Schedules</a></li>
                                     <li><a href="UI/CheckFare.html">CheckFare</a></li>
                                     <li><a href="UI/Cancel_Ticket.html">Cancellation</a></li>
-                                </ul>
 
+
+                                </ul>
                             </li>
                             <li>
 
@@ -260,12 +160,8 @@
 
                                 <a style="text-decoration:none" href="#">Products</a>
                                 <ul>
+                                    <li><a href="UI/Licensepage.html">Fleet Owner License</a></li>
 
-                                    <li ng-repeat="t in licenses" id="{{t.Id}}"><a href="#" ng-click="GotToLicensePage(t);">{{t.Name}}</a></li>
-
-                                    <!--<li><a href="Licensepage.html">Fleet Owner Lisence</a></li>
-                                    <li><a href="Licensepage.html">BTPOS Lisence</a></li>
-                                    <li><a href="Licensepage.html">TroubleTicket Lisence</a></li>-->
                                 </ul>
                             </li>
 
@@ -279,11 +175,10 @@
 
                             </li>
 
-                           
 
                         </ul>
-                        <div style="float:right; padding-top:11px; margin-right:100px">
-                            <input type="text" placeholder="Search" id="q" name="q" style="border-radius:30px; width:120px; height:35px" />
+                        <div style="float:right; padding-top:11px">
+                            <input type="text" placeholder="Search.." id="q" name="q" style="border-radius: 30px; width: 120px; height: 35px; color: red;" />
 
 
                         </div>
@@ -296,26 +191,58 @@
         <div class="clearfix"></div>
         <!--End Menu-->
         <!--End header-->
+
         <table>
             <tr>
+                <td width="15%"></td>
                 <td>
-                    <div id="wrapper">
-                        <div id="carousel">
-                            <img src="UI/Images/promos/bus1.jpg" alt="building1" width="990" height="450" />
-                            <img src="UI/Images/promos/bus4.jpg" alt="building2" width="990" height="450" />
-                            <img src="UI/Images/promos/bus6.jpg" alt="building3" width="990" height="450" />
-                            <img src="UI/Images/promos/bus1.jpg" alt="building1" width="990" height="450" />
-                            <img src="UI/Images/promos/bus4.jpg" alt="building2" width="990" height="450" />
-                            <img src="UI/Images/promos/bus6.jpg" alt="building3" width="990" height="450" />
 
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <img src="UI/Images/promos/bus4.jpg" alt="...">
+                                <!-- <div class="carousel-caption">
+                                   ... //u can set caption in this place
+                                 </div>-->
+                            </div>
+                            <div class="item">
+                                <img src="UI/Images/promos/bus1.jpg" alt="...">
+                                <!--<div class="carousel-caption">
+                                  ...
+                                </div>-->
+                            </div>
+                            <div class="item">
+                                <img src="UI/Images/promos/bus6.jpg" alt="...">
+                                <!-- <div class="carousel-caption">
+                                   ...
+                                 </div>-->
+                            </div>
                         </div>
-                        <a href="#" id="prev" title="Show previous"> </a>
-                        <a href="#" id="next" title="Show next"> </a>
-                        <div id="pager"></div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
                 </td>
+
             </tr>
         </table>
+
+
 
     </div>
     <div class="main-and-aside one-row r" style="width:80%;">
@@ -337,7 +264,7 @@
 
                                             <fieldset>
 
-                                                <div class="from-and-to clearfix"ng-model="SD">
+                                                <div class="from-and-to clearfix" ng-model="SD">
 
                                                     <div class="geolocation-box clearfix">
 
@@ -384,7 +311,7 @@
                                                 </div>
 
 
-                                                <input ng-model="result" value="1" type="radio" name="triptype" checked ng-init="result=1"/> One Way
+                                                <input ng-model="result" value="1" type="radio" name="triptype" checked ng-init="result=1" /> One Way
                                                 <input ng-model="result1" value="2" type="radio" name="triptype" checked ng-init="result=2" /> Two Way
 
 
@@ -471,7 +398,7 @@
             </div>
 
 
-                        </div>
+        </div>
 
         <div class="main">
 
@@ -574,7 +501,7 @@
                         <!-- Modal content-->
                         <div class="modal-content">
                             <div class="modal-header">
-                               
+
                                 <h3 class="modal-title" style="text-align:center">Login</h3>
                             </div>
                             <div class="modal-body">
@@ -604,9 +531,9 @@
                                             <label for="remember">Remember me on this computer </label>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="col-lg-12">
-                                        
+
                                         <div class="col-lg-4">
                                             <a href="UI/resetpassword.html" style="text-align:center" class="forgot_password">Forgot password?</a>
                                         </div>
@@ -615,16 +542,16 @@
                                                 Login
                                             </div>
                                         </div>
-                                        
-                                    </div>
-                                    
-                                        <div class="action_btns">
 
-                                            <div class="one_half last" style="margin-left:150px">
-                                                
-                                            </div>
+                                    </div>
+
+                                    <div class="action_btns">
+
+                                        <div class="one_half last" style="margin-left:150px">
+
                                         </div>
-</form>
+                                    </div>
+                                </form>
 
                             </div>
                             <div class="modal-footer">
@@ -659,59 +586,59 @@
 
                             Topup Interbus<br />GoCard
 
-                    </a>
+                        </a>
                         <a href="UI/Construction.html" class="flat-button top-icon">
 
-                        <img src="UI/Images/logos/congestion-homepage-charge-icon.png" alt="" /> Check In
-                    </a>
-
-                </div>
-                <div class="clearfix">
-
-                    <a href="UI/Construction.html" class="flat-button top-icon">
-
-                        <img src="UI/Images/logos/cycle-hire-homepage-icon.png" alt="" />
-
-                        Download InterbusGo App
-
-                    </a><a href="UI/Construction.html" class="flat-button top-icon">
-
-                        <img src="UI/Images/logos/airline-homepage-icon.png" alt="" /> Inquiries
-                    </a>
-
-                </div>
-
-            </div>
-
-            <div data-set="reserved-teaser" class="large tertiary-teaser">
-                <div class="moving-source-order">
-                    <div class="news-teaser">
-                        <a href="">
-                            <img src="UI/Images/promos/thames-clipper_rdax_400x200.jpg" alt="Central London traffic" />
-                            <div class="text-link">
-                                <h2>Major works and Events</h2>
-                                <p>Find out about upcoming works or events across Zimbabwe which may affect your journey</p>
-                            </div>
+                            <img src="UI/Images/logos/congestion-homepage-charge-icon.png" alt="" /> Check In
                         </a>
+
+                    </div>
+                    <div class="clearfix">
+
+                        <a href="UI/Construction.html" class="flat-button top-icon">
+
+                            <img src="UI/Images/logos/cycle-hire-homepage-icon.png" alt="" />
+
+                            Download InterbusGo App
+
+                        </a><a href="UI/Construction.html" class="flat-button top-icon">
+
+                            <img src="UI/Images/logos/airline-homepage-icon.png" alt="" /> Inquiries
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div data-set="reserved-teaser" class="large tertiary-teaser">
+                    <div class="moving-source-order">
+                        <div class="news-teaser">
+                            <a href="">
+                                <img src="UI/Images/promos/thames-clipper_rdax_400x200.jpg" alt="Central London traffic" />
+                                <div class="text-link">
+                                    <h2>Major works and Events</h2>
+                                    <p>Find out about upcoming works or events across Zimbabwe which may affect your journey</p>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="vertical-button-container">
-                <a href="UI/Construction.html" class="plain-button">Stations, stops &amp; piers</a>
-                <a href="UI/Construction.html" class="plain-button">Timetables</a>
-                <a href="UI/Construction.html" class="plain-button">Help &amp; contacts</a>
-                <a href="UI/Construction.html" class="plain-button">Shop for Products online</a>
-                <a href="UI/Construction.html" class="plain-button">Transport accessibility</a>
-                <a href="UI/Construction.html" class="plain-button">Social media &amp; email updates</a>
-                <a href="UI/Construction.html" class="plain-button">Interbus Digital Blog</a>
+                <div class="vertical-button-container">
+                    <a href="UI/Construction.html" class="plain-button">Stations, stops &amp; piers</a>
+                    <a href="UI/Construction.html" class="plain-button">Timetables</a>
+                    <a href="UI/Construction.html" class="plain-button">Help &amp; contacts</a>
+                    <a href="UI/Construction.html" class="plain-button">Shop for Products online</a>
+                    <a href="UI/Construction.html" class="plain-button">Transport accessibility</a>
+                    <a href="UI/Construction.html" class="plain-button">Social media &amp; email updates</a>
+                    <a href="UI/Construction.html" class="plain-button">Interbus Digital Blog</a>
+                </div>
+
             </div>
 
         </div>
 
     </div>
-
-                </div>
 
 
 

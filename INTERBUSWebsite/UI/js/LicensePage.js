@@ -10,7 +10,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
 
         if($scope.licenseCatId == null || $scope.licenseCatId.Id == null)
         {
-            alert('No license details configured for the selected license category. Please contact INTERBUS administartor.');
+            $scope.showVDialog('No license details configured for the selected license category. Please contact INTERBUS administartor.');
             return;
         }
         $http.get('http://localhost:52800/api/LicensePage/GetLicense?LicenseCatId=' + $scope.licenseCatId.Id).then(function (response, req) {
