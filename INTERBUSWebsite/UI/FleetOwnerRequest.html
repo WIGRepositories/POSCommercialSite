@@ -200,25 +200,25 @@
                     <div class="panel-body pan">
                         <form action="#" class="form-horizontal">
                             <div class="form-body pal">
-                                <h3>Personal</h3>
+                                <h3>Personal details</h3>
                                 
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="inputFirstName" class="col-md-3 control-label">First Name </label>
-                                            <div class="col-md-8"><input id="inputFirstName" type="text" placeholder="First Name" class="form-control" /></div>
+                                            <label for="inputFirstName" class="col-md-3 control-label" style="color: red;">First Name:</label>
+                                            <div class="col-md-8"><input id="inputFirstName" type="text" placeholder="First Name" class="form-control" ng-model="FleetOwnerRequest1.FirstName" /></div>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="inputLastName" class="col-md-3 control-label">Middle Name </label>
-                                            <div class="col-md-8"><input id="inputLastName" type="text" placeholder="Middle Name" class="form-control" /></div>
+                                            <label for="inputLastName" class="col-md-3 control-label" style="float:left">Middle Name:</label>
+                                            <div class="col-md-8"><input id="inputLastName" type="text" placeholder="Middle Name" class="form-control" ng-model="FleetOwnerRequest1.MiddleName" /></div>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="inputLastName" class="col-md-3 control-label">Last Name </label>
-                                            <div class="col-md-8"><input id="inputLastName" type="text" placeholder="Last Name" class="form-control" /></div>
+                                            <label for="inputLastName" class="col-md-3 control-label" style="color: red;">Last Name: </label>
+                                            <div class="col-md-8"><input id="inputLastName" type="text" placeholder="Last Name" class="form-control" ng-model="FleetOwnerRequest1.LastName" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -226,7 +226,7 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="inputEmail" class="col-md-3 control-label">Email-Id: </label>
+                                            <label for="inputEmail" class="col-md-3 control-label" style="color: red;">Email-Id: </label>
                                             <div class="col-md-8">
                                                 <div class="input-group"><span class="input-group-addon"><i class="fa fa-envelope"></i></span><input type="text" ng-model="FleetOwnerRequest1.EmailAddress" class="form-control" placeholder="Email-Id" /></div>
                                             </div>
@@ -234,15 +234,15 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="inputLastName" class="col-md-3 control-label">Contact No.: </label>
-                                            <div class="col-md-8"><input id="inputLastName" type="text" placeholder="Last Name" class="form-control" /></div>
+                                            <label for="inputLastName" class="col-md-3 control-label" style="color: red;">Contact No.: </label>
+                                            <div class="col-md-8"><input id="inputLastName" type="text" placeholder="Last Name" class="form-control" ng-model="FleetOwnerRequest1.PhoneNo" /></div>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <div class="form-group">
-                                                <label for="inputLastName" class="col-md-3 control-label">Alternate No.: </label>
-                                                <div class="col-md-8"><input id="inputLastName" type="text" placeholder="Last Name" class="form-control" /></div>
+                                                <label for="inputLastName" class="col-md-3 control-label" style="float:left">Alternate No.: </label>
+                                                <div class="col-md-8"><input id="inputLastName" type="text" placeholder="Last Name" class="form-control" ng-model="FleetOwnerRequest1.AltPhoneNo" /></div>
                                             </div>                                           
                                         </div>
                                     </div>
@@ -250,7 +250,7 @@
                                 <div class="row">
                                     
                                     <div class="col-md-4">
-                                        <label for="selGender" class="col-md-3 control-label">Gender: </label>
+                                        <label for="selGender" class="col-md-3 control-label" style="color: red;" ng-model="FleetOwnerRequest1.Gender">Gender: </label>
                                         <div class="col-md-8">
                                             <select id="selGender" class="form-control">
                                                 <option value="" selected>Select</option>
@@ -263,7 +263,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <div class="form-group">
-                                                <label for="inputLastName" class="col-md-3 control-label">Address.: </label>
+                                                <label for="inputLastName" class="col-md-3 control-label" style="color: red;">Address.: </label>
                                                 <div class="col-md-8">
                                                     <textarea rows="3" ng-model="FleetOwnerRequest1.Address" class="form-control"></textarea>
                                                 </div>
@@ -272,20 +272,20 @@
                                     </div>
 
                                     <div class="col-md-4">
-                                        <label for="Address Id" class="col-md-3 control-label">Photo:</label>
+                                        <label for="Address Id" class="col-md-3 control-label" style="float:left">Photo:</label>
                                         <div class="form-group">
 
                                             <!--<div class="text-center mbl"><img src="images/user.jpg" style="width:50px;height:50px" alt="" class="img-responsive" /></div>-->
                                             <div class="col-md-8">
                                                 <div class="col-md-6" style="text-align:left">
-                                                    <img id="cmpNewLogo" ng-src="{{imageSrc}}" width="120px" height="100px" />
+                                                    <img id="userNewLogo" ng-src="{{imageUserSrc}}" width="120px" height="100px" />
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <button class="btn btn-green" ng-click="UploadImg();" style="margin-top:5px">
+                                                    <button class="btn btn-green" ng-click="UploadUserImg();" style="margin-top:5px">
                                                         <i class="fa fa-upload"></i>&nbsp;
                                                         Upload
                                                     </button>
-                                                    <button class="btn btn-red" ng-click="clearImg();" style="margin-top:5px">
+                                                    <button class="btn btn-red" ng-click="clearUserImg();" style="margin-top:5px">
                                                         <i class="fa fa-upload"></i>&nbsp;
                                                         Remove
                                                     </button>
@@ -294,7 +294,7 @@
 
                                             </div>
 
-                                            <input type="file" name="fileInput" id="fileInput" ng-file-select="onFileSelect($files)" class="btn btn-green" accept=".jpg,.png,.gif,.jpeg" style="display:none" ng-model="$scope.imageSrc" ng-change="setimg();" />
+                                            <input type="file" name="fileInput" id="fileInput" ng-file-select="onFileSelect($files)" class="btn btn-green" accept=".jpg,.png,.gif,.jpeg" style="display:none" ng-model="$scope.imageUserSrc" ng-change="setimg();" />
                                         </div>
                                     </div>
                                 </div>
@@ -306,20 +306,20 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="inputFirstName" class="col-md-3 control-label">Name: </label>
-                                            <div class="col-md-8"><input id="inputFirstName" type="text" placeholder="Company Name" class="form-control" /></div>
+                                            <label for="inputFirstName" class="col-md-3 control-label" style="color: red;" >Name: </label>
+                                            <div class="col-md-8"><input id="inputFirstName" type="text" placeholder="Company Name" class="form-control" ng-model="FleetOwnerRequest1.CompanyName" /></div>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="inputLastName" class="col-md-3 control-label">Email-Id: </label>
-                                            <div class="col-md-8"><input id="inputLastName" type="text" placeholder="Email address" class="form-control" /></div>
+                                            <label for="inputLastName" class="col-md-3 control-label" style="color: red;">Email-Id: </label>
+                                            <div class="col-md-8"><div class="input-group"><span class="input-group-addon"><i class="fa fa-envelope"></i></span><input type="text" ng-model="FleetOwnerRequest1.CmpEmailAddress" class="form-control" placeholder="Email-Id" /></div></div>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="inputLastName" class="col-md-3 control-label">Contact no.:</label>
-                                            <div class="col-md-8"><input id="inputLastName" type="text" placeholder="official contact Number" class="form-control" /></div>
+                                            <label for="inputLastName" class="col-md-3 control-label" style="color: red;">Contact no.:</label>
+                                            <div class="col-md-8"><input id="inputLastName" type="text" placeholder="office contact Number" class="form-control" ng-model="FleetOwnerRequest1.CmpPhoneNo" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -327,20 +327,20 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="inputFirstName" class="col-md-3 control-label">Alternate No.: </label>
-                                            <div class="col-md-8"><input id="inputFirstName" type="text" placeholder="Alternate number" class="form-control" /></div>
+                                            <label for="inputFirstName" class="col-md-3 control-label" style="float:left">Alternate No.: </label>
+                                            <div class="col-md-8"><input id="inputFirstName" type="text" placeholder="Alternate number" class="form-control" ng-model="FleetOwnerRequest1.CmpAltPhoneNo" /></div>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="inputLastName" class="col-md-3 control-label">Title </label>
-                                            <div class="col-md-8"><input id="inputLastName" type="text" placeholder="Title" class="form-control" /></div>
+                                            <div class="col-md-8"><input id="inputLastName" type="text" placeholder="Title" class="form-control" ng-model="FleetOwnerRequest1.CmpTitle" /></div>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="inputLastName" class="col-md-3 control-label">Caption: </label>
-                                            <div class="col-md-8"><input id="inputLastName" type="text" placeholder="Caption" class="form-control" /></div>
+                                            <div class="col-md-8"><input id="inputLastName" type="text" placeholder="Caption" class="form-control" ng-model="FleetOwnerRequest1.CmpCaption" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -350,19 +350,45 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="inputFirstName" class="col-md-3 control-label">Fax: </label>
-                                            <div class="col-md-8"><input id="inputFirstName" type="text" placeholder="Fax" class="form-control" /></div>
+                                            <div class="col-md-8"><input id="inputFirstName" type="text" placeholder="Fax" class="form-control" ng-model="FleetOwnerRequest1.CmpFax" /></div>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="inputLastName" class="col-md-3 control-label">Fleet Size: </label>
-                                            <div class="col-md-8"><input id="inputLastName" type="text" placeholder="Fleet size" class="form-control" /></div>
+                                            <div class="col-md-8"><select class="col-md-12 form-control" ng-model="FleetOwnerRequest1.FleetSize">
+    <option value="">select fleet size</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+
+</select></div>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="inputLastName" class="col-md-3 control-label">Staff size: </label>
-                                            <div class="col-md-8"><input id="inputLastName" type="text" placeholder="Staff size" class="form-control" /></div>
+                                            <div class="col-md-8"><select class="col-md-12 form-control" ng-model="FleetOwnerRequest1.StaffSize">
+    <option value="">select Staff size</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+
+</select></div>
                                         </div>
                                     </div>
                                 </div>
@@ -371,20 +397,36 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="inputFirstName" class="col-md-3 control-label">Country:</label>
-                                            <div class="col-md-8"><input id="inputFirstName" type="text" placeholder="First Name" class="form-control" /></div>
+                                            <label for="inputFirstName" class="col-md-3 control-label" style="color: red;">Country:</label>
+                                            <div class="col-md-8"><select class="col-md-12 form-control" ng-model="FleetOwnerRequest1.Country">
+    <option value="">select Country</option>
+    <option value="245">Zimbabwe</option>
+</select></div>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="inputLastName" class="col-md-3 control-label">State/Province: </label>
-                                            <div class="col-md-8"><input id="inputLastName" type="text" placeholder="Middle Name" class="form-control" /></div>
+                                            <label for="inputLastName" class="col-md-3 control-label" style="color: red;">State/Province: </label>
+                                            <div class="col-md-8"><select class="col-md-12 form-control" ng-model="FleetOwnerRequest1.state">
+    <option value="">select State/Province</option>
+    <option value="1">Bulawayo</option>
+    <option value="2">Harare</option>
+    <option value="3">Manicaland</option>
+    <option value="4">Mashonaland Central</option>
+    <option value="5">Mashonaland East</option>
+    <option value="6">Mashonaland West</option>
+    <option value="7">Masvingo</option>
+    <option value="8">Matabeleland North</option>
+    <option value="9">Matabeleland South</option>
+    <option value="10">Midlands</option>
+
+</select></div>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="inputLastName" class="col-md-3 control-label">Zipcode: </label>
-                                            <div class="col-md-8"><input id="inputLastName" type="text" placeholder="Last Name" class="form-control" /></div>
+                                            <div class="col-md-8"><input id="inputLastName" type="text" placeholder="Last Name" class="form-control" ng-model="FleetOwnerRequest1.ZipCode" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -394,9 +436,9 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <div class="form-group">
-                                                <label for="inputLastName" class="col-md-3 control-label">Address.: </label>
+                                                <label for="inputLastName" class="col-md-3 control-label" style="color: red;">Address.: </label>
                                                 <div class="col-md-8">
-                                                    <textarea rows="3" ng-model="FleetOwnerRequest1.Address" class="form-control"></textarea>
+                                                    <textarea rows="3" ng-model="FleetOwnerRequest1.CmpAddress" class="form-control" ></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -404,9 +446,9 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <div class="form-group">
-                                                <label for="inputLastName" class="col-md-3 control-label">Address.: </label>
+                                                <label for="inputLastName" class="col-md-3 control-label">Alternate Address.: </label>
                                                 <div class="col-md-8">
-                                                    <textarea rows="3" ng-model="FleetOwnerRequest1.Address" class="form-control"></textarea>
+                                                    <textarea rows="3" ng-model="FleetOwnerRequest1.CmpAltAddress" class="form-control"></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -465,7 +507,7 @@
                                         <div class="form-group">
                                             <div class="col-md-12" style="text-align:center">
 
-                                                <input type="checkbox" ng-model="FleetOwnerRequest1.SentNewProductsEmails" />&nbsp;&nbsp;Send New Products Emails:
+                                                <input type="checkbox" ng-model="FleetOwnerRequest1.SendNewProductsEmails" />&nbsp;&nbsp;Send New Products Emails:
 
 
                                             </div>
@@ -501,185 +543,7 @@
            
         </div>
     </div>
-    <div class="container">
-        <div class="row" style=" margin-top: 80px;">
-
-            <div class="col-md-8 col-md-offset-2">
-                <div class="portlet box portlet-blue">
-                    <div class="portlet-header">
-                        <div class="caption">Fleet Owner Request</div>
-
-                    </div>
-                    <div class="portlet-body">
-                        <form role="form">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="firtsname">First Name:</label>
-                                        <!--<div class="input-group"><input type="text" ng-model="FleetOwnerRequest1.FirstName" id="firtsname" class="form-control" /></div>-->
-                                        <div><input type="text" ng-model="FleetOwnerRequest1.FirstName" id="firtsname" class="form-control" /></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Last Name</label>
-                                        <div><input type="text" ng-model="FleetOwnerRequest1.LastName" class="form-control" /></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Company Name</label>
-                                        <div><input type="text" ng-model="FleetOwnerRequest1.CompanyName" class="form-control" /></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="InputEmail">E-mail Id:</label>
-                                        <div class="input-group"><input type="text" ng-model="FleetOwnerRequest1.EmailAddress" class="form-control" /><span class="input-group-addon"><i class="fa fa-envelope"></i></span></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Phone No:</label>
-                                        <input type="text" ng-model="FleetOwnerRequest1.PhoneNo" ng-keypress="filterValue($event)" maxlength="10" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Gender</label>
-                                        <select class="form-control" ng-model="FleetOwnerRequest1.Gender">
-                                            <option value="">Select</option>
-                                            <option value="1">Male</option>
-                                            <option value="2">Female</option>
-                                            <option value="3">Others</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="Caption">Fleet Staff:</label>
-                                        <!--<div class="input-group"><input type="text" ng-model="FleetOwnerRequest1.FirstName" id="firtsname" class="form-control" /></div>-->
-                                        <div><input type="text" ng-model="FleetOwnerRequest1.FleetSize" id="Logo" class="form-control" /></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Permanent Address:</label>
-                                        <div><textarea rows="3" ng-model="FleetOwnerRequest1.PermanentAddress" class="form-control"></textarea></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Temporary Addres:</label>
-                                        <div><textarea rows="3" ng-model="FleetOwnerRequest1.TemporaryAddres" class="form-control"></textarea></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="firtsname">Country:</label>
-                                        <!--<div class="input-group"><input type="text" ng-model="FleetOwnerRequest1.FirstName" id="firtsname" class="form-control" /></div>-->
-                                        <select class="form-control" ng-model="FleetOwnerRequest1.Country">
-                                            <option value="">select Country</option>
-                                            <option value="Antartica">Antarctica</option>
-                                            <option value="Antigua and Barbuda">Antigua and Barbuda</option>
-                                            <option value="Argentina">Argentina</option>
-                                            <option value="Armenia">Armenia</option>
-                                            <option value="Aruba">Aruba</option>
-                                            <option value="Australia">Australia</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>ZipCode:</label>
-                                        <div><input type="text" ng-model="FleetOwnerRequest1.ZipCode" ng-keypress="filterValue($event)" class="form-control" /></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>State:</label>
-                                        <div><input type="text" ng-model="FleetOwnerRequest1.state" class="form-control" /></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="Title">Title</label>
-                                        <!--<div class="input-group"><input type="text" ng-model="FleetOwnerRequest1.Title" class="form-control" /></div>-->
-                                        <div><input type="text" ng-model="FleetOwnerRequest1.Title" class="form-control" /></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Staff Size</label>
-                                        <div class="input-icon right"><i class="fa fa-spinner fa-spin"></i><input type="text" ng-model="FleetOwnerRequest1.StaffSize" class="form-control" /></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Company Employee Size</label>
-                                        <div><input type="text" ng-model="FleetOwnerRequest1.CompanyEmployeSize" ng-keypress="filterValue($event)" class="form-control" /></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="firtsname">Code:</label>
-                                        <!--<div class="input-group"><input type="text" ng-model="FleetOwnerRequest1.FirstName" id="firtsname" class="form-control" /></div>-->
-                                        <div><input type="text" ng-model="FleetOwnerRequest1.Code" id="Code" class="form-control" /></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Fax:</label>
-                                        <div><input type="text" ng-model="FleetOwnerRequest1.Fax" id="firtsname" class="form-control" /></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Caption:</label>
-                                        <div><input type="text" ng-model="FleetOwnerRequest1.Caption" id="Caption" class="form-control" /></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Address</label><textarea rows="3" ng-model="FleetOwnerRequest1.Address" class="form-control"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Description</label>
-                                        <textarea rows="3" ng-model="FleetOwnerRequest1.Description" class="form-control"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            
-
-                        </form>
-                        <center>
-
-                            <button type="submit" data-target="#Modal-header-primary" data-toggle="modal" class="btn btn-primary" ng-click="save(FleetOwnerRequest1,'I')">
-                                Submit
-                            </button>
-
-                        </center>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
+    
 
     <div class="row">
         <div class="col-lg-12">

@@ -105,6 +105,7 @@
     <Content Include="UI\js\Carousle\js-core.js" />
     <Content Include="UI\js\Carousle\jwplayer.js" />
     <Content Include="UI\js\Carousle\thirdparty.js" />
+    <Content Include="UI\js\CreateFleetOwner.js" />
     <Content Include="UI\js\WebsiteUserInfo.js" />
     <Content Include="obj\Debug\INTERBUSWebsite.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\INTERBUSWebsite.dll" />
@@ -280,7 +281,6 @@
     <Content Include="UI\js\cc_af.js" />
     <Content Include="UI\js\CheckOut.js" />
     <Content Include="UI\js\createfleet.js" />
-    <Content Include="UI\js\CreateFleetOwner.js" />
     <Content Include="UI\js\Index.js" />
     <Content Include="UI\js\jplist.js" />
     <Content Include="UI\js\jquery-1.10.2.min.js" />
