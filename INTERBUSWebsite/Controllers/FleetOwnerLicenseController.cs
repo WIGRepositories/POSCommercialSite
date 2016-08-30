@@ -137,74 +137,10 @@ namespace INTERBUSWebsite.Controllers
             }
         }
 
-        [HttpPost]
-        public DataTable CreateNewFO(FleetOwnerRequest C)
-        {
-            DataTable Tbl = new DataTable();
-            SqlConnection conn = new SqlConnection();
-            try
-            {
-
-                //connect to database
-
-                //connetionString="Data Source=ServerName;Initial Catalog=DatabaseName;User ID=UserName;Password=Password"
-                conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["btposdb"].ToString();
-                //conn.ConnectionString = "Data Source=localhost;Initial Catalog=MyAlerts;integrated security=sspi;";
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "InSupdFleetOwnerRequest1";
-                cmd.Connection = conn;
-                conn.Open();
-
-
-                 SqlParameter UId = new SqlParameter("Id", SqlDbType.Int);
-                 UId.Value = C.Id;
-                 cmd.Parameters.Add(UId);
-
-                SqlParameter UFirstName = new SqlParameter("@FirstName", SqlDbType.VarChar, 50);
-                UFirstName.Value = C.FirstName;
-                cmd.Parameters.Add(UFirstName);
-
-                SqlParameter LastName = new SqlParameter("@LastName", SqlDbType.VarChar, 50);
-                LastName.Value = C.LastName;
-                cmd.Parameters.Add(LastName);
-
-                SqlParameter UEmail = new SqlParameter("@Email", SqlDbType.VarChar, 15);
-                UEmail.Value = C.Email;
-                cmd.Parameters.Add(UEmail);
-
-                SqlParameter UMobileNo = new SqlParameter("@MobileNo", SqlDbType.VarChar, 15);
-                UMobileNo.Value = C.MobileNo;
-                cmd.Parameters.Add(UMobileNo);
-
-                SqlParameter CCompanyName = new SqlParameter("@CompanyName", SqlDbType.VarChar, 15);
-                CCompanyName.Value = C.CompanyName;
-                cmd.Parameters.Add(CCompanyName);
-
-                SqlParameter Description = new SqlParameter("@Description", SqlDbType.VarChar, 15);
-                Description.Value = C.Description;
-                cmd.Parameters.Add(Description);              
-
-                SqlParameter insupdflag = new SqlParameter("@insupdflag", SqlDbType.VarChar, 10);
-                insupdflag.Value = C.insupdflag;
-                cmd.Parameters.Add(insupdflag);
-
-
-                cmd.ExecuteScalar();
-
-                cmd.Parameters.Clear();   
-            }
-            catch (Exception ex)
-            {
-                conn.Close();
-                string str = ex.Message;
-            }
-            // int found = 0;
-            return Tbl;
-        }
+       
         [HttpPost]
         [Route("api/FleetOwnerLicense/CreateNewFOR")]
-        public DataTable CreateNewFOR(FleetOwnerRequest1 FR)
+        public DataTable CreateNewFOR(FleetOwnerRequest fleetOwnerRequest)
         {
             DataTable Tbl = new DataTable();
             SqlConnection conn = new SqlConnection();
@@ -212,142 +148,148 @@ namespace INTERBUSWebsite.Controllers
             {
 
                 //connect to database
-
                 //connetionString="Data Source=ServerName;Initial Catalog=DatabaseName;User ID=UserName;Password=Password"
                 conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["btposdb"].ToString();
-                //conn.ConnectionString = "Data Source=localhost;Initial Catalog=MyAlerts;integrated security=sspi;";
+                
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "InSupdFleetOwnerRequestDetails";
+                cmd.CommandText = "InsUpdFleetOwnerRequestDetails";
                 cmd.Connection = conn;
-                conn.Open();
-
-
-                //SqlParameter FRId = new SqlParameter("Id", SqlDbType.Int);
-                //FRId.Value = FR.Id;
-                //cmd.Parameters.Add(FRId);
-
+                //conn.Open();    
+         
+                //User details
                 SqlParameter FRFirstName = new SqlParameter("@FirstName", SqlDbType.VarChar, 50);
-                FRFirstName.Value = FR.FirstName;
+                FRFirstName.Value = fleetOwnerRequest.FirstName;
                 cmd.Parameters.Add(FRFirstName);
 
+                SqlParameter FRMiddleName = new SqlParameter("@MiddleName", SqlDbType.VarChar, 50);
+                FRMiddleName.Value = fleetOwnerRequest.MiddleName;
+                cmd.Parameters.Add(FRMiddleName);
+
                 SqlParameter LastName = new SqlParameter("@LastName", SqlDbType.VarChar, 50);
-                LastName.Value = FR.LastName;
+                LastName.Value = fleetOwnerRequest.LastName;
                 cmd.Parameters.Add(LastName);
 
                 SqlParameter FREmailAddress = new SqlParameter("@EmailAddress", SqlDbType.VarChar, 50);
-                FREmailAddress.Value = FR.EmailAddress;
+                FREmailAddress.Value = fleetOwnerRequest.EmailAddress;
                 cmd.Parameters.Add(FREmailAddress);
 
-                SqlParameter FRTitle = new SqlParameter("@Title", SqlDbType.VarChar, 20);
-                FRTitle.Value = FR.Title;
-                cmd.Parameters.Add(FRTitle);
-
-                SqlParameter FRCompanyName = new SqlParameter("@CompanyName", SqlDbType.VarChar, 20);
-                FRCompanyName.Value = FR.CompanyName;
-                cmd.Parameters.Add(FRCompanyName);
-
-                SqlParameter Description = new SqlParameter("@Description", SqlDbType.VarChar, 15);
-                Description.Value = FR.Description;
-                cmd.Parameters.Add(Description);
-
-                SqlParameter CompanyEmployeSize = new SqlParameter("@CompanyEmployeSize", SqlDbType.Int);
-                CompanyEmployeSize.Value = FR.CompanyEmployeSize;
-                cmd.Parameters.Add(CompanyEmployeSize);
-
-                SqlParameter FleetSize = new SqlParameter("@FleetSize", SqlDbType.Int);
-                FleetSize.Value = FR.FleetSize;
-                cmd.Parameters.Add(FleetSize);               
-
                 SqlParameter Gender = new SqlParameter("@Gender", SqlDbType.Int);
-                Gender.Value = FR.Gender;
-                cmd.Parameters.Add(Gender);            
+                Gender.Value = fleetOwnerRequest.Gender;
+                cmd.Parameters.Add(Gender);
 
-
-                SqlParameter Address = new SqlParameter("@Address", SqlDbType.VarChar, 15);
-                Address.Value = FR.Address;
-                cmd.Parameters.Add(Address);
-
-                SqlParameter PhoneNo = new SqlParameter("@PhoneNo", SqlDbType.VarChar,50);
-                PhoneNo.Value = FR.PhoneNo;
+                SqlParameter PhoneNo = new SqlParameter("@PhoneNo", SqlDbType.VarChar, 20);
+                PhoneNo.Value = fleetOwnerRequest.PhoneNo;
                 cmd.Parameters.Add(PhoneNo);
 
+                SqlParameter AltPhoneNo = new SqlParameter("@AltPhoneNo", SqlDbType.VarChar, 20);
+                AltPhoneNo.Value = fleetOwnerRequest.AltPhoneNo;
+                cmd.Parameters.Add(AltPhoneNo);
+
+                SqlParameter Address = new SqlParameter("@Address", SqlDbType.VarChar, 15);
+                Address.Value = fleetOwnerRequest.Address;
+                cmd.Parameters.Add(Address);
+
+                SqlParameter userPhoto = new SqlParameter("@userPhoto", SqlDbType.Int);
+                userPhoto.Value = fleetOwnerRequest.userPhoto;
+                cmd.Parameters.Add(userPhoto);
+                            
+                //Company details
+                
+
+                SqlParameter FRCompanyName = new SqlParameter("@CompanyName", SqlDbType.VarChar, 20);
+                FRCompanyName.Value = fleetOwnerRequest.CompanyName;
+                cmd.Parameters.Add(FRCompanyName);
+
+                SqlParameter CmpEmailAddress = new SqlParameter("@CmpEmailAddress", SqlDbType.VarChar, 15);
+                CmpEmailAddress.Value = fleetOwnerRequest.CmpEmailAddress;
+                cmd.Parameters.Add(CmpEmailAddress);
+
+                SqlParameter CmpAddress = new SqlParameter("@CmpAddress", SqlDbType.Int);
+                CmpAddress.Value = fleetOwnerRequest.CmpAddress;
+                cmd.Parameters.Add(CmpAddress);
+
+                SqlParameter CmpAltAddress = new SqlParameter("@CmpAltAddress", SqlDbType.VarChar, 15);
+                CmpAltAddress.Value = fleetOwnerRequest.CmpAltAddress;
+                cmd.Parameters.Add(CmpAltAddress);
+
+                SqlParameter FleetSize = new SqlParameter("@FleetSize", SqlDbType.Int);
+                FleetSize.Value = fleetOwnerRequest.FleetSize;
+                cmd.Parameters.Add(FleetSize); 
+
                 SqlParameter StaffSize = new SqlParameter("@StaffSize", SqlDbType.VarChar, 50);
-                StaffSize.Value = FR.StaffSize;
+                StaffSize.Value = fleetOwnerRequest.StaffSize;
                 cmd.Parameters.Add(StaffSize);
 
                 SqlParameter Country = new SqlParameter("@Country", SqlDbType.VarChar, 50);
-                Country.Value = FR.Country;
+                Country.Value = fleetOwnerRequest.Country;
                 cmd.Parameters.Add(Country);
 
+                SqlParameter state = new SqlParameter("@state", SqlDbType.VarChar, 50);
+                state.Value = fleetOwnerRequest.state;
+                cmd.Parameters.Add(state);
+
                 SqlParameter Code = new SqlParameter("@Code", SqlDbType.VarChar, 50);
-                Code.Value = FR.Code;
+                Code.Value = fleetOwnerRequest.Code;
                 cmd.Parameters.Add(Code);
 
-                SqlParameter Fax = new SqlParameter("@Fax", SqlDbType.VarChar, 50);
-                Fax.Value = FR.Fax;
-                cmd.Parameters.Add(Fax);
+                SqlParameter CmpFax = new SqlParameter("@CmpFax", SqlDbType.VarChar, 50);
+                CmpFax.Value = fleetOwnerRequest.CmpFax;
+                cmd.Parameters.Add(CmpFax);
 
-                SqlParameter PermanentAddress = new SqlParameter("@PermanentAddress", SqlDbType.VarChar, 50);
-                PermanentAddress.Value = FR.PermanentAddress;
-                cmd.Parameters.Add(PermanentAddress);
+                SqlParameter CmpCaption = new SqlParameter("@CmpCaption", SqlDbType.VarChar, 50);
+                CmpCaption.Value = fleetOwnerRequest.CmpCaption;
+                cmd.Parameters.Add(CmpCaption);
 
-                SqlParameter TemporaryAddres = new SqlParameter("@TemporaryAddres", SqlDbType.VarChar, 50);
-                TemporaryAddres.Value = FR.TemporaryAddres;
-                cmd.Parameters.Add(TemporaryAddres);
-
-                SqlParameter state = new SqlParameter("@state", SqlDbType.VarChar, 50);
-                state.Value = FR.state;
-                cmd.Parameters.Add(state);
-            
+                SqlParameter CmpTitle = new SqlParameter("@CmpTitle", SqlDbType.VarChar, 50);
+                CmpTitle.Value = fleetOwnerRequest.CmpTitle;
+                cmd.Parameters.Add(CmpTitle);
 
 
+                SqlParameter CmpPhoneNo = new SqlParameter("@CmpPhoneNo", SqlDbType.VarChar, 50);
+                CmpPhoneNo.Value = fleetOwnerRequest.CmpPhoneNo;
+                cmd.Parameters.Add(CmpPhoneNo);
+
+                SqlParameter CmpAltPhoneNo = new SqlParameter("@CmpAltPhoneNo", SqlDbType.VarChar, 50);
+                CmpAltPhoneNo.Value = fleetOwnerRequest.CmpAltPhoneNo;
+                cmd.Parameters.Add(CmpAltPhoneNo);
+
+                SqlParameter ZipCode = new SqlParameter("@ZipCode", SqlDbType.VarChar, 50);
+                ZipCode.Value = fleetOwnerRequest.ZipCode;
+                cmd.Parameters.Add(ZipCode);
+
+                SqlParameter CmpLogo = new SqlParameter("@CmpLogo", SqlDbType.VarChar, 50);
+                CmpLogo.Value = fleetOwnerRequest.CmpLogo;
+                cmd.Parameters.Add(CmpLogo);
 
                 SqlParameter insupdflag = new SqlParameter("@insupdflag", SqlDbType.VarChar, 10);
-                insupdflag.Value = FR.insupdflag;
+                insupdflag.Value = fleetOwnerRequest.insupdflag;
                 cmd.Parameters.Add(insupdflag);
                 
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(Tbl);
-               
-                // cmd.ExecuteScalar();
-               // conn.Close();
-
-
-                //connetionString="Data Source=ServerName;Initial Catalog=DatabaseName;User ID=UserName;Password=Password"
-               // conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["btposdb"].ToString();
-                //conn.ConnectionString = "Data Source=localhost;Initial Catalog=MyAlerts;integrated security=sspi;";
-                SqlCommand cmd1 = new SqlCommand();
-                cmd1.CommandType = CommandType.StoredProcedure;
-                cmd1.CommandText = "InSupdFleetOwnerRequest";
-                cmd1.Connection = conn;
-              //  conn.Open();
-               
+               //General details                     
 
                 SqlParameter CurrentSystemInUse = new SqlParameter("@CurrentSystemInUse", SqlDbType.VarChar, 50);
-                CurrentSystemInUse.Value = FR.CurrentSystemInUse;
-                cmd1.Parameters.Add(CurrentSystemInUse);
+                CurrentSystemInUse.Value = fleetOwnerRequest.CurrentSystemInUse;
+                cmd.Parameters.Add(CurrentSystemInUse);
 
                 SqlParameter SentNewProductsEmails = new SqlParameter("@SentNewProductsEmails", SqlDbType.Int);
-                SentNewProductsEmails.Value = FR.SentNewProductsEmails;
-                cmd1.Parameters.Add(SentNewProductsEmails);
+                SentNewProductsEmails.Value = fleetOwnerRequest.SentNewProductsEmails;
+                cmd.Parameters.Add(SentNewProductsEmails);
 
                 SqlParameter howdidyouhearaboutus = new SqlParameter("@howdidyouhearaboutus", SqlDbType.VarChar, 50);
-                howdidyouhearaboutus.Value = FR.howdidyouhearaboutus;
-                cmd1.Parameters.Add(howdidyouhearaboutus);
+                howdidyouhearaboutus.Value = fleetOwnerRequest.howdidyouhearaboutus;
+                cmd.Parameters.Add(howdidyouhearaboutus);
 
                 SqlParameter Agreetotermsandconditions = new SqlParameter("@Agreetotermsandconditions", SqlDbType.Int);
-                Agreetotermsandconditions.Value = FR.Agreetotermsandconditions;
-                cmd1.Parameters.Add(Agreetotermsandconditions);
+                Agreetotermsandconditions.Value = fleetOwnerRequest.Agreetotermsandconditions;
+                cmd.Parameters.Add(Agreetotermsandconditions);
+                               
 
-                SqlParameter insupdflag1 = new SqlParameter("@insupdflag", SqlDbType.VarChar, 10);
-                insupdflag1.Value = FR.insupdflag;
-                cmd1.Parameters.Add(insupdflag1);
-
-                cmd1.ExecuteScalar();
-                conn.Close();
-                
-
+               // cmd.ExecuteScalar();
+               // conn.Close();
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.Fill(Tbl);
+                return Tbl;
             }
               
             catch (Exception ex)

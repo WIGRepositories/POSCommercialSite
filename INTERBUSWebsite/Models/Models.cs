@@ -65,18 +65,7 @@ namespace INTERBUSWebsite.Models
         public int TransactionId { set; get; }
     }
    
-    public class FleetOwnerRequest
-    {
-        public int Id { get; set; }
-        public String FirstName { get; set; }
-        public String LastName { get; set; }
-        public String Email { get; set; }
-        public String MobileNo { get; set; }
-        public String CompanyName { get; set; }
-        public String Description { get; set; }       
-        public string insupdflag { get; set; }
-
-    }
+   
 
     public class Booking
     {
@@ -167,42 +156,48 @@ namespace INTERBUSWebsite.Models
         public string ReenterNewPassword { set; get; }
 
     }
-    public class FleetOwnerRequest1
-    { 
-
+    public class FleetOwnerRequest
+    {                    
+        //user details
         public int Id { get; set; }
         public string FirstName { get; set; }
-
+        public string MiddleName { get; set; }
         public string LastName{get; set;}
         public int PhoneNo{get; set;}
         public string EmailAddress { get; set; }
-        public string CompanyName {get; set;}
-        public string Description {get; set;}
-
-        public string Title { get; set; }
-        public string CompanyEmployeSize { set; get; }
-
-        public string FleetSize { set; get; }
-        
-        public string CurrentSystemInUse { set; get; }
-        public string SentNewProductsEmails { set; get; }
-          
-        public string Gender { set; get; }
-
-        public string howdidyouhearaboutus { get; set; }
-           
-        public int Agreetotermsandconditions { get; set; }
-
+        public int AltPhoneNo{get; set;}  
+        public int Gender { set; get; }
         public string Address { get; set; }
+        public string userPhoto { get; set; }
+
+        //Company details
+        public string CompanyName {get; set;}
+        public string CmpEmailAddress { get; set; }
+
+        public string CmpAddress { get; set; }
+        public string CmpAltAddress { get; set; }
+
+        public string CmpCaption { get; set; }
+
+        public string CmpTitle { get; set; }
+        public string CmpPhoneNo { set; get; }
+        public string CmpAltPhoneNo { set; get; }
+
+        public string FleetSize { set; get; }           
         public int StaffSize { get; set; }
         public string Country {get;set;}
         public string Code {get;set;}
-        public string Fax {get;set;}
-        public string PermanentAddress {get;set;}
-        public string  TemporaryAddres{get;set;}
-
+        public string CmpFax {get;set;}
+        public string ZipCode {get;set;}
+        public string  CmpLogo{get;set;}
         public string state{get;set;}  
         public string insupdflag { get; set; }
+
+       //General details
+        public string CurrentSystemInUse { set; get; }
+        public string SentNewProductsEmails { set; get; }  
+        public string howdidyouhearaboutus { get; set; }           
+        public int Agreetotermsandconditions { get; set; }                    
            
     }
     public class LicensePage

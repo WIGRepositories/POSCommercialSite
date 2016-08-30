@@ -25,44 +25,54 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $uibModal, $localSt
             return;
         }
         var FleetOwnerRequest1 = {
-            //Id: Fleet.Id,
-            
+            //user details            
             FirstName: FleetOwnerRequest1.FirstName,
             LastName: FleetOwnerRequest1.LastName,
-
-            //UserTypeId: (role) ? 2 : User.UserType,
-
+            MiddleName: FleetOwnerRequest1.MiddleName,
             EmailAddress: FleetOwnerRequest1.EmailAddress,
-
             PhoneNo: FleetOwnerRequest1.PhoneNo,
-            //RoleId: (role) ? 2 : User.Role,
+            AltPhoneNo: FleetOwnerRequest1.AltPhoneNo,
+            Gender: FleetOwnerRequest1.Gender,
+            Address: FleetOwnerRequest1.Address,
 
+
+            userPhoto: $scope.imageUserSrc,
+            //company details
             CompanyName: FleetOwnerRequest1.CompanyName,
-            Description: FleetOwnerRequest1.Description,
-            Title: FleetOwnerRequest1.Title,
-            CompanyEmployeSize: FleetOwnerRequest1.CompanyEmployeSize,
+            CmpEmailAddress: FleetOwnerRequest1.CmpEmailAddress,
+            Title: FleetOwnerRequest1.CmpTitle,
+            CmpCaption: FleetOwnerRequest1.CmpCaption,
             FleetSize: FleetOwnerRequest1.FleetSize,
+            StaffSize: FleetOwnerRequest1.StaffSize,
+            Country: FleetOwnerRequest1.Country,
+            state: FleetOwnerRequest1.state,
+
+            Code: FleetOwnerRequest1.Code,
+            CmpFax: FleetOwnerRequest1.Fax,
+            CmpPhoneNo: FleetOwnerRequest1.CmpPhoneNo,
+            CmpAltPhoneNo: FleetOwnerRequest1.CmpAltPhoneNo,
+
+            CmpAddress: FleetOwnerRequest1.CmpAddress,
+            CmpAltAddress: FleetOwnerRequest1.CmpAltAddress,
+
+            ZipCode: FleetOwnerRequest1.ZipCode,
+            CmpLogo: $scope.imageSrc,
+
+            //General details        
             CurrentSystemInUse: FleetOwnerRequest1.CurrentSystemInUse,
             SentNewProductsEmails: 1,
-            Gender: FleetOwnerRequest1.Gender,
             howdidyouhearaboutus: FleetOwnerRequest1.howdidyouhearaboutus,
             Agreetotermsandconditions: 1,
-            Address: FleetOwnerRequest1.Address,
-            StaffSize: FleetOwnerRequest1.StaffSize,
-      Country:FleetOwnerRequest1.Country,
-            Code:FleetOwnerRequest1.Code,
-      Fax:FleetOwnerRequest1.Fax,
-            PermanentAddress:FleetOwnerRequest1.PermanentAddress,
-      TemporaryAddres:FleetOwnerRequest1.TemporaryAddres,
-            state:FleetOwnerRequest1.state,
-             insupdflag: 'I',
-       
+
+            insupdflag: 'I',
+
+
         }
         $http({
             url: 'http://localhost:52800/api/FleetOwnerLicense/CreateNewFOR',
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            data: FleetOwnerRequest1
+            data: fleetOwnerRequest
         })   
             .success(function (data, status, headers, config) {
                 //if (data[0]['status'] == "0") {
