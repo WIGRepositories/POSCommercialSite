@@ -101,7 +101,9 @@
     <Content Include="UI\css\01d511f62a-2.css" />
     <Content Include="UI\css\01d511f62a-3.css" />
     <Content Include="UI\css\096daf45c2-2.css" />
+    <Content Include="UI\css\banner.css" />
     <Content Include="UI\js\Carousle\cms.js" />
+    <Content Include="UI\js\Carousle\BannerCarousel.js" />
     <Content Include="UI\js\Carousle\js-core.js" />
     <Content Include="UI\js\Carousle\jwplayer.js" />
     <Content Include="UI\js\Carousle\thirdparty.js" />

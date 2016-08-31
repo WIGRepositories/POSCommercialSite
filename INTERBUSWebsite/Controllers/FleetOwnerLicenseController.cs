@@ -190,26 +190,26 @@ namespace INTERBUSWebsite.Controllers
                 Address.Value = fleetOwnerRequest.Address;
                 cmd.Parameters.Add(Address);
 
-                SqlParameter userPhoto = new SqlParameter("@userPhoto", SqlDbType.Int);
+                SqlParameter userPhoto = new SqlParameter("@userPhoto", SqlDbType.VarChar);
                 userPhoto.Value = fleetOwnerRequest.userPhoto;
                 cmd.Parameters.Add(userPhoto);
                             
                 //Company details
                 
 
-                SqlParameter FRCompanyName = new SqlParameter("@CompanyName", SqlDbType.VarChar, 20);
+                SqlParameter FRCompanyName = new SqlParameter("@CompanyName", SqlDbType.VarChar, 50);
                 FRCompanyName.Value = fleetOwnerRequest.CompanyName;
                 cmd.Parameters.Add(FRCompanyName);
 
-                SqlParameter CmpEmailAddress = new SqlParameter("@CmpEmailAddress", SqlDbType.VarChar, 15);
+                SqlParameter CmpEmailAddress = new SqlParameter("@CmpEmailAddress", SqlDbType.VarChar, 20);
                 CmpEmailAddress.Value = fleetOwnerRequest.CmpEmailAddress;
                 cmd.Parameters.Add(CmpEmailAddress);
 
-                SqlParameter CmpAddress = new SqlParameter("@CmpAddress", SqlDbType.Int);
+                SqlParameter CmpAddress = new SqlParameter("@CmpAddress", SqlDbType.VarChar,250);
                 CmpAddress.Value = fleetOwnerRequest.CmpAddress;
                 cmd.Parameters.Add(CmpAddress);
 
-                SqlParameter CmpAltAddress = new SqlParameter("@CmpAltAddress", SqlDbType.VarChar, 15);
+                SqlParameter CmpAltAddress = new SqlParameter("@CmpAltAddress", SqlDbType.VarChar, 250);
                 CmpAltAddress.Value = fleetOwnerRequest.CmpAltAddress;
                 cmd.Parameters.Add(CmpAltAddress);
 
@@ -217,15 +217,15 @@ namespace INTERBUSWebsite.Controllers
                 FleetSize.Value = fleetOwnerRequest.FleetSize;
                 cmd.Parameters.Add(FleetSize); 
 
-                SqlParameter StaffSize = new SqlParameter("@StaffSize", SqlDbType.VarChar, 50);
+                SqlParameter StaffSize = new SqlParameter("@StaffSize", SqlDbType.Int);
                 StaffSize.Value = fleetOwnerRequest.StaffSize;
                 cmd.Parameters.Add(StaffSize);
 
-                SqlParameter Country = new SqlParameter("@Country", SqlDbType.VarChar, 50);
+                SqlParameter Country = new SqlParameter("@Country", SqlDbType.Int);
                 Country.Value = fleetOwnerRequest.Country;
                 cmd.Parameters.Add(Country);
 
-                SqlParameter state = new SqlParameter("@state", SqlDbType.VarChar, 50);
+                SqlParameter state = new SqlParameter("@state", SqlDbType.Int);
                 state.Value = fleetOwnerRequest.state;
                 cmd.Parameters.Add(state);
 
@@ -258,13 +258,13 @@ namespace INTERBUSWebsite.Controllers
                 ZipCode.Value = fleetOwnerRequest.ZipCode;
                 cmd.Parameters.Add(ZipCode);
 
-                SqlParameter CmpLogo = new SqlParameter("@CmpLogo", SqlDbType.VarChar, 50);
+                SqlParameter CmpLogo = new SqlParameter("@CmpLogo", SqlDbType.VarChar);
                 CmpLogo.Value = fleetOwnerRequest.CmpLogo;
                 cmd.Parameters.Add(CmpLogo);
 
-                SqlParameter insupdflag = new SqlParameter("@insupdflag", SqlDbType.VarChar, 10);
-                insupdflag.Value = fleetOwnerRequest.insupdflag;
-                cmd.Parameters.Add(insupdflag);
+                //SqlParameter insupdflag = new SqlParameter("@insupdflag", SqlDbType.VarChar, 10);
+                //insupdflag.Value = fleetOwnerRequest.insupdflag;
+                //cmd.Parameters.Add(insupdflag);
                 
                //General details                     
 
@@ -287,7 +287,7 @@ namespace INTERBUSWebsite.Controllers
 
                // cmd.ExecuteScalar();
                // conn.Close();
-                SqlDataAdapter da = new SqlDataAdapter();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(Tbl);
                 return Tbl;
             }
@@ -310,7 +310,7 @@ namespace INTERBUSWebsite.Controllers
 
             }
             // int found = 0;
-            return Tbl;
+          //  return Tbl;
         }
        
         public void Options()

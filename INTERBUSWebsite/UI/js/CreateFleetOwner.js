@@ -24,7 +24,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $uibModal, $localSt
             alert('Please enter PhoneNo.');
             return;
         }
-        var FleetOwnerRequest1 = {
+        var fleetOwnerRequest = {
             //user details            
             FirstName: FleetOwnerRequest1.FirstName,
             LastName: FleetOwnerRequest1.LastName,
@@ -47,8 +47,8 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $uibModal, $localSt
             Country: FleetOwnerRequest1.Country,
             state: FleetOwnerRequest1.state,
 
-            Code: FleetOwnerRequest1.Code,
-            CmpFax: FleetOwnerRequest1.Fax,
+            Code:  $scope.GetUID(),
+            CmpFax: FleetOwnerRequest1.CmpFax,
             CmpPhoneNo: FleetOwnerRequest1.CmpPhoneNo,
             CmpAltPhoneNo: FleetOwnerRequest1.CmpAltPhoneNo,
 
@@ -117,6 +117,18 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $uibModal, $localSt
         }
     };
 
+    $scope.GetUID = function () {      
+
+        var date = new Date();
+        var components = [
+            date.getHours(),
+            date.getMinutes(),
+            date.getSeconds()
+        ];
+
+        var id = components.join("");
+        return 'CMP' + id;
+    }
 
 });
 app.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, mssg,status) {
