@@ -330,6 +330,12 @@ namespace INTERBUSWebsite.Controllers
                 kki.Value = ulconfirm.Units;
                 cmd1.Parameters.Add(kki);
 
+                SqlParameter pu = new SqlParameter();
+                pu.ParameterName = "@POSUnits";
+                pu.SqlDbType = SqlDbType.Decimal;
+                pu.Value = ulconfirm.POSUnits;
+                cmd1.Parameters.Add(pu);
+
                 SqlParameter flag = new SqlParameter();
                 flag.ParameterName = "@insupddelflag";
                 flag.SqlDbType = SqlDbType.VarChar;

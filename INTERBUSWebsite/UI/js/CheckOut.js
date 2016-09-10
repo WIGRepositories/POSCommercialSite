@@ -64,8 +64,8 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
                                             ULId: ulD.ULId,
                                             IsRenewal: 0,
                                             Amount: ulD.Amount,
-                                            //Units: ulD.Units,
-                                            Units: $localStorage.noOfBTPOSUnits,
+                                            Units: ulD.Units,
+                                            POSUnits: $localStorage.noOfBTPOSUnits,
                                             insupddelflag: 'I',
                                             userId: fo.Table[0].userid,
                                             foId: fo.Table[0].foid,
@@ -230,7 +230,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
         var modalInstance = $uibModal.open({
             animation: $scope.animationsEnabled,
             templateUrl: 'email.html',
-            // controller: 'ModalInstanceCtrl',
+             controller: 'ModalInstanceCtrl',
             resolve: {
                 mssg: function () {
                     return 'test';

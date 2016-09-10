@@ -17,7 +17,8 @@ namespace INTERBUSWebsite.Controllers
     {
         [HttpGet]
         [Route("api/Payments/MakePayment")]
-        public DataTable MakePayment() {           
+        public DataTable MakePayment(decimal amt)
+        {           
             try
             {
 
@@ -35,11 +36,11 @@ namespace INTERBUSWebsite.Controllers
                     amount = new Amount()
                     {
                         currency = "USD",
-                        total = "50",
+                        total = amt.ToString(),
                         details = new Details()
                         {
                             shipping = "0",
-                            subtotal = "50",
+                            subtotal = amt.ToString(),
                             tax = "0"
                         }
                     },
@@ -52,7 +53,7 @@ namespace INTERBUSWebsite.Controllers
                         {
                             name = "Item Name",
                             currency = "USD",
-                            price = "50",
+                            price = amt.ToString(),
                             quantity = "1",
                             sku = "sku"
                         }

@@ -332,7 +332,8 @@ namespace INTERBUSWebsite.Models
         public int itemId { set; get; }
         public string address { set; get; }
         public decimal Amount { set; get; }
-        public decimal Units { set; get; }        
+        public decimal Units { set; get; }
+        public decimal POSUnits { set; get; }     
         public int IsRenewal { set; get; }
         public string insupddelflag { set; get; }
     }

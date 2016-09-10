@@ -28,7 +28,7 @@ namespace INTERBUSWebsite.Controllers
             cmd.Connection = conn;
 
             //conn.Open();
-            SqlParameter code = new SqlParameter("@fleetownercode", SqlDbType.VarChar, 10);
+            SqlParameter code = new SqlParameter("@fleetownercode", SqlDbType.VarChar, 15);
             code.Value = fleetownercode;
             cmd.Parameters.Add(code);
 

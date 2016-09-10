@@ -102,6 +102,8 @@
     <Content Include="UI\css\01d511f62a-3.css" />
     <Content Include="UI\css\096daf45c2-2.css" />
     <Content Include="UI\css\banner.css" />
+    <Content Include="UI\images\bg1.png" />
+    <Content Include="UI\images\promos\bkgRd3.png" />
     <Content Include="UI\js\Carousle\cms.js" />
     <Content Include="UI\js\Carousle\BannerCarousel.js" />
     <Content Include="UI\js\Carousle\js-core.js" />
@@ -1114,7 +1116,9 @@
     <Content Include="UI\vendors\slimScroll\jquery.slimscroll.min.js" />
     <Content Include="UI\vendors\summernote\summernote.css" />
     <Content Include="UI\vendors\summernote\summernote.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />

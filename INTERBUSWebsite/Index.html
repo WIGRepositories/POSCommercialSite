@@ -189,8 +189,7 @@
 
                                 <a style="text-decoration:none" href="#">Products</a>
                                 <ul>
-                                    <li><a href="UI/Licensepage.html">Fleet Owner License</a></li>
-
+                                    <li ng-repeat="t in licenses" id="{{t.Id}}"><a href="#" ng-click="GotToLicensePage(t);">{{t.Name}}</a></li>
                                 </ul>
                             </li>
 
@@ -316,7 +315,7 @@
 
 
                                                                                 <input ng-model="result" value="1" type="radio" name="triptype" checked ng-init="result=1" /> One Way
-                                                                                <input ng-model="result1" value="2" type="radio" name="triptype" checked ng-init="result=2" /> Two Way
+                                                                                <input ng-model="result1" value="2" type="radio" name="triptype" ng-init="result=2" /> Two Way
 
 
                                                                                 <div class="extra-options clearfix">
