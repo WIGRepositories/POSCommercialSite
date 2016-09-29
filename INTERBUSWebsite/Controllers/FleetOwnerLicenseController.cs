@@ -186,7 +186,7 @@ namespace INTERBUSWebsite.Controllers
                 AltPhoneNo.Value = fleetOwnerRequest.AltPhoneNo;
                 cmd.Parameters.Add(AltPhoneNo);
 
-                SqlParameter Address = new SqlParameter("@Address", SqlDbType.VarChar, 15);
+                SqlParameter Address = new SqlParameter("@Address", SqlDbType.VarChar, 250);
                 Address.Value = fleetOwnerRequest.Address;
                 cmd.Parameters.Add(Address);
 

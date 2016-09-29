@@ -185,23 +185,32 @@
     <div class="container" >
         <div style="margin-top: 100px;text-align:center">
          
-                        <div >
-                            
-                            <h3 style="padding-top: 10px;align-items:center">
-                                Need to renew license? Enter license code:
-                                <input type="text" width="100" ng-model="txt"><button ng-click="ValidateLicenseCode(txt);" class="btn btn-primary">Renew</button>
-                            </h3> <!--<a href="Fleetownerrequest.html" style="color:red">
-                                    click here
-                                </a> to contact INTERBUS administrator-->
-                           
+            <div class="col-lg-12">
+                <div class="col-lg-6">
+                    <h3 style="padding-top: 10px;text-align:right">
+                        Need to renew license? Enter license code:
+                       
+                    </h3>
+                    </div>
+                <div class="col-lg-2" style="text-align:left">
+                    <input type="text" width="100%" ng-model="txt">
+                </div>
+                <div class="col-lg-4" style="text-align:left">
+                    <button ng-click="ValidateLicenseCode(txt);" class="btn btn-primary">Renew</button>
+                    </div>
+                    <!--<a href="Fleetownerrequest.html" style="color:red">
+            click here
+        </a> to contact INTERBUS administrator-->
 
-                        </div>
 
-            <h4 style="padding-top:10px;text-align:center">
-                <b><font style="color:red">Note:</font></b> You need a fleet owner code to buy/renew license. Do not have a fleet owner code? please <a href="Fleetownerrequest.html" style="color:red">
-                    click here
-                </a> to contact INTERBUS administrator
-            </h4>
+                </div>
+            <div class="row">
+                <h3 style="padding-top: 10px; text-align: center">
+                    <font style="padding-top: 10px; color: red"><h3>Note:You need a fleet owner code to buy/renew license.</h3></font> <br /> Do not have a fleet owner code? please <a href="Fleetownerrequest.html" style="color:red">
+                        click here
+                    </a> to contact INTERBUS administrator
+                </h3>
+            </div>
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <h2 style="padding-top:10px; text-align:center"> Please choose from below license options available to buy:</h2>

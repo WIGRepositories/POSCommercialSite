@@ -1125,6 +1125,7 @@
     <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\CartPaymentDetailsController.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
+    <Compile Include="Controllers\Email.cs" />
     <Compile Include="Controllers\LicensePage.cs" />
     <Compile Include="Controllers\LicensePageController.cs" />
     <Compile Include="Controllers\PaymentsController.cs" />
