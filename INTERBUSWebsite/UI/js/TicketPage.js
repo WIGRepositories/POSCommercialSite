@@ -13,7 +13,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         $scope.JourneyType = $scope.details.JourneyType;
 
 
-        //$http.get('http://localhost:52800/api/TicketBooking/GetCities?srcId=' + $scope.source + '&destId=' + $scope.destination).then(function (response, req) {
+        //$http.get('/api/TicketBooking/GetCities?srcId=' + $scope.source + '&destId=' + $scope.destination).then(function (response, req) {
         //    $scope.services = response.data;
         //    $scope.From = $scope.services.source;
         //    $scope.To = $scope.services.destination;

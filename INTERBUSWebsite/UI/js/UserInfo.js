@@ -19,7 +19,7 @@ var mycrtl1 = myapp1.controller('Mycntrlr', function ($scope, $http) {
 
         var req = {
             method: 'POST',
-            url: 'http://localhost:52800/api/UserInfo/saveUserInfo',
+            url: '/api/UserInfo/saveUserInfo',
             //headers: {
             //    'Content-Type': undefined
             data: register

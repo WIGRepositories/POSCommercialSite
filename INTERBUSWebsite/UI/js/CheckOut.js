@@ -28,7 +28,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
     }
 
         $http({
-            url: 'http://localhost:52800/api/UserLicensePymtTransactions/UserLicensePymtTransactions',
+            url: '/api/UserLicensePymtTransactions/UserLicensePymtTransactions',
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             data: UserLicensePymtTransactions,
@@ -38,8 +38,8 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
             $localStorage.UselicensePymtTranRecord = UserLicensePymtTransactions;
                                  
                                 $http({
-                                    url: 'http://localhost:52800/api/Payments/MakePayment?amt=' + ulD.Amount,
-                                   // url: 'http://localhost:52800/api/Payments/325435',
+                                    url: '/api/Payments/MakePayment?amt=' + ulD.Amount,
+                                   // url: '/api/Payments/325435',
                                     method: 'GET'
                                 }).success(function (data, status, headers, config) {
                                     
@@ -73,7 +73,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
                                         }
 
                                         $http({
-                                            url: 'http://localhost:52800/api/UserLicenses/SaveULConfirmDetails',
+                                            url: '/api/UserLicenses/SaveULConfirmDetails',
                                             method: 'POST',
                                             headers: { 'Content-Type': 'application/json' },
                                             data: ULConfirmDetails,
@@ -109,7 +109,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
                                 //    }
 
                                 //    $http({
-                                //        url: 'http://localhost:52800/api/UserLicenses/SaveULConfirmDetails',
+                                //        url: '/api/UserLicenses/SaveULConfirmDetails',
                                 //        method: 'POST',
                                 //        headers: { 'Content-Type': 'application/json' },
                                 //        data: ULConfirmDetails,
@@ -144,7 +144,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
         //$scope.modal_instance = $uibModal.open({
         //    animation: $scope.animationsEnabled,
         //    backdrop:false,
-        //    templateUrl: 'http://localhost:52800/UI/PopupTest.html',
+        //    templateUrl: '/UI/PopupTest.html',
         //    // controller: 'ModalInstanceCtrl',
         //    resolve: {
         //        mssg: function () {
@@ -159,13 +159,13 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
 
         //});
 
-        //$http.get('http://localhost:52800/api/Payments/MakePayment').then(function (response, req) {
+        //$http.get('/api/Payments/MakePayment').then(function (response, req) {
         //    $scope.transDetails = response.data;
 
         //});
 
         //$http({
-        //    url: 'http://localhost:52800/api/Payments/MakePayment',
+        //    url: '/api/Payments/MakePayment',
         //    method: 'GET'
         //}).success(function (data, status, headers, config) {
         //    alert('Saved successfully');
@@ -187,7 +187,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
 
         var modalInstance = $uibModal.open({
             animation: $scope.animationsEnabled,
-            templateUrl: 'http://localhost:52800/UI/PopupTest.html',
+            templateUrl: '/UI/PopupTest.html',
            // controller: 'ModalInstanceCtrl',
             resolve: {
                 mssg: function () {
@@ -204,7 +204,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
         $scope.ld = $localStorage.selLicense;
         $scope.ld.amt = $localStorage.UselicensePymtRecord[0].Amount;
 
-        //$http.get('http://localhost:52800/api/Checkout/getcheckdetails').then(function (response, req) {
+        //$http.get('/api/Checkout/getcheckdetails').then(function (response, req) {
         //    $scope.check = response.data;
 
         //})

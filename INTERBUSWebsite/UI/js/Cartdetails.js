@@ -85,7 +85,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
             }
                
        $http({
-           url: 'http://localhost:52800/api/UserLicenses/SaveUserLicensePayment',
+           url: '/api/UserLicenses/SaveUserLicensePayment',
           method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             data: userlicense,
@@ -94,7 +94,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
            // alert('Saved successfully');
             $localStorage.focheckoutDetails = data.Table;
             $localStorage.UselicensePymtRecord = data.Table1;
-            window.location.href = "http://localhost:52800/UI/CheckOut.html";
+            window.location.href = "/UI/CheckOut.html";
            
         }).error(function (ata, status, headers, config) {
             alert(ata);

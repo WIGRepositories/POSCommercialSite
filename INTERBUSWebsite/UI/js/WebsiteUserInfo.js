@@ -4,7 +4,7 @@ var myapp1 = angular.module('myApp', [])
 var mycrtl1 = myapp1.controller('myCtrl', function ($scope, $http) {
 
     $scope.getdata = function () {
-        $http.get('http://localhost:52800/api/WebsiteUserInfo/GetWebsiteUserInfo').then(function (res, data) {
+        $http.get('/api/WebsiteUserInfo/GetWebsiteUserInfo').then(function (res, data) {
             $scope.type = res.data;
 
             //alerts("hi");
@@ -55,7 +55,7 @@ var mycrtl1 = myapp1.controller('myCtrl', function ($scope, $http) {
 
         var req = {
             method: 'POST',
-            url: 'http://localhost:52800/api/WebsiteUserInfo/pos',
+            url: '/api/WebsiteUserInfo/pos',
             //headers: {
             //    'Content-Type': undefined
 

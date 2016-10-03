@@ -3,18 +3,25 @@ var app = angular.module('myApp', ['ngStorage'])
 
 var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
+    $scope.carouselImages = [{ "ID": 1, "Name": "TRAVEL WITH INTERBUS", "Caption": "Every Journey Matters....", "Path": "UI/Images/promos/11.jpg" }
+        , { "ID": 2, "Name": "Customer satisfaction", "Caption": "The comfort and convienience of travelling with INTERBUS", "Path": "/UI/Images/promos/12.png" }
+        , { "ID": 3, "Name": "Online Ticket Booking", "Caption": "Automated ticketing increases performance and convienience", "Path": "/UI/Images/promos/13.jpg" }
+        , { "ID": 4, "Name": "Hassel free travel", "Caption": "Get online tickets to make the journey hassel free", "Path": "/UI/Images/promos/14.png" }
+        , { "ID": 5, "Name": "Extensive coverage", "Caption": "Wide network taking you to various destinations", "Path": "/UI/Images/promos/2.png" }
+    ];
+
     $scope.GetStops = function () {
 
-        $http.get('http://localhost:52800/api/Stops/GetStops').then(function (response, req) {
-            $scope.Stops = response.data;
-        }, function (data) {
-            alert(data);
-        })
+        //$http.get('/api/Stops/GetStops').then(function (response, req) {
+        //    $scope.Stops = response.data;
+        //}, function (data) {
+        //    alert(data);
+        //})
        
-        $http.get('http://localhost:52800/api/Stops/TypesByGroupId?groupid=3').then(function (res, data) {
-            $scope.licenses = res.data;
+        //$http.get('/api/Stops/TypesByGroupId?groupid=3').then(function (res, data) {
+        //    $scope.licenses = res.data;
 
-        });
+        //});
     }
 
     $scope.GetServices = function () {
@@ -59,7 +66,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
     var req = {
         method: 'POST',
-        url: 'http://localhost:52800/api/ValidateCredentials/ValidateCredentials',
+        url: '/api/ValidateCredentials/ValidateCredentials',
         data: inputcred
     }
 

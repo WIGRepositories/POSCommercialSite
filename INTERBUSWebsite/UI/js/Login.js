@@ -22,7 +22,7 @@ var myCtrl = myapp1.controller('myCtrl', function ($scope, $http, $localStorage)
 
         var req = {
             method: 'POST',
-            url: 'http://localhost:52800/api/ValidateCredentials1/ValidateCredentials',
+            url: '/api/ValidateCredentials1/ValidateCredentials',
             data: inputcred
         }
 

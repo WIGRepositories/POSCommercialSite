@@ -5,7 +5,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
     //$scope.processPymt = function () {
     //    alert('Payment gateway integration will done here and on successful payment user will be redirect to ticket printing page.')
-    //    window.location.href = "http://localhost:52800/UI/TicketPage.html";
+    //    window.location.href = "/UI/TicketPage.html";
     //}
 
 });

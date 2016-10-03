@@ -13,7 +13,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
             $scope.showVDialog('No license details configured for the selected license category. Please contact INTERBUS administartor.');
             return;
         }
-        $http.get('http://localhost:52800/api/LicensePage/GetLicense?LicenseCatId=' + $scope.licenseCatId.Id).then(function (response, req) {
+        $http.get('/api/LicensePage/GetLicense?LicenseCatId=' + $scope.licenseCatId.Id).then(function (response, req) {
             $scope.License = response.data;
             if ($scope.License == null) {
                 alert('No license details configured for the selected license category. Please contact INTERBUS administartor.');
@@ -24,7 +24,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
   
     $scope.getUserLicenses = function () {
 
-        $http.get('http://localhost:52800/api/UserLicenses/getUserLicenses').then(function (response, req) {
+        $http.get('/api/UserLicenses/getUserLicenses').then(function (response, req) {
             $scope.License = response.data;
             if ($scope.License == null) {
                 alert('No license details configured for the selected license category. Please contact INTERBUS administartor.');
@@ -50,7 +50,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
         }
         else {            
 
-            $http.get('http://localhost:52800/api/fleetownerlicense/validatefleetowner?fleetownercode=' + code).then(function (response, req) {
+            $http.get('/api/fleetownerlicense/validatefleetowner?fleetownercode=' + code).then(function (response, req) {
                 $scope.foLicenseDetails = response.data;
                 if ($scope.foLicenseDetails.Table2[0].result == 0) {                    
                     alert('invalid fleet owner code');
@@ -123,7 +123,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
        $localstorage.value = License;
        var req = {
            method: 'POST',
-           url: 'http://localhost:52800/api/LicensePage/SaveLicence',
+           url: '/api/LicensePage/SaveLicence',
            data: License
        }
        $http(req).then(function (response) {
@@ -161,7 +161,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
        }
        var req = {
            method: 'POST',
-           url: 'http://localhost:52800/api/UserLicenses/SaveUserLicenseDetails',
+           url: '/api/UserLicenses/SaveUserLicenseDetails',
            data: userlicense
        }
        $http(req).then(function (response) {          

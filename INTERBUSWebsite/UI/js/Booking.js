@@ -1,7 +1,7 @@
 ﻿var app = angular.module('myApp', ['ngStorage'])
 
 var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
-    //$http.get('http://localhost:52800/api/Booking/commericialsite').then(function (response, req) {
+    //$http.get('/api/Booking/commericialsite').then(function (response, req) {
     //  $scope.routes = response.data;
 
     // })
@@ -55,10 +55,10 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
     //}
 
     $scope.AddSeats = function (x) {
-        document.getElementById('1').src = "http://localhost:52800/UI/images/busimages/acbus.jpg";
+        document.getElementById('1').src = "/UI/images/busimages/acbus.jpg";
 
         document.getElementById('1').style.borderColor = "green";
-        document.getElementById('1').style.backgroundImage = "http://localhost:52800/UI/images/busimages/acbus.jpg";
+        document.getElementById('1').style.backgroundImage = "/UI/images/busimages/acbus.jpg";
 
         if (selectList.indexOf(x) != -1)
             return;
@@ -92,7 +92,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         $scope.way = $localStorage.waytype;
 
        
-        $http.get('http://localhost:52800/api/TicketBooking/GetAvailableServices?srcId=' + $scope.srcId + '&destId=' + $scope.destId).then(function (response, req) {
+        $http.get('/api/TicketBooking/GetAvailableServices?srcId=' + $scope.srcId + '&destId=' + $scope.destId).then(function (response, req) {
             $scope.services = response.data;
         });        
     }
@@ -119,13 +119,13 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
             //$localStorage.waytype = selectedSeats;
            var req = {
                 method: 'POST'
-                , url: 'http://localhost:52800/api/TicketBooking/SaveBookingDetails'
+                , url: '/api/TicketBooking/SaveBookingDetails'
                 , data: book
             }
          //  $http(req).then(function (res) { window.location.href = "TicketCartdetails.html"; });
 
            $http({
-               url: 'http://localhost:52800/api/TicketBooking/SaveBookingDetails',
+               url: '/api/TicketBooking/SaveBookingDetails',
                method: 'POST',
                headers: { 'Content-Type': 'application/json' },
                data: book,
@@ -143,13 +143,13 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         {
             //var book = { "No_Seats": "5", "cost": "1500", "JourneyType": "1", "passengersList": selectedSeats.returnpssngr, "Seatcost": "900" };
             //$localStorage.book = book;
-            //var req = { method: 'POST', url: 'http://localhost:52800/api/TicketBooking/SaveBookingDetails', data: book }
+            //var req = { method: 'POST', url: '/api/TicketBooking/SaveBookingDetails', data: book }
             // $http(req).then(function (res) { window.location.href = "TicketPage.html"; });
          
             stat++;
             if (stat == 1) {
               
-                $http.get('http://localhost:52800/api/TicketBooking/GetAvailableServices?srcId=' + $scope.destId + '&destId=' + $scope.srcId).then(function (response, req) {
+                $http.get('/api/TicketBooking/GetAvailableServices?srcId=' + $scope.destId + '&destId=' + $scope.srcId).then(function (response, req) {
                     $scope.services = response.data;
                 });                
             }

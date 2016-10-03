@@ -1,7 +1,7 @@
 ﻿var myApp = angular.module('myApp', [])
 var Mycntrl = myapp1.controller('Mycntrl', function ($scope, $http) {
     $scope.getdata = function () {
-        $http.get('http://localhost:52800/api/resetpassword/GetResetPassword').then(function (res, data) {
+        $http.get('/api/resetpassword/GetResetPassword').then(function (res, data) {
             $scope.type = res.data;
 
             //alerts("hi");
@@ -22,7 +22,7 @@ var Mycntrl = myapp1.controller('Mycntrl', function ($scope, $http) {
 
         var req = {
             method: 'POST',
-            url: 'http://localhost:52800/api/ValidateCredentials/savepassword',            
+            url: '/api/ValidateCredentials/savepassword',            
             //headers: {
             //    'Content-Type': undefined
 
