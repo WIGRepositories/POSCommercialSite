@@ -3,662 +3,594 @@
 <!--<![endif]-->
 <head>
 
-    <link rel="stylesheet" href="UI/css/w3.css">
-    <!-- Latest compiled and minified CSS -->
-    <!-- Optional theme -->
-
-    <link rel="stylesheet" href="UI/css/bootstrap-theme.min.css">
-
     <title>Interbus - Get Moving Anywhere, Comfortably</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="images/icons/favicon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/icons/favicon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/icons/favicon-114x114.png">
+    <!--Loading bootstrap css-->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <!--<link rel="stylesheet" href="UI/css/bootstrap.min.css">-->
     <script src="UI/js/jquery-1.11.0.min.js"></script>
+
     <script src="UI/js/bootstrap.min.js"></script>
+
+
+    <link type="text/css" rel="stylesheet" href="UI/vendors/jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
+    <link type="text/css" rel="stylesheet" href="UI/vendors/font-awesome/css/font-awesome.min.css">
+        <!--LOADING STYLESHEET FOR PAGE--><!--Loading style vendors-->
+    <link type="text/css" rel="stylesheet" href="UI/vendors/animate.css/animate.css">
+    <link type="text/css" rel="stylesheet" href="UI/vendors/jquery-pace/pace.css">
+    <link type="text/css" rel="stylesheet" href="UI/vendors/iCheck/skins/all.css">
+    <link type="text/css" rel="stylesheet" href="UI/vendors/jquery-news-ticker/jquery.news-ticker.css">
+    <!--Loading style-->
     <link href="UI/css/themes/style2/pink-blue.css" rel="stylesheet" />
-
-    <link href="UI/css/StyleSheet2.css" media="screen,print" rel="stylesheet" />
-    <link href="UI/css/StyleSheet1.css" media="screen,print" rel="stylesheet" />
-    <link href="UI/css/StyleSheet4.css" media="screen,&#32;print" rel="stylesheet" />
-    <link href="UI/css/StyleSheet3.css" media="screen&#32;and&#32;(min-width:&#32;580px),print" rel="stylesheet" />
-    <link href="UI/css/StyleSheet5.css" media="screen&#32;and&#32;(min-width:&#32;900px)" rel="stylesheet" />
-    <link rel="stylesheet" href="UI/css/bootstrap.min.css">
-    <link rel="stylesheet" href="UI/css/wickedpicker.min.css">
-    <!--<link rel="stylesheet" href="UI/css/owl.carousel.css">-->
-    <link rel="stylesheet" href="UI/css/style1.css">
-    <link rel="stylesheet" href="UI/css/responsive.css">
-
+    <link type="text/css" rel="UI/stylesheet" href="css/style-responsive.css">
     <link href="UI/css/banner.css" rel="stylesheet" type="text/css">
-    
-    <script src="UI/js/Carousle/BannerCarousel.js" type="text/javascript"></script>
-
-    <link type="text/css" rel="stylesheet" href="UI/vendors/bootstrap-datepicker/css/datepicker.css">
-    <link type="text/css" rel="stylesheet" href="UI/vendors/bootstrap-daterangepicker/daterangepicker-bs3.css">
-    <!--<link type="text/css" rel="stylesheet" href="UI/vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css">-->
-    <link type="text/css" rel="stylesheet" href="UI/vendors/bootstrap-timepicker/css/bootstrap-timepicker.min.css">
-       
-    <script type="text/javascript" src="UI/js/jquery.leanModal.min.js"></script>
-    <script type="text/javascript" src="UI/js/wickedpicker.min.js"></script>
-
-    <style>
-        rr.div a {
-            text-decoration: none;
-            color: white;
-            font-size: 20px;
-            padding: 15px;
-            display: inline-block;
-        }
-
-        #container > table {
-            margin-bottom: 2%;
-        }
-
-        .rr ul {
-            display: inline;
-            margin: 0;
-            padding: 0;
-        }
+  
 
 
-            .rr ul li {
-                display: inline-block;
-                color: white;
-            }
 
-                .rr ul li:hover {
-                    background: #555;
-                }
-
-        .rr .active {
-            background: #555;
-        }
-
-
-        .rr ul li:hover ul {
-            display: block;
-        }
-
-        .rr ul li ul {
-            position: absolute;
-            width: 100px;
-            display: none;
-        }
-
-            .rr ul li ul li {
-                background: #555;
-                display: block;
-                border-bottom: 1px solid white;
-                width: 170px;
-            }
-
-                .rr ul li ul li a {
-                    display: block !important;
-                    text-decoration: none;
-                }
-
-                .rr ul li ul li:hover {
-                    background: #666;
-                }
-
-                .rr ul li ul li a:hover {
-                    text-decoration: none;
-                }
-
-        .item > img {
-            height: 385px !important;
-        }
-    </style>
-
-    <script type="text/javascript">
-        var h = document.documentElement;
-        h.className = h.className.replace(/\bno-js\b/, '');
-        var isTouch = !!("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0;
-
-        if (isTouch) {
-            // remove class which defines hover behavior
-            h.className = h.className.replace(/\bno-touch\b/, '');
-        }
-    </script>
-
-    <script type="text/javascript">
-        $(function () {
-            $('#carousel').carouFredSel({
-                width: '100%',
-                auto: {
-                    pauseOnHover: true,
-                },
-                items: {
-                    visible: 3,
-                    start: -1
-                },
-                scroll: {
-                    items: 1,
-                    duration: 2000,
-                    timeoutDuration: 2000,
-                },
-                prev: '#prev',
-                next: '#next',
-                pagination: {
-                    container: '#pager',
-                    deviation: 1
-                }
-            });
-        });
-    </script>
-
+      
 </head>
+<body class="sidebar-icons fixed-topbar">
+    <div class="row">
 
-<body ng-init="GetStops();" style="background-image:url(UI/images/bg1.png);background-repeat:repeat">
+        <div id="header-topbar-option-demo" class="page-header-topbar col-lg-12">
 
-    <!--start header-->
-    <!--<div class="parentDisable">-->
-    <div id="container">
 
-        <!--Start Menu -->
-        <div class="mainnav" id="mainnav" tabindex="0">
+            <nav id="topbar" role="navigation" style="margin-bottom: 0;" class="navbar navbar-default navbar-static-top ">
 
-            <div class="top-row" style="position:fixed; width:100%; z-index:1">
+                <div class="topbar-main">
+                    <div class="container boxed-layout">
 
-                <div class="r">
-                    <div class="rr" style="width:94%">
-                        <a style="margin-top: 0px; padding-top: 0px; margin-left: 35px; float:left" href="../index.html"><img style="height:76px; border-right:1px solid #D0D0D0 ;border-bottom:1px solid #D0D0D0 ; border-left:1px solid #D0D0D0 " src="UI/Images/logos/interbusLogo.png" alt="Alternate Text" /> </a>
-                        <ul class="collapsible-menu clearfix" style="margin-left:0px;height:76px">
-
-                            <li>
-
-                                <a style="text-decoration:none" href="../index.html">Home</a>
-
-                            </li>
-                            <li>
-
-                                <a class="active" style="text-decoration:none" href="Fares_and_payments.html">Fares / Payments</a>
-
-                                <ul>
-                                    <li><a href="UI/Schedules.html">Schedules</a></li>
-                                    <li><a href="UI/CheckFare.html">CheckFare</a></li>
-                                    <li><a href="UI/Cancel_Ticket.html">Cancellation</a></li>
+                        <a style="margin-top: 0px; padding-top: 0px; margin-left: 35px; float:left" href="../index.html"><img style="height:76px; border-right:1px solid #D0D0D0 ;border-bottom:1px solid #D0D0D0 ; border-left:1px solid #D0D0D0 " src="UI/Images/logos/dashboard.png" alt="Alternate Text" /> </a>
+                        <ul class="nav navbar navbar-top-links mbn">
+                            <li class="active"><a style="text-decoration:none" href="../index.html">Home</a></li>
+                            <li class="dropdown">
+                                <a data-hover="dropdown" href="#" class="dropdown-toggle">Fares/Payments</a>
+                                <ul class="dropdown-menu dropdown-alerts">
+                                    <li><p><a href="UI/Schedules.html"><span class="menu-title">Schedules</span></a></p></li>
+                                    <li><p><a href="UI/CheckFare.html">CheckFare</a></p></li>
+                                    <li><p><a href="UI/Cancel_Ticket.html">Cancellation</a></p></li>
+                                    <!--<li><p>You have 14 new notifications</p></li>-->
 
 
                                 </ul>
                             </li>
-                            <li>
-
-                                <a style="text-decoration:none" href="UI/Status_and_Updates.html">Status & Updates</a>
-
-                            </li>
-                            <li>
-
-                                <a style="text-decoration:none" href="#">Products</a>
-                                <ul>
+                            <li class="dropdown">
+                                <a data-hover="dropdown" href="#" class="dropdown-toggle">Products</a>
+                                <ul class="dropdown-menu dropdown-alerts">
                                     <li ng-repeat="t in licenses" id="{{t.Id}}"><a href="#" ng-click="GotToLicensePage(t);">{{t.Name}}</a></li>
+                                    <!--<li><p>You have 14 new notifications</p></li>-->
+
+
                                 </ul>
                             </li>
-
-                            <li>
-
-                                <a style="text-decoration:none" href="UI/About.html">About Us</a>
-                                <ul>
+                            <li class="dropdown">
+                                <a data-hover="dropdown" href="#" class="dropdown-toggle">About us</a>
+                                <ul class="dropdown-menu dropdown-alerts">
                                     <li><a href="UI/Contact.html">ContactUs</a></li>
 
                                 </ul>
 
                             </li>
 
-
+                            <li class="pull-right">
+                                <div>
+                                    <input type="text" placeholder="Search.." id="q" name="q" style="border-radius: 30px; width: 180px; height: 35px; color: red;" />
+                                    <a href="#"><i class="fa fa-search"></i></a>
+                                </div>
+                            </li>
                         </ul>
-                        <div style="float:right; padding-top:11px">
-                            <input type="text" placeholder="Search.." id="q" name="q" style="border-radius: 30px; width: 120px; height: 35px; color: red;" />
+
+                    </div>
+
+                </div>
+
+            </nav>
 
 
+
+        </div>
+       
+      
+
+    </div>
+    <div class="container shadow" style="padding-right:0px;padding-left:0px">
+        <br>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height:450px;padding-right:0px;padding-left:0px">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox" style="height: 450px; padding-right: 0px; padding-left: 0px;">
+                <div class="item active">
+                  
+                    <img src="UI/Images/promos/11.jpg" alt="Chania" style="height: 100%; width: 100%;padding-right:0px; padding-left: 0px">
+                  
+                    <div class="carousel-caption">
+                        <h2>Interbus image1</h2>
+                        <p><h3>Every journey matters.....</h3></p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="UI/Images/promos/12.png" alt="Chania" style="height: 100%; width: 100%; padding-right: 0px; padding-left: 0px; ">
+                    <div class="carousel-caption">
+                        <h2>Interbus image2</h2>
+                        <p><h3>The convienience of travelling with interbus.</h3></p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="UI/Images/promos/13.jpg" alt="Flower" style="height: 100%; width: 100%; padding-right: 0px; padding-left: 0px; ">
+                    <div class="carousel-caption">
+                        <h2>Interbus image3</h2>
+                        <p><h3>Get online tickets and become tension free with travelling.....</h3></p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="UI/Images/promos/14.png" alt="Flower" style="height: 100%; width: 100%; padding-right: 0px; padding-left: 0px; ">
+                    <div class="carousel-caption">
+                        <h2>Interbus image4</h2>
+                        <p><h3>Automated ticketing increases effeciency and convienience.</h3></p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="UI/Images/promos/2.png" alt="Flower" style="height: 100%; width: 100%; padding-right: 0px; padding-left: 0px; ">
+                    <div class="carousel-caption">
+                        <h2>Interbus image4</h2>
+                        <p><h3>Automated ticketing increases effeciency and convienience.</h3></p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" style="height:465px">
+        <!--<div id="myCarousel" class="carousel slide" data-ride="carousel" style="height: 450px; width: auto;padding-right:0px; padding-left: 0px">
+
+
+           
+            <div class="carousel-inner" role="listbox" style="height: 470px; width: auto; margin-right:-80px; padding-right: 0px; padding-left: 0px">
+
+
+                <div class="item ">
+                    <img src="UI/Images/promos/2.png" alt="Chania" style="height: 100%; padding-right: 0px; padding-left: 0px; ">
+                    <div class="carousel-caption">
+                        <h2>Interbus image1</h2>
+                        <p><h3>Every journey matters.....</h3></p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="UI/Images/promos/3.png" alt="Flower" style="height: 100%; padding-right: 0px; padding-left: 0px; ">
+                    <div class="carousel-caption">
+                        <h2>Interbus image2</h2>
+                        <p><h3>The convienience of travelling with interbus.</h3></p>
+                    </div>
+                </div>
+
+                <div class="item active">
+                    <img src="UI/Images/promos/4.png" alt="Flower" style="height: 100%; padding-right: 0px; padding-left: 0px; ">
+                    <div class="carousel-caption">
+                        <h2>Interbus image3</h2>
+                        <p><h3>Get online tickets and become tension free with travelling.....</h3></p>
+                    </div>
+                </div>
+                <div class="item ">
+                    <img src="UI/Images/promos/1.png" alt="Chania" style="height: 100%; padding-right:0px; padding-left: 0px">
+                    <div class="carousel-caption">
+                        <h2>Interbus image4</h2>
+                        <p><h3>Automated ticketing increases effeciency and convienience.</h3></p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>-->
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+       
+    </a>
+    <div>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" style="height:465px;">
+            <!--<div id="myCarousel" class="carousel slide" data-ride="carousel" style="height: 450px; width: auto;padding-right:0px; padding-left: 0px">
+               
+                <div class="carousel-inner" role="listbox" style="height: 470px; width: auto; margin-left:-80px; padding-right: 0px; padding-left: 0px">
+                   
+
+                    <div class="item active">
+                        <img src="UI/Images/promos/2.png" alt="Chania" style="height: 100%; padding-right: 0px; padding-left: 0px; ">
+                        <div class="carousel-caption">
+                            <h2>Interbus image1</h2>
+                            <p><h3>Every journey matters.....</h3></p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img src="UI/Images/promos/3.png" alt="Flower" style="height: 100%; padding-right: 0px; padding-left: 0px; ">
+                        <div class="carousel-caption">
+                            <h2>Interbus image2</h2>
+                            <p><h3>The convienience of travelling with interbus.</h3></p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img src="UI/Images/promos/4.png" alt="Flower" style="height: 100%; padding-right: 0px; padding-left: 0px; ">
+                        <div class="carousel-caption">
+                            <h2>Interbus image3</h2>
+                            <p><h3>Get online tickets and become tension free with travelling.....</h3></p>
+                        </div>
+                    </div>
+                    <div class="item ">
+                        <img src="UI/Images/promos/1.png" alt="Chania" style="height: 100%; padding-right:0px; padding-left: 0px">
+                        <div class="carousel-caption">
+                            <h2>Interbus image4</h2>
+                            <p><h3>Automated ticketing increases effeciency and convienience.</h3></p>
                         </div>
                     </div>
                 </div>
 
-            </div>
 
-        </div>
-        <div class="clearfix"></div>
-        <!--End Menu-->
-        <!--End header-->
-        <div>
-            <table>
-                <tr>
-                    <td height="450px">
-                        <div id="wrapper_banner">
+            </div>-->
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
 
-                            <div id="carousel">
-                                <img src="UI/Images/promos/bus3.jpg" alt=" " width="1140" height="1500" />
-                                <img src="UI/Images/promos/1.png" alt=" " width="1140" height="1500" />
-                                <img src="UI/Images/promos/bkgRd3.png" alt=" " width="1140" height="1500" />
-                                <img src="UI/Images/promos/2.png" alt=" " width="1140" height="1500" />
-                                <img src="UI/Images/promos/3.png" alt=" " width="1140" height="1500" />
-                                <img src="UI/Images/promos/4.png" alt=" " width="1141" height="1500" />
-                            </div>
-                            <a href="#" id="prev" title="Show previous" class="shadow"></a>
-                            <a href="#" id="next" title="Show next" class="shadow"></a>
+    <div class="container boxed-layout shadow" style="background-color: white; display: block;">
 
-                            <div id="pager"></div>
-                        </div>
-                    </td>
-                </tr>
-                <!--<tr><td height="4px" style="background-color:black;"></td></tr>-->
-                <tr>
-                    <td>
-                        <!-- /wrapper_banner -->
 
-                        <div id="regionMain">
-                            <div class="wrapper">
-                                <div class="wrapperShadow clearfix">
-                                    <div class="shadow main-and-aside one-row r" style="width: 60%; background-color:white">
-                                        <!--plan journey form-->
-                                        <div class="aside">
-                                            <div class="widget-wrapper homepage-style">
-                                                <div class="expandable-box" style="margin-top: 20px;">
-                                                    <div class="content">
-                                                        <div class="always-visible widget-heading primary">
-                                                            <div class="controls">&nbsp;</div>
-                                                            <div class="section-style">Plan a journey</div>
-                                                        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="page-content">
+                    <div class="row">
 
-                                                        <div class="start-hidden widget-content journey-planner-widget">
-                                                            <form autocomplete="off" action="booking.html" class="publictransport">
-                                                                <div class="journey-form">
-                                                                    <div class="basic-journey-options">
-                                                                        <div id="plan-a-journey">
+                        <div class="col-lg-4">
+                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
+                                <div class="panel-heading" style="background-color:black;text-align:center;text-decoration-color:white">Plan a journey</div>
+                                <div class="panel-body form-actions text-right pal" style="background-color: AliceBlue; ">
 
-                                                                            <fieldset>
+                                    <div class="row">
 
-                                                                                <div class="from-and-to clearfix" ng-model="SD">
-
-                                                                                    <div class="geolocation-box clearfix">
-
-                                                                                        <label class="heading&#32;visually-hidden" for="InputFrom">From</label>
-
-                                                                                        <select class="form-control" ng-options="S.Name for S in Stops track by S.Id" ng-model="S">
-                                                                                            <option value="">Select Source</option>
-                                                                                        </select>
-
-                                                                                    </div>
-
-                                                                                    <div id="search-filter-form-1">
-
-
-
-                                                                                        <label class="heading&#32;visually-hidden" for="InputTo">To</label>
-                                                                                        <select class="form-control" ng-options="D.Name for D in Stops track by D.Id" ng-model="D">
-                                                                                            <option value="">Select Destination</option>
-                                                                                        </select>
-
-                                                                                    </div>
-
-                                                                                </div>
-
-                                                                                <div class="time-options clearfix">
-
-                                                                                    <div class="time-defaults">
-
-                                                                                        <p>
-
-                                                                                            <strong>Leaving:</strong>
-
-                                                                                            <span>now</span>
-
-                                                                                        </p>
-
-                                                                                        <a class="change-departure-time" href="">change time</a>
-
-                                                                                        <div class="input-group datetimepicker-disable-date date"><input style="z-index:199" type="text" class="form-control" /><span class="input-group-addon"><i class="fa fa-clock-o"></i></span></div>
-                                                                                        <!--<input type="text" name="timepicker" class="timepicker" />-->
-
-                                                                                    </div>
-
-                                                                                </div>
-
-
-                                                                                <input ng-model="result" value="1" type="radio" name="triptype" checked ng-init="result=1" /> One Way
-                                                                                <input ng-model="result1" value="2" type="radio" name="triptype" ng-init="result=2" /> Two Way
-
-
-                                                                                <div class="extra-options clearfix">
-
-                                                                                    <a class="toggle-options more-options" href="UI/traveloptions.html" />Travel options & accessibility</a>
-
-                                                                                </div>
-
-                                                                                <input type="button" ng-click="GetServices();" class="primary-button plan-journey-button" value="Plan my journey" />
-
-                                                                                <a style="margin-top:10px" href="" data-target="#myModal" data-toggle="modal" class="primary-button plan-journey-button"> Recent Journeys</a>
-
-                                                                            </fieldset>
-
-                                                                        </div>
-
-                                                                    </div>
-
-                                                                </div>
-
-                                                                <input id="IsMultipleJourneySelection" name="IsMultipleJourneySelection" type="hidden" value="False" />
-
-                                                                <input id="JourneyType" name="JourneyType" type="hidden" value="" />
-
-                                                                <input id="IsPastWarning" name="IsPastWarning" type="hidden" value="False" />
-
-                                                            </form>
-
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-
-
-                                            <div data-set="reserved-teaser" class="large tertiary-teaser" style="margin-top: 20px;">
-
-                                                <div class="moving-source-order">
-
-                                                    <div class="news-teaser">
-
-                                                        <a href="">
-                                                            <div class="text-link">
-
-                                                                <h2>Fleet owner adverts </h2>
-
-                                                                <p>Find out about upcoming works or events across London which may affect your journey</p>
-
-                                                            </div>
-
-                                                        </a>
-
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-                                            <div data-set="reserved-teaser" class="large tertiary-teaser">
-
-                                                <div class="moving-source-order">
-
-                                                    <div class="news-teaser">
-
-                                                        <a href="">
-                                                            <div class="text-link">
-
-                                                                <h2>Fleet owner adverts </h2>
-
-                                                                <p>Find out about upcoming works or events across London which may affect your journey</p>
-                                                                <p>Find out about upcoming works or events across London which may affect your journey</p>
-                                                                <p>Find out about upcoming works or events across London which may affect your journey</p>
-
-                                                            </div>
-
-                                                        </a>
-
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-
-
+                                        <div class="form-group">
+                                            <select class="form-control" ng-options="S.Name for S in Stops track by S.Id" ng-model="S">
+                                                <option value="">Select Source</option>
+                                            </select>
                                         </div>
+                                    </div>
 
-                                        <div class="main" style="margin-top: 20px;">
+                                    <div class="row">
 
-                                            <div class="sub-main">
+                                        <div class="form-group">
+                                            <select class="form-control" ng-options="D.Name for D in Stops track by D.Id" ng-model="D">
+                                                <option value="">Select Destination</option>
+                                            </select>
+                                        </div>
+                                    </div>
 
+                                    <div class="row">
+                                        <div style="text-align:left">
+                                            <p>
 
-                                                <div class="secondary-teaser">
+                                                <b><font color="black"> Leaving:</font></b>
 
-                                                    <div class="news-teaser">
+                                                <input ng-model="result" value="1" type="radio" name="timing" checked ng-init="result=1" /> <font color="black">
+    Now
+</font>
+    <input ng-model="result1" value="2" type="radio" name="timing" ng-init="result=2" /> <font color="black"> Change Time</font>
 
-                                                        <a href="">
+</p>
 
-                                                            <img src="UI/Images/promos/thames-clipper_rdax_400x200.jpg" alt="Site visit from Tfl staff, construction site in Blackfriars, London" />
-                                                            <div class="text-link"><h2>Interbus Advert </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
+                                            <div>
 
-                                                        </a>
-
-                                                    </div>
-
-                                                </div>
-                                                <div data-set="reserved-teaser" class="small-medium tertiary-teaser"></div>
-
-                                                <div class="medium-large">
-
-                                                    <div class="news-teaser">
-
-                                                        <a href="">
-
-                                                            <div class="text-link">
-
-                                                                <h2>Travel Voucher</h2><p>
-                                                                    Get a travel Voucher  or  View routes and buses on
-                                                                    Promotion in and around Zimbabwe
-                                                                </p>
-
-                                                            </div>
-
-                                                        </a>
-
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="large">
-
-                                                    <div class="news-teaser">
-
-                                                        <a href="">
-
-                                                            <div class="text-link">
-
-                                                                <h2>Payment Methods</h2><p>Electronic notice board for new payment methods or routes</p>
-
-                                                            </div>
-
-                                                        </a>
-
-                                                    </div>
-
-                                                </div>
-
-                                                <div data-set="reserved-teaser" class="large tertiary-teaser">
-
-                                                    <div class="moving-source-order">
-
-                                                        <div class="news-teaser">
-
-                                                            <a href="">
-
-                                                                <img src="UI/Images/promos/thames-clipper_rdax_400x200.jpg" alt="Central London traffic" />
-
-                                                                <div class="text-link">
-
-
-
-                                                                    <p>
-                                                                        Find out about upcoming works or events across Zimbabwe which may affect your journey.
-                                                                        Events across Zimbabwe which may affect your journey
-                                                                    </p>
-
-                                                                </div>
-
-                                                            </a>
-
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-
+                                                <div class="input-group datetimepicker-disable-date date"><input style="z-index:199" type="text" class="form-control" /><span class="input-group-addon"><i class="fa fa-clock-o"></i></span></div>
+                                                <!--<input type="text" name="timepicker" class="timepicker" />-->
                                             </div>
-
-
-                                            <div class="sub-main" ng-model="type">
-                                                <!--Div for pop up starts-->
-                                                <!---->
-                                                <div class="modal fade" id="myModal" role="dialog">
-                                                    <div class="modal-dialog">
-
-                                                        <!-- Modal content-->
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-
-                                                                <h3 class="modal-title" style="text-align:center">Login</h3>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <form>
-                                                                    <div style="margin-bottom: 15px" class="row">
-                                                                        <div class="col-lg-6"><label><input type="text" placeholder="Email / Username" name="firstname" class="form-control" ng-model="UserName"></label></div>
-                                                                        <div class="col-lg-6"><label><input type="text" placeholder="Password" name="lastname" class="form-control" ng-model="Password"></label></div>
-                                                                    </div>
-                                                                    <div>
-                                                                        <div class="col-lg-1"></div>
-
-                                                                        <div class="col-lg-3">
-                                                                            <button class="btn btn-info" type="button" data-toggle="dropdown">
-                                                                                Login As
-                                                                                <span class="caret"></span>
-                                                                            </button>
-                                                                            <ul class="dropdown-menu">
-                                                                                <li><a href="#">Guest</a></li>
-                                                                                <li><a href="#">Admin</a></li>
-                                                                                <li><a href="#">Passenger</a></li>
-                                                                                <li><a href="#">Fleet Owner</a></li>
-                                                                            </ul>
-
-                                                                        </div>
-                                                                        <div class="col-lg-6">
-                                                                            <input type="checkbox" id="check" />
-                                                                            <label for="remember">Remember me on this computer </label>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="col-lg-12">
-
-                                                                        <div class="col-lg-4">
-                                                                            <a href="UI/resetpassword.html" style="text-align:center" class="forgot_password">Forgot password?</a>
-                                                                        </div>
-                                                                        <div class="col-lg-4">
-                                                                            <div class="btn btn_red" ng-click="Signin()">
-                                                                                Login
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </div>
-
-                                                                    <div class="action_btns">
-
-                                                                        <div class="one_half last" style="margin-left:150px">
-
-                                                                        </div>
-                                                                    </div>
-                                                                </form>
-
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                                <!---->
-
-                                                <div class="main-services">
-                                                    <div class="section-style-login">
-                                                        <a style="text-decoration:none; color:#CCCCCC" href="UI/UserLogin.html"><img src="UI/Images/login.png" />Login</a>
-                                                        <!--<a style="text-decoration:none; color:#CCCCCC" href="#modal" id="modal_trigger"><img src="UI/Images/login.png" />Login</a>-->
-                                                        <a style="text-decoration:none; color:#CCCCCC" href="">Or</a>
-                                                        <a style="text-decoration:none; color:#CCCCCC" href="UI/Registration.html">Create and Account</a>
-                                                    </div>
-                                                    <!--<div data-set="reserved-teaser" class="large tertiary-teaser">
-                                                        <div style="background-color:#f8f7f7">
-                                                            <h3 align="center" style="padding-top:5px">Need a New Fleet Owner License?</h3>
-                                                            <p align="center" style="padding-bottom:5px"> <a href="Licensepage.html" class="btn btn-info" role="button">Click Here..</a></p>
-
-                                                        </div>
-
-                                                    </div>-->
-                                                    <div class="clearfix">
-
-                                                        <a href="UI/Construction.html" class="flat-button top-icon">
-
-                                                            <img src="UI/Images/logos/oyster-homepage-icon.png" alt="" />
-
-                                                            Topup Interbus<br />GoCard
-
-                                                        </a>
-                                                        <a href="UI/Construction.html" class="flat-button top-icon">
-
-                                                            <img src="UI/Images/logos/congestion-homepage-charge-icon.png" alt="" /> Check In
-                                                        </a>
-
-                                                    </div>
-                                                    <div class="clearfix">
-
-                                                        <a href="UI/Construction.html" class="flat-button top-icon">
-
-                                                            <img src="UI/Images/logos/cycle-hire-homepage-icon.png" alt="" />
-
-                                                            Download InterbusGo App
-
-                                                        </a><a href="UI/Construction.html" class="flat-button top-icon">
-
-                                                            <img src="UI/Images/logos/airline-homepage-icon.png" alt="" /> Inquiries
-                                                        </a>
-
-                                                    </div>
-
-                                                </div>
-
-                                                <div data-set="reserved-teaser" class="large tertiary-teaser">
-                                                    <div class="moving-source-order">
-                                                        <div class="news-teaser">
-                                                            <a href="">
-                                                                <img src="UI/Images/promos/thames-clipper_rdax_400x200.jpg" alt="Central London traffic" />
-                                                                <div class="text-link">
-                                                                    <h2>Major works and Events</h2>
-                                                                    <p>Find out about upcoming works or events across Zimbabwe which may affect your journey</p>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="vertical-button-container">
-                                                    <a href="UI/Construction.html" class="plain-button">Stations, stops &amp; piers</a>
-                                                    <a href="UI/Construction.html" class="plain-button">Timetables</a>
-                                                    <a href="UI/Construction.html" class="plain-button">Help &amp; contacts</a>
-                                                    <a href="UI/Construction.html" class="plain-button">Shop for Products online</a>
-                                                    <a href="UI/Construction.html" class="plain-button">Transport accessibility</a>
-                                                    <a href="UI/Construction.html" class="plain-button">Social media &amp; email updates</a>
-                                                    <a href="UI/Construction.html" class="plain-button">Interbus Digital Blog</a>
-                                                </div>
-
-                                            </div>
-
+                                            <br />
+                                            <div>
+                                                <input ng-model="result" value="1" type="radio" name="triptype" checked ng-init="result=1" /> <font color="black">
+    One way
+</font>
+    <input ng-model="result1" value="2" type="radio" name="triptype" ng-init="result=2" /> <font color="black"> Two way</font>
+</div>
                                         </div>
 
                                     </div>
+                                    <div class="row">
+                                        <div class="form-group pull-left">
+                                            <br />
+                                            <a href="UI/traveloptions.html"><font color="blue"> <u>Travel options & accessibility</u></font></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="form-group pull-left col-lg-12">
+                                            <input type="button" ng-click="GetServices();" class="btn btn-blue panel-heading" value="Plan my journey" style="width:100%" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group pull-left col-lg-12">
+                                            <input type="button" data-target="#myModal" data-toggle="modal" class="btn btn-blue panel-heading" value="Recent Journeys" style="width:100%" />
+                                        </div>
+                                    </div>
+                                </div>
+                                    </div>
+                             </div>
+
+
+                      
+
+                        <div class="col-lg-8">
+                            <div class="row" >
+                                <div class="col-lg-6">
+                                    
+                                    <div class="panel panel-dark" style="background-color: AliceBlue; ">
+
+
+                                        <a href="">
+
+                                            <img src="UI/Images/advt1.jpeg" style="width:100%" />
+                                            <div class="text-link"><h2>Interbus Advert </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
+
+                                        </a>
+                                    </div>
+
+                                    
+                                    </div>
+                                <div class="col-lg-6">
+                                   
+                                    <div class="row">
+                                        <div class="panel panel-dark" style="background-color: AliceBlue; ">
+                                            <div class="panel-heading" style="background-color: black; text-align: center; text-decoration-color: white">
+                                                <a style="text-decoration:none; color:#CCCCCC" href="UI/UserLogin.html"><img src="UI/Images/login.png" />Login</a>
+                                                <!--<a style="text-decoration:none; color:#CCCCCC" href="#modal" id="modal_trigger"><img src="UI/Images/login.png" />Login</a>-->
+                                                <a style="text-decoration:none; color:#CCCCCC" href="">Or</a>
+                                                <a style="text-decoration:none; color:#CCCCCC" href="UI/Registration.html">Create and Account</a>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div class="row" style="text-align:center">
+                                            <div class="col-lg-6">
+                                                <div class="panel panel-dark" style="background-color: AliceBlue; ">
+                                                    <a href="UI/Construction.html" class="flat-button top-icon">
+
+                                                        <img src="UI/Images/logos/oyster-homepage-icon.png" alt="" /><br />
+
+                                                        Topup Interbus<br />GoCard
+
+                                                    </a>
+                                                    </div>
+
+                                                </div>
+                                            <div class="col-lg-6">
+                                                <div class="panel panel-dark" style="background-color: AliceBlue; ">
+                                                    <a href="UI/Construction.html" class="flat-button top-icon">
+
+                                                        <img src="UI/Images/logos/cycle-hire-homepage-icon.png" alt="" /><br />
+
+                                                        Download InterbusGo App
+
+                                                    </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    <div class="row" style="text-align:center">
+                                        <div class="col-lg-6">
+                                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
+
+                                                <a href="UI/Construction.html" class="flat-button top-icon">
+
+                                                    <img src="UI/Images/logos/congestion-homepage-charge-icon.png" alt="" /> <br />
+                                                    Check In
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
+                                                <a href="UI/Construction.html" class="flat-button top-icon">
+
+                                                    <img src="UI/Images/logos/airline-homepage-icon.png" alt="" /><br />
+                                                    Inquiries
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                            </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+
+                                    <div class="panel panel-dark" style="background-color: AliceBlue; ">
+                            
+                                    <h2>Travel Voucher</h2><p>
+                                        Get a travel Voucher  or  View routes and buses on
+                                        Promotion in and around Zimbabwe
+                                    </p>
+                                    </div>
+
 
                                 </div>
+                                <div class="col-lg-6">
+                                    <div class="panel panel-dark" style="background-color: AliceBlue; ">
+
+                                        <h2>Travel Voucher</h2><p>
+                                            Get a travel Voucher  or  View routes and buses on
+                                            Promotion in and around Zimbabwe
+                                        </p>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </div>
+                    </div>                   
+                    
 
-    <div class="row">
+                    <div class="row">
+                        <div class="col-lg-4">
+
+                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
+
+
+                                <a href="">
+
+                                    <img src="UI/Images/advt1.jpeg" style="width:100%" />
+                                    <div class="text-link"><h2>Interbus Advert </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
+
+                                </a>
+                            </div>
+
+
+                        </div>
+                        <div class="col-lg-4">
+
+                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
+
+
+                                <a href="">
+
+                                    <img src="UI/Images/advt1.jpeg" style="width:100%" />
+                                    <div class="text-link"><h2>Interbus Advert </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
+
+                                </a>
+                            </div>
+
+
+                        </div>
+                        <div class="col-lg-4">
+
+                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
+
+
+                                <a href="">
+
+                                    <img src="UI/Images/advt1.jpeg" style="width:100%" />
+                                    <div class="text-link"><h2>Interbus Advert </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
+
+                                </a>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-lg-4">
+
+                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
+
+
+                                <a href="">
+
+                                    <img src="UI/Images/advt1.jpeg" style="width:100%" />
+                                    <div class="text-link"><h2>Interbus Advert </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
+
+                                </a>
+                            </div>
+
+
+                        </div>
+                        <div class="col-lg-4">
+
+                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
+
+
+                                <a href="">
+
+                                    <img src="UI/Images/advt1.jpeg" style="width:100%" />
+                                    <div class="text-link"><h2>Interbus Advert </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
+
+                                </a>
+                            </div>
+
+
+                        </div>
+                        <div class="col-lg-4">
+
+                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
+
+
+                                <a href="">
+
+                                    <img src="UI/Images/advt1.jpeg" style="width:100%" />
+                                    <div class="text-link"><h2>Interbus Advert </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
+
+                                </a>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+
+                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
+
+
+                                <a href="">
+
+                                    <img src="UI/Images/advt1.jpeg" style="width:100%" />
+                                    <div class="text-link"><h2>Interbus Advert </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
+
+                                </a>
+                            </div>
+
+
+                        </div>
+                        <div class="col-lg-6">
+
+                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
+
+
+                                <a href="">
+
+                                    <img src="UI/Images/advt1.jpeg" style="width:100%" />
+                                    <div class="text-link"><h2>Interbus Advert </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
+
+                                </a>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+        </div>
+        <div class="clearfix"></div>
+
+        <!--END FOOTER-->
+    </div>
+        </div>
+ </div>
+        <!--END CONTENT--><!--BEGIN FOOTER-->
+    <div class="row" style="display:block">
         <div class="col-lg-12">
-            <div id="footer" tabindex="0">
+            <div id="footer-site" tabindex="0">
 
                 <h2 class="visually-hidden">Site footer</h2>
-                <div class="primary-footer r">
-                    <h2 class="visually-hidden">About Interbus</h2><ul class="footer-links">
+                <div class="footer-site r">
+                    <h2 class="visually-hidden">About Interbus</h2>
+                    <ul class="footer-site-links">
                         <li><a href="UI/Construction.html">Help &amp; contacts</a></li>
                         <li><a class="" href="UI/Construction.html">Careers</a></li>
                         <li><a class="" href="UI/Construction.html">About Interbus</a></li>
@@ -668,17 +600,19 @@
                         <li><a class="" href="UI/Construction.html">Gift Shop</a></li>
                         <li><a class="" href="UI/Construction.html">Social media &amp; email updates</a></li>
 
-                        <li><a class="languages-footer" href="UI/Construction.html">Other languages</a></li>
-                    </ul><h2 class="heading">Information for...</h2>
-                    <ul class="info-for clearfix">
+                        <li><a class="languages-footer-site" href="UI/Construction.html">Other languages</a></li>
+                    </ul>
+
+                    <h2 class="heading">Information for...</h2>
+                    <ul class="footer-site-links">
                         <li><a href="UI/Construction.html">Media</a></li>
                         <li><a href="UI/Construction.html">Business &amp; commercial</a></li>
                         <li><a href="UI/Construction.html">Get Support online 24/7</a></li>
                         <li><a href="UI/Construction.html">Schools &amp; young people</a></li>
                         <li><a href="UI/Construction.html">Deliveries in Zimbabwe</a></li>
                         <li><a href="UI/Construction.html">Urban planning & construction</a></li>
-
-
+                    </ul>
+                    <ul class="footer-site-links">
                         <li><a href="UI/Construction.html">Taxi &amp; private hire </a></li>
 
 
@@ -689,8 +623,8 @@
                         <li><a href="UI/Construction.html">Download Interbus App</a></li>
                     </ul>
                 </div>
-                <div class="secondary-footer">
-                    <h2 class="visually-hidden">Site structure and legal information</h2><div class="r">
+                <div class="footer-site">
+                    <div class="r">
                         <ul>
                             <li><a href="UI/Construction.html">Terms &amp; conditions </a></li>
                             <li><a href="UI/Construction.html">Privacy &amp; cookies</a></li>
@@ -698,59 +632,41 @@
                         </ul>
                         <span class="heading">Copyright Interbus</span>
                     </div>
+
                 </div>
-                <div>
+                    <div>
+                    </div>
                 </div>
-            </div>
         </div>
+
     </div>
 
+    
 
-    <script type="text/javascript">
-        $("#modal_trigger").leanModal({ top: 200, overlay: 0.6, closeButton: ".modal_close" });
-
-        $(function () {
-            // Calling Login Form
-            $("#login_form").click(function () {
-                $(".social_login").hide();
-                $(".user_login").show();
-                return false;
-            });
-
-            // Calling Register Form
-            $("#register_form").click(function () {
-                $(".social_login").hide();
-                $(".user_register").show();
-                $(".header_title").text('Register');
-                return false;
-            });
-
-            // Going back to Social Forms
-            $(".back_btn").click(function () {
-                $(".user_login").hide();
-                $(".user_register").hide();
-                $(".social_login").show();
-                $(".header_title").text('Login');
-                return false;
-            });
-
-        })
-    </script>
-    <script src="UI/js/bootstrap.min.js"></script>
-    <script src="UI/js/moment.js"></script>
-    <script src="UI/vendors/bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js"></script>
-    <script>
-        $('.datetimepicker-disable-date').datetimepicker({
-            pickDate: false
-        });
-    </script>
-    <script type="text/javascript" src="UI/js/bxslider.min.js"></script>
-    <script type="text/javascript" src="UI/js/script.slider.js"></script>
-    <script src="UI/js/angular.js"></script>
-    <script src="UI/js/ngStorage.js"></script>
-    <script src="UI/js/index.js"></script>
-    <!--<script src="UI/js/Login.js"></script>-->
+        <script src="UI/js/jquery-1.10.2.min.js"></script>
+        <script src="UI/js/jquery-migrate-1.2.1.min.js"></script>
+        <script src="UI/js/jquery-ui.js"></script>
+        <!--loading bootstrap js-->
+        <script src="UI/vendors/bootstrap/js/bootstrap.min.js"></script>
+        <script src="UI/vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
+        <script src="UI/js/html5shiv.js"></script>
+        <script src="UI/js/respond.min.js"></script>
+        <script src="UI/vendors/metisMenu/jquery.metisMenu.js"></script>
+        <script src="UI/vendors/slimScroll/jquery.slimscroll.js"></script>
+        <script src="UI/vendors/jquery-cookie/jquery.cookie.js"></script>
+        <script src="UI/vendors/iCheck/icheck.min.js"></script>
+        <script src="UI/vendors/iCheck/custom.min.js"></script>
+        <script src="UI/vendors/jquery-news-ticker/jquery.news-ticker.js"></script>
+        <script src="UI/js/jquery.menu.js"></script>
+        <script src="UI/vendors/jquery-pace/pace.min.js"></script>
+        <script src="UI/vendors/holder/holder.js"></script>
+        <script src="UI/vendors/responsive-tabs/responsive-tabs.js"></script>
+        <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
+        <script src="UI/js/main.js"></script>
+   
+      
 </body>
+
 
 
 

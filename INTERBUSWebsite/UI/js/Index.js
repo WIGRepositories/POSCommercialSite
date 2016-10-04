@@ -12,16 +12,16 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
     $scope.GetStops = function () {
 
-        //$http.get('/api/Stops/GetStops').then(function (response, req) {
-        //    $scope.Stops = response.data;
-        //}, function (data) {
-        //    alert(data);
-        //})
+        $http.get('/api/Stops/GetStops').then(function (response, req) {
+            $scope.Stops = response.data;
+        }, function (data) {
+            alert(data);
+        });
        
-        //$http.get('/api/Stops/TypesByGroupId?groupid=3').then(function (res, data) {
-        //    $scope.licenses = res.data;
+        $http.get('/api/Stops/TypesByGroupId?groupid=3').then(function (res, data) {
+            $scope.licenses = res.data;
 
-        //});
+        });
     }
 
     $scope.GetServices = function () {
