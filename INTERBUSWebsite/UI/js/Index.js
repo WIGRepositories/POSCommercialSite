@@ -42,7 +42,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
         //$rootscope.src = $scope.RS;
         //$rootscope.dest = $scope.RD;
-        $scope.way1 = $scope.result ;
+        $scope.way1 = (angular.getElementById('1').checked?1:0) ;
         $localStorage.waytype = $scope.way1;
         window.location.href = "UI/booking.html";
     }
