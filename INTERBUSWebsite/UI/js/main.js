@@ -42,9 +42,9 @@ $(function () {
     $("[data-toggle='tooltip'], [data-hover='tooltip']").tooltip();
     //END TOOLTIP
 
-    //BEGIN POPOVER
-    $("[data-toggle='popover'], [data-hover='popover']").popover();
-    //END POPOVER
+    ////BEGIN POPOVER
+    //$("[data-toggle='popover'], [data-hover='popover']").popover();
+    ////END POPOVER
 
     //BEGIN THEME SETTING
     $('#theme-setting > a.btn-theme-setting').click(function(){
@@ -303,11 +303,7 @@ $(function () {
     });
     //END CHECKBOX TABLE
 
-    //BEGIN JQUERY NEWS UPDATE
-    $('#news-update').ticker({
-        controls: false,
-        titleText: ''
-    });
+    
     //END JQUERY NEWS UPDATE
 
     $('.option-demo').hover(function() {

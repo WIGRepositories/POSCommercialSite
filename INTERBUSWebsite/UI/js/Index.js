@@ -14,6 +14,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
         $http.get('/api/Stops/GetStops').then(function (response, req) {
             $scope.Stops = response.data;
+            $localStorage.Stops = $scope.Stops;
         }, function (data) {
             alert(data);
         });
@@ -42,8 +43,8 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
         //$rootscope.src = $scope.RS;
         //$rootscope.dest = $scope.RD;
-        $scope.way1 = (angular.getElementById('1').checked?1:0) ;
-        $localStorage.waytype = $scope.way1;
+        $localStorage.timing = ($scope.timing == 'Now')? Date() : $scope.timing;
+        $localStorage.triptype = $scope.triptype;
         window.location.href = "UI/booking.html";
     }
     $scope.Signin = function () {

@@ -12,934 +12,433 @@
     <link rel="apple-touch-icon" href="images/icons/favicon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/icons/favicon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="images/icons/favicon-114x114.png">
+    
     <!--Loading bootstrap css-->  
     <link rel="stylesheet" href="UI/css/bootstrap.min.css">
-    <script src="UI/js/jquery-1.11.0.min.js"></script>
-
-    <script src="UI/js/bootstrap.min.js"></script>
-
-
+    <script src="UI/js/jquery-1.11.0.min.js"></script>    
+    <script src="UI/js/bootstrap.js"></script>
     <link type="text/css" rel="stylesheet" href="UI/vendors/jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
     <link type="text/css" rel="stylesheet" href="UI/vendors/font-awesome/css/font-awesome.min.css">
-        <!--LOADING STYLESHEET FOR PAGE--><!--Loading style vendors-->
+    
+    <!--LOADING STYLESHEET FOR PAGE--><!--Loading style vendors-->
     <link type="text/css" rel="stylesheet" href="UI/vendors/animate.css/animate.css">
     <link type="text/css" rel="stylesheet" href="UI/vendors/jquery-pace/pace.css">
     <link type="text/css" rel="stylesheet" href="UI/vendors/iCheck/skins/all.css">
     <link type="text/css" rel="stylesheet" href="UI/vendors/jquery-news-ticker/jquery.news-ticker.css">
+    
     <!--Loading style-->
     <link href="UI/css/themes/style2/pink-blue.css" rel="stylesheet" />
     <link type="text/css" rel="UI/stylesheet" href="css/style-responsive.css">
-    <link href="UI/css/banner.css" rel="stylesheet" type="text/css">
-  
-
-    <style>
-        /*vertical button*/
-        .vertical-button-container {
-            margin: 20px 0;
-            border-top: 1px solid #a8a8a8;
-            border-right: 1px solid #a8a8a8;
-            border-left: 1px solid #a8a8a8;
-            border-bottom: 3px solid #ccc;
-            border-bottom: 3px solid rgba(0,0,0,0.2);
-        }
-
-            .vertical-button-container.social .plain-button {
-                position: relative;
-                padding-left: 20px;
-                padding-right: 100px;
-            }
-
-                .vertical-button-container.social .plain-button:after {
-                    background-position: -64px -288px;
-                    right: 75px;
-                }
-
-            .vertical-button-container.social span {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 10px;
-                height: 100%;
-            }
-
-            .vertical-button-container.social .follow-text {
-                position: absolute;
-                right: 55px;
-                left: auto;
-                top: 50%;
-                margin-top: -13px;
-                color: #2070B0;
-            }
-
-        .plain-button {
-            display: block;
-            position: relative;
-            border: none;
-            border-bottom: 1px solid #a8a8a8;
-            width: 100%;
-            background: #fff;
-            padding: 9px 20px 8px 10px;
-            color: #2D3039;
-            -webkit-transition: background-color 0.3s;
-            -moz-transition: background-color 0.3s;
-            transition: background-color 0.3s;
-        }
-
-            .plain-button:hover, .plain-button:focus {
-                text-decoration: none;
-                background-color: #EFF6FD;
-            }
-
-            .plain-button:visited, .plain-button:active {
-                color: #2D3039;
-            }
-
-            .plain-button.single {
-                border-top: 1px solid #ccc;
-                border-left: 1px solid #ccc;
-                border-right: 1px solid #ccc;
-            }
-
-            .plain-button.with-icon > div {
-                text-align: left;
-                position: relative;
-            }
-
-                .plain-button.with-icon > div span.icon {
-                    position: absolute;
-                    top: -5px;
-                    left: -5px;
-                }
-
-            .plain-button h4, .plain-button .heading {
-                padding-left: 32px;
-                margin: 0;
-            }
-
-            .plain-button .logo {
-                display: block;
-                position: absolute;
-                left: 8%;
-                top: 50%;
-            }
-
-            .plain-button:after {
-                background-image: url("Images/vsprite_x2.b9905b1f.png");
-                background-image: url("Images/vsprite.fdb08bfe.png") \9;
-                background-size: 96px 3328px;
-                height: 32px;
-                width: 32px;
-                background-position: 0px -640px;
-                content: "";
-                position: absolute;
-                top: 50%;
-                right: 0;
-                margin-top: -16px;
-                margin-right: -6px;
-            }
-
-        .body-cms-preview .plain-button:after {
-            background-image: url("Images/vsprite.fdb08bfe.png");
-        }
-
-        .plain-button-external-link {
-            color: #2070B0;
-        }
-
-            .plain-button-external-link:visited, .plain-button-external-link:active {
-                color: #2070B0;
-            }
-
-            .plain-button-external-link:after {
-                margin-right: 2px;
-                background-image: url("Images/vsprite_x2.b9905b1f.png");
-                background-image: url("Images/vsprite.fdb08bfe.png") \9;
-                background-size: 96px 3328px;
-                height: 32px;
-                width: 32px;
-                background-position: -32px -1152px;
-            }
-        /*vertical button*/
-
-       
-    /*stylesheet3*/
-
-
-        #footer .footer-links, .horizontal-toggle-buttons.tw-buttons li.thirds {
-            float: left;
-            margin: 0 0 0 2.54%;
-            width: 29.928%;
-        }
-
-
-
-        #footer h2.heading, #footer .info-for, #alternatives {
-            float: left;
-            margin: 0 0 0 2.54%;
-            width: 62.396%;
-        }
-
-
-
-
-
-        #footer .footer-links {
-            padding: 20px 0 10px;
-            background: none;
-            margin-bottom: 0;
-        }
-
-            #footer .footer-links li {
-                border-right: 1px solid #ccc;
-            }
-
-                #footer .footer-links li.social, #footer .footer-links li.choose-language {
-                    border-right: none;
-                }
-
-        #footer a.info-for-link {
-            cursor: default;
-        }
-
-            #footer a.info-for-link:focus h2.heading, #footer a.info-for-link:hover h2.heading {
-                background-color: transparent;
-            }
-
-        #footer h2.heading {
-            margin: 20px 0 0 0;
-            padding: 7px 0 7px 5%;
-            border: none;
-            background: none;
-            color: #fff;
-            font-weight: bold;
-            cursor: default;
-        }
-
-            #footer h2.heading:before {
-                display: none;
-            }
-
-        #footer .expanded h2.heading:before {
-            display: none;
-        }
-
-        #footer .info-for {
-            padding: 0 0 10px;
-            margin-bottom: 0;
-            background: none;
-        }
-
-            #footer .info-for li {
-                display: block;
-                float: left;
-                margin-left: 4.07077%;
-                width: 47.96461%;
-                padding: 7px 0;
-                border: none;
-            }
-
-                #footer .info-for li:nth-child(2n) {
-                    margin-left: 0;
-                }
-
-                #footer .info-for li a {
-                    display: inline;
-                    padding: 0;
-                }
-
-                    #footer .info-for li a:after {
-                        display: none;
-                    }
-
-        #footer .secondary-footer {
-            padding-top: 7px;
-            padding-bottom: 7px;
-        }
-
-            #footer .secondary-footer ul li {
-                float: left;
-                margin: 0 1% 0 0;
-            }
-
-            #footer .secondary-footer span {
-                margin-top: 11px;
-                float: right;
-                display: block;
-            }
-
-        #footer .footer-MOL-logo {
-            float: right;
-            width: auto;
-        }
-
-    /*stylesheet3*/
-    /*stylesheet2*/
-    .footer-right-content {
-    position: absolute;
-    bottom: 8px;
-    right: 12px;
-    }
-
-    /*stylesheet1*/
-    #footer {
-    border-top: 3px solid #ccc;
-
-
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0px, #292C34),color-stop(6px, #373D48),color-stop(300px, #1F2329));
-    background-image: -webkit-linear-gradient(#292C34 0px,#373D48 6px,#1F2329 300px);
-    background-image: linear-gradient(#292C34 0px,#373D48 6px,#1F2329 300px);
-    }
-
-    #footer ul {
-    list-style-type: none;
-    margin-bottom: 0;
-    }
-
-    #footer a, #footer a:visited {
-    color: #CDCDCD;
-    font-size: 14px;
-    padding: 7px 0;
-    display: block;
-    }
-
-    #footer .footer-links {
-    padding: 20px 0 10px;
-    background: none;
-    margin-bottom: 0;
-    height: 40%;
-    /*margin: 0 2.54% 10px;*/
-    }
-
-    #footer .footer-links .languages {
-    background-image: url("Images/vsprite_x2.b9905b1f.png");
-    background-image: url("Images/vsprite.fdb08bfe.png") \9;
-    background-image: url("Images/vsprite_x2.b9905b1f.png");
-    background-image: url("Images/vsprite.fdb08bfe.png") \9;
-    background-size: 96px 3328px;
-    background-position: 0px -1312px;
-    height: 25px;
-    width: 32px;
-    display: inline-block;
-    }
-
-    .body-cms-preview #footer .footer-links .languages {
-    background-image: url("Images/vsprite.fdb08bfe.png");
-    }
-
-    .body-cms-preview #footer .footer-links .languages {
-    background-image: url("Images/vsprite.fdb08bfe.png");
-    }
-
-    #footer h2.heading {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    display: block;
-    padding: 10px 9px 10px 30px;
-    /*background-color: #2D3039;*/
-    color: #fff;
-    /*border-bottom: 3px solid #1B1D21;*/
-    font-weight: bold;
-    cursor: pointer;
-    margin: 0 2.54%;
-    position: relative;
-    }
-
-    #footer h2.heading:before {
-    background-image: url("/static/1/images/vsprite_x2.b9905b1f.png");
-    background-image: url("/static/1/images/vsprite.fdb08bfe.png") \9;
-    background-size: 96px 3328px;
-    height: 32px;
-    width: 32px;
-    background-position: -32px -704px;
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 5px;
-    }
-
-    .body-cms-preview #footer h2.heading:before {
-    background-image: url("/static/1/images/vsprite.fdb08bfe.png");
-    }
-
-    #footer .info-for-link {
-    padding: 0;
-    }
-
-    #footer .info-for-link:visited, #footer .info-for-link:active {
-    padding: 0;
-    }
-
-    #footer .info-for-link:focus, #footer .info-for-link:hover {
-    text-decoration: none;
-    }
-
-    #footer .info-for-link:focus h2.heading, #footer .info-for-link:hover h2.heading {
-    background-color: #444856;
-    }
-
-    #footer .info-for {
-    margin-bottom: 10px;
-    margin-left: 2.54%;
-    background-color: #202329;
-    padding: 0 0 10px;
-    margin-bottom: 0;
-    background: none;
-    }
-
-    /*#footer .info-for li {
-    display: none;
-    padding: 0;
-    border-right: 1px solid #868F98;
-    border-bottom: 1px solid #868F98;
-    border-left: 1px solid #868F98;
-    }*/
-
-    #footer .info-for a {
-    display: block;
-    padding: 18px 10px;
-    position: relative;
-    }
-
-    #footer .info-for a:after {
-    position: absolute;
-    top: 50%;
-    margin-top: -16px;
-    right: 2px;
-    content: "";
-    background-image: url("/static/1/images/vsprite_x2.b9905b1f.png");
-    background-image: url("/static/1/images/vsprite.fdb08bfe.png") \9;
-    background-size: 96px 3328px;
-    height: 32px;
-    width: 32px;
-    background-position: -32px -640px;
-    }
-
-    .body-cms-preview #footer .info-for a:after {
-    background-image: url("/static/1/images/vsprite.fdb08bfe.png");
-    }
-
-    #footer .expanded li {
-    display: block;
-    }
-
-    #footer .expanded h2.heading:before {
-    background-image: url("/static/1/images/vsprite_x2.b9905b1f.png");
-    background-image: url("/static/1/images/vsprite.fdb08bfe.png") \9;
-    background-size: 96px 3328px;
-    height: 32px;
-    width: 32px;
-    background-position: -32px -736px;
-    }
-
-    .body-cms-preview #footer .expanded h2.heading:before {
-    background-image: url("/static/1/images/vsprite.fdb08bfe.png");
-    }
-
-    #footer .secondary-footer {
-    background-color: #2C2F38;
-    font-style: italic;
-    }
-
-    #footer .secondary-footer span.heading {
-    margin-left: 2.54%;
-    color: #fff;
-    font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
-    }
-
-    #footer .secondary-footer a, #footer .secondary-footer a:visited {
-    color: #66CCCC;
-    text-decoration: underline;
-    font-size: 14px;
-    }
-
-    .footer-MOL-logo {
-    float: left;
-    padding: 0 2.54% 10px 2.54%;
-    width: 100%;
-    }
-
-    .languages-footer a {
-    position: relative;
-    padding-left: 28px;
-    }
-
-    .languages-footer a:after {
-    background-image: url("Images/vsprite_x2.b9905b1f.png");
-    background-image: url("Images/vsprite.fdb08bfe.png") \9;
-    background-size: 96px 3328px;
-    height: 32px;
-    width: 32px;
-    background-position: 0px -1312px;
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    margin-top: -16px;
-    margin-left: -5px;
-    }
-
-    .body-cms-preview .languages-footer a:after {
-    background-image: url("/static/1/images/vsprite.fdb08bfe.png");
-    }
-    </style>
-              
+    
 </head>
-<body class="sidebar-icons fixed-topbar" ng-init="GetStops();">
-    <div class="row">
+<body ng-init="GetStops();">
+    
+    <div id="container">
 
-        <div id="header-topbar-option-demo" class="page-header-topbar col-lg-12">
+        <!--start of white bar above menu-->
+        <!--End of white bar above menu-->
+        <!--Start Menu-->
+        <div class="mainnav" id="mainnav" tabindex="0">
 
+            <div class="top-row clearfix" style="position:fixed; width:100%; z-index:1">
 
-            <nav id="topbar" role="navigation" style="margin-bottom: 0;" class="navbar navbar-default navbar-static-top ">
+                <div class="r">
+                    <div class="rr">
+                        <a style="margin-top: 0px; padding-top: 0px; margin-right: 30px; float:left" href="../index.html"><img style="height:76px" src="UI/Images/logos/dashboard.png" alt="Alternate Text" /> </a>
+                        <ul class="collapsible-menu clearfix" style="margin-left:0px;">
 
-                <div class="topbar-main">
-                    <div class="container boxed-layout">
+                            <li style="margin-left:50px">
 
-                        <a style="margin-top: 0px; padding-top: 0px; margin-left: 35px; float:left" href="../index.html"><img style="height:76px; border-right:1px solid #D0D0D0 ;border-bottom:1px solid #D0D0D0 ; border-left:1px solid #D0D0D0 " src="UI/Images/logos/dashboard.png" alt="Alternate Text" /> </a>
-                        <ul class="nav navbar navbar-top-links mbn">
-                            <li class="active"><a style="text-decoration:none" href="../index.html">Home</a></li>
-                            <li class="dropdown">
-                                <a data-hover="dropdown" href="#" class="dropdown-toggle">Fares/Payments</a>
-                                <ul class="dropdown-menu dropdown-alerts">
-                                    <li><p><a href="UI/Schedules.html"><span class="menu-title">Schedules</span></a></p></li>
-                                    <li><p><a href="UI/CheckFare.html">CheckFare</a></p></li>
-                                    <li><p><a href="UI/Cancel_Ticket.html">Cancellation</a></p></li>
-                                    <!--<li><p>You have 14 new notifications</p></li>-->
+                                <a style="text-decoration:none" href="../index.html">Home</a>
+
+                            </li>
+                            <li>
+
+                                <a style="text-decoration:none" href="UI/Fares_and_payments.html">Fares / Payments</a>
+
+                                <ul>
+                                    <li><a href="#">Schedules</a></li>
+                                    <li><a href="#">CheckFare</a></li>
+                                    <li><a href="#">Cancellation</a></li>
 
 
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a data-hover="dropdown" href="#" class="dropdown-toggle">Products</a>
-                                <ul class="dropdown-menu dropdown-alerts">
-                                    <li ng-repeat="t in licenses" id="{{t.Id}}"><a href="#" ng-click="GotToLicensePage(t);">{{t.Name}}</a></li>
-                                    <!--<li><p>You have 14 new notifications</p></li>-->
+                            <li>
 
+                                <a style="text-decoration:none" href="UI/Status_and_Updates.html">Status & Updates</a>
+
+                            </li>
+                            <li>
+
+                                <a style="text-decoration:none" href="#">Products</a>
+                                <ul>
+                                    <li><a href="UI/Licensepage.html">Fleet Owner License</a></li>
 
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a data-hover="dropdown" href="#" class="dropdown-toggle">About us</a>
-                                <ul class="dropdown-menu dropdown-alerts">
-                                    <li><a href="UI/Contact.html">ContactUs</a></li>
+
+                            <li>
+
+                                <a style="text-decoration:none" href="UI/AboutUs.html">About Us</a>
+                                <ul>
+                                    <li><a href="UI/ContactUs.html">ContactUs</a></li>
 
                                 </ul>
 
                             </li>
 
-                            <li class="pull-right">
-                                <div>
-                                    <input type="text" placeholder="Search.." id="q" name="q" style="border-radius: 30px; width: 180px; height: 35px; color: red;" />
-                                    <a href="#"><i class="fa fa-search"></i></a>
+                            <li style="margin-left:220px">
+
+                                <div style="float:right; padding-top:11px">
+                                    <input type="text" placeholder="Search" id="q" name="q" style="border-radius:30px; width:120px; height:35px" />
+
+
                                 </div>
+
+
                             </li>
+
                         </ul>
-
-                    </div>
-
-                </div>
-
-            </nav>
-
-
-
-        </div>
-
-
-
-    </div>
-    <div class="container shadow" style="padding-right:0px;padding-left:0px">
-        <br>
-        <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height:450px;padding-right:0px;padding-left:0px">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-                <li data-target="#myCarousel" data-slide-to="3"></li>
-                <li data-target="#myCarousel" data-slide-to="4"></li>
-            </ol>
-
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox" style="height: 450px; padding-right: 0px; padding-left: 0px;">
-                <div class="item active">
-
-                    <img src="UI/Images/promos/11.jpg" alt="Chania" style="height: 100%; width: 100%;padding-right:0px; padding-left: 0px">
-
-                    <div class="carousel-caption">
-                        <h2>Interbus image1</h2>
-                        <p><h3>Every journey matters.....</h3></p>
                     </div>
                 </div>
 
-                <div class="item">
-                    <img src="UI/Images/promos/12.png" alt="Chania" style="height: 100%; width: 100%; padding-right: 0px; padding-left: 0px; ">
-                    <div class="carousel-caption">
-                        <h2>Interbus image2</h2>
-                        <p><h3>The convienience of travelling with interbus.</h3></p>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <img src="UI/Images/promos/13.jpg" alt="Flower" style="height: 100%; width: 100%; padding-right: 0px; padding-left: 0px; ">
-                    <div class="carousel-caption">
-                        <h2>Interbus image3</h2>
-                        <p><h3>Get online tickets and become tension free with travelling.....</h3></p>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <img src="UI/Images/promos/14.png" alt="Flower" style="height: 100%; width: 100%; padding-right: 0px; padding-left: 0px; ">
-                    <div class="carousel-caption">
-                        <h2>Interbus image4</h2>
-                        <p><h3>Automated ticketing increases effeciency and convienience.</h3></p>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="UI/Images/promos/2.png" alt="Flower" style="height: 100%; width: 100%; padding-right: 0px; padding-left: 0px; ">
-                    <div class="carousel-caption">
-                        <h2>Interbus image4</h2>
-                        <p><h3>Automated ticketing increases effeciency and convienience.</h3></p>
-                    </div>
-                </div>
             </div>
 
-
         </div>
+
+        <!--End Menu-->
     </div>
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" style="height:465px">
 
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
+ 
 
-    </a>
+    <div id="wrapper1">
+        <div id="carousel" class="shadow">
+            <img ng-repeat="i in carouselImages" src="{{i.Path}}" />
+        </div>
+            <a href="#" id="prev" title="Show previous"> </a>
+            <a href="#" id="next" title="Show next"> </a>
+            <div id="pager"></div>
+        </div>    
 
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" style="height:465px;">
-
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-
-    <div class="container boxed-layout shadow" style="background-color: white; display: block;">
+        <div class="container boxed-layout shadow" style="background-color: white; display: block;">
 
 
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="page-content">
-                    <div class="row">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-content">
+                        <div class="row">
 
-                        <div class="col-lg-4">
-                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
-                                <div class="panel-heading" style="background-color:black;text-align:center;text-decoration-color:white">Plan a journey</div>
-                                <div class="panel-body form-actions text-right pal" style="background-color: AliceBlue; ">
+                            <div class="col-lg-4">
+                                <div class="panel panel-dark" style="background-color: AliceBlue; ">
+                                    <div class="panel-heading" style="background-color:black;text-align:center;text-decoration-color:white">Plan a journey</div>
+                                    <div class="panel-body form-actions text-right pal" style="background-color: AliceBlue; ">
 
-                                    <div class="row">
+                                        <div class="row">
 
-                                        <div class="form-group">
-                                            <select class="form-control" ng-options="S.Name for S in Stops track by S.Id" ng-model="S">
-                                                <option value="">Select Source</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-
-                                        <div class="form-group">
-                                            <select class="form-control" ng-options="D.Name for D in Stops track by D.Id" ng-model="D">
-                                                <option value="">Select Destination</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div style="text-align:left">
-                                            <p>
-
-                                                <b><font color="black"> Leaving:</font></b>
-
-                                                <input id="currTime" value="1" type="radio" name="timing" checked/> <font color="black">
-                                                    Now
-                                                </font>
-                                                <input id="dtTime" value="2" type="radio" name="timing" /> <font color="black"> Change Time</font>
-
-                                            </p>
-
-                                            <div>
-
-                                                <div class="input-group datetimepicker-disable-date date"><input style="z-index:199" type="text" class="form-control" /><span class="input-group-addon"><i class="fa fa-clock-o"></i></span></div>
-                                                <!--<input type="text" name="timepicker" class="timepicker" />-->
-                                            </div>
-                                            <br />
-                                            <div>
-                                                <input  value="11" type="radio" name="triptype" checked /> <font color="black">
-                                                    One way
-                                                </font>
-                                                <input  value="12" type="radio" name="triptype"  /> <font color="black"> Two way</font>
+                                            <div class="form-group">
+                                                <select class="form-control" ng-options="S.Name for S in Stops track by S.Id" ng-model="S">
+                                                    <option value="">Select Source</option>
+                                                </select>
                                             </div>
                                         </div>
 
-                                    </div>
-                                    <div class="row">
-                                        <div class="form-group pull-left">
-                                            <br />
-                                            <a href="UI/traveloptions.html"><font color="blue"> <u>Travel options & accessibility</u></font></a>
-                                        </div>
-                                    </div>
+                                        <div class="row">
 
-                                    <div class="row">
-                                        <div class="form-group pull-left col-lg-12">
-                                            <input type="button" ng-click="GetServices();" class="btn btn-blue panel-heading" value="Plan my journey" style="width:100%" />
+                                            <div class="form-group">
+                                                <select class="form-control" ng-options="D.Name for D in Stops track by D.Id" ng-model="D">
+                                                    <option value="">Select Destination</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="form-group pull-left col-lg-12">
-                                            <input type="button" data-target="#myModal" data-toggle="modal" class="btn btn-blue panel-heading" value="Recent Journeys" style="width:100%" />
+
+                                        <div class="row">
+                                            <div style="text-align:left">
+                                                <p>
+
+                                                    <b><font color="black"> Leaving:</font></b>
+
+                                                    <input id="currTime" value="Now" type="radio" name="timing" ng-model="timing" checked /> <font color="black">
+                                                        Now
+                                                    </font>
+                                                    <input id="dtTime" value="ChangeTime" type="radio" name="timing" ng-model="timing" /> <font color="black"> Change Time</font>
+
+                                                </p>
+
+                                                <div>
+
+                                                    <div class="input-group datetimepicker-disable-date date"><input style="z-index:199" type="text" class="form-control" /><span class="input-group-addon"><i class="fa fa-clock-o"></i></span></div>
+                                                    <!--<input type="text" name="timepicker" class="timepicker" />-->
+                                                </div>
+                                                <br />
+                                                <div>
+                                                    <input value="11" type="radio" name="triptype" ng-model="triptype" checked /> <font color="black">
+                                                        One way
+                                                    </font>
+                                                    <input value="12" type="radio" name="triptype" ng-model="triptype" /> <font color="black"> Two way</font>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group pull-left">
+                                                <br />
+                                                <a href="UI/traveloptions.html"><font color="blue"> <u>Travel options & accessibility</u></font></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="form-group pull-left col-lg-12">
+                                                <input type="button" ng-click="GetServices();" class="btn btn-blue panel-heading" value="Plan my journey" style="width:100%" />
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group pull-left col-lg-12">
+                                                <input type="button" data-target="#myModal" data-toggle="modal" class="btn btn-blue panel-heading" value="Recent Journeys" style="width:100%" />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
 
 
 
-                        <div class="col-lg-8">
-                            <div class="row">
-                                <div class="col-lg-6">
+                            <div class="col-lg-8">
+                                <div class="row">
+                                    <div class="col-lg-6">
 
-                                    <div class="panel panel-dark" style="background-color: AliceBlue; ">
-
-
-                                        <a href="">
-
-                                            <img src="UI/Images/advt1.jpeg" style="width:100%" />
-                                            <div class="text-link"><h2>Interbus Advert </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
-
-                                        </a>
-                                    </div>
-
-
-                                </div>
-                                <div class="col-lg-6">
-
-                                    <div class="row">
                                         <div class="panel panel-dark" style="background-color: AliceBlue; ">
-                                            <div class="panel-heading" style="background-color: black; text-align: center; text-decoration-color: white">
-                                                <a style="text-decoration:none; color:#CCCCCC" href="UI/UserLogin.html"><img src="UI/Images/login.png" />Login</a>
-                                                <!--<a style="text-decoration:none; color:#CCCCCC" href="#modal" id="modal_trigger"><img src="UI/Images/login.png" />Login</a>-->
-                                                <a style="text-decoration:none; color:#CCCCCC" href="">Or</a>
-                                                <a style="text-decoration:none; color:#CCCCCC" href="UI/Registration.html">Create and Account</a>
+
+
+                                            <a href="">
+
+                                                <img src="UI/Images/advt1.jpeg" style="width:100%" />
+                                                <div class="text-link"><h2>Interbus Advert </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
+
+                                            </a>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="col-lg-6">
+
+                                        <div class="row">
+                                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
+                                                <div class="panel-heading" style="background-color: black; text-align: center; text-decoration-color: white">
+                                                    <a style="text-decoration:none; color:#CCCCCC" href="UI/UserLogin.html"><img src="UI/Images/login.png" />Login</a>
+                                                    <!--<a style="text-decoration:none; color:#CCCCCC" href="#modal" id="modal_trigger"><img src="UI/Images/login.png" />Login</a>-->
+                                                    <a style="text-decoration:none; color:#CCCCCC" href="">Or</a>
+                                                    <a style="text-decoration:none; color:#CCCCCC" href="UI/Registration.html">Create and Account</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="text-align:center">
+                                            <div class="col-lg-6">
+                                                <div class="panel panel-dark" style="background-color: AliceBlue; ">
+                                                    <a href="UI/Construction.html" class="flat-button top-icon">
+
+                                                        <img src="UI/Images/logos/oyster-homepage-icon.png" alt="" /><br />
+
+                                                        Topup Interbus<br />GoCard
+
+                                                    </a>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="panel panel-dark" style="background-color: AliceBlue; ">
+                                                    <a href="UI/Construction.html" class="flat-button top-icon">
+
+                                                        <img src="UI/Images/logos/cycle-hire-homepage-icon.png" alt="" /><br />
+
+                                                        Download InterbusGo App
+
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="text-align:center">
+                                            <div class="col-lg-6">
+                                                <div class="panel panel-dark" style="background-color: AliceBlue; ">
+
+                                                    <a href="UI/Construction.html" class="flat-button top-icon">
+
+                                                        <img src="UI/Images/logos/congestion-homepage-charge-icon.png" alt="" /> <br />
+                                                        Check In
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="panel panel-dark" style="background-color: AliceBlue; ">
+                                                    <a href="UI/Construction.html" class="flat-button top-icon">
+
+                                                        <img src="UI/Images/logos/airline-homepage-icon.png" alt="" /><br />
+                                                        Inquiries
+                                                    </a>
+
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row" style="text-align:center">
-                                        <div class="col-lg-6">
-                                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
-                                                <a href="UI/Construction.html" class="flat-button top-icon">
 
-                                                    <img src="UI/Images/logos/oyster-homepage-icon.png" alt="" /><br />
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
 
-                                                    Topup Interbus<br />GoCard
+                                        <div class="panel panel-dark" style="background-color: AliceBlue; ">
 
-                                                </a>
-                                            </div>
-
+                                            <h2>Travel Voucher</h2><p>
+                                                Get a travel Voucher  or  View routes and buses on
+                                                Promotion in and around Zimbabwe
+                                            </p>
                                         </div>
-                                        <div class="col-lg-6">
-                                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
-                                                <a href="UI/Construction.html" class="flat-button top-icon">
 
-                                                    <img src="UI/Images/logos/cycle-hire-homepage-icon.png" alt="" /><br />
 
-                                                    Download InterbusGo App
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="panel panel-dark" style="background-color: AliceBlue; ">
 
-                                                </a>
-                                            </div>
+                                            <h2>Travel Voucher</h2><p>
+                                                Get a travel Voucher  or  View routes and buses on
+                                                Promotion in and around Zimbabwe
+                                            </p>
                                         </div>
                                     </div>
-                                    <div class="row" style="text-align:center">
-                                        <div class="col-lg-6">
-                                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
 
-                                                <a href="UI/Construction.html" class="flat-button top-icon">
+                                </div>
+                            </div>
+                        </div>
 
-                                                    <img src="UI/Images/logos/congestion-homepage-charge-icon.png" alt="" /> <br />
-                                                    Check In
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
-                                                <a href="UI/Construction.html" class="flat-button top-icon">
 
-                                                    <img src="UI/Images/logos/airline-homepage-icon.png" alt="" /><br />
-                                                    Inquiries
-                                                </a>
+                        <div class="row">
+                            <div class="col-lg-4">
 
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="panel panel-dark" style="background-color: AliceBlue; ">
+
+
+                                    <a href="">
+
+                                        <img src="UI/Images/advt1.jpeg" style="width:100%" />
+                                        <div class="text-link"><h2>Interbus Advert </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
+
+                                    </a>
                                 </div>
 
+
                             </div>
-                            <div class="row">
-                                <div class="col-lg-6">
+                            <div class="col-lg-4">
 
-                                    <div class="panel panel-dark" style="background-color: AliceBlue; ">
-
-                                        <h2>Travel Voucher</h2><p>
-                                            Get a travel Voucher  or  View routes and buses on
-                                            Promotion in and around Zimbabwe
-                                        </p>
-                                    </div>
+                                <div class="panel panel-dark" style="background-color: AliceBlue; ">
 
 
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="panel panel-dark" style="background-color: AliceBlue; ">
+                                    <a href="">
 
-                                        <h2>Travel Voucher</h2><p>
-                                            Get a travel Voucher  or  View routes and buses on
-                                            Promotion in and around Zimbabwe
-                                        </p>
-                                    </div>
+                                        <img src="UI/Images/advt1.jpeg" style="width:100%" />
+                                        <div class="text-link"><h2>Interbus Advert </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
+
+                                    </a>
                                 </div>
 
+
                             </div>
-                        </div>
-                    </div>
+                            <div class="col-lg-4">
+
+                                <div class="panel panel-dark" style="background-color: AliceBlue; ">
 
 
-                    <div class="row">
-                        <div class="col-lg-4">
+                                    <a href="">
 
-                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
+                                        <img src="UI/Images/advt1.jpeg" style="width:100%" />
+                                        <div class="text-link"><h2>Interbus Advert </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
+
+                                    </a>
+                                </div>
 
 
-                                <a href="">
-
-                                    <img src="UI/Images/advt1.jpeg" style="width:100%" />
-                                    <div class="text-link"><h2>Interbus Advert </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
-
-                                </a>
                             </div>
-
-
-                        </div>
-                        <div class="col-lg-4">
-
-                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
-
-
-                                <a href="">
-
-                                    <img src="UI/Images/advt1.jpeg" style="width:100%" />
-                                    <div class="text-link"><h2>Interbus Advert </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
-
-                                </a>
-                            </div>
-
-
-                        </div>
-                        <div class="col-lg-4">
-
-                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
-
-
-                                <a href="">
-
-                                    <img src="UI/Images/advt1.jpeg" style="width:100%" />
-                                    <div class="text-link"><h2>Interbus Advert </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
-
-                                </a>
-                            </div>
-
 
                         </div>
 
-                    </div>
+
+                        <div class="row">
+                            <div class="col-lg-4">
+
+                                <div class="panel panel-dark" style="background-color: AliceBlue; ">
 
 
-                    <div class="row">
-                        <div class="col-lg-4">
+                                    <a href="">
 
-                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
+                                        <img src="UI/Images/advt1.jpeg" style="width:100%" />
+                                        <div class="text-link"><h2>Interbus Advert </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
+
+                                    </a>
+                                </div>
 
 
-                                <a href="">
+                            </div>
+                            <div class="col-lg-4">
 
-                                    <img src="UI/Images/advt1.jpeg" style="width:100%" />
-                                    <div class="text-link"><h2>Interbus Advert </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
+                                <div class="panel panel-dark" style="background-color: AliceBlue; ">
 
-                                </a>
+
+                                    <a href="">
+
+                                        <img src="UI/Images/advt1.jpeg" style="width:100%" />
+                                        <div class="text-link"><h2>Interbus Advert </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
+
+                                    </a>
+                                </div>
+
+
+                            </div>
+                            <div class="col-lg-4">
+
+                                <div class="panel panel-dark" style="background-color: AliceBlue; ">
+
+
+                                    <a href="">
+
+                                        <img src="UI/Images/advt1.jpeg" style="width:100%" />
+                                        <div class="text-link"><h2>Interbus Advert </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
+
+                                    </a>
+                                </div>
+
+
                             </div>
 
-
                         </div>
-                        <div class="col-lg-4">
 
-                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
+                        <div class="row">
+                            <div class="col-lg-6">
+
+                                <div class="panel panel-dark" style="background-color: AliceBlue; ">
 
 
-                                <a href="">
+                                    <a href="">
 
-                                    <img src="UI/Images/advt1.jpeg" style="width:100%" />
-                                    <div class="text-link"><h2>Interbus Advert </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
+                                        <img src="UI/Images/advt1.jpeg" style="width:100%" />
+                                        <div class="text-link"><h2>Interbus Advert </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
 
-                                </a>
+                                    </a>
+                                </div>
+
+
                             </div>
+                            <div class="col-lg-3">
+
+                                <div class="panel panel-dark" style="background-color: AliceBlue; ">
 
 
-                        </div>
-                        <div class="col-lg-4">
+                                    <a href="">
 
-                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
+                                        <img src="UI/Images/advt1.jpeg" style="width:100%" />
+                                        <div class="text-link"><h2>Interbus Advert </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
 
-
-                                <a href="">
-
-                                    <img src="UI/Images/advt1.jpeg" style="width:100%" />
-                                    <div class="text-link"><h2>Interbus Advert </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
-
-                                </a>
+                                    </a>
+                                </div>
                             </div>
-
-
-                        </div>
-
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-6">
-
-                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
-
-
-                                <a href="">
-
-                                    <img src="UI/Images/advt1.jpeg" style="width:100%" />
-                                    <div class="text-link"><h2>Interbus Advert </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
-
-                                </a>
-                            </div>
-
-
-                        </div>
-                        <div class="col-lg-3">
-
-                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
-
-
-                                <a href="">
-
-                                    <img src="UI/Images/advt1.jpeg" style="width:100%" />
-                                    <div class="text-link"><h2>Interbus Advert </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
-
-                                </a>
-                            </div>
-                        </div>
                             <div class="col-lg-3">
                                 <div class="vertical-button-container">
                                     <a href="UI/Construction.html" class="plain-button">Stations, stops &amp; piers</a>
@@ -951,100 +450,130 @@
                                     <a href="UI/Construction.html" class="plain-button">Interbus Digital Blog</a>
                                 </div>
 
-                          
+
                             </div>
+                        </div>
                     </div>
-                </div>
-                <div class="clearfix"></div>
+                    <div class="clearfix"></div>
 
-                <!--END FOOTER-->
+                    <!--END FOOTER-->
+                </div>
             </div>
         </div>
-    </div>
-    <!--END CONTENT--><!--BEGIN FOOTER-->
-    <div class="row">
-        <div class="col-lg-12">
-            <div id="footer" tabindex="0">
+        <!--END CONTENT--><!--BEGIN FOOTER-->
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="footer" tabindex="0">
 
-                <h2 class="visually-hidden">Site footer</h2>
-                <div class="primary-footer r">
-                    <h2 class="visually-hidden">About Interbus</h2><ul class="footer-links">
-                        <li><a href="UI/Construction.html">Help &amp; contacts</a></li>
-                        <li><a class="" href="UI/Construction.html">Careers</a></li>
-                        <li><a class="" href="UI/Construction.html">About Interbus</a></li>
-                        <li><a class="" href="UI/Construction.html">Safety &amp; security</a></li>
-                        <li><a class="" href="UI/Construction.html">Transparency</a></li>
-                        <li><a class="" href="UI/Construction.html">Publications &amp; reports</a></li>
-                        <li><a class="" href="UI/Construction.html">Gift Shop</a></li>
-                        <li><a class="" href="UI/Construction.html">Social media &amp; email updates</a></li>
+                    <h2 class="visually-hidden">Site footer</h2>
+                    <div class="primary-footer r">
+                        <h2 class="visually-hidden">About Interbus</h2><ul class="footer-links">
+                            <li><a href="UI/Construction.html">Help &amp; contacts</a></li>
+                            <li><a class="" href="UI/Construction.html">Careers</a></li>
+                            <li><a class="" href="UI/Construction.html">About Interbus</a></li>
+                            <li><a class="" href="UI/Construction.html">Safety &amp; security</a></li>
+                            <li><a class="" href="UI/Construction.html">Transparency</a></li>
+                            <li><a class="" href="UI/Construction.html">Publications &amp; reports</a></li>
+                            <li><a class="" href="UI/Construction.html">Gift Shop</a></li>
+                            <li><a class="" href="UI/Construction.html">Social media &amp; email updates</a></li>
 
-                        <li><a class="languages-footer" href="UI/Construction.html">Other languages</a></li>
-                    </ul><h2 class="heading">Information for...</h2>
-                    <ul class="info-for clearfix">
-                        <li><a href="UI/Construction.html">Media</a></li>
-                        <li><a href="UI/Construction.html">Business &amp; commercial</a></li>
-                        <li><a href="UI/Construction.html">Get Support online 24/7</a></li>
-                        <li><a href="UI/Construction.html">Schools &amp; young people</a></li>
-                        <li><a href="UI/Construction.html">Deliveries in Zimbabwe</a></li>
-                        <li><a href="UI/Construction.html">Urban planning & construction</a></li>
-
-
-                        <li><a href="UI/Construction.html">Taxi &amp; private hire </a></li>
+                            <li><a class="languages-footer" href="UI/Construction.html">Other languages</a></li>
+                        </ul><h2 class="heading">Information for...</h2>
+                        <ul class="info-for clearfix">
+                            <li><a href="UI/Construction.html">Media</a></li>
+                            <li><a href="UI/Construction.html">Business &amp; commercial</a></li>
+                            <li><a href="UI/Construction.html">Get Support online 24/7</a></li>
+                            <li><a href="UI/Construction.html">Schools &amp; young people</a></li>
+                            <li><a href="UI/Construction.html">Deliveries in Zimbabwe</a></li>
+                            <li><a href="UI/Construction.html">Urban planning & construction</a></li>
 
 
-                        <li><a href="UI/Construction.html">Bus operators</a></li>
-                        <li><a href="UI/Construction.html">Open data users</a></li>
-                        <li><a href="UI/Construction.html">Coach drivers</a></li>
-                        <li><a href="UI/Construction.html">Investors</a></li>
-                        <li><a href="UI/Construction.html">Download Interbus App</a></li>
-                    </ul>
-                </div>
-                <div class="secondary-footer">
-                    <h2 class="visually-hidden">Site structure and legal information</h2><div class="r">
-                        <ul>
-                            <li><a href="UI/Construction.html">Terms &amp; conditions </a></li>
-                            <li><a href="UI/Construction.html">Privacy &amp; cookies</a></li>
-                            <li><a href="UI/Construction.html">Website accessibility</a></li>
+                            <li><a href="UI/Construction.html">Taxi &amp; private hire </a></li>
+
+
+                            <li><a href="UI/Construction.html">Bus operators</a></li>
+                            <li><a href="UI/Construction.html">Open data users</a></li>
+                            <li><a href="UI/Construction.html">Coach drivers</a></li>
+                            <li><a href="UI/Construction.html">Investors</a></li>
+                            <li><a href="UI/Construction.html">Download Interbus App</a></li>
                         </ul>
-                        <span class="heading">Copyright Interbus</span>
                     </div>
-                </div>
-                <div>
+                    <div class="secondary-footer">
+                        <h2 class="visually-hidden">Site structure and legal information</h2><div class="r">
+                            <ul>
+                                <li><a href="UI/Construction.html">Terms &amp; conditions </a></li>
+                                <li><a href="UI/Construction.html">Privacy &amp; cookies</a></li>
+                                <li><a href="UI/Construction.html">Website accessibility</a></li>
+                            </ul>
+                            <span class="heading">Copyright Interbus</span>
+                        </div>
+                    </div>
+                    <div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
 
-    <script src="UI/js/jquery-1.10.2.min.js"></script>
-    <script src="UI/js/jquery-migrate-1.2.1.min.js"></script>
-    <script src="UI/js/jquery-ui.js"></script>
-    <!--loading bootstrap js-->
-    <script src="UI/vendors/bootstrap/js/bootstrap.min.js"></script>
-    <script src="UI/vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
-    <script src="UI/js/html5shiv.js"></script>
-    <script src="UI/js/respond.min.js"></script>
-    <script src="UI/vendors/metisMenu/jquery.metisMenu.js"></script>
-    <script src="UI/vendors/slimScroll/jquery.slimscroll.js"></script>
-    <script src="UI/vendors/jquery-cookie/jquery.cookie.js"></script>
-    <script src="UI/vendors/iCheck/icheck.min.js"></script>
-    <script src="UI/vendors/iCheck/custom.min.js"></script>
-    <script src="UI/vendors/jquery-news-ticker/jquery.news-ticker.js"></script>
-    <script src="UI/js/jquery.menu.js"></script>
-    <script src="UI/vendors/jquery-pace/pace.min.js"></script>
-    <script src="UI/vendors/holder/holder.js"></script>
-    <script src="UI/vendors/responsive-tabs/responsive-tabs.js"></script>
-    <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
-    <script src="UI/js/main.js"></script>
+        <script src="UI/js/jquery-1.10.2.min.js"></script>
+        <script src="UI/js/jquery-migrate-1.2.1.min.js"></script>
+        <script src="UI/js/jquery-ui.js"></script>
+        <!--loading bootstrap js-->
+        <!--<script src="UI/vendors/bootstrap/js/bootstrap.js"></script>-->
+        <script src="UI/vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
+        <script src="UI/js/html5shiv.js"></script>
+        <script src="UI/js/respond.min.js"></script>
+        <script src="UI/vendors/metisMenu/jquery.metisMenu.js"></script>
+        <script src="UI/vendors/slimScroll/jquery.slimscroll.js"></script>
+        <script src="UI/vendors/jquery-cookie/jquery.cookie.js"></script>
+        <script src="UI/vendors/iCheck/icheck.min.js"></script>
+        <script src="UI/vendors/iCheck/custom.min.js"></script>
 
-    <script src="UI/js/angular.js"></script>
-    <script src="UI/js/ui-bootstrap-tpls-1.3.3.js"></script>
-    <script src="UI/js/ngStorage.js"></script>
+        <script src="UI/js/jquery.menu.js"></script>
+        <script src="UI/vendors/jquery-pace/pace.min.js"></script>
+        <script src="UI/vendors/holder/holder.js"></script>
+        <script src="UI/vendors/responsive-tabs/responsive-tabs.js"></script>
+        <script src="UI/js/moment.js"></script>
+        <script src="UI/vendors/bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js"></script>
+
+        <script>
+            $('.datetimepicker-disable-date').datetimepicker({
+                pickDate: false
+            });
+        </script>
+
+        <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
+        <script src="UI/js/main.js"></script>
+        <script src="UI/js/Carousle/jquery.carouFredSel-6.0.4-packed.js"></script>
+        <script src="UI/js/angular.js"></script>
+        <script src="UI/js/ui-bootstrap-tpls-1.3.3.js"></script>
+        <script src="UI/js/ngStorage.js"></script>
 
 
-    <script src="UI/js/Index.js"></script>
-
+        <script src="UI/js/Index.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                $('#carousel').carouFredSel({
+                    width: '100%',
+                    items: {
+                        visible: 3,
+                        start: -1
+                    },
+                    scroll: {
+                        items: 1,
+                        duration: 1000,
+                        timeoutDuration: 3000
+                    },
+                    prev: '#prev',
+                    next: '#next',
+                    pagination: {
+                        container: '#pager',
+                        deviation: 1
+                    }
+                });
+            });
+        </script>
 
 </body>
 

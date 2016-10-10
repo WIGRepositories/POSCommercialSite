@@ -6809,6 +6809,8 @@ button.close {
         background-repeat: repeat-x;
     }
 
+    
+
     .carousel-control:focus, .carousel-control:hover {
         color: #fff;
         text-decoration: none;

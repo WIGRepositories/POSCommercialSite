@@ -109,8 +109,10 @@
     <Content Include="UI\images\promos\13.jpg" />
     <Content Include="UI\images\promos\14.png" />
     <Content Include="UI\images\promos\bkgRd3.png" />
+    <Content Include="UI\js\bootstrap.js" />
     <Content Include="UI\js\Carousle\cms.js" />
     <Content Include="UI\js\Carousle\BannerCarousel.js" />
+    <Content Include="UI\js\Carousle\jquery.carouFredSel-6.0.4-packed.js" />
     <Content Include="UI\js\Carousle\js-core.js" />
     <Content Include="UI\js\Carousle\jwplayer.js" />
     <Content Include="UI\js\Carousle\thirdparty.js" />
@@ -121,7 +123,6 @@
     <Content Include="obj\Debug\INTERBUSWebsite.pdb" />
     <Content Include="References\log4net.dll" />
     <Content Include="References\PayPal.dll" />
-    <Content Include="UI\About.html" />
     <Content Include="UI\AboutUs.html" />
     <Content Include="UI\AddTroubleTicketingDetails.html" />
     <Content Include="UI\assets\css\bootstrap-theme.css" />
@@ -146,7 +147,6 @@
     <Content Include="UI\CheckFare.html" />
     <Content Include="UI\CheckOut.html" />
     <Content Include="UI\Construction.html" />
-    <Content Include="UI\Contact.html" />
     <Content Include="UI\ContactUs.html" />
     <Content Include="UI\css\bootstrap-theme.min.css" />
     <Content Include="UI\css\bootstrap.min.css" />
@@ -162,16 +162,7 @@
     <Content Include="UI\css\StyleSheet4.css" />
     <Content Include="UI\css\StyleSheet5.css" />
     <Content Include="UI\css\StyleSheet6.css" />
-    <Content Include="UI\css\themes\style2\green-dark.css" />
-    <Content Include="UI\css\themes\style2\green-grey.css" />
     <Content Include="UI\css\themes\style2\pink-blue.css" />
-    <Content Include="UI\css\themes\style2\pink-brown.css" />
-    <Content Include="UI\css\themes\style2\pink-dark.css" />
-    <Content Include="UI\css\themes\style2\pink-green.css" />
-    <Content Include="UI\css\themes\style2\pink-grey.css" />
-    <Content Include="UI\css\themes\style2\pink-violet.css" />
-    <Content Include="UI\css\themes\style2\red-dark.css" />
-    <Content Include="UI\css\themes\style2\red-grey.css" />
     <Content Include="UI\css\w3.css" />
     <Content Include="UI\css\wickedpicker.min.css" />
     <Content Include="UI\datepicker.html" />

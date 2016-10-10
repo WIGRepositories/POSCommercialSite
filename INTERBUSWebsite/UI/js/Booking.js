@@ -1,20 +1,73 @@
 ﻿var app = angular.module('myApp', ['ngStorage'])
 
 var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
-    //$http.get('/api/Booking/commericialsite').then(function (response, req) {
-    //  $scope.routes = response.data;
-
-    // })
+   
     var stat = 0;
     $scope.selectedSeats = new Array();
     $scope.selectedSeats.pssngr = new Array();
     $scope.selectedSeats.returnpssngr = new Array();
 
     $scope.selectedIndex = -1;
-    //$scope.GetAvailableServices = function () {
-    //    $scope.srcId = $localStorage.srcId;
-    //    $scope.destId = $localStorage.destId;
-    //    $scope.way = $localStorage.waytype;
+   
+    $scope.testClick = function () {
+        $scope.Stops = $localStorage.Stops;
+    }
+    $scope.GetServices = function () {
+        if ($scope.S == null) {
+            alert('Please select source.');
+            return;
+        }
+
+        if ($scope.D == null) {
+            alert('Please select destination.');
+            return;
+        }
+
+        $localStorage.src = $scope.S;
+        $localStorage.dest = $scope.D;
+
+        //$rootscope.src = $scope.RS;
+        //$rootscope.dest = $scope.RD;
+        $localStorage.timing = ($scope.timing == 'Now') ? Date() : $scope.timing;
+        $localStorage.triptype = $scope.triptype;
+        // $scope.GetAvailableServices();
+
+        $scope.services = [
+            { "Id": 1, "Company": "CMP1", "VehicleType": "AC", "AvailableSeats": "10", "WindowSeats": "3", "StartTime": "11:00 AM", "EndTime": "12:30 PM", "Rating": "3", "Price": "10", "luggageCrg": "", "Discount": "" }
+            , { "Id": 2, "Company": "CMP2", "VehicleType": "Non-AC", "AvailableSeats": "12", "WindowSeats": "3", "StartTime": "11:10 AM", "EndTime": "12:30 PM", "Rating": "4", "Price": "12", "luggageCrg": "", "Discount": "" }
+            , { "Id": 3, "Company": "CMP3", "VehicleType": "AC", "AvailableSeats": "4", "WindowSeats": "4", "StartTime": "12:00 PM", "EndTime": "12:30 PM", "Rating": "3", "Price": "10", "luggageCrg": "", "Discount": "" }
+            , { "Id": 4, "Company": "CMP4", "VehicleType": "Non-AC", "AvailableSeats": "5", "WindowSeats": "2", "StartTime": "12:30 PM", "EndTime": "12:30 PM", "Rating": "", "Price": "13", "luggageCrg": "", "Discount": "" }
+            , { "Id": 5, "Company": "CMP5", "VehicleType": "AC", "AvailableSeats": "6", "WindowSeats": "2", "StartTime": "12:30 PM", "EndTime": "12:30 PM", "Rating": "", "Price": "11", "luggageCrg": "", "Discount": "" }
+            , { "Id": 6, "Company": "CMP6", "VehicleType": "AC", "AvailableSeats": "3", "WindowSeats": "1", "StartTime": "12:30 PM", "EndTime": "12:30 PM", "Rating": "", "Price": "11", "luggageCrg": "", "Discount": "" }
+            , { "Id": 7, "Company": "CMP7", "VehicleType": "AC", "AvailableSeats": "23", "WindowSeats": "4", "StartTime": "12:30 PM", "EndTime": "12:30 PM", "Rating": "", "Price": "12", "luggageCrg": "", "Discount": "" }
+            , { "Id": 8, "Company": "CMP8", "VehicleType": "AC", "AvailableSeats": "11", "WindowSeats": "2", "StartTime": "12:30 PM", "EndTime": "12:30 PM", "Rating": "", "Price": "11", "luggageCrg": "", "Discount": "" }
+            , { "Id": 9, "Company": "CMP9", "VehicleType": "Non-AC", "AvailableSeats": "33", "WindowSeats": "6", "StartTime": "12:30 PM", "EndTime": "12:30 PM", "Rating": "", "Price": "10", "luggageCrg": "", "Discount": "" }
+            , { "Id": 10, "Company": "CMP10", "VehicleType": "Non-AC", "AvailableSeats": "2", "WindowSeats": "0", "StartTime": "12:30 PM", "EndTime": "12:30 PM", "Rating": "", "Price": "11", "luggageCrg": "", "Discount": "" }
+            , { "Id": 11, "Company": "CMP11", "VehicleType": "AC", "AvailableSeats": "9", "WindowSeats": "2", "StartTime": "12:30 PM", "EndTime": "12:30 PM", "Rating": "", "Price": "13", "luggageCrg": "", "Discount": "" }
+            , { "Id": 12, "Company": "CMP12", "VehicleType": "AC", "AvailableSeats": "5", "WindowSeats": "2", "StartTime": "12:30 PM", "EndTime": "12:30 PM", "Rating": "", "Price": "12", "luggageCrg": "", "Discount": "" }
+            , { "Id": 13, "Company": "CMP13", "VehicleType": "AC", "AvailableSeats": "8", "WindowSeats": "2", "StartTime": "12:30 PM", "EndTime": "12:30 PM", "Rating": "", "Price": "11", "luggageCrg": "", "Discount": "" }
+        ];
+
+    }
+
+    seatMap = [{ "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "A", "row": 1, "selected": false }
+        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "B", "row": 1, "selected": false }
+        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "C", "row": 1, "selected": false }
+        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "D", "row": 1, "selected": false }
+        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "E", "row": 1, "selected": false }
+        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "F", "row": 1, "selected": false }
+        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "A", "row": 2, "selected": false }
+        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "B", "row": 2, "selected": false }
+        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "C", "row": 2, "selected": false }
+        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "D", "row": 2, "selected": false }
+        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "E", "row": 2, "selected": false }
+        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "F", "row": 2, "selected": false }
+        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "A", "row": 3, "selected": false }
+        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "B", "row": 3, "selected": false }
+        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "C", "row": 3, "selected": false }
+        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "D", "row": 3, "selected": false }
+        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "E", "row": 3, "selected": false }
+        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "F", "row": 3, "selected": false }];
 
     $scope.test = function (b) {
         if ($scope.selectedIndex != -1)
@@ -85,6 +138,11 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
     $scope.GetAvailableServices = function ()
     {
+        $scope.src = $localStorage.src;
+        $scope.dest = $localStorage.dest;
+        $scope.timing = $localStorage.timing;
+
+
         $scope.srcId = $localStorage.src.Id;
         $scope.destId = $localStorage.dest.Id;
         $scope.srcStage = $localStorage.src.name;
