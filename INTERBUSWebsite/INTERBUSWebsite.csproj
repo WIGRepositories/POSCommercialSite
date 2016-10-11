@@ -103,12 +103,13 @@
     <Content Include="UI\css\01d511f62a-3.css" />
     <Content Include="UI\css\096daf45c2-2.css" />
     <Content Include="UI\css\banner.css" />
+    <Content Include="UI\images\advt1.jpeg" />
     <Content Include="UI\images\bg1.png" />
+    <Content Include="UI\images\logos\dashboard.png" />
     <Content Include="UI\images\promos\11.jpg" />
     <Content Include="UI\images\promos\12.png" />
     <Content Include="UI\images\promos\13.jpg" />
     <Content Include="UI\images\promos\14.png" />
-    <Content Include="UI\images\promos\bkgRd3.png" />
     <Content Include="UI\js\bootstrap.js" />
     <Content Include="UI\js\Carousle\cms.js" />
     <Content Include="UI\js\Carousle\BannerCarousel.js" />

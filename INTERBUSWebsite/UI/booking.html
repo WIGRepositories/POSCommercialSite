@@ -1,14 +1,16 @@
-﻿<!DOCTYPE html>
+﻿
 <html lang="en" >
 
-<!--<![endif]-->
 <head>
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="css/w3.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="images/icons/favicon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/icons/favicon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/icons/favicon-114x114.png">
+    <!--<link rel="stylesheet" href="css/w3.css">-->
 
     <!-- links for table -->
     <!--Loading bootstrap css-->
@@ -21,7 +23,7 @@
     <!--Loading style-->
     <link type="text/css" rel="stylesheet" href="css/themes/style2/pink-blue.css" id="theme-change" class="style-change color-change">
     <link type="text/css" rel="stylesheet" href="css/style-responsive.css">
-    <link rel="stylesheet" type="text/css" href="css/Main.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/Main.css">-->
 
 
     <!-- Optional theme -->
@@ -30,83 +32,25 @@
     <script src="js/bootstrap.js"></script>
     <title>Interbus - Get Moving Anywhere, Comfortably</title>
 
-    <link href="css/StyleSheet2.css" media="screen,print" rel="stylesheet" />
+    <!--<link href="css/StyleSheet2.css" media="screen,print" rel="stylesheet" />
     <link href="css/StyleSheet1.css" media="screen,print" rel="stylesheet" />
     <link href="css/StyleSheet4.css" media="screen,&#32;print" rel="stylesheet" />
     <link href="css/StyleSheet3.css" media="screen&#32;and&#32;(min-width:&#32;580px),print" rel="stylesheet" />
     <link href="css/StyleSheet5.css" media="screen&#32;and&#32;(min-width:&#32;900px)" rel="stylesheet" />
     
-    <link href="css/StyleSheet6.css" media="screen" rel="stylesheet" />
-      
-    <style>
-        rr.div a {
-            text-decoration: none;
-            color: white;
-            font-size: 20px;
-            padding: 15px;
-            display: inline-block;
-        }
-
-        .rr ul {
-            display: inline;
-            margin: 0;
-            padding: 0;
-        }
-
-
-            .rr ul li {
-                display: inline-block;
-                color: white;
-            }
-
-                .rr ul li:hover {
-                    background: #555;
-                }
-
-                    .rr ul li:hover ul {
-                        display: block;
-                    }
-
-                .rr ul li ul {
-                    position: absolute;
-                    width: 100px;
-                    display: none;
-                }
-
-                    .rr ul li ul li {
-                        background: #555;
-                        display: block;
-                        border-bottom: 1px solid white;
-                        width: 170px;
-                    }
-
-                        .rr ul li ul li a {
-                            display: block !important;
-                            text-decoration: none;
-                        }
-
-                        .rr ul li ul li:hover {
-                            background: #666;
-                        }
-
-                        .rr ul li ul li a:hover {
-                            text-decoration: none;
-                        }
-    </style>
-
+    <link href="css/StyleSheet6.css" media="screen" rel="stylesheet" />-->
 
 </head>
-
-<body ng-app="myApp" ng-controller="myCtrl" ng-init="GetAvailableServices();" ng-model="Booking" >
+<body ng-app="myApp" ng-controller="myCtrl" ng-init="GetAvailableServices();" ng-model="Booking" style="background-color: white" >
     
-    <div id="container">
+    <div id="container" style="margin-top:0px">
 
         <!--start of white bar above menu-->
         <!--End of white bar above menu-->
         <!--Start Menu-->
         <div class="mainnav" id="mainnav" tabindex="0">
 
-            <div class="top-row" style="position:fixed; width:100%; z-index:1">
+            <div class="top-row clearfix" style ="position:fixed;width:100%; z-index:1">
 
                 <div class="r">
                     <div class="rr">
@@ -170,31 +114,231 @@
                 </div>
 
             </div>
-
-        </div>
+            <div class="clearfix"></div>
+            </div>
 
         <!--End Menu-->
     </div>
+    <div class="row" style="margin-top:80px">
+
+        <div ng-show="services.length != 0" style=" width: 100%; z-index: 1; background-color: white;">
+            <div style="position: fixed; width: 100%; z-index: 1; background-color: aliceblue; margin-left: 10px">
+                <!--<table class="table table-advanced" style="border: none; background-color: aliceblue; margin-right: -50px">
+
+                    <tr style="border:none">
+                        <td width="50%" style="text-align:center;" colspan="3"> Src-dest</td>
+                        <td style="text-align:center">Dest-src</td>
+                    </tr>
 
 
+                   
+                </table>-->
+                <div class="row" style="height:50px">
+                    <div class="col-md-3"></div>
+                        <div class="col-md-3">Start time - End Time</div>
+                    <div class="col-md-3"></div>
+                        <div class="col-md-3">End Time - Start Time</div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-md-4" style="text-align:center">Travels Name</div>
+                    <div class="col-md-2">Start time - End Time</div>
+                    <div class="col-md-2">Rating</div>
+                    <div class="col-md-2">Available Seats</div>
+                    <div class="col-md-2">Price</div>
+                </div>
 
-
-
-    <div class="row" style="margin-top:60px;min-height:500px">
-
-        <!--<div>
-            <div class="col-lg-12">
-                <div class="col-lg-6" style="background-color: #8d9db6; border-right: 1px solid white; padding: 10px"><div style="float:right; color:white; font-size:16px"><strong>{{b.srcName}}</strong><div style="text-align:center">< 17-6-2016 ></div></div></div>
-                <div class="col-lg-6" style="background-color: #8d9db6; padding: 10px"><div style="float: left; color: #618685; font-size: 16px; ">{{b.destName}}<br /><div style="text-align:center">< 20-6-2016 ></div></div></div>
             </div>
 
-        </div>-->
-        <!--<div class="col-lg-12" checked ng-init="result=2">
-            <div class="col-lg-6" style="background-color: #8d9db6; border-right: 1px solid white; padding: 10px"><div style="float:right; color:white; font-size:16px"><strong>{{src.name}}</strong><div style="text-align:center">< 17-6-2016 ></div></div></div>
-            <div class="col-lg-6" style="background-color: #8d9db6; padding: 10px"><div style="float: left; color: #618685; font-size: 16px;">{{src.name}}<br /><div style="text-align:center">< 20-6-2016 ></div></div></div>
-        </div>-->
+            <div style="width: 100%; z-index: 1; background-color: white;padding-top:100px">
+               
+                <div class="col-md-12" ng-repeat="b in services">
+                    <table class="col-md-12" style="border:solid 1px;padding-top:30px">
+                        <tr>
+                            <td style="width: 100%; border: solid 1px; padding-top: 10px;padding-bottom:10px">
+                                <div class=" col-md-4" style="text-align:center">
+                                    <img src="Images/busimages/nonac.jpg" />
+                                    <strong>  {{b.Company}}</strong>
+                                    <div class="message-inner">
+                                        <div class="qa-message-content">
+                                            {{b.VehicleType}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <img src="Images/busimages/time.jpg" /><strong> {{b.StartTime}} -  {{b.EndTime}}</strong>
 
 
+                                    <div class="message-inner">
+
+                                        <div class="qa-message-content">
+                                            {{b.Duration}} hours
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2"><strong>  {{b.Rating}} </strong><br /></div>
+                                <div class="col-md-2">
+                                    <img src="Images/busimages/seat.jpg" />
+                                    <strong>  {{b.AvailableSeats}}Seats </strong><br />
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="col-md-3 col-sm-4">
+                                        <strong>Rs.{{b.Price}}</strong>
+                                    </div>
+                                    <br />
+                                    <button ng-click="test($index);" type="button" class="btn btn-primary">
+                                        select seats
+                                    </button>
+                                </div>
+
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center">
+                                
+                                
+
+
+                            </td>
+                        </tr>
+                    </table>
+                    <div id="t_{{$index}}" style="display:none;text-align:center">
+
+                        <img id='masterimg' src="images/busimages/selction seats.jpg" alt="Planets" usemap="#seats" style="width:956px;height:261px;">
+
+                        <map name="seats">
+                            <!--<area shape="rect" style="background-color:red" coords="212,34,192,52" alt="Sun" href="#" ng-click="AddSeats('1');">
+            <area shape="rect" style="background-color:red" coords="234,34,217,52" alt="Sun" href="#" ng-click="AddSeats('2');">
+            <area shape="rect" style="background-color:red" coords="258,34,242,52" alt="Sun" href="#" ng-click="AddSeats('3');">
+                        <area shape="rect" style="background-color:red" coords="283,34,266,52" alt="Sun" href="#" ng-click="AddSeats('4');">-->
+                            <area id="1" shape="rect" style="background-color:red" coords="352,34,372,52" alt="Sun" href="#" ng-click="AddSeats('A5');">
+                            <area shape="rect" style="background-color:red" coords="378,34,395,52" alt="Sun" href="#" ng-click="AddSeats('A6');">
+                            <area shape="rect" style="background-color:red" coords="400,34,420,52" alt="Sun" href="#" ng-click="AddSeats('A7');">
+                            <area shape="rect" style="background-color:red" coords="426,34,445,52" alt="Sun" href="#" ng-click="AddSeats('A8');">
+                            <!--<area shape="rect" style="background-color:red" coords="402,34,386,52" alt="Sun" href="#" ng-click="AddSeats('A3');">
+            <area shape="rect" style="background-color:red" coords="425,34,410,52" alt="Sun" href="#" ng-click="AddSeats('A3');">-->
+                            <!--<area shape="rect" style="background-color:red" coords="212,59,192,71" alt="Sun" href="#" onclick="alert('B1 Selected');">
+            <area shape="rect" style="background-color:red" coords="234,59,217,71" alt="Sun" href="#" onclick="alert('B2 Selected');">
+            <area shape="rect" style="background-color:red" coords="258,59,242,71" alt="Sun" href="#" onclick="alert('B3 Selected');">
+            <area shape="rect" style="background-color:red" coords="283,59,266,71" alt="Sun" href="#" onclick="alert('B4 Selected');">
+            <area shape="rect" style="background-color:red" coords="307,59,290,71" alt="Sun" href="#" onclick="alert('B5 Selected');">
+            <area shape="rect" style="background-color:red" coords="331,59,314,71" alt="Sun" href="#" onclick="alert('B6 Selected');">
+                        <area shape="rect" style="background-color:red" coords="354,59,338,71" alt="Sun" href="#" onclick="alert('B7 Selected');">-->
+                            <area shape="rect" style="background-color:red" coords="352,56,372,72" alt="Sun" href="#" ng-click="AddSeats('B8 Selected');">
+                            <area shape="rect" style="background-color:red" coords="378,56,395,72" alt="Sun" href="#" ng-click="AddSeats('B9 Selected');">
+                            <area shape="rect" style="background-color:red" coords="402,56,420,72" alt="Sun" href="#" ng-click="AddSeats('B10 Selected');">
+                            <area shape="rect" style="background-color:red" coords="426,56,445,72" alt="Sun" href="#" ng-click="AddSeats('B10 Selected');">
+                        </map>
+                        <div class="col-md-8 col-md-offset-1" ng-repeat="seat in selectedSeats.pssngr">
+                            <div class="row">
+                                <form>
+                                    <table>
+
+                                        <tr>
+                                            <td><label>Passenger Details:</label></td>
+                                            <td><input type="text" id="fname1" placeholder="First Name" ng-model="seat.fname" /></td>
+                                            <td><input type="text" id="lname1" placeholder="Last Name" ng-model="seat.lname" /></td>
+                                            <td>
+                                                <select id="Age" ng-model="seat.Age">
+                                                    <option value="0" selected>--Select Age--</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                    <option value="13">13</option>
+                                                    <option value="14">14</option>
+                                                    <option value="15">15</option>
+                                                    <option value="16">16</option>
+                                                    <option value="17">17</option>
+                                                    <option value="18">18</option>
+                                                    <option value="19">19</option>
+                                                    <option value="20">20</option>
+                                                    <option value="21">21</option>
+                                                    <option value="22">22</option>
+                                                    <option value="23">23</option>
+                                                    <option value="24">24</option>
+                                                    <option value="25">25</option>
+                                                    <option value="26">26</option>
+                                                    <option value="27">27</option>
+                                                    <option value="28">28</option>
+                                                    <option value="29">29</option>
+                                                    <option value="30">30</option>
+                                                    <option value="31">31</option>
+                                                    <option value="32">32</option>
+                                                    <option value="33">33</option>
+                                                    <option value="34">34</option>
+                                                    <option value="35">35</option>
+                                                    <option value="36">36</option>
+                                                    <option value="37">37</option>
+                                                    <option value="38">38</option>
+                                                    <option value="39">39</option>
+                                                    <option value="40">40</option>
+                                                </select>
+                                            </td>
+
+                                            <td>
+                                                <select name="Sex">
+                                                    <option value="0" selected>--Select Gender--</option>
+                                                    <option value="1">Male</option>
+                                                    <option value="2">Female</option>
+                                                    <option value="3">Others</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </form>
+                            </div>
+
+                        </div>
+                        <center ng-init="Booking.Cost = 0">
+
+
+                            <!--<button type="button" class="btn btn-primary" ng-click="AddSeats();">Add seats</button>-->
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+                            <button type="button" class="btn btn-primary" ng-click="savedata(selectedSeats);">booking</button>
+                        </center>
+                        <table>
+
+                            <tr>
+                                <td id="imgTd" colspan="6">
+                                    <table>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <table>
+                                                    <tr><td><label>Seat(s):{{count}}</label></td></tr>
+                                                    <tr><td><label>Base Fare:{{basePrice}}</label></td></tr>
+                                                    <tr><td><label>Total Fare:{{count*basePrice}}</label></td></tr>
+                                                </table>
+                                            </td>
+                                            <!--<td><label>Seat(s):{{count}}</label></td>
+                            <td><label>Base Fare:{{Booking.Cost}}</label></td>
+                            <td><label>Total Fare:{{count*Booking.Cost}}</label></td>-->
+                                        </tr>
+                                    </table>
+
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+
+    </div>
+    <div class="row" style="margin-top:80px;min-height:500px;">
         <div class="row">
             <div class="container boxed-layout" ng-show="services.length == 0">
 
@@ -284,217 +428,13 @@
                 </div>
 
 
+                </div>
             </div>
-        </div>
-
-        <table class="table table-bordered table-advanced tablesorter">
 
             
-                        <tr>
-                            <th width="25%" style="text-align:right">Travels Name</th>
-                            <th style="text-align:center">Start time - End Time</th>
-                            <th style="text-align:center">Rating</th>
-                            <th style="text-align:center">Available Seats</th>
-                            <th style="text-align:left">Price</th>
-                        </tr>
-                        
-                </table>
-                        <table class="table table-bordered table-advanced tablesorter">
-
-                            <tr ng-repeat="b in services">
-                                <td>
-                                    <table>
-                                      
-                                        <tr>
-                                            <td width="25%" style="text-align:center">
-                                                <img src="Images/busimages/nonac.jpg"></img>
-                                                <strong>  {{b.Company}}</strong>
-                                                <div class="message-inner">
-                                                    <div class="qa-message-content">
-                                                        {{b.VehicleType}}
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td width="15%" style="text-align:center">
-                                                <img src="Images/busimages/time.jpg" /><strong> {{b.StartTime}} -  {{b.EndTime}}</strong>
-
-
-                                                <div class="message-inner">
-
-                                                    <div class="qa-message-content">
-                                                        {{b.Duration}} hours
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td width="15%" style="text-align:center">
-
-                                                <strong>  {{b.Rating}} </strong><br />
-                                            </td>
-                                            <td width="15%" style="text-align:center">
-                                                <img src="Images/busimages/seat.jpg" />
-                                                <strong>  {{b.AvailableSeats}}Seats </strong><br />
-                                            </td>
-
-                                            <td width="10%" style="text-align:left">
-
-                                                <div class="col-md-3 col-sm-4">
-                                                    <strong>Rs.{{b.Price}}</strong>
-                                                </div>
-
-                                                <button ng-click="test($index);" type="button" class="btn btn-primary">
-                                                    select seats
-                                                </button>
-
-                                            </td>
-
-                                        </tr>
-                                        <tr>
-                                            <td colspan="5" style="text-align:center">
-                                                <div id="t_{{$index}}" style="display:none;text-align:center">
-                                                    <table>
-
-                                                        <tr>
-                                                            <td id="imgTd" colspan="6">
-                                                                <table>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <img id='masterimg' src="images/busimages/selction seats.jpg" alt="Planets" usemap="#seats" style="width:956px;height:261px;">
-
-                                                                            <map name="seats">
-                                                                                <!--<area shape="rect" style="background-color:red" coords="212,34,192,52" alt="Sun" href="#" ng-click="AddSeats('1');">
-                                                                                <area shape="rect" style="background-color:red" coords="234,34,217,52" alt="Sun" href="#" ng-click="AddSeats('2');">
-                                                                                <area shape="rect" style="background-color:red" coords="258,34,242,52" alt="Sun" href="#" ng-click="AddSeats('3');">
-                                                                                            <area shape="rect" style="background-color:red" coords="283,34,266,52" alt="Sun" href="#" ng-click="AddSeats('4');">-->
-                                                                                <area id="1" shape="rect" style="background-color:red" coords="352,34,372,52" alt="Sun" href="#" ng-click="AddSeats('A5');">
-                                                                                <area shape="rect" style="background-color:red" coords="378,34,395,52" alt="Sun" href="#" ng-click="AddSeats('A6');">
-                                                                                <area shape="rect" style="background-color:red" coords="400,34,420,52" alt="Sun" href="#" ng-click="AddSeats('A7');">
-                                                                                <area shape="rect" style="background-color:red" coords="426,34,445,52" alt="Sun" href="#" ng-click="AddSeats('A8');">
-                                                                                <!--<area shape="rect" style="background-color:red" coords="402,34,386,52" alt="Sun" href="#" ng-click="AddSeats('A3');">
-                                                                                <area shape="rect" style="background-color:red" coords="425,34,410,52" alt="Sun" href="#" ng-click="AddSeats('A3');">-->
-                                                                                <!--<area shape="rect" style="background-color:red" coords="212,59,192,71" alt="Sun" href="#" onclick="alert('B1 Selected');">
-                                                                                <area shape="rect" style="background-color:red" coords="234,59,217,71" alt="Sun" href="#" onclick="alert('B2 Selected');">
-                                                                                <area shape="rect" style="background-color:red" coords="258,59,242,71" alt="Sun" href="#" onclick="alert('B3 Selected');">
-                                                                                <area shape="rect" style="background-color:red" coords="283,59,266,71" alt="Sun" href="#" onclick="alert('B4 Selected');">
-                                                                                <area shape="rect" style="background-color:red" coords="307,59,290,71" alt="Sun" href="#" onclick="alert('B5 Selected');">
-                                                                                <area shape="rect" style="background-color:red" coords="331,59,314,71" alt="Sun" href="#" onclick="alert('B6 Selected');">
-                                                                                            <area shape="rect" style="background-color:red" coords="354,59,338,71" alt="Sun" href="#" onclick="alert('B7 Selected');">-->
-                                                                                <area shape="rect" style="background-color:red" coords="352,56,372,72" alt="Sun" href="#" ng-click="AddSeats('B8 Selected');">
-                                                                                <area shape="rect" style="background-color:red" coords="378,56,395,72" alt="Sun" href="#" ng-click="AddSeats('B9 Selected');">
-                                                                                <area shape="rect" style="background-color:red" coords="402,56,420,72" alt="Sun" href="#" ng-click="AddSeats('B10 Selected');">
-                                                                                <area shape="rect" style="background-color:red" coords="426,56,445,72" alt="Sun" href="#" ng-click="AddSeats('B10 Selected');">
-                                                                            </map>
-                                                                        </td>
-                                                                        <td>
-                                                                            <table>
-                                                                                <tr><td><label>Seat(s):{{count}}</label></td></tr>
-                                                                                <tr><td><label>Base Fare:{{basePrice}}</label></td></tr>
-                                                                                <tr><td><label>Total Fare:{{count*basePrice}}</label></td></tr>
-                                                                            </table>
-                                                                        </td>
-                                                                        <!--<td><label>Seat(s):{{count}}</label></td>
-                                                                        <td><label>Base Fare:{{Booking.Cost}}</label></td>
-                                                                        <td><label>Total Fare:{{count*Booking.Cost}}</label></td>-->
-                                                                    </tr>
-                                                                </table>
-                                                                <div class="col-md-8 col-md-offset-1" ng-repeat="seat in selectedSeats.pssngr">
-                                                                    <div class="row">
-                                                                        <form>
-                                                                            <table>
-
-                                                                                <tr>
-                                                                                    <td><label>Passenger Details:</label></td>
-                                                                                    <td><input type="text" id="fname1" placeholder="First Name" ng-model="seat.fname" /></td>
-                                                                                    <td><input type="text" id="lname1" placeholder="Last Name" ng-model="seat.lname" /></td>
-                                                                                    <td>
-                                                                                        <select id="Age" ng-model="seat.Age">
-                                                                                            <option value="0" selected>--Select Age--</option>
-                                                                                            <option value="1">1</option>
-                                                                                            <option value="2">2</option>
-                                                                                            <option value="3">3</option>
-                                                                                            <option value="4">4</option>
-                                                                                            <option value="5">5</option>
-                                                                                            <option value="6">6</option>
-                                                                                            <option value="7">7</option>
-                                                                                            <option value="8">8</option>
-                                                                                            <option value="9">9</option>
-                                                                                            <option value="10">10</option>
-                                                                                            <option value="11">11</option>
-                                                                                            <option value="12">12</option>
-                                                                                            <option value="13">13</option>
-                                                                                            <option value="14">14</option>
-                                                                                            <option value="15">15</option>
-                                                                                            <option value="16">16</option>
-                                                                                            <option value="17">17</option>
-                                                                                            <option value="18">18</option>
-                                                                                            <option value="19">19</option>
-                                                                                            <option value="20">20</option>
-                                                                                            <option value="21">21</option>
-                                                                                            <option value="22">22</option>
-                                                                                            <option value="23">23</option>
-                                                                                            <option value="24">24</option>
-                                                                                            <option value="25">25</option>
-                                                                                            <option value="26">26</option>
-                                                                                            <option value="27">27</option>
-                                                                                            <option value="28">28</option>
-                                                                                            <option value="29">29</option>
-                                                                                            <option value="30">30</option>
-                                                                                            <option value="31">31</option>
-                                                                                            <option value="32">32</option>
-                                                                                            <option value="33">33</option>
-                                                                                            <option value="34">34</option>
-                                                                                            <option value="35">35</option>
-                                                                                            <option value="36">36</option>
-                                                                                            <option value="37">37</option>
-                                                                                            <option value="38">38</option>
-                                                                                            <option value="39">39</option>
-                                                                                            <option value="40">40</option>
-                                                                                        </select>
-                                                                                    </td>
-
-                                                                                    <td>
-                                                                                        <select name="Sex">
-                                                                                            <option value="0" selected>--Select Gender--</option>
-                                                                                            <option value="1">Male</option>
-                                                                                            <option value="2">Female</option>
-                                                                                            <option value="3">Others</option>
-                                                                                        </select>
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </table>
-                                                                        </form>
-                                                                    </div>
-
-                                                                </div>
-                                                                <center ng-init="Booking.Cost = 0">
-
-
-                                                                    <!--<button type="button" class="btn btn-primary" ng-click="AddSeats();">Add seats</button>-->
-                                                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-
-                                                                    <button type="button" class="btn btn-primary" ng-click="savedata(selectedSeats);">booking</button>
-                                                                </center>
-                                                            </td>
-                                                        </tr>
-
-
-
-
-
-                                                    </table>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-
-                        </table>
-
-
-
-
-
     </div>
+
+    
     <div class="row">
         <div class="col-lg-12">
             <div id="footer" tabindex="0">
@@ -516,13 +456,7 @@
         </div>
     </div>
 
-    <!-- End SiteCatalyst -->
-    <script>
-
-    </script>
-
-
-
+        
     <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/jquery-ui.js"></script>
@@ -536,7 +470,7 @@
     <script src="vendors/jquery-cookie/jquery.cookie.js"></script>
     <script src="vendors/iCheck/icheck.min.js"></script>
     <script src="vendors/iCheck/custom.min.js"></script>
-    <script src="vendors/jquery-news-ticker/jquery.news-ticker.js"></script>
+    
     <script src="js/jquery.menu.js"></script>
     <script src="vendors/jquery-pace/pace.min.js"></script>
     <script src="vendors/holder/holder.js"></script>

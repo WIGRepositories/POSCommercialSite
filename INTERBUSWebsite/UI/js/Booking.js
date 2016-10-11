@@ -1,7 +1,93 @@
 ﻿var app = angular.module('myApp', ['ngStorage'])
 
-var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
+var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $filter) {
    
+    $scope.seatstest = [];
+    $scope.select_all = false;
+
+    //function to create n-dimensional array
+
+    var makeArray = function createArray(dimensions, value) {
+        // Create new array
+        var array = new Array(dimensions[0] || 0);
+        var i = dimensions[0];
+
+        // If dimensions array's length is bigger than 1
+        // we start creating arrays in the array elements with recursions
+        // to achieve multidimensional array
+        if (dimensions.length > 1) {
+            // Remove the first value from the array
+            var args = Array.prototype.slice.call(dimensions, 1);
+            // For each index in the created array create a new array with recursion
+            while (i--) {
+                array[dimensions[0] - 1 - i] = createArray(args, value);
+            }
+            // If there is only one element left in the dimensions array
+            // assign value to each of the new array's elements if value is set as param
+        } else {
+            if (typeof value !== 'undefined') {
+                while (i--) {
+                    array[dimensions[0] - 1 - i] = value;
+                }
+            }
+        }
+
+        return array;
+    }
+    $scope.seatstest = makeArray([3, 2]);
+
+    $scope.seats = [{ "Id": 1, "row": 0, "col": 0, "label": "A1" },
+    { "Id": 2, "row": 0, "col": 1, "label": "A2" },
+    { "Id": 3, "row": 1, "col": 0, "label": "B1" },
+    { "Id": 4, "row": 1, "col": 1, "label": "B2" },
+    { "Id": 5, "row": 2, "col": 1, "label": "C1" }];
+    
+    for (i = 0; i <= $scope.seats.length - 1; i++) {
+        $scope.seatstest[$scope.seats[i]["row"]][$scope.seats[i]["col"]] = $scope.seats[i]["label"];
+    }
+    //for (i = 0; i <= $scope.seats.length - 1; i++) {        
+    //    for (j = 0; j <= $scope.seats.length - 1; j++) {
+    //        if ($scope.seats[j])
+    //        $scope.seatstest[i][j] = $scope.seats[j];
+
+    //        //if (i == $scope.seats[j]["row"])
+    //        //{
+               
+    //        //    $scope.seatstest.push({ row: i, col: j,"label": $scope.seats[j]["label"] });
+                
+    //        //}
+    //        //if (i == $scope.seats[j]["row"])
+    //        //{
+    //        //    if(j == $scope.seats[j]["col"])               
+    //        //        $scope.seatstest[i][j] = $scope.seats[j];
+    //        //}
+            
+    //        //$scope.seats.push({ row: i, posn: "B" });
+    //        //$scope.seats.push({ row: i, posn: "C" });
+    //        //$scope.seats.push({ row: i, posn: "D" });
+    //        //$scope.seats.push({ row: i, posn: "E" });
+    //        //$scope.seats.push({ row: i, posn: "F" });
+    //    }
+    //}
+
+    //for (i = 1; i <= 5; i++) {
+    //    for (j = 1; j <= 5; j++) {
+    //        $scope.seats.push({ row: i, col: j, posn: "A"+i+j });          
+    //        //$scope.seats.push({ row: i, posn: "B" });
+    //        //$scope.seats.push({ row: i, posn: "C" });
+    //        //$scope.seats.push({ row: i, posn: "D" });
+    //        //$scope.seats.push({ row: i, posn: "E" });
+    //        //$scope.seats.push({ row: i, posn: "F" });
+    //    }
+    //}
+
+    $scope.columns = function (r) {
+        var input = [];
+        for (var i = start; i < end; i++) input.push($scope.arr[i]);
+        return input;
+        //return $filter('filter')($scope.seats, { row: r });
+    };
+
     var stat = 0;
     $scope.selectedSeats = new Array();
     $scope.selectedSeats.pssngr = new Array();
