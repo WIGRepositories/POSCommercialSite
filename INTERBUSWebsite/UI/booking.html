@@ -203,33 +203,14 @@
                             </td>
                         </tr>
                     </table>
-                    <div id="t_{{$index}}" style="display:none;text-align:center">
-
-                        <img id='masterimg' src="images/busimages/selction seats.jpg" alt="Planets" usemap="#seats" style="width:956px;height:261px;">
-
-                        <map name="seats">
-                            <!--<area shape="rect" style="background-color:red" coords="212,34,192,52" alt="Sun" href="#" ng-click="AddSeats('1');">
-            <area shape="rect" style="background-color:red" coords="234,34,217,52" alt="Sun" href="#" ng-click="AddSeats('2');">
-            <area shape="rect" style="background-color:red" coords="258,34,242,52" alt="Sun" href="#" ng-click="AddSeats('3');">
-                        <area shape="rect" style="background-color:red" coords="283,34,266,52" alt="Sun" href="#" ng-click="AddSeats('4');">-->
-                            <area id="1" shape="rect" style="background-color:red" coords="352,34,372,52" alt="Sun" href="#" ng-click="AddSeats('A5');">
-                            <area shape="rect" style="background-color:red" coords="378,34,395,52" alt="Sun" href="#" ng-click="AddSeats('A6');">
-                            <area shape="rect" style="background-color:red" coords="400,34,420,52" alt="Sun" href="#" ng-click="AddSeats('A7');">
-                            <area shape="rect" style="background-color:red" coords="426,34,445,52" alt="Sun" href="#" ng-click="AddSeats('A8');">
-                            <!--<area shape="rect" style="background-color:red" coords="402,34,386,52" alt="Sun" href="#" ng-click="AddSeats('A3');">
-            <area shape="rect" style="background-color:red" coords="425,34,410,52" alt="Sun" href="#" ng-click="AddSeats('A3');">-->
-                            <!--<area shape="rect" style="background-color:red" coords="212,59,192,71" alt="Sun" href="#" onclick="alert('B1 Selected');">
-            <area shape="rect" style="background-color:red" coords="234,59,217,71" alt="Sun" href="#" onclick="alert('B2 Selected');">
-            <area shape="rect" style="background-color:red" coords="258,59,242,71" alt="Sun" href="#" onclick="alert('B3 Selected');">
-            <area shape="rect" style="background-color:red" coords="283,59,266,71" alt="Sun" href="#" onclick="alert('B4 Selected');">
-            <area shape="rect" style="background-color:red" coords="307,59,290,71" alt="Sun" href="#" onclick="alert('B5 Selected');">
-            <area shape="rect" style="background-color:red" coords="331,59,314,71" alt="Sun" href="#" onclick="alert('B6 Selected');">
-                        <area shape="rect" style="background-color:red" coords="354,59,338,71" alt="Sun" href="#" onclick="alert('B7 Selected');">-->
-                            <area shape="rect" style="background-color:red" coords="352,56,372,72" alt="Sun" href="#" ng-click="AddSeats('B8 Selected');">
-                            <area shape="rect" style="background-color:red" coords="378,56,395,72" alt="Sun" href="#" ng-click="AddSeats('B9 Selected');">
-                            <area shape="rect" style="background-color:red" coords="402,56,420,72" alt="Sun" href="#" ng-click="AddSeats('B10 Selected');">
-                            <area shape="rect" style="background-color:red" coords="426,56,445,72" alt="Sun" href="#" ng-click="AddSeats('B10 Selected');">
-                        </map>
+                    <div class="col-md-12" id="t_{{$index}}" style="display:none;text-align:center">
+                        <div style="width: 100%; z-index: 1; background-color: aliceblue; margin-left: 10px">
+                            <table>
+                                <tr ng-repeat="s in seatstest">
+                                    <td ng-repeat="c in s" style="padding: 20px"><div style="height:30px;width:30px;background-color:red;border:solid;" ng-click="AddSeats(c);">{{c}}</div></td>
+                                </tr>
+                            </table>
+                        </div>
                         <div class="col-md-8 col-md-offset-1" ng-repeat="seat in selectedSeats.pssngr">
                             <div class="row">
                                 <form>

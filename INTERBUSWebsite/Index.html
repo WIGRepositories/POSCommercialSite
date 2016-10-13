@@ -73,7 +73,7 @@
 
                                 <a style="text-decoration:none" href="#">Products</a>
                                 <ul>
-                                    <li><a href="UI/Licensepage.html">Fleet Owner License</a></li>
+                                    <li ng-repeat="t in licenses" id="{{t.Id}}"><a href="#" ng-click="GotToLicensePage(t);">{{t.Name}}</a></li>
 
                                 </ul>
                             </li>
@@ -460,6 +460,55 @@
                 </div>
             </div>
         </div>
+
+    <!--<div data-set="reserved-teaser" class="large tertiary-teaser">
+        <div class="moving-source-order">
+            <div class="news-teaser">
+                <a href="">
+                    <div class="text-link">
+
+                        <form>
+                            <label>Email / Username</label><input type="text" class="form-control" ng-model="UserName" />
+
+                            <label>Password</label><input type="text" class="form-control" ng-model="Password" />
+                            <br />
+                            <div class="dropdown">
+                                <button class="btn btn-info btn-sm" type="button" data-toggle="dropdown">
+                                    Login As
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+
+                                    <li><a href="#">Guest</a></li>
+                                    <li><a href="#">Admin</a></li>
+                                    <li><a href="#">Passenger</a></li>
+                                    <li><a href="#">Fleet Owner</a></li>
+
+
+                                </ul>
+                            </div><br />
+
+                            <div>
+                                <input type="checkbox" id="check" />
+
+                                <label for="remember">Remember me on this computer </label>
+
+                            </div>
+
+                            <div class="action_btns">
+
+                                <div class="one_half last" style="margin-left:120px">
+                                    <div class="btn btn_red btn-sm" ng-click="Signin()">
+                                        Login
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>-->
         <!--END CONTENT--><!--BEGIN FOOTER-->
         <div class="row">
             <div class="col-lg-12">
