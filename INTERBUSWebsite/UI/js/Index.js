@@ -9,6 +9,11 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         , { "ID": 4, "Name": "Hassel free travel", "Caption": "Get online tickets to make the journey hassel free", "Path": "/UI/Images/promos/14.png" }
         , { "ID": 5, "Name": "Extensive coverage", "Caption": "Wide network taking you to various destinations", "Path": "/UI/Images/promos/2.png" }
     ];
+    $scope.triptype = "oneway";
+
+    $scope.RadioChange = function (s) {
+        $scope.triptype = s;
+    };
 
     $scope.GetStops = function () {
 

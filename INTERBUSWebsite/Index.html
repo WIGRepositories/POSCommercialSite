@@ -172,10 +172,11 @@
                                                 </div>
                                                 <br />
                                                 <div>
-                                                    <input value="11" type="radio" name="triptype" ng-model="triptype" checked /> <font color="black">
+                                                    <input value="oneway" type="radio" name="tt" ng-change="RadioChange('oneway')"  ng-model="triptype" checked /> <font color="black">
                                                         One way
                                                     </font>
-                                                    <input value="12" type="radio" name="triptype" ng-model="triptype" /> <font color="black"> Two way</font>
+                                                    <input value="twoway" type="radio" name="tt" ng-change="RadioChange('twoway')" ng-model="triptype" /><font color="black"> Two way</font>
+                                                    
                                                 </div>
                                             </div>
 
@@ -226,7 +227,7 @@
                                         <div class="row">
                                             <div class="panel panel-dark" style="background-color: AliceBlue; ">
                                                 <div class="panel-heading" style="background-color: black; text-align: center; text-decoration-color: white">
-                                                    <a style="text-decoration:none; color:#CCCCCC" href="UI/UserLogin.html"><img src="UI/Images/login.png" />Login</a>
+                                                    <a style="text-decoration:none; color:#CCCCCC" href="#" data-target="#Modal-header-primary" data-toggle="modal"><img src="UI/Images/login.png" />Login</a>
                                                     <!--<a style="text-decoration:none; color:#CCCCCC" href="#modal" id="modal_trigger"><img src="UI/Images/login.png" />Login</a>-->
                                                     <a style="text-decoration:none; color:#CCCCCC" href="">Or</a>
                                                     <a style="text-decoration:none; color:#CCCCCC" href="UI/Registration.html">Create and Account</a>
@@ -509,6 +510,115 @@
             </div>
         </div>
     </div>-->
+
+    <div id="Modal-header-primary1" tabindex="-1" role="dialog" aria-labelledby="modal-header-primary-label" aria-hidden="true" class="modal fade">
+        <div class=" modal-dialog modal-lg">
+            <div class="modal-content">  
+                <div class="page-form" ng-controller="myCtrl" ng-model="type">
+                    <form class="form-validate-signin">
+                        <div class="header-content">
+                            <h3>Smart Ticketing Log in</h3>
+                          
+                            <div class="body-content">
+                                <div class="form-group">
+                                    <table>
+                                        <tr>
+                                            <td height="5px" align="left">
+                                                <div style="margin-right:10px" class="row">
+                                                    <div class="input-icon right:col-md-2">
+                                                        <i class="fa fa-user"></i>
+                                                        <input type="text" placeholder="Username" name="username" class="form-control" ng-model="UserName">
+                                                        <!--<span ng-show="!UserName"><font color="red">Please enter UserName</font></span>-->
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td height="5px" align="right">
+                                                <div style="margin-left:5px" class="row">
+                                                    <div class="input-icon right:col-md-2">
+                                                        <i class="fa fa-key"></i>
+                                                        <input type="password" placeholder="Password" name="password" class="form-control" ng-model="Password">
+                                                        <!--<span ng-show="!Password"><font color="red">Please enter Password</font></span>-->
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                               
+                                <div class="form-group" style="text-align:center">
+                                    <button ng-click="Signin()" class="btn btn-success">
+                                        Log In
+                                        &nbsp;<i class="fa fa-chevron-circle-right"></i>
+                                    </button>
+                                    <br />
+                                    <!--<div class="clearfix"></div>-->
+                                    <div class="form-group">
+                                        <b> Forgot your Password?</b><a style="color:blue" href='UI/ForgotPassword.html' class='btn-forgot-pwd'>Click Here</a>
+                                    </div>
+                                </div>
+                             
+                            </div>
+                        </div>
+                    </form>
+                </div>        
+            </div>
+        </div>
+    </div>
+
+    <div id="Modal-header-primary" tabindex="-1" role="dialog" aria-labelledby="modal-header-primary-label" aria-hidden="true" class="modal fade" style="margin-top:100px">
+        <div class="modal-dialog">
+            
+                <div class="panel panel-dark" style="background-color: AliceBlue;padding:0px">
+                    <!--<button type="button" data-dismiss="modal" aria-hidden="true" class="close" style="background-color:white;padding:0px">&times;</button>-->
+                    <div class="panel-heading" style="background-color:black;text-align:center;text-decoration-color:white">Log in</div>
+                   
+                    <div class="panel-body form-actions text-right pal" style="background-color: AliceBlue; ">
+
+                        <div class="body-content" ng-model="register">
+
+
+                            <div class="form-group">
+                                <div class="input-icon right"><i class="fa fa-user"></i><input type="text" placeholder="EmailId/User Name" name="username" ng-model="UserName" class="form-control"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-icon right"><i class="fa fa-key"></i><input id="ln" type="password" placeholder="password" name="password" ng-model="Password" class="form-control"></div>
+                            </div>
+                            
+                            <div class="form-group">
+
+                                <select id="selGender" class="form-control" ng-model="FleetOwnerRequest1.Gender">
+                                    <option value="" selected>Select</option>
+                                    <option value="1">Customer</option>
+                                    <option value="2">Fleet Owner</option>
+                                    <option value="3">Interbus Support</option>
+                                    <option value="3">Sales agent</option>
+                                    <option value="3">Fleet Owner Supervisor</option>
+                                    <option value="3">Guest/Others</option>
+                                </select>
+                            </div>
+
+                            
+                            <div class="form-group">
+                                <b> Forgot your Password?</b><a style="color:blue" href='UI/ForgotPassword.html' class='btn-forgot-pwd'>Click Here</a>
+                            </div>
+                          
+
+                            <div class="form-group">
+                                
+                                <button class="btn btn-info" ng-click="Signin();">
+                                    Login
+                                </button>
+                                <button  data-dismiss="modal" class="btn btn-primary">
+                                    Cancel
+                                </button>
+                             
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          
+        </div>
+    </div>
         <!--END CONTENT--><!--BEGIN FOOTER-->
         <div class="row">
             <div class="col-lg-12">

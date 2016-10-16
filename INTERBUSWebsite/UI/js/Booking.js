@@ -34,52 +34,49 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
 
         return array;
     }
-    $scope.seatstest = makeArray([3, 2]);
+    $scope.seatstest = makeArray([6, 5]);
 
-    $scope.seats = [{ "Id": 1, "row": 0, "col": 0, "label": "A1" },
-    { "Id": 2, "row": 0, "col": 1, "label": "A2" },
-    { "Id": 3, "row": 1, "col": 0, "label": "B1" },
-    { "Id": 4, "row": 1, "col": 1, "label": "B2" },
-    { "Id": 5, "row": 2, "col": 1, "label": "C1" }];
+    $scope.seats = [{ "Id": 1, "row": 0, "col": 0, "label": "A1","status":"2"},
+    { "Id": 2, "row": 0, "col": 1, "label": "A2", "status": "1" },
+    { "Id": 22, "row": 0, "col": 2, "label": "A3", "status": "0" },
+    { "Id": 3, "row": 0, "col": 3, "label": "A3" ,"status":"1"},
+    { "Id": 4, "row": 0, "col": 4, "label": "A4" ,"status":"1"},
+    
+    { "Id": 5, "row": 1, "col": 0, "label": "B1" ,"status":"1"},
+    { "Id": 6, "row": 1, "col": 1, "label": "B2", "status": "1" },
+    { "Id": 23, "row": 1, "col": 2, "label": "A2", "status": "0" },
+    { "Id": 7, "row": 1, "col": 3, "label": "B3" ,"status":"2"},    
+    { "Id": 30, "row": 1, "col": 4, "label": "B3", "status": "1" },
+
+    { "Id": 8, "row": 2, "col": 0, "label": "C1" ,"status":"1"},
+    { "Id": 9, "row": 2, "col": 1, "label": "C2", "status": "1" },
+    { "Id": 24, "row": 2, "col": 2, "label": "A2", "status": "0" },
+    { "Id": 10, "row":2, "col": 3, "label": "C3" ,"status":"1"},
+    { "Id": 11, "row": 2, "col": 4, "label": "C4" ,"status":"1"},
+
+    { "Id": 12, "row": 4, "col": 0, "label": "D1" ,"status":"1"},
+    { "Id": 25, "row": 4, "col": 2, "label": "A2", "status": "0" },
+    { "Id": 14, "row": 4, "col": 1, "label": "D3" ,"status":"1"},
+    { "Id": 15, "row": 4, "col": 3, "label": "D4" ,"status":"2"},
+    { "Id": 16, "row": 4, "col": 4, "label": "D5" ,"status":"1"},
+    
+    { "Id": 17, "row": 5, "col": 0, "label": "D1" ,"status":"1"},
+    { "Id": 18, "row": 5, "col": 1, "label": "D2" ,"status":"1"},
+    { "Id": 19, "row": 5, "col": 2, "label": "D3" ,"status":"1"},
+    { "Id": 20, "row": 5, "col": 3, "label": "D4" ,"status":"1"},
+    { "Id": 21, "row": 5, "col": 4, "label": "D5" ,"status":"1"},
+
+    { "Id": 25, "row": 3, "col": 0, "label": "E1" ,"status":"1"},
+    { "Id": 26, "row": 3, "col": 1, "label": "E2" ,"status":"1"},
+    { "Id": 27, "row": 3, "col": 2, "label": "" ,"status":"0"},
+    { "Id": 28, "row": 3, "col": 3, "label": "E3" ,"status":"1"},
+    { "Id": 29, "row": 3, "col": 4, "label": "E4" ,"status":"1"},
+    ];
     
     for (i = 0; i <= $scope.seats.length - 1; i++) {
-        $scope.seatstest[$scope.seats[i]["row"]][$scope.seats[i]["col"]] = $scope.seats[i]["label"];
+        $scope.seatstest[$scope.seats[i]["row"]][$scope.seats[i]["col"]] = { "Id": $scope.seats[i]["Id"], "label": $scope.seats[i]["label"], "status": ($scope.seats[i] == null) ? 0 : $scope.seats[i]["status"] };
     }
-    //for (i = 0; i <= $scope.seats.length - 1; i++) {        
-    //    for (j = 0; j <= $scope.seats.length - 1; j++) {
-    //        if ($scope.seats[j])
-    //        $scope.seatstest[i][j] = $scope.seats[j];
-
-    //        //if (i == $scope.seats[j]["row"])
-    //        //{
-               
-    //        //    $scope.seatstest.push({ row: i, col: j,"label": $scope.seats[j]["label"] });
-                
-    //        //}
-    //        //if (i == $scope.seats[j]["row"])
-    //        //{
-    //        //    if(j == $scope.seats[j]["col"])               
-    //        //        $scope.seatstest[i][j] = $scope.seats[j];
-    //        //}
-            
-    //        //$scope.seats.push({ row: i, posn: "B" });
-    //        //$scope.seats.push({ row: i, posn: "C" });
-    //        //$scope.seats.push({ row: i, posn: "D" });
-    //        //$scope.seats.push({ row: i, posn: "E" });
-    //        //$scope.seats.push({ row: i, posn: "F" });
-    //    }
-    //}
-
-    //for (i = 1; i <= 5; i++) {
-    //    for (j = 1; j <= 5; j++) {
-    //        $scope.seats.push({ row: i, col: j, posn: "A"+i+j });          
-    //        //$scope.seats.push({ row: i, posn: "B" });
-    //        //$scope.seats.push({ row: i, posn: "C" });
-    //        //$scope.seats.push({ row: i, posn: "D" });
-    //        //$scope.seats.push({ row: i, posn: "E" });
-    //        //$scope.seats.push({ row: i, posn: "F" });
-    //    }
-    //}
+    
 
     $scope.columns = function (r) {
         var input = [];
@@ -115,6 +112,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
         //$rootscope.src = $scope.RS;
         //$rootscope.dest = $scope.RD;
         $localStorage.timing = ($scope.timing == 'Now') ? Date() : $scope.timing;
+      
         $localStorage.triptype = $scope.triptype;
         // $scope.GetAvailableServices();
 
@@ -135,26 +133,6 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
         ];
 
     }
-
-    seatMap = [{ "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "A", "row": 1, "selected": false }
-        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "B", "row": 1, "selected": false }
-        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "C", "row": 1, "selected": false }
-        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "D", "row": 1, "selected": false }
-        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "E", "row": 1, "selected": false }
-        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "F", "row": 1, "selected": false }
-        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "A", "row": 2, "selected": false }
-        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "B", "row": 2, "selected": false }
-        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "C", "row": 2, "selected": false }
-        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "D", "row": 2, "selected": false }
-        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "E", "row": 2, "selected": false }
-        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "F", "row": 2, "selected": false }
-        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "A", "row": 3, "selected": false }
-        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "B", "row": 3, "selected": false }
-        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "C", "row": 3, "selected": false }
-        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "D", "row": 3, "selected": false }
-        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "E", "row": 3, "selected": false }
-        , { "baggage": "0", "carry_ons": "0", "first_name": "", "last_name": "", "meal": "Any", "passport": "", "posn": "F", "row": 3, "selected": false }];
-
     $scope.test = function (b) {
         if ($scope.selectedIndex != -1)
             document.getElementById('t_' + $scope.selectedIndex).style.display = "none";
@@ -172,52 +150,55 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
     $scope.count = 0;
     var selectList = [];
    
-    //$scope.GetAvailableServices = function () {
-    //    $scope.srcId = $localStorage.srcId;
-    //    $scope.destId = $localStorage.destId;
-    //    $scope.way = $localStorage.waytype;
    
-   
-    //$scope.totalseats = 0;
-    //$scope.count = 0;
-    //var selectList = [];
-    
-
-    //        $scope.returncount = $scope.selectedSeats.returnpssngr.length;
-    //    }
-    //        $scope.selectedSeats.returnpssngr.push(returndata);
-       
-    //        $scope.count = $scope.selectedSeats.returnpssngr.length;
-    //}
-    //    // $scope.seats = $scope.count;
-
-    //}
 
     $scope.AddSeats = function (x) {
-        document.getElementById('1').src = "/UI/images/busimages/acbus.jpg";
+       
+        if(x.status == "1")
+        {
+            //set the status as selected and add it to the passenger array
+            x.status = "3";
 
-        document.getElementById('1').style.borderColor = "green";
-        document.getElementById('1').style.backgroundImage = "/UI/images/busimages/acbus.jpg";
+            if (selectList.indexOf(x.label) != -1)
+                return;
+            selectList.push(x.label);
+            
+            var item = {
+                "SeatId": x.Id
+               , "SeatNo": ""
+             , "NoOfSeats": $scope.count
+               , "Fname": ""
+               , "Lname": ""
+               , "Age": ""
+               , "Sex": ""
+               , "Identityproof": ""
 
-        if (selectList.indexOf(x) != -1)
-            return;
-        selectList.push(x);
-        var item = {
-            "SeatId": x
-           , "SeatNo": ""
-         , "NoOfSeats": $scope.count
-           , "Fname": ""
-           , "Lname": ""
-           , "Age": ""
-           , "Sex": ""
-           , "Identityproof": ""
-
-        }
+            }
             $scope.selectedSeats.pssngr.push(item);
+        }
+        else{
+            x.status = "1";           
+            selectList.splice(selectList.indexOf(x.label), 1);
+            var item = {
+                "SeatId": x.Id
+               , "SeatNo": ""
+             , "NoOfSeats": $scope.count
+               , "Fname": ""
+               , "Lname": ""
+               , "Age": ""
+               , "Sex": ""
+               , "Identityproof": ""
+
+            }
+            $scope.selectedSeats.pssngr.splice($scope.selectedSeats.pssngr.indexOf(item), 1);
+        }
+        
+        
 
             $scope.count = $scope.selectedSeats.pssngr.length;
             $scope.totalseats = $scope.count;
-            $scope.count = 0;
+            $scope.selectedSeatsList = selectList.join(',');
+            //$scope.count = 0;
           //  $scope.subtotal = $scope.count * $scope.Booking.Cost;
         }
 
@@ -233,7 +214,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
         $scope.destId = $localStorage.dest.Id;
         $scope.srcStage = $localStorage.src.name;
         $scope.destStage = $localStorage.dest.name;
-        $scope.way = $localStorage.waytype;
+        $scope.triptype = $localStorage.triptype;
 
        
         $http.get('/api/TicketBooking/GetAvailableServices?srcId=' + $scope.srcId + '&destId=' + $scope.destId).then(function (response, req) {
@@ -241,8 +222,18 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
         });        
     }
     var stat = 0;
-    $scope.savedata = function (selectedSeats) {
-        if ($localStorage.waytype == 1) {
+
+    $scope.ProceedToPayment = function () {
+        window.location.href = "TicketCartdetails.html";
+    }
+    $scope.savedata = function () {
+        //prepare the data for saving 
+        //if it is 2 way, then display the return option
+        //prepare the data for return
+        //proceed to checkout
+
+
+        if ($localStorage.triptype == 1) {
             $scope.showDiv = true; 
            var book = { "No_Seats": "5", "cost": "1500", "JourneyType": "1", "passengersList": selectedSeats.pssngr, "Seatcost": "900" };
             //for(int i=0; i<selectedSeats.length; i++){}
@@ -283,7 +274,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
 
         //    window.location.href = "TicketCartdetails.html";
 
-        } else if ($localStorage.waytype == 2 && stat <= 1)
+        } else if ($localStorage.triptype == 2 && stat <= 1)
         {
             //var book = { "No_Seats": "5", "cost": "1500", "JourneyType": "1", "passengersList": selectedSeats.returnpssngr, "Seatcost": "900" };
             //$localStorage.book = book;

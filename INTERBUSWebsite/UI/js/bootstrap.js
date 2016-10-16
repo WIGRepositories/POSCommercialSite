@@ -247,7 +247,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
     var $btn = $(e.target)
     if (!$btn.hasClass('btn')) $btn = $btn.closest('.btn')
     $btn.button('toggle')
-    e.preventDefault()
+   // e.preventDefault()
   })
 
 }(jQuery);
