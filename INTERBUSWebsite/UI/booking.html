@@ -435,75 +435,102 @@
     </div>
     
     <div id="Modal-header-primary" tabindex="-1" role="dialog" aria-labelledby="modal-header-primary-label" aria-hidden="true" class="modal fade">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-lg" ng-model="currGroup">
             <div class="modal-content">
                 <div class="modal-header modal-header-primary">
                     <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
                     <h4 id="modal-header-primary-label" class="modal-title">Passenger Details</h4>
                 </div>
-                <div class="modal-body" ng-model="currGroup">
-                    <div class="row"  ng-repeat="seat in selectedSeats.pssngr">
-                        
-                        
-                                <div class="col-md-3">
-                                    <label for="Name" class="control-label" style="color:red;float:left" ng-if="$index == 0"> Primary passenger:<span class='require'>*</span></label>
-                                    <label for="Name" class="control-label" style="color:red;float:left" ng-if="$index != 0"> Co-passenger {{$index}}:<span class='require'>*</span></label>
+                <div class="modal-body">
+                    <div class="row" ng-repeat="seat in selectedSeats.pssngr">
 
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="col-md-4"><input id="inputFirstName" type="text" ng-model="currGroup.Name" class="form-control" /><span class="help-block"></span></div>
-                                    <div class="col-md-4"><input id="code" type="text" ng-model="currGroup.Code" class="form-control"  /><span class="help-block"></span></div>
-                                    <div class="col-md-4"><input id="code" type="text" ng-model="currGroup.Code" class="form-control"  /><span class="help-block"></span></div>
-                                </div>
-                        
-                    </div>                    
+
+                        <div class="col-md-2">
+                            <label for="Name" class="control-label" style="color:red;float:left" ng-if="$index == 0"> Primary passenger:<span class='require'>*</span></label>
+                            <label for="Name" class="control-label" style="color:red;float:left" ng-if="$index != 0"> Co-passenger {{$index}}:<span class='require'>*</span></label>
+
+                        </div>
+                        <div class="col-md-10" style="text-align:left">
+                            <div class="col-md-3"><input id="inputFirstName" type="text" ng-model="seat.FName" class="form-control" placeholder="First Name" /><span class="help-block"></span></div>
+                            <div class="col-md-3"><input id="code" type="text" ng-model="seat.LName" class="form-control" placeholder="Last Name" /><span class="help-block"></span></div>
+
+                            <div class="col-md-3">
+                                <select class="form-control" ng-model="S">
+                                    <option value="" selected>Age</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                                <span class="help-block"></span>
+                            </div>
+                            <div class="col-md-3">
+                                <select class="form-control" ng-model="G">
+                                    <option value="" selected>Gender</option>
+                                    <option value="1">Male</option>
+                                    <option value="2">Female</option>
+                                    <option value="3">Neutral</option>
+                                </select>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+
+                    </div>
 
                     <div class="row" style="margin-top:10px">
                         <div class="col-md-6">
                             <div class="row">
-                                
-                                    <label for="Fax" class="col-md-4 control-label" style="color: red;float: left">E-mail Id:<span class='require'></span></label>
-                                    <div class="col-md-8"><input id="EmailId" type="text" ng-model="currGroup.EmailId" class="form-control" /><span class="help-block"></span></div>
-                                
+
+                                <label for="Fax" class="col-md-4 control-label" style="color: red;float: left">E-mail Id:<span class='require'></span></label>
+                                <div class="col-md-8"><input id="EmailId" type="text" ng-model="currGroup.EmailId" class="form-control" /><span class="help-block"></span></div>
+
                             </div>
                             <div class="row">
-                                
-                                    <label for="ContactNo1" class="col-md-4 control-label" style="color: red;float: left">Contact No.1:<span class='require'></span></label>
-                                    <div class="col-md-8"><input id="ContactNo1" type="text" ng-keypress="filterValue($event)" ng-model="currGroup.ContactNo1" class="form-control" maxlength="10" /><span class="help-block"></span></div>
-                               
+
+                                <label for="ContactNo1" class="col-md-4 control-label" style="color: red;float: left">Contact No.1:<span class='require'></span></label>
+                                <div class="col-md-8"><input id="ContactNo1" type="text" ng-keypress="filterValue($event)" ng-model="currGroup.ContactNo1" class="form-control" maxlength="10" /><span class="help-block"></span></div>
+
                             </div>
                             <div class="row">
-                              
-                                    <label for="ContactNo2" class="col-md-4 control-label" style="float:left">Contact No.2:<span class='require'></span></label>
-                                    <div class="col-md-8">
-                                        <input type="text" id="ContactNo2" ng-keypress="filterValue($event)" ng-model="currGroup.ContactNo2" maxlength="10" data-fv-numeric="true" data-fv-numeric-message="Please enter valid phone numbers" data-fv-phone-country11="IN" required="required" data-fv-notempty-message="This field cannot be left blank." class="form-control" name="data[User][mobile]" data-fv-field="data[User][mobile]">
-                                        <!--<input id="ContactNo2" type="text" ng-model="currGroup.ContactNo2" class="form-control" maxlength="10" />-->
-                                        <span class="help-block">
-                                        </span>
-                                  
 
-                                </div>
-                            </div>
+                                <label for="ContactNo2" class="col-md-4 control-label" style="float:left">Contact No.2:<span class='require'></span></label>
+                                <div class="col-md-8">
+                                    <input type="text" id="ContactNo2" ng-keypress="filterValue($event)" ng-model="currGroup.ContactNo2" maxlength="10" data-fv-numeric="true" data-fv-numeric-message="Please enter valid phone numbers" data-fv-phone-country11="IN" required="required" data-fv-notempty-message="This field cannot be left blank." class="form-control" name="data[User][mobile]" data-fv-field="data[User][mobile]">
+                                    <!--<input id="ContactNo2" type="text" ng-model="currGroup.ContactNo2" class="form-control" maxlength="10" />-->
+                                    <span class="help-block">
+                                    </span>
 
-                            </div>
 
-                            <div class="col-md-6">
-                                <div>
-                                    <label for="Address Id" class="col-md-4 control-label" style="color: red; float: left">Address:</label>
-
-                                    <div class="col-md-8"><textarea rows="4" class="form-control" ng-model="currGroup.Address"></textarea></div>
-                                    <br />
                                 </div>
                             </div>
 
                         </div>
+
+                        <div class="col-md-6">
+                            <div>
+                                <label for="Address Id" class="col-md-4 control-label" style="color: red; float: left">Address:</label>
+
+                                <div class="col-md-8"><textarea rows="4" class="form-control" ng-model="currGroup.Address"></textarea></div>
+                                <br />
+                            </div>
+                        </div>
+
+                    </div>
 
                 </div>
 
 
                 <div class="form-actions">
                     <div style="text-align:center">
-                        <button type="button" class="btn btn-green" ng-click="ProceedToPayment();">Proceed to payment</button>
+                        <button type="button" class="btn btn-green" ng-click="ProceedToPayment(currGroup);">Proceed to payment</button>
                         <button type="button" data-dismiss="modal" class="btn btn-primary">Close</button>
                     </div>
                 </div>

@@ -183,8 +183,8 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
                 "SeatId": x.Id
                , "SeatNo": ""
              , "NoOfSeats": $scope.count
-               , "Fname": ""
-               , "Lname": ""
+               , "FName": ""
+               , "LName": ""
                , "Age": ""
                , "Sex": ""
                , "Identityproof": ""
@@ -223,15 +223,18 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
     }
     var stat = 0;
 
-    $scope.ProceedToPayment = function () {
+    $scope.ProceedToPayment = function (currGroup) {
+        var test = $scope.selectedSeats.pssngr[0];
+        alert();
         window.location.href = "TicketCartdetails.html";
     }
-    $scope.savedata = function () {
+
+    $scope.savedata = function () {      
         //prepare the data for saving 
         //if it is 2 way, then display the return option
         //prepare the data for return
         //proceed to checkout
-
+        alert();
 
         if ($localStorage.triptype == 1) {
             $scope.showDiv = true; 
