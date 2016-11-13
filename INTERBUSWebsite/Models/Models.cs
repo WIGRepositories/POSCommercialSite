@@ -122,21 +122,25 @@ namespace INTERBUSWebsite.Models
 
     }
 
-    public class UserIn
+    public class UserInfo
     {
-      
+        public int Id { get; set; }
         public String FirstName { get; set; }
         public String LastName { get; set; }
         public String UserName { get; set; }
         public String Password { get; set; }
         public String EmailAddress { get; set; }
-        public String ConfirmPassword { get; set; }
-        public String Gender { get; set; } 
+        public String Mobile { get; set; }
+        public int Gender { get; set; }
         public String salt { set; get; }
-     
-       
-
+        public int UserTypeId { get; set; }
+        public int UserId { get; set; }
+        public int Active { get; set; }
+        public string InsUpdDelFlag { get; set; }
+        public int IsEmailVerified { get; set; }
+        public DateTime CreatedOn { get; set; }
     }
+
     public class UserLogin
     {
         public int Id { set; get; }

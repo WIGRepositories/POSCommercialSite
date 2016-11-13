@@ -84,7 +84,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
             //if the user has role, then get the details and save in session
             $localStorage.uname = res.data[0].name;
             $localStorage.userdetails = res.data;
-            window.location.href = "UI/BookedTicketHistory.html";
+          //  window.location.href = "UI/BookedTicketHistory.html";
         }
     });
 }

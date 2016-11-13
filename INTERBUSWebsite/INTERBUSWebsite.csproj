@@ -127,6 +127,7 @@
     <Content Include="UI\images\promos\13.jpg" />
     <Content Include="UI\images\promos\14.png" />
     <Content Include="UI\js\bootstrap.js" />
+    <Content Include="UI\js\Carousle\Carousel.js" />
     <Content Include="UI\js\Carousle\cms.js" />
     <Content Include="UI\js\Carousle\BannerCarousel.js" />
     <Content Include="UI\js\Carousle\jquery.carouFredSel-6.0.4-packed.js" />

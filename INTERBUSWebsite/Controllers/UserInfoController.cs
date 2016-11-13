@@ -12,82 +12,98 @@ namespace INTERBUSWebsite.Controllers
 {
     public class UserInfoController : ApiController
     {
-         [HttpPost]
-          public DataTable saveUserInfo(UserIn b)
+        [HttpPost]
+        public DataTable saveUserInfo(UserInfo b)
         {
-            DataTable Tbl = new DataTable();
 
+            DataTable Tbl = new DataTable();
 
             //connect to database
             SqlConnection conn = new SqlConnection();
-            //connetionString="Data Source=ServerName;Initial Catalog=DatabaseName;User ID=UserName;Password=Password"
-            conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["btposdb"].ToString();
-          
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "InsUpdWebsiteUserInfo";
-            cmd.Connection = conn;
-            conn.Open();
-       
-
-            SqlParameter Gid = new SqlParameter();
-            Gid.ParameterName = "@FirstName";
-            Gid.SqlDbType = SqlDbType.VarChar;
-            Gid.Value = b.FirstName;
-            cmd.Parameters.Add(Gid);
+            try
+            {
+                //connetionString="Data Source=ServerName;Initial Catalog=DatabaseName;User ID=UserName;Password=Password"
+                conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["btposdb"].ToString();
 
 
-            SqlParameter pid = new SqlParameter();
-            pid.ParameterName = "@LastName";
-            pid.SqlDbType = SqlDbType.VarChar;
-            pid.Value = b.LastName;
-            cmd.Parameters.Add(pid);
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "InsUpdWebsiteUserInfo";
+                cmd.Connection = conn;
+                //     conn.Open();       
 
-            
-            SqlParameter lid = new SqlParameter();
-            lid.ParameterName = "@UserName";
-            lid.SqlDbType = SqlDbType.VarChar;
-            lid.Value = b.UserName;
-            cmd.Parameters.Add(lid);
+                SqlParameter id = new SqlParameter("@Id", SqlDbType.Int);
+                id.Value = b.Id;
+                cmd.Parameters.Add(id);
 
-            SqlParameter gid = new SqlParameter();
-            gid.ParameterName = "@Password";
-            gid.SqlDbType = SqlDbType.VarChar;
-            gid.Value = b.Password;
-            cmd.Parameters.Add(gid);
+                SqlParameter Gid = new SqlParameter("@FirstName", SqlDbType.VarChar, 50);
+                Gid.Value = b.FirstName;
+                cmd.Parameters.Add(Gid);
 
-            SqlParameter oid = new SqlParameter();
-            oid.ParameterName = "@EmailAddress";
-            oid.SqlDbType = SqlDbType.VarChar;
-            oid.Value = b.EmailAddress;
-            cmd.Parameters.Add(oid);
-            
-             SqlParameter rid = new SqlParameter();
-            rid.ParameterName = "@ConfirmPassword";
-            rid.SqlDbType = SqlDbType.VarChar;
-            rid.Value = b.ConfirmPassword;
-            cmd.Parameters.Add(rid);
+                SqlParameter pid = new SqlParameter("@LastName", SqlDbType.VarChar, 50);
+                pid.Value = b.LastName;
+                cmd.Parameters.Add(pid);
 
-             SqlParameter wid = new SqlParameter();
-            wid.ParameterName = "@Gender";
-            wid.SqlDbType = SqlDbType.VarChar;
-            wid.Value = b.Gender;
-             cmd.Parameters.Add(wid);
 
-             SqlParameter salt = new SqlParameter();
-             salt.ParameterName = "@salt";
-             salt.SqlDbType = SqlDbType.VarChar;
-             salt.Value = b.salt;
-             cmd.Parameters.Add(salt);
+                SqlParameter lid = new SqlParameter("@UserName", SqlDbType.VarChar, 50);
+                lid.Value = b.UserName;
+                cmd.Parameters.Add(lid);
 
-            //DataSet ds = new DataSet();
-            //SqlDataAdapter db = new SqlDataAdapter(cmd);
-            //db.Fill(ds);
-           // Tbl = Tables[0];
-            cmd.ExecuteScalar();
-            conn.Close();
-            // int found = 0;
-            return Tbl;
+                SqlParameter gid = new SqlParameter("@Password", SqlDbType.VarChar, 50);
+                gid.Value = b.Password;
+                cmd.Parameters.Add(gid);
+
+                SqlParameter oid = new SqlParameter("@EmailAddress", SqlDbType.VarChar, 50);
+                oid.Value = b.EmailAddress;
+                cmd.Parameters.Add(oid);
+
+                SqlParameter rid = new SqlParameter("@Mobile", SqlDbType.VarChar, 15);
+                rid.Value = b.Mobile;
+                cmd.Parameters.Add(rid);
+
+                SqlParameter wid = new SqlParameter("@Gender", SqlDbType.Int);
+                wid.Value = b.Gender;
+                cmd.Parameters.Add(wid);
+
+                SqlParameter UserTypeId = new SqlParameter("@UserTypeId", SqlDbType.Int);
+                UserTypeId.Value = b.UserTypeId;
+                cmd.Parameters.Add(UserTypeId);
+
+                SqlParameter UserId = new SqlParameter("@UserId", SqlDbType.Int);
+                UserId.Value = b.UserId;
+                cmd.Parameters.Add(UserId);
+
+                SqlParameter Active = new SqlParameter("@Active", SqlDbType.Int);
+                Active.Value = b.Active;
+                cmd.Parameters.Add(Active);
+
+                SqlParameter IsEmailVerified = new SqlParameter("@IsEmailVerified", SqlDbType.Int);
+                IsEmailVerified.Value = b.IsEmailVerified;
+                cmd.Parameters.Add(IsEmailVerified);
+                                
+                SqlParameter insUpdDelFlag = new SqlParameter("@insUpdDelFlag", SqlDbType.VarChar, 15);
+                insUpdDelFlag.Value = b.InsUpdDelFlag;
+                cmd.Parameters.Add(insUpdDelFlag);
+
+
+                SqlDataAdapter db = new SqlDataAdapter(cmd);
+                db.Fill(Tbl);
+                // Tbl = Tables[0];
+
+                //            cmd.ExecuteScalar();
+                //           conn.Close();
+                // int found = 0;
+                return Tbl;
+            }
+
+            catch (Exception ex)
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+                return Tbl;
+            }
         }
         public void Options() { }
 

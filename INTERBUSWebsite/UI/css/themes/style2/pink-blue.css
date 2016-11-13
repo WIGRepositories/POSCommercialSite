@@ -7071,6 +7071,22 @@ ul.nav.nav-tabs li a {
     box-shadow: 0 0 2.5em 0.5em rgba(0,0,0,0.4);
 }
 
+.cshadow {
+    /*-moz-box-shadow:    10px 10px 15px 6px #000;
+    -webkit-box-shadow: 10px 10px 15px 6px #000;    
+    box-shadow: 0 0 0.5em 0.5em rgba(0,0,0,0.4);*/
+
+    -webkit-box-shadow: -7px 0px 10px 0px #000, 7px 0px 10px 0px #000;
+-moz-box-shadow: -7px 0px 10px 0px #000, 7px 0px 10px 0px #000;
+box-shadow: -7px 0px 10px 0px #000, 7px 0px 10px 0px #000;
+}
+
+.shadowRight {
+    -moz-box-shadow:    10px 10px 15px 6px #000;
+    -webkit-box-shadow: 10px 10px 15px 6px #000;    
+    box-shadow: 0 0 2.5em 0.5em rgba(0,0,0,0.4);
+}
+
 #footer-site {
     border-top: 3px solid #ccc;
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0px, #292C34),color-stop(6px, #373D48),color-stop(300px, #1F2329));
@@ -7380,8 +7396,8 @@ ul.nav.nav-tabs li a {
             width:1170px;
         }
 
-        #prev, #next {
-            background-color: rgba(255, 255, 255, 0.7);
+        #prev {
+          
             display: block;
             height: 450px;
             width: 45%;
@@ -7389,8 +7405,17 @@ ul.nav.nav-tabs li a {
             position: absolute;
         }
 
+         #next {
+           
+            display: block;
+            height: 450px;
+            width: 20.2%;
+            top: 0;
+            position: absolute;
+        }
+
             #prev:hover, #next:hover {
-                background-color: #fff;
+                background-color: #999999;
                 background-color: rgba(255, 255, 255, 0.1);
             }
 
@@ -7399,7 +7424,7 @@ ul.nav.nav-tabs li a {
         }
 
         #next {
-            right: -490px;
+            right: -20px;
         }
 
         #pager {
@@ -8042,6 +8067,8 @@ ul.nav.nav-tabs li a {
 
         .carousel-control.left,
         .carousel-control.right {
-            background: rgba(255, 255, 255, 0.3);
+           /* background: rgba(255, 255, 255, 0.3);*/
+             background-color: #bf4346;
+               background-color: rgba(255, 255, 255, 0.7);
             width:20%;
         }

@@ -1,5 +1,5 @@
-﻿var myapp1 = angular.module('myApp',[])
-var mycrtl1 = myapp1.controller('myCtrl', function ($scope, $http) {
+﻿var myapp1 = angular.module('myApp', ['ngStorage', 'ui.bootstrap'])
+var mycrtl1 = myapp1.controller('myCtrl', function ($scope, $http, $localStorage, $uibModal) {
 
 
     $scope.saveUser = function (type) {
@@ -59,28 +59,29 @@ var mycrtl1 = myapp1.controller('myCtrl', function ($scope, $http) {
             UserName: type.UserName,
             Password: type.Password,
             EmailAddress: type.EmailAddress,
-            Mobile: type.Mobile
-
+            Mobile: type.Mobile,    
+            Gender:type.Gender,    
+            UserTypeId:1,
+            UserId:null,
+            Active: 1,
+            IsEmailVerified:0,
+            InsUpdDelFlag:'I'
         };
 
         var req = {
             method: 'POST',
-            url: '/api/UserInfo/saveUserInfodfds',
+            url: '/api/UserInfo/saveUserInfo',
             //headers: {
             //    'Content-Type': undefined
 
             data: userinfo
-
-
-
-
         }
         //if (data != null) {
         //    alert('Saved successfully!!.');
         //    return;
         //}
         $http(req).then(function (response) {
-            $scope.showDialog("Saved successfully!!");
+            $scope.showDialog("Saved successfully!!<br/>. Please enter the Email verification code sent to email address to complete registration.");
 
             $scope.type = null;
             $scope.GetWebsiteUserInfo();
@@ -91,6 +92,10 @@ var mycrtl1 = myapp1.controller('myCtrl', function ($scope, $http) {
             errmssg = (errdata && errdata.ExceptionMessage) ? errdata.ExceptionMessage : errdata.Message;
             $scope.showDialog(errmssg);
         });
+
+    }
+
+    $scope.VerifyEmailAddress = function () {
 
     }
 
