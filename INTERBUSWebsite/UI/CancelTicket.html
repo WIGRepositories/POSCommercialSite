@@ -1,837 +1,694 @@
-﻿<!DOCTYPE html>
-<html lang="en" ng-app="myApp" ng-controller="myCtrl">
+﻿<html lang="en">
 <head>
-    <title>Dashboard</title>
+
+    <title>Interbus - Get Moving Anywhere, Comfortably</title>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="images/icons/favicon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/icons/favicon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/icons/favicon-114x114.png">
     <!--Loading bootstrap css-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <!--<script src="js/Carousle/jquery.carouFredSel-6.0.4-packed.js" type="text/javascript"></script>-->
+    <script src="js/bootstrap.js"></script>
+
+
     <link type="text/css" rel="stylesheet" href="vendors/jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
     <link type="text/css" rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
-    <link type="text/css" rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
     <!--LOADING STYLESHEET FOR PAGE--><!--Loading style vendors-->
     <link type="text/css" rel="stylesheet" href="vendors/animate.css/animate.css">
-    <link type="text/css" rel="stylesheet" href="vendors/jquery-pace/pace.css">
+
     <link type="text/css" rel="stylesheet" href="vendors/iCheck/skins/all.css">
     <link type="text/css" rel="stylesheet" href="vendors/jquery-news-ticker/jquery.news-ticker.css">
     <!--Loading style-->
-    <link type="text/css" rel="stylesheet" href="css/themes/style2/pink-blue.css" id="theme-change" class="style-change color-change">
-    <link type="text/css" rel="stylesheet" href="css/style-responsive.css">
+    <link href="css/themes/style2/pink-blue.css" rel="stylesheet" />
+    <link type="text/css" rel="UI/stylesheet" href="css/style-responsive.css">
+    <!--<link href="css/banner.css" rel="stylesheet" type="text/css">-->
+
+
 </head>
 
-<body ng-model="dashboardDS">
-    <div>
-        <!--BEGIN THEME SETTING-->
-        <!--BEGIN BACK TO TOP--><a id="totop" href="#"><i class="fa fa-angle-up"></i></a><!--END BACK TO TOP--><!--BEGIN TOPBAR-->
-        <div id="header-topbar-option-demo" class="page-header-topbar">
-            <nav id="topbar" role="navigation" style="margin-bottom: 0;" data-step="3" class="navbar navbar-default navbar-static-top">
-                <div class="topbar-main">
+<body>
 
-                    <a id="" href="" class="hidden-xs"><i class=""></i></a>
-                    <ul class="nav navbar-nav horizontal-menu hidden-sm hidden-xs  ">
+    <div id="container">
+        <div class="mainnav" id="mainnav" tabindex="0">
 
+            <div class="top-row clearfix" style="position: fixed; width: 100%; padding-top: 0px; z-index: 1">
 
-                        <li class=" "><a href="../index.html">Home &nbsp;</a></li>
-                        <li><a href="AboutUs.html">AboutUs&nbsp;</a></li>
-                        <li class=""><a href="ContactUs.html"> ContactUs &nbsp;</a></li>
-                        <li class=""><a href="Schedules.html"> Schedules &nbsp;</a></li>
+                <div class="r">
+                    <div class="rr">
+                        <a style="margin-top: 10px; padding-top: 0px; margin-right: 30px; float:left" href="../index.html"><img style="height:26px" src="Images/logos/Idashboard.png" alt="Alternate Text" /></a>
+                        <ul class="collapsible-menu clearfix" style="margin-left:0px;">
 
-                        <li class=""><a href="CheckFare.html">CheckFare &nbsp;</a></li>
-                        <li class=""> <a href="Cancellation.html">Cancellation &nbsp;</a></li>
-                        <li class=""> <a href="FeedBack.html">FeedBack/complaints &nbsp;</a></li>
-                        <li class="dropdown topbar-user">
-                            <a data-hover="dropdown" href="#" class="dropdown-toggle">&nbsp;<span class="hidden-xs">Jay</span>&nbsp;<span class="caret"></span></a>
-                            <ul class="dropdown-menu dropdown-user pull-right">
-                                <li><a href="extra-profile.html"><i class="fa fa-user"></i>My Profile</a></li>
-                                <li><a href="page-calendar.html"><i class="fa fa-calendar"></i>My Calendar</a></li>
-                                <li><a href="email-inbox.html"><i class="fa fa-envelope"></i>My Inbox<span class="badge badge-danger">3</span></a></li>
-                                <li><a href="#"><i class="fa fa-tasks"></i>My Tasks<span class="badge badge-success">7</span></a></li>
-                                <li class="divider"></li>
-                                <li><a href="extra-lock-screen.html"><i class="fa fa-lock"></i>Lock Screen</a></li>
-                                <li><a href="extra-signin.html"><i class="fa fa-key"></i>Log Out</a></li>
-                            </ul>
-                        </li>
-                        
-                    </ul>
-                </div>
+                            <li style="margin-left:50px">
 
-            </nav>
-            <!--END TOPBAR-->
-            <div id="wrapper">
-                <!--BEGIN SIDEBAR MENU-->
-                <nav id="sidebar" role="navigation" data-step="2" data-position="right" class="navbar-default navbar-static-side">
-                    <div class="sidebar-collapse menu-scroll">
-                        <ul id="side-menu" class="nav">
-                            <li class="user-panel">
+                                <a style="text-decoration:none" href="../index.html">Home</a>
 
-
-                                <div class="clearfix"></div>
                             </li>
                             <li>
-                                <a href="CancelTicket.html">
-                                    <i class="fa fa-tachometer fa-fw">
-                                        <div class="icon-bg bg-orange"></div>
-                                    </i><span class="menu-title"></span>
-                                </a>
+
+                                <a style="text-decoration:none" href="Fares_and_payments.html">Fares / Payments</a>
+
+                                <ul>
+                                    <li><a href="#">Schedules</a></li>
+                                    <li><a href="#">CheckFare</a></li>
+                                    <li><a href="#">Cancellation</a></li>
+
+
+                                </ul>
+                            </li>
+                            <li>
+
+                                <a style="text-decoration:none" href="Status_and_Updates.html">Status & Updates</a>
+
+                            </li>
+                            <li>
+
+                                <a style="text-decoration:none" href="#">Products</a>
+                                <ul>
+                                    <li><a href="Licensepage.html">Fleet Owner License</a></li>
+
+                                </ul>
+                            </li>
+
+                            <li>
+
+                                <a style="text-decoration:none" href="AboutUs.html">About Us</a>
+                                <ul>
+                                    <li><a href="ContactUs.html">ContactUs</a></li>
+
+                                </ul>
+
+                            </li>
+
+                            <li style="margin-left:220px">
+
+                                <div style="float:right; padding-top:11px">
+                                    <input type="text" placeholder="Search" id="q" name="q" style="border-radius:30px; width:120px; height:35px" />
+
+
+                                </div>
+
+
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="clearfix"></div>
+
+        <!--End Menu-->
+    </div>
+    <!--End Header-->
+
+    <div class="container" style="margin-top:60px;min-height:380px;font-size:medium">
+        <div class="row">
+
+            <!--BEGIN TITLE & BREADCRUMB PAGE-->
+            <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
+
+                <ol class="breadcrumb page-breadcrumb pull-right ">
+                    <li>Hello, Admin!&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                    <li><a href="../Index.html">Sign Out</a>&nbsp;&nbsp;</li>
+                </ol>
+
+                <div class="clearfix"></div>
+            </div>
+
+        </div>
+
+        <div class="row" style="padding:0px">
+            <div id="wrapper" style="padding:0px">
+                <!--BEGIN SIDEBAR MENU-->
+                <nav id="sidebar" role="navigation" data-step="2" data-position="right" class="navbar-default navbar-static-side" style="padding: 0px; background-color: none;z-index:0">
+                    <div class="sidebar-collapse menu-scroll">
+                        <ul id="side-menu" class="nav" style="margin-left: 0px; background-color: none">
+
+                            <li>
+
                             </li>
 
 
-
-
-
-
+                            <li class="active">
+                                <a href="UserProfile.html">
+                                    <i class="fa fa-tachometer fa-fw">
+                                        <div class="icon-bg bg-orange"></div>
+                                    </i><span class="menu-title">User Profile</span>
+                                </a>
+                            </li>
                             <li>
                                 <a href="BookedTicketHistory.html">
                                     <i class="fa fa-sitemap fa-fw">
                                         <div class="icon-bg bg-dark"></div>
                                     </i><span class="menu-title">Booked Ticket History</span>
                                 </a>
-
-
-
                             </li>
-
+                            <li>
+                                <a href="CancelTicket.html">
+                                    <i class="fa fa-sitemap fa-fw">
+                                        <div class="icon-bg bg-dark"></div>
+                                    </i><span class="menu-title">Cancellation</span>
+                                </a>
+                            </li>
                             <li>
                                 <a href="Refund.html">
-                                    <i class="fa fa-truck">
-                                        <div class="icon-bg bg-green"></div>
+                                    <i class="fa fa-sitemap fa-fw">
+                                        <div class="icon-bg bg-dark"></div>
                                     </i><span class="menu-title">Refunds</span>
                                 </a>
-
-
                             </li>
-
-
-
                             <li>
                                 <a href="PrintTicket.html">
-                                    <i class="fa fa-gears">
+                                    <i class="fa fa-sitemap fa-fw">
                                         <div class="icon-bg bg-dark"></div>
                                     </i><span class="menu-title">Print Ticket</span>
                                 </a>
-
-                            </li>
-
-
-
-                            <!--<li>
-                                <a href="#">
-                                    <i class="fa fa-send-o fa-fw">
-                                        <div class="icon-bg bg-green"></div>
-                                    </i><span class="menu-title">Users</span><span class="fa arrow"></span>
-                                </a>
-                                <ul class="nav nav-second-level">
-                                    <li><a href="Company.html"><i class="fa fa-briefcase"></i><span class="submenu-title">Company</span></a></li>
-                                    <li><a href="CompanyRoles.html"><i class="fa fa-briefcase"></i><span class="submenu-title">CompanyRoles</span></a></li>
-                                    <li><a href="Users.html"><i class="fa fa-briefcase"></i><span class="submenu-title">Users</span></a></li>
-                                    <li><a href="Inventory.html"><i class="fa fa-briefcase"></i><span class="submenu-title">Inventory</span></a></li>
-                                    <li><a href="InventoryItems.html"><i class="fa fa-briefcase"></i><span class="submenu-title">InventoryItems</span></a></li>
-                                    <li><a href="LicenseDetails.html"><i class="fa fa-briefcase"></i><span class="submenu-title">License Details</span></a></li>
-                                    <li><a href="LicensePayments.html"><i class="fa fa-align-left"></i><span class="submenu-title">LicensePayments</span></a></li>
-                                    <li><a href="InventorySales.html"><i class="fa fa-align-left"></i><span class="submenu-title">InventorySales</span></a></li>
-                                    <li><a href="InventoryPurchases.html"><i class="fa fa-align-left"></i><span class="submenu-title">InventoryPurchases</span></a></li>
-                                </ul>
-
-                            </li>-->
-                            <!--<li>
-                                <a href="#">
-                                    <i class="fa fa-desktop fa-fw">
-                                        <div class="icon-bg bg-pink"></div>
-                                    </i><span class="menu-title">BT POS</span><span class="fa arrow"></span>
-                                </a>
-                                <ul class="nav nav-second-level">
-                                    <li><a href="BTPOSDetails.html"><i class="fa fa-align-left"></i><span class="submenu-title">BT POS Details</span></a></li>
-                                    <li><a href="Routes.html"><i class="fa fa-align-left"></i><span class="submenu-title">Routes</span></a></li>
-                                    <li><a href="AddNewRouteDetails.html"><i class="fa fa-align-left"></i><span class="submenu-title">Route Details</span></a></li>
-                                    <li><a href="Stops.html"><i class="fa fa-align-left"></i><span class="submenu-title">Stops</span></a></li>
-                                    <li><a href="VehicleDetails.html"><i class="fa fa-align-left"></i><span class="submenu-title">Vehicle Details</span></a></li>
-
-                                </ul>
-                            </li>
-
-
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-send-o fa-fw">
-                                        <div class="icon-bg bg-green"></div>
-                                    </i><span class="menu-title">Configuration</span><span class="fa arrow"></span>
-                                </a>
-                                <ul class="nav nav-second-level">
-                                    <li><a href="TypeGroups.html"><i class="fa fa-briefcase"></i><span class="submenu-title">Type Groups</span></a></li>
-                                    <li><a href="Types.html"><i class="fa fa-th-large"></i><span class="submenu-title">Types</span></a></li>
-                                    <li><a href="Roles.html"><i class="fa fa-hand-o-up"></i><span class="submenu-title">Roles</span></a></li>
-                                    <li><a href="RoleDetails.html"><i class="fa fa-hand-o-up"></i><span class="submenu-title">Role Details</span></a></li>
-                                    <li><a href="Objects.html"><i class="fa fa-align-left"></i><span class="submenu-title">Objects</span></a></li>
-                                </ul>
-                            </li>
-
-
-
-
-
-
-
-
-
-
-
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-edit fa-fw">
-                                        <div class="icon-bg bg-violet"></div>
-                                    </i><span class="menu-title">Utilities & Tools</span><span class="fa arrow"></span>
-                                </a>
-                                <ul class="nav nav-second-level">
-                                    <li><a href="EditHistory.html"><i class="fa fa-columns"></i><span class="submenu-title">Edit history</span></a></li>
-                                    <li><a href="TroubleTicketingDetails.html"><i class="fa fa-align-left"></i><span class="submenu-title">TroubleTicketingDetails</span></a></li>
-                                    <li><a href="SubCategory.html"><i class="fa fa-align-left"></i><span class="submenu-title">SubCategory</span></a></li>
-                                </ul>
                             </li>
                             <li>
-                                <a href="#">
-                                    <i class="fa fa-th-list fa-fw">
-                                        <div class="icon-bg bg-blue"></div>
-                                    </i><span class="menu-title">Reports</span><span class="fa arrow"></span>
+                                <a href="Feedback.html">
+                                    <i class="fa fa-sitemap fa-fw">
+                                        <div class="icon-bg bg-dark"></div>
+                                    </i><span class="menu-title">Feedback/Enquiry</span>
                                 </a>
-                                <ul class="nav nav-second-level">
-                                    <li><a href="CompanyReports.html"><i class="fa fa-th-large"></i><span class="submenu-title">Company reports</span></a></li>
-                                    <li><a href="FleetRepoprts.Html"><i class="fa fa-tablet"></i><span class="submenu-title">Fleet owner reports</span></a></li>
-                                    <li><a href="AdminReports.html"><i class="fa fa-tencent-weibo"></i><span class="submenu-title">Admin reports</span></a></li>
-                                    <li><a href="TroubleTicketReports.html"><i class="fa fa-filter"></i><span class="submenu-title">Trouble ticket reports</span></a></li>
-                                </ul>
                             </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-envelope-o">
-                                        <div class="icon-bg bg-primary"></div>
-                                    </i><span class="menu-title">Alerts & Notifications</span><span class="fa arrow"></span>
-                                </a>
-                                <ul class="nav nav-second-level">
-                                    <li><a href="Inbox.html"><i class="fa fa-inbox"></i><span class="submenu-title">Inbox</span></a></li>
-                                    <li><a href="ComposeMail.html"><i class="fa fa-pencil"></i><span class="submenu-title">Compose Mail</span></a></li>
-                                    <li><a href="ViewMail.html"><i class="fa fa-eye"></i><span class="submenu-title">View Mail</span></a></li>
-                                    <li><a href="Alerts.html"><i class="fa fa-inbox"></i><span class="submenu-title">Alerts</span></a></li>
-                                    <li><a href="Notifications.html"><i class="fa fa-inbox"></i><span class="submenu-title">Notifications</span></a></li>
-                                    <li><a href="ConfigureAlerts.html"><i class="fa fa-pencil"></i><span class="submenu-title">Configure Alerts</span></a></li>
-                                </ul>
-                            </li>-->
                         </ul>
+
                     </div>
-                </nav>              
-                  <!--END CHAT FORM--><!--BEGIN PAGE WRAPPER-->
+                </nav>                <!--END CHAT FORM--><!--BEGIN PAGE WRAPPER-->
                 <div id="page-wrapper">
-                    <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
-                        <div class="page-header pull-left">
-                            <div class="page-title">Booked Ticket List To Cancellation</div>
-                        </div>
-
-                        <div class="col-md-12">
-
-
-                            <div class="container-fluid">
-                                <div class="navbar-header">
-                                    <button type="button" data-toggle="collapse" data-target=".bs-example-js-navbar-scrollspy" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-
-                                </div>
-                                <div class="collapse navbar-collapse bs-example-js-navbar-scrollspy">
-                                    <ul class="nav navbar-nav">
-
-                                        <li class="dropdown">
-                                            <a id="navbarDrop1" href="#" data-toggle="dropdown" class="dropdown-toggle">
-                                                Travels
-                                                &nbsp;<b class="caret"></b>
-                                            </a>
-                                            <ul role="menu" aria-labelledby="navbarDrop1" class="dropdown-menu">
-                                                <li><a href="#one" tabindex="-1">apsrtc</a></li>
-                                                <li><a href="#two" tabindex="-1">kesineni</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="#three" tabindex="-1">orange</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a id="navbarDrop1" href="#" data-toggle="dropdown" class="dropdown-toggle">
-                                                BusType
-                                                &nbsp;<b class="caret"></b>
-                                            </a>
-                                            <ul role="menu" aria-labelledby="navbarDrop1" class="dropdown-menu">
-                                                <li><a href="#one" tabindex="-1">ac</a></li>
-                                                <li><a href="#two" tabindex="-1">nonac</a></li>
-
-                                                <li><a href="#three" tabindex="-1">sleeper</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a id="navbarDrop1" href="#" data-toggle="dropdown" class="dropdown-toggle">
-                                                Amenities
-                                                &nbsp;<b class="caret"></b>
-                                            </a>
-                                            <ul role="menu" aria-labelledby="navbarDrop1" class="dropdown-menu">
-                                                <li><a href="#one" tabindex="-1">wifi</a></li>
-                                                <li><a href="#two" tabindex="-1">headsets</a></li>
-                                                <li><a href="#two" tabindex="-1">waterbottle</a></li>
-                                                <li><a href="#two" tabindex="-1">blankets</a></li>
-                                                <li><a href="#two" tabindex="-1">charging point</a></li>
-                                                <li><a href="#two" tabindex="-1">movie</a></li>
-
-                                                <li><a href="#three" tabindex="-1">Reading light</a></li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="dropdown">
-                                            <a id="navbarDrop1" href="#" data-toggle="dropdown" class="dropdown-toggle">
-                                                Boarding
-                                                &nbsp;<b class="caret"></b>
-                                            </a>
-                                            <ul role="menu" aria-labelledby="navbarDrop1" class="dropdown-menu">
-                                                <li><a href="#one" tabindex="-1">stage1</a></li>
-                                                <li><a href="#two" tabindex="-1">stage2</a></li>
-
-                                                <li><a href="#three" tabindex="-1">stage3</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a id="navbarDrop1" href="#" data-toggle="dropdown" class="dropdown-toggle">
-                                                Dropping
-                                                &nbsp;<b class="caret"></b>
-                                            </a>
-                                            <ul role="menu" aria-labelledby="navbarDrop1" class="dropdown-menu">
-                                                <li><a href="#one" tabindex="-1">stage1</a></li>
-                                                <li><a href="#two" tabindex="-1">stage2</a></li>
-
-                                                <li><a href="#three" tabindex="-1">stage3</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a id="navbarDrop1" href="#" data-toggle="dropdown" class="dropdown-toggle">
-                                                Rating
-                                                &nbsp;<b class="caret"></b>
-                                            </a>
-                                            <ul role="menu" aria-labelledby="navbarDrop1" class="dropdown-menu">
-                                                <li><a href="#one" tabindex="-1">Higher rated</a></li>
-                                                <li><a href="#two" tabindex="-1">All buses</a></li>
+                    <!--BEGIN TITLE & BREADCRUMB PAGE-->
+                    <div id="tableactionTabContent" class="tab-content">
+                        <div id="table-table-tab" class="tab-pane fade in active">
+                            <div class="row">
+                                <div class="col-lg-12">
 
 
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
+                                    <div class="table-container">
+                                        <div class="row mbm">
 
-                                <div id="tableactionTabContent" class="tab-content">
-                                    <div id="table-table-tab" class="tab-pane fade in active">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-
-
-                                                <div class="table-container">
-                                                    <div class="row mbm">
-
-                                                        <div id="imgTd1" style="display:none" class="seatlayoutDropDown">
-                                                            <div class="seatLayoutMain">
-                                                                <div class="seatLayoutBox">
-                                                                    <div class="low-rating-window">
-                                                                        This bus has been rated low by travellers on bus quality, punctuality or staff behaviour.
-                                                                    </div>
-                                                                    <div class="lowRatingMessage Hide">
-                                                                        <div class="summary">
-                                                                            <i class="icon-alert"></i>
-                                                                            This bus has been rated low on
-                                                                            <a class="bqLink">Bus quality</a>
-                                                                            <span class="comma1 Hide">, </span><span class="and1 Hide">and </span>
-                                                                            <a class="punLink">Punctuality</a>
-                                                                            <span class="comma2 Hide">, </span><span class="and2 Hide">and </span>
-                                                                            <a class="stLink">Staff behaviour</a>
-                                                                            based on
-                                                                            <span class="numRating">10 customer</span>
-                                                                            ratings.
-                                                                        </div>
-
-                                                                        <ul>
-                                                                            <li class="busQuality">
-                                                                                <span class="ratingType">Bus quality</span>
-                                                                                <div class="ratingStars">
-                                                                                    <span class="icon-rating_star_blank"></span>
-                                                                                    <span class="icon-rating_star_red Rating"></span>
-                                                                                </div>
-                                                                                <span class="ratingValue">2.4</span>
-                                                                                <span class="ratingMessage">(signifies that the bus may not be clean or amenities like water are not provided)</span>
-                                                                            </li>
-
-                                                                            <li class="punctuality">
-                                                                                <span class="ratingType">Punctuality</span>
-                                                                                <div class="ratingStars">
-                                                                                    <span class="icon-rating_star_blank"></span>
-                                                                                    <span class="icon-rating_star_red Rating"></span>
-                                                                                </div>
-                                                                                <span class="ratingValue">2.4</span>
-                                                                                <span class="ratingMessage">(signifies that the bus may not depart/arrive on the scheduled time)</span>
-                                                                            </li>
-
-                                                                            <li class="staffBehaviour">
-                                                                                <span class="ratingType">Staff behaviour</span>
-                                                                                <div class="ratingStars">
-                                                                                    <span class="icon-rating_star_blank"></span>
-                                                                                    <span class="icon-rating_star_red Rating"></span>
-                                                                                </div>
-                                                                                <span class="ratingValue">2.4</span>
-                                                                                <span class="ratingMessage">(signifies that the staff may not be very well behaved/cooperative)</span>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-
-                                                                    <div class="seatlayoutContainer clearfix"></div>
-
-                                                                    <div class="routeNote XGrey TextCenter Hide">
-                                                                        <i class="icon-routeNote"></i>
-                                                                        <span class="TextBold">Please note : </span>
-                                                                        <span class="content"></span>
-                                                                    </div>
-                                                                </div>
-
+                                            <div id="imgTd1" style="display:none" class="seatlayoutDropDown">
+                                                <div class="seatLayoutMain">
+                                                    <div class="seatLayoutBox">
+                                                        <div class="low-rating-window">
+                                                            This bus has been rated low by travellers on bus quality, punctuality or staff behaviour.
+                                                        </div>
+                                                        <div class="lowRatingMessage Hide">
+                                                            <div class="summary">
+                                                                <i class="icon-alert"></i>
+                                                                This bus has been rated low on
+                                                                <a class="bqLink">Bus quality</a>
+                                                                <span class="comma1 Hide">, </span><span class="and1 Hide">and </span>
+                                                                <a class="punLink">Punctuality</a>
+                                                                <span class="comma2 Hide">, </span><span class="and2 Hide">and </span>
+                                                                <a class="stLink">Staff behaviour</a>
+                                                                based on
+                                                                <span class="numRating">10 customer</span>
+                                                                ratings.
                                                             </div>
+
+                                                            <ul>
+                                                                <li class="busQuality">
+                                                                    <span class="ratingType">Bus quality</span>
+                                                                    <div class="ratingStars">
+                                                                        <span class="icon-rating_star_blank"></span>
+                                                                        <span class="icon-rating_star_red Rating"></span>
+                                                                    </div>
+                                                                    <span class="ratingValue">2.4</span>
+                                                                    <span class="ratingMessage">(signifies that the bus may not be clean or amenities like water are not provided)</span>
+                                                                </li>
+
+                                                                <li class="punctuality">
+                                                                    <span class="ratingType">Punctuality</span>
+                                                                    <div class="ratingStars">
+                                                                        <span class="icon-rating_star_blank"></span>
+                                                                        <span class="icon-rating_star_red Rating"></span>
+                                                                    </div>
+                                                                    <span class="ratingValue">2.4</span>
+                                                                    <span class="ratingMessage">(signifies that the bus may not depart/arrive on the scheduled time)</span>
+                                                                </li>
+
+                                                                <li class="staffBehaviour">
+                                                                    <span class="ratingType">Staff behaviour</span>
+                                                                    <div class="ratingStars">
+                                                                        <span class="icon-rating_star_blank"></span>
+                                                                        <span class="icon-rating_star_red Rating"></span>
+                                                                    </div>
+                                                                    <span class="ratingValue">2.4</span>
+                                                                    <span class="ratingMessage">(signifies that the staff may not be very well behaved/cooperative)</span>
+                                                                </li>
+                                                            </ul>
                                                         </div>
 
-                                                        <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
-                                                            <tr>
-                                                                
-                                                                <td>
-                                                                    <strong> Transaction Id</strong>
-                                                                    <div class="message-inner">
-
-                                                                        
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <strong>pnr number</strong>
-
-
-                                                                    <div class="message-inner">
-
-                                                                       
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    
-                                                                    <strong> From</strong>
-
-                                                                    
-
-                                                                </td>
-
-                                                                
-                                                                <td>
-                                                                    <div class="message-inner">
-
-                                                                        <div class="qa-message-content">
-                                                                            <strong> To </strong>
-                                                                        </div>
-                                                                    </div>
-                                                                    
-                                                                </td>
-                                                                <td>
-                                                                    <div class="message-inner">
-
-                                                                        <div class="qa-message-content">
-                                                                            <strong>Total amount </strong>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </td>
-                                                                <td>
-                                                                    <div class="message-inner">
-
-                                                                        <div class="qa-message-content">
-                                                                            <strong>Refund Amount </strong>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </td>
-                                                                <td>
-                                                                    <div class="message-inner">
-
-                                                                        <div class="qa-message-content">
-                                                                            <strong>Cancelled On </strong>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </td>
-                                                                <td>
-                                                                    <div class="message-inner">
-
-                                                                        <div class="qa-message-content">
-                                                                            <strong>Type Of Ticket </strong>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </td>
-                                                            </tr>
-                                                            
-                                                                <tr>
-
-                                                                    <td>
-                                                                        <strong>
-                                                                            <a href="cancelticketinformation.html" style="color:blue"><u>
-    185456
-</u>
-                                                                        </strong>
-                                                                            <div class="message-inner">
-
-
-                                                                            </div>
-</td>
-                                                                    <td>
-                                                                        <strong>12854769</strong>
-
-
-                                                                        <div class="message-inner">
-
-
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                        
-                                                                        <strong>chennai</strong>
-
-
-
-                                                                    </td>
-
-                                                                    
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>hyderabad </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>600 </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>300 </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>29-09-2015 </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>E-Ticket </strong>
-                                                                            </div>
-                                                                        </div>
-                                                                        </a>
-                                                                    </td>
-                                                                </tr>
-
-
-
-
-
-
-
-
-                                                         
-                                                           
-                                                                <tr>
-
-                                                                    <td>
-                                                                        <strong><a href="cancelticketinformation.html" style="color:blue"><u>845742</u></strong>
-                                                                        <div class="message-inner">
-
-
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                       <strong>33585967</strong>
-
-
-                                                                        <div class="message-inner">
-
-
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                       
-                                                                        <strong>tirupathi</strong>
-
-
-
-                                                                    </td>
-
-                                                                    
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong> vijayawada </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>800 </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>600 </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>14-01-2015 </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>E-ticket </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                </tr>
-
-
-
-
-
-
-
-
-                                                          
-                                                                <tr>
-
-                                                                    <td>
-                                                                        <strong><a href="cancelticketinformation.html" style="color:blue"> <u>212278</u></strong>
-                                                                        <div class="message-inner">
-
-
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <strong> 33585967</strong>
-
-                                                                        <div class="message-inner">
-
-
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                       
-                                                                        <strong>kadapa</strong>
-
-
-
-                                                                    </td>
-
-                                                                    
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>delhi </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>1250 </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>850 </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>15-04-2015 </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>Eticket</strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                </tr>
-
-
-
-
-
-
-
-
-                                                            </table>
-
-
-                                                            
-                                                            
-                                                            
-
-
-
-                                                        
-                                                        <div class="row">
-                                                            <div class="col-lg-6">
-
-                                                            </div>
-
+                                                        <div class="seatlayoutContainer clearfix"></div>
+
+                                                        <div class="routeNote XGrey TextCenter Hide">
+                                                            <i class="icon-routeNote"></i>
+                                                            <span class="TextBold">Please note : </span>
+                                                            <span class="content"></span>
                                                         </div>
                                                     </div>
+
                                                 </div>
+                                            </div>
+
+                                            <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
+                                                <tr>
+
+                                                    <td>
+                                                        <strong> Transaction Id</strong>
+                                                        <div class="message-inner">
+
+
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <strong>pnr number</strong>
+
+
+                                                        <div class="message-inner">
+
+
+                                                        </div>
+                                                    </td>
+                                                    <td>
+
+                                                        <strong> From</strong>
+
+
+
+                                                    </td>
+
+
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong> To </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>Total amount </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>Refund Amount </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>Cancelled On </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>Type Of Ticket </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+
+                                                    <td>
+                                                        <strong>
+                                                            <a href="cancelticketinformation.html" style="color:blue">
+                                                                <u>
+                                                                    185456
+                                                                </u>
+                                                        </strong>
+                                                        <div class="message-inner">
+
+
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <strong>12854769</strong>
+
+
+                                                        <div class="message-inner">
+
+
+                                                        </div>
+                                                    </td>
+                                                    <td>
+
+                                                        <strong>chennai</strong>
+
+
+
+                                                    </td>
+
+
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>hyderabad </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>600 </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>300 </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>29-09-2015 </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>E-Ticket </strong>
+                                                            </div>
+                                                        </div>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+
+
+
+
+
+
+
+
+
+
+                                                <tr>
+
+                                                    <td>
+                                                        <strong><a href="cancelticketinformation.html" style="color:blue"><u>845742</u></strong>
+                                                        <div class="message-inner">
+
+
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <strong>33585967</strong>
+
+
+                                                        <div class="message-inner">
+
+
+                                                        </div>
+                                                    </td>
+                                                    <td>
+
+                                                        <strong>tirupathi</strong>
+
+
+
+                                                    </td>
+
+
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong> vijayawada </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>800 </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>600 </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>14-01-2015 </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>E-ticket </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                </tr>
+
+
+
+
+
+
+
+
+
+                                                <tr>
+
+                                                    <td>
+                                                        <strong><a href="cancelticketinformation.html" style="color:blue"> <u>212278</u></strong>
+                                                        <div class="message-inner">
+
+
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <strong> 33585967</strong>
+
+                                                        <div class="message-inner">
+
+
+                                                        </div>
+                                                    </td>
+                                                    <td>
+
+                                                        <strong>kadapa</strong>
+
+
+
+                                                    </td>
+
+
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>delhi </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>1250 </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>850 </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>15-04-2015 </strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                    <td>
+                                                        <div class="message-inner">
+
+                                                            <div class="qa-message-content">
+                                                                <strong>Eticket</strong>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <div class="row">
+                                                <div class="col-lg-6">
+
+                                                </div>
+
                                             </div>
                                         </div>
                                     </div>
+                                   
                                 </div>
-
-                                <script>
-                                    function test() {
-                                        var currstyle = document.getElementById('imgTd').style.display;
-                                        document.getElementById('imgTd').style.display = (currstyle == "none") ? "table-cell" : "none";
-                                    }
-                                </script>
-
-
-
-                                <script src="js/jquery-1.10.2.min.js"></script>
-                                <script src="js/jquery-migrate-1.2.1.min.js"></script>
-                                <script src="js/jquery-ui.js"></script>
-                                <!--loading bootstrap js-->
-                                <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
-                                <script src="vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
-                                <script src="js/html5shiv.js"></script>
-                                <script src="js/respond.min.js"></script>
-                                <script src="vendors/metisMenu/jquery.metisMenu.js"></script>
-                                <script src="vendors/slimScroll/jquery.slimscroll.js"></script>
-                                <script src="vendors/jquery-cookie/jquery.cookie.js"></script>
-                                <script src="vendors/iCheck/icheck.min.js"></script>
-                                <script src="vendors/iCheck/custom.min.js"></script>
-                                <script src="vendors/jquery-news-ticker/jquery.news-ticker.js"></script>
-                                <script src="js/jquery.menu.js"></script>
-                                <script src="vendors/jquery-pace/pace.min.js"></script>
-                                <script src="vendors/holder/holder.js"></script>
-                                <script src="vendors/responsive-tabs/responsive-tabs.js"></script>
-                                <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
-
-                                <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
-
-
-                                <script src="js/main.js"></script>
-                                <script src="js/angular.js"></script>
-                                <script src="js/Index.js"></script>
-
-
-
-
-
+                                <!--END PAGE WRAPPER-->
                             </div>
                         </div>
 
-
-
-
-
-
-
-                        <!--BEGIN TITLE & BREADCRUMB PAGE-->
-                        <!--END TITLE & BREADCRUMB PAGE--><!--BEGIN CONTENT-->
-                        <!--END CONTENT-->
-                        <!--BEGIN FOOTER-->
-                        <div id="footer">
-                            <div class="copyright">2016 © Interbus - Bus Ticketing dashboard portal</div>
-                        </div>
-                        <!--END FOOTER-->
                     </div>
-
-                <!--END PAGE WRAPPER-->
+                    </div>
+                </div>
             </div>
         </div>
+    
+                    <!--END CONTENT--><!--BEGIN FOOTER-->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div id="footer" tabindex="0">
 
-    </div>
-    </div>
-    <script src="js/jquery-1.10.2.min.js"></script>
-    <script src="js/jquery-migrate-1.2.1.min.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <!--loading bootstrap js-->
-    <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
-    <script src="vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <script src="vendors/metisMenu/jquery.metisMenu.js"></script>
-    <script src="vendors/slimScroll/jquery.slimscroll.js"></script>
-    <script src="vendors/jquery-cookie/jquery.cookie.js"></script>
-    <script src="vendors/iCheck/icheck.min.js"></script>
-    <script src="vendors/iCheck/custom.min.js"></script>
-    <script src="vendors/jquery-news-ticker/jquery.news-ticker.js"></script>
-    <script src="js/jquery.menu.js"></script>
-    <script src="vendors/jquery-pace/pace.min.js"></script>
-    <script src="vendors/holder/holder.js"></script>
-    <script src="vendors/responsive-tabs/responsive-tabs.js"></script>
-    <!--LOADING SCRIPTS FOR PAGE-->
-    <script src="js/table-action.js"></script>
-    <!--CORE JAVASCRIPT-->
-    <script src="js/main.js"></script>
+                                <h2 class="visually-hidden">Site footer</h2>
+                                <div class="primary-footer r">
+                                    <h2 class="visually-hidden">About Interbus</h2><ul class="footer-links">
+                                        <li><a href="Construction.html">Help &amp; contacts</a></li>
+                                        <li><a class="" href="Construction.html">Careers</a></li>
+                                        <li><a class="" href="Construction.html">About Interbus</a></li>
+                                        <li><a class="" href="Construction.html">Safety &amp; security</a></li>
+                                        <li><a class="" href="Construction.html">Transparency</a></li>
+                                        <li><a class="" href="Construction.html">Publications &amp; reports</a></li>
+                                        <li><a class="" href="Construction.html">Gift Shop</a></li>
+                                        <li><a class="" href="Construction.html">Social media &amp; email updates</a></li>
 
-    <script src="js/angular.js"></script>
-    <script src="js/ngStorage.js"></script>
+                                        <li><a class="languages-footer" href="Construction.html">Other languages</a></li>
+                                    </ul><h2 class="heading">Information for...</h2>
+                                    <ul class="info-for clearfix">
+                                        <li><a href="Construction.html">Media</a></li>
+                                        <li><a href="Construction.html">Business &amp; commercial</a></li>
+                                        <li><a href="Construction.html">Get Support online 24/7</a></li>
+                                        <li><a href="Construction.html">Schools &amp; young people</a></li>
+                                        <li><a href="Construction.html">Deliveries in Zimbabwe</a></li>
+                                        <li><a href="Construction.html">Urban planning & construction</a></li>
 
-    <script src="js/source.js"></script>
 
-    <!--<script src="js/Alerts.js"></script>
+                                        <li><a href="Construction.html">Taxi &amp; private hire </a></li>
 
-    <script src="js/Notifications.js"></script>-->
+
+                                        <li><a href="Construction.html">Bus operators</a></li>
+                                        <li><a href="Construction.html">Open data users</a></li>
+                                        <li><a href="Construction.html">Coach drivers</a></li>
+                                        <li><a href="Construction.html">Investors</a></li>
+                                        <li><a href="Construction.html">Download Interbus App</a></li>
+                                    </ul>
+                                </div>
+                                <div class="secondary-footer">
+                                    <h2 class="visually-hidden">Site structure and legal information</h2>
+                                    <div class="r">
+                                        <div class="col-lg-5">
+                                            <ul>
+                                                <li><a href="UI/Construction.html">Terms &amp; conditions </a></li>
+                                                <li><a href="UI/Construction.html">Privacy &amp; cookies</a></li>
+                                                <li><a href="UI/Construction.html">Website accessibility</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="col-lg-4">
+                                            <ul>
+                                                <li> <a href="www.webingate.com">Powered by www.webingate.com </a></li>
+                                            </ul>
+                                            <span class="heading"></span>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <span class="heading">Copyright © Interbus</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <script src="js/jquery-1.10.2.min.js"></script>
+                    <script src="js/jquery-migrate-1.2.1.min.js"></script>
+                    <script src="js/jquery-ui.js"></script>
+                    <!--loading bootstrap js-->
+                    <!--<script src="vendors/bootstrap/js/bootstrap.js"></script>-->
+                    <script src="vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
+                    <script src="js/html5shiv.js"></script>
+                    <script src="js/respond.min.js"></script>
+                    <script src="vendors/metisMenu/jquery.metisMenu.js"></script>
+                    <script src="vendors/slimScroll/jquery.slimscroll.js"></script>
+                    <script src="vendors/jquery-cookie/jquery.cookie.js"></script>
+                    <script src="vendors/iCheck/icheck.min.js"></script>
+                    <script src="vendors/iCheck/custom.min.js"></script>
+
+                    <script src="js/jquery.menu.js"></script>
+
+                    <script src="vendors/holder/holder.js"></script>
+                    <script src="vendors/responsive-tabs/responsive-tabs.js"></script>
+                    <script src="js/moment.js"></script>
+                    <script src="vendors/bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js"></script>
+
+                    <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
+                    <script src="js/main.js"></script>
+                    <script src="js/angular.js"></script>
+                    <script src="js/Index.js"></script>
 </body>
-
 </html>
