@@ -1,259 +1,63 @@
-﻿<!doctype html>
-
-<!-- tfl-probe -->
-
-<!--[if IE 7]>         <html lang="en" class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
-
-<!--[if IE 8]>         <html lang="en" class="no-js lt-ie10 lt-ie9"> <![endif]-->
-
-<!--[if IE 9]>         <html lang="en" class="no-js lt-ie10"> <![endif]-->
-
-<!--[if gt IE 9]><!-->
-
-<html lang="en" class="no-js no-touch">
-
-<!--<![endif]-->
+﻿<html lang="en">
 <head>
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  
+    <title>Interbus - Get Moving Anywhere, Comfortably</title>
 
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="images/icons/favicon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/icons/favicon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/icons/favicon-114x114.png">
+    <!--Loading bootstrap css-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <!--<script src="js/Carousle/jquery.carouFredSel-6.0.4-packed.js" type="text/javascript"></script>-->
+    <script src="js/bootstrap.js"></script>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" href="/cdn/static/assets/icons/favicon.ico" type="image/x-icon" />
-
-    <link rel="stylesheet" href="css/w3.css">
-
-   
-
-    <!-- links for table -->
- 
-    <!--Loading bootstrap css-->  
     <link type="text/css" rel="stylesheet" href="vendors/jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
     <link type="text/css" rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
-    <link type="text/css" rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
     <!--LOADING STYLESHEET FOR PAGE--><!--Loading style vendors-->
     <link type="text/css" rel="stylesheet" href="vendors/animate.css/animate.css">
-    <link type="text/css" rel="stylesheet" href="vendors/jquery-pace/pace.css">
+
     <link type="text/css" rel="stylesheet" href="vendors/iCheck/skins/all.css">
     <link type="text/css" rel="stylesheet" href="vendors/jquery-news-ticker/jquery.news-ticker.css">
     <!--Loading style-->
-    <link type="text/css" rel="stylesheet" href="css/themes/style2/pink-blue.css" id="theme-change" class="style-change color-change">
-    <link type="text/css" rel="stylesheet" href="css/style-responsive.css">
-    <link rel="stylesheet" type="text/css" href="css/Main.css">
-  
-
-    <!-- Optional theme -->
-
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css" >
-
-
-
-    <!-- Latest compiled and minified JavaScript -->
-
-    
-
-    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
-
-    <meta name="HandheldFriendly" content="True">
-
-    <script type="text/javascript">
-
-        var h = document.documentElement;
-
-        h.className = h.className.replace(/\bno-js\b/, '');
-
-        var isTouch = !!("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0;
-
-
-
-        if (isTouch) {
-
-            // remove class which defines hover behavior
-
-            h.className = h.className.replace(/\bno-touch\b/, '');
-
-        }
-
-    </script>
-
-
-
-    <script src="js/bootstrap.min.js"></script>
-
-    
-
-
-
-                    <title>Interbus - Get Moving Anywhere, Comfortably</title>
-
-
-    
-
-
-    <meta name="description" content="Information on all forms of transport in London including cycle hire. Routes, maps, plan a journey, tickets sales, realtime traffic and travel updates." />
-
-    <meta name="keywords" />
-
-                    <meta name="author" content="Interbus | Get Moving Anywhere, Comfortably" />
-
-<link href="css/StyleSheet2.css" media="screen,print" rel="stylesheet" />
-
-    <link href="css/StyleSheet1.css" media="screen,print" rel="stylesheet" />
-
-    <link href="css/StyleSheet4.css" media="screen,&#32;print" rel="stylesheet" />    
-
-    <link href="css/StyleSheet3.css" media="screen&#32;and&#32;(min-width:&#32;580px),print" rel="stylesheet" />
-
-
-
-    <link href="css/StyleSheet5.css" media="screen&#32;and&#32;(min-width:&#32;900px)" rel="stylesheet" />
-
-    <!--<link href="/cdn/static/styles/core/min/print.min.bbf3e026.css" media="print" rel="stylesheet" />-->        
-
-            
-
-    <link href="css/StyleSheet6.css" media="screen" rel="stylesheet" />
-
-       
-
-<script type="text/javascript">
-
- // Instructions: please embed this snippet directly into every page in your website template.
-
- // For optimal performance, this must be embedded directly into the template, not referenced
-
- // as an external file.
-
-
-
- // Answers Cloud Services Embed Script v1.02
-
- // DO NOT MODIFY BELOW THIS LINE *****************************************
-
- ;(function (g) {
-
- var d = document, i, am = d.createElement('script'), h = d.head || d.getElementsByTagName("head")[0],
-
- aex = {
-
- "src": "//gateway.answerscloud.com/tfl-gov-uk/production/gateway.min.js",
-
- "type": "text/javascript",
-
- "async": "true",
-
- "data-vendor": "acs",
-
- "data-role": "gateway"
-
- };
-
- for (var attr in aex) { am.setAttribute(attr,aex[attr]); }
-
- h.appendChild(am);
-
- g['acsReady'] = function () {var aT = '__acsReady__', args = Array.prototype.slice.call(arguments, 0),k = setInterval(function () {if (typeof g[aT] === 'function') {clearInterval(k);for (i = 0; i < args.length; i++) {g[aT].call(g, function(fn) { return function() { setTimeout(fn, 1) };}(args[i]));}}}, 50);};
-
- })(window);
-
- // DO NOT MODIFY ABOVE THIS LINE *****************************************
-
-</script>
-
-                    <style>
-                        rr.div a {
-                            text-decoration: none;
-                            color: white;
-                            font-size: 20px;
-                            padding: 15px;
-                            display: inline-block;
-                        }
-
-                        .rr ul {
-                            display: inline;
-                            margin: 0;
-                            padding: 0;
-                        }
-                        .rr .active {
-                            background: #555;
-                        }
-
-
-                            .rr ul li {
-                                display: inline-block;
-                                color: white;
-                            }
-
-                                .rr ul li:hover {
-                                    background: #555;
-                                }
-
-                                    .rr ul li:hover ul {
-                                        display: block;
-                                    }
-
-                                .rr ul li ul {
-                                    position: absolute;
-                                    width: 100px;
-                                    display: none;
-                                }
-
-                                    .rr ul li ul li {
-                                        background: #555;
-                                        display: block;
-                                        border-bottom: 1px solid white;
-                                        width: 170px;
-                                    }
-
-                                        .rr ul li ul li a {
-                                            display: block !important;
-                                            text-decoration: none;
-                                        }
-
-                                        .rr ul li ul li:hover {
-                                            background: #666;
-                                        }
-
-                                        .rr ul li ul li a:hover {
-                                            text-decoration: none;
-                                        }
-                    </style>
-
+    <link href="css/themes/style2/pink-blue.css" rel="stylesheet" />
+    <link type="text/css" rel="UI/stylesheet" href="css/style-responsive.css">
+    <!--<link href="css/banner.css" rel="stylesheet" type="text/css">-->
 
 
 </head>
 
-<body style="background-image:url(images/one1.jpg)">
-    
-<!--Start Header-->
-   
-<!--Start Menu-->
+<body>
+
+    <div id="container">
         <div class="mainnav" id="mainnav" tabindex="0">
 
-            <div class="top-row" style="position:fixed; width:100%; z-index:1">
+            <div class="top-row clearfix" style="position: fixed; width: 100%; padding-top: 0px; z-index: 1">
 
                 <div class="r">
-                    <div class="rr" style="width:94%">
-                        <a style="margin-top: 0px; padding-top: 0px; margin-left: 35px; float:left" href="../index.html"><img style="height:76px; border-right:1px solid #D0D0D0 ;border-bottom:1px solid #D0D0D0 ; border-left:1px solid #D0D0D0 " src="Images/logos/interbusLogo.png" alt="Alternate Text" /> </a>
-                        <ul class="collapsible-menu clearfix" style="margin-left:0px;height:76px">
+                    <div class="rr">
+                        <a style="margin-top: 10px; padding-top: 0px; margin-right: 30px; float:left" href="../index.html"><img style="height:26px" src="Images/logos/Idashboard.png" alt="Alternate Text" /></a>
+                        <ul class="collapsible-menu clearfix" style="margin-left:0px;">
 
-                            <li>
+                            <li style="margin-left:50px">
 
                                 <a style="text-decoration:none" href="../index.html">Home</a>
 
                             </li>
                             <li>
 
-                                <a class="active" style="text-decoration:none" href="Fares_and_
-                                   .html">Fares / Payments</a>
+                                <a style="text-decoration:none" href="Fares_and_payments.html">Fares / Payments</a>
 
                                 <ul>
-                                    <li><a href="Schedules.html">Schedules</a></li>
+                                     <li><a href="Schedules.html">Schedules</a></li>
                                     <li><a href="CheckFare.html">CheckFare</a></li>
-                                    <li><a href="Cancel_Ticket.html">Cancellation</a></li>
-                                    
+                                    <li><a href="Cancellation.html">Cancellation</a></li>
+
 
                                 </ul>
                             </li>
@@ -273,7 +77,7 @@
 
                             <li>
 
-                                <a style="text-decoration:none" href="About.html">About Us</a>
+                                <a style="text-decoration:none" href="AboutUs.html">About Us</a>
                                 <ul>
                                     <li><a href="ContactUs.html">ContactUs</a></li>
 
@@ -281,350 +85,368 @@
 
                             </li>
 
-                         
-                        </ul>
-                        <div style="float:right; padding-top:11px">
-                                    <input type="text" placeholder="Search.." id="q" name="q" style="border-radius: 30px; width: 120px; height: 35px; color: red;" />
+                            <li style="margin-left:220px">
+
+                                <div style="float:right; padding-top:11px">
+                                    <input type="text" placeholder="Search" id="q" name="q" style="border-radius:30px; width:120px; height:35px" />
 
 
                                 </div>
+
+
+                            </li>
+
+                        </ul>
                     </div>
                 </div>
 
             </div>
 
         </div>
-   <!--End Menu-->
-                    
-              
-<!--End Header-->
+        <div class="clearfix"></div>
 
-<!--Start Container-->
-<div class="container" style="padding-top:80px">
-<div class="r">
-<div class="breadcrumb-container">
-<ul class="breadcrumbs clearfix">
-<li class="home">
-<a href="/">
-<span class="hide-text">Home</span>
-</a>
-</li>
-<li class="ellipsis hidden" style="">
-<a href="javascript:void(0)">...</a>
-</li>
-<li>
-<span class="last-breadcrumb">Fares & payments</span>
-</li>
-</ul>
-</div>
-</div>
-<div class="r">
-<div class="headline-container landing-page section-landing-container">
-<h1>Fares & payments</h1>
-</div>
-</div>
-<div class="main-and-aside r">
-<div class="main">
-<div class="small-medium" data-set="widget"></div>
-<div class="primary-teaser landing-page-teaser">
-<div class="news-teaser ">
-<a class="external-link" data-img-alt="Contactless account promo image" data-img-breakpoint="medium" data-img="Images/promos/contactless-homepage-promo.jpg" href="#" target="_parent">
-<img width="711" height="356" src="Images/promos/contactless-homepage-promo.jpg" alt="Contactless account promo image">
-<div class="text-link sit-top">
-<h2>Check your contactless travel spend</h2>
-<p>Create a contactless account to see your contactless journey and payment history</p>
-</div>
-</a>
-</div>
-</div>
-<div class="clearfix"></div>
-<div class="module-grid clearfix">
-<div>
-<div class="news-teaser">
-<a href="/fares-and-payments/contactless?intcmp=8257">
-<img alt="Using a contactless payment card on buses" src="Images/promos/x001-00081-buses-contactless-payment_rdax_400x200.jpg">
-<div class="text-link">
-<h2>Contactless</h2>
-<p>Use contactless for value, flexibility and convenience</p>
-</div>
-</a>
-</div>
-<div class="news-teaser">
-<a href="/fares-and-payments/fares?intcmp=1648">
-<div class="text-link">
-<h2>Fares</h2>
-<p>Find out the cost of your journeys before you travel</p>
-</div>
-</a>
-</div>
-<div class="news-teaser">
-<a href="/fares-and-payments/fares/single-fare-finder?intcmp=1660">
-<div class="text-link">
-<h2>Single fare finder</h2>
-<p>Find the cost of a single journey between two stations</p>
-</div>
-</a>
-</div>
-<div class="vertical-button-container">
-<a class="plain-button" href="/fares-and-payments/where-to-top-up-and-buy-tickets">Where to top up and buy tickets</a>
-<a class="plain-button" href="/corporate/terms-and-conditions/ticketing-and-travel-conditions-of-carriage">Travel terms & conditions</a>
-<a class="plain-button" href="/fares-and-payments/penalties-and-enforcement">Penalties & enforcement</a>
-<a class="plain-button" href="/travel-information/visiting-london/visitor-oyster-card">Buy a Visitor Oyster card</a>
-</div>
-</div>
-<div>
-<div class="news-teaser">
-<a data-img-alt="Scanning an Oyster card" data-img-breakpoint="medium" data-img="Images/promos/x001-00080-checking-machine-oyster_rdax_400x200.jpg" href="/fares-and-payments/oyster?intcmp=1683">
-<img width="345" height="172" src="Images/promos/x001-00080-checking-machine-oyster_rdax_400x200.jpg" alt="Scanning an Oyster card">
-<div class="text-link">
-<h2>Oyster</h2>
-<p>Find out how you can save time and money with an Oyster card </p>
-</div>
-</a>
-</div>
-<div class="related-links">
-<h3>News</h3>
-<p>The latest developments to help make paying for your travel easier </p>
-<div class="vertical-button-container">
-<a class="plain-button" href="/fares-and-payments/contactless/other-methods-of-contactless-payment/android-pay">Android Pay now accepted</a>
-<a class="plain-button" href="/fares-and-payments/fares/river">Contactless accepted on River Bus</a>
-</div>
-</div>
-<div class="news-teaser">
-<a href="/campaign/rail-travel-outside-the-london-fare-zones?intcmp=35637">
-<div class="text-link">
-<h2>Travel beyond Zone 9</h2>
-<p>Contactless and Oyster are accepted on some rail services outside London</p>
-</div>
-</a>
-</div>
-<div class="vertical-button-container">
-<a class="plain-button" href="/fares-and-payments/ways-to-pay">Ways to pay</a>
-<a class="plain-button" href="/fares-and-payments/adult-discounts-and-concessions">Adult discounts & concessions</a>
-<a class="plain-button" href="/fares-and-payments/replacements-and-refunds">Refunds & replacements </a>
-<a class="plain-button" href="/fares-and-payments/travel-for-under-18s">Under 18 travel</a>
-</div>
-</div>
-</div>
-</div>
-<div class="aside">
-<div class="large" data-set="widget">
-<div class="moving-source-order">
-<div class="widget-wrapper">
-<div class="expandable-box">
-<div class="content">
-<div class="always-visible widget-heading">
-<div class="controls"> </div>
-<div class="widget-title plain">Payments</div>
-</div>
-<div class="start-hidden widget-content payments-widget clearfix">
-<div class="news-teaser">
-<div>
-<div class="text-only">
-<h2>Contactless online</h2>
-<div class="action-icon">
-<img alt="Contactless online icon" src="Images/logos/contactless-icon.png">
-</div>
-<p>Manage your contactless payment cards and see your journey and payment history</p>
-</div>
-<div class="call-to-action-button">
-<a class="secondary-button external-link" href="" target="_parent">Manage your cards</a>
-</div>
-</div>
-</div>
-<div class="news-teaser">
-<div>
-<div class="text-only">
-<h2>Oyster online</h2>
-<div class="action-icon">
-<img alt="Oyster online icon" src="Images/promos/53-fares-and-payment-oyster-icon.png">
-</div>
-<p>Top up, add or renew a Travelcard and see your journey history</p>
-</div>
-<div class="call-to-action-button">
-<a class="secondary-button external-link" href="https://oyster.com" target="_parent">Manage your Oyster card</a>
-</div>
-</div>
-</div>
-<div class="news-teaser">
-<div>
-<div class="text-only">
-<h2>Oyster photocards online</h2>
-<div class="action-icon">
-<img alt="Oyster photocards online icon" src="Images/logos/48-fares-and-payment-zipoyster-icon.png">
-</div>
-<p>Query with your Oyster photocard? Sign into your account</p>
-</div>
-<div class="call-to-action-button">
-<a class="secondary-button external-link" href="#" target="_parent">Manage your Oyster photocard</a>
-</div>
-</div>
-</div>
-<div class="news-teaser">
-<div>
-<div class="text-only">
-<h2>Congestion Charge</h2>
-<div class="action-icon">
-<img alt="Congestion Charge icon" src="Images/promos/50-fares-and-payment-cc-icon.png">
-</div>
-</div>
-<div class="call-to-action-button">
-<a class="secondary-button external-link" href="#" target="_parent">Pay the Congestion Charge</a>
-</div>
-</div>
-</div>
-<div class="news-teaser driving">
-<div>
-<div class="text-only">
-<h2>Congestion Charge penalty</h2>
-<div class="action-icon">
-<img alt="Congestion Charge penalty icon" src="Images/promos/48-fares-and-payment-pcn-logo-icon.png">
-</div>
-</div>
-<div class="call-to-action-button">
-<a class="secondary-button external-link" href="#">Pay a Congestion Charge PCN</a>
-</div>
-</div>
-</div>
-<div class="news-teaser">
-<div>
-<div class="text-only">
-<h2>Low Emission Zone charge</h2>
-<div class="action-icon">
-<img alt="Low Emission Zone charge icon" src="Images/promos/52-fares-and-payment-lez-icon.png">
-</div>
-</div>
-<div class="call-to-action-button">
-<a class="secondary-button external-link" href="https:#" target="_parent">Pay the LEZ charge</a>
-</div>
-</div>
-</div>
-<div class="news-teaser driving">
-<div>
-<div class="text-only">
-<h2>Low Emission Zone penalty</h2>
-<div class="action-icon">
-<img alt="Low Emission Zone penalty icon" src="Images/promos/48-fares-and-payment-pcn-logo-icon.png">
-</div>
-<p>Pay a Penalty Charge Notice (PCN) if your vehicle hasn't met emissions standards</p>
-</div>
-<div class="call-to-action-button">
-<a class="secondary-button external-link" href="#" target="_parent">Pay a Low Emission Zone PCN</a>
-</div>
-</div>
-</div>
-<div class="news-teaser driving">
-<div>
-<div class="text-only">
-<h2>Red routes penalty</h2>
-<div class="action-icon">
-<img alt="Red routes penalty icon" src="Images/promos/48-fares-and-payment-pcn-logo-icon.png">
-</div>
-<p>Pay a Penalty Charge Notice (PCN) for parking or stopping on a red route</p>
-</div>
-<div class="call-to-action-button">
-<a class="secondary-button" href="/modes/driving/pay-a-pcn">Pay a red route PCN</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="module-grid">
-<div class="advert-tile unsponsored-style google-ads">
-<div class="follow-social twitter">
-<div class="social-image"></div>
-<div class="social-text">
-<h3>Follow us on Twitter</h3>
-<p>Advance information about disruption and planned works on public transport</p>
-</div>
-<div class="social-button">
-<a class="secondary-button external-link" href="https://twitter.com" target="_parent">Follow @Interbus Alerts</a>
-</div>
-</div>
-</div>
-</div>
-<div class="small-medium" data-set="content"> </div>
-</div>
-</div>
-</div>
-<!--End Container-->
-                        
-
-                           
-   <!--footer-->
-<div class="row">
-<div class="col-lg-12">
-<div id="footer" tabindex="0">
-
-                    <h2 class="visually-hidden">Site footer</h2>
-
-
-
-                    <div class="primary-footer r">
-                    <h2 class="visually-hidden">About Interbus</h2><ul class="footer-links"><li><a href="Construction.html">Help &amp; contacts</a></li><li><a class="" href="Construction.html">Careers</a></li><li><a class="" href="Construction.html">About Interbus</a></li>
-                    <li><a class="" href="Construction.html">Safety &amp; security</a></li>
-                    <li><a class="" href="Construction.html">Transparency</a></li>
-                    <li><a class="" href="Construction.html">Publications &amp; reports</a></li>
-                    <li><a class="" href="Construction.html">Gift Shop</a></li>
-                    <li><a class="" href="Construction.html">Social media &amp; email updates</a></li>
-                    
-                    <li><a class="languages-footer" href="Construction.html">Other languages</a></li></ul><h2 class="heading">Information for...</h2>
-                    <ul class="info-for clearfix"><li><a href="Construction.html">Media</a></li>
-                    <li><a href="Construction.html">Business &amp; commercial</a></li>
-                    <li><a href="Construction.html">Get Support online 24/7</a></li><li><a href="Construction.html">Schools &amp; young people</a></li>
-                    <li><a href="Construction.html">Deliveries in Zimbabwe</a></li>
-                     <li><a href="Construction.html">Urban planning & construction</a></li>
-
-
-                    <li><a href="Construction.html">Taxi &amp; private hire </a></li>
-
-                    
-                    <li><a href="Construction.html">Bus operators</a></li>
-                    <li><a href="Construction.html">Open data users</a></li>
-                    <li><a href="Construction.html">Coach drivers</a></li><li><a href="Construction.html">Investors</a></li>
-                     <li><a href="Construction.html">Download Interbus App</a></li>
-                    </ul></div>
-                    <div class="secondary-footer"><h2 class="visually-hidden">Site structure and legal information</h2><div class="r">
-                    <ul><li><a href="Construction.html">Terms &amp; conditions </a></li>
-                    <li><a href="Construction.html">Privacy &amp; cookies</a></li>
-                    <li><a href="Construction.html">Website accessibility</a></li></ul>
-                    <span class="heading">Copyright Interbus</span></div></div>
-                    <div>
-                    </div>
+        <!--End Menu-->
     </div>
-</div>
-     </div>  
-    <!--end footer-->         
-                    <script src="js/jquery-1.10.2.min.js"></script>
-                    <script src="js/jquery-migrate-1.2.1.min.js"></script>
-                    <script src="js/jquery-ui.js"></script>
-                    <!--loading bootstrap js-->
-                    <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
-                    <script src="vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
-                    <script src="js/html5shiv.js"></script>
-                    <script src="js/respond.min.js"></script>
-                    <script src="vendors/metisMenu/jquery.metisMenu.js"></script>
-                    <script src="vendors/slimScroll/jquery.slimscroll.js"></script>
-                    <script src="vendors/jquery-cookie/jquery.cookie.js"></script>
-                    <script src="vendors/iCheck/icheck.min.js"></script>
-                    <script src="vendors/iCheck/custom.min.js"></script>
-                    <script src="vendors/jquery-news-ticker/jquery.news-ticker.js"></script>
-                    <script src="js/jquery.menu.js"></script>
-                    <script src="vendors/jquery-pace/pace.min.js"></script>
-                    <script src="vendors/holder/holder.js"></script>
-                    <script src="vendors/responsive-tabs/responsive-tabs.js"></script>
-                    <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
+    <!--End Header-->
+    <!--Start Container-->
+    <div class="container" style="padding-top:70px">
+        <h2 style="text-align:center">Fares and Payments</h2>
+        <div id="full-width-content">
+            <div class="col-md-6">
+                <div class="main-and-aside r">
+                    <div class="main">
+                        <div class="small-medium" data-set="widget"></div>
+                        <!--<div class="primary-teaser landing-page-teaser">
+                            <div class="news-teaser ">
+                                <a class="external-link" data-img-alt="Contactless account promo image" data-img-breakpoint="medium" data-img="Images/promos/contactless-homepage-promo.jpg" href="#" target="_parent">
+                                    <img width="711" height="356" src="Images/promos/contactless-homepage-promo.jpg" alt="Contactless account promo image">
+                                    <div class="text-link sit-top">
+                                        <h2>Check your contactless travel spend</h2>
+                                        <p>Create a contactless account to see your contactless journey and payment history</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>-->
+                        <div class="clearfix"></div>
+                        <div class="module-grid clearfix">
+                            <div>
 
-                    <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
+                                <div class="vertical-button-container" style="background-color:ButtonFace">
+                                    <a href="/fares-and-payments/contactless?intcmp=8257">
+                                        <img alt="Using a contactless payment card on buses" src="Images/promos/x001-00081-buses-contactless-payment_rdax_400x200.jpg" style="width:100%">
+                                        <div class="text-link" style="border:5px;border-color:black">
+                                            <h2>Contactless</h2>
+                                            <p>Use contactless for value, flexibility and convenience</p>
+                                        </div>
+                                    </a>
+                                </div>
 
 
-                    <script src="js/main.js"></script>
-                    <script src="js/angular.js"></script>
-                    <script src="js/Index.js"></script>
+
+                                <div class="vertical-button-container" style="background-color:ButtonFace">
+                                    <a href="/fares-and-payments/fares?intcmp=1648">
+                                        <div class="text-link">
+                                            <h2>Fares</h2>
+                                            <p>Find out the cost of your journeys before you travel</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="vertical-button-container" style="background-color:ButtonFace">
+                                    <a href="/fares-and-payments/fares/single-fare-finder?intcmp=1660">
+                                        <div class="text-link">
+                                            <h2>Single fare finder</h2>
+                                            <p>Find the cost of a single journey between two stations</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="vertical-button-container" style="background-color:ButtonFace">
+                                    <a class="plain-button" href="/fares-and-payments/where-to-top-up-and-buy-tickets">Where to top up and buy tickets</a>
+                                    <a class="plain-button" href="/corporate/terms-and-conditions/ticketing-and-travel-conditions-of-carriage">Travel terms & conditions</a>
+                                    <a class="plain-button" href="/fares-and-payments/penalties-and-enforcement">Penalties & enforcement</a>
+                                    <a class="plain-button" href="/travel-information/visiting-london/visitor-oyster-card">Buy a Visitor Chihuta Card</a>
+                                </div>
+
+
+                                <div class="vertical-button-container" style="background-color:ButtonFace">
+                                    <a class="plain-button" href="/fares-and-payments/ways-to-pay">Ways to pay</a>
+                                    <a class="plain-button" href="/fares-and-payments/adult-discounts-and-concessions">Adult discounts & concessions</a>
+                                    <a class="plain-button" href="/fares-and-payments/replacements-and-refunds">Refunds & replacements </a>
+                                    <a class="plain-button" href="/fares-and-payments/travel-for-under-18s">Under 18 travel</a>
+                                </div>
+
+                                <div class="related-links" style="background-color:ButtonFace">
+
+                                    <h3>News</h3>
+                                    <p>The latest developments to help make paying for your travel easier </p>
+                                    <div class="vertical-button-container">
+                                        <a class="plain-button" href="/fares-and-payments/contactless/other-methods-of-contactless-payment/android-pay">Android Pay now accepted</a>
+                                        <a class="plain-button" href="/fares-and-payments/fares/river">Contactless accepted on River Bus</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <div class="vertical-button-container" style="background-color:ButtonFace">
+                        <a data-img-alt="Scanning an Chihuta Card" data-img-breakpoint="medium" data-img="Images/promos/x001-00080-checking-machine-oyster_rdax_400x200.jpg" href="/fares-and-payments/oyster?intcmp=1683">
+                            <img src="Images/promos/x001-00080-checking-machine-oyster_rdax_400x200.jpg" alt="Scanning an Chihuta Card" style="width:100%;">
+                            <div class="text-link">
+                                <h2>Chihuta</h2>
+                                <p>Find out how you can save time and money with an Chihuta Card </p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="aside">
+                        <div class="large" data-set="widget">
+                            <div class="moving-source-order">
+                                <div class="widget-wrapper">
+                                    <div class="expandable-box">
+                                        <div class="content">
+                                            <div class="always-visible widget-heading">
+                                                <div class="controls"> </div>
+                                                <h2>Payments</h2>
+                                            </div>
+                                            <div class="start-hidden widget-content payments-widget clearfix">
+                                                <div class="vertical-button-container" style="background-color:ButtonFace">
+                                                    <div>
+                                                        <div class="text-only">
+                                                            <h2>Contactless online</h2>
+                                                            <div class="action-icon">
+                                                                <img alt="Contactless online icon" src="Images/logos/contactless-icon.png">
+                                                            </div>
+                                                            <p>Manage your contactless payment cards and see your journey and payment history</p>
+                                                        </div>
+                                                        <div class="call-to-action-button">
+                                                            <a class="secondary-button external-link" href="" target="_parent">Manage your cards</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="vertical-button-container" style="background-color:ButtonFace">
+                                                    <div>
+                                                        <div class="text-only">
+                                                            <h2>Chihuta online</h2>
+                                                            <div class="action-icon">
+                                                                <img alt="Oyster online icon" src="Images/promos/53-fares-and-payment-oyster-icon.png">
+                                                            </div>
+                                                            <p>Top up, add or renew a Travelcard and see your journey history</p>
+                                                        </div>
+                                                        <div class="call-to-action-button">
+                                                            <a class="secondary-button external-link" href="https://oyster.com" target="_parent">Manage your Chihuta Card</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="vertical-button-container" style="background-color:ButtonFace">
+                                                    <div>
+                                                        <div class="text-only">
+                                                            <h2>Chihuta photocards online</h2>
+                                                            <div class="action-icon">
+                                                                <img alt="Chihuta photocards online icon" src="Images/logos/48-fares-and-payment-zipoyster-icon.png">
+                                                            </div>
+                                                            <p>Query with your Chihuta photocard? Sign into your account</p>
+                                                        </div>
+                                                        <div class="call-to-action-button">
+                                                            <a class="secondary-button external-link" href="#" target="_parent">Manage your Oyster photocard</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="module-grid">
+                        <div class="advert-tile unsponsored-style google-ads">
+                            <div class="follow-social twitter">
+                                <div class="social-image"></div>
+                                <div class="social-text">
+                                    <h3>Follow us on Twitter</h3>
+                                    <p>Advance information about disruption and planned works on public transport</p>
+                                </div>
+                                <div class="social-button">
+                                    <a class="secondary-button external-link" href="https://twitter.com" target="_parent">Follow @Interbus Alerts</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-medium" data-set="content"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="main">
+        <div class="large" data-set="status-map">
+            <div class="moving-source-order">
+                <div class="status-map-wrapper map-wrapper status-page">
+                    <div class="tab-content">
+                        <script src='js/maps/gmap1.js'></script>
+
+                        <div style='overflow: hidden; height: 400px; width: 100%;'>
+                            <div id='gmap_canvas' style='height: 400px; width:100% ;'></div>
+                            <style>
+                                #gmap_canvas img {
+                                    max-width: none !important;
+                                    background: none !important;
+                                }
+                            </style>
+                        </div>
+                        <a href='https://www.add-map.net/'>BT POS tracking</a>
+                        <script type='text/javascript' src='js/maps/gmap.js'></script>
+                        <script type='text/javascript'>
+
+                            var locations = [
+                                     ['Bondi Beach', -17.8295, 31.0337, 4],
+                                     ['Coogee Beach', -17.8295, 31.0358, 5],
+                                     ['Cronulla Beach', -17.8295, 31.0345, 3],
+                                     ['Manly Beach', -17.8295, 31.0331, 2],
+                                     ['Maroubra Beach', -17.8295, 31.0331, 1]
+                            ];
+
+
+                            var map = new google.maps.Map(document.getElementById('gmap_canvas'), {
+                                zoom: 15,
+                                center: new google.maps.LatLng(-17.8252, 31.0335), //17.8252° S, 31.0335° E
+                                mapTypeId: google.maps.MapTypeId.ROADMAP
+                            });
+
+
+                            var infowindow = new google.maps.InfoWindow();
+
+
+                            var marker, i;
+
+
+                            for (i = 0; i < locations.length; i++) {
+                                marker = new google.maps.Marker({
+                                    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                                    map: map
+                                });
+
+
+                                google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                                    return function () {
+                                        infowindow.setContent(locations[i][0]);
+                                        infowindow.open(map, marker);
+                                    }
+                                })(marker, i));
+                            }
+
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>-->
+    <!--End Container-->
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="footer" tabindex="0">
+
+                <h2 class="visually-hidden">Site footer</h2>
+                <div class="primary-footer r">
+                    <h2 class="visually-hidden">About Interbus</h2><ul class="footer-links">
+                        <li><a href="Construction.html">Help &amp; contacts</a></li>
+                        <li><a class="" href="Construction.html">Careers</a></li>
+                        <li><a class="" href="Construction.html">About Interbus</a></li>
+                        <li><a class="" href="Construction.html">Safety &amp; security</a></li>
+                        <li><a class="" href="Construction.html">Transparency</a></li>
+                        <li><a class="" href="Construction.html">Publications &amp; reports</a></li>
+                        <li><a class="" href="Construction.html">Gift Shop</a></li>
+                        <li><a class="" href="Construction.html">Social media &amp; email updates</a></li>
+
+                        <li><a class="languages-footer" href="Construction.html">Other languages</a></li>
+                    </ul><h2 class="heading">Information for...</h2>
+                    <ul class="info-for clearfix">
+                        <li><a href="Construction.html">Media</a></li>
+                        <li><a href="Construction.html">Business &amp; commercial</a></li>
+                        <li><a href="Construction.html">Get Support online 24/7</a></li>
+                        <li><a href="Construction.html">Schools &amp; young people</a></li>
+                        <li><a href="Construction.html">Deliveries in Zimbabwe</a></li>
+                        <li><a href="Construction.html">Urban planning & construction</a></li>
+
+
+                        <li><a href="Construction.html">Taxi &amp; private hire </a></li>
+
+
+                        <li><a href="Construction.html">Bus operators</a></li>
+                        <li><a href="Construction.html">Open data users</a></li>
+                        <li><a href="Construction.html">Coach drivers</a></li>
+                        <li><a href="Construction.html">Investors</a></li>
+                        <li><a href="Construction.html">Download Interbus App</a></li>
+                    </ul>
+                </div>
+                <div class="secondary-footer">
+                    <h2 class="visually-hidden">Site structure and legal information</h2>
+                    <div class="r">
+                        <div class="col-lg-5">
+                            <ul>
+                                <li><a href="UI/Construction.html">Terms &amp; conditions </a></li>
+                                <li><a href="UI/Construction.html">Privacy &amp; cookies</a></li>
+                                <li><a href="UI/Construction.html">Website accessibility</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <ul>
+                                <li> <a href="www.webingate.com">Powered by www.webingate.com </a></li>
+                            </ul>
+                            <span class="heading"></span>
+                        </div>
+                        <div class="col-lg-2">
+                            <span class="heading">Copyright © Interbus</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End SiteCatalyst -->
+    <script>
+        function test() {
+            var currstyle = document.getElementById('imgTd').style.display;
+            document.getElementById('imgTd').style.display = (currstyle == "none") ? "table-cell" : "none";
+        }
+    </script>
+
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <!--loading bootstrap js-->
+    <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <script src="vendors/metisMenu/jquery.metisMenu.js"></script>
+    <script src="vendors/slimScroll/jquery.slimscroll.js"></script>
+    <script src="vendors/jquery-cookie/jquery.cookie.js"></script>
+    <script src="vendors/iCheck/icheck.min.js"></script>
+    <script src="vendors/iCheck/custom.min.js"></script>
+    <script src="vendors/jquery-news-ticker/jquery.news-ticker.js"></script>
+    <script src="js/jquery.menu.js"></script>
+    <script src="vendors/jquery-pace/pace.min.js"></script>
+    <script src="vendors/holder/holder.js"></script>
+    <script src="vendors/responsive-tabs/responsive-tabs.js"></script>
+    <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
+
+    <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
+
+
+    <script src="js/main.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/Index.js"></script>
 
 
 

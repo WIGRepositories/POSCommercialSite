@@ -142,6 +142,9 @@
     <Content Include="UI\js\fileupload\ng-file-upload-shim.js" />
     <Content Include="UI\js\fileupload\ng-file-upload.js" />
     <Content Include="UI\js\fileupload\Upload.js" />
+    <Content Include="UI\js\maps\gmap.js" />
+    <Content Include="UI\js\maps\gmap1.js" />
+    <Content Include="UI\js\TicketCheckOut.js" />
     <Content Include="UI\js\WebsiteUserInfo.js" />
     <Content Include="obj\Debug\INTERBUSWebsite.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\INTERBUSWebsite.dll" />
@@ -336,6 +339,8 @@
     <Content Include="UI\LicensePage.html" />
     <Content Include="UI\Login.html" />
     <Content Include="UI\mail.html" />
+    <Content Include="UI\TicketCheckOut.html" />
+    <Content Include="UI\traveloptions.html" />
     <Content Include="UI\PopupTest.html" />
     <Content Include="UI\PrintTicket.html" />
     <Content Include="UI\Refund.html" />

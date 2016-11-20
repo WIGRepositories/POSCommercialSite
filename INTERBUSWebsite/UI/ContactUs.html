@@ -54,9 +54,9 @@
                                 <a style="text-decoration:none" href="Fares_and_payments.html">Fares / Payments</a>
 
                                 <ul>
-                                    <li><a href="#">Schedules</a></li>
-                                    <li><a href="#">CheckFare</a></li>
-                                    <li><a href="#">Cancellation</a></li>
+                                     <li><a href="Schedules.html">Schedules</a></li>
+                                    <li><a href="CheckFare.html">CheckFare</a></li>
+                                    <li><a href="Cancellation.html">Cancellation</a></li>
 
 
                                 </ul>
@@ -107,6 +107,7 @@
 
         <!--End Menu-->
     </div>
+
     <!--End Header-->
     <div class="container" style="margin-top:80px">
         <h2 style="text-align:center">CONTACT US</h2>
@@ -120,35 +121,64 @@
                 Ph: +000 000 000 000 0000<br />
                 Ph: +000 000 000 000 0000<br />
                 <br />For all inquires please contact: <a href="mailto:info@interbus.com">info@interbus.com</a><br /><br />
-                
-
-
-
-
-
 
         </div>
 
         <div class="main">
-            <div class="large" data-set="status-map">
-                <div class="moving-source-order">
-                    <div class="status-map-wrapper map-wrapper status-page">
-                        <div class="tab-content">
-                            <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
-
-                            <div style='overflow: hidden; height: 400px; width: 100%;'>
-                                <div id='gmap_canvas' style='height: 400px; width:100% ;'></div>
-                                <style>
-                                    #gmap_canvas img {
-                                        max-width: none !important;
-                                        background: none !important;
-                                    }
-                                </style>
+            <div class="col-lg-4" style="padding:0px">
+                <div class="panel panel-dark" style="background-color: AliceBlue; ">
+                    <div class="panel-heading" style="background-color:black;text-align:center;text-decoration-color:white">Contact us</div>
+                    <div class="panel-body pan">
+                        <form action="#">
+                            <div class="form-body pal">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="inputName" class="control-label">Name</label>
+                                            <div class="input-icon right"><i class="fa fa-user"></i><input id="inputName" type="text" placeholder="" class="form-control" /></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="inputEmail" class="control-label">E-mail</label>
+                                            <div class="input-icon right"><i class="fa fa-envelope"></i><input id="inputEmail" type="text" placeholder="" class="form-control" /></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputSubject" class="control-label">Subject</label>
+                                    <div class="input-icon right"><i class="fa fa-tag"></i><input id="inputSubject" type="text" placeholder="" class="form-control" /></div>
+                                </div>
+                                <div class="form-group"><label for="inputMessage" class="control-label">Message</label><textarea rows="5" class="form-control"></textarea></div>
                             </div>
-                            <a href='https://www.add-map.net/'>INTERBUS office</a>
-                            <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=19cc11156f11fadab1362a8ca4ecee14a47fc51d'></script>
-                            <script type='text/javascript'>
+                            <div class="form-actions text-right pal">                                
+                                <button ng-click="ValidateLicenseCode(txt);" class="btn btn-primary">Send message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
 
+            </div>
+            <div class="col-lg-8">
+                <div class="large" data-set="status-map">
+                    <div class="moving-source-order">
+                        <div class="status-map-wrapper map-wrapper status-page">
+                            <div class="tab-content">
+                                <script src='js/maps/gmap1.js'></script>
+
+                                <div style='overflow: hidden; height: 400px; width: 100%;'>
+                                    <div id='gmap_canvas' style='height: 400px; width:100% ;'></div>
+                                    <style>
+                                        #gmap_canvas img {
+                                            max-width: none !important;
+                                            background: none !important;
+                                        }
+                                    </style>
+                                </div>
+                                <a href='https://www.add-map.net/'>Interbus office</a>
+                                <script type='text/javascript' src='js/maps/gmap.js'></script>
+                                <script type='text/javascript'>
+                                
                                 var locations = [
                                          ['Bondi Beach', -17.8295, 31.0337, 4],
                                          ['Coogee Beach', -17.8295, 31.0358, 5],
@@ -186,14 +216,14 @@
                                     })(marker, i));
                                 }
 
-                            </script>
+                                </script>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
-
         </div>
-
     </div>
 
 
@@ -236,13 +266,25 @@
                     </ul>
                 </div>
                 <div class="secondary-footer">
-                    <h2 class="visually-hidden">Site structure and legal information</h2><div class="r">
-                        <ul>
-                            <li><a href="Construction.html">Terms &amp; conditions </a></li>
-                            <li><a href="Construction.html">Privacy &amp; cookies</a></li>
-                            <li><a href="Construction.html">Website accessibility</a></li>
-                        </ul>
-                        <span class="heading">Copyright Interbus</span>
+                    <h2 class="visually-hidden">Site structure and legal information</h2>
+                    <div class="r">
+                        <div class="col-lg-5">
+                            <ul>
+                                <li><a href="UI/Construction.html">Terms &amp; conditions </a></li>
+                                <li><a href="UI/Construction.html">Privacy &amp; cookies</a></li>
+                                <li><a href="UI/Construction.html">Website accessibility</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <ul>
+                                <li> <a href="www.webingate.com">Powered by www.webingate.com </a></li>
+                            </ul>
+                            <span class="heading"></span>
+                        </div>
+                        <div class="col-lg-2">
+                            <span class="heading">Copyright © Interbus</span>
+                        </div>
                     </div>
                 </div>
                 <div>
@@ -251,26 +293,31 @@
         </div>
     </div>
 
-
-
     <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/jquery-ui.js"></script>
     <!--loading bootstrap js-->
-    <!--<script src="vendors/bootstrap/js/bootstrap.js"></script>-->
+    <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
     <script src="vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
-   
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
     <script src="vendors/metisMenu/jquery.metisMenu.js"></script>
     <script src="vendors/slimScroll/jquery.slimscroll.js"></script>
     <script src="vendors/jquery-cookie/jquery.cookie.js"></script>
     <script src="vendors/iCheck/icheck.min.js"></script>
     <script src="vendors/iCheck/custom.min.js"></script>
-
+    <script src="vendors/jquery-news-ticker/jquery.news-ticker.js"></script>
     <script src="js/jquery.menu.js"></script>
-
-    
+    <script src="vendors/jquery-pace/pace.min.js"></script>
+    <script src="vendors/holder/holder.js"></script>
+    <script src="vendors/responsive-tabs/responsive-tabs.js"></script>
     <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
-    <!--<script src="js/main.js"></script>-->
+
+    <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
+
+
+    <script src="js/main.js"></script>
     <script src="js/angular.js"></script>
+    <script src="js/Index.js"></script>
 </body>
 </html>

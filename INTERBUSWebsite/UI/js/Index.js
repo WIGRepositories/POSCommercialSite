@@ -11,6 +11,12 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
     ];
     $scope.triptype = "oneway";
 
+    $scope.timing = "Now";
+
+    $scope.ChangeTravelType = function (travelTime) {
+        $scope.timing = (travelTime == 0) ? "Now" : "Later";
+    }
+
     $scope.RadioChange = function (s) {
         $scope.triptype = s;
     };
@@ -67,7 +73,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         return;
 
     }
-
+   
     var inputcred = { LoginInfo: u, Passkey: p }
 
     var req = {
@@ -83,11 +89,18 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         else {
             //if the user has role, then get the details and save in session
             $localStorage.uname = res.data[0].name;
+            $scope.username = $localStorage.uname;
             $localStorage.userdetails = res.data;
           //  window.location.href = "UI/BookedTicketHistory.html";
         }
     });
 }
+
+    $scope.SignOutUser = function () {
+        $localStorage.uname = null;
+        $scope.username = null;
+        $localStorage.userdetails = null;
+    }
 
     $scope.GotToLicensePage = function (t) {
         $localStorage.licenseId = t;

@@ -1,148 +1,50 @@
-﻿<!doctype html>
-
-<html lang="en">
-
+﻿<html lang="en">
 <head>
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="css/w3.css">
-    <!-- links for table -->
- 
-    <!--Loading bootstrap css-->      
-    <link type="text/css" rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
-    <link type="text/css" rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
-    <!--LOADING STYLESHEET FOR PAGE--><!--Loading style vendors-->
-    <link type="text/css" rel="stylesheet" href="vendors/animate.css/animate.css">
-    <link type="text/css" rel="stylesheet" href="vendors/jquery-pace/pace.css">
-    <link type="text/css" rel="stylesheet" href="vendors/iCheck/skins/all.css">
-    
-    <!--Loading style-->
-    <link type="text/css" rel="stylesheet" href="css/themes/style2/pink-blue.css" id="theme-change" class="style-change color-change">
-    <link type="text/css" rel="stylesheet" href="css/style-responsive.css">
-    <link rel="stylesheet" type="text/css" href="css/Main.css">
-  
-
-    <!-- Optional theme -->
-
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css" >
-    <!-- Latest compiled and minified JavaScript -->    
-<script type="text/javascript">
-
-        var h = document.documentElement;
-
-        h.className = h.className.replace(/\bno-js\b/, '');
-
-        var isTouch = !!("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0;
-
-
-
-        if (isTouch) {
-
-            // remove class which defines hover behavior
-
-            h.className = h.className.replace(/\bno-touch\b/, '');
-
-        }
-
-    </script>
-
-    <script src="js/bootstrap.min.js"></script>
 
     <title>Interbus - Get Moving Anywhere, Comfortably</title>
 
-
-<link href="css/StyleSheet2.css" media="screen,print" rel="stylesheet" />
-    <link href="css/StyleSheet1.css" media="screen,print" rel="stylesheet" />
-    <link href="css/StyleSheet4.css" media="screen,&#32;print" rel="stylesheet" />    
-    <link href="css/StyleSheet3.css" media="screen&#32;and&#32;(min-width:&#32;580px),print" rel="stylesheet" />    
-    <link href="css/StyleSheet5.css" media="screen&#32;and&#32;(min-width:&#32;900px)" rel="stylesheet" />
-    <!--<link href="/cdn/static/styles/core/min/print.min.bbf3e026.css" media="print" rel="stylesheet" />-->        
-    <link href="css/StyleSheet6.css" media="screen" rel="stylesheet" />
-
-                    <style>
-                        rr.div a {
-                            text-decoration: none;
-                            color: white;
-                            font-size: 20px;
-                            padding: 15px;
-                            display: inline-block;
-                        }
-
-                        .rr ul {
-                            display: inline;
-                            margin: 0;
-                            padding: 0;
-                        }
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="images/icons/favicon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/icons/favicon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/icons/favicon-114x114.png">
+    <!--Loading bootstrap css-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <!--<script src="js/Carousle/jquery.carouFredSel-6.0.4-packed.js" type="text/javascript"></script>-->
+    <script src="js/bootstrap.js"></script>
 
 
-                            .rr ul li {
-                                display: inline-block;
-                                color: white;
-                            }
-                        .rr .active {
-                            background: #555;
-                        }
+    <link type="text/css" rel="stylesheet" href="vendors/jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
+    <link type="text/css" rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
+    <!--LOADING STYLESHEET FOR PAGE--><!--Loading style vendors-->
+    <link type="text/css" rel="stylesheet" href="vendors/animate.css/animate.css">
 
-                                .rr ul li:hover {
-                                    background: #555;
-                                }
-
-                                    .rr ul li:hover ul {
-                                        display: block;
-                                    }
-
-                                .rr ul li ul {
-                                    position: absolute;
-                                    width: 100px;
-                                    display: none;
-                                }
-
-                                    .rr ul li ul li {
-                                        background: #555;
-                                        display: block;
-                                        border-bottom: 1px solid white;
-                                        width: 170px;
-                                    }
-
-                                        .rr ul li ul li a {
-                                            display: block !important;
-                                            text-decoration: none;
-                                        }
-
-                                        .rr ul li ul li:hover {
-                                            background: #666;
-                                        }
-
-                                        .rr ul li ul li a:hover {
-                                            text-decoration: none;
-                                        }
-                    </style>
+    <link type="text/css" rel="stylesheet" href="vendors/iCheck/skins/all.css">
+    <link type="text/css" rel="stylesheet" href="vendors/jquery-news-ticker/jquery.news-ticker.css">
+    <!--Loading style-->
+    <link href="css/themes/style2/pink-blue.css" rel="stylesheet" />
+    <link type="text/css" rel="UI/stylesheet" href="css/style-responsive.css">
+    <!--<link href="css/banner.css" rel="stylesheet" type="text/css">-->
 
 
 </head>
 
-<body style="background-image:url(images/one1.jpg)">
+<body>
 
-
-    <div id="c-mask" class="c-mask disable-touch-scrolling"></div>
-    <!--Start Header-->
-    <div id="container" style="position:absolute; width:100%">
-
-
-        <!--Start Menu-->
+    <div id="container">
         <div class="mainnav" id="mainnav" tabindex="0">
 
-            <div class="top-row" style="position:fixed; width:100%; z-index:13">
+            <div class="top-row clearfix" style="position: fixed; width: 100%; padding-top: 0px; z-index: 1">
 
                 <div class="r">
                     <div class="rr">
-                        <a style="margin-top: 0px; padding-top: 0px; margin-right: 50px; float:left" href="../index.html"><img style="height:76px" src="Images/logos/interbusLogo.png" alt="Alternate Text" /> </a>
+                        <a style="margin-top: 10px; padding-top: 0px; margin-right: 30px; float:left" href="../index.html"><img style="height:26px" src="Images/logos/Idashboard.png" alt="Alternate Text" /></a>
                         <ul class="collapsible-menu clearfix" style="margin-left:0px;">
 
-                            <li style="margin-left:90px">
+                            <li style="margin-left:50px">
 
                                 <a style="text-decoration:none" href="../index.html">Home</a>
 
@@ -152,31 +54,30 @@
                                 <a style="text-decoration:none" href="Fares_and_payments.html">Fares / Payments</a>
 
                                 <ul>
-                                    <li><a href="#">Schedules</a></li>
-                                    <li><a href="#">CheckFare</a></li>
-                                    <li><a href="#">Cancellation</a></li>
+                                     <li><a href="Schedules.html">Schedules</a></li>
+                                    <li><a href="CheckFare.html">CheckFare</a></li>
+                                    <li><a href="Cancellation.html">Cancellation</a></li>
 
 
                                 </ul>
                             </li>
                             <li>
 
-                                <a class="active" style="text-decoration:none" href="Status_and_Updates.html">Status & Updates</a>
+                                <a style="text-decoration:none" href="Status_and_Updates.html">Status & Updates</a>
 
                             </li>
                             <li>
 
                                 <a style="text-decoration:none" href="#">Products</a>
                                 <ul>
-                                    <li><a href="Licensepage.html">Fleet Owner Lisence</a></li>
-                                    <li><a href="Licensepage.html">BTPOS Lisence</a></li>
-                                    <li><a href="Licensepage.html">TroubleTicket Lisence</a></li>
+                                    <li><a href="Licensepage.html">Fleet Owner License</a></li>
+
                                 </ul>
                             </li>
 
                             <li>
 
-                                <a style="text-decoration:none" href="About.html">About Us</a>
+                                <a style="text-decoration:none" href="AboutUs.html">About Us</a>
                                 <ul>
                                     <li><a href="ContactUs.html">ContactUs</a></li>
 
@@ -184,10 +85,10 @@
 
                             </li>
 
-                            <li style="margin-left:150px">
+                            <li style="margin-left:220px">
 
                                 <div style="float:right; padding-top:11px">
-                                    <input type="text" placeholder="Search.." id="q" name="q" style="border-radius: 30px; width: 120px; height: 35px; color: red;" />
+                                    <input type="text" placeholder="Search" id="q" name="q" style="border-radius:30px; width:120px; height:35px" />
 
 
                                 </div>
@@ -202,755 +103,260 @@
             </div>
 
         </div>
-        <!--End Menu-->
+        <div class="clearfix"></div>
 
+        <!--End Menu-->
     </div>
     <!--End Header-->
     <!--Start Container-->
-    <div class="container" style="padding-top:120px">
-        <div id="full-width-content" tab-index="0">
-            <div class="r">
-                <div class="breadcrumb-container">
-                    <ul class="breadcrumbs clearfix">
-                        <li class="home">
-                            <a href="/">
-                                <span class="hide-text">Home</span>
-                            </a>
-                        </li>
-                        <li class="ellipsis hidden" style="">
-                            <a href="javascript:void(0)">...</a>
-                        </li>
-                        <li>
-                            <a href="/tube-dlr-overground/status/">Status updates</a>
-                        </li>
-                        <li>
-                            <span class="last-breadcrumb">Tube, Overground, TfL Rail & DLR</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="r status-update-heading">
-                <div class="headline-container content-page clearfix heading-dropdowns-wrap">
-                    <h2>Status Updates</h2>
-                    <div class="dropdowns-wrap clearfix">
-                        <div class="heading-dropdown modes-dropdown-placeholder" data-list-header="Select Transport Mode">
-                            <div class="for-dropdown">
-                                <h2>Tube, Overground, TfL Rail & DLR</h2>
-                                <div class="dropdown-button tab-dropdown dropdown-closed " aria-label="Mode of transport" role="button" tabindex="0" data-list-header="Select Transport Mode" style="">
-                                    <span>Tube, Overground, TfL Rail & DLR</span>
+    <div class="container" style="padding-top:70px">
+        <h2 style="text-align:center">Status and updates</h2>
+        <div id="full-width-content">
+
+            <div class="main">
+                <div class="large" data-set="status-map">
+                    <div class="moving-source-order">
+                        <div class="status-map-wrapper map-wrapper status-page">
+                            <div class="tab-content">
+                                <script src='js/maps/gmap1.js'></script>
+
+                                <div style='overflow: hidden; height: 400px; width: 100%;'>
+                                    <div id='gmap_canvas' style='height: 400px; width:100% ;'></div>
+                                    <style>
+                                        #gmap_canvas img {
+                                            max-width: none !important;
+                                            background: none !important;
+                                        }
+                                    </style>
                                 </div>
-                                <ul class="links-list modes-list status-updates hidden" data-dropdown-option="tab-dropdown" data-dropdown-target="modes-dropdown-placeholder" data-dropdown-label="Mode of transport" data-selected-item-id="Tube, Overground, TfL Rail & DLR">
-                                    <li class="tube selected" data-item-id="Tube, Overground, TfL Rail & DLR" style="border-top-width: 1px;">
-                                        <a href="/tube-dlr-overground/status/?startdate=2016-05-28T00%3a00%3a00&endDate=2016-05-29T23%3a59%3a59&dateTypeSelect=This%20weekend">
-                                            <span class="dropdown-name">Tube, Overground, TfL Rail & DLR</span>
-                                        </a>
-                                    </li>
-                                    <li class="bus " data-item-id="Buses">
-                                        <a href="/bus/status/?startdate=2016-05-28T00%3a00%3a00&endDate=2016-05-29T23%3a59%3a59&dateTypeSelect=This%20weekend">
-                                            <span class="dropdown-name">Buses</span>
-                                        </a>
-                                    </li>
-                                    <li class="traffic " data-item-id="Traffic">
-                                        <a href="/traffic/status/?startdate=2016-05-28T00%3a00%3a00&endDate=2016-05-29T23%3a59%3a59&dateTypeSelect=This%20weekend">
-                                            <span class="dropdown-name">Traffic</span>
-                                        </a>
-                                    </li>
-                                    <li class="tram " data-item-id="Tram">
-                                        <a href="/tram/status/?startdate=2016-05-28T00%3a00%3a00&endDate=2016-05-29T23%3a59%3a59&dateTypeSelect=This%20weekend">
-                                            <span class="dropdown-name">Tram</span>
-                                        </a>
-                                    </li>
-                                    <li class="river-bus " data-item-id="River Bus">
-                                        <a href="/river/status/?startdate=2016-05-28T00%3a00%3a00&endDate=2016-05-29T23%3a59%3a59&dateTypeSelect=This%20weekend">
-                                            <span class="dropdown-name">River Bus</span>
-                                        </a>
-                                    </li>
-                                    <li class="cable-car " data-item-id="Emirates Air Line">
-                                        <a href="/cable-car/status/?startdate=2016-05-28T00%3a00%3a00&endDate=2016-05-29T23%3a59%3a59&dateTypeSelect=This%20weekend">
-                                            <span class="dropdown-name">Emirates Air Line</span>
-                                        </a>
-                                    </li>
-                                    <li class="national-rail " data-item-id="National Rail">
-                                        <a href="/national-rail/status/?startdate=2016-05-28T00%3a00%3a00&endDate=2016-05-29T23%3a59%3a59&dateTypeSelect=This%20weekend">
-                                            <span class="dropdown-name">National Rail</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="heading-dropdown date-dropdown-placeholder" data-list-header="Select date">
-                            <div class="for-dropdown">
-                                <h2>Now 16:07</h2>
-                                <div class="dropdown-button tab-dropdown dropdown-closed datepicker-dropdown" aria-label="Date picker" role="button" tabindex="0" data-list-header="Select date">
-                                    <span>Now 10:57</span>
-                                </div>
-                                <ul class="links-list status-updates hidden datepicker-dropdown" data-dropdown-option="tab-dropdown" data-dropdown-target="date-dropdown-placeholder" data-dropdown-label="Date picker" data-selected-item-id="26/05/16">
-                                    <li class="selected" data-item-id="Now 10:57">
-                                        <span class="dropdown-name">Now 16:07</span>
-                                    </li>
-                                    <li class="not-selected" data-item-id="28/05/16 - 29/05/16">
-                                        <a href="/tube-dlr-overground/status/?startDate=2016-05-28T00%3a00%3a00&endDate=2016-05-29T23%3a59%3a59&dateTypeSelect=This%20weekend">
-                                            <span class="dropdown-name">This weekend</span>
-                                            <span class="right-arrow icon"></span>
-                                        </a>
-                                    </li>
-                                    <li class="not-selected no-hover" data-item-id="">
-                                        <div class="date-wrap">
-                                            <span class="dropdown-name" data-direction="" data-lineids="" data-input="">Future date</span>
-                                        </div>
-                                        <div class="advance-month-container">
-                                            <span>May 2016</span>
-                                            <a class="no-js-next-month" href="/tube-dlr-overground/status/?startDate=2016-06-26T00%3a00%3a00">
-                                                <span>Next month</span>
-                                            </a>
-                                        </div>
-                                        <div class="date-link-container" data-href="/tube-dlr-overground/status/" data-current-year="2016" data-current-month="5" data-current-day="26">
-                                            <div class="date-link">
-                                                <span class="selected-date" data-selected-year="2016" data-selected-month="5" data-selected-day="26">26/05/16</span>
-                                                <span class="hidden calendar-year">2016</span>
-                                                <span class="hidden calendar-month">May</span>
-                                                <span class="hidden calendar-day">26</span>
-                                            </div>
-                                            <div class="date-link">
-                                                <a href="/tube-dlr-overground/status/?startDate=2016-05-27T00%3a00%3a00&endDate=2016-05-27T23%3a59%3a59">27/05/16</a>
-                                                <span class="hidden calendar-year">2016</span>
-                                                <span class="hidden calendar-month">May</span>
-                                                <span class="hidden calendar-day">27</span>
-                                            </div>
-                                            <div class="date-link">
-                                                <a href="/tube-dlr-overground/status/?startDate=2016-05-28T00%3a00%3a00&endDate=2016-05-28T23%3a59%3a59">28/05/16</a>
-                                                <span class="hidden calendar-year">2016</span>
-                                                <span class="hidden calendar-month">May</span>
-                                                <span class="hidden calendar-day">28</span>
-                                            </div>
-                                            <div class="date-link">
-                                                <a href="/tube-dlr-overground/status/?startDate=2016-05-29T00%3a00%3a00&endDate=2016-05-29T23%3a59%3a59">29/05/16</a>
-                                                <span class="hidden calendar-year">2016</span>
-                                                <span class="hidden calendar-month">May</span>
-                                                <span class="hidden calendar-day">29</span>
-                                            </div>
-                                            <div class="date-link">
-                                                <a href="/tube-dlr-overground/status/?startDate=2016-05-30T00%3a00%3a00&endDate=2016-05-30T23%3a59%3a59">30/05/16</a>
-                                                <span class="hidden calendar-year">2016</span>
-                                                <span class="hidden calendar-month">May</span>
-                                                <span class="hidden calendar-day">30</span>
-                                            </div>
-                                            <div class="date-link">
-                                                <a href="/tube-dlr-overground/status/?startDate=2016-05-31T00%3a00%3a00&endDate=2016-05-31T23%3a59%3a59">31/05/16</a>
-                                                <span class="hidden calendar-year">2016</span>
-                                                <span class="hidden calendar-month">May</span>
-                                                <span class="hidden calendar-day">31</span>
-                                            </div>
-                                        </div>
-                                        <div class="fc-calendar-wrapper clearfix hidden">
-                                            <div class="current-month">
-                                                <a class="calendar-previous-month hide-text disabled" href="javascript:void(0);">Previous month</a>
-                                                <span class="calendar-month">May</span>
-                                                <span class="calendar-year">2016</span>
-                                                <a class="calendar-next-month hide-text" href="javascript:void(0);">Next month</a>
-                                            </div>
-                                            <div class="fc-calendar-container" data-year="2016" data-month="5">
-                                                <div class="fc-calendar fc-six-rows">
-                                                    <div class="fc-head">
-                                                        <div>M</div>
-                                                        <div>T</div>
-                                                        <div>W</div>
-                                                        <div>T</div>
-                                                        <div>F</div>
-                                                        <div>S</div>
-                                                        <div>S</div>
-                                                    </div>
-                                                    <div class="fc-body">
-                                                        <div class="fc-row">
-                                                            <div></div>
-                                                            <div></div>
-                                                            <div></div>
-                                                            <div></div>
-                                                            <div></div>
-                                                            <div></div>
-                                                            <div>
-                                                                <span class="fc-date">1</span>
-                                                                <span class="fc-weekday">S</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="fc-row">
-                                                            <div>
-                                                                <span class="fc-date">2</span>
-                                                                <span class="fc-weekday">M</span>
-                                                            </div>
-                                                            <div>
-                                                                <span class="fc-date">3</span>
-                                                                <span class="fc-weekday">T</span>
-                                                            </div>
-                                                            <div>
-                                                                <span class="fc-date">4</span>
-                                                                <span class="fc-weekday">W</span>
-                                                            </div>
-                                                            <div>
-                                                                <span class="fc-date">5</span>
-                                                                <span class="fc-weekday">T</span>
-                                                            </div>
-                                                            <div>
-                                                                <span class="fc-date">6</span>
-                                                                <span class="fc-weekday">F</span>
-                                                            </div>
-                                                            <div>
-                                                                <span class="fc-date">7</span>
-                                                                <span class="fc-weekday">S</span>
-                                                            </div>
-                                                            <div>
-                                                                <span class="fc-date">8</span>
-                                                                <span class="fc-weekday">S</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="fc-row">
-                                                            <div>
-                                                                <span class="fc-date">9</span>
-                                                                <span class="fc-weekday">M</span>
-                                                            </div>
-                                                            <div>
-                                                                <span class="fc-date">10</span>
-                                                                <span class="fc-weekday">T</span>
-                                                            </div>
-                                                            <div>
-                                                                <span class="fc-date">11</span>
-                                                                <span class="fc-weekday">W</span>
-                                                            </div>
-                                                            <div>
-                                                                <span class="fc-date">12</span>
-                                                                <span class="fc-weekday">T</span>
-                                                            </div>
-                                                            <div>
-                                                                <span class="fc-date">13</span>
-                                                                <span class="fc-weekday">F</span>
-                                                            </div>
-                                                            <div>
-                                                                <span class="fc-date">14</span>
-                                                                <span class="fc-weekday">S</span>
-                                                            </div>
-                                                            <div>
-                                                                <span class="fc-date">15</span>
-                                                                <span class="fc-weekday">S</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="fc-row">
-                                                            <div>
-                                                                <span class="fc-date">16</span>
-                                                                <span class="fc-weekday">M</span>
-                                                            </div>
-                                                            <div>
-                                                                <span class="fc-date">17</span>
-                                                                <span class="fc-weekday">T</span>
-                                                            </div>
-                                                            <div>
-                                                                <span class="fc-date">18</span>
-                                                                <span class="fc-weekday">W</span>
-                                                            </div>
-                                                            <div>
-                                                                <span class="fc-date">19</span>
-                                                                <span class="fc-weekday">T</span>
-                                                            </div>
-                                                            <div>
-                                                                <span class="fc-date">20</span>
-                                                                <span class="fc-weekday">F</span>
-                                                            </div>
-                                                            <div>
-                                                                <span class="fc-date">21</span>
-                                                                <span class="fc-weekday">S</span>
-                                                            </div>
-                                                            <div>
-                                                                <span class="fc-date">22</span>
-                                                                <span class="fc-weekday">S</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="fc-row">
-                                                            <div>
-                                                                <span class="fc-date">23</span>
-                                                                <span class="fc-weekday">M</span>
-                                                            </div>
-                                                            <div>
-                                                                <span class="fc-date">24</span>
-                                                                <span class="fc-weekday">T</span>
-                                                            </div>
-                                                            <div>
-                                                                <span class="fc-date">25</span>
-                                                                <span class="fc-weekday">W</span>
-                                                            </div>
-                                                            <div class="fc-today">
-                                                                <span class="fc-date">26</span>
-                                                                <span class="fc-weekday">T</span>
-                                                            </div>
-                                                            <div class="highlighted-day">
-                                                                <a href="/tube-dlr-overground/status/?input=&lineIds=&dateTypeSelect=Future date&direction=&startDate=2016-05-27T00%3a00%3a00&endDate=2016-05-27T23%3a59%3a59">
-                                                                    <span class="fc-date">27</span>
-                                                                </a>
-                                                                <span class="fc-weekday">F</span>
-                                                            </div>
-                                                            <div class="highlighted-day">
-                                                                <a href="/tube-dlr-overground/status/?input=&lineIds=&dateTypeSelect=Future date&direction=&startDate=2016-05-28T00%3a00%3a00&endDate=2016-05-28T23%3a59%3a59">
-                                                                    <span class="fc-date">28</span>
-                                                                </a>
-                                                                <span class="fc-weekday">S</span>
-                                                            </div>
-                                                            <div class="highlighted-day">
-                                                                <a href="/tube-dlr-overground/status/?input=&lineIds=&dateTypeSelect=Future date&direction=&startDate=2016-05-29T00%3a00%3a00&endDate=2016-05-29T23%3a59%3a59">
-                                                                    <span class="fc-date">29</span>
-                                                                </a>
-                                                                <span class="fc-weekday">S</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="fc-row">
-                                                            <div class="highlighted-day">
-                                                                <a href="/tube-dlr-overground/status/?input=&lineIds=&dateTypeSelect=Future date&direction=&startDate=2016-05-30T00%3a00%3a00&endDate=2016-05-30T23%3a59%3a59">
-                                                                    <span class="fc-date">30</span>
-                                                                </a>
-                                                                <span class="fc-weekday">M</span>
-                                                            </div>
-                                                            <div class="highlighted-day">
-                                                                <a href="/tube-dlr-overground/status/?input=&lineIds=&dateTypeSelect=Future date&direction=&startDate=2016-05-31T00%3a00%3a00&endDate=2016-05-31T23%3a59%3a59">
-                                                                    <span class="fc-date">31</span>
-                                                                </a>
-                                                                <span class="fc-weekday">T</span>
-                                                            </div>
-                                                            <div></div>
-                                                            <div></div>
-                                                            <div></div>
-                                                            <div></div>
-                                                            <div></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="r service-status-links" data-mode="Tube, Overground, TfL Rail & DLR"> </div>
-            <div class="r service-status-links"> </div>
+                                <a href='https://www.add-map.net/'>BT POS tracking</a>
+                                <script type='text/javascript' src='js/maps/gmap.js'></script>
+                                <script type='text/javascript'>
+
+                                    var locations = [
+                                             ['Bondi Beach', -17.8295, 31.0337, 4],
+                                             ['Coogee Beach', -17.8295, 31.0358, 5],
+                                             ['Cronulla Beach', -17.8295, 31.0345, 3],
+                                             ['Manly Beach', -17.8295, 31.0331, 2],
+                                             ['Maroubra Beach', -17.8295, 31.0331, 1]
+                                    ];
 
 
-            <div class="r no-overflow small-medium">
-                <div class="view-static-map-button ">
-                    <span class="view-static-map-button-icon"></span>
-                    <span>View live map</span>
-                    <span class="expand-map-icon"></span>
-                </div>
-                <div class="small-medium main map-sliver-container non-google-map" data-set="status-map"> </div>
-            </div>
-
-            <div class="r r-override-su">
-                <div class="aside">
-                    <ul class="tabs-style-2 lines-stations-tab">
-                        <li class="lines-tab selected">
-                            <a href="#lines-status">Lines</a>
-                        </li>
-                        <li class="stations-tab">
-                            <a href="#stations-status">Stations</a>
-                        </li>
-                    </ul>
-
-                    <div class="fav-panel-save-container no-js-hide">
-                        <div class="fav-panel-save-container-inner favourite-tab">
-                            <a id="fav-panel-save" href="javascript:void(0)">
-                                <span class="align-text">Add favourites</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div id="service-status-page-board" class="service-status-rainbow-board board-wrapper">
-                        <div id="rainbow-list-tube-dlr-overground-tflrail" class="ajax-su rainbow-list-wrapper lines-status visible">
-                            <h2>Lines</h2>
-                            <ul class="rainbow-list interactive ">
-                                <li class="rainbow-list-item district disrupted expandable " data-mode="tube" data-severity-codes="5" data-line-id="lul-district">
-                                    <a class="rainbow-list-link" data-line-class="lul-district" href="#line-lul-district">
-                                        <span class="service-name district">
-                                            <span>District</span>
-                                        </span>
-                                        <span class="disruption-summary ">
-                                            <span>
-                                                Part closure
-                                                <br>
-                                            </span>
-                                        </span>
-                                        <span class="controls"> </span>
-                                    </a>
-                                    <div class="rainbow-list-content">
-                                        <div class="section">
-                                            <p>DISTRICT LINE: Saturday 28, Sunday 29 and Bank Holiday Monday 30 May, no service between Earl's Court and Wimbledon. This is to allow for track replacement work at Fulham Broadway, Putney Bridge and Wimbledon. Replacement buses operate.</p>
-                                            <p>Replacement buses operateService A: Hammersmith - Putney Bridge - East Putney - Southfields - Wimbledon Park - WimbledonService B: Earl's Court - West Brompton - Fulham Broadway - Parsons Green - Putney Bridge - Wimbledon.</p>
-                                        </div>
-                                        <div class="section">
-                                            <div class="vertical-button-container">
-                                                <a class="plain-button" href="/plan-a-journey/">Replan your journey</a>
-                                            </div>
-                                        </div>
-                                        <a class="close-message" href="#">Close status</a>
-                                    </div>
-                                </li>
-                                <li class="rainbow-list-item overground disrupted expandable " data-mode="overground" data-severity-codes="5" data-line-id="raillo-overground">
-                                    <a class="rainbow-list-link" data-line-class="raillo-overground" href="#line-raillo-overground">
-                                        <span class="service-name overground">
-                                            <span>London Overground</span>
-                                        </span>
-                                        <span class="disruption-summary ">
-                                            <span>
-                                                Part closure
-                                                <br>
-                                            </span>
-                                        </span>
-                                        <span class="controls"> </span>
-                                    </a>
-                                    <div class="rainbow-list-content">
-                                        <div class="section">
-                                            <p>LONDON OVERGROUND: Sunday 29 and Monday 30 May, no service between Romford and Upminster due to Crossrail works. Please use local London Buses services instead.</p>
-                                            <p></p>
-                                        </div>
-                                        <div class="section">
-                                            <p>LONDON OVERGROUND: Saturday 7 and Sunday 8 May, and every Saturday and Sunday until Saturday 24 and Sunday 25 September (except Saturdays 28 May and 27 August), as well as on Bank Holiday Mondays 30 May and 29 August, no service between Gospel Oak and Barking to help prepare the line for electrification. Replacement buses operate.</p>
-                                            <p>Replacement buses operate Route J: Gospel Oak Station (Highgate Road) - Upper Holloway - Crouch Hill - Finsbury Park (for London Underground Piccadilly and Victoria line and National Rail Great Northern services) - Harringay Green Lanes - Seven Sisters (for London Underground Victoria line and London Overground Enfield Town / Cheshunt services and South Tottenham) Route T: Walthamstow Central (for London Underground Victoria line and London Overground Chingford Services) - Leyton Midland Road - Leytonstone High Road - Wanstead Park - Woodgrange Park - East Ham (for London Underground District and Hammersmith & City line, set down only towards Barking, pick up only towards Walthamstow) - Barking.For travel between Seven Sisters and Walthamstow Central, use London Underground Victoria line (valid tickets are accepted for entrance and exit at Seven Sisters, Tottenham Hale, Blackhorse Road and Walthamstow Central only) or local London Buses services via any reasonable routes.</p>
-                                        </div>
-                                        <div class="section">
-                                            <div class="vertical-button-container">
-                                                <a class="plain-button" href="/plan-a-journey/">Replan your journey</a>
-                                            </div>
-                                        </div>
-                                        <a class="close-message" href="#">Close status</a>
-                                    </div>
-                                </li>
-                                <li class="rainbow-list-item tflrail disrupted expandable " data-mode="tflrail" data-severity-codes="4,5" data-line-id="tfl-rail">
-                                    <a class="rainbow-list-link" data-line-class="tfl-rail" href="#line-tfl-rail">
-                                        <span class="service-name tflrail">
-                                            <span>TfL Rail</span>
-                                        </span>
-                                        <span class="disruption-summary ">
-                                            <span>
-                                                Planned closure
-                                                <br>
-                                                Part closure
-                                                <br>
-                                            </span>
-                                        </span>
-                                        <span class="controls"> </span>
-                                    </a>
-                                    <div class="rainbow-list-content">
-                                        <div class="section">
-                                            <p>TfL Rail: Every Sunday until 0800, buses replace trains between Shenfield and Ilford, due to Network Rail track works.</p>
-                                            <p>Service A: Shenfield - Brentwood - Harold Wood - Gidea Park - Romford - Chadwell Heath - Goodmayes - Ilford</p>
-                                        </div>
-                                        <div class="section">
-                                            <p>TfL RAIL: Sunday 29 and Monday 30 May, no service Liverpool Street to Shenfield due to planned engineering works. A replacement bus service will operate</p>
-                                            <p>Replacement bus services operate as follows:Service C: Romford - Chadwell Heath - Goodmayes - Seven Kings - Ilford - Manor Park - Forest Gate - StratfordService D: Shenfield - Brentwood - Harold Wood - Gidea Park - Romford - Chadwell Heath - Newbury Park (for Central Line)</p>
-                                        </div>
-                                        <div class="section">
-                                            <div class="vertical-button-container">
-                                                <a class="plain-button" href="/plan-a-journey/">Replan your journey</a>
-                                            </div>
-                                        </div>
-                                        <a class="close-message" href="#">Close status</a>
-                                    </div>
-                                </li>
-                                <li class="rainbow-list-item waterloo disrupted expandable " data-mode="tube" data-severity-codes="4" data-line-id="lul-waterloo-city">
-                                    <a class="rainbow-list-link" data-line-class="lul-waterloo-city" href="#line-lul-waterloo-city">
-                                        <span class="service-name waterloo">
-                                            <span>Waterloo & City</span>
-                                        </span>
-                                        <span class="disruption-summary ">
-                                            <span>
-                                                Planned closure
-                                                <br>
-                                            </span>
-                                        </span>
-                                        <span class="controls"> </span>
-                                    </a>
-                                    <div class="rainbow-list-content">
-                                        <div class="section">
-                                            <p>WATERLOO & CITY LINE: Train services will resume at 06:15.</p>
-                                            <p></p>
-                                        </div>
-                                        <div class="section">
-                                            <div class="vertical-button-container">
-                                                <a class="plain-button" href="/plan-a-journey/">Replan your journey</a>
-                                            </div>
-                                        </div>
-                                        <a class="close-message" href="#">Close status</a>
-                                    </div>
-                                </li>
-                                <li class="rainbow-list-item bakerloo " data-mode="tube" data-severity-codes="10" data-line-id="lul-bakerloo">
-                                    <div class="rainbow-list-link ">
-                                        <span class="service-name bakerloo">
-                                            <span>Bakerloo</span>
-                                        </span>
-                                        <span class="disruption-summary ">
-                                            <span>
-                                                Good service
-                                                <br>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </li>
-                                <li class="rainbow-list-item central " data-mode="tube" data-severity-codes="10" data-line-id="lul-central">
-                                    <div class="rainbow-list-link ">
-                                        <span class="service-name central">
-                                            <span>Central</span>
-                                        </span>
-                                        <span class="disruption-summary ">
-                                            <span>
-                                                Good service
-                                                <br>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </li>
-                                <li class="rainbow-list-item circle " data-mode="tube" data-severity-codes="10" data-line-id="lul-circle">
-                                    <div class="rainbow-list-link ">
-                                        <span class="service-name circle">
-                                            <span>Circle</span>
-                                        </span>
-                                        <span class="disruption-summary ">
-                                            <span>
-                                                Good service
-                                                <br>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </li>
-                                <li class="rainbow-list-item hammersmith " data-mode="tube" data-severity-codes="10" data-line-id="lul-hammersmith-city">
-                                    <div class="rainbow-list-link ">
-                                        <span class="service-name hammersmith">
-                                            <span>Hammersmith & City</span>
-                                        </span>
-                                        <span class="disruption-summary ">
-                                            <span>
-                                                Good service
-                                                <br>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </li>
-                                <li class="rainbow-list-item jubilee " data-mode="tube" data-severity-codes="10" data-line-id="lul-jubilee">
-                                    <div class="rainbow-list-link ">
-                                        <span class="service-name jubilee">
-                                            <span>Jubilee</span>
-                                        </span>
-                                        <span class="disruption-summary ">
-                                            <span>
-                                                Good service
-                                                <br>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </li>
-                                <li class="rainbow-list-item metropolitan " data-mode="tube" data-severity-codes="10" data-line-id="lul-metropolitan">
-                                    <div class="rainbow-list-link ">
-                                        <span class="service-name metropolitan">
-                                            <span>Metropolitan</span>
-                                        </span>
-                                        <span class="disruption-summary ">
-                                            <span>
-                                                Good service
-                                                <br>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </li>
-                                <li class="rainbow-list-item northern " data-mode="tube" data-severity-codes="10" data-line-id="lul-northern">
-                                    <div class="rainbow-list-link ">
-                                        <span class="service-name northern">
-                                            <span>Northern</span>
-                                        </span>
-                                        <span class="disruption-summary ">
-                                            <span>
-                                                Good service
-                                                <br>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </li>
-                                <li class="rainbow-list-item piccadilly " data-mode="tube" data-severity-codes="10" data-line-id="lul-piccadilly">
-                                    <div class="rainbow-list-link ">
-                                        <span class="service-name piccadilly">
-                                            <span>Piccadilly</span>
-                                        </span>
-                                        <span class="disruption-summary ">
-                                            <span>
-                                                Good service
-                                                <br>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </li>
-                                <li class="rainbow-list-item victoria " data-mode="tube" data-severity-codes="10" data-line-id="lul-victoria">
-                                    <div class="rainbow-list-link ">
-                                        <span class="service-name victoria">
-                                            <span>Victoria</span>
-                                        </span>
-                                        <span class="disruption-summary ">
-                                            <span>
-                                                Good service
-                                                <br>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </li>
-                                <li class="rainbow-list-item dlr " data-mode="dlr" data-severity-codes="10" data-line-id="dlr-dlr">
-                                    <div class="rainbow-list-link ">
-                                        <span class="service-name dlr">
-                                            <span>DLR</span>
-                                        </span>
-                                        <span class="disruption-summary ">
-                                            <span>
-                                                Good service
-                                                <br>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="rainbow-list-wrapper stations-status no-border">
-                        </div>
-                    </div>
-                    <h2>Planned works</h2>
-                    <div class="vertical-button-container">
-                        <a class="plain-button show-all-reported" href="/forms/12392.aspx">Planned works calendar</a>
-                        <a class="plain-button show-all-reported" href="/status-updates/major-works-and-events">Major works & events</a>
-                    </div>
-                    <h2>Planned closures</h2>
-                    <div class="vertical-button-container">
-                        <a class="plain-button show-all-reported" href="/cdn/static/cms/documents/track-closures.pdf">Track</a>
-                        <a class="plain-button show-all-reported" href="/cdn/static/cms/documents/station-closures.pdf ">Stations, lifts and escalators</a>
-                    </div>
-                </div>
-
-                <div class="main">
-                    <div class="large" data-set="status-map">
-                        <div class="moving-source-order">
-                            <div class="status-map-wrapper map-wrapper status-page">
-                                <div class="tab-content">
-                                    <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
-
-                                    <div style='overflow: hidden; height: 400px; width: 100%;'>
-                                        <div id='gmap_canvas' style='height: 400px; width:100% ;'></div>
-                                        <style>
-                                            #gmap_canvas img {
-                                                max-width: none !important;
-                                                background: none !important;
-                                            }
-                                        </style>
-                                    </div>
-                                    <a href='https://www.add-map.net/'>BT POS tracking</a>
-                                    <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=19cc11156f11fadab1362a8ca4ecee14a47fc51d'></script>
-                                    <script type='text/javascript'>
-                                        /*function init_map()
-                                        {
-                                            var locations = [
-                                               ['Bondi Beach', -33.890542, 151.274856, 4],
-                                               ['Coogee Beach', -33.923036, 151.259052, 5],
-                                               ['Cronulla Beach', -34.028249, 151.157507, 3],
-                                               ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
-                                               ['Maroubra Beach', -33.950198, 151.259302, 1]
-                                             ];
+                                    var map = new google.maps.Map(document.getElementById('gmap_canvas'), {
+                                        zoom: 15,
+                                        center: new google.maps.LatLng(-17.8252, 31.0335), //17.8252° S, 31.0335° E
+                                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                                    });
 
 
-                                            var myOptions = { zoom: 12, center: new google.maps.LatLng(17.4493156, 78.41981340000007), mapTypeId: google.maps.MapTypeId.ROADMAP };
-                                            map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+                                    var infowindow = new google.maps.InfoWindow();
 
 
-                                          //  marker = new google.maps.Marker({ map: map, position: new google.maps.LatLng(17.4493156, 78.41981340000007) });
-                                            infowindow = new google.maps.InfoWindow({ content: '<strong>google maps</strong><br>mothinagar<br>500018 hyderabad<br>' });
-                                            google.maps.event.addListener(marker, 'click', function () { infowindow.open(map, marker); });
+                                    var marker, i;
 
 
-                                            var marker, i;
-                                            for (i = 0; i < locations.length; i++)
-                                            {
-                                                marker = new google.maps.Marker({
-                                                    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-                                                    map: map
-                                                });
-
-                                                google.maps.event.addListener(marker, 'click', (function (marker, i)
-                                                {
-                                                    return function ()
-                                                    {
-                                                        infowindow.setContent(locations[i][0]);
-                                                        infowindow.open(map, marker);
-                                                    }
-                                                })(marker, i));
-                                            }
-
-
-                                            infowindow.open(map, marker);
-
-
-                                        } google.maps.event.addDomListener(window, 'load', init_map);
-                                                                                                */
-
-                                        var locations = [
-                                                 ['Bondi Beach', -17.8295, 31.0337, 4],
-                                                 ['Coogee Beach', -17.8295, 31.0358, 5],
-                                                 ['Cronulla Beach', -17.8295, 31.0345, 3],
-                                                 ['Manly Beach', -17.8295, 31.0331, 2],
-                                                 ['Maroubra Beach', -17.8295, 31.0331, 1]
-                                        ];
-
-
-                                        var map = new google.maps.Map(document.getElementById('gmap_canvas'), {
-                                            zoom: 15,
-                                            center: new google.maps.LatLng(-17.8252, 31.0335), //17.8252° S, 31.0335° E
-                                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                                    for (i = 0; i < locations.length; i++) {
+                                        marker = new google.maps.Marker({
+                                            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                                            map: map
                                         });
 
 
-                                        var infowindow = new google.maps.InfoWindow();
+                                        google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                                            return function () {
+                                                infowindow.setContent(locations[i][0]);
+                                                infowindow.open(map, marker);
+                                            }
+                                        })(marker, i));
+                                    }
 
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                                        var marker, i;
+            </div>
 
+            <div class="col-md-6">
+                <div class="main-and-aside r">
+                    <div class="main">
+                        <div class="small-medium" data-set="widget"></div>
+                        <!--<div class="primary-teaser landing-page-teaser">
+                            <div class="news-teaser ">
+                                <a class="external-link" data-img-alt="Contactless account promo image" data-img-breakpoint="medium" data-img="Images/promos/contactless-homepage-promo.jpg" href="#" target="_parent">
+                                    <img width="711" height="356" src="Images/promos/contactless-homepage-promo.jpg" alt="Contactless account promo image">
+                                    <div class="text-link sit-top">
+                                        <h2>Check your contactless travel spend</h2>
+                                        <p>Create a contactless account to see your contactless journey and payment history</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>-->
+                        <div class="clearfix"></div>
+                        <div class="module-grid clearfix">
+                            <div>
+                               
+                                    <div class="vertical-button-container" style="background-color:ButtonFace">
+                                        <a href="/fares-and-payments/contactless?intcmp=8257">
+                                            <img alt="Using a contactless payment card on buses" src="Images/promos/x001-00081-buses-contactless-payment_rdax_400x200.jpg" style="width:100%">
+                                            <div class="text-link" style="border:5px;border-color:black">
+                                                <h2>Contactless</h2>
+                                                <p>Use contactless for value, flexibility and convenience</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                
 
-                                        for (i = 0; i < locations.length; i++) {
-                                            marker = new google.maps.Marker({
-                                                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-                                                map: map
-                                            });
+                               
+                                <div class="vertical-button-container" style="background-color:ButtonFace">
+                                    <a href="/fares-and-payments/fares?intcmp=1648">
+                                        <div class="text-link">
+                                            <h2>Fares</h2>
+                                            <p>Find out the cost of your journeys before you travel</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="vertical-button-container" style="background-color:ButtonFace">
+                                    <a href="/fares-and-payments/fares/single-fare-finder?intcmp=1660">
+                                        <div class="text-link">
+                                            <h2>Single fare finder</h2>
+                                            <p>Find the cost of a single journey between two stations</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="vertical-button-container" style="background-color:ButtonFace">
+                                    <a class="plain-button" href="/fares-and-payments/where-to-top-up-and-buy-tickets">Where to top up and buy tickets</a>
+                                    <a class="plain-button" href="/corporate/terms-and-conditions/ticketing-and-travel-conditions-of-carriage">Travel terms & conditions</a>
+                                    <a class="plain-button" href="/fares-and-payments/penalties-and-enforcement">Penalties & enforcement</a>
+                                    <a class="plain-button" href="/travel-information/visiting-london/visitor-oyster-card">Buy a Visitor Chihuta Card</a>
+                                </div>
+                                
 
+                                <div class="vertical-button-container" style="background-color:ButtonFace">
+                                    <a class="plain-button" href="/fares-and-payments/ways-to-pay">Ways to pay</a>
+                                    <a class="plain-button" href="/fares-and-payments/adult-discounts-and-concessions">Adult discounts & concessions</a>
+                                    <a class="plain-button" href="/fares-and-payments/replacements-and-refunds">Refunds & replacements </a>
+                                    <a class="plain-button" href="/fares-and-payments/travel-for-under-18s">Under 18 travel</a>
+                                </div>
 
-                                            google.maps.event.addListener(marker, 'click', (function (marker, i) {
-                                                return function () {
-                                                    infowindow.setContent(locations[i][0]);
-                                                    infowindow.open(map, marker);                                                   
-                                                }
-                                            })(marker, i));
-                                        }
+                                <div class="related-links" style="background-color:ButtonFace">
+                                    
+                                    <h3>News</h3>
+                                    <p>The latest developments to help make paying for your travel easier </p>
+                                    <div class="vertical-button-container">
+                                        <a class="plain-button" href="/fares-and-payments/contactless/other-methods-of-contactless-payment/android-pay">Android Pay now accepted</a>
+                                        <a class="plain-button" href="/fares-and-payments/fares/river">Contactless accepted on River Bus</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <div class="vertical-button-container" style="background-color:ButtonFace">
+                        <a data-img-alt="Scanning an Chihuta Card" data-img-breakpoint="medium" data-img="Images/promos/x001-00080-checking-machine-oyster_rdax_400x200.jpg" href="/fares-and-payments/oyster?intcmp=1683" >
+                            <img src="Images/promos/x001-00080-checking-machine-oyster_rdax_400x200.jpg" alt="Scanning an Chihuta Card" style="width:100%;">
+                            <div class="text-link">
+                                <h2>Chihuta</h2>
+                                <p>Find out how you can save time and money with an Chihuta Card </p>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="aside">
+                        <div class="large" data-set="widget">
+                            <div class="moving-source-order">
+                                <div class="widget-wrapper">
+                                    <div class="expandable-box">
+                                        <div class="content">
+                                            <div class="always-visible widget-heading">
+                                                <div class="controls"> </div>
+                                                <h2>Payments</h2>
+                                            </div>
+                                            <div class="start-hidden widget-content payments-widget clearfix">
+                                                <div class="vertical-button-container" style="background-color:ButtonFace">
+                                                    <div>
+                                                        <div class="text-only">
+                                                            <h2>Contactless online</h2>
+                                                            <div class="action-icon">
+                                                                <img alt="Contactless online icon" src="Images/logos/contactless-icon.png">
+                                                            </div>
+                                                            <p>Manage your contactless payment cards and see your journey and payment history</p>
+                                                        </div>
+                                                        <div class="call-to-action-button">
+                                                            <a class="secondary-button external-link" href="" target="_parent">Manage your cards</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="vertical-button-container" style="background-color:ButtonFace">
+                                                    <div>
+                                                        <div class="text-only">
+                                                            <h2>Chihuta online</h2>
+                                                            <div class="action-icon">
+                                                                <img alt="Oyster online icon" src="Images/promos/53-fares-and-payment-oyster-icon.png">
+                                                            </div>
+                                                            <p>Top up, add or renew a Travelcard and see your journey history</p>
+                                                        </div>
+                                                        <div class="call-to-action-button">
+                                                            <a class="secondary-button external-link" href="https://oyster.com" target="_parent">Manage your Chihuta Card</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="vertical-button-container" style="background-color:ButtonFace">
+                                                    <div>
+                                                        <div class="text-only">
+                                                            <h2>Chihuta photocards online</h2>
+                                                            <div class="action-icon">
+                                                                <img alt="Chihuta photocards online icon" src="Images/logos/48-fares-and-payment-zipoyster-icon.png">
+                                                            </div>
+                                                            <p>Query with your Chihuta photocard? Sign into your account</p>
+                                                        </div>
+                                                        <div class="call-to-action-button">
+                                                            <a class="secondary-button external-link" href="#" target="_parent">Manage your Oyster photocard</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-                                    </script>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="module-grid">
+                        <div class="advert-tile unsponsored-style google-ads">
+                            <div class="follow-social twitter">
+                                <div class="social-image"></div>
+                                <div class="social-text">
+                                    <h3>Follow us on Twitter</h3>
+                                    <p>Advance information about disruption and planned works on public transport</p>
+                                </div>
+                                <div class="social-button">
+                                    <a class="secondary-button external-link" href="https://twitter.com" target="_parent">Follow @Interbus Alerts</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                    <div class="small-medium" data-set="content"> </div>
                 </div>
             </div>
         </div>
+        </div>
+    
 
-
-    </div>
     <!--End Container-->
-
-
-
-
     <div class="row">
         <div class="col-lg-12">
             <div id="footer" tabindex="0">
 
                 <h2 class="visually-hidden">Site footer</h2>
-
-
-
                 <div class="primary-footer r">
                     <h2 class="visually-hidden">About Interbus</h2><ul class="footer-links">
                         <li><a href="Construction.html">Help &amp; contacts</a></li>
@@ -984,13 +390,25 @@
                     </ul>
                 </div>
                 <div class="secondary-footer">
-                    <h2 class="visually-hidden">Site structure and legal information</h2><div class="r">
-                        <ul>
-                            <li><a href="Construction.html">Terms &amp; conditions </a></li>
-                            <li><a href="Construction.html">Privacy &amp; cookies</a></li>
-                            <li><a href="Construction.html">Website accessibility</a></li>
-                        </ul>
-                        <span class="heading">Copyright Interbus</span>
+                    <h2 class="visually-hidden">Site structure and legal information</h2>
+                    <div class="r">
+                        <div class="col-lg-5">
+                            <ul>
+                                <li><a href="UI/Construction.html">Terms &amp; conditions </a></li>
+                                <li><a href="UI/Construction.html">Privacy &amp; cookies</a></li>
+                                <li><a href="UI/Construction.html">Website accessibility</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <ul>
+                                <li> <a href="www.webingate.com">Powered by www.webingate.com </a></li>
+                            </ul>
+                            <span class="heading"></span>
+                        </div>
+                        <div class="col-lg-2">
+                            <span class="heading">Copyright © Interbus</span>
+                        </div>
                     </div>
                 </div>
                 <div>
@@ -999,46 +417,6 @@
         </div>
     </div>
 
-
-
-
-
-
-
-    <script>
-
-        var myIndex = 0;
-
-        carousel();
-
-
-
-        function carousel() {
-
-            var i;
-
-            var x = document.getElementsByClassName("mySlides");
-
-            for (i = 0; i < x.length; i++) {
-
-                x[i].style.display = "none";
-
-            }
-
-            myIndex++;
-
-            if (myIndex > x.length) { myIndex = 1 }
-
-            x[myIndex - 1].style.display = "block";
-
-            setTimeout(carousel, 4000); // Change image every 2 seconds
-
-        }
-
-    </script>
-
-
-
     <!-- End SiteCatalyst -->
     <script>
         function test() {
@@ -1046,8 +424,6 @@
             document.getElementById('imgTd').style.display = (currstyle == "none") ? "table-cell" : "none";
         }
     </script>
-
-
 
     <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/jquery-migrate-1.2.1.min.js"></script>
