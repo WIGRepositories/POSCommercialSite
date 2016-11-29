@@ -1,7 +1,7 @@
-﻿
-<html lang="en" >
-
+﻿<html lang="en">
 <head>
+
+    <title>Interbus - Get Moving Anywhere, Comfortably</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -10,54 +10,41 @@
     <link rel="apple-touch-icon" href="images/icons/favicon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/icons/favicon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="images/icons/favicon-114x114.png">
-    <!--<link rel="stylesheet" href="css/w3.css">-->
-
-    <!-- links for table -->
     <!--Loading bootstrap css-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <!--<script src="js/Carousle/jquery.carouFredSel-6.0.4-packed.js" type="text/javascript"></script>-->
+    <script src="js/bootstrap.js"></script>
+
+
+    <link type="text/css" rel="stylesheet" href="vendors/jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
     <link type="text/css" rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
-    <link type="text/css" rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
     <!--LOADING STYLESHEET FOR PAGE--><!--Loading style vendors-->
-    <link type="text/css" rel="stylesheet" href="vendors/jquery-pace/pace.css">
+    <link type="text/css" rel="stylesheet" href="vendors/animate.css/animate.css">
+
     <link type="text/css" rel="stylesheet" href="vendors/iCheck/skins/all.css">
     <link type="text/css" rel="stylesheet" href="vendors/jquery-news-ticker/jquery.news-ticker.css">
     <!--Loading style-->
-    <link type="text/css" rel="stylesheet" href="css/themes/style2/pink-blue.css" id="theme-change" class="style-change color-change">
-    <link type="text/css" rel="stylesheet" href="css/style-responsive.css">
-    <!--<link rel="stylesheet" type="text/css" href="css/Main.css">-->
+    <link href="css/themes/style2/pink-blue.css" rel="stylesheet" />
+    <link type="text/css" rel="UI/stylesheet" href="css/style-responsive.css">
+    <!--<link href="css/banner.css" rel="stylesheet" type="text/css">-->
 
-
-    <!-- Optional theme -->
-    <script src="js/jquery-1.11.0.min.js"></script>
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-    <script src="js/bootstrap.js"></script>
-    <title>Interbus - Get Moving Anywhere, Comfortably</title>
-
-    <!--<link href="css/StyleSheet2.css" media="screen,print" rel="stylesheet" />
-    <link href="css/StyleSheet1.css" media="screen,print" rel="stylesheet" />
-    <link href="css/StyleSheet4.css" media="screen,&#32;print" rel="stylesheet" />
-    <link href="css/StyleSheet3.css" media="screen&#32;and&#32;(min-width:&#32;580px),print" rel="stylesheet" />
-    <link href="css/StyleSheet5.css" media="screen&#32;and&#32;(min-width:&#32;900px)" rel="stylesheet" />
-    
-    <link href="css/StyleSheet6.css" media="screen" rel="stylesheet" />-->
 
 </head>
-<body ng-app="myApp" ng-controller="myCtrl" ng-init="GetAvailableServices();" ng-model="Booking" style="background-color: white" >
-    
-    <div id="container" style="margin-top:0px" >
 
-        <!--start of white bar above menu-->
-        <!--End of white bar above menu-->
-        <!--Start Menu-->
+<body ng-app="myApp" ng-controller="myCtrl" ng-init="GetAvailableServices();" ng-model="Booking" style="background-color: white">
+
+    <div id="container">
         <div class="mainnav" id="mainnav" tabindex="0">
 
-            <div class="top-row clearfix" style ="position:fixed;width:100%; z-index:2">
+            <div class="top-row clearfix" style="position: fixed; width: 100%; padding-top: 0px; z-index: 1">
 
                 <div class="r">
                     <div class="rr">
-                        <a style="margin-top: 0px; padding-top: 0px; margin-right: 50px; float:left" href="../index.html"><img  style="height: 70px" src="Images/logos/dashboard.png" alt="Alternate Text" /> </a>
+                        <a style="margin-top: 10px; padding-top: 0px; margin-right: 30px; float:left" href="../index.html"><img style="height:26px" src="Images/logos/Idashboard.png" alt="Alternate Text" /></a>
                         <ul class="collapsible-menu clearfix" style="margin-left:0px;">
 
-                            <li style="margin-left:90px">
+                            <li style="margin-left:50px">
 
                                 <a style="text-decoration:none" href="../index.html">Home</a>
 
@@ -67,7 +54,7 @@
                                 <a style="text-decoration:none" href="Fares_and_payments.html">Fares / Payments</a>
 
                                 <ul>
-                                     <li><a href="UI/Schedules.html">Schedules</a></li>
+                                    <li><a href="Schedules.html">Schedules</a></li>
                                     <li><a href="CheckFare.html">CheckFare</a></li>
                                     <li><a href="Cancellation.html">Cancellation</a></li>
 
@@ -90,15 +77,15 @@
 
                             <li>
 
-                                <a style="text-decoration:none" href="#">About Us</a>
+                                <a style="text-decoration:none" href="AboutUs.html">About Us</a>
                                 <ul>
-                                    <li><a href="#">ContactUs</a></li>
+                                    <li><a href="ContactUs.html">ContactUs</a></li>
 
                                 </ul>
 
                             </li>
 
-                            <li style="margin-left:150px">
+                            <li style="margin-left:220px">
 
                                 <div style="float:right; padding-top:11px">
                                     <input type="text" placeholder="Search" id="q" name="q" style="border-radius:30px; width:120px; height:35px" />
@@ -114,12 +101,13 @@
                 </div>
 
             </div>
-            <div class="clearfix"></div>
-            </div>
+
+        </div>
+        <div class="clearfix"></div>
 
         <!--End Menu-->
     </div>
-    <div class="row" style="margin-top:60px">
+    <div class="row" style="margin-top:53px;padding-right:0px">
 
         <div ng-show="services.length != 0" style=" width: 100%; z-index: 1; background-color: white;">
             <div style="position: fixed; width: 100%; z-index: 1; background-color: #d84e55; margin-left: 10px">
@@ -131,43 +119,48 @@
                     </tr>
 
 
-                   
+
                 </table>-->
                 <div class="row" style="height:70px" ng-if="triptype == 'oneway'">
-                    <div class="col-md-6" style="padding:15px">
-                        <div class="col-md-4">
+                    <div class="col-md-8" style="padding:15px">
+                        <div class="col-md-3">
 
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                             <div style="text-align:center; height:40px;background-color:firebrick;padding:10px">
                                 <font style="color:white;">Onward Journey</font>
-                                
-</div>
-                            <br /><font style="color:white;" size="4">  <div class="input-group datetimepicker-disable-date date"><input style="z-index:199" type="text" class="form-control" /><span class="input-group-addon"><i class="fa fa-clock-o"></i></span></div></font>
+                            </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <font style="color:white;" size="4">  {{S.Name}} - {{D.Name}} </font>
                         </div>
-                    </div>                    
-                    <div class="col-md-6" style="padding:15px;text-align:center">
-                        <div class="col-md-3"></div>
-                            <div class="col-md-2">
-                                <div style="text-align:center; height:40px;background-color:lightcoral;padding:10px">
-                                    <font style="color:white;">+Return Journey</font>
-                                </div>
-                            </div>
                         <div class="col-md-2">
-                            <div style="text-align:center; height:40px;background-color:lightcoral;padding:10px">
-                                <font style="color:white;">Modify</font>
+                            <font style="color:white;" size="4">  </font>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3" style="padding:15px;text-align:center">
+
+                        <div class="col-md-6">                           
+                            <div style="text-align:center; height:40px;background-color:lightcoral;padding:10px" data-target="#AddReturnDetails" data-toggle="modal">
+                                <font style="color:white;">+Return Journey</font>
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <div style="text-align:center; height:40px;background-color:lightcoral;padding:10px" data-target="#ModifyJourneydetails" data-toggle="modal" ng-if="triptype == 'oneway'">
+                                <font style="color:white;">Modify</font>
+
+                                <!--<a href="#" data-target="#Modal-header-primary" data-toggle="modal" class="btn btn-info btn-sm" ng-if="triptype == 'oneway'">Modify</a>-->
+                            </div>
                         </div>
-                    
+                    </div>
+
 
                 </div>
                 <div class="row" style="height:70px" ng-if="triptype == 'twoway'">
                     <div class="col-md-6" style="padding:15px">
-                        <div class="col-md-4">
+                        <div class="col-md-3">
 
                         </div>
                         <div class="col-md-2">
@@ -180,14 +173,17 @@
                         <div class="col-md-6">
                             <font style="color:white;" size="4">  {{S.Name}} - {{D.Name}} </font>
                         </div>
-                    </div> 
+                    </div>
                     <div class="col-md-6" style="padding:15px">
-                        
-                        <div class="col-md-2">
-                            <div style="text-align:center; height:40px;background-color:firebrick;padding:10px">
-                                <font style="color:white;">Return Journey</font>
 
-                            </div>
+                        <div class="col-md-2">
+                            <button ng-click="testAlert();">
+                                <div style="text-align:center; height:40px;background-color:firebrick;padding:10px">
+                                    <font style="color:white;">Return Journey</font>
+
+
+                                </div>
+                            </button>
                             <br /><font style="color:white;" size="4">  <div class="input-group datetimepicker-disable-date date"><input style="z-index:199" type="text" class="form-control" /><span class="input-group-addon"><i class="fa fa-clock-o"></i></span></div> </font>
                         </div>
                         <div class="col-md-6">
@@ -196,19 +192,22 @@
                         <div class="col-md-4">
                             <div class="col-md-6">
                                 <div style="text-align:center; height:40px;background-color:lightcoral;padding:10px">
-                                    <font style="color:white;">Modify</font>
+                                    <!--<font style="color:white;">Modify</font>-->
+
+                                    <a href="#" data-target="#ModifyJourneydetails" data-toggle="modal" class="btn btn-info btn-sm" ng-if="triptype == 'oneway'">Modify</a>
+
                                 </div>
                             </div>
                         </div>
-                    </div> 
+                    </div>
 
                 </div>
-               
+
 
             </div>
 
-            <div style="width: 100%; z-index: 1; background-color: white;padding-top:130px">
-               
+            <div style="width: 100%; z-index: 1; background-color: white;padding-top:100px">
+
                 <div class="col-md-12" ng-repeat="b in services">
                     <table class="col-md-12" style="border:solid 1px;padding-top:30px">
                         <tr>
@@ -238,7 +237,7 @@
                                     <img src="Images/busimages/seat.jpg" />
                                     <strong>  {{b.AvailableSeats}} Seats </strong><br />
                                     <strong>  {{b.WindowSeats}} Window Seats</strong>
-</div>
+                                </div>
                                 <div class="col-md-2">
                                     <div class="col-md-3 col-sm-4">
                                         <strong>Rs.{{b.Price}}</strong>
@@ -253,94 +252,95 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="text-align:center">
-                            </td>
+                            <td style="text-align:center"></td>
                         </tr>
                     </table>
                     <div class="col-md-12" id="t_{{$index}}" style="display:none;text-align:center;padding:20px">
                         <div class="col-md-4"></div>
-                        <div class="col-md-4"><div style="width: 100%; z-index: 1; margin-left: 5px">
-    <div class="col-md-6" style="background-color: aliceblue;">
-        <table>
-            <tr>
-                <td colspan="10" style="text-align:right"><img src="Images/busimages/driver.png" /></td>
-            </tr>
-            <tr>
-                <td colspan="10" style="text-align:right;height:5px"></td>
-            </tr>
-            <tr ng-repeat="s in seatstest track by $index">
-
-                <td ng-repeat="c in s track by $index" style="padding: 2px">
-                    <!--<div ng-hide="c.status == 0" ng-style="{'background-color':c.status == 2 ?  'grey': 'green'}" ng-click="AddSeats(c);"></div>-->
-                    <div data-toggle="tooltip" data-placement="left" title="" data-original-title="Tooltip on left"> <img src="Images/busimages/Aseat.png" ng-hide="c.status == 0" ng-if="c.status == 1" ng-click="AddSeats(c);" /></div>
-
-                    <img src="Images/busimages/BSeat.png" ng-hide="c.status == 0" ng-if="c.status == 2" />
-                    <img src="Images/busimages/SSeat.png" ng-hide="c.status == 0" ng-if="c.status == 3" ng-click="AddSeats(c);" data-hover="tooltip" />
-                </td>
-
-            </tr>          
-        </table>
-    </div>
-                                                  <div class="col-md-6">
-                                                      <table>
-                                                          <tr>
-                                                              <td>Legend:</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td><img src="Images/busimages/Aseat.png" style="padding: 5px"> Available seat</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td><img src="Images/busimages/BSeat.png" style="padding: 5px"> Already booked seat</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td><img src="Images/busimages/SSeat.png" style="padding: 5px"> Selected seat</td>
-                                                          </tr>
-                                                      </table>
-                                                  </div>
-</div>
-
-
-</div>
                         <div class="col-md-4">
-   <table>
-    <tr>
-        <td id="imgTd" colspan="6">
-            <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
-                <tr>
-                    <td>
-                        <table>
-                            <tr><td><label>Seat(s):<strong>{{selectedSeatsList}}</strong></label></td></tr>
-                            <tr><td><label>Total Seat(s):{{count}}</label></td></tr>
-                            <tr><td><label>Base Fare:{{b.Price}}</label></td></tr>
-                            <tr><td><label><strong>Total Fare:{{count*b.Price}}</strong></label></td></tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="actions">
-                            <button type="button" class="btn btn-primary" ng-click="savedata();" ng-if="triptype == 'twoway'">Proceed</button>
-                            <button type="button" data-target="#Modal-header-primary" data-toggle="modal" class="btn btn-info btn-sm" ng-if="triptype == 'oneway'">Checkout</button>                            
-                        </div>
-                    </td>
-                </tr>
-            </table>
+                            <div style="width: 100%; z-index: 1; margin-left: 5px">
+                                <div class="col-md-6" style="background-color: aliceblue;">
+                                    <table>
+                                        <tr>
+                                            <td colspan="10" style="text-align:right"><img src="Images/busimages/driver.png" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="10" style="text-align:right;height:5px"></td>
+                                        </tr>
+                                        <tr ng-repeat="s in seatstest track by $index">
 
-        </td>
-    </tr>
-</table></div>
-                       
+                                            <td ng-repeat="c in s track by $index" style="padding: 2px">
+                                                <!--<div ng-hide="c.status == 0" ng-style="{'background-color':c.status == 2 ?  'grey': 'green'}" ng-click="AddSeats(c);"></div>-->
+                                                <div data-toggle="tooltip" data-placement="left" title="" data-original-title="Tooltip on left"> <img src="Images/busimages/Aseat.png" ng-hide="c.status == 0" ng-if="c.status == 1" ng-click="AddSeats(c);" /></div>
+
+                                                <img src="Images/busimages/BSeat.png" ng-hide="c.status == 0" ng-if="c.status == 2" />
+                                                <img src="Images/busimages/SSeat.png" ng-hide="c.status == 0" ng-if="c.status == 3" ng-click="AddSeats(c);" data-hover="tooltip" />
+                                            </td>
+
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="col-md-6">
+                                    <table>
+                                        <tr>
+                                            <td>Legend:</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="Images/busimages/Aseat.png" style="padding: 5px"> Available seat</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="Images/busimages/BSeat.png" style="padding: 5px"> Already booked seat</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="Images/busimages/SSeat.png" style="padding: 5px"> Selected seat</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-4">
+                            <table>
+                                <tr>
+                                    <td id="imgTd" colspan="6">
+                                        <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
+                                            <tr>
+                                                <td>
+                                                    <table>
+                                                        <tr><td><label>Seat(s):<strong>{{selectedSeatsList}}</strong></label></td></tr>
+                                                        <tr><td><label>Total Seat(s):{{count}}</label></td></tr>
+                                                        <tr><td><label>Base Fare:{{b.Price}}</label></td></tr>
+                                                        <tr><td><label><strong>Total Fare:{{count*b.Price}}</strong></label></td></tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="actions">
+                                                        <button type="button" class="btn btn-primary" ng-click="savedata();" ng-if="triptype == 'twoway'">Proceed</button>
+                                                        <button type="button" data-target="#Modal-header-primary" data-toggle="modal" class="btn btn-info btn-sm" ng-if="triptype == 'oneway'">Checkout</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
                     </div>
                 </div>
-                
+
             </div>
         </div>
 
 
     </div>
-    <div class="row" style="margin-top:80px;min-height:500px;">
+    <div class="row" style="margin-top:80px;min-height:500px;" ng-show="services.length == 0">
         <div class="row">
-            <div class="container boxed-layout" ng-show="services.length == 0">
+            <div class="container boxed-layout">
 
 
 
@@ -384,24 +384,26 @@
 
                                                     <b><font color="black"> Leaving:</font></b>
 
-                                                    <input id="currTime" value="Now" type="radio" name="timing" ng-model="timing" checked /> <font color="black">
+                                                    <input id="currTime" value="Now" type="radio" name="timing" ng-model="timing" checked ng-change="ChangeTravelType('0');" /> <font color="black">
                                                         Now
                                                     </font>
-                                                    <input id="dtTime" value="ChangeTime" type="radio" name="timing" ng-model="timing" /> <font color="black"> Change Time</font>
+                                                    <input id="dtTime" value="Later" type="radio" name="timing" ng-model="timing" ng-change="ChangeTravelType('1');" /> <font color="black"> Change Time</font>
 
                                                 </p>
 
-                                                <div>
+                                                <div ng-hide="timing == 'Now'" style="display:none">
 
                                                     <div class="input-group datetimepicker-disable-date date"><input style="z-index:199" type="text" class="form-control" /><span class="input-group-addon"><i class="fa fa-clock-o"></i></span></div>
                                                     <!--<input type="text" name="timepicker" class="timepicker" />-->
                                                 </div>
                                                 <br />
                                                 <div>
-                                                    <input value="oneway" type="radio" name="triptype1" ng-model="triptype" checked /> <font color="black">
+                                                    <b><font color="black">Travel Type:</font></b>
+                                                    <input value="oneway" type="radio" name="tt" ng-change="RadioChange('oneway')" ng-model="triptype" checked /> <font color="black">
                                                         One way
                                                     </font>
-                                                    <input value="twoway" type="radio" name="triptype1" ng-model="triptype" /> <font color="black"> Two way</font>
+                                                    <input value="twoway" type="radio" name="tt" ng-change="RadioChange('twoway')" ng-model="triptype" /><font color="black"> Two way</font>
+
                                                 </div>
                                             </div>
 
@@ -415,7 +417,7 @@
 
                                         <div class="row">
                                             <div class="form-group pull-left col-lg-12">
-                                                <input type="button" ng-click="GetServices();" class="btn btn-blue panel-heading" value="Get Services" style="width:100%" />
+                                                <input type="button" ng-click="GetServices();" class="btn btn-blue panel-heading" value="Plan my journey" style="width:100%" />
                                             </div>
                                         </div>
 
@@ -428,12 +430,125 @@
                 </div>
 
 
+            </div>
+        </div>
+
+
+    </div>
+
+    
+
+
+    <div id="AddReturnDetails" tabindex="-1" role="dialog" aria-labelledby="modal-header-primary-label" aria-hidden="true" class="modal fade">
+        <div class="modal-dialog" ng-model="currGroup">
+            <div class="modal-content">
+                <div class="modal-header modal-header-primary">
+                    <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
+                    <h4 id="modal-header-primary-label" class="modal-title">Select Return date & Time</h4>
+                </div>
+                <div class="modal-body">
+                   
+                    <div class="row">
+
+                        <label for="Fax" class="col-md-4 control-label" style="color: red;float: left">Source:<span class='require'></span></label>
+                        <div class="col-md-8"><input id="EmailId" type="text" ng-model="currGroup.EmailId" class="form-control" disabled /><span class="help-block"></span></div>
+
+                    </div>
+                    <div class="row">
+
+                        <label for="ContactNo1" class="col-md-4 control-label" style="color: red;float: left">Destination:<span class='require'></span></label>
+                        <div class="col-md-8"><input id="ContactNo1" type="text" ng-model="currGroup.ContactNo1" class="form-control" maxlength="10" disabled/><span class="help-block"></span></div>
+
+                    </div>
+                    <div class="row">
+
+                        <label for="ContactNo2" class="col-md-4 control-label" style="float:left">Travel date & Time:<span class='require'></span></label>
+                        <div class="col-md-8">
+                            <div class="input-group datetimepicker-disable-date date"><input style="z-index:199" type="text" class="form-control" /><span class="input-group-addon"><i class="fa fa-clock-o"></i></span></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-actions">
+                    <div style="text-align:center">
+                        <button type="button" class="btn btn-green" ng-click="AddReturnDatenTime();">Add return details</button>
+                        <button type="button" data-dismiss="modal" class="btn btn-primary">Close</button>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            
+
+
     </div>
-    
+
+
+    <div id="ModifyJourneydetails" tabindex="-1" role="dialog" aria-labelledby="modal-header-primary-label" aria-hidden="true" class="modal fade">
+        <div class="modal-dialog" ng-model="currGroup">
+            <div class="modal-content">
+                <div class="modal-header modal-header-primary">
+                    <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
+                    <h4 id="modal-header-primary-label" class="modal-title">Modify journey date & Time</h4>
+                </div>
+                <div class="modal-body">
+                    <h3>Onward journey</h3>
+                    <div class="row">
+
+                        <label for="Fax" class="col-md-4 control-label" style="color: red;float: left">Source:<span class='require'></span></label>
+                        <div class="col-md-8"><input id="EmailId" type="text" ng-model="currGroup.EmailId" class="form-control" disabled /><span class="help-block"></span></div>
+
+                    </div>
+                    <div class="row">
+
+                        <label for="ContactNo1" class="col-md-4 control-label" style="color: red;float: left">Destination:<span class='require'></span></label>
+                        <div class="col-md-8"><input id="ContactNo1" type="text" ng-model="currGroup.ContactNo1" class="form-control" maxlength="10" disabled /><span class="help-block"></span></div>
+
+                    </div>
+                    <div class="row">
+
+                        <label for="ContactNo2" class="col-md-4 control-label" style="float:left">Travel date & Time:<span class='require'></span></label>
+                        <div class="col-md-8">
+                            <div class="input-group datetimepicker-disable-date date"><input style="z-index:199" type="text" class="form-control" /><span class="input-group-addon"><i class="fa fa-clock-o"></i></span></div>
+                        </div>
+                    </div>
+                    <h3>Return journey</h3>
+                    <div class="row">
+
+                        <label for="Fax" class="col-md-4 control-label" style="color: red;float: left">Source:<span class='require'></span></label>
+                        <div class="col-md-8"><input id="EmailId" type="text" ng-model="currGroup.EmailId" class="form-control" disabled /><span class="help-block"></span></div>
+
+                    </div>
+                    <div class="row">
+
+                        <label for="ContactNo1" class="col-md-4 control-label" style="color: red;float: left">Destination:<span class='require'></span></label>
+                        <div class="col-md-8"><input id="ContactNo1" type="text" ng-model="currGroup.ContactNo1" class="form-control" maxlength="10" disabled /><span class="help-block"></span></div>
+
+                    </div>
+                    <div class="row">
+
+                        <label for="ContactNo2" class="col-md-4 control-label" style="float:left">Travel date & Time:<span class='require'></span></label>
+                        <div class="col-md-8">
+                            <div class="input-group datetimepicker-disable-date date"><input style="z-index:199" type="text" class="form-control" /><span class="input-group-addon"><i class="fa fa-clock-o"></i></span></div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="form-actions">
+                    <div style="text-align:center">
+                        <button type="button" class="btn btn-green" ng-click="GetServices();">Get Available Services</button>
+                        <button type="button" data-dismiss="modal" class="btn btn-primary">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
     <div id="Modal-header-primary" tabindex="-1" role="dialog" aria-labelledby="modal-header-primary-label" aria-hidden="true" class="modal fade">
         <div class="modal-dialog modal-lg" ng-model="currGroup">
             <div class="modal-content">
@@ -540,7 +655,7 @@
 
 
     </div>
-    
+
     <div class="row">
         <div class="col-lg-12">
             <div id="footer" tabindex="0">
@@ -605,15 +720,15 @@
             </div>
         </div>
     </div>
-    
 
-        
+
+
     <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/jquery-ui.js"></script>
     <!--loading bootstrap js-->
     <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
-    <script src="vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>   
+    <script src="vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <script src="vendors/metisMenu/jquery.metisMenu.js"></script>
@@ -621,18 +736,14 @@
     <script src="vendors/jquery-cookie/jquery.cookie.js"></script>
     <script src="vendors/iCheck/icheck.min.js"></script>
     <script src="vendors/iCheck/custom.min.js"></script>
-    
+
     <script src="js/jquery.menu.js"></script>
     <script src="vendors/jquery-pace/pace.min.js"></script>
     <script src="vendors/holder/holder.js"></script>
     <script src="vendors/responsive-tabs/responsive-tabs.js"></script>
     <script src="js/moment.js"></script>
     <script src="vendors/bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js"></script>
-    <script>
-        $('.datetimepicker-disable-date').datetimepicker({
-            pickDate: false
-        });
-    </script>
+    
     <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
     <script src="js/transition.js"></script>
     <script src="js/tooltip.js"></script>
@@ -641,12 +752,16 @@
     <script src="js/angular.js"></script>
     <script src="js/ngStorage.js"></script>
     <script src="js/Booking.js"></script>
-   
+
 
     <script>
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
         })
+
+        $('.datetimepicker-disable-date').datetimepicker({
+            pickDate: true
+        });
     </script>
 </body>
 

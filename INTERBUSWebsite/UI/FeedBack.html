@@ -137,7 +137,7 @@
                             </li>
 
 
-                            <li class="active">
+                            <li>
                                 <a href="UserProfile.html">
                                     <i class="fa fa-tachometer fa-fw">
                                         <div class="icon-bg bg-orange"></div>
@@ -172,7 +172,7 @@
                                     </i><span class="menu-title">Print Ticket</span>
                                 </a>
                             </li>
-                            <li>
+                            <li class="active">
                                 <a href="Feedback.html">
                                     <i class="fa fa-sitemap fa-fw">
                                         <div class="icon-bg bg-dark"></div>
@@ -185,11 +185,41 @@
                 </nav>                <!--END CHAT FORM--><!--BEGIN PAGE WRAPPER-->
                 <div id="page-wrapper">
                     <!--BEGIN TITLE & BREADCRUMB PAGE-->
+                    <div class="col-lg-4" style="padding:0px">
+                        <div class="panel panel-dark" style="background-color: AliceBlue; ">
+                            <div class="panel-heading" style="background-color:black;text-align:center;text-decoration-color:white">Contact us</div>
+                            <div class="panel-body pan">
+                                <form action="#">
+                                    <div class="form-body pal">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="inputName" class="control-label">Name</label>
+                                                    <div class="input-icon right"><i class="fa fa-user"></i><input id="inputName" type="text" placeholder="" class="form-control" /></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="inputEmail" class="control-label">E-mail</label>
+                                                    <div class="input-icon right"><i class="fa fa-envelope"></i><input id="inputEmail" type="text" placeholder="" class="form-control" /></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputSubject" class="control-label">Subject</label>
+                                            <div class="input-icon right"><i class="fa fa-tag"></i><input id="inputSubject" type="text" placeholder="" class="form-control" /></div>
+                                        </div>
+                                        <div class="form-group"><label for="inputMessage" class="control-label">Message</label><textarea rows="5" class="form-control"></textarea></div>
+                                    </div>
+                                    <div class="form-actions text-right pal">
+                                        <button ng-click="ValidateLicenseCode(txt);" class="btn btn-primary">Send message</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
 
-                    <div id="footer">
-                        <div class="copyright">2016 � Interbus - Bus Ticketing dashboard portal</div>
                     </div>
-                    <!--END FOOTER-->
+                  
                 </div>
                 <!--END PAGE WRAPPER-->
             </div>

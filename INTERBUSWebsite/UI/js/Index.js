@@ -1,7 +1,11 @@
 
-var app = angular.module('myApp', ['ngStorage'])
+var app = angular.module('myApp', ['ngStorage','ui.bootstrap'])
 
-var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
+var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uibModal) {
+
+    if ($localStorage.uname) {
+        $scope.username = $localStorage.uname;
+    }
 
     $scope.carouselImages = [{ "ID": 1, "Name": "TRAVEL WITH INTERBUS", "Caption": "Every Journey Matters....", "Path": "UI/Images/promos/11.jpg" }
         , { "ID": 2, "Name": "Customer satisfaction", "Caption": "The comfort and convienience of travelling with INTERBUS", "Path": "/UI/Images/promos/12.png" }
@@ -39,13 +43,15 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
     $scope.GetServices = function () {
         if ($scope.S == null)
         {
-            alert('Please select source.');
+            // alert('Please select source.');
+
+            $scope.showDialog('Please select source.');
             return;
         }
 
         if ($scope.D == null)
         {
-            alert('Please select destination.');
+            $scope.showDialog('Please select destination.');
             return;
     }
 
@@ -64,12 +70,12 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
     var p = $scope.Password
 
     if (u == null) {
-        alert('Please enter username');
+        $scope.showDialog('Please enter username');
         return;
     }
 
     if (p == null) {
-        alert('Please enter password');
+        $scope.showDialog('Please enter password');
         return;
 
     }
@@ -88,10 +94,29 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         }
         else {
             //if the user has role, then get the details and save in session
-            $localStorage.uname = res.data[0].name;
+            $localStorage.uname = res.data[0].FirstName;
             $scope.username = $localStorage.uname;
             $localStorage.userdetails = res.data;
-          //  window.location.href = "UI/BookedTicketHistory.html";
+            //  window.location.href = "UI/BookedTicketHistory.html";
+            //$uibModal.close();
+
+            switch ($scope.FleetOwnerRequest1.Op) {
+                case "1":
+                    window.location.href = "UI/BookedTicketHistory.html";
+                    break;                    
+                case "2":
+                    window.location.href = "UI/CancelTicket.html";
+                    break;
+                case "3":
+                    window.location.href = "UI/Feedback.html";
+                    break;
+                case "4":
+                    window.location.href = "UI/UserProfile.html";
+                    break;
+                default:
+                    break;
+            }
+
         }
     });
 }
@@ -106,8 +131,40 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         $localStorage.licenseId = t;
         window.location.href = "UI/LicensePage.html";
     }
+
+    $scope.RecentJourneyClick = function () {
+        
+        $scope.FleetOwnerRequest1.Op = 1;
+    }
+
+
+$scope.showDialog = function (message) {
+
+    var modalInstance = $uibModal.open({
+        animation: $scope.animationsEnabled,
+        templateUrl: 'statusPopup.html',
+        controller: 'ModalInstanceCtrl',
+        resolve: {
+            mssg: function () {
+                return message;
+            }
+        }
+    });
+}
+   
 });
 
+app.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, mssg) {
+
+    $scope.mssg = mssg;
+    $scope.ok = function () {
+        $uibModalInstance.close('test');
+    };
+
+    $scope.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+    };
+});
 
 function fun() {
     if (document.getElementById("ddlBusType").value == 2) {//if Booking Type

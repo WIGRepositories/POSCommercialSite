@@ -5,6 +5,17 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
     $scope.seatstest = [];
     $scope.select_all = false;
 
+    $scope.triptype = "oneway";
+
+    $scope.timing = "Now";
+
+    $scope.ChangeTravelType = function (travelTime) {
+        $scope.timing = (travelTime == 0) ? "Now" : "Later";
+    }
+
+    $scope.RadioChange = function (s) {
+        $scope.triptype = s;
+    };
     //function to create n-dimensional array
 
     var makeArray = function createArray(dimensions, value) {
@@ -226,7 +237,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
     $scope.ProceedToPayment = function (currGroup) {
         var test = $scope.selectedSeats.pssngr[0];
         alert();
-        window.location.href = "TicketCartdetails.html";
+        window.location.href = "TicketCheckOut.html";
     }
 
     $scope.savedata = function () {      
@@ -234,7 +245,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
         //if it is 2 way, then display the return option
         //prepare the data for return
         //proceed to checkout
-        alert();
+       // alert();
 
         if ($localStorage.triptype == 1) {
             $scope.showDiv = true; 
@@ -294,6 +305,10 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
 
         } else { window.location.href = "TicketCartdetails.html"; 
         }
+    }
+
+    $scope.testAlert = function () {
+        alert('tet');
     }
     
     });

@@ -125,11 +125,12 @@
 
 
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="page-content">
+                <div class="page-content">
+                    <div class="col-lg-4">
+
                         <div class="row">
 
-                            <div class="col-lg-4">
+                            <div class="col-lg-12">
                                 <div class="panel panel-dark" style="background-color: AliceBlue; ">
                                     <div class="panel-heading" style="background-color:black;text-align:center;text-decoration-color:white">Plan a journey</div>
                                     <div class="panel-body form-actions text-right pal" style="background-color: AliceBlue; ">
@@ -161,7 +162,7 @@
                                                     <input id="currTime" value="Now" type="radio" name="timing" ng-model="timing" checked ng-change="ChangeTravelType('0');" /> <font color="black">
                                                         Now
                                                     </font>
-                                                    <input id="dtTime" value="Later" type="radio" name="timing" ng-model="timing" ng-change="ChangeTravelType('1');"/> <font color="black"> Change Time</font>
+                                                    <input id="dtTime" value="Later" type="radio" name="timing" ng-model="timing" ng-change="ChangeTravelType('1');" /> <font color="black"> Change Time</font>
 
                                                 </p>
 
@@ -173,11 +174,11 @@
                                                 <br />
                                                 <div>
                                                     <b><font color="black">Travel Type:</font></b>
-                                                    <input value="oneway" type="radio" name="tt" ng-change="RadioChange('oneway')"  ng-model="triptype" checked /> <font color="black">
+                                                    <input value="oneway" type="radio" name="tt" ng-change="RadioChange('oneway')" ng-model="triptype" checked /> <font color="black">
                                                         One way
                                                     </font>
                                                     <input value="twoway" type="radio" name="tt" ng-change="RadioChange('twoway')" ng-model="triptype" /><font color="black"> Two way</font>
-                                                    
+
                                                 </div>
                                             </div>
 
@@ -196,154 +197,16 @@
                                         </div>
                                         <div class="row">
                                             <div class="form-group pull-left col-lg-12">
-                                                <input type="button" data-target="#Modal-header-primary" data-toggle="modal" class="btn btn-blue panel-heading" value="Recent Journeys" style="width:100%" />
+                                                <input type="button" data-target="#Modal-header-primary" data-toggle="modal" class="btn btn-blue panel-heading" value="Recent Journeys" style="width:100%" ng-click="RecentJourneyClick();" />
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-
-
-
-
-                            <div class="col-lg-8">
-                                <div class="row">
-                                    <div class="col-lg-6">
-
-                                        <div class="panel panel-dark" style="background-color: AliceBlue; ">
-
-                                            <a href="">
-
-                                                <img src="UI/Images/Advt/harare 1.jpg" style="width:100%" />
-                                                <div class="text-link"><h2>Harare </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
-
-                                            </a>
-                                           
-                                        </div>
-
-
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="row" ng-hide="username == null">
-                                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
-                                                <div class="panel-heading" style="background-color: black; text-align: center; text-decoration-color: white; padding: 0px">
-
-                                                    <ul class="nav" style="padding:0px">
-                                                        <li class="dropdown topbar-user col-lg-8" style="background-color:black;padding-left:0px">
-                                                            <a data-hover="dropdown" href="#" class="dropdown-toggle  pull-left" style="background-color: black;">&nbsp;<span class=" hidden-xs" style="text-decoration:none; color:#CCCCCC;"><img src="UI/Images/login.png" />Hello, {{username}}!</span>&nbsp;<span class="caret"></span></a>
-                                                            <ul class="dropdown-menu dropdown-user pull-right">
-                                                                <li><a href="UI/UserProfile.html" style="background-color:black"><i class="fa fa-user"></i>My Account</a></li>
-                                                                <li><a href="page-calendar.html" style="background-color:black"><i class="fa fa-calendar"></i>Recent Journey</a></li>
-                                                                <li><a href="email-inbox.html" style="background-color:black"><i class="fa fa-envelope"></i>Cancellation</a></li>
-                                                                <li><a href="#" style="background-color:black"><i class="fa fa-tasks"></i>Feedback/Enquiry</a></li>
-
-                                                                <li><a href="#" style="background-color:black" ng-click="SignOutUser();"><i class="fa fa-key"></i>Sign Out</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="col-lg-4" style="padding:0px">
-                                                            <a style="text-decoration: none; color: #CCCCCC; background-color: black;" href="#" ng-click="SignOutUser();">Sign Out!</a>
-                                                        </li>
-                                                    </ul>
-
-                                                </div>
-
-                                            </div>
-
-
-                                        </div>
-                                        
-
-                                        
-
-                                        <div class="row" ng-show="username == null">
-                                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
-                                                <div class="panel-heading" style="background-color: black; text-align: center; text-decoration-color: white">
-                                                    <a style="text-decoration:none; color:#CCCCCC" href="#" data-target="#Modal-header-primary" data-toggle="modal"><img src="UI/Images/login.png" />Login</a>
-                                                    <a style="text-decoration:none; color:#CCCCCC" href="">Or</a>
-                                                    <a style="text-decoration:none; color:#CCCCCC" href="UI/Registration.html">Create and Account</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row" style="text-align:center">
-                                            <div class="col-lg-6">
-                                                <div class="panel panel-dark" style="background-color: AliceBlue; ">
-                                                    <a href="UI/Construction.html" class="flat-button top-icon">
-
-                                                        <img src="UI/Images/logos/oyster-homepage-icon.png" alt="" /><br />
-
-                                                        <h5>    Recharge Chihuta Card</h5>
-
-</a>
-                                                </div>
-
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="panel panel-dark" style="background-color: AliceBlue; ">
-                                                    <a href="UI/Construction.html" class="flat-button top-icon">
-
-                                                        <img src="UI/Images/logos/cycle-hire-homepage-icon.png" alt="" /><br />
-
-                                                        <h5>  Download Smart Tickets App</h5>
-
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row" style="text-align:center">
-                                            <div class="col-lg-6">
-                                                <div class="panel panel-dark" style="background-color: AliceBlue; ">
-
-                                                    <a href="UI/Construction.html" class="flat-button top-icon">
-
-                                                        <img src="UI/Images/logos/congestion-homepage-charge-icon.png" alt="" /> <br />
-                                                        <h5>  Check In</h5>
-</a>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="panel panel-dark" style="background-color: AliceBlue; ">
-                                                    <a href="UI/Construction.html" class="flat-button top-icon">
-
-                                                        <img src="UI/Images/logos/airline-homepage-icon.png" alt="" /><br />
-                                                        <h5>    Inquiries</h5>
-</a>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-6">
-
-                                        <div class="panel panel-dark" style="background-color: AliceBlue; ">
-
-                                            <h2>Travel Voucher</h2><p>
-                                                Get a travel Voucher  or  View routes and buses on
-                                                Promotion in and around Zimbabwe
-                                            </p>
-                                        </div>
-
-
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="panel panel-dark" style="background-color: AliceBlue; ">
-
-                                            <h2>Travel Voucher</h2><p>
-                                                Get a travel Voucher  or  View routes and buses on
-                                                Promotion in and around Zimbabwe
-                                            </p>
-                                        </div>
-                                    </div>
-
                                 </div>
                             </div>
                         </div>
 
-
                         <div class="row">
-                            <div class="col-lg-4">
+                            <div class="col-lg-12">
 
                                 <div class="panel panel-dark" style="background-color: AliceBlue; ">
 
@@ -358,121 +221,13 @@
 
 
                             </div>
-                            <div class="col-lg-4">
 
-                                <div class="panel panel-dark" style="background-color: AliceBlue; ">
-
-
-                                    <a href="">
-
-                                        <img src="UI/Images/Advt/Falls 2.jpg" style="width:100%" />
-                                        <div class="text-link"><h2>Falls </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
-
-                                    </a>
-                                </div>
-
-
-                            </div>
-                            <div class="col-lg-4">
-
-                                <div class="panel panel-dark" style="background-color: AliceBlue; ">
-
-
-                                    <a href="">
-
-                                        <img src="UI/Images/Advt/GZ1.jpg" style="width:100%" />
-                                        <div class="text-link"><h2>Zimbabwe GZ </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
-
-                                    </a>
-                                </div>
-
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="row">
-                            <div class="col-lg-4">
-
-                                <div class="panel panel-dark" style="background-color: AliceBlue; ">
-
-
-                                    <a href="">
-
-                                        <img src="UI/Images/Advt/Airport.jpg" style="width:100%" />
-                                        <div class="text-link"><h2>Airport </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
-
-                                    </a>
-                                </div>
-
-
-                            </div>
-
-                           
-                            <div class="col-lg-4">
-
-                                <div class="panel panel-dark" style="background-color: AliceBlue; ">
-
-
-                                    <a href="">
-
-                                        <img src="UI/Images/Advt/Kariba.jpg" style="width:100%" />
-                                        <div class="text-link"><h2>Kariba </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
-
-                                    </a>
-                                </div>
-
-
-                            </div>
-                            <div class="col-lg-4">
-
-                                <div class="panel panel-dark" style="background-color: AliceBlue; ">
-
-
-                                    <a href="">
-
-                                        <img src="UI/Images/Advt/mutare.jpg" style="width:100%" />
-                                        <div class="text-link"><h2>Mutare </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
-
-                                    </a>
-                                </div>
-
-
-                            </div>
 
                         </div>
 
                         <div class="row">
-                            <div class="col-lg-6">
 
-                                <div class="panel panel-dark" style="background-color: AliceBlue; ">
-
-
-                                    <a href="">
-
-                                        <img src="UI/Images/Advt/safari 1.jpg" style="width:100%" />
-                                        <div class="text-link"><h2>Safari</h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
-
-                                    </a>
-                                </div>
-
-
-                            </div>
-                            <div class="col-lg-3">
-
-                                <div class="panel panel-dark" style="background-color: AliceBlue; ">
-
-
-                                    <a href="">
-
-                                        <img src="UI/Images/Advt/Streets 1.jpg" style="width:100%" />
-                                        <div class="text-link"><h2>Streets </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
-
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
+                            <div class="col-lg-12">
                                 <div class="vertical-button-container">
                                     <a href="UI/Construction.html" class="plain-button">Stations, stops &amp; piers</a>
                                     <a href="UI/Construction.html" class="plain-button">Timetables</a>
@@ -487,12 +242,278 @@
                             </div>
                         </div>
                     </div>
-                    <div class="clearfix"></div>
+                    <!--<div class="clearfix"></div>-->
+                    <!--END FOOTER-->
 
+                    <div class="col-lg-8">
+                       
+                            <div class="row">
+
+
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+
+                                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
+
+                                                <a href="">
+
+                                                    <img src="UI/Images/Advt/harare 1.jpg" style="width: 100%; min-height: 200px" />
+                                                    <div class="text-link"><h2>Harare </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
+
+                                                </a>
+
+                                            </div>
+
+
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="row" ng-hide="username == null">
+                                                <div class="panel panel-dark" style="background-color: AliceBlue; ">
+                                                    <div class="panel-heading" style="background-color: black; text-align: center; text-decoration-color: white; padding: 0px">
+
+                                                        <ul class="nav" style="padding:0px">
+                                                            <li class="dropdown topbar-user col-lg-8" style="background-color:black;padding-left:0px">
+                                                                <a data-hover="dropdown" href="#" class="dropdown-toggle  pull-left" style="background-color: black;">&nbsp;<span class=" hidden-xs" style="text-decoration:none; color:#CCCCCC;"><img src="UI/Images/login.png" />Hello, {{username}}!</span>&nbsp;<span class="caret"></span></a>
+                                                                <ul class="dropdown-menu dropdown-user pull-right">
+                                                                    <li><a href="UI/UserProfile.html" style="background-color:black"><i class="fa fa-user"></i>My Account</a></li>
+                                                                    <li><a href="UI/BookedTicketHistory.html" style="background-color:black"><i class="fa fa-calendar"></i>Recent Journey</a></li>
+                                                                    <li><a href="UI/CancelTicket.html" style="background-color:black"><i class="fa fa-envelope"></i>Cancellation</a></li>
+                                                                    <li><a href="UI/Feedback.html" style="background-color:black"><i class="fa fa-tasks"></i>Feedback/Enquiry</a></li>
+
+                                                                    <li><a href="#" style="background-color:black" ng-click="SignOutUser();"><i class="fa fa-key"></i>Sign Out</a></li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="col-lg-4" style="padding:0px">
+                                                                <a style="text-decoration: none; color: #CCCCCC; background-color: black;" href="#" ng-click="SignOutUser();">Sign Out!</a>
+                                                            </li>
+                                                        </ul>
+
+                                                    </div>
+
+                                                </div>
+
+
+                                            </div>
+
+                                            <div class="row" ng-show="username == null">
+                                                <div class="panel panel-dark" style="background-color: AliceBlue; ">
+                                                    <div class="panel-heading" style="background-color: black; text-align: center; text-decoration-color: white">
+                                                        <a style="text-decoration:none; color:#CCCCCC" href="#" data-target="#Modal-header-primary" data-toggle="modal"><img src="UI/Images/login.png" />Login</a>
+                                                        <a style="text-decoration:none; color:#CCCCCC" href="">Or</a>
+                                                        <a style="text-decoration:none; color:#CCCCCC" href="UI/Registration.html">Create and Account</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="row" style="text-align:center">
+                                                <div class="col-lg-6">
+                                                    <div class="panel panel-dark" style="background-color: AliceBlue;min-height:110px">
+                                                        <a href="UI/Construction.html" class="flat-button top-icon">
+
+                                                            <img src="UI/Images/logos/oyster-homepage-icon.png" alt="" /><br />
+
+                                                            <h5>    Recharge Chihuta Card</h5>
+
+                                                        </a>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="panel panel-dark" style="background-color: AliceBlue; min-height: 110px">
+                                                        <a href="UI/Construction.html" class="flat-button top-icon">
+
+                                                            <img src="UI/Images/logos/cycle-hire-homepage-icon.png" alt="" /><br />
+
+                                                            <h5>  Download Smart Tickets App</h5>
+
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                           
+                                                <div class="col-lg-6">
+                                                    <div class="panel panel-dark" style="background-color: AliceBlue; min-height: 110px;">
+
+                                                        <a href="UI/Construction.html" class="flat-button top-icon">
+
+                                                            <img src="UI/Images/logos/congestion-homepage-charge-icon.png" alt="" /> <br />
+                                                            <h5>  Check In</h5>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="panel panel-dark" style="background-color: AliceBlue; min-height: 110px">
+                                                        <a href="UI/Construction.html" class="flat-button top-icon">
+
+                                                            <img src="UI/Images/logos/airline-homepage-icon.png" alt="" /><br />
+                                                            <h5>    Inquiries</h5>
+                                                        </a>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <!--<div class="col-lg-6">
+
+                                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
+
+                                                <h2>Travel Voucher</h2><p>
+                                                    Get a travel Voucher  or  View routes and buses on
+                                                    Promotion in and around Zimbabwe
+                                                </p>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
+
+                                                <h2>Travel Voucher</h2><p>
+                                                    Get a travel Voucher  or  View routes and buses on
+                                                    Promotion in and around Zimbabwe
+                                                </p>
+                                            </div>
+                                        </div>-->
+
+
+
+
+                                        <div class="col-lg-4">
+
+                                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
+
+
+                                                <a href="">
+
+                                                    <img src="UI/Images/Advt/Falls 2.jpg" style="width: 100%; min-height: 200px" />
+                                                    <div class="text-link"><h2>Falls </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
+
+                                                </a>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="col-lg-4">
+
+                                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
+
+
+                                                <a href="">
+
+                                                    <img src="UI/Images/Advt/GZ1.jpg" style="width: 100%; min-height: 200px" />
+                                                    <div class="text-link"><h2>Zimbabwe GZ </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
+
+                                                </a>
+                                            </div>
+
+
+                                        </div>
+
+
+                                        <div class="col-lg-4">
+
+                                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
+
+
+                                                <a href="">
+
+                                                    <img src="UI/Images/Advt/Kariba.jpg" style="width: 100%; min-height: 200px" />
+                                                    <div class="text-link"><h2>Kariba </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
+
+                                                </a>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="col-lg-4">
+
+                                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
+
+
+                                                <a href="">
+
+                                                    <img src="UI/Images/Advt/safari 1.jpg" style="width: 100%; min-height: 200px" />
+                                                    <div class="text-link"><h2>Safari</h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
+
+                                                </a>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="col-lg-4">
+
+                                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
+
+
+                                                <a href="">
+
+                                                    <img src="UI/Images/Advt/Streets 1.jpg" style="width: 100%; min-height: 200px" />
+                                                    <div class="text-link"><h2>Streets </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
+
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+
+                                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
+
+
+                                                <a href="">
+
+                                                    <img src="UI/Images/Advt/mutare.jpg" style="width: 100%; min-height: 200px" />
+                                                    <div class="text-link"><h2>Mutare </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
+
+                                                </a>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="col-lg-4">
+
+                                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
+
+
+                                                <a href="">
+
+                                                    <img src="UI/Images/Advt/Falls 2.jpg" style="width:100%" />
+                                                    <div class="text-link"><h2>Falls </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
+
+                                                </a>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="col-lg-4">
+
+                                            <div class="panel panel-dark" style="background-color: AliceBlue; ">
+
+
+                                                <a href="">
+
+                                                    <img src="UI/Images/Advt/GZ1.jpg" style="width:100%" />
+                                                    <div class="text-link"><h2>Zimbabwe GZ </h2><p>Attracting more women and young people into our exciting and diverse industry</p></div>
+
+                                                </a>
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                       
+                    </div>
+                    <!--<div class="clearfix"></div>-->
                     <!--END FOOTER-->
                 </div>
             </div>
-        </div>
+            </div>
+        
 
     
 
@@ -603,7 +624,7 @@
 
                             <div class="form-group">
                                 
-                                <button class="btn btn-info" ng-click="Signin();">
+                                <button class="btn btn-info" data-dismiss="modal" ng-click="Signin();">
                                     Login
                                 </button>
                                 <button  data-dismiss="modal" class="btn btn-primary">
@@ -615,6 +636,74 @@
                     </div>
                 </div>
           
+        </div>
+    </div>
+
+    <div id="recentjourneys" tabindex="-1" role="dialog" aria-labelledby="modal-header-primary-label" aria-hidden="true" class="modal fade" style="margin-top:100px">
+        <div class="modal-dialog">
+
+            <div class="panel panel-dark" style="background-color: AliceBlue;padding:0px">
+                <!--<button type="button" data-dismiss="modal" aria-hidden="true" class="close" style="background-color:white;padding:0px">&times;</button>-->
+                <div class="panel-heading" style="background-color:black;text-align:center;text-decoration-color:white">Log in</div>
+
+                <div class="panel-body form-actions text-right pal" style="background-color: AliceBlue; ">
+
+                    <div class="body-content" ng-model="register">
+
+
+                        <div class="form-group">
+                            <div class="input-icon right"><i class="fa fa-user"></i><input type="text" placeholder="EmailId/User Name" name="username" ng-model="UserName" class="form-control"></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-icon right"><i class="fa fa-key"></i><input id="ln" type="password" placeholder="password" name="password" ng-model="Password" class="form-control"></div>
+                        </div>
+
+                        <div class="form-group">
+
+                            <select id="selGender" class="form-control" ng-model="FleetOwnerRequest1.UserType" ng-value="1" disabled >
+                                <option value="">Select Login Type</option>
+                                <option value="1" selected>Customer</option>
+                                <option value="2">Fleet Owner</option>
+                                <option value="3">Interbus Support</option>
+                                <option value="4">Sales agent</option>
+                                <option value="5">Fleet Owner Supervisor</option>
+                                <option value="6">Guest/Others</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+
+                            <select id="selGender" class="form-control" ng-model="FleetOwnerRequest1.Op" ng-value="1" disabled>
+                                <option value="">Select Operation</option>
+                                <option value="1" selected>Recent Journey</option>
+                                <option value="2">Cancellation</option>
+                                <option value="3">Feedback/Enquiry</option>
+                                <option value="4">My Account</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <b> New user?</b><a style="color:blue" href='UI/Registration.html' class='btn-forgot-pwd'>Register</a>
+                        </div>
+                        <div class="form-group">
+                            <b> Forgot your Password?</b><a style="color:blue" href='UI/ForgotPassword.html' class='btn-forgot-pwd'>Click Here</a>
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <button data-dismiss="modal" class="btn btn-info" ng-click="Signin();">
+                                Login
+                            </button>
+                            <button data-dismiss="modal" class="btn btn-primary">
+                                Cancel
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
         <!--END CONTENT--><!--BEGIN FOOTER-->
@@ -682,7 +771,20 @@
             </div>
         </div>
 
+    <script type="text/ng-template" id="statusPopup.html" data-backdrop="static">
 
+        <div class="modal-header">
+            <h3 class="modal-title">Validation!</h3>
+        </div>
+        <div class="modal-body">
+            {{mssg}}
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+
+    </script>
 
         <script src="UI/js/jquery-1.10.2.min.js"></script>
         <script src="UI/js/jquery-migrate-1.2.1.min.js"></script>

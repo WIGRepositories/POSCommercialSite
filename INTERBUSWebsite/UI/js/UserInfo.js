@@ -1,6 +1,7 @@
 ﻿var myapp1 = angular.module('myApp', ['ngStorage', 'ui.bootstrap'])
 var mycrtl1 = myapp1.controller('myCtrl', function ($scope, $http, $localStorage, $uibModal) {
 
+    $scope.registered = 0;
 
     $scope.saveUser = function (type) {
         if (type == null) {
@@ -51,7 +52,12 @@ var mycrtl1 = myapp1.controller('myCtrl', function ($scope, $http, $localStorage
             return;
         }
 
-
+        var agreement = document.getElementById('agreement');
+        if (agreement.checked == false)
+        {
+            alert('Please accept the terms and conditions.');
+            return;
+        }
 
         var userinfo = {
             FirstName: type.FirstName,
@@ -81,10 +87,12 @@ var mycrtl1 = myapp1.controller('myCtrl', function ($scope, $http, $localStorage
         //    return;
         //}
         $http(req).then(function (response) {
-            $scope.showDialog("Saved successfully!!<br/>. Please enter the Email verification code sent to email address to complete registration.");
-
+           // $scope.showDialog("Saved successfully!!<br/>. Please enter the Email verification code sent to email address to complete registration.");
+            alert("Saved successfully!!. Please enter the Email verification code sent to email address to complete registration.");
             $scope.type = null;
-            $scope.GetWebsiteUserInfo();
+            // $scope.GetWebsiteUserInfo();
+
+            $scope.registered = 1;
 
         }, function (errres) {
             var errdata = errres.data;
@@ -95,8 +103,18 @@ var mycrtl1 = myapp1.controller('myCtrl', function ($scope, $http, $localStorage
 
     }
 
-    $scope.VerifyEmailAddress = function () {
+    $scope.VerifyEmailAddress = function (code) {
 
+        if (code == '1111') {
+            $scope.codeVerified = 1;
+            //redirect to user profile page
+
+            window.location.href = "UserProfile.html";
+        }
+        else {
+            // alert('invalid email code');
+            $scope.codeVerified = 0;
+        }
     }
 
     $scope.showDialog = function (message) {
@@ -105,7 +123,7 @@ var mycrtl1 = myapp1.controller('myCtrl', function ($scope, $http, $localStorage
             animation: $scope.animationsEnabled,
             backdrop: false,
             templateUrl: 'statusPopup.html',
-            //  controller: 'ModalInstanceCtrl',            
+              controller: 'ModalInstanceCtrl',            
             resolve: {
                 mssg: function () {
                     return message;
