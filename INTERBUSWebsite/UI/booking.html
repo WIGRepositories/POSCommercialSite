@@ -142,16 +142,14 @@
 
                     <div class="col-md-3" style="padding:15px;text-align:center">
 
-                        <div class="col-md-6">                           
+                        <!--<div class="col-md-6">                           
                             <div style="text-align:center; height:40px;background-color:lightcoral;padding:10px" data-target="#AddReturnDetails" data-toggle="modal">
                                 <font style="color:white;">+Return Journey</font>
                             </div>
-                        </div>
+                        </div>-->
                         <div class="col-md-6">
                             <div style="text-align:center; height:40px;background-color:lightcoral;padding:10px" data-target="#ModifyJourneydetails" data-toggle="modal" ng-if="triptype == 'oneway'">
-                                <font style="color:white;">Modify</font>
-
-                                <!--<a href="#" data-target="#Modal-header-primary" data-toggle="modal" class="btn btn-info btn-sm" ng-if="triptype == 'oneway'">Modify</a>-->
+                                <font style="color:white;">Modify</font>                              
                             </div>
                         </div>
                     </div>
@@ -243,7 +241,7 @@
                                         <strong>Rs.{{b.Price}}</strong>
                                     </div>
                                     <br />
-                                    <button ng-click="test($index);" type="button" class="btn btn-primary">
+                                    <button ng-click="FillInitialDetails($index, b);" type="button" class="btn btn-primary">
                                         select seats
                                     </button>
                                 </div>
@@ -512,7 +510,7 @@
                             <div class="input-group datetimepicker-disable-date date"><input style="z-index:199" type="text" class="form-control" /><span class="input-group-addon"><i class="fa fa-clock-o"></i></span></div>
                         </div>
                     </div>
-                    <h3>Return journey</h3>
+                    <!--<h3>Return journey</h3>
                     <div class="row">
 
                         <label for="Fax" class="col-md-4 control-label" style="color: red;float: left">Source:<span class='require'></span></label>
@@ -531,7 +529,7 @@
                         <div class="col-md-8">
                             <div class="input-group datetimepicker-disable-date date"><input style="z-index:199" type="text" class="form-control" /><span class="input-group-addon"><i class="fa fa-clock-o"></i></span></div>
                         </div>
-                    </div>
+                    </div>-->
 
                 </div>
 
@@ -557,7 +555,7 @@
                     <h4 id="modal-header-primary-label" class="modal-title">Passenger Details</h4>
                 </div>
                 <div class="modal-body">
-                    <div class="row" ng-repeat="seat in selectedSeats.pssngr">
+                    <div class="row" ng-repeat="seat in onwarddetails.BookedSeats">
 
 
                         <div class="col-md-2">
@@ -570,25 +568,25 @@
                             <div class="col-md-3"><input id="code" type="text" ng-model="seat.LName" class="form-control" placeholder="Last Name" /><span class="help-block"></span></div>
 
                             <div class="col-md-3">
-                                <select class="form-control" ng-model="S">
+                                <select class="form-control" ng-model="seat.Age">
                                     <option value="" selected>Age</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                    <option value="32">32</option>
                                 </select>
                                 <span class="help-block"></span>
                             </div>
                             <div class="col-md-3">
-                                <select class="form-control" ng-model="G">
+                                <select class="form-control" ng-model="seat.Gender">
                                     <option value="" selected>Gender</option>
                                     <option value="1">Male</option>
                                     <option value="2">Female</option>

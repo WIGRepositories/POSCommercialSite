@@ -1,4 +1,5 @@
-﻿using System;
+﻿using INTERBUSWebsite.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -13,7 +14,7 @@ namespace INTERBUSWebsite.Controllers
     {
         [HttpGet]
 
-        public DataTable GetWebsiteUserInfo()
+        public DataTable GetWebsiteUserInfo(string logininfo)
         {
             DataTable Tbl = new DataTable();
 
@@ -28,16 +29,15 @@ namespace INTERBUSWebsite.Controllers
             cmd.CommandText = "GetWebsiteUserInfo";
             cmd.Connection = conn;
 
-            DataSet ds = new DataSet();
+            SqlParameter psw = new SqlParameter("@logininfo", SqlDbType.VarChar, 20);
+            psw.Value = logininfo;
+            cmd.Parameters.Add(psw);
+
+            
             SqlDataAdapter db = new SqlDataAdapter(cmd);
-            db.Fill(ds);
-            Tbl = ds.Tables[0];
-
-            // int found = 0;
+            db.Fill(Tbl);
+            
             return Tbl;
-
-
-
         }
          [HttpPost]
         public HttpResponseMessage pos(WebsiteUserInfo b)

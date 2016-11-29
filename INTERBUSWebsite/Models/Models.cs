@@ -5,7 +5,7 @@ using System.Web;
 
 namespace INTERBUSWebsite.Models
 {
-   
+
 
     public class FleetOwner
     {
@@ -64,42 +64,68 @@ namespace INTERBUSWebsite.Models
         public DateTime date { set; get; }
         public int TransactionId { set; get; }
     }
-   
-   
-
-    public class Booking
+    public class BookingDetails
     {
-        public int Pnr_ID { get; set; }
-        public string Pnr_No { get; set; }
-        public int No_Seats { get; set; }
-        public int cost { get; set; }
-        public string dateandtime { get; set; }
-        public string src { get; set; }
-        public string dest { get; set; }
-        public string vehicle_No { get; set; }
-        public string JourneyDate { get; set; }
-        public string ArrivalTime { get; set; }
-        public string DeptTime { get; set; }
-        public int PassengerId { get; set; }
+        public int Id { get; set; }
+        public string TicketNo { get; set; }
+      public string TransId { get; set; }
+      public string EmailId{ get; set; }
+      public string MobileNo{ get; set; }
+      public string AltMobileNo{ get; set; }
+      public string Address { get; set; }
+        public DateTime? JourneyDate{ get; set; }
+      public DateTime? JourneyTime{ get; set; }
+      public string Src{ get; set; }
+      public string Dest{ get; set; }
+      public int SrcId{ get; set; }
+      public int DestId{ get; set; }
+      public int RouteId{ get; set; }
+      public int VehicleId{ get; set; }
+      public int NoOfSeats{ get; set; }
+      public string Seats{ get; set; }
+      public string Status{ get; set; }
+      public int StatusId{ get; set; }
+      public string BookedBy{ get; set; }
+      public int BookedById{ get; set; }           
+      public decimal Amount{ get; set; }
+      public string BookingType{ get; set; }
+      public int BookingTypeId{ get; set; }
+      public string JourneyType{ get; set; }
+      public int JourneyTypeId{ get; set; }
+      public int UserId{ get; set; }
+      public string insupddelflag { get; set; }
 
-        public int TransactionId { get; set; }
-        public string Transaction_Number { get; set; }
-        public int Amount { get; set; }
-        public int Paymentmode { get; set; }
-        public string Gateway_transId { get; set; }
+      public IEnumerable<BookedSeats> BookedSeats { get; set; }
 
-        //public int Bookedhistory_Id { get; set; }
-        //public int UserId { get; set; }
-        public int RouteId { get; set; }
-        public int fleetOwnerId { get; set; }
-        public int TransactionStatus { get; set; }
-        public string AuthCode { get; set; }
-        public int JourneyType { get; set; }
-      
-        public IEnumerable<passengerDetails> passengersList { get; set; }
-        
     }
-        
+
+    public class BookedSeats
+    {
+        public int Id { get; set; }
+        public int BookingId { get; set; }
+        public string TicketNo { get; set; }
+        public string SeatNo { get; set; }
+        public int SeatId { get; set; }
+        public int VehicleId { get; set; }
+        public int Row { get; set; }
+
+        public int Col { get; set; }
+
+        public DateTime JourneyDate { get; set; }
+        public DateTime JourneyTime { get; set; }
+        public string Status { get; set; }
+        public int StatusId { get; set; }
+        public string FName { get; set; }
+        public string LName { get; set; }
+        public int Age { get; set; }
+        public int Gender { get; set; }
+        public string IdProof { get; set; }
+        public string PassengerType { get; set; }
+        public int PrimaryPassenger { get; set; }
+
+        public string insupddelflag { get; set; }
+    }
+
     public class passengerDetails
     {
         public string SeatNo { get; set; }
@@ -153,7 +179,7 @@ namespace INTERBUSWebsite.Models
     }
     public class reset
     {
-      
+
         public string UserName { set; get; }
         public string OldPassword { set; get; }
         public string NewPassword { set; get; }
@@ -161,21 +187,21 @@ namespace INTERBUSWebsite.Models
 
     }
     public class FleetOwnerRequest
-    {                    
+    {
         //user details
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
-        public string LastName{get; set;}
-        public int PhoneNo{get; set;}
+        public string LastName { get; set; }
+        public int PhoneNo { get; set; }
         public string EmailAddress { get; set; }
-        public int AltPhoneNo{get; set;}  
+        public int AltPhoneNo { get; set; }
         public int Gender { set; get; }
         public string Address { get; set; }
         public string userPhoto { get; set; }
 
         //Company details
-        public string CompanyName {get; set;}
+        public string CompanyName { get; set; }
         public string CmpEmailAddress { get; set; }
 
         public string CmpAddress { get; set; }
@@ -187,22 +213,22 @@ namespace INTERBUSWebsite.Models
         public string CmpPhoneNo { set; get; }
         public string CmpAltPhoneNo { set; get; }
 
-        public string FleetSize { set; get; }           
+        public string FleetSize { set; get; }
         public int StaffSize { get; set; }
-        public string Country {get;set;}
-        public string Code {get;set;}
-        public string CmpFax {get;set;}
-        public string ZipCode {get;set;}
-        public string  CmpLogo{get;set;}
-        public string state{get;set;}  
+        public string Country { get; set; }
+        public string Code { get; set; }
+        public string CmpFax { get; set; }
+        public string ZipCode { get; set; }
+        public string CmpLogo { get; set; }
+        public string state { get; set; }
         public string insupdflag { get; set; }
 
-       //General details
+        //General details
         public string CurrentSystemInUse { set; get; }
-        public string SentNewProductsEmails { set; get; }  
-        public string howdidyouhearaboutus { get; set; }           
-        public int Agreetotermsandconditions { get; set; }                    
-           
+        public string SentNewProductsEmails { set; get; }
+        public string howdidyouhearaboutus { get; set; }
+        public int Agreetotermsandconditions { get; set; }
+
     }
     public class LicensePage
     {
@@ -215,7 +241,7 @@ namespace INTERBUSWebsite.Models
         public int FeatureLabel { get; set; }
         public int FeatureValue { get; set; }
 
-      
+
         public string insupdflag { get; set; }
 
         public int LicenseCatId { get; set; }
@@ -234,7 +260,7 @@ namespace INTERBUSWebsite.Models
         public string FleetOwner { set; get; }
 
     }
-    
+
     public class UserLicenseDetails
     {
         public List<ULLicense> checkSchedule { get; set; }
@@ -269,18 +295,18 @@ namespace INTERBUSWebsite.Models
         public int IsRenewal { set; get; }
         public string insupddelflag { set; get; }
     }
-  
+
     public class UserLicensePayments
     {
-        public int Id { set; get;}
-        public int ULId { set; get;}
-        public DateTime CreatedOn { set; get;}
-        public decimal Amount { set; get;}
-        public decimal UnitPrice { set; get;}
-        public decimal Units { set; get;}
-        public int StatusId { set; get;}
-        public int LicensePymtTransId { set; get;}
-        public int IsRenewal { set; get;}
+        public int Id { set; get; }
+        public int ULId { set; get; }
+        public DateTime CreatedOn { set; get; }
+        public decimal Amount { set; get; }
+        public decimal UnitPrice { set; get; }
+        public decimal Units { set; get; }
+        public int StatusId { set; get; }
+        public int LicensePymtTransId { set; get; }
+        public int IsRenewal { set; get; }
         public string TransId { set; get; }
         public DateTime PaymentTypeId { get; set; }
     }
@@ -313,19 +339,20 @@ namespace INTERBUSWebsite.Models
     }
     public class ULFeatures
     {
-       // public int Id { set; get; }
+        // public int Id { set; get; }
         public int ULPymtId { set; get; }
         public int FeatureId { set; get; }
         public string FeatureValue { set; get; }
         public string FeatureDesc { set; get; }
     }
 
-    public class payPalPymnt { 
-    
+    public class payPalPymnt
+    {
+
     }
 
     public class ULConfirmDetails
-    { 
+    {
         public int Id { set; get; }
         public int ULId { set; get; }
         public int ULPymtId { set; get; }
@@ -337,37 +364,33 @@ namespace INTERBUSWebsite.Models
         public string address { set; get; }
         public decimal Amount { set; get; }
         public decimal Units { set; get; }
-        public decimal POSUnits { set; get; }     
+        public decimal POSUnits { set; get; }
         public int IsRenewal { set; get; }
         public string insupddelflag { set; get; }
     }
-   
+    
+    public class WebsiteUserInfo
+    {
+        public string FirstName { set; get; }
+        public string LastName { set; get; }
+
+        public string UserName { set; get; }
+
+        public string Password { set; get; }
+
+        public string EmailAddress { set; get; }
+
+        public string Mobile { set; get; }        
+    }
+
+    public class ResetPassword
+    {
+        public string Username { set; get; }
+
+        public string OldPassword { set; get; }
+
+        public string NewPassword { set; get; }
+
+        public string ReEnterNewPassword { set; get; }
+    }
 }
-
-      public class WebsiteUserInfo
-      {
-          public string FirstName { set; get; }
-          public string LastName { set; get; }
-
-          public string UserName { set; get; }
-
-          public string Password { set; get; }
-
-          public string EmailAddress { set; get; }
-
-          public string Mobile { set; get; }
-          
-
-      }
-
-
-     public class ResetPassword
-     {
-         public string Username { set; get; }
-
-         public string OldPassword { set; get; }
-
-         public string NewPassword {set;get;}
-
-         public string ReEnterNewPassword {set;get;}
-     }

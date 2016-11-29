@@ -44,245 +44,235 @@ namespace INTERBUSWebsite.Controllers
 
 
 
-    [HttpPost]
-          public DataTable SaveBookingDetails(Booking B)
+          [HttpPost]
+          public DataTable SaveBookingDetails(BookingDetails B)
           {
-
-              //Booking b = TestServices();
-              IEnumerable<passengerDetails> pasglist = B.passengersList;
-
               DataTable Tbl = new DataTable();
+
               SqlConnection conn = new SqlConnection();
-              //connetionString="Data Source=ServerName;Initial Catalog=DatabaseName;User ID=UserName;Password=Password"
               conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["btposdb"].ToString();
+
               SqlCommand PnrDeatilscmd = new SqlCommand();
               PnrDeatilscmd.CommandType = CommandType.StoredProcedure;
-              PnrDeatilscmd.CommandText = "sp_InsPnrDetails";
+              PnrDeatilscmd.CommandText = "InsUpdDelBookingDetails";
               PnrDeatilscmd.Connection = conn;
               conn.Open();
 
-              int LastPnrID;
-              string Pnr_Gen_No = "PNR" + Guid.NewGuid().ToString().Substring(0, 6);
+              SqlParameter Id = new SqlParameter("@Id", SqlDbType.Int);
+              Id.Value = B.Id;
+              PnrDeatilscmd.Parameters.Add(Id);
 
-              SqlParameter LastInsPnrID = new SqlParameter("@LastInsPnrID", SqlDbType.Int);
-              LastInsPnrID.Direction = ParameterDirection.Output;
-              PnrDeatilscmd.Parameters.Add(LastInsPnrID);
+              SqlParameter TicketNo = new SqlParameter("@TicketNo", SqlDbType.VarChar, 20);
+              TicketNo.Value = B.TicketNo;
+              PnrDeatilscmd.Parameters.Add(TicketNo);
 
-              //SqlParameter PnrGenNo = new SqlParameter("@PnrGenNo", SqlDbType.Int);
-              //PnrDeatilscmd.Parameters.Add(PnrGenNo);
+              SqlParameter TransId = new SqlParameter("@TransId", SqlDbType.Int);
+              TransId.Value = B.TransId;
+              PnrDeatilscmd.Parameters.Add(TransId);
 
-              SqlParameter Pnr_No = new SqlParameter("Pnr_No", SqlDbType.VarChar, 20);
-              Pnr_No.Value = Pnr_Gen_No;
-              PnrDeatilscmd.Parameters.Add(Pnr_No);
+              SqlParameter EmailId = new SqlParameter("@EmailId", SqlDbType.VarChar, 50);
+              EmailId.Value = B.EmailId;
+              PnrDeatilscmd.Parameters.Add(EmailId);
 
-              SqlParameter No_Seats = new SqlParameter("No_Seats", SqlDbType.Int);
-              No_Seats.Value = B.No_Seats;
-              PnrDeatilscmd.Parameters.Add(No_Seats);
+              SqlParameter MobileNo = new SqlParameter("@MobileNo", SqlDbType.VarChar, 15);
+              MobileNo.Value = B.MobileNo;
+              PnrDeatilscmd.Parameters.Add(MobileNo);
 
-              SqlParameter cost = new SqlParameter("cost", SqlDbType.Int);
-              cost.Value = B.cost;
-              PnrDeatilscmd.Parameters.Add(cost);
+              SqlParameter AltMobileNo = new SqlParameter("@AltMobileNo", SqlDbType.VarChar, 15);
+              AltMobileNo.Value = B.AltMobileNo;
+              PnrDeatilscmd.Parameters.Add(AltMobileNo);
 
+              SqlParameter TravelDate = new SqlParameter("@TravelDate", SqlDbType.Date);
+              TravelDate.Value = B.JourneyDate;
+              PnrDeatilscmd.Parameters.Add(TravelDate);
 
-              DateTime dt = DateTime.Now;
-              String strDate = "";
-              strDate = dt.ToString("MM/dd/yyyy");
+              SqlParameter TravelTime = new SqlParameter("@TravelTime", SqlDbType.Time);
+              TravelTime.Value = B.JourneyTime.Value.TimeOfDay;
+              PnrDeatilscmd.Parameters.Add(TravelTime);
 
-              SqlParameter dateandtime = new SqlParameter("dateandtime", SqlDbType.VarChar, 30);
-              dateandtime.Value = strDate;
-              PnrDeatilscmd.Parameters.Add(dateandtime);
+              SqlParameter Src = new SqlParameter("@Src", SqlDbType.VarChar, 50);
+              Src.Value = B.Src;
+              PnrDeatilscmd.Parameters.Add(Src);
 
-              SqlParameter src = new SqlParameter("src", SqlDbType.VarChar, 30);
-              src.Value = B.src;
-              PnrDeatilscmd.Parameters.Add(src);
+              SqlParameter Dest = new SqlParameter("@Dest", SqlDbType.VarChar, 50);
+              Dest.Value = B.Dest;
+              PnrDeatilscmd.Parameters.Add(Dest);
 
-              SqlParameter dest = new SqlParameter("dest", SqlDbType.VarChar, 30);
-              dest.Value = B.dest;
-              PnrDeatilscmd.Parameters.Add(dest);
+              SqlParameter SrcId = new SqlParameter("@SrcId", SqlDbType.Int);
+              SrcId.Value = B.SrcId;
+              PnrDeatilscmd.Parameters.Add(SrcId);
 
-              SqlParameter vehicle_No = new SqlParameter("vehicle_No", SqlDbType.VarChar, 20);
-              vehicle_No.Value = B.vehicle_No;
-              PnrDeatilscmd.Parameters.Add(vehicle_No);
+              SqlParameter DestId = new SqlParameter("@DestId", SqlDbType.Int);
+              DestId.Value = B.DestId;
+              PnrDeatilscmd.Parameters.Add(DestId);
 
-              SqlParameter JourneyDate = new SqlParameter("JourneyDate", SqlDbType.VarChar, 30);
-              JourneyDate.Value = strDate; //DateTime.Now.ToString("yyyy-MM-ddThh:mm:sszzz"); 
-              PnrDeatilscmd.Parameters.Add(JourneyDate);
+              SqlParameter RouteId = new SqlParameter("@RouteId", SqlDbType.Int);
+              RouteId.Value = B.RouteId;
+              PnrDeatilscmd.Parameters.Add(RouteId);
 
-              SqlParameter ArrivalTime = new SqlParameter("ArrivalTime", SqlDbType.VarChar, 30);
-              ArrivalTime.Value = strDate;
-              PnrDeatilscmd.Parameters.Add(ArrivalTime);
+              SqlParameter VehicleId = new SqlParameter("@VehicleId", SqlDbType.Int);
+              VehicleId.Value = B.VehicleId;
+              PnrDeatilscmd.Parameters.Add(VehicleId);
 
-              SqlParameter DeptTime = new SqlParameter("DeptTime", SqlDbType.VarChar, 30);
-              DeptTime.Value = strDate;
-              PnrDeatilscmd.Parameters.Add(DeptTime);
+              SqlParameter NoOfSeats = new SqlParameter("@NoOfSeats", SqlDbType.Int);
+              NoOfSeats.Value = B.NoOfSeats;
+              PnrDeatilscmd.Parameters.Add(NoOfSeats);
 
-              Random r = new Random();
-              var x = r.Next(0, 1000000);
-              string s = x.ToString("00000000");
-          
-           //   string AuthCode = "AUTH" + Guid.NewGuid().ToString().Substring(0, 6);
+              SqlParameter Seats = new SqlParameter("@Seats", SqlDbType.VarChar, 250);
+              Seats.Value = B.Seats;
+              PnrDeatilscmd.Parameters.Add(Seats);
 
-              SqlParameter Aut = new SqlParameter("AuthCode", SqlDbType.VarChar, 10);
-              Aut.Value = s;
-              PnrDeatilscmd.Parameters.Add(Aut);
+              SqlParameter Status = new SqlParameter("@Status", SqlDbType.VarChar, 50);
+              Status.Value = B.Status;
+              PnrDeatilscmd.Parameters.Add(Status);
 
-              SqlParameter Journeytype = new SqlParameter("JourneyType", SqlDbType.VarChar, 20);
-              Journeytype.Value = B.JourneyType;
-              PnrDeatilscmd.Parameters.Add(Journeytype);
-             
+              SqlParameter StatusId = new SqlParameter("@StatusId", SqlDbType.Int);
+              StatusId.Value = B.StatusId;
+              PnrDeatilscmd.Parameters.Add(StatusId);
 
-              PnrDeatilscmd.ExecuteNonQuery();
-              PnrDeatilscmd.Parameters.Clear();
-              LastPnrID = Convert.ToInt32(LastInsPnrID.Value);
+              SqlParameter BookedBy = new SqlParameter("@BookedBy", SqlDbType.VarChar, 150);
+              BookedBy.Value = B.BookedBy;
+              PnrDeatilscmd.Parameters.Add(BookedBy);
 
+              SqlParameter BookedById = new SqlParameter("@BookedById", SqlDbType.Int);
+              BookedById.Value = B.BookedById;
+              PnrDeatilscmd.Parameters.Add(BookedById);
 
-
-              conn.Close();
-
-              SqlCommand PaymentDetailscmd = new SqlCommand();
-              PaymentDetailscmd.CommandType = CommandType.StoredProcedure;
-              PaymentDetailscmd.CommandText = "sp_InsPaymentDetails";
-              PaymentDetailscmd.Connection = conn;
-              conn.Open();
-
-              SqlParameter Transaction_Number = new SqlParameter("Transaction_Number", SqlDbType.VarChar, 30);
-              Transaction_Number.Value = B.Transaction_Number;
-              PaymentDetailscmd.Parameters.Add(Transaction_Number);
-
-              SqlParameter Amount = new SqlParameter("Amount", SqlDbType.Int);
+              SqlParameter Amount = new SqlParameter("@Amount", SqlDbType.Decimal);
               Amount.Value = B.Amount;
-              PaymentDetailscmd.Parameters.Add(Amount);
+              PnrDeatilscmd.Parameters.Add(Amount);
 
-              SqlParameter Paymentmode = new SqlParameter("Paymentmode", SqlDbType.Int);
-              Paymentmode.Value = B.Paymentmode;
-              PaymentDetailscmd.Parameters.Add(Paymentmode);
+              SqlParameter BookingType = new SqlParameter("@BookingType", SqlDbType.VarChar, 10);
+              BookingType.Value = B.BookingType;
+              PnrDeatilscmd.Parameters.Add(BookingType);
 
-              SqlParameter datetime = new SqlParameter("dateandtime", SqlDbType.DateTime);
-              datetime.Value = DateTime.Now.ToString("MM/dd/yyyy");
-              PaymentDetailscmd.Parameters.Add(datetime);
+              SqlParameter BookingTypeId = new SqlParameter("@BookingTypeId", SqlDbType.Int);
+              BookingTypeId.Value = B.BookingTypeId;
+              PnrDeatilscmd.Parameters.Add(BookingTypeId);
 
-              SqlParameter Pnr_Id = new SqlParameter("Pnr_Id", SqlDbType.Int);
-              Pnr_Id.Value = LastPnrID;
-              PaymentDetailscmd.Parameters.Add(Pnr_Id);
+              SqlParameter JourneyType = new SqlParameter("@JourneyType", SqlDbType.VarChar, 10);
+              JourneyType.Value = B.JourneyType;
+              PnrDeatilscmd.Parameters.Add(JourneyType);
 
-              SqlParameter PnrNo = new SqlParameter("Pnr_No", SqlDbType.VarChar, 20);
-              PnrNo.Value = Pnr_Gen_No;
-              PaymentDetailscmd.Parameters.Add(PnrNo);
+              SqlParameter JourneyTypeId = new SqlParameter("@JourneyTypeId", SqlDbType.Int);
+              JourneyTypeId.Value = B.JourneyTypeId;
+              PnrDeatilscmd.Parameters.Add(JourneyTypeId);
 
+              SqlParameter UserId = new SqlParameter("@UserId", SqlDbType.Int);
+              UserId.Value = B.UserId;
+              PnrDeatilscmd.Parameters.Add(UserId);
 
-              SqlParameter Gateway_transId = new SqlParameter("Gateway_transId", SqlDbType.VarChar, 20);
-              Gateway_transId.Value = B.Gateway_transId;
-              PaymentDetailscmd.Parameters.Add(Gateway_transId);
+              SqlParameter Address = new SqlParameter("@Address", SqlDbType.VarChar, 500);
+              Address.Value = B.Address;
+              PnrDeatilscmd.Parameters.Add(Address);
 
-              SqlParameter TransactionStatus = new SqlParameter("TransactionStatus", SqlDbType.VarChar, 20);
-              TransactionStatus.Value = B.TransactionStatus;
-              PaymentDetailscmd.Parameters.Add(TransactionStatus);
-             
+              SqlParameter insupddelflag = new SqlParameter("@insupddelflag", SqlDbType.VarChar);
+              insupddelflag.Value = B.insupddelflag;
+              PnrDeatilscmd.Parameters.Add(insupddelflag);
 
-              PaymentDetailscmd.ExecuteNonQuery();
-              PaymentDetailscmd.Parameters.Clear();
-              conn.Close();
+              object bookingId = PnrDeatilscmd.ExecuteScalar();
 
+              if (B.BookedSeats != null)
+              {
 
+                  PnrDeatilscmd.Parameters.Clear();
 
+                  PnrDeatilscmd.CommandText = "InsUpdDelBookedSeats";
 
-            
-              conn.Open();
+                  foreach (BookedSeats b in B.BookedSeats)
+                  {
+                      //@Id int = -1,@BookingId int,@TicketNo varchar(20),@SeatNo varchar(5),@SeatId int,@VehicleId int,@Row int,@Col int,@JourneyDate date,@JourneyTime time(7)
+                      //,@Status varchar(10),@StatusId int,@FName varchar(50),@LName varchar(50),@Age int,@Gender int,@PassengerType varchar(15),@IdProof varchar(50)
+                      //,@PrimaryPassenger int,@insupddelflag varchar                       
 
+                      SqlParameter bId = new SqlParameter("@Id", SqlDbType.Int);
+                      bId.Value = b.Id;
+                      PnrDeatilscmd.Parameters.Add(bId);
 
-              foreach (passengerDetails result in pasglist)
-            {
-                SqlCommand PassengerDetailscmd = new SqlCommand();
-                PassengerDetailscmd.CommandType = CommandType.StoredProcedure;
-                PassengerDetailscmd.CommandText = "sp_InsPassengerDetails";
-                PassengerDetailscmd.Connection = conn;
-                SqlParameter Fname = new SqlParameter("Fname", SqlDbType.VarChar, 30);
-                Fname.Value = result.Fname;
-                PassengerDetailscmd.Parameters.Add(Fname);
+                      SqlParameter BookingId = new SqlParameter("@BookingId", SqlDbType.Int);
+                      BookingId.Value = bookingId;
+                      PnrDeatilscmd.Parameters.Add(BookingId);
 
-                SqlParameter Lname = new SqlParameter("Lname", SqlDbType.VarChar, 30);
-                Lname.Value = result.Lname;
-                PassengerDetailscmd.Parameters.Add(Lname);
+                      SqlParameter bTicketNo = new SqlParameter("@TicketNo", SqlDbType.VarChar, 50);
+                      bTicketNo.Value = B.TicketNo;
+                      PnrDeatilscmd.Parameters.Add(bTicketNo);
 
-                SqlParameter Age = new SqlParameter("Age", SqlDbType.Int);
-                Age.Value = result.Age;
-                PassengerDetailscmd.Parameters.Add(Age);
+                      SqlParameter SeatNo = new SqlParameter("@SeatNo", SqlDbType.VarChar, 50);
+                      SeatNo.Value = b.SeatNo;
+                      PnrDeatilscmd.Parameters.Add(SeatNo);
 
-                SqlParameter Sex = new SqlParameter("Sex", SqlDbType.Int);
-                Sex.Value = result.Sex;
-                PassengerDetailscmd.Parameters.Add(Sex);
+                      SqlParameter SeatId = new SqlParameter("@SeatId", SqlDbType.Int);
+                      SeatId.Value = b.SeatId;
+                      PnrDeatilscmd.Parameters.Add(SeatId);
 
-                DateTime dat = DateTime.Now;
-                String startDate = "";
-                startDate = dat.ToString("MM/dd/yyyy");
+                      SqlParameter bVehicleId = new SqlParameter("@VehicleId", SqlDbType.Int);
+                      bVehicleId.Value = b.VehicleId;
+                      PnrDeatilscmd.Parameters.Add(bVehicleId);
 
-                SqlParameter date_time = new SqlParameter("datetime", SqlDbType.VarChar, 30);
-                date_time.Value = startDate;
-                PassengerDetailscmd.Parameters.Add(date_time);
+                      SqlParameter Row = new SqlParameter("@Row", SqlDbType.Int);
+                      Row.Value = b.Row;
+                      PnrDeatilscmd.Parameters.Add(Row);
 
-                SqlParameter Identityproof = new SqlParameter("Identityproof", SqlDbType.VarChar,30);
-                Identityproof.Value = result.Identityproof;
-                PassengerDetailscmd.Parameters.Add(Identityproof);
+                      SqlParameter Col = new SqlParameter("@Col", SqlDbType.Int);
+                      Col.Value = b.Col;
+                      PnrDeatilscmd.Parameters.Add(Col);
 
-                SqlParameter PnrId = new SqlParameter("Pnr_Id", SqlDbType.Int);
-                PnrId.Value = LastPnrID;
-                PassengerDetailscmd.Parameters.Add(PnrId);
+                      SqlParameter JourneyDate = new SqlParameter("@JourneyDate", SqlDbType.Date);
+                      JourneyDate.Value = B.JourneyDate;
+                      PnrDeatilscmd.Parameters.Add(JourneyDate);
 
-                SqlParameter Pnrno = new SqlParameter("Pnr_No", SqlDbType.VarChar, 20);
-                Pnrno.Value = Pnr_Gen_No;
-                PassengerDetailscmd.Parameters.Add(Pnrno);
+                      SqlParameter JourneyTime = new SqlParameter("@JourneyTime", SqlDbType.Time);
+                      JourneyTime.Value = B.JourneyTime.Value.TimeOfDay;
+                      PnrDeatilscmd.Parameters.Add(JourneyTime);
 
-                PassengerDetailscmd.ExecuteNonQuery();
-                PassengerDetailscmd.Parameters.Clear();
-            }
-            conn.Close();
+                      SqlParameter bStatus = new SqlParameter("@Status", SqlDbType.VarChar, 50);
+                      bStatus.Value = b.Status;
+                      PnrDeatilscmd.Parameters.Add(bStatus);
 
-           conn.Open();
+                      SqlParameter bStatusId = new SqlParameter("@StatusId", SqlDbType.Int);
+                      bStatusId.Value = b.StatusId;
+                      PnrDeatilscmd.Parameters.Add(bStatusId);
 
+                      SqlParameter FName = new SqlParameter("@FName", SqlDbType.VarChar, 50);
+                      FName.Value = b.FName;
+                      PnrDeatilscmd.Parameters.Add(FName);
 
-           foreach (passengerDetails result in pasglist)
-           {
-               SqlCommand PnrToSeatscmd = new SqlCommand();
-               PnrToSeatscmd.CommandType = CommandType.StoredProcedure;
-               PnrToSeatscmd.CommandText = "sp_InsPnrToSeats";
-               PnrToSeatscmd.Connection = conn;
+                      SqlParameter LName = new SqlParameter("@LName", SqlDbType.VarChar, 50);
+                      LName.Value = b.LName;
+                      PnrDeatilscmd.Parameters.Add(LName);
 
-               SqlParameter Pnr_ID = new SqlParameter("Pnr_ID", SqlDbType.Int);
-               Pnr_ID.Value = LastPnrID;
-               PnrToSeatscmd.Parameters.Add(Pnr_ID);
+                      SqlParameter Age = new SqlParameter("@Age", SqlDbType.Int);
+                      Age.Value = b.Age;
+                      PnrDeatilscmd.Parameters.Add(Age);                                         
 
-               SqlParameter Pnrnum = new SqlParameter("Pnr_No", SqlDbType.VarChar, 20);
-               Pnrnum.Value = Pnr_Gen_No;
-               PnrToSeatscmd.Parameters.Add(Pnrnum);
+                      SqlParameter Gender = new SqlParameter("@Gender", SqlDbType.Int);
+                      Gender.Value = b.Gender;
+                      PnrDeatilscmd.Parameters.Add(Gender);
 
-               SqlParameter seatNo = new SqlParameter("SeatNo", SqlDbType.VarChar, 20);
-               seatNo.Value = result.SeatNo;
-               PnrToSeatscmd.Parameters.Add(seatNo);
+                      SqlParameter PassengerType = new SqlParameter("@PassengerType", SqlDbType.VarChar, 50);
+                      PassengerType.Value = b.PassengerType;
+                      PnrDeatilscmd.Parameters.Add(PassengerType);
 
-               SqlParameter SeatId = new SqlParameter("SeatId", SqlDbType.Int);
-               SeatId.Value = result.SeatId;
-               PnrToSeatscmd.Parameters.Add(SeatId);
+                      SqlParameter IdProof = new SqlParameter("@IdProof", SqlDbType.VarChar, 250);
+                      IdProof.Value = b.IdProof;
+                      PnrDeatilscmd.Parameters.Add(IdProof);
 
-               SqlParameter VehicleNo = new SqlParameter("VehicleNo", SqlDbType.VarChar, 30);
-               VehicleNo.Value = B.vehicle_No;
-               PnrToSeatscmd.Parameters.Add(VehicleNo);
+                      SqlParameter PrimaryPassenger = new SqlParameter("@PrimaryPassenger", SqlDbType.Int);
+                      PrimaryPassenger.Value = b.PrimaryPassenger;
+                      PnrDeatilscmd.Parameters.Add(PrimaryPassenger);
 
-               DateTime dat = DateTime.Now;
-               String staDate = "";
-               staDate = dat.ToString("MM/dd/yyyy");
+                      SqlParameter binsupddelflag = new SqlParameter("@insupddelflag", SqlDbType.VarChar);
+                      binsupddelflag.Value = b.insupddelflag;
+                      PnrDeatilscmd.Parameters.Add(binsupddelflag);
 
-               SqlParameter Date = new SqlParameter("Date", SqlDbType.VarChar, 30);
-               Date.Value = staDate;
-               PnrToSeatscmd.Parameters.Add(Date);
-              
-               PnrToSeatscmd.ExecuteNonQuery();
-               PnrToSeatscmd.Parameters.Clear();
-           }
+                      PnrDeatilscmd.ExecuteScalar();
 
-           conn.Close();
+                      PnrDeatilscmd.Parameters.Clear();
+                  }
+              }
 
- return Tbl;
-             
+              return Tbl;
+
           }
 
     }

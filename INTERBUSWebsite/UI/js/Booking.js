@@ -2,12 +2,14 @@
 
 var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $filter) {
    
-    $scope.seatstest = [];
-    $scope.select_all = false;
+    $scope.seatstest = [];  
 
     $scope.triptype = "oneway";
-
     $scope.timing = "Now";
+    $scope.currentDetails = 'Onward';
+    $scope.totalseats = 0;
+    $scope.count = 0;
+    var selectList = [];
 
     $scope.ChangeTravelType = function (travelTime) {
         $scope.timing = (travelTime == 0) ? "Now" : "Later";
@@ -15,85 +17,6 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
 
     $scope.RadioChange = function (s) {
         $scope.triptype = s;
-    };
-    //function to create n-dimensional array
-
-    var makeArray = function createArray(dimensions, value) {
-        // Create new array
-        var array = new Array(dimensions[0] || 0);
-        var i = dimensions[0];
-
-        // If dimensions array's length is bigger than 1
-        // we start creating arrays in the array elements with recursions
-        // to achieve multidimensional array
-        if (dimensions.length > 1) {
-            // Remove the first value from the array
-            var args = Array.prototype.slice.call(dimensions, 1);
-            // For each index in the created array create a new array with recursion
-            while (i--) {
-                array[dimensions[0] - 1 - i] = createArray(args, value);
-            }
-            // If there is only one element left in the dimensions array
-            // assign value to each of the new array's elements if value is set as param
-        } else {
-            if (typeof value !== 'undefined') {
-                while (i--) {
-                    array[dimensions[0] - 1 - i] = value;
-                }
-            }
-        }
-
-        return array;
-    }
-    $scope.seatstest = makeArray([6, 5]);
-
-    $scope.seats = [{ "Id": 1, "row": 0, "col": 0, "label": "A1","status":"2"},
-    { "Id": 2, "row": 0, "col": 1, "label": "A2", "status": "1" },
-    { "Id": 22, "row": 0, "col": 2, "label": "A3", "status": "0" },
-    { "Id": 3, "row": 0, "col": 3, "label": "A3" ,"status":"1"},
-    { "Id": 4, "row": 0, "col": 4, "label": "A4" ,"status":"1"},
-    
-    { "Id": 5, "row": 1, "col": 0, "label": "B1" ,"status":"1"},
-    { "Id": 6, "row": 1, "col": 1, "label": "B2", "status": "1" },
-    { "Id": 23, "row": 1, "col": 2, "label": "A2", "status": "0" },
-    { "Id": 7, "row": 1, "col": 3, "label": "B3" ,"status":"2"},    
-    { "Id": 30, "row": 1, "col": 4, "label": "B3", "status": "1" },
-
-    { "Id": 8, "row": 2, "col": 0, "label": "C1" ,"status":"1"},
-    { "Id": 9, "row": 2, "col": 1, "label": "C2", "status": "1" },
-    { "Id": 24, "row": 2, "col": 2, "label": "A2", "status": "0" },
-    { "Id": 10, "row":2, "col": 3, "label": "C3" ,"status":"1"},
-    { "Id": 11, "row": 2, "col": 4, "label": "C4" ,"status":"1"},
-
-    { "Id": 12, "row": 4, "col": 0, "label": "D1" ,"status":"1"},
-    { "Id": 25, "row": 4, "col": 2, "label": "A2", "status": "0" },
-    { "Id": 14, "row": 4, "col": 1, "label": "D3" ,"status":"1"},
-    { "Id": 15, "row": 4, "col": 3, "label": "D4" ,"status":"2"},
-    { "Id": 16, "row": 4, "col": 4, "label": "D5" ,"status":"1"},
-    
-    { "Id": 17, "row": 5, "col": 0, "label": "D1" ,"status":"1"},
-    { "Id": 18, "row": 5, "col": 1, "label": "D2" ,"status":"1"},
-    { "Id": 19, "row": 5, "col": 2, "label": "D3" ,"status":"1"},
-    { "Id": 20, "row": 5, "col": 3, "label": "D4" ,"status":"1"},
-    { "Id": 21, "row": 5, "col": 4, "label": "D5" ,"status":"1"},
-
-    { "Id": 25, "row": 3, "col": 0, "label": "E1" ,"status":"1"},
-    { "Id": 26, "row": 3, "col": 1, "label": "E2" ,"status":"1"},
-    { "Id": 27, "row": 3, "col": 2, "label": "" ,"status":"0"},
-    { "Id": 28, "row": 3, "col": 3, "label": "E3" ,"status":"1"},
-    { "Id": 29, "row": 3, "col": 4, "label": "E4" ,"status":"1"},
-    ];
-    
-    for (i = 0; i <= $scope.seats.length - 1; i++) {
-        $scope.seatstest[$scope.seats[i]["row"]][$scope.seats[i]["col"]] = { "Id": $scope.seats[i]["Id"], "label": $scope.seats[i]["label"], "status": ($scope.seats[i] == null) ? 0 : $scope.seats[i]["status"] };
-    }
-    
-
-    $scope.columns = function (r) {
-        var input = [];
-        for (var i = start; i < end; i++) input.push($scope.arr[i]);
-        return input;
-        //return $filter('filter')($scope.seats, { row: r });
     };
 
     var stat = 0;
@@ -106,6 +29,8 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
     $scope.testClick = function () {
         $scope.Stops = $localStorage.Stops;
     }
+
+
     $scope.GetServices = function () {
         if ($scope.S == null) {
             alert('Please select source.');
@@ -144,24 +69,42 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
         ];
 
     }
-    $scope.test = function (b) {
+
+    //fill initial details
+    $scope.FillInitialDetails = function (indx, vDetails) {
+
         if ($scope.selectedIndex != -1)
             document.getElementById('t_' + $scope.selectedIndex).style.display = "none";
-        var currstyle = document.getElementById('t_' + b).style.display;
+
+        var currstyle = document.getElementById('t_' + indx).style.display;
         // var currstyle = document.getElementById('imgTd').style.display;
+
         if (currstyle == "none") {
-            document.getElementById('t_' + b).style.display = "table-cell";
-            $scope.selectedIndex = b;
+            document.getElementById('t_' + indx).style.display = "table-cell";
+            $scope.selectedIndex = indx;
             // $scope.selectedSeats = [];
         }
-
-     //   $scope.basePrice = b.amount;
+        //   $scope.basePrice = b.amount;
+        $scope.onwarddetails = new Object();
+        $scope.onwarddetails.VehicleId = vDetails.Id;
+        $scope.onwarddetails.TicketNo = $scope.GetTicketNo();
+        $scope.onwarddetails.JourneyDate = new Date();
+        $scope.onwarddetails.JourneyTime = new Date();
+        $scope.onwarddetails.EmailId = '';
+        $scope.onwarddetails.MobileNo = '';
+        $scope.onwarddetails.AltMobileNo = '';
+        $scope.onwarddetails.Address = '';
+        $scope.onwarddetails.perunitprice = '';
+        $scope.onwarddetails.JourneyType = 'Onward';
+        $scope.onwarddetails.bookingType = 'Online';
+        $scope.onwarddetails.bookedBy = 'Onward';
+        $scope.onwarddetails.userid = 'Onward';
+        $scope.onwarddetails.NoOfSeats = 0;
+        $scope.onwarddetails.seatslist = '';
+        $scope.onwarddetails.amount = 0;//
+        $scope.onwarddetails.insupddelflag = 'I';//
+        $scope.onwarddetails.BookedSeats = [];
     }
-    $scope.totalseats = 0;
-    $scope.count = 0;
-    var selectList = [];
-   
-   
 
     $scope.AddSeats = function (x) {
        
@@ -169,6 +112,13 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
         {
             //set the status as selected and add it to the passenger array
             x.status = "3";
+
+            var newSeat = $scope.GetSeat();
+            newSeat.SeatId = x.Id;
+            newSeat.SeatNo = x.label;
+            newSeat.Row = x.Row;
+            newSeat.Col = x.Col;
+            $scope.onwarddetails.BookedSeats.push(newSeat);
 
             if (selectList.indexOf(x.label) != -1)
                 return;
@@ -182,7 +132,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
                , "Lname": ""
                , "Age": ""
                , "Sex": ""
-               , "Identityproof": ""
+               , "Identityproof": ""              
 
             }
             $scope.selectedSeats.pssngr.push(item);
@@ -206,13 +156,38 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
         
         
 
-            $scope.count = $scope.selectedSeats.pssngr.length;
-            $scope.totalseats = $scope.count;
-            $scope.selectedSeatsList = selectList.join(',');
-            //$scope.count = 0;
-          //  $scope.subtotal = $scope.count * $scope.Booking.Cost;
-        }
+        $scope.count = $scope.selectedSeats.pssngr.length;
+        $scope.totalseats = $scope.count;
+        $scope.selectedSeatsList = selectList.join(',');
+        //$scope.count = 0;
+        //  $scope.subtotal = $scope.count * $scope.Booking.Cost;
+    }
 
+    $scope.GetSeat = function(){
+        var newseat = new Object();       
+        newseat.TicketNo = $scope.onwarddetails.TicketNo;      
+        newseat.VehicleId = $scope.onwarddetails.VehicleId;       
+        newseat.JourneyDate = $scope.onwarddetails.JourneyDate;
+        newseat.JourneyTime = $scope.onwarddetails.JourneyTime;
+        newseat.Status= 'Blocked';
+        newseat.StatusId = '2';
+
+        newseat.Id = '';
+        newseat.BookingId = '';
+        newseat.SeatNo = '';
+        newseat.SeatId = '';
+        newseat.Row = '';
+        newseat.Col = '';
+        newseat.FName = '';
+        newseat.LName='';
+        newseat.Age='';
+        newseat.Gender='';
+        newseat.IdProof='';
+        newseat.PassengerType='';
+        newseat.PrimaryPassenger = '';
+        newseat.insupddelflag = 'I';
+        return newseat;
+    }
 
     $scope.GetAvailableServices = function ()
     {
@@ -235,9 +210,31 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
     var stat = 0;
 
     $scope.ProceedToPayment = function (currGroup) {
-        var test = $scope.selectedSeats.pssngr[0];
-        alert();
-        window.location.href = "TicketCheckOut.html";
+
+        //fill the remaining details 
+        
+        $scope.onwarddetails.EmailId = currGroup.EmailId;
+        $scope.onwarddetails.MobileNo = currGroup.ContactNo1;
+        $scope.onwarddetails.AltMobileNo = currGroup.ContactNo2;
+        $scope.onwarddetails.Address = currGroup.Address;
+
+        
+        $http({
+            url: '/api/TicketBooking/SaveBookingDetails',
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            data: $scope.onwarddetails
+        }).success(function (data, status, headers, config) {
+            alert('Saved successfully');
+
+            $localStorage.onwarddetails = $scope.onwarddetails;
+
+            window.location.href = "TicketCheckOut.html";
+        }).error(function (ata, status, headers, config) {
+            alert(ata);
+        });
+
+        //window.location.href = "TicketCheckOut.html";
     }
 
     $scope.savedata = function () {      
@@ -309,6 +306,96 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
 
     $scope.testAlert = function () {
         alert('tet');
+    }
+
+    var makeArray = function createArray(dimensions, value) {
+        // Create new array
+        var array = new Array(dimensions[0] || 0);
+        var i = dimensions[0];
+
+        // If dimensions array's length is bigger than 1
+        // we start creating arrays in the array elements with recursions
+        // to achieve multidimensional array
+        if (dimensions.length > 1) {
+            // Remove the first value from the array
+            var args = Array.prototype.slice.call(dimensions, 1);
+            // For each index in the created array create a new array with recursion
+            while (i--) {
+                array[dimensions[0] - 1 - i] = createArray(args, value);
+            }
+            // If there is only one element left in the dimensions array
+            // assign value to each of the new array's elements if value is set as param
+        } else {
+            if (typeof value !== 'undefined') {
+                while (i--) {
+                    array[dimensions[0] - 1 - i] = value;
+                }
+            }
+        }
+
+        return array;
+    }
+    $scope.seatstest = makeArray([6, 5]);
+
+    $scope.seats = [{ "Id": 1, "row": 0, "col": 0, "label": "A1", "status": "2" },
+    { "Id": 2, "row": 0, "col": 1, "label": "A2", "status": "1" },
+    { "Id": 22, "row": 0, "col": 2, "label": "A3", "status": "0" },
+    { "Id": 3, "row": 0, "col": 3, "label": "A3", "status": "1" },
+    { "Id": 4, "row": 0, "col": 4, "label": "A4", "status": "1" },
+
+    { "Id": 5, "row": 1, "col": 0, "label": "B1", "status": "1" },
+    { "Id": 6, "row": 1, "col": 1, "label": "B2", "status": "1" },
+    { "Id": 23, "row": 1, "col": 2, "label": "A2", "status": "0" },
+    { "Id": 7, "row": 1, "col": 3, "label": "B3", "status": "2" },
+    { "Id": 30, "row": 1, "col": 4, "label": "B3", "status": "1" },
+
+    { "Id": 8, "row": 2, "col": 0, "label": "C1", "status": "1" },
+    { "Id": 9, "row": 2, "col": 1, "label": "C2", "status": "1" },
+    { "Id": 24, "row": 2, "col": 2, "label": "A2", "status": "0" },
+    { "Id": 10, "row": 2, "col": 3, "label": "C3", "status": "1" },
+    { "Id": 11, "row": 2, "col": 4, "label": "C4", "status": "1" },
+
+    { "Id": 12, "row": 4, "col": 0, "label": "D1", "status": "1" },
+    { "Id": 25, "row": 4, "col": 2, "label": "A2", "status": "0" },
+    { "Id": 14, "row": 4, "col": 1, "label": "D3", "status": "1" },
+    { "Id": 15, "row": 4, "col": 3, "label": "D4", "status": "2" },
+    { "Id": 16, "row": 4, "col": 4, "label": "D5", "status": "1" },
+
+    { "Id": 17, "row": 5, "col": 0, "label": "D1", "status": "1" },
+    { "Id": 18, "row": 5, "col": 1, "label": "D2", "status": "1" },
+    { "Id": 19, "row": 5, "col": 2, "label": "D3", "status": "1" },
+    { "Id": 20, "row": 5, "col": 3, "label": "D4", "status": "1" },
+    { "Id": 21, "row": 5, "col": 4, "label": "D5", "status": "1" },
+
+    { "Id": 25, "row": 3, "col": 0, "label": "E1", "status": "1" },
+    { "Id": 26, "row": 3, "col": 1, "label": "E2", "status": "1" },
+    { "Id": 27, "row": 3, "col": 2, "label": "", "status": "0" },
+    { "Id": 28, "row": 3, "col": 3, "label": "E3", "status": "1" },
+    { "Id": 29, "row": 3, "col": 4, "label": "E4", "status": "1" },
+    ];
+
+    for (i = 0; i <= $scope.seats.length - 1; i++) {
+        $scope.seatstest[$scope.seats[i]["row"]][$scope.seats[i]["col"]] = { "Id": $scope.seats[i]["Id"], "label": $scope.seats[i]["label"], "status": ($scope.seats[i] == null) ? 0 : $scope.seats[i]["status"], "Row": $scope.seats[i]["row"], "Col": $scope.seats[i]["col"] };
+    }
+
+    $scope.columns = function (r) {
+        var input = [];
+        for (var i = start; i < end; i++) input.push($scope.arr[i]);
+        return input;
+        //return $filter('filter')($scope.seats, { row: r });
+    };
+
+    $scope.GetTicketNo = function () {
+               
+        var date = new Date();
+        var components = [
+            date.getHours(),
+            date.getMinutes(),
+            date.getSeconds()
+        ];
+
+        var ticketno = 'T'+components.join("");
+        return ticketno;
     }
     
     });
