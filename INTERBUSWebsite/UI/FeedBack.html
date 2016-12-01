@@ -1,4 +1,4 @@
-﻿<html lang="en">
+﻿<html lang="en" ng-app="myApp" ng-controller="myCtrl">
 <head>
 
     <title>Interbus - Get Moving Anywhere, Comfortably</title>
@@ -54,7 +54,7 @@
                                 <a style="text-decoration:none" href="Fares_and_payments.html">Fares / Payments</a>
 
                                 <ul>
-                                     <li><a href="Schedules.html">Schedules</a></li>
+                                    <li><a href="Schedules.html">Schedules</a></li>
                                     <li><a href="CheckFare.html">CheckFare</a></li>
                                     <li><a href="Cancellation.html">Cancellation</a></li>
 
@@ -115,8 +115,8 @@
             <!--BEGIN TITLE & BREADCRUMB PAGE-->
             <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
 
-                <ol class="breadcrumb page-breadcrumb pull-right ">
-                    <li>Hello, Admin!&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                <ol class="breadcrumb page-breadcrumb pull-right " style="padding:0px">
+                    <li>Hello, {{username}}!&nbsp;&nbsp;&nbsp;&nbsp;</li>
                     <li><a href="../Index.html">Sign Out</a>&nbsp;&nbsp;</li>
                 </ol>
 
@@ -219,7 +219,7 @@
                         </div>
 
                     </div>
-                  
+
                 </div>
                 <!--END PAGE WRAPPER-->
             </div>

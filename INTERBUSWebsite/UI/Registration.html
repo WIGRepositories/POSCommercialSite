@@ -109,76 +109,76 @@
     </div>
     <!--End Header-->
 
-    <div class="row" style="margin-top:40px; margin-bottom:20px" ng-show="registered == 0">
+    <div class="row" style="margin-top:40px; margin-bottom:20px" ng-show="registeredUseId == 0">
         <div class="col-md-6 col-md-offset-3">
             <div class="page-form" style="border:1px solid">
 
                 <div class="header-content"><h1>Register</h1></div>
                 <div class="body-content" ng-model="register">
-                   
-                        <div class="form-group">
-                            <label for="inputLastName" class="control-label" style="float:left">First Name:</label>
-                            <div class="input-icon right"><i class="fa fa-user" style="margin-top:32px"></i><input type="text" placeholder="First Name" name="username" ng-model="register.FirstName" class="form-control"></div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputLastName" class=" control-label" style="float:left">Last Name:</label>
-                            <div class="input-icon right"><i class="fa fa-key" style="margin-top:32px"></i><input id="ln" type="password" placeholder="Last Name" name="password" ng-model="register.LastName" class="form-control"></div>
-                        </div>
-                      
-                        <div class="form-group">
-                            <label for="inputLastName" class="control-label" style="float:left">User Name:</label>
-                            <div class="input-icon right"><i class="fa fa-user" style="margin-top:32px"></i><input type="text" placeholder="Username" name="username" ng-model="register.UserName" class="form-control"></div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputLastName" class="control-label" style="float:left">Password:</label>
-                            <div class="input-icon right"><i class="fa fa-key" style="margin-top:32px"></i><input id="password" type="password" placeholder="Password" name="password" ng-model="register.Password" class="form-control"></div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputLastName" class="control-label" style="float:left">Re-enter password:</label>
-                            <div class="input-icon right"><i class="fa fa-key" style="margin-top:32px"></i><input id="password" type="password" placeholder="Re-enter Password" name="password" ng-model="register.RePassword" class="form-control"></div>
-                        </div>
 
-                        <hr>
-                        <div class="form-group">
-                            <label for="inputLastName" class="control-label" style="float:left">E-mail address:</label>
-                            <div class="input-icon right"><i class="fa fa-envelope" style="margin-top:32px"></i><input type="email" placeholder="Email Address" name="email" ng-model="register.EmailAddress" class="form-control"></div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputLastName" class="control-label" style="float:left">Contact Number:</label>
-                            <div class="input-icon right"><i class="fa fa-envelope" style="margin-top:32px"></i><input type="text" placeholder="Mobile" name="Mobile" ng-model="register.Mobile" class="form-control" maxlength="10"></div>
-                        </div>
-                        <div class="form-group">
+                    <div class="form-group">
+                        <label for="inputLastName" class="control-label" style="float:left">First Name:</label>
+                        <div class="input-icon right"><i class="fa fa-user" style="margin-top:32px"></i><input type="text" placeholder="First Name" name="username" ng-model="register.FirstName" class="form-control"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputLastName" class=" control-label" style="float:left">Last Name:</label>
+                        <div class="input-icon right"><i class="fa fa-key" style="margin-top:32px"></i><input id="ln" type="password" placeholder="Last Name" name="password" ng-model="register.LastName" class="form-control"></div>
+                    </div>
 
-                            <div class="input-icon right">
-                                <select class="form-control" ng-model="register.Gender">
-                                    <option value="" selected>Gender</option>
-                                    <option value="1">Male</option>
-                                    <option value="2">Female</option>
-                                    <option value="3">Neutral</option>
-                                </select>
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <label for="inputLastName" class="control-label" style="float:left">User Name:</label>
+                        <div class="input-icon right"><i class="fa fa-user" style="margin-top:32px"></i><input type="text" placeholder="Username" name="username" ng-model="register.UserName" class="form-control"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputLastName" class="control-label" style="float:left">Password:</label>
+                        <div class="input-icon right"><i class="fa fa-key" style="margin-top:32px"></i><input id="password" type="password" placeholder="Password" name="password" ng-model="register.Password" class="form-control"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputLastName" class="control-label" style="float:left">Re-enter password:</label>
+                        <div class="input-icon right"><i class="fa fa-key" style="margin-top:32px"></i><input id="password" type="password" placeholder="Re-enter Password" name="password" ng-model="register.RePassword" class="form-control"></div>
+                    </div>
 
-                        <div class="form-group mbn">
-                            <div class="checkbox">
-                                <label>
-                                    <input id="agreement" tabindex="5" type="checkbox" />&nbsp;
-                                    I agree with the Terms and Conditions
-                                </label>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="form-group mbn">
-                            <a href="../Index.html" class="btn btn-warning">
-                                <i class="fa fa-chevron-circle-left"></i>&nbsp;
-                                Back
-                            </a>
-                            <button class="btn btn-info pull-right" ng-click="saveUser(register);">
-                                Submit
-                                &nbsp;<i class="fa fa-chevron-circle-right"></i>
-                            </button>
+                    <hr>
+                    <div class="form-group">
+                        <label for="inputLastName" class="control-label" style="float:left">E-mail address:</label>
+                        <div class="input-icon right"><i class="fa fa-envelope" style="margin-top:32px"></i><input type="email" placeholder="Email Address" name="email" ng-model="register.EmailAddress" class="form-control"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputLastName" class="control-label" style="float:left">Contact Number:</label>
+                        <div class="input-icon right"><i class="fa fa-envelope" style="margin-top:32px"></i><input type="text" placeholder="Mobile" name="Mobile" ng-model="register.Mobile" class="form-control" maxlength="10"></div>
+                    </div>
+                    <div class="form-group">
+
+                        <div class="input-icon right">
+                            <select class="form-control" ng-model="register.Gender">
+                                <option value="" selected>Gender</option>
+                                <option value="1">Male</option>
+                                <option value="2">Female</option>
+                                <option value="3">Neutral</option>
+                            </select>
                         </div>
                     </div>
+
+                    <div class="form-group mbn">
+                        <div class="checkbox">
+                            <label>
+                                <input id="agreement" tabindex="5" type="checkbox" />&nbsp;
+                                I agree with the Terms and Conditions
+                            </label>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="form-group mbn">
+                        <a href="../Index.html" class="btn btn-warning">
+                            <i class="fa fa-chevron-circle-left"></i>&nbsp;
+                            Back
+                        </a>
+                        <button class="btn btn-info pull-right" ng-click="saveUser(register);">
+                            Submit
+                            &nbsp;<i class="fa fa-chevron-circle-right"></i>
+                        </button>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -186,7 +186,7 @@
    
         
 
-    <div class="container" style="margin-top:60px;min-height:380px;font-size:medium" ng-show="registered == 0">
+    <div class="container" style="margin-top:60px;min-height:380px;font-size:medium" ng-show="registeredUseId != 0">
         <div class="row">
             <h2 style="text-align:center">Verify Email Address</h2>
 
@@ -208,7 +208,7 @@
                                         </h5>
                                     </font>
                                     <div class="row" style="padding-top:15px;padding-bottom:15px">
-                                        
+
 
                                         <div class="col-md-10">
                                             <div class="form-group">
@@ -232,7 +232,7 @@
                                         </h5>
                                     </font>
 
-                                 
+
 
                                     <div class="form-group mbn">
 

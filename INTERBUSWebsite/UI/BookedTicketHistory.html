@@ -1,4 +1,4 @@
-﻿<html lang="en">
+﻿<html lang="en" ng-app="myApp" ng-controller="myCtrl">
 <head>
 
     <title>Interbus - Get Moving Anywhere, Comfortably</title>
@@ -54,7 +54,7 @@
                                 <a style="text-decoration:none" href="Fares_and_payments.html">Fares / Payments</a>
 
                                 <ul>
-                                     <li><a href="Schedules.html">Schedules</a></li>
+                                    <li><a href="Schedules.html">Schedules</a></li>
                                     <li><a href="CheckFare.html">CheckFare</a></li>
                                     <li><a href="Cancellation.html">Cancellation</a></li>
 
@@ -114,9 +114,8 @@
 
             <!--BEGIN TITLE & BREADCRUMB PAGE-->
             <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
-
-                <ol class="breadcrumb page-breadcrumb pull-right ">
-                    <li>Hello, Admin!&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                <ol class="breadcrumb page-breadcrumb pull-right " style="padding:0px">
+                    <li>Hello, {{username}}!&nbsp;&nbsp;&nbsp;&nbsp;</li>
                     <li><a href="../Index.html">Sign Out</a>&nbsp;&nbsp;</li>
                 </ol>
 
@@ -196,404 +195,9 @@
                                                 <div class="panel panel-violet">
                                                     <div class="panel-heading">Booked Ticket History</div>
                                                     <div class="panel-body pan">
-                                                        <form action="#" class="form-horizontal form-seperated form-row-stripped">
-                                                            <div class="form-body">
-                                                                <div class="form-group">
-
-                                                                    <label for="inputFirstName" class="col-md-2 control-label">PNR Number</label>
-
-                                                                    <div class="col-md-3">
-                                                                        <input id="inputFirstName" type="text" class="form-control" ng-model="User.FirstName" />
-                                                                        <span class="help-block"></span>
-                                                                    </div>
-
-
-                                                                    <div class="form-group">
-                                                                        <label class="col-md-2 control-label">Date</label>
-                                                                        <div class="col-md-4">
-                                                                            <div class="input-group datetimepicker-default date">
-                                                                                <input class="form-control" type="text">
-                                                                                <span class="input-group-addon">
-                                                                                    <i class="fa fa-calendar">
-                                                                                    </i>
-                                                                                </span>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </div>
-
-
-
-                                                                <div class="form-group">
-                                                                    <label for="inputMiddleName" class="col-md-2 control-label">From Stop </label>
-
-                                                                    <div class="col-md-3"><input id="inputMiddleName" type="text" class="form-control" ng-model="User.MiddleName" /><span class="help-block"></span></div>
-
-                                                                    <label for="inputLastName" class="col-md-2 control-label">To Stop<span class='require'>*</span></label>
-
-                                                                    <div class="col-md-3"><input id="inputLastName" type="text" class="form-control" ng-model="User.Email" /><span class="help-block"></span></div>
-
-                                                                </div>
-
-                                                                <div class="form-body pdl">
-
-                                                                    <div class="form-actions text-center pal">
-                                                                        <button type="submit" class="btn btn-green" ng-click="save(User, 'I')">Search</button>
-                                                                        &nbsp;
-                                                                        <button type="reset" class="btn btn-primary" ng-click="clearUser()">Reset</button><br />
-                                                                        <br />
-                                                                    </div>
-
-
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                        <div class="panel panel-violet">
-                                                            <div class="panel-heading">Booked Tickets</div>
-                                                            <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
-                                                                <tr>
-                                                                    <td>
-                                                                        <strong>S.NO</strong>
-                                                                        <div class="message-inner">
-
-
-                                                                        </div>
-                                                                    </td>
-
-                                                                    <td>
-                                                                        <strong> Transaction Id</strong>
-                                                                        <div class="message-inner">
-
-
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <strong>pnr number</strong>
-
-
-                                                                        <div class="message-inner">
-
-
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-
-                                                                        <strong> From</strong>
-
-
-
-                                                                    </td>
-
-
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong> To </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>Total amount </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>Refund Amount </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>Cancelled On </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>Type Of Ticket </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                </tr>
-
-                                                                <tr>
-                                                                    <td>
-                                                                        <strong>1</strong>
-                                                                        <div class="message-inner">
-
-
-                                                                        </div>
-                                                                    </td>
-
-                                                                    <td>
-                                                                        185456
-                                                                        <div class="message-inner">
-
-
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <strong>12854769</strong>
-
-
-                                                                        <div class="message-inner">
-
-
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-
-                                                                        <strong>chennai</strong>
-
-
-
-                                                                    </td>
-
-
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>hyderabad </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>600 </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>300 </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>29-09-2015 </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>E-Ticket </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                </tr>
-
-
-
-
-
-
-
-
-
-
-                                                                <tr>
-                                                                    <td>
-                                                                        <strong>2</strong>
-                                                                        <div class="message-inner">
-
-
-                                                                        </div>
-                                                                    </td>
-
-                                                                    <td>
-                                                                        <strong>845742</strong>
-                                                                        <div class="message-inner">
-
-
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <strong>33585967</strong>
-
-
-                                                                        <div class="message-inner">
-
-
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-
-                                                                        <strong>tirupathi</strong>
-
-
-
-                                                                    </td>
-
-
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong> vijayawada </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>800 </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>600 </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>14-01-2015 </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>E-ticket </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                </tr>
-
-
-
-
-
-
-
-
-
-                                                                <tr>
-
-                                                                    <td>
-                                                                        <strong>3</strong>
-                                                                        <div class="message-inner">
-
-
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <strong> 212278</strong>
-                                                                        <div class="message-inner">
-
-
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <strong> 33585967</strong>
-
-                                                                        <div class="message-inner">
-
-
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-
-                                                                        <strong>kadapa</strong>
-
-
-
-                                                                    </td>
-
-
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>delhi </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>1250 </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>850 </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>15-04-2015 </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="message-inner">
-
-                                                                            <div class="qa-message-content">
-                                                                                <strong>tatkal </strong>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </td>
-                                                                </tr>
-
-
-                                                            </table>
+                                                        <div class="alert alert-danger">
+                                                            No Records to show.
+                                                           
                                                         </div>
                                                     </div>
                                                 </div>
@@ -615,100 +219,100 @@
 
         </div>
     </div>
-        <!--END CONTENT--><!--BEGIN FOOTER-->
-        
-        
-        <div class="row">
-            <div class="col-lg-12">
-                <div id="footer" tabindex="0">
-
-                    <h2 class="visually-hidden">Site footer</h2>
-                    <div class="primary-footer r">
-                        <h2 class="visually-hidden">About Interbus</h2><ul class="footer-links">
-                            <li><a href="Construction.html">Help &amp; contacts</a></li>
-                            <li><a class="" href="Construction.html">Careers</a></li>
-                            <li><a class="" href="Construction.html">About Interbus</a></li>
-                            <li><a class="" href="Construction.html">Safety &amp; security</a></li>
-                            <li><a class="" href="Construction.html">Transparency</a></li>
-                            <li><a class="" href="Construction.html">Publications &amp; reports</a></li>
-                            <li><a class="" href="Construction.html">Gift Shop</a></li>
-                            <li><a class="" href="Construction.html">Social media &amp; email updates</a></li>
-
-                            <li><a class="languages-footer" href="Construction.html">Other languages</a></li>
-                        </ul><h2 class="heading">Information for...</h2>
-                        <ul class="info-for clearfix">
-                            <li><a href="Construction.html">Media</a></li>
-                            <li><a href="Construction.html">Business &amp; commercial</a></li>
-                            <li><a href="Construction.html">Get Support online 24/7</a></li>
-                            <li><a href="Construction.html">Schools &amp; young people</a></li>
-                            <li><a href="Construction.html">Deliveries in Zimbabwe</a></li>
-                            <li><a href="Construction.html">Urban planning & construction</a></li>
+    <!--END CONTENT--><!--BEGIN FOOTER-->
 
 
-                            <li><a href="Construction.html">Taxi &amp; private hire </a></li>
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="footer" tabindex="0">
+
+                <h2 class="visually-hidden">Site footer</h2>
+                <div class="primary-footer r">
+                    <h2 class="visually-hidden">About Interbus</h2><ul class="footer-links">
+                        <li><a href="Construction.html">Help &amp; contacts</a></li>
+                        <li><a class="" href="Construction.html">Careers</a></li>
+                        <li><a class="" href="Construction.html">About Interbus</a></li>
+                        <li><a class="" href="Construction.html">Safety &amp; security</a></li>
+                        <li><a class="" href="Construction.html">Transparency</a></li>
+                        <li><a class="" href="Construction.html">Publications &amp; reports</a></li>
+                        <li><a class="" href="Construction.html">Gift Shop</a></li>
+                        <li><a class="" href="Construction.html">Social media &amp; email updates</a></li>
+
+                        <li><a class="languages-footer" href="Construction.html">Other languages</a></li>
+                    </ul><h2 class="heading">Information for...</h2>
+                    <ul class="info-for clearfix">
+                        <li><a href="Construction.html">Media</a></li>
+                        <li><a href="Construction.html">Business &amp; commercial</a></li>
+                        <li><a href="Construction.html">Get Support online 24/7</a></li>
+                        <li><a href="Construction.html">Schools &amp; young people</a></li>
+                        <li><a href="Construction.html">Deliveries in Zimbabwe</a></li>
+                        <li><a href="Construction.html">Urban planning & construction</a></li>
 
 
-                            <li><a href="Construction.html">Bus operators</a></li>
-                            <li><a href="Construction.html">Open data users</a></li>
-                            <li><a href="Construction.html">Coach drivers</a></li>
-                            <li><a href="Construction.html">Investors</a></li>
-                            <li><a href="Construction.html">Download Interbus App</a></li>
-                        </ul>
-                    </div>
-                    <div class="secondary-footer">
-                        <h2 class="visually-hidden">Site structure and legal information</h2>
-                        <div class="r">
-                            <div class="col-lg-5">
-                                <ul>
-                                    <li><a href="UI/Construction.html">Terms &amp; conditions </a></li>
-                                    <li><a href="UI/Construction.html">Privacy &amp; cookies</a></li>
-                                    <li><a href="UI/Construction.html">Website accessibility</a></li>
-                                </ul>
-                            </div>
+                        <li><a href="Construction.html">Taxi &amp; private hire </a></li>
 
-                            <div class="col-lg-4">
-                                <ul>
-                                    <li> <a href="www.webingate.com">Powered by www.webingate.com </a></li>
-                                </ul>
-                                <span class="heading"></span>
-                            </div>
-                            <div class="col-lg-2">
-                                <span class="heading">Copyright © Interbus</span>
-                            </div>
+
+                        <li><a href="Construction.html">Bus operators</a></li>
+                        <li><a href="Construction.html">Open data users</a></li>
+                        <li><a href="Construction.html">Coach drivers</a></li>
+                        <li><a href="Construction.html">Investors</a></li>
+                        <li><a href="Construction.html">Download Interbus App</a></li>
+                    </ul>
+                </div>
+                <div class="secondary-footer">
+                    <h2 class="visually-hidden">Site structure and legal information</h2>
+                    <div class="r">
+                        <div class="col-lg-5">
+                            <ul>
+                                <li><a href="UI/Construction.html">Terms &amp; conditions </a></li>
+                                <li><a href="UI/Construction.html">Privacy &amp; cookies</a></li>
+                                <li><a href="UI/Construction.html">Website accessibility</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <ul>
+                                <li> <a href="www.webingate.com">Powered by www.webingate.com </a></li>
+                            </ul>
+                            <span class="heading"></span>
+                        </div>
+                        <div class="col-lg-2">
+                            <span class="heading">Copyright © Interbus</span>
                         </div>
                     </div>
-                    <div>
-                    </div>
+                </div>
+                <div>
                 </div>
             </div>
         </div>
+    </div>
 
 
 
-        <script src="js/jquery-1.10.2.min.js"></script>
-        <script src="js/jquery-migrate-1.2.1.min.js"></script>
-        <script src="js/jquery-ui.js"></script>
-        <!--loading bootstrap js-->
-        <!--<script src="vendors/bootstrap/js/bootstrap.js"></script>-->
-        <script src="vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
-        <script src="js/html5shiv.js"></script>
-        <script src="js/respond.min.js"></script>
-        <script src="vendors/metisMenu/jquery.metisMenu.js"></script>
-        <script src="vendors/slimScroll/jquery.slimscroll.js"></script>
-        <script src="vendors/jquery-cookie/jquery.cookie.js"></script>
-        <script src="vendors/iCheck/icheck.min.js"></script>
-        <script src="vendors/iCheck/custom.min.js"></script>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <!--loading bootstrap js-->
+    <!--<script src="vendors/bootstrap/js/bootstrap.js"></script>-->
+    <script src="vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <script src="vendors/metisMenu/jquery.metisMenu.js"></script>
+    <script src="vendors/slimScroll/jquery.slimscroll.js"></script>
+    <script src="vendors/jquery-cookie/jquery.cookie.js"></script>
+    <script src="vendors/iCheck/icheck.min.js"></script>
+    <script src="vendors/iCheck/custom.min.js"></script>
 
-        <script src="js/jquery.menu.js"></script>
+    <script src="js/jquery.menu.js"></script>
 
-        <script src="vendors/holder/holder.js"></script>
-        <script src="vendors/responsive-tabs/responsive-tabs.js"></script>
-        <script src="js/moment.js"></script>
-        <script src="vendors/bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js"></script>
+    <script src="vendors/holder/holder.js"></script>
+    <script src="vendors/responsive-tabs/responsive-tabs.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="vendors/bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js"></script>
 
-        <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
-        <script src="js/main.js"></script>
-        <script src="js/angular.js"></script>
-        <script src="js/Index.js"></script>
+    <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
+    <script src="js/main.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/Index.js"></script>
 </body>
 </html>

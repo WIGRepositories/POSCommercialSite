@@ -157,14 +157,21 @@ namespace INTERBUSWebsite.Models
         public String Password { get; set; }
         public String EmailAddress { get; set; }
         public String Mobile { get; set; }
+        public String AltMobileNo { get; set; }
         public int Gender { get; set; }
-        public String salt { set; get; }
         public int UserTypeId { get; set; }
         public int UserId { get; set; }
         public int Active { get; set; }
         public string InsUpdDelFlag { get; set; }
+        public String EVerificationCode { get; set; }
+        public DateTime EVerifiedOn { get; set; }
         public int IsEmailVerified { get; set; }
+        public String MVerificationCode { get; set; }
+        public DateTime MVerifiedOn { get; set; }
+        public int IsMobileVerified { get; set; }
         public DateTime CreatedOn { get; set; }
+        public int ENoOfAttempts { get; set; }
+        public int MNoOfAttempts { get; set; }
     }
 
     public class UserLogin

@@ -84,14 +84,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Start\DBScripts\dbo.gettable2.sql" />
-    <Content Include="App_Start\DBScripts\dbo.table2.sql" />
-    <Content Include="DBScript\dbo.Booking.sql" />
-    <Content Include="DBScript\dbo.GetBooking.sql" />
-    <Content Include="DBScript\dbo.GetHiringType.sql" />
-    <Content Include="DBScript\dbo.gettable2.sql" />
-    <Content Include="DBScript\dbo.HiringType.sql" />
-    <Content Include="DBScript\dbo.table2.sql" />
+    <Content Include="DBScript\DBScript_SProcs.sql" />
+    <Content Include="DBScript\DBScript_Tables.sql" />
     <Content Include="Global.asax" />
     <Content Include="HTMLPage2.html" />
     <Content Include="Index.html" />

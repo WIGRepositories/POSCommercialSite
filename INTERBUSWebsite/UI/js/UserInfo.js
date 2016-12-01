@@ -1,7 +1,7 @@
 ﻿var myapp1 = angular.module('myApp', ['ngStorage', 'ui.bootstrap'])
 var mycrtl1 = myapp1.controller('myCtrl', function ($scope, $http, $localStorage, $uibModal) {
 
-    $scope.registered = 0;
+    $scope.registeredUseId = 0;
 
     $scope.saveUser = function (type) {
         if (type == null) {
@@ -87,18 +87,40 @@ var mycrtl1 = myapp1.controller('myCtrl', function ($scope, $http, $localStorage
         //    return;
         //}
         $http(req).then(function (response) {
-           // $scope.showDialog("Saved successfully!!<br/>. Please enter the Email verification code sent to email address to complete registration.");
+
+            if (response.data.length == 0) {
+                $scope.registeredUseId = 0;
+                alert('User name or email address or mobile already exists or could not be registered. Please contact INTERBUS administrator.')
+            }
+        else {
+            //if the user has role, then get the details and save in session
+                $localStorage.uname = response.data[0].name;
+                $localStorage.userdetails = response.data;
+
+                $scope.registeredUseId = 1;
+                
             alert("Saved successfully!!. Please enter the Email verification code sent to email address to complete registration.");
             $scope.type = null;
-            // $scope.GetWebsiteUserInfo();
+        }
 
-            $scope.registered = 1;
+            //$scope.registeredUseId = response.data;
+
+            //if ($scope.registeredUseId > 0) {
+            //    // $scope.showDialog("Saved successfully!!<br/>. Please enter the Email verification code sent to email address to complete registration.");
+            //    alert("Saved successfully!!. Please enter the Email verification code sent to email address to complete registration.");
+            //    $scope.type = null;
+            //    // $scope.GetWebsiteUserInfo();
+            //}
+            //else {
+               
+            //}
 
         }, function (errres) {
             var errdata = errres.data;
             var errmssg = "";
+            $scope.registeredUseId = 0;
             errmssg = (errdata && errdata.ExceptionMessage) ? errdata.ExceptionMessage : errdata.Message;
-            $scope.showDialog(errmssg);
+            $scope.showDialog(errmssg);            
         });
 
     }

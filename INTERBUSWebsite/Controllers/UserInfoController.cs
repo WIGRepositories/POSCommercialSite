@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Mail;
 using System.Web.Http;
 
 namespace INTERBUSWebsite.Controllers
@@ -17,7 +18,7 @@ namespace INTERBUSWebsite.Controllers
         {
 
             DataTable Tbl = new DataTable();
-
+           // int userid = b.Id;
             //connect to database
             SqlConnection conn = new SqlConnection();
             try
@@ -85,14 +86,61 @@ namespace INTERBUSWebsite.Controllers
                 insUpdDelFlag.Value = b.InsUpdDelFlag;
                 cmd.Parameters.Add(insUpdDelFlag);
 
+                SqlParameter emailVerificationCode = new SqlParameter("@EVerificationCode", SqlDbType.VarChar, 15);
+                emailVerificationCode.Value = null;
+                emailVerificationCode.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(emailVerificationCode);
 
-                SqlDataAdapter db = new SqlDataAdapter(cmd);
-                db.Fill(Tbl);
-                // Tbl = Tables[0];
+              //  conn.Open();
 
-                //            cmd.ExecuteScalar();
-                //           conn.Close();
-                // int found = 0;
+             //   object outputid = cmd.ExecuteScalar();
+
+              //  conn.Close();
+              //  userid = (int)outputid;
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(Tbl);
+                
+                //retrive the code and send email to the user
+                object val = emailVerificationCode.Value;
+                if (val != null)
+                {
+                    try
+                    {
+                        MailMessage mail = new MailMessage();
+                        string emailserver = System.Configuration.ConfigurationManager.AppSettings["emailserver"].ToString();
+                                                
+                        string username = System.Configuration.ConfigurationManager.AppSettings["username"].ToString();
+                        string pwd = System.Configuration.ConfigurationManager.AppSettings["password"].ToString();
+                        string fromaddress = System.Configuration.ConfigurationManager.AppSettings["fromaddress"].ToString();
+                        string port = System.Configuration.ConfigurationManager.AppSettings["port"].ToString();
+
+                        SmtpClient SmtpServer = new SmtpClient(emailserver);
+
+                        mail.From = new MailAddress(fromaddress);
+                        mail.To.Add("webingate@gmail.com");
+                        mail.Subject = "Test Mail";
+                        mail.Body = "<h3>Congratulations!!</h3> <br/><br/>You have been successfully registered with INTERBUS website. Please use below email verification to verify the email address.<br/><br/>Email verification code: <h4><strong>" + val.ToString() + "</strong></h4>";
+
+                        //SmtpServer.Port = 465;
+                        //SmtpServer.Port = 587;
+                        SmtpServer.Port = Convert.ToInt32(port);
+                        SmtpServer.UseDefaultCredentials = false;
+
+                        SmtpServer.Credentials = new System.Net.NetworkCredential(username, pwd);
+                        SmtpServer.EnableSsl = true;
+                        //SmtpServer.TargetName = "STARTTLS/smtp.gmail.com";
+                        SmtpServer.Send(mail);
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //throw ex;
+                    }
+
+                }
+               
+                
                 return Tbl;
             }
 
