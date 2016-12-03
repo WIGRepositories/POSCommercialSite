@@ -110,17 +110,26 @@
     <div class="row" style="margin-top:40px">
         
         <div class="page-content">
-            <div id="invoice-page" class="row">              
+            <div id="invoice-page" class="row">  
+                <div>
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="pull-left"><h1>e-Ticket Details</h1></div>
+                        <div class="pull-right">
+                            <button type="submit" class="btn btn-success mrm" ng-click="printDiv('printableArea')">
+                                <i class="fa fa-print"></i>&nbsp;
+                                Print
+                            </button>
+                        </div>
+                    </div> 
+                    </div>           
                 <div class="col-md-8 col-md-offset-2">
-                    <h1>e-Ticket Details</h1>
                    
+                    
+                    
                     <div class="panel">
-                        <div class="panel-body">
-                            <div class="invoice-title">
-                                <button type="submit" class="btn btn-success mrm">
-                                    <i class="fa fa-print"></i>&nbsp;
-                                    Print
-                                </button>
+                        <div class="panel-body" id="printableArea">
+                            <div class="invoice-title pull-right">
+                                
                                 <p class="text-left">April 22, 2014</p>
                             </div>
                             <div class="pull-left">
@@ -128,274 +137,249 @@
                                 <address class="mbn">78183 Sweards Bluff Ave, INTERBUS<br />TM Sasa, ZMB 94107<br /><abbr title="Phone">P:</abbr>(123) 456-7890<br /><br />info@email.com</address>
                             </div>
                             <div class="clearfix"></div>
-                            <hr />
-                            <h4 class="block-heading">Onward journey details</h4>
-                            <div class="row">
-                                <table border="0" cellpadding="1" cellspacing="1" width="100%">
-                                    <tbody>
-                                       
-                                        <tr width="100%" style="text-align:left;background:#e9efff;padding-left:8px">
-                                            <td width="20%">From :</td>
-                                            <td style="font-size:13px;font-weight:bolder">{{From}}</td>
-                                            <td width="20%">To :</td>
-                                            <td style="font-size:13px;font-weight:bolder">{{To}}</td>
-                                        </tr>
-                                        <tr width="100%" style="text-align:left;background:#f7f9ff;padding-left:8px">
-                                            <td width="20%">Pickup Point :</td>
-                                            <td style="font-size:13px;font-weight:bolder">S.R.NAGAR</td>
-                                            <td width="20%">Date of Journey :</td>
-                                            <td width="30%" style="font-size:13px;font-weight:bolder">24-Jun-2016</td>
-                                        </tr>
-                                        <tr width="100%" style="text-align:left;background:#e9efff;padding-left:8px">
-                                            <td width="20%">Pickup Point Adress </td>
-                                            <td style="font-size:13px;font-weight:bolder">S.R.NAGAR CITY BUS STOP 040-65557271</td>
-                                            <td width="20%">Depart On :</td>
-                                            <td style="font-size:13px;font-weight:bolder">24-Jun-2016 13:35</td>
-                                        </tr>
-                                        <tr width="100%" style="text-align:left;background:#f7f9ff;padding-left:8px">
-                                            <td width="20%">No. of Seats :</td>
-                                            <td style="font-size:13px;font-weight:bolder">
-                                                1
-                                                ( Adults:
-                                                1
-                                                &nbsp; Children:
-                                                0
-                                                )
-                                            </td>
-                                            <td width="20%">Arrival On :</td>
-                                            <td style="font-size:13px;font-weight:bolder">24-Jun-2016 18:45</td>
-                                        </tr>
-                                        <tr width="100%" style="text-align:left;background:#f7f9ff;padding-left:8px">
-                                            <td width="20%">Platform No :</td>
-                                            <td style="font-size:13px;font-weight:bolder"></td>
-                                            <td>Start Time at Origin :</td>
-                                            <td style="font-size:13px;font-weight:bolder">
-                                                24/06/201612:45 Hrs
-                                            </td>
-                                        </tr>
-                                        <tr width="100%" style="text-align:left;background:#e9efff;padding-left:8px">
-                                            <td>OB Ref. No :</td>
-                                            <td style="font-size:13px;font-weight:bolder">3019362659</td>
-                                            <td>Bank Name :</td>
-                                            <td style="font-size:13px;font-weight:bolder">
-                                                HDFC FSS
-                                            </td>
-                                        </tr>
-                                        <tr width="100%" style="text-align:left;background:#f7f9ff;padding-left:8px"></tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <hr />
-                            <h4 class="block-heading">Return journey details</h4>
+                            <br />
+                            <!--<h4 class="block-heading">Onward journey details</h4>-->
+                            <h4 class="block-heading"><b>Journey details</b></h4>
                            
-                                <table border="0" cellpadding="1" cellspacing="1" width="100%">
-                                    <tbody>
-                                        <tr width="100%" style="text-align:left;background:#e9efff;padding-left:8px">
-                                            <td width="20%">Ticket No :</td>
-                                            <td width="30%" style="font-size:13px;font-weight:bolder">54060471</td>
-                                            <td width="20%">Uid Number :</td>
-                                            <td width="30%" style="font-size:13px;font-weight:bolder">4113</td>
-                                        </tr>
-                                        <tr width="100%" style="text-align:left;background:#f7f9ff;padding-left:8px">
-                                            <td width="20%">Service Code/Name :</td>
-                                            <td style="font-size:13px;font-weight:bolder">
-                                                3622
-                                                /
-                                                BHEL-VJA
-                                            </td>
-                                            <td width="20%">Service Category:</td>
-                                            <td style="font-size:13px;font-weight:bolder">SUPLUX</td>
-                                        </tr>
-                                        <tr width="100%" style="text-align:left;background:#e9efff;padding-left:8px">
-                                            <td width="20%">From :</td>
-                                            <td style="font-size:13px;font-weight:bolder">S.R.NAGAR</td>
-                                            <td width="20%">To :</td>
-                                            <td style="font-size:13px;font-weight:bolder">KODAD</td>
-                                        </tr>
-                                        <tr width="100%" style="text-align:left;background:#f7f9ff;padding-left:8px">
-                                            <td width="20%">Pickup Point :</td>
-                                            <td style="font-size:13px;font-weight:bolder">S.R.NAGAR</td>
-                                            <td width="20%">Date of Journey :</td>
-                                            <td width="30%" style="font-size:13px;font-weight:bolder">24-Jun-2016</td>
-                                        </tr>
-                                        <tr width="100%" style="text-align:left;background:#e9efff;padding-left:8px">
-                                            <td width="20%">Pickup Point Adress </td>
-                                            <td style="font-size:13px;font-weight:bolder">S.R.NAGAR CITY BUS STOP 040-65557271</td>
-                                            <td width="20%">Depart On :</td>
-                                            <td style="font-size:13px;font-weight:bolder">24-Jun-2016 13:35</td>
-                                        </tr>
-                                        <tr width="100%" style="text-align:left;background:#f7f9ff;padding-left:8px">
-                                            <td width="20%">No. of Seats :</td>
-                                            <td style="font-size:13px;font-weight:bolder">
-                                                1
-                                                ( Adults:
-                                                1
-                                                &nbsp; Children:
-                                                0
-                                                )
-                                            </td>
-                                            <td width="20%">Arrival On :</td>
-                                            <td style="font-size:13px;font-weight:bolder">24-Jun-2016 18:45</td>
-                                        </tr>
-                                        <tr width="100%" style="text-align:left;background:#f7f9ff;padding-left:8px">
-                                            <td width="20%">Platform No :</td>
-                                            <td style="font-size:13px;font-weight:bolder"></td>
-                                            <td>Start Time at Origin :</td>
-                                            <td style="font-size:13px;font-weight:bolder">
-                                                24/06/201612:45 Hrs
-                                            </td>
-                                        </tr>
-                                        <tr width="100%" style="text-align:left;background:#e9efff;padding-left:8px">
-                                            <td>OB Ref. No :</td>
-                                            <td style="font-size:13px;font-weight:bolder">3019362659</td>
-                                            <td>Bank Name :</td>
-                                            <td style="font-size:13px;font-weight:bolder">
-                                                HDFC FSS
-                                            </td>
-                                        </tr>
-                                        <tr width="100%" style="text-align:left;background:#f7f9ff;padding-left:8px"></tr>
-                                    </tbody>
+                                    <table class="table table-striped table-hover" style="text-align:left">
+                                        <tbody>
+                                            <tr>
+                                                <td style="width:25%">Ticket Number:</td>
+                                                <td style="width:30%"><b>T00001</b></td>
+                                                <td style="width:20%">Transaction Id:</td>
+                                                <td style="width:30%">TRN0001</td>
+                                            </tr>
+                                            <tr>
+                                                <td><div>From:</div></td>
+                                                <td>TM Sasa</td>
+                                                <td>To:</td>
+                                                <td>Harare train station</td>
+                                            </tr>
+                                            <tr>
+                                                <td><div>Departure Date & Time:</div></td>
+                                                <td><b> 11/13/2016 12:00</b></td>
+                                                <td><div>Arrival Date & Time:</div></td>
+                                                <td><b>11/13/2016 12:35</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td><div>No. Of Seats:</div></td>
+                                                <td>4 (Adults 4, children 0)</td>
+                                                <td><div>Seat Numbers:</div></td>
+                                                <td><b>A1,A2,A6,A8</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td><div>Vehicle Number:</div></td>
+                                                <td><b>ZWB TT 30002</b></td>
+                                                <td><div>Service Provider:</div></td>
+                                                <td>Zipco travels</td>
+                                            </tr>
+                                            <tr>
+                                                <td><div>Distance:</div></td>
+                                                <td>2 Kms</td>
+                                                <td><div>Base fare:</div></td>
+                                                <td>$10</td>
+                                            </tr>
+                                            <tr>
+                                                <td><div>Booked On:</div></td>
+                                                <td>11/13/2016 10:00</td>
+                                                <td><div>Payment Type:</div></td>
+                                                <td>TM Sasa</td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                
+
+                            <div class="row">
+                                <table class="table" style="text-align:left">                                    
+                                    <tr>
+                                        <td style="width:60%"><h4 class=" block-heading">
+                                            <b> Contact details </b>
+                                        </h4>
+                                            <table class="table table-striped table-bordered">
+                                                <tbody>
+                                                    <tr>
+
+                                                       
+                                                            <td>Mobile:</td>
+                                                            <td>999-999-99999</td>
+                                                       
+                                                    </tr>
+                                                    <tr>
+
+                                                       
+                                                            <td>Email Address:</td>
+                                                            <td>abc@abc.com</td>
+                                                       
+                                                    </tr>
+                                                    <tr>
+
+                                                       
+                                                            <td>Address:</td>
+                                                            <td><address class="mbn">78183 Sweards Bluff Ave, INTERBUS<br />TM Sasa, ZMB 94107<br /><abbr title="Phone">P:</abbr>(123) 456-7890</address> </td>
+                                                       
+                                                    </tr>
+
+
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <h4 class=" block-heading">
+                                                <b>Fare details</b>
+                                            </h4>
+                                            <table class="table table-striped table-bordered table-hover">
+                                                <tbody>
+                                                    <tr>
+
+                                                       
+                                                            <td style="width:50%">Base Fare:</td>
+                                                            <td>$20</td>
+                                                        
+                                                    </tr>
+                                                    <tr>
+
+                                                     
+                                                            <td>Sub total:</td>
+                                                            <td>$80</td>
+                                                       
+                                                    </tr>
+
+                                                    <tr>
+
+                                                            <td>Total:</td>
+                                                            <td><b>$80</b></td>
+                                                       
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
                                 </table>
-                          
-                            <hr class="mbm" />
+                                   
+                                   
+                                        
+                                   
+                                </div>
+                                
+                           
+                           
+                            <h4 class="block-heading"><b>Passenger details</b></h4>
+                            
+                                    <table class="table table-striped table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th style="text-align:center">#</th>
+                                                <th style="text-align:center">Passenger Name</th>
+                                                <th style="text-align:center">Age</th>
+                                                <th style="text-align:center">Category</th>
+                                                <th style="text-align:center">Gender</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody style="text-align:center">
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Table cell</td>
+                                                <td>Table cell</td>
+                                                <td>Table cell</td>
+                                                <td>Table cell</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Table cell</td>
+                                                <td>Table cell</td>
+                                                <td>Table cell</td>
+                                                <td>Table cell</td>
 
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                <tbody>
-                                    <tr width="100%" style="text-align:left;background:#e9efff;padding-left:8px">
-                                        <td width="30%" style="font-weight:bold">Original Basic Fare (+):</td>
-                                        <td width="20%"><img src="https://ci3.googleusercontent.com/proxy/TI6XuTTUwSRYeSAtXLUlK044V9FiOhZona_1jolYlZxVjEe-cDHhDfUM4d4jgonuKcYQreerbmjeQs_UAGwURhnX0ieE8hCflgvPd1PzMvbWG0O5CXcW9Nc=s0-d-e1-ft#http://www.apsrtconline.in:80/oprs-web/_assets/images/InrSymbol.png" class="CToWUd">232.0</td>
-                                        <td width="30%">Basic Fare (+):</td>
-                                        <td width="20%" style="font-weight:bold"><img src="https://ci3.googleusercontent.com/proxy/TI6XuTTUwSRYeSAtXLUlK044V9FiOhZona_1jolYlZxVjEe-cDHhDfUM4d4jgonuKcYQreerbmjeQs_UAGwURhnX0ieE8hCflgvPd1PzMvbWG0O5CXcW9Nc=s0-d-e1-ft#http://www.apsrtconline.in:80/oprs-web/_assets/images/InrSymbol.png" class="CToWUd">232.0</td>
-                                        <td width="30%">Reservation Fee (+) :</td>
-                                        <td width="20%" style="font-weight:bold"><img src="https://ci3.googleusercontent.com/proxy/TI6XuTTUwSRYeSAtXLUlK044V9FiOhZona_1jolYlZxVjEe-cDHhDfUM4d4jgonuKcYQreerbmjeQs_UAGwURhnX0ieE8hCflgvPd1PzMvbWG0O5CXcW9Nc=s0-d-e1-ft#http://www.apsrtconline.in:80/oprs-web/_assets/images/InrSymbol.png" class="CToWUd">20.0</td>
-                                    </tr>
-                                    <tr width="100%" style="text-align:left;background:#f7f9ff;padding-left:8px">
-                                        <td>Service Fee (+):</td>
-                                        <td width="20%" style="font-size:13px;font-weight:bolder"><img src="https://ci3.googleusercontent.com/proxy/TI6XuTTUwSRYeSAtXLUlK044V9FiOhZona_1jolYlZxVjEe-cDHhDfUM4d4jgonuKcYQreerbmjeQs_UAGwURhnX0ieE8hCflgvPd1PzMvbWG0O5CXcW9Nc=s0-d-e1-ft#http://www.apsrtconline.in:80/oprs-web/_assets/images/InrSymbol.png" class="CToWUd">7.0</td>
-                                        <td width="30%">Toll Fee (+):</td>
-                                        <td width="20%" style="font-size:13px;font-weight:bolder"><img src="https://ci3.googleusercontent.com/proxy/TI6XuTTUwSRYeSAtXLUlK044V9FiOhZona_1jolYlZxVjEe-cDHhDfUM4d4jgonuKcYQreerbmjeQs_UAGwURhnX0ieE8hCflgvPd1PzMvbWG0O5CXcW9Nc=s0-d-e1-ft#http://www.apsrtconline.in:80/oprs-web/_assets/images/InrSymbol.png" class="CToWUd">12.0</td>
-                                    </tr>
-                                    <tr width="100%" style="text-align:left;background:#e9efff;padding-left:8px">
-                                        <td>Concession Amount (-):</td>
-                                        <td width="20%" style="font-size:13px;font-weight:bolder"><img src="https://ci3.googleusercontent.com/proxy/TI6XuTTUwSRYeSAtXLUlK044V9FiOhZona_1jolYlZxVjEe-cDHhDfUM4d4jgonuKcYQreerbmjeQs_UAGwURhnX0ieE8hCflgvPd1PzMvbWG0O5CXcW9Nc=s0-d-e1-ft#http://www.apsrtconline.in:80/oprs-web/_assets/images/InrSymbol.png" class="CToWUd">0.0</td>
-                                        <td>Dinner Amount (+):</td>
-                                        <td width="20%" style="font-size:13px;font-weight:bolder"><img src="https://ci3.googleusercontent.com/proxy/TI6XuTTUwSRYeSAtXLUlK044V9FiOhZona_1jolYlZxVjEe-cDHhDfUM4d4jgonuKcYQreerbmjeQs_UAGwURhnX0ieE8hCflgvPd1PzMvbWG0O5CXcW9Nc=s0-d-e1-ft#http://www.apsrtconline.in:80/oprs-web/_assets/images/InrSymbol.png" class="CToWUd">0.0</td>
-                                    </tr>
-                                    <tr width="100%" style="text-align:left;background:#f7f9ff;padding-left:8px">
-                                        <td width="30%">Levy Price (+):</td>
-                                        <td width="20%" style="font-size:13px;font-weight:bolder"><span style="font-size:14px;font-weight:bold;color:#23364d"><img src="https://ci3.googleusercontent.com/proxy/TI6XuTTUwSRYeSAtXLUlK044V9FiOhZona_1jolYlZxVjEe-cDHhDfUM4d4jgonuKcYQreerbmjeQs_UAGwURhnX0ieE8hCflgvPd1PzMvbWG0O5CXcW9Nc=s0-d-e1-ft#http://www.apsrtconline.in:80/oprs-web/_assets/images/InrSymbol.png" class="CToWUd">4.0</span></td>
-                                    </tr>
-                                    <tr width="100%" style="text-align:left;background:#e9efff;padding-left:8px">
-                                        <td width="30%">Total Price (+):</td>
-                                        <td width="20%" style="font-size:13px;font-weight:bolder"><span style="font-size:14px;font-weight:bold;color:#23364d"><img src="https://ci3.googleusercontent.com/proxy/TI6XuTTUwSRYeSAtXLUlK044V9FiOhZona_1jolYlZxVjEe-cDHhDfUM4d4jgonuKcYQreerbmjeQs_UAGwURhnX0ieE8hCflgvPd1PzMvbWG0O5CXcW9Nc=s0-d-e1-ft#http://www.apsrtconline.in:80/oprs-web/_assets/images/InrSymbol.png" class="CToWUd">275.0</span></td>
-                                    </tr>
-                                </tbody>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Table cell</td>
+                                                <td>Table cell</td>
+                                                <td>Table cell</td>
+                                                <td>Table cell</td>
+
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                               
+                            
+                            <table>
+                                <tr>
+                                    <td valign="top">
+                                        <span style="font-weight:bold;color:red">ID Proof Note : </span><span style="font-weight:bold">
+                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            During bus journey, one of the passenger on an e-ticket appears should carry the original identity card such as:
+                                            Driving License, Photo ID card issued by Central/State Govt./Private Organisations, Passport, Credit Card with Photo identification, Student ID issued by any Institute.
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top">
+                                        <h3>Important :</h3>
+                                        <ul>
+                                            <li>
+                                                The seat(s) booked under this ticket is/are not
+                                                transferable.
+                                            </li>
+                                            <li>
+                                                This e-ticket is valid only for the seat number and bus
+                                                service specified herein.
+                                            </li>
+                                            <li>
+                                                This e-ticket has to be carried by the passenger during the
+                                                journey along with an original photo ID Card of the passenger
+                                                whose
+                                                name appears above.
+                                            </li>
+                                            <li>Please keep the ticket safely till the end of the journey.</li>
+                                            <li>Please show the ticket at the time of checking.</li>
+                                            <li>
+                                                Corporation reserves the rights to change/cancel the
+                                                service category.
+                                            </li>
+                                            <li>
+                                                BOOKING/CANCELLATION of tickets can be done before 1 hour of the scheduled start
+                                                time at origin of the service only.
+                                            </li>
+                                            <li>
+                                                Partial cancellation is allowed in round-trip tickets provided the same number and type (Adult/child) are cancelled in both UP and DOWN Journeys.
+                                            </li>
+                                            <li>
+                                                For e-Ticketing/Refund Related Queries/ Service Cancelled refunds to
+                                                E-Mail: <a href="mailto:online.support@interbus.in" target="_blank">online.support@interbus.in</a>
+                                            </li>
+
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top">
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="font-weight:bold" width="20%">Booked By Name :</td>
+                                                    <td width="20%">ONLINE</td>
+                                                    <td width="15%"></td>                                                   
+                                                    <td style="font-weight:bold" width="20%">Booked On :</td>
+                                                    <td width="25%">23-Jun-2016 20:35</td>
+                                                </tr>
+                                                
+                                                <tr>
+                                                    <td colspan="5" style="text-align:center"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="5" style="text-align:center"><br /><b> WISH YOU HAPPY JOURNEY ***</b></td>
+                                                </tr>
+                                                
+                                               
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
                             </table>
-
-                            <table width="100%" border="1" cellspacing="0" cellpadding="0" style="padding:1px;border-collapse:collapse;margin-top:10px;margin-bottom:20px;margin-right:10px">
-                                <tbody>
-                                    <tr style="padding:1px;border-collapse:collapse;width:434px;margin-top:10px;background:#e4e4e4;margin-bottom:20px">
-                                        <td align="center" style="font-weight:bold">Passenger Name</td>
-                                        <td align="center" style="font-weight:bold">Age</td>
-                                        <td align="center" style="font-weight:bold">Category</td>
-                                        <td align="center" style="font-weight:bold">Gender</td>
-                                        <td align="center" style="font-weight:bold">Seat No.</td>
-                                    </tr>
-                                    <tr width="100%" style="text-align:left;background:#f7f9ff;padding-left:8px">
-                                        <td align="center">SARALA.M</td>
-                                        <td align="center">57</td>
-                                        <td align="center">ADULT</td>
-                                        <td align="center">Male</td>
-                                        <td align="center">4</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <table><tr>
-    <td valign="top">
-        <span style="font-weight:bold;color:red">ID Proof Note : </span><span style="font-weight:bold">
-            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            During bus journey, one of the passenger on an e-ticket appears should carry the original identity card such as:
-            Driving License, Photo ID card issued by Central/State Govt./Private Organisations, Passport, Credit Card with Photo identification, Student ID issued by any Institute.
-        </span>
-    </td>
-</tr>
-<tr>
-    <td valign="top">
-        <h3>Important :</h3>
-        <ul>
-            <li>
-                The seat(s) booked under this ticket is/are not
-                transferable.
-            </li>
-            <li>
-                This e-ticket is valid only for the seat number and bus
-                service specified herein.
-            </li>
-            <li>
-                This e-ticket has to be carried by the passenger during the
-                journey along with an original photo ID Card of the passenger
-                whose
-                name appears above.
-            </li>
-            <li>Please keep the ticket safely till the end of the journey.</li>
-            <li>Please show the ticket at the time of checking.</li>
-            <li>
-                Corporation reserves the rights to change/cancel the
-                service category.
-            </li>
-            <li>
-                BOOKING/CANCELLATION of tickets can be done before 1 hour of the scheduled start
-                time at origin of the service only.
-            </li>
-            <li>
-                Free travel in Vijayawada and Visakhapatnam city buses (except A/C buses) before 2Hrs. of departure
-                time and after 2Hrs. of arrival time is allowed.
-            </li>
-            <li>
-                Partial cancellation is allowed in round-trip tickets provided the same number and type (Adult/child) are cancelled in both UP and DOWN Journeys.
-            </li>
-            <li>
-                For e-Ticketing/Refund Related Queries/ Service Cancelled refunds to
-                E-Mail: <a href="mailto:online.support@apsrtconline.in" target="_blank">online.support@apsrtconline.in</a>
-            </li>
-            <li>
-                If waiting list ticket is not confirmed, please cancel the ticket within 15 days from the scheduled start time
-                at origin of the service to avail full refund (for the unconfirmed seats only) except service fee and reservation fee.
-                Wait listed passengers will not be permitted to perform the journey.
-            </li>
-        </ul>
-    </td>
-</tr>
-<tr>
-    <td valign="top">
-        <table border="0" cellpadding="0" cellspacing="0" width="100%">
-            <tbody>
-                <tr>
-                    <td style="font-weight:bold" width="15%">Booked By Name :</td>
-                    <td width="15%">ONLINE</td>
-                    <td width="15%"></td>
-                    <td width="15%"></td>
-                    <td style="font-weight:bold" width="15%">Booked On :</td>
-                    <td width="15%">23-Jun-2016 20:35</td>
-                </tr>
-                <tr>
-                    <td colspan="6">&nbsp;</td>
-                </tr>
-                <tr width="100%">
-                    <td width="1%"></td>
-                    <td width="26%" align="right" style="font-weight:bold">
-                        *** WISH YOU HAPPY JOURNEY.,
-
-                    </td>
-                    <td align="left" width="73%" colspan="4" style="font-weight:bold">
-                        SRVC START TIME @ORIGIN 12:45 HRS
-                        ***
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </td>
-</tr></table>
                         </div>
                     </div>
                 </div>
@@ -492,12 +476,7 @@
 
     <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
 
-    <script language="JavaScript">
-        if (window.print) {
-            ButtonControl.style.visibility = "hidden";
-            document.write('<form><input type=button name=print value="Print" onClick="window.print()"></form>');
-        }
-    </script>
+    
     <script src="js/main.js"></script>
     <script src="js/angular.js"></script>
     <script src="js/ngStorage.js"></script>
