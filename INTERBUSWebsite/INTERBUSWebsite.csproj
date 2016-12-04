@@ -97,6 +97,7 @@
     <Content Include="UI\css\01d511f62a-3.css" />
     <Content Include="UI\css\096daf45c2-2.css" />
     <Content Include="UI\css\banner.css" />
+    <Content Include="UI\EmailConfirmations.html" />
     <Content Include="UI\ForgotPassword.html" />
     <Content Include="UI\images\advt1.jpeg" />
     <Content Include="UI\images\Advt\Airport.jpg" />
@@ -137,6 +138,8 @@
     <Content Include="UI\js\fileupload\ng-file-upload-shim.js" />
     <Content Include="UI\js\fileupload\ng-file-upload.js" />
     <Content Include="UI\js\fileupload\Upload.js" />
+    <Content Include="UI\js\jsPDF\html2pdf.js" />
+    <Content Include="UI\js\jsPDF\jspdf.js" />
     <Content Include="UI\js\maps\gmap.js" />
     <Content Include="UI\js\maps\gmap1.js" />
     <Content Include="UI\js\TicketCheckOut.js" />

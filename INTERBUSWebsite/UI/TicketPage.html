@@ -277,9 +277,9 @@
                                                 <th style="text-align:center">Gender</th>
                                             </tr>
                                         </thead>
-                                        <tbody style="text-align:center">
+                                        <tbody style="text-align:center" ng-repeat="s in onwarddetails.BookedSeats">
                                             <tr>
-                                                <td>1</td>
+                                                <td>{{$index}}</td>
                                                 <td>Table cell</td>
                                                 <td>Table cell</td>
                                                 <td>Table cell</td>
@@ -480,7 +480,14 @@
     <script src="js/main.js"></script>
     <script src="js/angular.js"></script>
     <script src="js/ngStorage.js"></script>
+    <script src='js/jsPDF/jspdf.debug.js'></script>
+    <!--<script src='js/jsPDF/canvas.js'></script>-->
+    <script src='js/jsPDF/html2pdf.js'></script>
+
+    <script src="js/fileupload/angular-file-upload.js"></script>
+    <script src="js/fileupload/angular-file-upload-shim.js"></script>
     <script src="js/TicketPage.js"></script>
+    <script src="js/fileupload/Upload.js"></script>    
 
 </body>
 

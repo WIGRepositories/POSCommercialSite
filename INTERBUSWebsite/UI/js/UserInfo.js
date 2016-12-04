@@ -2,6 +2,8 @@
 var mycrtl1 = myapp1.controller('myCtrl', function ($scope, $http, $localStorage, $uibModal) {
 
     $scope.registeredUseId = 0;
+    $scope.userEmailAddress = 'test';//null;
+    $scope.emailVerificationStatus = 0;
 
     $scope.saveUser = function (type) {
         if (type == null) {
@@ -42,6 +44,9 @@ var mycrtl1 = myapp1.controller('myCtrl', function ($scope, $http, $localStorage
             alert('Please enter EmailAddress.');
             return;
         }
+        else {
+            $scope.userEmailAddress = type.EmailAddress;
+        }
 
         if (type.Mobile == null || type.Mobile == "") {
             alert('Please enter Mobile.');
@@ -73,6 +78,8 @@ var mycrtl1 = myapp1.controller('myCtrl', function ($scope, $http, $localStorage
             IsEmailVerified:0,
             InsUpdDelFlag:'I'
         };
+
+        
 
         var req = {
             method: 'POST',
@@ -125,18 +132,31 @@ var mycrtl1 = myapp1.controller('myCtrl', function ($scope, $http, $localStorage
 
     }
 
-    $scope.VerifyEmailAddress = function (code) {
+    $scope.VerifyEmailAddress = function () {
 
-        if (code == '1111') {
-            $scope.codeVerified = 1;
-            //redirect to user profile page
+        if ($scope.emailAddrCode == null) {
+            $scope.showDialog('Please enter valid verification code.');
+            return;
+        }
 
-            window.location.href = "UserProfile.html";
+        if ($scope.userEmailAddress == null) {
+            $scope.showDialog('Email Address could not be verified currently. Please re-try from user profile details. Click "OK" to navigate to user profile section.');
+            return;
         }
-        else {
-            // alert('invalid email code');
-            $scope.codeVerified = 0;
-        }
+
+        $http.get('/api/UserInfo/VerifyEmailAddress?emailAddress=' + $scope.userEmailAddress + '&code=' + $scope.emailAddrCode).then(function (response, req) {
+            $scope.emailVerificationStatus = response.data;
+            if ($scope.emailVerificationStatus == 1) {
+                $scope.showDialog('Email Address verified successfully. Click "OK" to proceed to User Profile');
+                window.location.href = "UserProfile.html";
+                return;
+            }
+            else
+            {
+                $scope.showDialog('Email Address could not be verified.');
+                return;
+            }
+        });
     }
 
     $scope.showDialog = function (message) {
