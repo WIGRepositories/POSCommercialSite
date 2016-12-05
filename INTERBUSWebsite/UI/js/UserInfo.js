@@ -147,7 +147,8 @@ var mycrtl1 = myapp1.controller('myCtrl', function ($scope, $http, $localStorage
         $http.get('/api/UserInfo/VerifyEmailAddress?emailAddress=' + $scope.userEmailAddress + '&code=' + $scope.emailAddrCode).then(function (response, req) {
             $scope.emailVerificationStatus = response.data;
             if ($scope.emailVerificationStatus == 1) {
-                $scope.showDialog('Email Address verified successfully. Click "OK" to proceed to User Profile');
+                //$scope.showDialog('Email Address verified successfully. Click "OK" to proceed to User Profile');
+                alert('Email Address verified successfully. Click "OK" to proceed to User Profile');
                 window.location.href = "UserProfile.html";
                 return;
             }

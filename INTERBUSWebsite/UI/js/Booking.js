@@ -4,6 +4,8 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
    
     $scope.seatstest = [];  
 
+
+
     $scope.triptype = "oneway";
     $scope.timing = "Now";
     $scope.currentDetails = 'Onward';

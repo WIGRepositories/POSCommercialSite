@@ -3,6 +3,8 @@ var app = angular.module('myApp', ['ngStorage','ui.bootstrap'])
 
 var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uibModal) {
 
+    $scope.selectedOp = 0;
+
     if ($localStorage.uname) {
         $scope.username = $localStorage.uname;
     }
@@ -77,9 +79,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
     if (p == null) {
         $scope.showDialog('Please enter password');
         return;
-
-    }
-   
+    }   
     var inputcred = { LoginInfo: u, Passkey: p }
 
     var req = {
@@ -88,7 +88,8 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
         data: inputcred
     }
 
-    $http(req).then(function (res) {
+    $http(req).then(function (res) {       
+
         if (res.data.length == 0) {
             alert('invalid credentials');
         }
@@ -99,23 +100,32 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
             $localStorage.userdetails = res.data;
             //  window.location.href = "UI/BookedTicketHistory.html";
             //$uibModal.close();
-
-            switch ($scope.FleetOwnerRequest1.Op) {
-                case "1":
-                    window.location.href = "UI/BookedTicketHistory.html";
-                    break;                    
-                case "2":
-                    window.location.href = "UI/CancelTicket.html";
-                    break;
-                case "3":
-                    window.location.href = "UI/Feedback.html";
-                    break;
-                case "4":
-                    window.location.href = "UI/UserProfile.html";
-                    break;
-                default:
-                    break;
+            if ($scope.selectedOp == 1)
+            {
+                window.location.href = "UI/BookedTicketHistory.html";
             }
+            else
+            {
+                window.location.href = "UI/UserProfile.html";
+            }
+            //switch ($scope.SelectedOp) {
+            //    case 1:
+            //        window.location.href = "UI/BookedTicketHistory.html";
+            //        break;                    
+            //    case 2:
+            //        window.location.href = "UI/CancelTicket.html";
+            //        break;
+            //    case 3:
+            //        window.location.href = "UI/Feedback.html";
+            //        break;
+            //    case 4:
+            //        window.location.href = "UI/UserProfile.html";
+            //        break;
+            //    default:
+            //        window.location.href = "UI/UserProfile.html";
+            //        break;
+            //        break;
+            //}
 
         }
     });
@@ -133,8 +143,14 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
     }
 
     $scope.RecentJourneyClick = function () {
-        
-        $scope.FleetOwnerRequest1.Op = 1;
+        if ($localStorage.uname) {
+            window.location.href = "UI/BookedTicketHistory.html";
+        }
+        else
+        {
+            $scope.selectedOp = 1;           
+        }
+       
     }
 
 

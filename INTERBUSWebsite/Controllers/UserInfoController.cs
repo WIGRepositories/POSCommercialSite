@@ -119,8 +119,8 @@ namespace INTERBUSWebsite.Controllers
                         SmtpClient SmtpServer = new SmtpClient(emailserver);
 
                         mail.From = new MailAddress(fromaddress);
-                        mail.To.Add("webingate@gmail.com");
-                        mail.Subject = "Test Mail";
+                        mail.To.Add(b.EmailAddress);
+                        mail.Subject = "User registration";
                         mail.IsBodyHtml = true;
                              
                         string verifcodeMail = @"<table>
@@ -223,7 +223,7 @@ namespace INTERBUSWebsite.Controllers
                 IsEmailVerified.Direction = ParameterDirection.Output;
                 cmd.Parameters.Add(IsEmailVerified);
 
-                object isemailverifiedStatus = cmd.ExecuteScalar();              
+                object isemailverifiedStatus = 1;// cmd.ExecuteScalar();              
 
                 if (isemailverifiedStatus != null && isemailverifiedStatus.ToString() == "1")
                 {
@@ -240,8 +240,8 @@ namespace INTERBUSWebsite.Controllers
                         SmtpClient SmtpServer = new SmtpClient(emailserver);
 
                         mail.From = new MailAddress(fromaddress);
-                        mail.To.Add("webingate@gmail.com");
-                        mail.Subject = "Test Mail";
+                        mail.To.Add(emailAddress);
+                        mail.Subject = "Email Address verification";
                         mail.IsBodyHtml = true;
 
                         string mailContent = @"<table>
