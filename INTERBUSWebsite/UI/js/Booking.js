@@ -183,7 +183,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
         newseat.FName = '';
         newseat.LName='';
         newseat.Age='';
-        newseat.Gender='';
+        newseat.Gender = '';        
         newseat.IdProof='';
         newseat.PassengerType='';
         newseat.PrimaryPassenger = '';
@@ -219,91 +219,119 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
         $scope.onwarddetails.MobileNo = currGroup.ContactNo1;
         $scope.onwarddetails.AltMobileNo = currGroup.ContactNo2;
         $scope.onwarddetails.Address = currGroup.Address;
+        $scope.onwarddetails.Seats = $scope.selectedSeatsList;
+        $scope.onwarddetails.NoOfSeats=$scope.onwarddetails.BookedSeats.length;
+        $scope.onwarddetails.perunitprice = $scope.perunitprice;
+        $scope.onwarddetails.amount = ($scope.selectedSeats.pssngr.length * $scope.perunitprice)
 
-        
+        $localStorage.onwarddetails = $scope.onwarddetails;
+
         $http({
             url: '/api/TicketBooking/SaveBookingDetails',
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             data: $scope.onwarddetails
         }).success(function (data, status, headers, config) {
-            alert('Saved successfully');
-
-            $localStorage.onwarddetails = $scope.onwarddetails;
+            if (data == null) {
+                alert('Error during ticket booking. Please re-try.')
+                return;
+            }
+            $scope.BookingId = data;
+            
+            if ($scope.BookingId == null || $scope.BookingId == -1) {
+                alert('Error during ticket booking. Please re-try.')
+                return;
+            }
+            $localStorage.BookingId = $scope.BookingId;
 
             window.location.href = "TicketCheckOut.html";
         }).error(function (ata, status, headers, config) {
-            alert(ata);
+            alert('Error during ticket booking. Please re-try. Details:' + ata);
         });
 
         //window.location.href = "TicketCheckOut.html";
     }
 
-    $scope.savedata = function () {      
-        //prepare the data for saving 
-        //if it is 2 way, then display the return option
-        //prepare the data for return
-        //proceed to checkout
-       // alert();
-
-        if ($localStorage.triptype == 1) {
-            $scope.showDiv = true; 
-           var book = { "No_Seats": "5", "cost": "1500", "JourneyType": "1", "passengersList": selectedSeats.pssngr, "Seatcost": "900" };
-            //for(int i=0; i<selectedSeats.length; i++){}
-            // passengersList: [{ "SeatId": "1", SeatNo: selectedSeats.SelectedSeatId, Fname: seat.pssngr.fname, Lname: seat.pssngr.lname, "Age": "30", "Sex": "0", "Identityproof": "adhar" }]
-
-            //Fname2: Booking.psngr2.Fname2,  //Lname2: Booking.psngr2.Lname2, //Fname3: Booking.psngr3.Fname3, //Lname3: Booking.psngr3.Lname3, //"No_Seats": "5", "cost": "1500", "JourneyType": "1",
-            //"passengersList": [{ "SeatId": "1","SeatNo": "A1", "Age": "30", "Sex": "0", "Identityproof": "adhar" },
-            //                  ]
-            //};
-            /*
-            {
-      "Pnr_ID": 0,  "Pnr_No": null,  "No_Seats": 0,  "cost": 0,  "dateandtime": "0001-01-01T00:00:00",  "src": null,  "dest": null,  "vehicle_No": null,  "PassengerId": 0, "Fname": "srujan",
-      "Lname": null,  "Age": 0,  "Sex": 0,  "Identityproof": null,  "TransactionId": 0,  "Transaction_Number": null,  "Amount": 0,  "Paymentmode": 0,  "Gateway_transId": null,
-      "PSID": 0,  "SeatNo": null,  "passengersList": [    {  "SeatId": null,  "Fname": null, "Lname": null,   "Age": 30,   "Sex": 0,   "Identityproof": null   },
+    $scope.savedata = function (b) {
+        if (selectList.length == 0)
         {
-          "SeatId": null,    "Fname": null,     "Lname": null,    "Age": 33,    "Sex": 0,   "Identityproof": null   }  ]
-    }*/
-            //$localStorage.waytype = selectedSeats;
-           var req = {
-                method: 'POST'
-                , url: '/api/TicketBooking/SaveBookingDetails'
-                , data: book
-            }
-         //  $http(req).then(function (res) { window.location.href = "TicketCartdetails.html"; });
-
-           $http({
-               url: '/api/TicketBooking/SaveBookingDetails',
-               method: 'POST',
-               headers: { 'Content-Type': 'application/json' },
-               data: book,
-
-           }).success(function (data, status, headers, config) {
-               alert('Saved successfully');
-               window.location.href = "TicketCartdetails.html";
-           }).error(function (ata, status, headers, config) {
-               alert(ata);
-           });
-
-        //    window.location.href = "TicketCartdetails.html";
-
-        } else if ($localStorage.triptype == 2 && stat <= 1)
-        {
-            //var book = { "No_Seats": "5", "cost": "1500", "JourneyType": "1", "passengersList": selectedSeats.returnpssngr, "Seatcost": "900" };
-            //$localStorage.book = book;
-            //var req = { method: 'POST', url: '/api/TicketBooking/SaveBookingDetails', data: book }
-            // $http(req).then(function (res) { window.location.href = "TicketPage.html"; });
-         
-            stat++;
-            if (stat == 1) {
-              
-                $http.get('/api/TicketBooking/GetAvailableServices?srcId=' + $scope.destId + '&destId=' + $scope.srcId).then(function (response, req) {
-                    $scope.services = response.data;
-                });                
-            }
-
-        } else { window.location.href = "TicketCartdetails.html"; 
+            alert('Please select the seats.');
         }
+        $scope.perunitprice = b.Price;
+    }
+
+    $scope.savedata1 = function (b) {      
+    //    //prepare the data for saving 
+    //    //if it is 2 way, then display the return option
+    //    //prepare the data for return
+    //    //proceed to checkout
+    //   // alert();
+
+    //    if ($localStorage.triptype == 1) {
+    //        $scope.showDiv = true; 
+    //       var book = { "No_Seats": "5", "cost": "1500", "JourneyType": "1", "passengersList": selectedSeats.pssngr, "Seatcost": "900" };
+    //        //for(int i=0; i<selectedSeats.length; i++){}
+    //        // passengersList: [{ "SeatId": "1", SeatNo: selectedSeats.SelectedSeatId, Fname: seat.pssngr.fname, Lname: seat.pssngr.lname, "Age": "30", "Sex": "0", "Identityproof": "adhar" }]
+
+    //        //Fname2: Booking.psngr2.Fname2,  //Lname2: Booking.psngr2.Lname2, //Fname3: Booking.psngr3.Fname3, //Lname3: Booking.psngr3.Lname3, //"No_Seats": "5", "cost": "1500", "JourneyType": "1",
+    //        //"passengersList": [{ "SeatId": "1","SeatNo": "A1", "Age": "30", "Sex": "0", "Identityproof": "adhar" },
+    //        //                  ]
+    //        //};
+    //        /*
+    //        {
+    //  "Pnr_ID": 0,  "Pnr_No": null,  "No_Seats": 0,  "cost": 0,  "dateandtime": "0001-01-01T00:00:00",  "src": null,  "dest": null,  "vehicle_No": null,  "PassengerId": 0, "Fname": "srujan",
+    //  "Lname": null,  "Age": 0,  "Sex": 0,  "Identityproof": null,  "TransactionId": 0,  "Transaction_Number": null,  "Amount": 0,  "Paymentmode": 0,  "Gateway_transId": null,
+    //  "PSID": 0,  "SeatNo": null,  "passengersList": [    {  "SeatId": null,  "Fname": null, "Lname": null,   "Age": 30,   "Sex": 0,   "Identityproof": null   },
+    //    {
+    //      "SeatId": null,    "Fname": null,     "Lname": null,    "Age": 33,    "Sex": 0,   "Identityproof": null   }  ]
+    //}*/
+    //        //$localStorage.waytype = selectedSeats;
+    //       var req = {
+    //            method: 'POST'
+    //            , url: '/api/TicketBooking/SaveBookingDetails'
+    //            , data: book
+    //        }
+    //     //  $http(req).then(function (res) { window.location.href = "TicketCartdetails.html"; });
+
+    //       $http({
+    //           url: '/api/TicketBooking/SaveBookingDetails',
+    //           method: 'POST',
+    //           headers: { 'Content-Type': 'application/json' },
+    //           data: book,
+
+    //       }).success(function (data, status, headers, config) {
+    //           if (data == null)
+    //           {
+    //               alert('Error during ticket booking. Please re-try.')
+    //               return;
+    //           }
+    //           $scope.BookingId = data[0];
+    //           $localStorage.BookingId = $scope.BookingId;
+    //           alert('Saved successfully');
+    //           window.location.href = "TicketCartdetails.html";
+    //       }).error(function (ata, status, headers, config) {
+    //           alert('Error during ticket booking. Please re-try. Details:' + ata);               
+    //       });
+
+    //    //    window.location.href = "TicketCartdetails.html";
+
+    //    } else if ($localStorage.triptype == 2 && stat <= 1)
+    //    {
+    //        //var book = { "No_Seats": "5", "cost": "1500", "JourneyType": "1", "passengersList": selectedSeats.returnpssngr, "Seatcost": "900" };
+    //        //$localStorage.book = book;
+    //        //var req = { method: 'POST', url: '/api/TicketBooking/SaveBookingDetails', data: book }
+    //        // $http(req).then(function (res) { window.location.href = "TicketPage.html"; });
+         
+    //        stat++;
+    //        if (stat == 1) {
+              
+    //            $http.get('/api/TicketBooking/GetAvailableServices?srcId=' + $scope.destId + '&destId=' + $scope.srcId).then(function (response, req) {
+    //                $scope.services = response.data;
+    //            });                
+    //        }
+
+    //    } else { window.location.href = "TicketCartdetails.html"; 
+    //    }
     }
 
     $scope.testAlert = function () {

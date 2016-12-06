@@ -130,7 +130,7 @@
                         <div class="panel-body" id="printableArea">
                             <div class="invoice-title pull-right">
                                 
-                                <p class="text-left">April 22, 2014</p>
+                                <p class="text-left">{{dt}}</p>
                             </div>
                             <div class="pull-left">
                                 <h2 class="text-green logo"><img style="height:26px" src="Images/logos/Idashboard.png" alt="Alternate Text" /></h2>
@@ -145,27 +145,28 @@
                                         <tbody>
                                             <tr>
                                                 <td style="width:25%">Ticket Number:</td>
-                                                <td style="width:30%"><b>T00001</b></td>
+                                                <td style="width:30%"><b>{{onwarddetails.TicketNo}}</b></td>
                                                 <td style="width:20%">Transaction Id:</td>
                                                 <td style="width:30%">TRN0001</td>
                                             </tr>
                                             <tr>
                                                 <td><div>From:</div></td>
-                                                <td>TM Sasa</td>
+                                                <td>{{srcStage}}</td>
                                                 <td>To:</td>
-                                                <td>Harare train station</td>
+                                                <td>{{destStage}}</td>
                                             </tr>
                                             <tr>
                                                 <td><div>Departure Date & Time:</div></td>
-                                                <td><b> 11/13/2016 12:00</b></td>
+                                                <td><b> {{onwarddetails.JourneyDate}}</b></td>
                                                 <td><div>Arrival Date & Time:</div></td>
-                                                <td><b>11/13/2016 12:35</b></td>
+                                                <td><b>{{onwarddetails.JourneyDate}}</b></td>
                                             </tr>
                                             <tr>
                                                 <td><div>No. Of Seats:</div></td>
-                                                <td>4 (Adults 4, children 0)</td>
+                                                <!--<td>{{onwarddetails.NoOfSeats}} (Adults {{onwarddetails.NoOfSeats}}, children 0)</td>-->
+                                                <td>{{onwarddetails.NoOfSeats}}</td>
                                                 <td><div>Seat Numbers:</div></td>
-                                                <td><b>A1,A2,A6,A8</b></td>
+                                                <td><b>{{onwarddetails.Seats}}</b></td>
                                             </tr>
                                             <tr>
                                                 <td><div>Vehicle Number:</div></td>
@@ -177,13 +178,13 @@
                                                 <td><div>Distance:</div></td>
                                                 <td>2 Kms</td>
                                                 <td><div>Base fare:</div></td>
-                                                <td>$10</td>
+                                                <td>${{onwarddetails.perunitprice}}</td>
                                             </tr>
                                             <tr>
                                                 <td><div>Booked On:</div></td>
-                                                <td>11/13/2016 10:00</td>
+                                                <td>{{dt}}</td>
                                                 <td><div>Payment Type:</div></td>
-                                                <td>TM Sasa</td>
+                                                <td>Credit Card</td>
                                             </tr>
                                             
                                         </tbody>
@@ -202,21 +203,21 @@
 
                                                        
                                                             <td>Mobile:</td>
-                                                            <td>999-999-99999</td>
+                                                            <td>{{onwarddetails.MobileNo}}</td>
                                                        
                                                     </tr>
                                                     <tr>
 
                                                        
                                                             <td>Email Address:</td>
-                                                            <td>abc@abc.com</td>
+                                                            <td>{{onwarddetails.EmailId}}</td>
                                                        
                                                     </tr>
                                                     <tr>
 
                                                        
                                                             <td>Address:</td>
-                                                            <td><address class="mbn">78183 Sweards Bluff Ave, INTERBUS<br />TM Sasa, ZMB 94107<br /><abbr title="Phone">P:</abbr>(123) 456-7890</address> </td>
+                                                            <td><address class="mbn">{{onwarddetails.Address}}</address> </td>
                                                        
                                                     </tr>
 
@@ -234,21 +235,21 @@
 
                                                        
                                                             <td style="width:50%">Base Fare:</td>
-                                                            <td>$20</td>
+                                                            <td>${{onwarddetails.perunitprice}}</td>
                                                         
                                                     </tr>
                                                     <tr>
 
                                                      
                                                             <td>Sub total:</td>
-                                                            <td>$80</td>
+                                                            <td>${{onwarddetails.amount}}</td>
                                                        
                                                     </tr>
 
                                                     <tr>
 
                                                             <td>Total:</td>
-                                                            <td><b>$80</b></td>
+                                                            <td><b>${{onwarddetails.amount}}</b></td>
                                                        
                                                     </tr>
 
@@ -273,35 +274,20 @@
                                                 <th style="text-align:center">#</th>
                                                 <th style="text-align:center">Passenger Name</th>
                                                 <th style="text-align:center">Age</th>
-                                                <th style="text-align:center">Category</th>
+                                                <!--<th style="text-align:center">Category</th>-->
                                                 <th style="text-align:center">Gender</th>
                                             </tr>
                                         </thead>
                                         <tbody style="text-align:center" ng-repeat="s in onwarddetails.BookedSeats">
                                             <tr>
                                                 <td>{{$index}}</td>
-                                                <td>Table cell</td>
-                                                <td>Table cell</td>
-                                                <td>Table cell</td>
-                                                <td>Table cell</td>
+                                                <td>{{s.FName}} {{s.LName}}</td>
+                                                <td>{{s.Age}}</td>                                                
+                                                <!--<td>ADULT</td>-->
+                                                <td ng-if="s.Gender==1"> Male</td>
+                                                <td ng-if="s.Gender==2"> Female</td>
+                                                <td ng-if="s.Gender==3"> Neutral</td>
                                             </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Table cell</td>
-                                                <td>Table cell</td>
-                                                <td>Table cell</td>
-                                                <td>Table cell</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Table cell</td>
-                                                <td>Table cell</td>
-                                                <td>Table cell</td>
-                                                <td>Table cell</td>
-
-                                            </tr>
-
                                         </tbody>
                                     </table>
                                

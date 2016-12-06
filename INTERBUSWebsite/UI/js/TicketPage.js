@@ -5,11 +5,15 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, file
    
 
     $scope.GetDetails = function () {
-
+        $scope.dt = new Date();
         //get the booking id and get the details from db
         //if obtained from db then take it otherwise retive from session
+        $scope.BookingId = $localStorage.BookingId;
 
-        $scope.onwarddetails =  $localStorage.onwarddetails;
+        $scope.srcStage = $localStorage.src.name;
+        $scope.destStage = $localStorage.dest.name;
+
+        $scope.onwarddetails = $localStorage.onwarddetails;
 
         //$scope.source = $localStorage.srcId;
         //$scope.destination = $localStorage.destId;
@@ -36,28 +40,28 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, file
 
         var html1 = '<!doctype html><html>' + docHead + '<body onLoad="window.print()">' + printContents + '</body></html>';
 
-        var html = '<html>' + docHead + '<body>' + printContents + '</body></html>';
+        //var html = '<html>' + docHead + '<body>' + printContents + '</body></html>';
 
-        html2pdf(html, pdf, function (pdf) {
-            var content = pdf.output('blob');
-            //pdf.output('dataurlnewwindow');
-            //pdf.save('ticket.pdf')
+        //html2pdf(html, pdf, function (pdf) {
+        //    var content = pdf.output('blob');
+        //    //pdf.output('dataurlnewwindow');
+        //    //pdf.save('ticket.pdf')
 
-            fileReader.readAsDataUrl(content, $scope, 4).then(function (result) {
+        //    fileReader.readAsDataUrl(content, $scope, 4).then(function (result) {
 
-                var docContent = result;
-                openPDF(docContent, "test.pdf");
-            });
-        });
+        //        var docContent = result;
+        //        openPDF(docContent, "test.pdf");
+        //    });
+        //});
         
-        //var winAttr = "location=yes, statusbar=no, menubar=no, titlebar=no, toolbar=no,dependent=no, width=865, height=600, resizable=yes, screenX=200, screenY=200, personalbar=no, scrollbars=yes";
+        var winAttr = "location=yes, statusbar=no, menubar=no, titlebar=no, toolbar=no,dependent=no, width=865, height=600, resizable=yes, screenX=200, screenY=200, personalbar=no, scrollbars=yes";
 
-        //var newWin = window.open("", "_blank", winAttr);
-        //var writeDoc = newWin.document;
-        //writeDoc.open();
-        //writeDoc.write(html1);
-        //writeDoc.close();
-        //newWin.focus();
+        var newWin = window.open("", "_blank", winAttr);
+        var writeDoc = newWin.document;
+        writeDoc.open();
+        writeDoc.write(html1);
+        writeDoc.close();
+        newWin.focus();
     }
 
     function openPDF(resData, fileName) {
