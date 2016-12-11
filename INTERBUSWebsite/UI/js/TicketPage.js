@@ -2,45 +2,97 @@
 
 var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, fileReader) {
 
-   
-
     $scope.GetDetails = function () {
-        $scope.dt = new Date();
-        //get the booking id and get the details from db
-        //if obtained from db then take it otherwise retive from session
+
         $scope.BookingId = $localStorage.BookingId;
 
-        $scope.srcStage = $localStorage.src.name;
-        $scope.destStage = $localStorage.dest.name;
+        if ($scope.BookingId == null) {
+            return;
+        }
 
-        $scope.onwarddetails = $localStorage.onwarddetails;
-
-        //$scope.source = $localStorage.srcId;
-        //$scope.destination = $localStorage.destId;
-        //$scope.details = $localStorage.book;
-        //$scope.firstName = $scope.details.No_Seats;
-        //$scope.NoofSeats = $scope.details.NoofSeats;
-        //$scope.JourneyType = $scope.details.JourneyType;
-
-
-
-        //$http.get('/api/TicketBooking/GetCities?srcId=' + $scope.source + '&destId=' + $scope.destination).then(function (response, req) {
-        //    $scope.services = response.data;
-        //    $scope.From = $scope.services.source;
-        //    $scope.To = $scope.services.destination;
-        //})
+        $http.get('/api/TicketBooking/GetticketDetails?bookingId=' + $scope.BookingId).then(function (response, data) {
+            $scope.ticketContent = response.data[0];
+            document.getElementById('printableArea').innerHTML = $scope.ticketContent.TicketContent;
+        });
     }
+   
 
+    $scope.GetDetails1 = function () {
+
+        
+        //demoFromHTML();
+        //$scope.dt = new Date();
+        ////get the booking id and get the details from db
+        ////if obtained from db then take it otherwise retive from session
+        //$scope.BookingId = $localStorage.BookingId;
+
+        //$scope.srcStage = $localStorage.src.Name;
+        //$scope.destStage = $localStorage.dest.Name;
+
+        //$scope.onwarddetails = $localStorage.onwarddetails;
+
+        ////$scope.source = $localStorage.srcId;
+        ////$scope.destination = $localStorage.destId;
+        ////$scope.details = $localStorage.book;
+        ////$scope.firstName = $scope.details.No_Seats;
+        ////$scope.NoofSeats = $scope.details.NoofSeats;
+        ////$scope.JourneyType = $scope.details.JourneyType;
+
+        //var docHead = document.head.outerHTML;
+        //var printContents = document.getElementById('printableArea').outerHTML;
+
+        //// var pdf = new jsPDF('p', 'pt', 'letter');
+
+        //var html1 = '<!doctype html><html>' + docHead + '<body onLoad="window.print()">' + printContents + '</body></html>';
+
+        //var BookedTicketDetails = {
+        //    BookingId: $scope.BookingId,
+        //    TicketNo: $scope.onwarddetails.TicketNo,
+        //    TransId: 'TR0001',//$scope.onwarddetails.TransId,
+        //    EmailId: $scope.onwarddetails.EmailId,
+        //    MobileNo: $scope.onwarddetails.MobileNo,
+        //    insupddelflag:'I',
+        //    TicketContent: html1
+        //}
+
+        //var req = {
+        //    method: 'POST',
+        //    url: '/api/TicketBooking/SaveBookedTicket',
+        //    data: BookedTicketDetails
+        //}
+
+        //$http(req).then(function (res) {
+            
+        //});
+    }
+    $scope.printDiv1 = function (id) {
+        var data = document.getElementById(id).innerHTML;
+        var myWindow = window.open('', 'my div', 'height=400,width=600');
+        myWindow.document.write('<html><head><title>my div</title>');
+        /*optional stylesheet*/ //myWindow.document.write('<link rel="stylesheet" href="main.css" type="text/css" />');
+        myWindow.document.write('</head><body >');
+        myWindow.document.write(data);
+        myWindow.document.write('</body></html>');
+        myWindow.document.close(); // necessary for IE >= 10
+
+        myWindow.onload = function () { // necessary if the div contain images
+
+            myWindow.focus(); // necessary for IE >= 10
+            myWindow.print();
+            myWindow.close();
+        };
+    }
     $scope.printDiv = function (div) {
 
+        
         var docHead = document.head.outerHTML;
-        var printContents = document.getElementById(div).outerHTML;
+        var printContents = document.getElementById(div).innerHTML;
 
-        var pdf = new jsPDF('p', 'pt', 'letter');
+      //  var pdf = new jsPDF();//'p', 'pt', 'a4');
 
         var html1 = '<!doctype html><html>' + docHead + '<body onLoad="window.print()">' + printContents + '</body></html>';
 
-        //var html = '<html>' + docHead + '<body>' + printContents + '</body></html>';
+      //  var html = '<html>' + docHead + '<body>' + printContents + '</body></html>';
 
         //html2pdf(html, pdf, function (pdf) {
         //    var content = pdf.output('blob');
@@ -54,7 +106,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, file
         //    });
         //});
         
-        var winAttr = "location=yes, statusbar=no, menubar=no, titlebar=no, toolbar=no,dependent=no, width=865, height=600, resizable=yes, screenX=200, screenY=200, personalbar=no, scrollbars=yes";
+        var winAttr = "location=yes, statusbar=no, menubar=no, titlebar=no, toolbar=no,dependent=no, width=1265, height=600, resizable=yes, screenX=200, screenY=100, personalbar=no, scrollbars=yes";
 
         var newWin = window.open("", "_blank", winAttr);
         var writeDoc = newWin.document;
@@ -62,6 +114,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, file
         writeDoc.write(html1);
         writeDoc.close();
         newWin.focus();
+        writeDoc.focus();
     }
 
     function openPDF(resData, fileName) {
@@ -113,6 +166,50 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, file
         return blob;
     }
 
+    function demoFromHTML() {
+        var pdf = new jsPDF('p', 'pt', 'letter')
 
+        // source can be HTML-formatted string, or a reference
+        // to an actual DOM element from which the text will be scraped.
+        , source = $('#printableArea')[0]
+
+        // we support special element handlers. Register them with jQuery-style 
+        // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
+        // There is no support for any other type of selectors 
+        // (class, of compound) at this time.
+        , specialElementHandlers = {
+            // element with id of "bypass" - jQuery style selector
+            '#bypassme': function (element, renderer) {
+                // true = "handled elsewhere, bypass text extraction"
+                return true
+            }
+        }
+
+        margins = {
+            top: 80,
+            bottom: 60,
+            left: 40,
+            width: 1500
+        };
+        // all coords and widths are in jsPDF instance's declared units
+        // 'inches' in this case
+        pdf.fromHTML(
+            source // HTML string or DOM elem ref.
+            , margins.left // x coord
+            , margins.top // y coord
+            ,
+            {
+                'width': margins.width // max width of content on PDF
+                , 'elementHandlers': specialElementHandlers
+            },
+            function (dispose) {
+                // dispose: object with X, Y of the last line add to the PDF 
+                //          this allow the insertion of new lines after html
+                pdf.save('Test.pdf');
+            },
+            margins
+        )
+    }
    
 });
+

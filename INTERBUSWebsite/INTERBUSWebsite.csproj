@@ -98,6 +98,8 @@
     <Content Include="UI\css\096daf45c2-2.css" />
     <Content Include="UI\css\banner.css" />
     <Content Include="UI\EmailConfirmations.html" />
+    <Content Include="UI\EmailTemplates\1.txt" />
+    <Content Include="UI\EmailTemplates\TicketFormat.html" />
     <Content Include="UI\ForgotPassword.html" />
     <Content Include="UI\images\advt1.jpeg" />
     <Content Include="UI\images\Advt\Airport.jpg" />

@@ -92,6 +92,12 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
         $scope.onwarddetails.TicketNo = $scope.GetTicketNo();
         $scope.onwarddetails.JourneyDate = new Date();
         $scope.onwarddetails.JourneyTime = new Date();
+
+        $scope.onwarddetails.Src = $localStorage.src.Name;
+        $scope.onwarddetails.Dest = $localStorage.dest.Name;
+        $scope.onwarddetails.SrcId = $localStorage.src.Id;
+        $scope.onwarddetails.DestId = $localStorage.dest.Id;
+        
         $scope.onwarddetails.EmailId = '';
         $scope.onwarddetails.MobileNo = '';
         $scope.onwarddetails.AltMobileNo = '';
@@ -225,29 +231,29 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $fil
         $scope.onwarddetails.amount = ($scope.selectedSeats.pssngr.length * $scope.perunitprice)
 
         $localStorage.onwarddetails = $scope.onwarddetails;
-
-        $http({
-            url: '/api/TicketBooking/SaveBookingDetails',
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            data: $scope.onwarddetails
-        }).success(function (data, status, headers, config) {
-            if (data == null) {
-                alert('Error during ticket booking. Please re-try.')
-                return;
-            }
-            $scope.BookingId = data;
+        window.location.href = "TicketCheckOut.html";
+        //$http({
+        //    url: '/api/TicketBooking/SaveBookingDetails',
+        //    method: 'POST',
+        //    headers: { 'Content-Type': 'application/json' },
+        //    data: $scope.onwarddetails
+        //}).success(function (data, status, headers, config) {
+        //    if (data == null) {
+        //        alert('Error during ticket booking. Please re-try.')
+        //        return;
+        //    }
+        //    $scope.BookingId = data;
             
-            if ($scope.BookingId == null || $scope.BookingId == -1) {
-                alert('Error during ticket booking. Please re-try.')
-                return;
-            }
-            $localStorage.BookingId = $scope.BookingId;
+        //    if ($scope.BookingId == null || $scope.BookingId == -1) {
+        //        alert('Error during ticket booking. Please re-try.')
+        //        return;
+        //    }
+        //    $localStorage.BookingId = $scope.BookingId;
 
-            window.location.href = "TicketCheckOut.html";
-        }).error(function (ata, status, headers, config) {
-            alert('Error during ticket booking. Please re-try. Details:' + ata);
-        });
+        //    window.location.href = "TicketCheckOut.html";
+        //}).error(function (ata, status, headers, config) {
+        //    alert('Error during ticket booking. Please re-try. Details:' + ata);
+        //});
 
         //window.location.href = "TicketCheckOut.html";
     }

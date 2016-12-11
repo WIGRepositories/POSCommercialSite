@@ -5,8 +5,6 @@ using System.Web;
 
 namespace INTERBUSWebsite.Models
 {
-
-
     public class FleetOwner
     {
         public int Id { get; set; }
@@ -75,6 +73,11 @@ namespace INTERBUSWebsite.Models
       public string Address { get; set; }
         public DateTime? JourneyDate{ get; set; }
       public DateTime? JourneyTime{ get; set; }
+      public decimal perunitprice { get; set; }
+      public DateTime? ArrivalDate { get; set; }
+      public DateTime? ArrivalTime { get; set; }
+      public DateTime? DepartureDate { get; set; }
+      public DateTime? DepartureTime { get; set; }
       public string Src{ get; set; }
       public string Dest{ get; set; }
       public int SrcId{ get; set; }
@@ -125,7 +128,16 @@ namespace INTERBUSWebsite.Models
 
         public string insupddelflag { get; set; }
     }
-
+    public class BookedTicketDetails {
+        public int Id { get; set; }
+        public int BookingId { get; set; }
+        public string TicketNo { get; set; }
+        public string TransId { get; set; }
+        public string EmailId { get; set; }
+        public string MobileNo { get; set; }
+        public string TicketContent { get; set; }
+        public string insupddelflag { get; set; }
+    }
     public class passengerDetails
     {
         public string SeatNo { get; set; }
