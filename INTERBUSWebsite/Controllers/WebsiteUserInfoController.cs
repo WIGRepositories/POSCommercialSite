@@ -116,6 +116,32 @@ namespace INTERBUSWebsite.Controllers
                 return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex);
             }
         }
+
+         [HttpGet]
+         public DataTable GetBookedHistory(string emailid) {
+             DataTable dt = new DataTable();
+
+             //connect to database
+            SqlConnection conn = new SqlConnection();
+            //connetionString="Data Source=ServerName;Initial Catalog=DatabaseName;User ID=UserName;Password=Password"
+            conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["btposdb"].ToString();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "GetBookedHistory";
+            cmd.Connection = conn;
+
+            SqlParameter psw = new SqlParameter("@emailAddress", SqlDbType.VarChar, 20);
+            psw.Value = emailid;
+            cmd.Parameters.Add(psw);
+
+            
+            SqlDataAdapter db = new SqlDataAdapter(cmd);
+            db.Fill(dt);
+             
+
+             return dt;
+         }
         public void Options()
         {
 

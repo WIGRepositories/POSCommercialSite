@@ -407,6 +407,137 @@ namespace INTERBUSWebsite.Controllers
                 #endregion ticket information
 
                 #region Make payment and get the payment ID
+                int btposTransId = -1;
+
+            
+
+            try
+            {
+                //INSERT INTO [POSDashboard].[dbo].[BookingPaymentDetails]
+                //       ([TicketNo]
+                //       ,[Amount]
+                //       ,[PaymentMode]
+                //       ,[transDate]
+                //       ,[BookingId]
+                //       ,[GateWayTransId]
+                //       ,[TransStatus]
+                //       ,[TransStatusId]
+                //       ,[TransType]
+                //       ,[TransTypeId])
+                // VALUES
+                //       (<TicketNo, varchar(30),>
+                //       ,<Amount, decimal(18,0),>
+                //       ,<PaymentMode, varchar(50),>
+                //       ,<transDate, datetime,>
+                //       ,<BookingId, int,>
+                //       ,<GateWayTransId, varchar(50),>
+                //       ,<TransStatus, varchar(20),>
+                //       ,<TransStatusId, int,>
+                //       ,<TransType, varchar(50),>
+                //       ,<TransTypeId, int,>)
+
+                #region insert initial record for trans
+
+                //connetionString="Data Source=ServerName;Initial Catalog=DatabaseName;User ID=UserName;Password=Password"
+               // conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["btposdb"].ToString();
+
+                SqlCommand cmd1 = new SqlCommand();
+                cmd1.CommandType = CommandType.StoredProcedure;
+                cmd1.CommandText = "InsUpdOnlineTicketTransactions";
+                cmd1.Connection = conn;
+
+                SqlParameter cid = new SqlParameter("@TicketNo",SqlDbType.VarChar,30);
+                cid.Value = B.TicketNo;
+                cmd1.Parameters.Add(cid);
+                
+                SqlParameter amt = new SqlParameter("@Amount",SqlDbType.Decimal);
+                amt.Value = B.Amount;
+                cmd1.Parameters.Add(amt);
+
+                SqlParameter pmode = new SqlParameter("@PaymentMode",SqlDbType.VarChar,30);
+                pmode.Value = "Credit Card";
+                cmd1.Parameters.Add(pmode);
+                
+                SqlParameter trandate = new SqlParameter("@transDate",SqlDbType.DateTime);
+                trandate.Value = DateTime.Now;
+                cmd1.Parameters.Add(trandate);
+
+                SqlParameter bkid = new SqlParameter("@BookingId",SqlDbType.Int);
+                bkid.Value = bookingId;
+                cmd1.Parameters.Add(bkid);
+
+                SqlParameter gtranId = new SqlParameter("@GateWayTransId",SqlDbType.VarChar,50);
+                gtranId.Value = DBNull.Value;
+                cmd1.Parameters.Add(gtranId);
+
+                SqlParameter transStatus = new SqlParameter("@TransStatus",SqlDbType.VarChar,20);
+                transStatus.Value = "In Progress";
+                cmd1.Parameters.Add(transStatus);
+
+                SqlParameter TransStatusId = new SqlParameter("@TransStatusId",SqlDbType.Int);
+                TransStatusId.Value = 1;
+                cmd1.Parameters.Add(TransStatusId);
+                
+                SqlParameter TransType = new SqlParameter("@TransType",SqlDbType.VarChar,50);
+                TransType.Value = "online";
+                cmd1.Parameters.Add(TransType);
+
+                  SqlParameter TransTypeId = new SqlParameter("@TransTypeId",SqlDbType.Int);
+                TransTypeId.Value = 1;
+                cmd1.Parameters.Add(TransTypeId);
+
+                SqlParameter flag = new SqlParameter("@insupddelflag", SqlDbType.VarChar);
+                flag.Value = "I";
+                cmd1.Parameters.Add(flag);                             
+
+                //insert into db
+                if (conn != null && conn.State != ConnectionState.Open)
+                {
+                    conn.Open();
+                }              
+
+                object val = cmd1.ExecuteScalar();
+
+                conn.Close();
+
+                #endregion insert initial record for trans
+
+                string gatewayTransId = "";
+
+                #region paypal
+                //GetPaymentAck(decimal amt, string cardno, string cvv, string expirydate)
+                gatewayTransId = PaymentsController.GetPaymentAck(B.Amount,"","","");
+
+                #endregion paypal
+
+                #region update transagain
+
+                cmd1.Parameters["@insupddelflag"].Value = "U";
+                cmd1.Parameters["@GateWayTransId"].Value = gatewayTransId;
+                cmd1.Parameters.Add("@Id", SqlDbType.Int).Value = val;
+
+               
+                if (conn != null && conn.State != ConnectionState.Open)
+                {
+                    conn.Open();
+                }
+
+                cmd1.ExecuteNonQuery();
+
+                conn.Close();
+                #endregion update transagain
+
+
+            }
+            catch (SqlException sqlEx)
+            {
+                if (conn != null && conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+
+            }
+
                 #endregion Make payment and get the payment ID
 
                 #region update the status of the booking

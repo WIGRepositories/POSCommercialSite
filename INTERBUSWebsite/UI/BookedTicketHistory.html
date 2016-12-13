@@ -109,25 +109,13 @@
     </div>
     <!--End Header-->
 
-    <div class="container" style="margin-top:60px;min-height:380px;font-size:medium">
-        <div class="row">
-
-            <!--BEGIN TITLE & BREADCRUMB PAGE-->
-            <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
-                <ol class="breadcrumb page-breadcrumb pull-right " style="padding:0px">
-                    <li>Hello, {{username}}!&nbsp;&nbsp;&nbsp;&nbsp;</li>
-                    <li><a href="../Index.html">Sign Out</a>&nbsp;&nbsp;</li>
-                </ol>
-
-                <div class="clearfix"></div>
-            </div>
-
-        </div>
+    <div class="container" style="margin-top:53px;font-size:medium">
+       
 
         <div class="row" style="padding:0px">
             <div id="wrapper" style="padding:0px">
                 <!--BEGIN SIDEBAR MENU-->
-                <nav id="sidebar" role="navigation" data-step="2" data-position="right" class="navbar-default navbar-static-side" style="padding: 0px; background-color: none;z-index:0">
+                <nav id="sidebar" role="navigation" data-step="2" data-position="right" class="navbar-default navbar-static-side" style="padding: 0px; background-color: none;z-index:0;height:50px">
                     <div class="sidebar-collapse menu-scroll">
                         <ul id="side-menu" class="nav" style="margin-left: 0px; background-color: none">
 
@@ -183,42 +171,40 @@
                     </div>
                 </nav>                <!--END CHAT FORM--><!--BEGIN PAGE WRAPPER-->
                 <div id="page-wrapper">
+
+
                     <!--BEGIN TITLE & BREADCRUMB PAGE-->
-                    <div class="page-content">
-                        <div id="form-layouts" class="row">
-                            <div class="col-lg-12">
+                    <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
+                        <ol class="breadcrumb page-breadcrumb pull-right " style="padding:0px">
+                            <li>Hello, {{username}}!&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                            <li><a href="../Index.html">Sign Out</a>&nbsp;&nbsp;</li>
+                        </ol>
 
-                                <div style="background: transparent; border: 0; box-shadow: none !important" class="tab-content pan mtl mbn responsive">
-                                    <div id="tab-form-actions" class="tab-pane fade active in">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="panel panel-violet">
-                                                    <div class="panel-heading">Booked Ticket History</div>
-                                                    <div class="panel-body pan">
-                                                        <div class="alert alert-danger">
-                                                            No Records to show.
-                                                           
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                    <!--END PAGE WRAPPER-->
-                                </div>
-                            </div>
-
-                        </div>
+                        <div class="clearfix"></div>
                     </div>
 
-                </div>
 
-            </div>
+                    <!--BEGIN TITLE & BREADCRUMB PAGE-->
+                    <div class="page-content">
+                        <div id="table-action" class="row">
+                            <div class="col-lg-12">
+                                <div id="tableactionTabContent" class="tab-content">
+
+                                    <div class="alert alert-danger">
+                                        No Records to show.
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    </div>
 
         </div>
-    </div>
+            </div>
+        </div>
     <!--END CONTENT--><!--BEGIN FOOTER-->
 
 
@@ -313,6 +299,6 @@
     <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
     <script src="js/main.js"></script>
     <script src="js/angular.js"></script>
-    <script src="js/Index.js"></script>
+    <script src="js/BookingHistory.js"></script>
 </body>
 </html>
