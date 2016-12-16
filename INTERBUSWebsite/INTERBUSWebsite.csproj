@@ -118,12 +118,15 @@
     <Content Include="UI\images\busimages\SSeat.png" />
     <Content Include="UI\images\dashboard.png" />
     <Content Include="UI\images\img5.jpg" />
+    <Content Include="UI\images\logos\Chihuta-homepage-icon.png" />
     <Content Include="UI\images\logos\dashboard.png" />
     <Content Include="UI\images\logos\Idashboard.png" />
     <Content Include="UI\images\promos\11.jpg" />
     <Content Include="UI\images\promos\12.png" />
     <Content Include="UI\images\promos\13.jpg" />
     <Content Include="UI\images\promos\14.png" />
+    <Content Include="UI\images\promos\images.jpeg" />
+    <Content Include="UI\images\promos\x001-00081-buses-contactless-payment_rdax_400x200.jpg" />
     <Content Include="UI\js\BookingHistory.js" />
     <Content Include="UI\js\bootstrap.js" />
     <Content Include="UI\js\Cancellation.js" />
@@ -134,6 +137,7 @@
     <Content Include="UI\js\Carousle\js-core.js" />
     <Content Include="UI\js\Carousle\jwplayer.js" />
     <Content Include="UI\js\Carousle\thirdparty.js" />
+    <Content Include="UI\js\ContactUs.js" />
     <Content Include="UI\js\CreateFleetOwner.js" />
     <Content Include="UI\js\fileupload\angular-file-upload-shim.js" />
     <Content Include="UI\js\fileupload\angular-file-upload.js" />
@@ -145,6 +149,7 @@
     <Content Include="UI\js\jsPDF\jspdf.js" />
     <Content Include="UI\js\maps\gmap.js" />
     <Content Include="UI\js\maps\gmap1.js" />
+    <Content Include="UI\js\Refund.js" />
     <Content Include="UI\js\TicketCheckOut.js" />
     <Content Include="UI\js\UserProfile.js" />
     <Content Include="UI\js\WebsiteUserInfo.js" />
@@ -269,7 +274,6 @@
     <Content Include="UI\images\logos\cycle-hire-homepage-icon.png" />
     <Content Include="UI\images\logos\interbus.jpg" />
     <Content Include="UI\images\logos\interbusLogo.png" />
-    <Content Include="UI\images\logos\oyster-homepage-icon.png" />
     <Content Include="UI\images\one1.jpg" />
     <Content Include="UI\images\promos\1.jpg" />
     <Content Include="UI\images\promos\1.png" />
@@ -294,8 +298,6 @@
     <Content Include="UI\images\promos\santanderfreehire-hp-1400x700.jpg" />
     <Content Include="UI\images\promos\thames-clipper_rdax_400x200.jpg" />
     <Content Include="UI\images\promos\travel-disruptions_rdax_400x200.jpg" />
-    <Content Include="UI\images\promos\x001-00080-checking-machine-oyster_rdax_400x200.jpg" />
-    <Content Include="UI\images\promos\x001-00081-buses-contactless-payment_rdax_400x200.jpg" />
     <Content Include="UI\images\santanderfreehire-hp-1400x700.jpg" />
     <Content Include="UI\images\SocialMedia_sprite.png" />
     <Content Include="UI\images\StyleSheet1.css" />
@@ -342,7 +344,6 @@
     <Content Include="UI\Login.html" />
     <Content Include="UI\mail.html" />
     <Content Include="UI\TicketCheckOut.html" />
-    <Content Include="UI\traveloptions.html" />
     <Content Include="UI\PopupTest.html" />
     <Content Include="UI\PrintTicket.html" />
     <Content Include="UI\Refund.html" />
@@ -354,6 +355,7 @@
     <Content Include="UI\success.html" />
     <Content Include="UI\TicketCartdetails.html" />
     <Content Include="UI\TicketPage.html" />
+    <Content Include="UI\traveloptions.html" />
     <Content Include="UI\UserProfile.html" />
     <Content Include="UI\vendors\animate.css\animate.css" />
     <Content Include="UI\vendors\bootstrap-colorpicker\css\colorpicker.css" />

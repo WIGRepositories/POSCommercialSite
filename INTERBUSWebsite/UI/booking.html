@@ -132,7 +132,7 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <font style="color:white;" size="4">  {{S.Name}} - {{D.Name}} </font>
+                            <font style="color:white;" size="4">  {{src.Name}} - {{dest.Name}} </font>
                         </div>
                         <div class="col-md-2">
                             <font style="color:white;" size="4">  </font>
@@ -212,7 +212,7 @@
                             <td style="width: 100%; border: solid 1px; padding-top: 10px;padding-bottom:10px">
                                 <div class=" col-md-4" style="text-align:center">
                                     <img src="Images/busimages/nonac.jpg" />
-                                    <strong>  {{b.Company}}</strong>
+                                    <strong>  {{b.cmpName}}</strong>
                                     <div class="message-inner">
                                         <div class="qa-message-content">
                                             {{b.VehicleType}}
@@ -220,7 +220,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3">
-                                    <img src="Images/busimages/time.jpg" /><strong> {{b.StartTime}} -  {{b.EndTime}}</strong>
+                                    <img src="Images/busimages/time.jpg" /><strong> {{b.ArrivalTime}} -  {{b.DepartureTime}}</strong>
 
 
                                     <div class="message-inner">
@@ -238,7 +238,7 @@
                                 </div>
                                 <div class="col-md-2">
                                     <div class="col-md-3 col-sm-4">
-                                        <strong>Rs.{{b.Price}}</strong>
+                                        <strong>Rs.{{b.Amount}}</strong>
                                     </div>
                                     <br />
                                     <button ng-click="FillInitialDetails($index, b);" type="button" class="btn btn-primary">

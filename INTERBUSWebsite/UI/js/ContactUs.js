@@ -7,11 +7,9 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
         $scope.emailid = $localStorage.userdetails[0].EmailAddress;
 
-        $http.get('/api/websiteuserinfo/GetWebsiteUserInfo?logininfo=' + $scope.emailid).then(function (response, data) {
-            $scope.userdetails = response.data[0];
+        $http.get('/api/WebsiteUserInfo/GetTicketHistory?emailid=' + $scope.emailid).then(function (response, data) {
+            $scope.bookedHistory = response.data;
         });
-    } else {
-        window.location.href = "../index.html";
     }
 
     $scope.LogoutUser = function () {
