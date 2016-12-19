@@ -1,6 +1,12 @@
-﻿var app = angular.module('myApp', [])
-var ctrl = app.controller('myCtrl', function ($scope, $http) {
-   
+﻿var app = angular.module('myApp', ['ngStorage', 'ui.bootstrap'])
+
+var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uibModal) {
+
+
+    if ($localStorage.uname) {
+        $scope.username = $localStorage.uname;
+    }
+
     $scope.GetSchedules = function () {
 
         $http.get('/api/Schedules/GetSchedules').then(function (response, req) {

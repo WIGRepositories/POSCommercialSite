@@ -1,4 +1,4 @@
-﻿<html lang="en">
+﻿<html lang="en" ng-app="myApp" ng-controller="myCtrl">
 <head>
 
     <title>Interbus - Get Moving Anywhere, Comfortably</title>
@@ -19,15 +19,15 @@
 
     <link type="text/css" rel="stylesheet" href="vendors/jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
     <link type="text/css" rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
-  
+
     <link type="text/css" rel="stylesheet" href="vendors/animate.css/animate.css">
 
     <link type="text/css" rel="stylesheet" href="vendors/iCheck/skins/all.css">
-   
+
     <!--Loading style-->
     <link href="css/themes/style2/pink-blue.css" rel="stylesheet" />
     <link type="text/css" rel="stylesheet" href="css/style-responsive.css">
-  
+
 
 
 </head>
@@ -35,6 +35,10 @@
 <body>
 
     <div id="container">
+
+        <!--start of white bar above menu-->
+        <!--End of white bar above menu-->
+        <!--Start Menu-->
         <div class="mainnav" id="mainnav" tabindex="0">
 
             <div class="top-row clearfix" style="position:fixed; width:100%; z-index:1">
@@ -45,7 +49,7 @@
                     <div class="col-lg-2 pull-left">
                         <a style="margin-top: 10px; padding-top: 0px; margin-right: 30px; float:left" href="../index.html"><img style="height:26px" src="Images/logos/Idashboard.png" alt="Alternate Text" /></a>
                     </div>
-                    <div class="col-lg-8">
+                    <div class="col-lg-9">
                         <div class="r">
                             <div class="rr">
                                 <ul class="collapsible-menu clearfix" style="margin-left:0px;">
@@ -90,40 +94,31 @@
                                         </ul>
 
                                     </li>
-                                    <li>
-                                        <a style="text-decoration:none" href="#">Hi, {{username}}!</a>
 
-                                        <ul class="nav" style="padding:0px">
-                                            <li class="dropdown" style="padding-left:0px">
-                                                <!--<a data-hover="dropdown" href="#" class="dropdown-toggle  pull-left" style="background-color: black;">&nbsp;<span class=" hidden-xs" style="text-decoration:none; color:#CCCCCC;">Hi, {{username}}!</span>&nbsp;<span class="caret"></span></a>-->
-                                                <ul class="dropdown-menu dropdown-user pull-right">
-                                                    <li><a href="UserProfile.html"><i class="fa fa-user"></i>My Account</a></li>
-                                                    <li><a href="BookedTicketHistory.html"><i class="fa fa-calendar"></i>Recent Journey</a></li>
-                                                    <li><a href="CancelTicket.html"><i class="fa fa-envelope"></i>Cancellation</a></li>
-                                                    <li><a href="Feedback.html"><i class="fa fa-tasks"></i>Feedback/Enquiry</a></li>
+                                    <li ng-hide="username == null" style="text-align:left;background-color:gray">
+                                        <a style="text-decoration: none; text-align: left;padding-left:50px" href="#">Hi, {{username}}!</a>
 
-                                                    <li><a href="#" ng-click="SignOutUser();"><i class="fa fa-key"></i>Sign Out</a></li>
-                                                </ul>
-                                            </li>
+                                        <ul style="padding-left:0px">
+
+                                            <li><a href="UserProfile.html"><i class="fa fa-user"></i>My Account</a></li>
+                                            <li><a href="BookedTicketHistory.html"><i class="fa fa-calendar"></i>Recent Journey</a></li>
+                                            <li><a href="CancelTicket.html"><i class="fa fa-envelope"></i>Cancellation</a></li>
+                                            <li><a href="Feedback.html"><i class="fa fa-tasks"></i>Feedback/Enquiry</a></li>
+
+                                            <li><a href="#" ng-click="SignOutUser();"><i class="fa fa-key"></i>Sign Out</a></li>
+
 
                                         </ul>
 
 
                                     </li>
-                                    <li style="margin-left:220px">
-
-
-
-
-                                    </li>
-
 
                                 </ul>
                             </div>
 
                         </div>
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-lg-1">
                         <div style="float:right; padding-top:11px">
                             <input type="text" placeholder="Search" id="q" name="q" style="border-radius:30px; width:120px; height:35px" />
 
@@ -183,20 +178,22 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="inputSubject" class="control-label">Category</label>
-                                    <div class="input-icon right"><select class="form-control" ng-model="seat.Age">
-                                        <option value="" selected>Select</option>
-                                        <option value="21">Suggestion</option>
-                                        <option value="22">Complaint</option>
-                                        <option value="23">Booking issue</option>
-                                        <option value="24">cancellation issue</option>
-                                        <option value="25">Scheduling issue</option>
-                                        <option value="26">Card issue</option>
-                                        <option value="27">Print issue</option>
-                                        <option value="28">License renewal issue</option>
-                                        <option value="29">Payment related issue</option>
-                                        <option value="30">Refund issue</option>
-                                        <option value="31">Others</option>                                        
-                                    </select></div>
+                                    <div class="input-icon right">
+                                        <select class="form-control" ng-model="seat.Age">
+                                            <option value="" selected>Select</option>
+                                            <option value="21">Suggestion</option>
+                                            <option value="22">Complaint</option>
+                                            <option value="23">Booking issue</option>
+                                            <option value="24">cancellation issue</option>
+                                            <option value="25">Scheduling issue</option>
+                                            <option value="26">Card issue</option>
+                                            <option value="27">Print issue</option>
+                                            <option value="28">License renewal issue</option>
+                                            <option value="29">Payment related issue</option>
+                                            <option value="30">Refund issue</option>
+                                            <option value="31">Others</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputSubject" class="control-label">Subject</label>
@@ -204,7 +201,7 @@
                                 </div>
                                 <div class="form-group"><label for="inputMessage" class="control-label">Message</label><textarea rows="5" class="form-control"></textarea></div>
                             </div>
-                            <div class="form-actions text-right pal">                                
+                            <div class="form-actions text-right pal">
                                 <button ng-click="ValidateLicenseCode(txt);" class="btn btn-primary">Send message</button>
                             </div>
                         </form>
@@ -231,43 +228,43 @@
                                 <a href='https://www.add-map.net/'>Interbus office</a>
                                 <script type='text/javascript' src='js/maps/gmap.js'></script>
                                 <script type='text/javascript'>
-                                
-                                var locations = [
-                                         ['Bondi Beach', -17.8295, 31.0337, 4],
-                                         ['Coogee Beach', -17.8295, 31.0358, 5],
-                                         ['Cronulla Beach', -17.8295, 31.0345, 3],
-                                         ['Manly Beach', -17.8295, 31.0331, 2],
-                                         ['Maroubra Beach', -17.8295, 31.0331, 1]
-                                ];
+
+                                    var locations = [
+                                             ['Bondi Beach', -17.8295, 31.0337, 4],
+                                             ['Coogee Beach', -17.8295, 31.0358, 5],
+                                             ['Cronulla Beach', -17.8295, 31.0345, 3],
+                                             ['Manly Beach', -17.8295, 31.0331, 2],
+                                             ['Maroubra Beach', -17.8295, 31.0331, 1]
+                                    ];
 
 
-                                var map = new google.maps.Map(document.getElementById('gmap_canvas'), {
-                                    zoom: 15,
-                                    center: new google.maps.LatLng(-17.8252, 31.0335), //17.8252° S, 31.0335° E
-                                    mapTypeId: google.maps.MapTypeId.ROADMAP
-                                });
-
-
-                                var infowindow = new google.maps.InfoWindow();
-
-
-                                var marker, i;
-
-
-                                for (i = 0; i < locations.length; i++) {
-                                    marker = new google.maps.Marker({
-                                        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-                                        map: map
+                                    var map = new google.maps.Map(document.getElementById('gmap_canvas'), {
+                                        zoom: 15,
+                                        center: new google.maps.LatLng(-17.8252, 31.0335), //17.8252° S, 31.0335° E
+                                        mapTypeId: google.maps.MapTypeId.ROADMAP
                                     });
 
 
-                                    google.maps.event.addListener(marker, 'click', (function (marker, i) {
-                                        return function () {
-                                            infowindow.setContent(locations[i][0]);
-                                            infowindow.open(map, marker);
-                                        }
-                                    })(marker, i));
-                                }
+                                    var infowindow = new google.maps.InfoWindow();
+
+
+                                    var marker, i;
+
+
+                                    for (i = 0; i < locations.length; i++) {
+                                        marker = new google.maps.Marker({
+                                            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                                            map: map
+                                        });
+
+
+                                        google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                                            return function () {
+                                                infowindow.setContent(locations[i][0]);
+                                                infowindow.open(map, marker);
+                                            }
+                                        })(marker, i));
+                                    }
 
                                 </script>
                             </div>
@@ -322,20 +319,20 @@
                     <h2 class="visually-hidden">Site structure and legal information</h2>
                     <div class="r">
                         <div class="col-lg-5">
-                            <ul>
-                                <li><a href="Construction.html">Terms &amp; conditions </a></li>
-                                <li><a href="Construction.html">Privacy &amp; cookies</a></li>
-                                <li><a href="Construction.html">Website accessibility</a></li>
+                            <ul style="padding-left:0px">
+                                <li><a href="UI/Construction.html">Terms &amp; conditions </a></li>
+                                <li style="padding-left:10px"><a href="UI/Construction.html">Privacy &amp; cookies</a></li>
+                                <li style="padding-left:10px"><a href="UI/Construction.html">Website accessibility</a></li>
                             </ul>
                         </div>
 
-                        <div class="col-lg-4">
+                        <div class="col-lg-4" style="text-align:left">
                             <ul>
-                                <li> <a href="www.webingate.com">Powered by www.webingate.com </a></li>
+                                <li> <a href="http://www.webingate.com" target="_blank">Powered by www.webingate.com </a></li>
                             </ul>
                             <span class="heading"></span>
                         </div>
-                        <div class="col-lg-2">
+                        <div class="col-lg-3">
                             <span class="heading">Copyright © Interbus</span>
                         </div>
                     </div>
@@ -371,6 +368,8 @@
 
     <script src="js/main.js"></script>
     <script src="js/angular.js"></script>
+    <script src="js/ui-bootstrap-tpls-1.3.3.js"></script>
+    <script src="js/ngStorage.js"></script>
     <script src="js/Index.js"></script>
 </body>
 </html>

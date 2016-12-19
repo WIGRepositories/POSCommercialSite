@@ -94,21 +94,18 @@
 
                                     </li>
                                   
-                                    <li ng-hide="username == null" style="text-align:right">
-                                        <a style="text-decoration: none; text-align: right;padding-left:50px" href="#">Hi, {{username}}!</a>
+                                    <li ng-hide="username == null" style="text-align:left;background-color:gray">
+                                        <a style="text-decoration: none; text-align: left;padding-left:50px" href="#">Hi, {{username}}!</a>
 
-                                        <ul class="nav" style="padding-left:0px">
-                                            <li class="dropdown" style="padding-left:0px">
-                                                <!--<a data-hover="dropdown" href="#" class="dropdown-toggle  pull-left" style="background-color: black;">&nbsp;<span class=" hidden-xs" style="text-decoration:none; color:#CCCCCC;">Hi, {{username}}!</span>&nbsp;<span class="caret"></span></a>-->
-                                                <ul class="dropdown-menu dropdown-user pull-right">
+                                        <ul style="padding-left:0px">
+                                            
                                                     <li><a href="UI/UserProfile.html"><i class="fa fa-user"></i>My Account</a></li>
                                                     <li><a href="UI/BookedTicketHistory.html"><i class="fa fa-calendar"></i>Recent Journey</a></li>
                                                     <li><a href="UI/CancelTicket.html"><i class="fa fa-envelope"></i>Cancellation</a></li>
                                                     <li><a href="UI/Feedback.html"><i class="fa fa-tasks"></i>Feedback/Enquiry</a></li>
 
                                                     <li><a href="#" ng-click="SignOutUser();"><i class="fa fa-key"></i>Sign Out</a></li>
-                                                </ul>
-                                            </li>
+                                               
 
                                         </ul>
 
@@ -302,9 +299,9 @@
                                                 <div class="panel panel-dark" style="background-color: AliceBlue; ">
                                                     <div class="panel-heading" style="background-color: black; text-align: center; text-decoration-color: white; padding: 0px">
 
-                                                        <ul class="nav" style="padding:0px">
-                                                            <li class="dropdown topbar-user col-lg-8" style="background-color:black;padding-left:0px">
-                                                                <a data-hover="dropdown" href="#" class="dropdown-toggle  pull-left" style="background-color: black;">&nbsp;<span class=" hidden-xs" style="text-decoration:none; color:#CCCCCC;"><img src="UI/Images/login.png" />Hello, {{username}}!</span>&nbsp;<span class="caret"></span></a>
+                                                        <ul class="nav" style="padding-left:0px">
+                                                            <li class="dropdown topbar-user col-lg-8" style="background-color:black;">
+                                                                <a data-hover="dropdown" href="#" class="dropdown-toggle  pull-left" style="background-color: black;padding:10px 0px 10px 0px">&nbsp;<span class=" hidden-xs" style="text-decoration:none; color:#CCCCCC;"><img src="UI/Images/login.png" />Hello, {{username}}!</span>&nbsp;<span class="caret"></span></a>
                                                                 <ul class="dropdown-menu dropdown-user pull-right">
                                                                     <li><a href="UI/UserProfile.html" style="background-color:black"><i class="fa fa-user"></i>My Account</a></li>
                                                                     <li><a href="UI/BookedTicketHistory.html" style="background-color:black"><i class="fa fa-calendar"></i>Recent Journey</a></li>
@@ -775,20 +772,20 @@
                     <div class="secondary-footer">
                         <h2 class="visually-hidden">Site structure and legal information</h2>
                         <div class="r">
-                            <div class="col-lg-5"><ul>
+                            <div class="col-lg-5"><ul style="padding-left:0px">
                                 <li><a href="UI/Construction.html">Terms &amp; conditions </a></li>
-                                <li><a href="UI/Construction.html">Privacy &amp; cookies</a></li>
-                                <li><a href="UI/Construction.html">Website accessibility</a></li>
+                                <li style="padding-left:10px"><a href="UI/Construction.html">Privacy &amp; cookies</a></li>
+                                <li style="padding-left:10px"><a href="UI/Construction.html">Website accessibility</a></li>
                             </ul>
                             </div>
                             
-                            <div class="col-lg-4">
+                            <div class="col-lg-4" style="text-align:left">
                                 <ul>
-                                    <li> <a href="www.webingate.com">Powered by www.webingate.com </a></li>
+                                    <li> <a href="http://www.webingate.com" target="_blank">Powered by www.webingate.com </a></li>
                                     </ul>
                                     <span class="heading"></span>
                             </div>
-                            <div class="col-lg-2">
+                            <div class="col-lg-3">
                                     <span class="heading">Copyright © Interbus</span>
                             </div>
                         </div>
