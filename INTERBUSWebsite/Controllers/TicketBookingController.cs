@@ -722,6 +722,29 @@ namespace INTERBUSWebsite.Controllers
             
             return dt;
         }
+
+        [HttpGet]
+        [Route("api/TicketBooking/GetTicketsForCancellation")]
+        public DataTable GetTicketsForCancellation(string ticketNo, string emailmobileno) {
+            DataTable dt = new DataTable();
+
+            //connect to database
+            SqlConnection conn = new SqlConnection();
+            //connetionString="Data Source=ServerName;Initial Catalog=DatabaseName;User ID=UserName;Password=Password"
+            conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["btposdb"].ToString();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "GetTicketsForCancellation";
+            cmd.Parameters.Add("@ticketNo", SqlDbType.VarChar,25).Value = ticketNo;
+            cmd.Parameters.Add("@emailidmobileno", SqlDbType.VarChar,50).Value = emailmobileno;
+            cmd.Connection = conn;
+
+            SqlDataAdapter db = new SqlDataAdapter(cmd);
+            db.Fill(dt);
+
+            return dt;
+        }
     }
 }
 

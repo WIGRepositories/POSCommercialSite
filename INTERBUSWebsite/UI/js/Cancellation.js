@@ -1,7 +1,7 @@
 ﻿var app = angular.module('myApp', ['ngStorage'])
 var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
-    
+    $scope.TicketsForCancellation = null;
 
     $scope.getCancellationHistory = function () {
 
@@ -28,7 +28,17 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
         window.location.href = "../index.html";
     }
     $scope.GetTicketsForCancellation = function () {
-        //get the ticket details and show
 
+        if (($scope.ticketNo == null || $scope.ticketNo == '' ) && ($scope.emailIdmobileno ==null || $scope.emailIdmobileno == '')) {
+            alert('Please enter the ticke number or registered email address or mobile number');
+        return;
+        }
+        var tickenum = ($scope.ticketNo == null || $scope.ticketNo == '') ? '' : $scope.ticketNo;
+        var em = ($scope.emailIdmobileno == null || $scope.emailIdmobileno == '') ? '' : $scope.emailIdmobileno;
+
+        //get the ticket details and show
+        $http.get('/api/TicketBooking/GetTicketsForCancellation?ticketNo=' + tickenum + '&emailmobileno=' + em).then(function (response, data) {
+            $scope.TicketsForCancellation = response.data;
+        });
     }
 });
