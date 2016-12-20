@@ -1,14 +1,17 @@
 ﻿var app = angular.module('myApp', ['ngStorage'])
 var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
-    if ($localStorage.uname) {
-        $scope.username = $localStorage.uname;
-    }
-    else {
-        window.location.href = "../index.html";
-    }
+    
 
-    $scope.getCancellationHistory = function(){
+    $scope.getCancellationHistory = function () {
+
+        if ($localStorage.uname) {
+            $scope.username = $localStorage.uname;
+        }
+        else {
+            window.location.href = "../index.html";
+        }
+
         $scope.emailid = $localStorage.userdetails[0].EmailAddress;
 
         $http.get('/api/WebsiteUserInfo/GetCancellationHistory?emailid=' + $scope.emailid).then(function (response, data) {
@@ -24,7 +27,8 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage) {
 
         window.location.href = "../index.html";
     }
-    $scope.RetriveTicketDetails = function () {
+    $scope.GetTicketsForCancellation = function () {
         //get the ticket details and show
+
     }
 });
