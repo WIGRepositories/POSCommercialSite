@@ -226,7 +226,196 @@
                     </div>
                 </div>
            
+    <div id="Modal-header-primary" tabindex="-1" role="dialog" aria-labelledby="modal-header-primary-label" aria-hidden="true" class="modal fade">
+        <div class="modal-dialog modal-lg" ng-model="currGroup">
+            <div class="modal-content">
+                <div class="modal-header modal-header-primary">
+                    <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
+                    <h4 id="modal-header-primary-label" class="modal-title">Ticket Details</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row" ng-repeat="seat in onwarddetails.BookedSeats">
 
+
+                        <div class="col-md-2">
+                            <label for="Name" class="control-label" style="color:red;float:left" ng-if="$index == 0"> Primary passenger:<span class='require'>*</span></label>
+                            <label for="Name" class="control-label" style="color:red;float:left" ng-if="$index != 0"> Co-passenger {{$index}}:<span class='require'>*</span></label>
+
+                        </div>
+                        <div class="col-md-10" style="text-align:left">
+                            <div class="col-md-1"><input id="inputFirstName" type="checkbox" ng-model="seat.FName" class="form-control" placeholder="First Name" /><span class="help-block"></span></div>
+                            <div class="col-md-2"><input id="inputFirstName" type="text" ng-model="seat.FName" class="form-control" placeholder="First Name" /><span class="help-block"></span></div>
+                            <div class="col-md-2"><input id="code" type="text" ng-model="seat.LName" class="form-control" placeholder="Last Name" /><span class="help-block"></span></div>
+
+                            <div class="col-md-3">
+                                <select class="form-control" ng-model="seat.Age">
+                                    <option value="" selected>Age</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                    <option value="32">32</option>
+                                </select>
+                                <span class="help-block"></span>
+                            </div>
+                            <div class="col-md-2">
+                                <select class="form-control" ng-model="seat.Gender">
+                                    <option value="" selected>Gender</option>
+                                    <option value="1">Male</option>
+                                    <option value="2">Female</option>
+                                    <option value="3">Neutral</option>
+                                </select>
+                                <span class="help-block"></span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="margin-top:10px">
+                        <div class="col-md-6">
+                            <div class="row">
+
+                                <label for="Fax" class="col-md-4 control-label" style="color: red;float: left">E-mail Id:<span class='require'></span></label>
+                                <div class="col-md-8"><input id="EmailId" type="text" ng-model="currGroup.EmailId" class="form-control" /><span class="help-block"></span></div>
+
+                            </div>
+                            <div class="row">
+
+                                <label for="ContactNo1" class="col-md-4 control-label" style="color: red;float: left">Contact No.1:<span class='require'></span></label>
+                                <div class="col-md-8"><input id="ContactNo1" type="text" ng-keypress="filterValue($event)" ng-model="currGroup.ContactNo1" class="form-control" maxlength="10" /><span class="help-block"></span></div>
+
+                            </div>
+                            <div class="row">
+
+                                <label for="ContactNo2" class="col-md-4 control-label" style="float:left">Contact No.2:<span class='require'></span></label>
+                                <div class="col-md-8">
+                                    <input type="text" id="ContactNo2" ng-keypress="filterValue($event)" ng-model="currGroup.ContactNo2" maxlength="10" data-fv-numeric="true" data-fv-numeric-message="Please enter valid phone numbers" data-fv-phone-country11="IN" required="required" data-fv-notempty-message="This field cannot be left blank." class="form-control" name="data[User][mobile]" data-fv-field="data[User][mobile]">
+                                    <!--<input id="ContactNo2" type="text" ng-model="currGroup.ContactNo2" class="form-control" maxlength="10" />-->
+                                    <span class="help-block">
+                                    </span>
+
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div>
+                                    <label for="Address Id" class="col-md-4 control-label" style="color: red; float: left">Address:</label>
+
+                                    <div class="col-md-8"><textarea rows="4" class="form-control" ng-model="currGroup.Address"></textarea></div>
+                                    <br />
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            
+                                <div class="col-md-12" id="t_{{$index}}" style="text-align:center;padding:20px">                                    
+                                    <div class="col-md-6">
+                                       
+                                                <table>
+                                                    <tr>
+                                                        <td colspan="10" style="text-align:right"><img src="Images/busimages/driver.png" /></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="10" style="text-align:right;height:5px"></td>
+                                                    </tr>
+                                                    <tr ng-repeat="s in seatstest track by $index">
+
+                                                        <td ng-repeat="c in s track by $index" style="padding: 2px">
+                                                            <!--<div ng-hide="c.status == 0" ng-style="{'background-color':c.status == 2 ?  'grey': 'green'}" ng-click="AddSeats(c);"></div>-->
+                                                            <div data-toggle="tooltip" data-placement="left" title="" data-original-title="Tooltip on left"> <img src="Images/busimages/Aseat.png" ng-hide="c.status == 0" ng-if="c.status == 1" ng-click="AddSeats(c);" /></div>
+
+                                                            <img src="Images/busimages/BSeat.png" ng-hide="c.status == 0" ng-if="c.status == 2" />
+                                                            <img src="Images/busimages/SSeat.png" ng-hide="c.status == 0" ng-if="c.status == 3" ng-click="AddSeats(c);" data-hover="tooltip" />
+                                                        </td>
+
+                                                    </tr>
+                                                </table>
+                                           
+                                            <!--<div class="col-md-6">
+                                                <table>
+                                                    <tr>
+                                                        <td>Legend:</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><img src="Images/busimages/Aseat.png" style="padding: 5px"> Available seat</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><img src="Images/busimages/BSeat.png" style="padding: 5px"> Already booked seat</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><img src="Images/busimages/SSeat.png" style="padding: 5px"> Selected seat</td>
+                                                    </tr>
+                                                </table>
+                                            </div>-->
+                                      
+
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <table>
+                                            <tr>
+                                                <td id="imgTd" colspan="6">
+                                                    <table class="table table-hover table-striped table-bordered table-advanced tablesorter">
+                                                        <tr>
+                                                            <td>
+                                                                <table>
+                                                                    <tr><td><label>Seat(s):<strong>{{selectedSeatsList}}</strong></label></td></tr>
+                                                                    <tr><td><label>Total Seat(s):{{count}}</label></td></tr>
+                                                                    <tr><td><label>Base Fare:{{b.Price}}</label></td></tr>
+                                                                    <tr><td><label><strong>Total Fare:{{count*b.Price}}</strong></label></td></tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Seats to be cancelled:
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="actions">
+                                                                    <button type="button" class="btn btn-primary" ng-click="savedata(b);" ng-if="triptype == 'twoway'">Proceed</button>
+                                                                    <button type="button" ng-click="savedata(b);" data-target="#Modal-header-primary" data-toggle="modal" class="btn btn-info btn-sm" ng-if="triptype == 'oneway'">Checkout</button>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+                                </div>
+
+                           
+                        </div>
+                    </div>
+
+
+                    <div class="form-actions">
+                        <div style="text-align:center">
+                            <button type="button" class="btn btn-green" ng-click="ProceedToPayment(currGroup);">Proceed to payment</button>
+                            <button type="button" data-dismiss="modal" class="btn btn-primary">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
 
     <!--END CONTENT--><!--BEGIN FOOTER-->
     <div class="row">

@@ -19,133 +19,148 @@ namespace INTERBUSWebsite.Controllers
         [Route("api/Payments/MakePayment")]
         public DataTable MakePayment(decimal amt)
         {
-            try
-            {
 
-                // ### Api Context
-                // Pass in a `APIContext` object to authenticate 
-                // the call and to send a unique request id 
-                // (that ensures idempotency). The SDK generates
-                // a request id if you do not pass one explicitly. 
-                // See [Configuration.cs](/Source/Configuration.html) to know more about APIContext.
-                var apiContext = INTERBUSWebsite.Controllers.Configuration.GetAPIContext();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("result");
+            dt.Columns.Add("detail");
 
-                // A transaction defines the contract of a payment - what is the payment for and who is fulfilling it. 
-                var transaction = new Transaction()
-                {
-                    amount = new Amount()
-                    {
-                        currency = "USD",
-                        total = amt.ToString(),
-                        details = new Details()
-                        {
-                            shipping = "0",
-                            subtotal = amt.ToString(),
-                            tax = "0"
-                        }
-                    },
-                    description = "This is the license payment transaction.",
-                    item_list = new ItemList()
-                    {
-                        items = new List<Item>()
-                    {
-                        new Item()
-                        {
-                            name = "Item Name",
-                            currency = "USD",
-                            price = amt.ToString(),
-                            quantity = "1",
-                            sku = "sku"
-                        }
-                    },
-                        shipping_address = new ShippingAddress
-                        {
-                            city = "Harare",
-                            country_code = "US",
-                            line1 = "52 N Main ST",
-                            postal_code = "43210",
-                            state = "OH",
-                            recipient_name = "admin admin"
-                        }
-                    },
-                    invoice_number = Common.GetRandomInvoiceNumber()
-                };
+            DataRow dr = dt.NewRow();
+            dr[0] = "Success";
+            dr[1] = "PYT-"+Guid.NewGuid();
 
-                // A resource representing a Payer that funds a payment.
-                var payer = new Payer()
-                {
-                    payment_method = "credit_card",
-                    funding_instruments = new List<FundingInstrument>()
-                {
-                    new FundingInstrument()
-                    {
-                        credit_card = new CreditCard()
-                        {
-                            billing_address = new Address()
-                            {
-                                city = "Harare",
-                                country_code = "US",
-                                line1 = "52 N Main ST",
-                                postal_code = "43210",
-                                state = "OH"
-                            },
-                            cvv2 = "874",
-                            expire_month = 11,
-                            expire_year = 2018,
-                            first_name = "admin",
-                            last_name = "admin",
-                            number = "4024007185826731",//"4877274905927862",
-                            type = "visa"
-                        }
-                    }
-                },
-                    payer_info = new PayerInfo
-                    {
-                        email = "test@email.com"
-                    }
-                };
+            dt.Rows.Add(dr);
 
-                // A Payment resource; create one using the above types and intent as `sale` or `authorize`
-                var payment = new Payment()
-                {
-                    intent = "sale",
-                    payer = payer,
-                    transactions = new List<Transaction>() { transaction }
-                };
+            return dt;
 
-                // Create a payment using a valid APIContext
-                var createdPayment = payment.Create(apiContext);
+            #region paypal integration
+            //try
+            //{
 
-                DataTable dt = new DataTable();
-                dt.Columns.Add("result");
-                dt.Columns.Add("detail");
+            //    // ### Api Context
+            //    // Pass in a `APIContext` object to authenticate 
+            //    // the call and to send a unique request id 
+            //    // (that ensures idempotency). The SDK generates
+            //    // a request id if you do not pass one explicitly. 
+            //    // See [Configuration.cs](/Source/Configuration.html) to know more about APIContext.
+            //    var apiContext = INTERBUSWebsite.Controllers.Configuration.GetAPIContext();
 
-                DataRow dr = dt.NewRow();
-                dr[0] = "Success";
-                dr[1] = createdPayment.id;
+            //    // A transaction defines the contract of a payment - what is the payment for and who is fulfilling it. 
+            //    var transaction = new Transaction()
+            //    {
+            //        amount = new Amount()
+            //        {
+            //            currency = "USD",
+            //            total = amt.ToString(),
+            //            details = new Details()
+            //            {
+            //                shipping = "0",
+            //                subtotal = amt.ToString(),
+            //                tax = "0"
+            //            }
+            //        },
+            //        description = "This is the license payment transaction.",
+            //        item_list = new ItemList()
+            //        {
+            //            items = new List<Item>()
+            //        {
+            //            new Item()
+            //            {
+            //                name = "Item Name",
+            //                currency = "USD",
+            //                price = amt.ToString(),
+            //                quantity = "1",
+            //                sku = "sku"
+            //            }
+            //        },
+            //            shipping_address = new ShippingAddress
+            //            {
+            //                city = "Harare",
+            //                country_code = "US",
+            //                line1 = "52 N Main ST",
+            //                postal_code = "43210",
+            //                state = "OH",
+            //                recipient_name = "admin admin"
+            //            }
+            //        },
+            //        invoice_number = Common.GetRandomInvoiceNumber()
+            //    };
 
-                dt.Rows.Add(dr);
+            //    // A resource representing a Payer that funds a payment.
+            //    var payer = new Payer()
+            //    {
+            //        payment_method = "credit_card",
+            //        funding_instruments = new List<FundingInstrument>()
+            //    {
+            //        new FundingInstrument()
+            //        {
+            //            credit_card = new CreditCard()
+            //            {
+            //                billing_address = new Address()
+            //                {
+            //                    city = "Harare",
+            //                    country_code = "US",
+            //                    line1 = "52 N Main ST",
+            //                    postal_code = "43210",
+            //                    state = "OH"
+            //                },
+            //                cvv2 = "123",
+            //                expire_month = 03,
+            //                expire_year = 2022,
+            //                first_name = "joseph",
+            //                last_name = "muzite",
+            //                number = "4024007161924351",//"4877274905927862",//"4311190714987216",//
+            //                type = "visa"
+            //            }
+            //        }
+            //    },
+            //        payer_info = new PayerInfo
+            //        {
+            //            email = "webingate@yandex.com"
+            //        }
+            //    };
+
+            //    // A Payment resource; create one using the above types and intent as `sale` or `authorize`
+            //    var payment = new Payment()
+            //    {
+            //        intent = "sale",
+            //        payer = payer,
+            //        transactions = new List<Transaction>() { transaction }
+            //    };
+
+            //    // Create a payment using a valid APIContext
+            //    var createdPayment = payment.Create(apiContext);
+
+            //    DataTable dt = new DataTable();
+            //    dt.Columns.Add("result");
+            //    dt.Columns.Add("detail");
+
+            //    DataRow dr = dt.NewRow();
+            //    dr[0] = "Success";
+            //    dr[1] = createdPayment.id;
+
+            //    dt.Rows.Add(dr);
 
 
-                return dt;
+            //    return dt;
 
-            }
-            catch (Exception ex)
-            {
-                string str = ex.Message;
-                // return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex);
-                DataTable dt = new DataTable();
-                dt.Columns.Add("result");
-                dt.Columns.Add("detail");
+            //}
+            //catch (Exception ex)
+            //{
+            //    string str = ex.Message;
+            //    // return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex);
+            //    DataTable dt = new DataTable();
+            //    dt.Columns.Add("result");
+            //    dt.Columns.Add("detail");
 
-                DataRow dr = dt.NewRow();
-                dr[0] = "Failed";
-                dr[1] = str;
+            //    DataRow dr = dt.NewRow();
+            //    dr[0] = "Failed";
+            //    dr[1] = str;
 
-                dt.Rows.Add(dr);
+            //    dt.Rows.Add(dr);
 
-                return dt;
-            }
+            //    return dt;
+            //}
+            #endregion paypal integration
         }
 
 

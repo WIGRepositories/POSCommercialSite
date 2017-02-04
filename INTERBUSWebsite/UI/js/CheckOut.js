@@ -82,7 +82,8 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
                                            // alert('Saved successfully');
                                             $localStorage.ULConfirmDetails = ULConfirmDetails;
                                             $localStorage.ULConfirmDetailsRes = data;
-                                            $scope.ShowConfirmationMssg(data);
+                                            window.location.href = "LicenseConfirmation.html";
+                                            //$scope.ShowConfirmationMssg(data);
                                             //   $('#Modal-header-new').modal('hide');
                                         });
                                 }).error(function (ata, status, headers, config) {
@@ -136,6 +137,9 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
         $('#Modal-header-new').modal('hide');
     }
 
+    $scope.FillULConfirmDetails = function () {
+        $scope.ulconfirm = $localStorage.ULConfirmDetailsRes[0];
+    }
 
     $scope.processPymt1 = function () {
         $('#Modal-header-new').modal('show');

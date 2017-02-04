@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Mail;
 using System.Web.Http;
 
 
@@ -289,6 +290,96 @@ namespace INTERBUSWebsite.Controllers
                // conn.Close();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(Tbl);
+
+                int status;
+                if (Tbl != null && Tbl.Rows.Count > 0)
+                {
+                    #region send email with details
+
+                    try
+                    {
+                        MailMessage mail = new MailMessage();
+                        string emailserver = System.Configuration.ConfigurationManager.AppSettings["emailserver"].ToString();
+
+                        string eusername = System.Configuration.ConfigurationManager.AppSettings["username"].ToString();
+                        string pwd = System.Configuration.ConfigurationManager.AppSettings["password"].ToString();
+                        string fromaddress = System.Configuration.ConfigurationManager.AppSettings["fromaddress"].ToString();
+                        string port = System.Configuration.ConfigurationManager.AppSettings["port"].ToString();
+
+                        SmtpClient SmtpServer = new SmtpClient(emailserver);
+
+                        mail.From = new MailAddress(fromaddress);
+                        mail.To.Add(fleetOwnerRequest.EmailAddress);
+                        mail.Subject = "INTERBUS Fleet Owner registration status";
+                        mail.IsBodyHtml = true;
+
+                        string verifcodeMail = @"<table>
+                                                        <tr>
+                                                            <td>
+                                                                <h2>Thank you for registering with INTERBUS as fleet owner!</h2>
+                                                                <table width=\""760\"" align=\""center\"">
+                                                                    <tbody style='background-color:#F0F8FF;'>
+                                                                        <tr>
+                                                                            <td style=\""font-family:'Zurich BT',Arial,Helvetica,sans-serif;font-size:15px;text-align:left;line-height:normal;background-color:#F0F8FF;\"" >
+<div style='padding:10px;border:#0000FF solid 2px;'>                                                                                
+<h3>Congratulations!!</h3>
+                                                                                <h4>You have been successfully registered with INTERBUS as a fleet owner</h4>
+                                                                                <h3>Fleet Owner Code Details</h3>                                                                                
+                                                                                Your fleet owner code is:<h3>" + Tbl.Rows[0]["FleetOwnerCode"].ToString() + @"</h3>  
+
+
+Use the above fleet owner code to buy/renew license and for any further correspondence with INTERBUS.
+                                                                                <br /><br />
+                                                        
+
+                                                        If you didn't make this request, <a href='http://154.120.237.198:52800'>click here</a> to cancel.
+
+                                                                                <br/>
+                                                                                <br/>             
+                                                                       
+                                                                                Warm regards,<br>
+                                                                                INTERBUS Customer Service Team<br/><br />
+</div>
+                                                                            </td>
+                                                                        </tr>
+
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+
+                                                    </table>";
+
+
+                        mail.Body = verifcodeMail;
+                        //SmtpServer.Port = 465;
+                        //SmtpServer.Port = 587;
+                        SmtpServer.Port = Convert.ToInt32(port);
+                        SmtpServer.UseDefaultCredentials = false;
+
+                        SmtpServer.Credentials = new System.Net.NetworkCredential(eusername, pwd);
+                        string enablessl = string.IsNullOrEmpty(System.Configuration.ConfigurationManager.AppSettings["EnableSsl"]) ? "false": System.Configuration.ConfigurationManager.AppSettings["EnableSsl"].ToString();
+                        string TargetName = string.IsNullOrEmpty(System.Configuration.ConfigurationManager.AppSettings["TargetName"]) ? "" : System.Configuration.ConfigurationManager.AppSettings["TargetName"].ToString();
+
+                        SmtpServer.EnableSsl = Convert.ToBoolean(enablessl);
+                        //user these setting for sending using gmail server
+                        //SmtpServer.EnableSsl = true;
+                        if (TargetName != "")
+                            SmtpServer.TargetName = TargetName;
+                        SmtpServer.Send(mail);
+                        status = 1;
+                    }
+                    catch (Exception ex)
+                    {
+                        //throw ex;
+                        status = -1;
+                    }
+
+                    //update if email is sent
+
+                    #endregion send email with details
+                }
+
                 return Tbl;
             }
               

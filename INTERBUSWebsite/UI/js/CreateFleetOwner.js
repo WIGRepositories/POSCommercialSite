@@ -288,12 +288,14 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $uibModal, $localSt
 
 
         }
-        $http({
+        var req = {
             url: '/api/FleetOwnerLicense/CreateNewFOR',
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             data: fleetOwnerRequest
-        })   
+        }
+
+        $http(req)
             .success(function (data, status, headers, config) {
                 //if (data[0]['status'] == "0") {
                 //    alert(data[0]['details']);

@@ -343,6 +343,7 @@
     <Content Include="UI\LicensePage.html" />
     <Content Include="UI\Login.html" />
     <Content Include="UI\mail.html" />
+    <Content Include="UI\PaymentConfirmation.html" />
     <Content Include="UI\TicketCheckOut.html" />
     <Content Include="UI\PopupTest.html" />
     <Content Include="UI\PrintTicket.html" />
@@ -1294,6 +1295,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\Trace.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\CancellationController.cs" />

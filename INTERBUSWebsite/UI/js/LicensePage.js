@@ -94,8 +94,8 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
 
 
         $localStorage.License = License;
-        $localStorage.LicenseTypeId = Lid;
-
+        $localStorage.LicenseTypeId = Lid.Id;
+        $localStorage.SelLic = Lid;
 
 
         //insert the details into UserLicense table
@@ -148,7 +148,7 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $localStorage, $uib
            ActualExpiry: $localStorage.ActualExpiry,
            LastUpdatedOn: $localStorage.LastUpdatedOn,
            StatusId: 1,//$localStorage.StatusId,
-           RenewFreqTypeId: 1,//$localStorage.foLicenseDetails.Table[1].RenewFreqTypeId,
+           RenewFreqTypeId: $localStorage.SelLic.RenewFreqTypeId,
            // ULId:$localStorage.ULId,
            //  CreatedOn:$localStorage.CreatedOn,
            //  Amount: $localStorage.Amount,

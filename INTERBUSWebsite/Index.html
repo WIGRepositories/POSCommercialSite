@@ -69,7 +69,7 @@
 
                                 <a style="text-decoration:none" href="#">Products</a>
                                 <ul>
-                                    <li><a href="UI/Licensepage.html">Fleet Owner License</a></li>
+                                    <li ng-repeat="l in licenses"><a href="#" ng-click="GotToLicensePage(l)">{{l.Name}}</a></li>
 
                                 </ul>
                             </li>

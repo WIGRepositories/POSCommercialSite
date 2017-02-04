@@ -1,0 +1,693 @@
+﻿
+<html lang="en" ng-app="myApp" ng-controller="myCtrl as vm">
+<head>
+    <title>INTERRBUS | Create Fleet Owner</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/w3.css">
+    <!-- links for table -->
+
+    <link type="text/css" rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
+    <!--LOADING STYLESHEET FOR PAGE--><!--Loading style vendors-->
+
+    <link type="text/css" rel="stylesheet" href="vendors/jquery-pace/pace.css">
+    <link type="text/css" rel="stylesheet" href="vendors/iCheck/skins/all.css">
+    <link type="text/css" rel="stylesheet" href="vendors/jquery-steps/css/jquery.steps.css">
+
+    <!--Loading style-->
+    <link type="text/css" rel="stylesheet" href="css/themes/style2/pink-blue.css" id="theme-change" class="style-change color-change">
+    <link type="text/css" rel="stylesheet" href="css/style-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/Main.css">
+
+
+    <!-- Optional theme -->
+
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+
+
+    <!-- Latest compiled and minified JavaScript -->
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <meta name="HandheldFriendly" content="True">
+
+    <script type="text/javascript">
+
+        var h = document.documentElement;
+        h.className = h.className.replace(/\bno-js\b/, '');
+        var isTouch = !!("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0;
+        if (isTouch) {
+            // remove class which defines hover behavior
+            h.className = h.className.replace(/\bno-touch\b/, '');
+        }
+    </script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <link href="css/StyleSheet2.css" media="screen,print" rel="stylesheet" />
+    <link href="css/StyleSheet1.css" media="screen,print" rel="stylesheet" />
+    <link href="css/StyleSheet4.css" media="screen,&#32;print" rel="stylesheet" />
+    <link href="css/StyleSheet3.css" media="screen&#32;and&#32;(min-width:&#32;580px),print" rel="stylesheet" />
+    <link href="css/StyleSheet5.css" media="screen&#32;and&#32;(min-width:&#32;900px)" rel="stylesheet" />
+    <!--<link href="/cdn/static/styles/core/min/print.min.bbf3e026.css" media="print" rel="stylesheet" />-->
+    <link href="css/StyleSheet6.css" media="screen" rel="stylesheet" />
+    <style>
+        rr.div a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            padding: 15px;
+            display: inline-block;
+        }
+
+        .rr ul {
+            display: inline;
+            margin: 0;
+            padding: 0;
+        }
+
+
+            .rr ul li {
+                display: inline-block;
+                color: white;
+            }
+
+                .rr ul li:hover {
+                    background: #555;
+                }
+
+                    .rr ul li:hover ul {
+                        display: block;
+                    }
+
+                .rr ul li ul {
+                    position: absolute;
+                    width: 100px;
+                    display: none;
+                }
+
+                    .rr ul li ul li {
+                        background: #555;
+                        display: block;
+                        border-bottom: 1px solid white;
+                        width: 170px;
+                    }
+
+                        .rr ul li ul li a {
+                            display: block !important;
+                            text-decoration: none;
+                        }
+
+                        .rr ul li ul li:hover {
+                            background: #666;
+                        }
+
+                        .rr ul li ul li a:hover {
+                            text-decoration: none;
+                        }
+    </style>
+
+
+</head>
+
+<body ng-model="FleetOwnerRequest1" style="background-image:url(images/one1.jpg)">
+
+    <!--Start Header-->
+    <div id="container">
+
+        <!--start of white bar above menu-->
+        <!--End of white bar above menu-->
+        <!--Start Menu-->
+        <div class="mainnav" id="mainnav" tabindex="0">
+
+            <div class="top-row" style="position:fixed; width:100%; z-index:1">
+
+                <div class="r">
+                    <div class="rr" style="width:94%">
+                        <a style="margin-top: 0px; padding-top: 0px; margin-left: 35px; float:left" href="../index.html"><img style="height:76px; border-right:1px solid #D0D0D0 ;border-bottom:1px solid #D0D0D0 ; border-left:1px solid #D0D0D0 " src="Images/logos/interbusLogo.png" alt="Alternate Text" /> </a>
+                        <ul class="collapsible-menu clearfix" style="margin-left:0px;height:76px">
+
+                            <li>
+
+                                <a style="text-decoration:none" href="../index.html">Home</a>
+
+                            </li>
+                            <li>
+
+                                <a class="active" style="text-decoration:none" href="Fares_and_payments.html">Fares / Payments</a>
+
+                                <ul>
+                                    <li><a href="Schedules.html">Schedules</a></li>
+                                    <li><a href="CheckFare.html">CheckFare</a></li>
+                                    <li><a href="Cancel_Ticket.html">Cancellation</a></li>
+
+
+                                </ul>
+                            </li>
+                            <li>
+
+                                <a style="text-decoration:none" href="Status_and_Updates.html">Status & Updates</a>
+
+                            </li>
+                            <li>
+
+                                <a style="text-decoration:none" href="#">Products</a>
+                                <ul>
+                                    <li><a href="Licensepage.html">Fleet Owner License</a></li>
+
+                                </ul>
+                            </li>
+
+                            <li>
+
+                                <a style="text-decoration:none" href="About.html">About Us</a>
+                                <ul>
+                                    <li><a href="Contact.html">ContactUs</a></li>
+
+                                </ul>
+
+                            </li>
+
+
+                        </ul>
+                        <div style="float:right; padding-top:11px">
+                            <input type="text" placeholder="Search.." id="q" name="q" style="border-radius: 30px; width: 120px; height: 35px; color: red;" />
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="page-content col-lg-9 col-md-offset-2" style="margin-top:80px">
+            
+
+            <div class="panel">
+                <div class="panel-heading">Fleet owner request Form</div>
+
+                <div class="panel-body">
+                    <div id="wizard-container">
+
+                        <div id="wizard-step-container">
+                            <ul class="nav nav-pills nav-justified">
+                                <li ng-repeat="step in vm.steps" ng-class="{'active':step.step == vm.currentStep}"><a ng-click="vm.gotoStep(step.step)" href="">{{step.step}}. {{step.name}}</a></li>
+                            </ul>
+                        </div>
+                        <div id="wizard-content-container">
+                            <ng-include src="vm.getStepTemplate()"></ng-include>
+                            <div id="wizard-navigation-container">
+                                <div class="pull-right">
+                                    <span class="btn-group">
+                                        <button ng-disabled="vm.currentStep <= 1" class="btn btn-default" name="previous" type="button" ng-click="vm.gotoStep(vm.currentStep - 1)"><i class="fa fa-arrow-left"></i> Previous step</button>
+                                        <button ng-disabled="vm.currentStep >= vm.steps.length" class="btn btn-primary" name="next" type="button" ng-click="vm.gotoStep(vm.currentStep + 1)">Next step <i class="fa fa-arrow-right"></i></button>
+                                    </span>
+                                    <button ng-disabled="vm.currentStep != vm.steps.length" class="btn btn-success" name="next" type="button" ng-click="vm.save()"> <i class="fa fa-floppy-o"></i> Save</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+</div>
+
+        </div>
+
+    
+    <!--End Header-->
+
+    <script type="text/ng-template" id="company.html" role="tabpanel" data-backdrop="static">
+
+
+       
+        <div class="row" style="margin-top:8px">
+
+            <div class="col-lg-12">
+                <div class="panel panel-violet">
+                   
+                    <div class="panel-body pan" ng-model="currGroup">
+
+                        <div class="row" style="margin-top:4px">
+
+                            <div class="col-md-6">
+                                <label for="Name" class="col-md-4 control-label" style="color:red;float:left"> Name:<span class='require'>*</span></label>
+                                <div class="col-md-8"><input id="inputFirstName" type="text" ng-model="currGroup.Name" class="form-control" /><span class="help-block"></span></div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="code" class="col-md-4 control-label" style="color:red;float:left">Code*:<span class='require'></span></label>
+                                <div class="col-md-8"><input id="code" type="text" ng-model="currGroup.Code" class="form-control" readonly /><span class="help-block"></span></div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="Fax" class="col-md-4 control-label" style="color: red;float: left">E-mail Id:<span class='require'></span></label>
+                                <div class="col-md-8"><input id="EmailId" type="text" ng-model="currGroup.EmailId" class="form-control" /><span class="help-block"></span></div>
+
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="ContactNo1" class="col-md-4 control-label" style="color: red;float: left">Contact No.1:<span class='require'></span></label>
+                                <div class="col-md-8"><input id="ContactNo1" type="text" ng-keypress="filterValue($event)" ng-model="currGroup.ContactNo1" class="form-control" maxlength="10" /><span class="help-block"></span></div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <label for="ContactNo2" class="col-md-4 control-label" style="float:left">Contact No.2:<span class='require'></span></label>
+                                <div class="col-md-8">
+                                    <input type="text" id="ContactNo2" ng-keypress="filterValue($event)" ng-model="currGroup.ContactNo2" maxlength="10" data-fv-numeric="true" data-fv-numeric-message="Please enter valid phone numbers" data-fv-phone-country11="IN" required="required" data-fv-notempty-message="This field cannot be left blank." class="form-control" name="data[User][mobile]" data-fv-field="data[User][mobile]">
+                                    <!--<input id="ContactNo2" type="text" ng-model="currGroup.ContactNo2" class="form-control" maxlength="10" />-->
+                                    <span class="help-block">
+                                    </span>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-6">
+                                <label for="Fax" class="col-md-4 control-label" style="float:left">Fax:<span class='require'></span></label>
+                                <div class="col-md-8"><input id="Fax" type="text" ng-model="currGroup.Fax" class="form-control" /><span class="help-block"></span></div>
+                            </div>
+
+
+                        </div>
+                        <div class="row">
+
+
+                            <div class="col-md-6">
+                                <label for="Fax" class="col-md-4 control-label" style="float:left">Title:<span class='require'></span></label>
+                                <div class="col-md-8"><input id="Title" type="text" ng-model="currGroup.Title" class="form-control" /><span class="help-block"></span></div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="Fax" class="col-md-4 control-label" style="float:left">Caption: <span class='require'></span></label>
+                                <div class="col-md-8"><input id="Caption" type="text" ng-model="currGroup.Caption" class="form-control" /><span class="help-block"></span></div>
+                            </div>
+
+                        </div>
+
+                        <div class="row" style="margin-top:5px">
+
+                            <div class="col-md-6">
+                                <label for="inputMiddleName" class="col-md-4 control-label" style="color: red; float: left">Country:<span class='require'>*</span></label>
+                                <div class="col-md-8">
+                                    <select class="col-md-12 form-control" ng-model="currGroup.Country">
+                                        <option value="">select Country</option>
+                                        <option value="245">Zimbabwe</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="State" class="col-md-4 control-label" style="color: red; float: left">State/Province:<span class='require'></span></label>
+                                <div class="col-md-8">
+                                    <select class="col-md-12 form-control" ng-model="currGroup.State">
+                                        <option value="">select Country</option>
+                                        <option value="1">Bulawayo</option>
+                                        <option value="2">Harare</option>
+                                        <option value="3">Manicaland</option>
+                                        <option value="4">Mashonaland Central</option>
+                                        <option value="5">Mashonaland East</option>
+                                        <option value="6">Mashonaland West</option>
+                                        <option value="7">Masvingo</option>
+                                        <option value="8">Matabeleland North</option>
+                                        <option value="9">Matabeleland South</option>
+                                        <option value="10">Midlands</option>
+
+                                    </select>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="row" style="margin-top:10px">
+
+                            <div class="col-md-6">
+                                <label for="Fax" class="col-md-4 control-label" style="float:left">Fleet Size:<span class='require'></span></label>
+                                <div class="col-md-8">
+                                    <!--<input id="EmailId" type="text" ng-model="currGroup.FleetSize" class="form-control" /><span class="help-block"></span>-->
+
+                                    <select class="col-md-12 form-control" ng-model="currGroup.FleetSize">
+                                        <option value="">select fleet size</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <label for="Fax" class="col-md-4 control-label" style="float:left">Staff Size:<span class='require'></span></label>
+                                <div class="col-md-8">
+                                    <!--<input id="StaffSize" type="text" ng-model="currGroup.StaffSize" class="form-control" /><span class="help-block"></span>-->
+                                    <select class="col-md-12 form-control" ng-model="currGroup.StaffSize">
+                                        <option value="">select Staff size</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+
+                                    </select>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="row" style="margin-top:10px">
+
+                            <div class="col-md-6">
+                                <label for="Address Id" class="col-md-4 control-label" style="float:left">Logo:</label>
+                                <!--<div class="text-center mbl"><img src="images/user.jpg" style="width:50px;height:50px" alt="" class="img-responsive" /></div>-->
+                                <div class="col-md-8">
+                                    <img id="cmpNewLogo" ng-src="{{imageSrc}}" width="150px" height="150px" />
+                                    <br />
+                                    <a href="#" class="btn btn-green" ng-click="UploadImg();" style="margin-top:5px">
+                                        <i class="fa fa-upload"></i>&nbsp;
+                                        Upload New Logo
+                                    </a>
+                                    <a href="#" class="btn btn-red" ng-click="clearImg();" style="margin-top:5px">
+                                        <i class="fa fa-upload"></i>&nbsp;
+                                        Remove Logo
+                                    </a>
+
+                                </div>
+
+
+
+                                <input type="file" name="fileInput" id="fileInput" ng-file-select="onFileSelect($files)" class="btn btn-green" accept=".jpg,.png,.gif,.jpeg" style="display:none" ng-model="$scope.imageSrc" ng-change="setimg();" />
+
+                            </div>
+
+
+
+
+                            <div class="col-md-6">
+                                <div>
+                                    <label for="Address Id" class="col-md-4 control-label" style="color: red; float: left">Address:</label>
+
+                                    <div class="col-md-8"><textarea rows="4" class="form-control" ng-model="currGroup.Address"></textarea></div>
+                                    <br />
+                                </div>
+
+                                <div style="margin-top:10px">
+                                    <label for="Fax" class="col-md-4 control-label" style="float:left">Alternate Address:</label>
+                                    <div class="col-md-8" style="margin-top:10px"><textarea rows="3" class="form-control" ng-model="currGroup.AlternateAddress"></textarea></div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <label for="ZipCode" class="col-md-4 control-label" style="float:left">ZipCode:<span class='require'></span></label>
+
+                                    <div class="col-md-8"><input id="ZipCode" type="text" ng-model="currGroup.ZipCode" class="form-control" /><span class="help-block"></span></div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+
+        </div>
+       
+
+    </script>
+
+    <script type="text/ng-template" id="user.html" role="tabpanel" data-backdrop="static">
+
+
+        <div class="page-content">
+
+            <div id="tab-form-actions" class="tab-pane fade active in">
+                <div class="row">
+
+                    <div class="col-lg-12">
+                        <div class="panel panel-violet">
+                            <div class="panel-heading">Add New User</div>
+                            <div class="panel-body pan">
+                                <form action="#" class="form-horizontal">
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label for="inputFirstName" class="col-md-2 control-label">First Name:<span class='require'>*</span></label>
+
+                                            <div class="col-md-3"><input id="inputFirstName" type="text" placeholder="First Name" class="form-control" ng-model="User.FirstName" /><span class="help-block"></span></div>
+
+                                            <label for="inputLastName" class="col-md-2 control-label">Last Name:<span class='require'>*</span></label>
+
+                                            <div class="col-md-3"><input id="inputLastName" type="text" placeholder="Last Name" class="form-control" ng-model="User.LastName" /><span class="help-block"></span></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputMiddleName" class="col-md-2 control-label">Middle Name</label>
+
+                                            <div class="col-md-3"><input id="inputMiddleName" type="text" placeholder="Middle Name" class="form-control" ng-model="User.MiddleName" /><span class="help-block"></span></div>
+
+                                            <label for="inputLastName" class="col-md-2 control-label">Email:<span class='require'>*</span></label>
+
+                                            <div class="col-md-3"><input id="inputLastName" type="text" placeholder="" class="form-control" ng-model="User.Email" /><span class="help-block"></span></div>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputMiddleName" class="col-md-2 control-label">Mobile Number:</label>
+
+                                            <div class="col-md-3"><input id="inputMiddleName" type="text" placeholder="" ng-keypress="filterValue($event)" class="form-control" maxlength="10" ng-model="User.MobileNo" /><span class="help-block"></span></div>
+
+                                            <label for="" class="col-md-2 control-label">Employee No:<span class='require'>*</span></label>
+
+                                            <div class="col-md-3"><input id="Employee no" type="text" class="form-control" ng-model="User.EmpNo" /><span class="help-block"></span></div>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Address Id" class="col-md-2 control-label">Address:</label>
+
+                                            <div class="col-md-3"><textarea rows="3" class="form-control" ng-model="User.AdressId"></textarea></div>
+                                            <label for="inputMiddleName" class="col-md-2 control-label">Company:<span class='require'>*</span></label>
+
+                                            <div class="col-md-3">
+                                                <select ng-options="cmp.Name for cmp in Companies track by cmp.Id" ng-model="cmp" ng-change="getRolesForCompany(cmp)" width="100%">
+                                                    <option value="">Select Company</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+
+                                            <label for="" class="col-md-2 control-label">Supervisor:</label>
+                                            <div class="col-md-2">
+                                                <select ng-options="mgr.FirstName+' '+mgr.LastName  for mgr in MgrUsers track by mgr.Id" ng-model="mgr" style="width:100%">
+                                                    <option value="">Select</option>
+                                                </select>
+                                            </div>
+
+                                            <label for="inputMiddleName" class="col-md-3 control-label">Role:<span class='require'>*</span></label>
+                                            <div class="col-md-4">
+                                                <select ng-options="r.rolename for r in cmproles track by r.Id" ng-model="r" width="100%">
+                                                    <option value="">Select Role</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+
+                                        <!--<div class="form-group">
+                                            <label for="Logo" class="col-md-2 control-label">Logo:</label>
+
+                                            <div class="col-md-2">
+                                                <img src="images/user.jpg" alt="" class="img-responsive" width="25px" />
+                                                <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                                            </div>
+                                        </div>-->
+
+                                        <div class="form-group">
+                                            <div class="text-center mbl"><img src="images/user.jpg" style="width:50px;height:50px" alt="" class="img-responsive" /></div>
+                                            <div class="col-md-2">
+                                                <div class="text-left">
+                                                    <a href="#" class="btn btn-green">
+                                                        <i class="fa fa-upload"></i>&nbsp;
+                                                        Upload Logo
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-violet">
+                                            <div class="panel-heading">User Login</div>
+
+                                            <br />
+                                            <div class="form-group">
+
+                                                <div style="width:30%;float:left">
+                                                    <label for="inputMiddleName" class="col-md-5">User Name:</label>
+
+                                                    <div class="col-md-7"><input type="text" class="form-control" ng-model="User.UserName" /></div>
+                                                </div>
+                                                <div style="width:30%;float:left">
+                                                    <label for="inputMiddleName" class="col-md-5">Password:</label>
+
+                                                    <div class="col-md-7"><input type="password" class="form-control" ng-model="User.Password" /></div>
+                                                </div>
+                                                <div style="width:30%;float:left">
+                                                    <label for="inputMiddleName" class="col-md-5">Re-Enter Password:</label>
+
+                                                    <div class="col-md-7"><input type="password" class="form-control" ng-model="reenteredPwd" /><span class="help-block"></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-actions text-center">
+                                            <button class="btn btn-green" type="button" ng-click="save(User, 'I',-1)">Save</button>
+                                            &nbsp;
+                                            <a href="Users.html" class="btn btn-primary" ng-click="clearUser()">Cancel</a><br />
+                                        </div>
+
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </script>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="footer" tabindex="0">
+
+                    <h2 class="visually-hidden">Site footer</h2>
+
+
+
+                    <div class="primary-footer r">
+                        <h2 class="visually-hidden">About Interbus</h2><ul class="footer-links">
+                            <li><a href="Construction.html">Help &amp; contacts</a></li>
+                            <li><a class="" href="Construction.html">Careers</a></li>
+                            <li><a class="" href="Construction.html">About Interbus</a></li>
+                            <li><a class="" href="Construction.html">Safety &amp; security</a></li>
+                            <li><a class="" href="Construction.html">Transparency</a></li>
+                            <li><a class="" href="Construction.html">Publications &amp; reports</a></li>
+                            <li><a class="" href="Construction.html">Gift Shop</a></li>
+                            <li><a class="" href="Construction.html">Social media &amp; email updates</a></li>
+
+                            <li><a class="languages-footer" href="Construction.html">Other languages</a></li>
+                        </ul><h2 class="heading">Information for...</h2>
+                        <ul class="info-for clearfix">
+                            <li><a href="Construction.html">Media</a></li>
+                            <li><a href="Construction.html">Business &amp; commercial</a></li>
+                            <li><a href="Construction.html">Get Support online 24/7</a></li>
+                            <li><a href="Construction.html">Schools &amp; young people</a></li>
+                            <li><a href="Construction.html">Deliveries in Zimbabwe</a></li>
+                            <li><a href="Construction.html">Urban planning & construction</a></li>
+
+
+                            <li><a href="Construction.html">Taxi &amp; private hire </a></li>
+
+
+                            <li><a href="Construction.html">Bus operators</a></li>
+                            <li><a href="Construction.html">Open data users</a></li>
+                            <li><a href="Construction.html">Coach drivers</a></li>
+                            <li><a href="Construction.html">Investors</a></li>
+                            <li><a href="Construction.html">Download Interbus App</a></li>
+                        </ul>
+                    </div>
+                    <div class="secondary-footer">
+                        <h2 class="visually-hidden">Site structure and legal information</h2><div class="r">
+                            <ul>
+                                <li><a href="Construction.html">Terms &amp; conditions </a></li>
+                                <li><a href="Construction.html">Privacy &amp; cookies</a></li>
+                                <li><a href="Construction.html">Website accessibility</a></li>
+                            </ul>
+                            <span class="heading">Copyright Interbus</span>
+                        </div>
+                    </div>
+                    <div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script type="text/ng-template" id="statusPopup.html" data-backdrop="static">
+
+            <div class="modal-header">
+                <h3 class="modal-title">Information!</h3>
+            </div>
+            <div class="modal-body">
+                <h3>
+                    {{mssg}}
+                    <div ng-hide="status==1" ng-show="status==0"><br /><a href="LicensePage.html" style="color:red">Click here</a> to proceed to license buying</div>
+                </h3>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+                <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+            </div>
+
+        </script>
+
+
+
+        <script src="js/jquery-1.10.2.min.js"></script>
+        <script src="js/jquery-migrate-1.2.1.min.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <!--loading bootstrap js-->
+        <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+        <script src="vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
+
+        <script src="vendors/metisMenu/jquery.metisMenu.js"></script>
+        <script src="vendors/slimScroll/jquery.slimscroll.js"></script>
+        <script src="vendors/jquery-cookie/jquery.cookie.js"></script>
+        <script src="vendors/iCheck/icheck.min.js"></script>
+        <script src="vendors/iCheck/custom.min.js"></script>
+        <script src="vendors/jquery-news-ticker/jquery.news-ticker.js"></script>
+        <script src="js/jquery.menu.js"></script>
+        <script src="vendors/jquery-pace/pace.min.js"></script>
+        <script src="vendors/holder/holder.js"></script>
+        <script src="vendors/responsive-tabs/responsive-tabs.js"></script>
+        <!--LOADING SCRIPTS FOR PAGE--><!--CORE JAVASCRIPT-->
+        <script src="vendors/jquery-validate/jquery.validate.min.js"></script>
+        <script src="vendors/jquery-steps/js/jquery.steps.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/angular.js"></script>
+        <script src="js/ui-bootstrap-tpls-1.3.3.js"></script>
+        <script src="js/ngStorage.js"></script>
+        <script src="js/CreateFleetOwner1.js"></script>
+</body>
+
+</html>
+

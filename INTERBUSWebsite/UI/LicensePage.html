@@ -126,39 +126,37 @@
 
 
     <div class="container">
-        <div style="margin-top: 100px;text-align:center">
+        <div style="margin-top: 80px;text-align:center">
 
             <div class="col-lg-12">
-                <div class="col-lg-6">
-                    <h3 style="padding-top: 10px;text-align:right">
+               
+                    <h4 style="padding-top: 10px;">
                         Need to renew license? Enter license code:
 
-                    </h3>
-                </div>
-                <div class="col-lg-2" style="text-align:left">
-                    <input type="text" width="100%" ng-model="txt">
-                </div>
-                <div class="col-lg-4" style="text-align:left">
-                    <button ng-click="ValidateLicenseCode(txt);" class="btn btn-primary">Renew</button>
-                </div>
+                    </h4>
+             
+                <input type="text" ng-model="txt">
+
+                <button ng-click="ValidateLicenseCode(txt);" class="btn btn-primary">Renew</button>
+
                 <!--<a href="Fleetownerrequest.html" style="color:red">
-                    click here
-                </a> to contact INTERBUS administrator-->
+            click here
+        </a> to contact INTERBUS administrator-->
 
 
             </div>
             <div class="row">
-                <h3 style="padding-top: 10px; text-align: center">
-                    <font style="padding-top: 10px; color: red"><h3>Note:You need a fleet owner code to buy/renew license.</h3></font> <br /> Do not have a fleet owner code? please <a href="Fleetownerrequest.html" style="color:red">
+                <h4 style="padding-top: 10px; text-align: center">
+                    <font style="padding-top: 10px; color: red"><h4>Note:You need a fleet owner code to buy/renew license.</h4></font> <br /> Do not have a fleet owner code? please <a href="Fleetownerrequest.html" style="color:red">
                         click here
                     </a> to contact INTERBUS administrator
-                </h3>
+                </h4>
             </div>
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <h2 style="padding-top:10px; text-align:center"> Please choose from below license options available to buy:</h2>
+                    <h3 style="padding-top:10px; text-align:center"> Please choose from below license options available to buy:</h3>
                     <div class="container" ng-model="License">
-                        <div class="col-md-10" style="text-align:center;align-content:center">
+                        <div class="col-md-9" style="text-align:center;align-content:center">
                             <div class="row mtl">
                                 <div class="page-content">
 
@@ -175,18 +173,19 @@
                                                     <table class="table mbn">
                                                         <tbody>
                                                             <tr ng-repeat="f in License.Table1 | filter:{ LicenseTypeId: Lt.Id }" ng-init="selType=f">
-                                                                <td>{{f.FeatureLabel}}: <strong>{{f.FeatureValue}}</strong></td>
+                                                                <td>{{f.FeatureLabel}}:</td>
+                                                                <td><strong>{{f.FeatureValue}}</strong></td>
                                                             </tr>
 
                                                         </tbody>
                                                     </table>
                                                 </div>
                                                 <br />
-                                                <ul class="pricing-list text-center">
-                                                    <button id="buy" type="button" data-target="#Modal-header-Secondary" data-toggle="modal" class="btn btn-primary" ng-click="SetLicensedetails(License, Lt.Id);">Buy Now</button>
+                                                <div class="row pricing-list text-center">
+                                                    <button id="buy" type="button" data-target="#Modal-header-Secondary" data-toggle="modal" class="btn btn-primary" ng-click="SetLicensedetails(License, Lt);">Buy Now</button>
                                                     <!--<li class="text-center"><button id="Renew" ng-click="GoToConfirmation1(txt, License, Lt.Id);" class="btn btn-primary">Buy</button></li>-->
-                                                </ul>
-
+                                                </div>
+                                                <br />
                                             </div>
                                         </div>
 
@@ -282,16 +281,17 @@
                     <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
                     <h4 id="modal-header-primary-label" class="modal-title">Fleet owner code</h4>
                 </div>
-                <div class="modal-body" ng-model="currGroup">
-
-                    Enter the fleet owner code:<input type="text" ng-model="FleetOwnerCode" width="100px" />
-                    Do not have a fleet owner code? please <a href="Fleetownerrequest.html" style="color:red">click here</a> to contact INTERBUS administrator
-
-
+                <div class="modal-body">
+                                        Enter the fleet owner code:<input type="text" ng-model="FleetOwnerCode" width="100px" />
+                <br />
+               
+                        Do not have a fleet owner code? please <a href="Fleetownerrequest.html" style="color:red">click here</a> to contact INTERBUS administrator
+                  
 
                 </div>
+
                 <div class="form-actions">
-                    <div class="col-md-offset-3 col-md-9">
+                    <div style="text-align:center">
                         <button type="button" class="btn btn-green" ng-click="ValidateFOCode(FleetOwnerCode);">Proceed</button>
                         <button type="button" data-dismiss="modal" class="btn btn-primary">Close</button>
                     </div>

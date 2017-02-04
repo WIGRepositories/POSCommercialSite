@@ -48,6 +48,8 @@ namespace INTERBUSWebsite.Controllers
         public int SaveBookingDetails(BookingDetails B)
         {
             //DataTable Tbl = new DataTable();
+            LogTraceWriter traceWriter = new LogTraceWriter();
+            traceWriter.Trace(Request, "0", TraceLevel.Info, "{0}", "SaveBookingDetails....");
 
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["btposdb"].ToString();
@@ -349,11 +351,15 @@ namespace INTERBUSWebsite.Controllers
                     //SmtpServer.TargetName = "STARTTLS/smtp.gmail.com";
                     SmtpServer.Send(mail);
                     status = 1;
+                                        
+                    traceWriter.Trace(Request, "0", TraceLevel.Info, "{0}", "sent ticket email....");
+
                 }
                 catch (Exception ex)
                 {
                     //throw ex;
                     status = 0;
+                    traceWriter.Trace(Request, "0", TraceLevel.Info, "{0}", "sent ticket email failed:"+ex.Message);
                 }
 
                 #region Save Ticket
@@ -394,12 +400,12 @@ namespace INTERBUSWebsite.Controllers
 
                     PnrDeatilscmd.ExecuteScalar();
 
-
+                    traceWriter.Trace(Request, "0", TraceLevel.Info, "{0}", "ticket booking completed....");
                 }
                 catch (Exception ex)
                 {
 
-
+                    traceWriter.Trace(Request, "0", TraceLevel.Info, "{0}", "ticket booking error....:"+ex.Message);
                 }
 
                 #endregion Save ticket
@@ -577,6 +583,8 @@ namespace INTERBUSWebsite.Controllers
         public int SaveBookedTicket(BookedTicketDetails B)
         {
             //DataTable Tbl = new DataTable();
+            LogTraceWriter traceWriter = new LogTraceWriter();
+            traceWriter.Trace(Request, "0", TraceLevel.Info, "{0}", "SaveBookedTicket....");
 
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["btposdb"].ToString();
@@ -629,7 +637,7 @@ namespace INTERBUSWebsite.Controllers
 
                 //on successful saving, send the details to email id
                 #region email the e-ticket
-
+                traceWriter.Trace(Request, "0", TraceLevel.Info, "{0}", "sending booked ticket....");
                 if (bookingId != null)
                 {
                     try
@@ -666,7 +674,9 @@ namespace INTERBUSWebsite.Controllers
                     catch (Exception ex)
                     {
                         //throw ex;
+                        traceWriter.Trace(Request, "0", TraceLevel.Info, "{0}", "ticket send failed. details:"+ex.Message);
                     }
+                    traceWriter.Trace(Request, "0", TraceLevel.Info, "{0}", "SaveBookedTicket completed.");
                 }
                 #endregion email the e-ticket
 
