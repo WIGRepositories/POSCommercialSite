@@ -32,7 +32,7 @@
 
 </head>
 
-<body ng-init="FillULConfirmDetails();">
+<body ng-init="FillFOConfirmDetails();">
 
     <div id="container">
         <div class="mainnav" id="mainnav" tabindex="0">
@@ -126,66 +126,47 @@
     <!--End Menu-->
     <!--End Header-->
     <div style="margin-top:80px;text-align:center;">
-        <h2 style="text-align:center">License payment confirmation!</h2>
-        <div class="col-md-10">       
+        <h2 style="text-align:center">Fleet owner registration confirmation!</h2>
+        <div class="col-md-10">
             <div class="container col-md-offset-2">
 
-                <table class="table table-bordered" style="background-color: white;">
-                   
-                        <tr>
-                            <td>
-                              
-                                <table align="center">
-                                    <tbody>
-                                        <tr>
-                                            <td style="font-family:'Zurich bt',arial,helvetica,sans-serif;font-size:15px;text-align:left;line-height:normal;">
-                                                <div style='padding:10px;border:#0000FF solid 2px;'>
-                                                    <h3 style="text-align:center">Congratulations!!</h3>
-                                                    <h3>Your license payment is processed successfully.</h3>
-                                                    <h3>Fleet Owner License Details</h3>
-                                                    Your payment transaction Id:<b> {{ulconfirm.TransId}}</b>
-                                                    <br />
-                                                    Your license code is:<b> {{ulconfirm.licenseCode}}</b>
-                                                    <br />
-                                                    License Activated on  : <b>{{ulconfirm.startdate}}</b>
-                                                    <br />
-                                                    License Expiry on     :<b> {{ulconfirm.expiryon}}</b>
-                                                    <br />
-                                                    No.of BTPOS units to be shipped: <b>{{ulconfirm.noofunits}}</b>
-                                                    <br />
-                                                    Shipping order for BT POS units:<b> {{ulconfirm.shipOrder}}	</b>
-                                                    <br />
-                                                    <!--<br />
-                                                    Your Smart Ticket dashboard login and password details are sent to your registed emailid.-->
-                                                    <!--Your Smart Ticket dashboard login user name            : <b>{{ulconfirm.username}}</b>
-                                                    <br />-->
-                                                    <!--Your Smart Ticket dashboard login one time password is   : <b>{{ulconfirm.username}}</b>
-                                                    <br />-->
-                                                    <br />
-                                                    <h5>Please contact interbus admin for any further information!</h5>
+                <table class="table table-bordered" style="background-color: white;">                         
+                                <tbody>
+                                    <tr>
+                                        <td style="font-family:'Zurich bt',arial,helvetica,sans-serif;font-size:15px;text-align:center;line-height:normal;">
+                                            <div style='padding:10px;border:#0000FF solid 2px;'>
+                                                <h3 style="text-align:center">Congratulations!!</h3>
+                                                <h3>Your are registered as a fleet owner with INTERBUS successfully.</h3>
+                                                <br />
+                                                <h4> Your Fleet Owner code is:<b> {{NewFOCode}}</b></h4>
+                                               
+                                                <br />
+                                                please use the code to buy license and for future correspondence with INTERBUS.
+                                                <br />                                               
+                                                <br />
+                                                <a href="LicensePage.html" style="color:red">Click here</a> to proceed to license buying                                                                                           
+                                                <br />
+                                                <br />
+                                                <h5>Please contact interbus admin for any further information!</h5>
 
-                                                    <center><h3> Above details and your Smart Ticket dashboard credentails are sent to your registered email id: {{ulconfirm.emailid}}</h3></center>
-                                                    <h3 style="text-align:center"> <a href="http://154.120.237.198:1476" target="_blank">Click here</a> to login into dashboard portal</h3>
+                                                <center><h4> The same details are sent to your registered email id: {{FOemailid}}</h4></center>
+                                              
 
-                                                    <center><h3> Happy ticketing!</h3></center>
+                                                <center><h3> Happy ticketing!</h3></center>
 
 
-                                                    For any queries/concerns please contact INTERBUS adminitrator - admin@interbus.com
+                                                For any queries/concerns please contact INTERBUS adminitrator - admin@interbus.com
 
 
-                                                </div>
-                                            </td>
-                                        </tr>
+                                            </div>
+                                        </td>
+                                    </tr>
 
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
+                                </tbody>
+                            </table>
+                        
 
-                 
-                </table>
 
-              
 
             </div>
 
@@ -288,7 +269,12 @@
     <script src="js/angular.js"></script>
     <script src="js/ui-bootstrap-tpls-1.3.3.js"></script>
     <script src="js/ngStorage.js"></script>
-    <script src="js/Checkout.js"></script>
+    <script src="js/fileupload/angular-file-upload.js"></script>
+    <script src="js/fileupload/angular-file-upload-shim.js"></script>
+
+    <script src="js/CreateFleetOwner.js"></script>
+
+    <script src="js/fileupload/Upload.js"></script>  
 
 </body>
 

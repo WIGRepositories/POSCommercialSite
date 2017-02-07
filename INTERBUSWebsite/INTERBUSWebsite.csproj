@@ -343,7 +343,7 @@
     <Content Include="UI\LicensePage.html" />
     <Content Include="UI\Login.html" />
     <Content Include="UI\mail.html" />
-    <Content Include="UI\PaymentConfirmation.html" />
+    <Content Include="UI\FOConfirmation.html" />
     <Content Include="UI\TicketCheckOut.html" />
     <Content Include="UI\PopupTest.html" />
     <Content Include="UI\PrintTicket.html" />

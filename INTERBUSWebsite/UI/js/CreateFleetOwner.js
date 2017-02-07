@@ -302,11 +302,12 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $uibModal, $localSt
                 //    return;
                 //}
 
-             //   $localStorage.code = data[0].FleetOwnerCode;
-                $scope.showDialog('saved successfully. The fleet owner code is ' + data[0].FleetOwnerCode + '.\n please use the code to buy license.\n The same has been sent to the given e-mailid:' + FleetOwnerRequest1.EmailAddress+'.',0);
+                $localStorage.NewFOcode = data[0].FleetOwnerCode;
+                $localStorage.FOemailid = FleetOwnerRequest1.EmailAddress;
+               // $scope.showDialog('saved successfully. The fleet owner code is ' + data[0].FleetOwnerCode + '.\n please use the code to buy license.\n The same has been sent to the given e-mailid:' + FleetOwnerRequest1.EmailAddress+'.',0);
 
                 
-           // window.location.href = "/UI/LicenseConfirmation.html";
+            window.location.href = "FOConfirmation.html";
         }).error(function (ata, status, headers, config) {
             $scope.showDialog(ata.ExceptionMessage,1);
         });
@@ -314,6 +315,11 @@ var ctrl = app.controller('myCtrl', function ($scope, $http, $uibModal, $localSt
         $scope.clearFleetOwnerRequest1 = function () {
             $scope.FleetOwnerRequest1 = null;
         };
+    }
+
+    $scope.FillFOConfirmDetails = function () {
+      $scope.NewFOCode =  $localStorage.NewFOcode;
+      $scope.FOemailid = $localStorage.FOemailid;
     }
 
     $scope.showDialog = function (message,status) {
